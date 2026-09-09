@@ -1,0 +1,466 @@
+{
+ "case_id": "ep068-070_night_baron_murder_case",
+ "episode_number": "68-70",
+ "title": "Night Baron Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Night_Baron_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0068.txt, case_closed_dataset/subs_resolved/0070.txt (middle episode 0069 transcript was not part of this batch, so the middle-episode dialogue is reconstructed only from what 0068 sets up and 0070 recaps/resolves)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, an unnamed knocked-out police officer) omitted by convention; their off-screen involvement (Conan pushed into the pool, Kogoro drugged and publicly misfiring his deduction at Maeda, the officer knocked out) is preserved instead as attrs on the relevant object/person nodes so the facts aren't lost. No event nodes: every action is a directly typed edge between the entities involved, sharing an order integer. Two Night Baron costumes are modeled as separate object instances since they are physically distinct props used by two different people for two different purposes. The strongest red herring is Satoru Maeda, who genuinely did commit a second, real act (stealing a spare costume and staging a fight to mislead investigators) after independently suspecting his fiancee, making Kogoro's public accusation against him wrong about the murder but not baseless about his behavior. Konno and Kamijo are also treated with suspicion (unverified alibi / drugging behavior) before being cleared. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tokio Ebara",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "computer programmer",
+    "attrs": {
+     "died_of": "fell from a hotel balcony",
+     "criminal_history": "hacked a company three years before and stole its 'Workshop' software, then sold the stolen software to Hideko Kamijo"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Shiro Konno",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "bank employee",
+    "attrs": {
+     "cleared_by": "phone records only show he was online from 9:45-10:06, which doesn't confirm he was actually in his room the whole time -- treated as suspicious before being cleared along with everyone but Sayama"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Genichiro Kaneshiro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "computer company owner",
+    "attrs": {
+     "cleared_by": "confirmed at the outdoor restaurant with Hayashi at the time of the murder",
+     "unrelated_backstory": "mentions his own son died four years earlier; unconnected to this case"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shizue Hayashi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kaneshiro's butler",
+    "attrs": {
+     "cleared_by": "confirmed at the outdoor restaurant with Kaneshiro at the time of the murder"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hideko Kamijo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "software company CEO",
+    "attrs": {
+     "cleared_of_murder": "was in the pub, stepped out for five minutes, and returned before the murder was discovered",
+     "separate_real_misconduct": "secretly drugged Kogoro Mouri's drink with sleeping pills to read his detective notebook and learn the Night Baron's identity first; the notebook turned out blank"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Satoru Maeda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "former Japanese karate champion; university electrical engineering assistant",
+    "attrs": {
+     "publicly_accused": "Kogoro Mouri publicly names him as the killer, reasoning only a karate champion could knock out a third-dan black-belt officer in one blow and dodge Ran's kicks -- true of his actions, but not of the murder",
+     "true_role": "innocent of the murder; independently suspected Sayama after finding a wig among her belongings, then deliberately staged a second Night Baron appearance and withheld his own airtight alibi to draw suspicion onto himself and protect her"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Akiko Sayama",
+    "aliases": ["the Night Baron (impersonated identity)"],
+    "roles": ["suspect"],
+    "occupation": "high school math teacher",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Akiko Sayama's brother",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "ran the software company that produced \"Workshop\"",
+    "attrs": {
+     "died_of": "jumped from his company's building after Ebara hacked in and stole the software he had bet everything on"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Izu Princess Hotel outdoor restaurant / statue courtyard",
+    "attrs": {
+     "wind": "swept nightly by the strong local 'Princess Wind,' blowing left-to-right past the statue, except for one sheltered pocket almost directly below Ebara's balcony"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Tokio Ebara's room (2101)",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Akiko Sayama's room (one of the rare spots sheltered from the Princess Wind, directly below Ebara's balcony)",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Hotel observation lounge",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Princess Hotel 2F Pub Emerald",
+    "attrs": {}
+   },
+   {
+    "id": "l6",
+    "name": "Hotel swimming pool",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Night Baron costume A (Sayama's own)",
+    "role": "instrument",
+    "attrs": {
+     "used_for": "worn by Sayama to push a young tour guest into the hotel pool and scare Kogoro Mouri off the investigation, and later used to dress Ebara's drugged body before he was pushed"
+    }
+   },
+   {
+    "id": "o1b",
+    "name": "Night Baron costume B (a spare, taken from the crime-scene office)",
+    "role": "instrument",
+    "attrs": {
+     "used_for": "stolen by Maeda after the murder and worn to knock out a third-dan police officer guarding the body in one blow, then confront Ran and Conan -- feats only his karate background could explain, planting the false idea that the killer was a trained fighter"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "\"Night Baron virus\" prize (fabricated)",
+    "role": "tool",
+    "attrs": {
+     "significance": "the promised legendary computer virus program never actually existed; it was invented purely as bait to lure Ebara, a known hacker, to the hotel and later to Sayama's room"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Cellophane tape (security-lock trick)",
+    "role": "tool",
+    "attrs": {
+     "trick": "folded over with a short sticky tab, pressed across the door's security lock before closing it, then tugged free from outside so the lock reads as set from the inside, leaving no visible evidence"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Sleeping pills",
+    "role": "tool",
+    "attrs": {
+     "use": "slipped into Ebara's drink to subdue him before he was moved and pushed"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Wig matching Ebara's hairstyle",
+    "role": "evidence",
+    "attrs": {
+     "significance": "found among Sayama's belongings and later discovered floating in the pool; convinced Maeda of her guilt, though it was ultimately unneeded because Ebara and the Night Baron persona shared the same natural hairstyle"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "\"Workshop\" software",
+    "role": "evidence",
+    "attrs": {
+     "history": "created by Akiko Sayama's brother's company; stolen by Ebara via hacking and sold to Hideko Kamijo three years before the murder"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The second Night Baron sighting required knocking out a third-dan black-belt officer in a single blow and evading Ran's kicks entirely -- only the former karate champion Maeda could plausibly do this. This genuinely implicates him in staging that later appearance, but not in the murder itself, since he has an independent alibi for the time Ebara actually died.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "Test blankets dressed as decoys and dropped from every suspect's room show that, given the Princess Wind blowing across the courtyard that night, only a drop from the one room sheltered from the wind -- Sayama's, directly below Ebara's balcony -- lands where Ebara's body actually did; every other room's decoy, including Ebara's own, is blown well off to the side.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Cellophane tape residue is found in the blind spot of Ebara's room's security lock -- proof the lock was set from outside the room after the killer already had his key, meaning the room was staged to look like the murder scene before the body was ever moved there.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p6",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p8",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "causes_death_of",
+   "from": "p1",
+   "to": "p8",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 3,
+   "method": "hacked into his company and stole the 'Workshop' software he had bet everything on, driving him to jump from the company building",
+   "circumstance_tags": ["driven_to_suicide"]
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o6"
+  },
+  {
+   "type": "lures",
+   "from": "p7",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "organizes the Izu Mystery Tour and dangles a fabricated legendary 'Night Baron' computer virus as bait to draw the hacker Ebara in"
+  },
+  {
+   "type": "owns",
+   "from": "p7",
+   "to": "o2"
+  },
+  {
+   "type": "wears",
+   "from": "p7",
+   "to": "o1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l6",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "drugs",
+   "from": "p7",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "slips sleeping pills into his drink"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p7",
+   "to": "o4",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "lures",
+   "from": "p7",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "draws him to her own room with a renewed promise of the virus's location, after having driven her fiance off for the night"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p7",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "dressed his drugged body in the Night Baron costume and wig, then pushed him from her own balcony -- a rare wind-sheltered spot -- so he fell straight onto the courtyard statue instead of being blown aside like a drop from his own room would be",
+   "circumstance_tags": ["staged_scene", "locked_room", "disguise"]
+  },
+  {
+   "type": "owns",
+   "from": "p7",
+   "to": "o5"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p7",
+   "to": "o1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p7",
+   "to": "o3",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "sets Ebara's own room's security lock from the outside with the cellophane-tape trick, then tosses his room key back inside, making it look like he fell from a sealed room",
+   "circumstance_tags": ["locked_room", "staged_scene"]
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "discovers",
+   "from": "p6",
+   "to": "o5",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "finds the wig among Sayama's belongings and becomes convinced she is the killer"
+  },
+  {
+   "type": "disguises_as",
+   "from": "p6",
+   "to": "o1b",
+   "order": 8,
+   "temporal_frame": "present",
+   "circumstance_tags": ["cover_up", "red_herring", "self_sacrifice"],
+   "detail": "steals a spare Night Baron costume from the crime-scene office and deliberately runs into Ran and Conan, drawing suspicion toward a skilled fighter distinct from Sayama"
+  },
+  {
+   "type": "covers_for",
+   "from": "p6",
+   "to": "p7",
+   "order": 9,
+   "temporal_frame": "present",
+   "circumstance_tags": ["cover_up", "self_sacrifice"],
+   "detail": "conceals that fans can vouch for his location at 10:03 PM, willing to take the blame in her place"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present",
+   "circumstance_tags": ["unverified_alibi", "red_herring"]
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l4",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "was in the observation lounge with Ran and Conan around the time of the murder; initially treated as a vague/unverified alibi since he was the one who checked the time, but later confirmed airtight when fans he met at the lounge entrance at 10:03 corroborate it",
+   "circumstance_tags": ["unverified_alibi", "red_herring"]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l5",
+   "order": 5,
+   "temporal_frame": "present",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1b"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p7"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p7"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p7"
+  },
+  {
+   "type": "implicates",
+   "from": "o1b",
+   "to": "p6",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p7",
+   "to": "p1",
+   "motive_type": "revenge_for_brothers_death_--_ebara_hacked_and_stole_the_workshop_software_her_brother_had_bet_everything_on_driving_him_to_suicide"
+  }
+ ],
+ "label": {
+  "murderer_id": "p7"
+ }
+}

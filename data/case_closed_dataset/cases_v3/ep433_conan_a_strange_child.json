@@ -1,0 +1,219 @@
+{
+ "case_id": "ep433_conan_a_strange_child",
+ "episode_number": "433",
+ "title": "Conan: A Strange Child",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Conan:_A_Strange_Child",
+ "subtitle_source": ["subs_resolved/0433.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro Mouri, Conan, Inspector Megure, Takagi, Chiba) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Old cases/ep433 file (s1 Umezu Takashi, s2 Touru Mikami, s3 Chika Araki; murderer_id s2) had the correct culprit -- Mikami is confirmed by the transcript -- so no culprit reversal here, unlike some other rebuilds. However the old file understated the plot: it omitted the real motive entirely (Mikami secretly ghostwrote Umezu's award-winning novel and was forbidden from ever taking public credit), omitted Takashi's blackmail of his own father over drug use and Mikami's subsequent frame-up of Takashi with that same drug stash, and omitted Chika Araki's red-herring accusation (Takashi falsely claims she ghostwrote the book). The old file's clue c2 called the dying-message object a 'trophy'; it is actually a hand-carved Ichii-wood ceremonial stick given as an award memento, and the dying message itself has two layers -- a surface misdirection (upside-down kanji reading 'raku-ki' ~ Takashi's catchphrase 'lucky') and the true layer (Umezu's whole bibliography is built from palindromes, the same property as the name 'Mikami'). case_type: murder. Temporal/order fields intentionally omitted per current build guidance.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Osamu Umezu",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "famous novelist",
+    "attrs": {
+     "died_of": "nerve agent poisoning, staged as suicide",
+     "found_holding": "Ichii-wood stick, deliberately positioned upside down as a dying message",
+     "conflict": "just kicked his son Takashi out for blackmailing him"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Takashi Umezu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unemployed, aspiring author",
+    "attrs": {
+     "catchphrase": "raku (\"lucky\") -- used repeatedly, misreads as the dying message's surface layer",
+     "drug_use": "admits to using drugs; the same stash Mikami used to poison his father was planted in his pocket during their struggle",
+     "estate": "inherits his father's full fortune after the murder"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Touru Mikami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Umezu's secretary",
+    "attrs": {
+     "secret": "actually wrote The Road to the Thirteenth Step; Umezu forbade him from ever claiming credit publicly",
+     "name_note": "\"Mikami\" is a palindrome, the true target of Umezu's dying message",
+     "alibi": "claimed to walk from the cafe straight to a TV station meeting"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Chika Araki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Umezu's student, aspiring writer",
+    "attrs": {
+     "falsely_accused_by": "Takashi, who claims she secretly ghostwrote the novel -- she denies it and is not the culprit"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Osamu Umezu's apartment",
+    "attrs": {"unit": "503", "note": "locked-room crime scene"}
+   },
+   {
+    "id": "l2",
+    "name": "Roof of the apartment building",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Cafe across the street",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "TV station",
+    "attrs": {"note": "Mikami's claimed alibi destination"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Bag of nerve agent poison",
+    "role": "weapon",
+    "attrs": {
+     "effect": "attacks the nervous system",
+     "administered_via": "Umezu's coffee",
+     "later_use": "planted in Takashi's pocket to frame him"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "String-and-key locked-room rig",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "string tied to the roof guardrail, threaded through the window, used to pull the door key back inside after locking the apartment from outside",
+     "corroborating_trace": "tape on the wall calendar recently replaced, with a bubble mark from the string rubbing against it"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Fake typed suicide note",
+    "role": "evidence",
+    "attrs": {
+     "content": "My life as a writer is over. Everything I've done has been in vain.",
+     "method": "typed on Umezu's own word processor after he was already dead"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Ichii-wood ceremonial stick",
+    "role": "evidence",
+    "attrs": {
+     "material": "Ichii tree wood, an award memento from fans",
+     "surface_reading": "upside-down kanji 'ki'+'raku' reversed reads 'raku-ki', close to 'lucky' -- Takashi's catchphrase, a red-herring layer",
+     "true_reading": "positioned upside down on purpose to flag it as a clue, not to name Takashi"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Clay peony button",
+    "role": "evidence",
+    "attrs": {
+     "design": "given to everyone who worked on the novel",
+     "found": "stuck to the sofa, torn from Mikami's blazer during the struggle"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Umezu's chewing gum",
+    "role": "evidence",
+    "attrs": {
+     "note": "brand Mikami hands out (\"good for your brain\"); found missing near the body alongside the button"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "The Road to the Thirteenth Step",
+    "role": "evidence",
+    "attrs": {
+     "credited_author": "Osamu Umezu (public)",
+     "real_author": "Touru Mikami (secret)"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "\"My Secret\" manuscript",
+    "role": "evidence",
+    "attrs": {
+     "outlet": "Weekly Nichiuri",
+     "nonsensical_phrase": "Everyone can see it, but no one can recognize it. Only I may see the pleasures hidden in my works."
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Button torn from Mikami's blazer found stuck to the sofa by the gum Umezu had been chewing -- proves a struggle with Mikami specifically.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Every title on Umezu's bookshelf and the manuscript's odd phrase are palindromes -- his hidden signature technique, the same property as the name \"Mikami\".",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "student_of"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+
+  {"type": "blackmails", "from": "p2", "to": "p1", "detail": "threatens to tell police about his own drug use unless Umezu pays him, exploiting Umezu's prize candidacy"},
+  {"type": "confronts", "from": "p1", "to": "p2", "detail": "refuses the money and throws him out of the apartment"},
+  {"type": "accuses", "from": "p2", "to": "p4", "detail": "falsely claims Araki secretly ghostwrote the award-winning novel", "circumstance_tags": ["red_herring"]},
+
+  {"type": "owns", "from": "p3", "to": "o1"},
+  {"type": "rigs", "from": "p3", "to": "o2"},
+  {"type": "kills", "from": "p3", "to": "p1", "method": "nerve agent poisoning, staged as suicide", "circumstance_tags": ["locked_room", "staged_suicide", "cover_up"]},
+  {"type": "poisons", "from": "p3", "to": "p1", "method": "slips the nerve agent into his coffee while his attention is diverted"},
+  {"type": "assaults", "from": "p3", "to": "p1", "detail": "strikes him on the back of the head with a trash can during a struggle", "circumstance_tags": ["staged_suicide"]},
+  {"type": "stages_suicide_of", "from": "p3", "to": "p1", "circumstance_tags": ["staged_suicide"]},
+  {"type": "leaves_evidence", "from": "p3", "to": "o3"},
+  {"type": "stages_alibi_using", "from": "p3", "to": "o2", "circumstance_tags": ["locked_room"]},
+  {"type": "plants_evidence_on", "from": "p3", "to": "p2", "detail": "hides his own drug stash in Takashi's pocket during a struggle to frame him", "circumstance_tags": ["frame_attempt"]},
+
+  {"type": "owns", "from": "p1", "to": "o6"},
+  {"type": "leaves_evidence", "from": "p3", "to": "o5"},
+
+  {"type": "implicates", "from": "o5", "to": "p3"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "regarding", "from": "c1", "to": "o6"},
+
+  {"type": "implicates", "from": "o4", "to": "p2", "circumstance_tags": ["red_herring"]},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "o4"},
+  {"type": "regarding", "from": "c2", "to": "o7"},
+  {"type": "regarding", "from": "c2", "to": "o8"},
+
+  {"type": "written_by", "from": "o7", "to": "p3"},
+  {"type": "credited_to", "from": "o7", "to": "p1"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "denied_public_credit_as_ghostwriter"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "financial_inheritance_and_blackmail_dispute (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "credit_theft_accusation (only alleged by Takashi, denied by Araki, red herring)"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

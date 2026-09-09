@@ -1,0 +1,199 @@
+{
+ "case_id": "ep881-882_the_wizard_of_the_ripples",
+ "episode_number": "881-882",
+ "title": "The Wizard of the Ripples",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Wizard_of_the_Ripples",
+ "subtitle_source": ["subs_resolved/0881.txt", "subs_resolved/0882.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (young Shinichi/Conan, Ran, Yukiko, Yusaku) omitted by convention even though this episode's flashback frame stars a child-age Shinichi as the on-scene solver -- he is the same fixed detective persona used throughout the dataset. Old cases/ep881-882 file's culprit identification (the sandal-buying woman, Kitamori Yasue) is confirmed correct by the transcript -- no discrepancy there. Corrections/additions vs. the old file: (1) the old file spelled the third suspect's surname 'Ooami'; the transcript's on-screen name card reads 'Oami Raiya', corrected here; (2) the old file's suspect pool and 2 objects/clues covered only the theft-of-the-day; this rebuild adds the getaway driver (dies in the crash, never named on-screen), Fukumizu's unnamed girlfriend (whose shove into the ocean is the innocent explanation for his wet clothes), and the framing-story family (Shuichi Akai, Mary Sera, Shukichi Haneda, young Masumi Sera, and their father Tsutomu, referred to by first name only) since they are named, plot-relevant figures in the episode even though they aren't suspects in the theft. case_type: theft (the driver's death is an accidental crash, not a killing by any suspect, matching the old file's theft classification).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Unnamed getaway driver",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "thief",
+    "attrs": {
+     "died_of": "broken neck from windshield impact, unbelted, in the crash",
+     "identity": "never named on-screen; wore a ski mask during the robbery"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kitamori Yasue",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "thief posing as a beachgoer",
+    "attrs": {
+     "stated_age": 27,
+     "note": "Conan and Shinichi both suspect 'Kitamori Yasue' is a fake name"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Fukumizu Shigekatsu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {"stated_age": 32}
+   },
+   {
+    "id": "p4",
+    "name": "Oami Raiya",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {"stated_age": 26, "detail": "wears two watches, one set to Japan time and one to New York time"}
+   },
+   {
+    "id": "p5",
+    "name": "Fukumizu's girlfriend",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {"unnamed": true}
+   },
+   {
+    "id": "p6",
+    "name": "Shuichi Akai",
+    "aliases": ["Mr. Pierrot"],
+    "roles": ["backstory_figure", "witness"],
+    "occupation": "plays accordion for tips at a bar; FBI hopeful",
+    "attrs": {
+     "cover_story_debunked": "Shinichi wrongly guesses he's a circus pierrot from an accordion-belt mark on his wrist and leftover tear makeup",
+     "true_explanation": "bar musician; the mark under his eye is a bruise from a fight with his mother, not makeup",
+     "motive_backstory": "investigating who killed his father instead of studying abroad as claimed; plans to join the FBI"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Mary Sera",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {"detail": "sent her children to live in this country after her husband's death"}
+   },
+   {
+    "id": "p8",
+    "name": "Shukichi Haneda",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "high school student",
+    "attrs": {}
+   },
+   {
+    "id": "p9",
+    "name": "Masumi Sera",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {"detail": "young child in this flashback; meets half-brother Shuichi for the first time"}
+   },
+   {
+    "id": "p10",
+    "name": "Tsutomu",
+    "aliases": [],
+    "roles": ["backstory_figure", "victim"],
+    "occupation": null,
+    "attrs": {
+     "status": "presumed dead, body never found",
+     "last_words": "told his family to pretend he never existed, having made serious enemies"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Atsuhama Beach", "attrs": {}},
+   {"id": "l2", "name": "Cliff road above the beach", "attrs": {"detail": "guardrail broken through by the getaway car"}},
+   {"id": "l3", "name": "Beach hut shop", "attrs": {"detail": "sells T-shirts, swimsuits, and sandals"}},
+   {"id": "l4", "name": "Watchmaker's shop", "attrs": {"detail": "about a kilometer from the beach; robbed roughly an hour before the crash"}},
+   {"id": "l5", "name": "Ocean below the cliff", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Bag of stolen watches", "role": "contraband", "attrs": {"detail": "brand-name watches, price tags still attached, stuffed loosely into a bag rather than packed like a wholesaler's delivery"}},
+   {"id": "o2", "name": "Kitamori's stuck watch (10:10)", "role": "evidence", "attrs": {"stuck_display_time": "10:10", "significance": "the default display time store watches are set to, matched by serial number to the stolen goods"}},
+   {"id": "o3", "name": "Kitamori's coin-bought sandals", "role": "evidence", "attrs": {"payment_method": "coins only", "reason": "her banknotes were soaked in the ocean and too suspicious to hand over"}},
+   {"id": "o4", "name": "Fukumizu's T-shirt and trunks", "role": "evidence", "attrs": {"reason": "bought after his girlfriend pushed him into the ocean"}},
+   {"id": "o5", "name": "Oami's Hawaiian shirt", "role": "evidence", "attrs": {"price": "3000 yen", "reason": "bought after his bag was allegedly stolen while he showered"}},
+   {"id": "o6", "name": "Sunken getaway car", "role": "evidence", "attrs": {"driver_seat": "right side", "passenger_window": "found fully open", "note": "driver not wearing a seatbelt"}},
+   {"id": "o7", "name": "Girlfriend's car", "role": "evidence", "attrs": {"detail": "driven home alone by Fukumizu's girlfriend, stranding him at the beach"}}
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Fukumizu's watch read 1:45 and Oami's two watches both read 2:00, all plausible running times, but Kitamori's watch was stuck at 10:10 -- the default display time new store watches are set to, proving hers was stolen stock, not a running watch.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Fukumizu and Oami paid normally for their beach-hut purchases, but Kitamori could only pay in coins for cheap sandals -- her banknotes had been soaked in the ocean and were too suspicious to spend.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "The sunken car's passenger-side window was open while the unbelted driver died on impact -- proving a second occupant opened it underwater to escape after finding him unresponsive.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "steals", "from": "p1", "to": "o1"},
+  {"type": "steals", "from": "p2", "to": "o1"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "accomplice_in_robbery"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "crashes_into", "from": "p1", "to": "l2", "circumstance_tags": ["fatal_accident"], "detail": "car broke through the guardrail; driver wasn't wearing a seatbelt and broke his neck on impact"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "escapes_through", "from": "p2", "to": "o6", "circumstance_tags": ["staged_alibi"], "detail": "opened the passenger window underwater after the driver failed to respond, swam to shore, and disguised herself as a swimmer using her own clothes"},
+  {"type": "located_in", "from": "o1", "to": "o6"},
+  {"type": "located_in", "from": "o6", "to": "l5"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "stolen_from", "from": "o2", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "owns", "from": "p3", "to": "o4"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "owns", "from": "p4", "to": "o5"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "dating"},
+  {"type": "pushes", "from": "p5", "to": "p3", "circumstance_tags": ["unrelated_subplot"], "detail": "pushed him off a rubber boat into the ocean after he rejected her marriage proposal, soaking his clothes"},
+  {"type": "owns", "from": "p5", "to": "o7"},
+  {"type": "drives_away_with", "from": "p5", "to": "o7", "detail": "drove off alone, leaving Fukumizu stranded and soaked"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c1", "to": "p4"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "p4"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "o6"},
+  {"type": "regarding", "from": "c3", "to": "l5"},
+  {"type": "relationship", "from": "p6", "to": "p8", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p6", "to": "p9", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p8", "to": "p9", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p6", "to": "p7", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p8", "to": "p7", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p9", "to": "p7", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p6", "to": "p10", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p9", "to": "p10", "relation_type": "child_of"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "was_at", "from": "p9", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l3"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

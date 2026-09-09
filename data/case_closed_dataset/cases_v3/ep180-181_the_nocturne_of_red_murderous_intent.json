@@ -1,0 +1,360 @@
+{
+ "case_id": "ep180-181_the_nocturne_of_red_murderous_intent",
+ "episode_number": "180-181",
+ "title": "The Nocturne of Red Murderous Intent",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Nocturne_of_Red_Murderous_Intent",
+ "subtitle_source": ["subs_resolved/0180.txt", "subs_resolved/0181.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri posing as 'Morita', Ran, Inspector Megure, Detective Kobayashi) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved. The old wiki-derived case file at cases/ep180-181_the_nocturne_of_red_murderous_intent.json had the correct culprit (Misaki Kana) but several inaccuracies corrected here against the transcript: (1) it says Misaki met/dated Tenma 'in Hawaii' -- the transcript never mentions Hawaii; the attempted murder happened at an unnamed 'nearby beach', and the only named location tied to Misaki/Yoshinori's backstory is Fiji (their wedding, ten years ago). (2) it collapses the fake self-inflicted 'stalker' attack (staged by Misaki in her own bedroom during the party's opening blackout, using a fishing-line-rigged Beethoven bust) and the actual murder trap (a decorative sword suspended from the piano-room chandelier, triggered later that same night when Gerard Tenma picked up a planted tuning fork) into one event ('rigs a sword to fall... during a staged blackout stalker scene') -- these are two separate staged incidents, in two different rooms, using two different rigged objects, though built on the same fishing-line-and-weight-into-the-sea method, which is itself the clue that ties them together and unmasks Misaki. (3) it omits the victim's real name (Jun'ya Tenma), the reconciliation subplot (Tenma secretly rewrote the song's flower-code lyrics from a message of hatred to one of forgiveness before the contract signing, having realized his own 10-years-ago stalking of Misaki drove her to attack him), and the red-herring frame-up of Misaki's husband Yoshinori (accused by his own brother Hideki, who stood to gain control of the company either way). case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yoshinori Kana",
+    "aliases": ["Morita-sama's host", "Kana Amusement Group chairman"],
+    "roles": ["suspect"],
+    "occupation": "chairman, Kana Amusement Group",
+    "attrs": {
+     "age": 35,
+     "hired_kogoro_mouri_to": "protect his wife Misaki from an apparent stalker",
+     "framed_for": "the murder of Gerard Tenma, by his own wife",
+     "public_scandal": "accused by his brother Hideki, in front of the guests, of secretly negotiating and bringing Gerard Tenma to Japan for personal reasons connected to Misaki"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Misaki Kana",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "president, Kana Music Publishing",
+    "attrs": {
+     "age": 32,
+     "backstory": "dated Jun'ya Tenma, a then-unknown musician, before marrying Yoshinori; ten years ago, two weeks before her wedding, she pushed him off a cliff at a beach when he refused to let her leave him",
+     "true_motive": "conceal the attempted murder she committed against Tenma ten years earlier, which would end her marriage and her control of the Kana companies if exposed",
+     "framing_plan": "staged threatening calls/letters/flowers against herself (mimicking the flower-code lyrics of Tenma's own song), staged a fake stalker attack on herself during the party blackout, then arranged for the photo of her and Tenma to surface so a jealous, publicly-humiliated Yoshinori would be blamed for killing Tenma",
+     "unmasked_by": "wine stain inside the piano lid matching wine spilled on her brooch, proving she opened the piano lid despite claiming she never left the kitchen and never drank the wine"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Masayo Tokudaiji",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "secretary to Yoshinori Kana",
+    "attrs": {
+     "age": 24,
+     "company_rumor": "rumored to be having an affair with Yoshinori",
+     "sent_to_basement": "by Misaki, to fetch the silver tea set, during the window when Misaki was setting up the murder trap"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Michel Anglade",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "manager to Gerard Tenma",
+    "attrs": {
+     "age": 40,
+     "gift": "brought hand-made French wine, not sold in Japan, as a gift for Misaki",
+     "brooch_incident": "accidentally bumped into Misaki during the toast, spilling wine on her brooch -- the detail that later convicts her"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hideki Kana",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "vice-president, Kana Music Publishing",
+    "attrs": {
+     "age": 30,
+     "accusation": "publicly accuses his brother Yoshinori of murdering Tenma out of jealousy, in front of the police, immediately raising the question of who would take over the Kana Amusement Group"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Gerard Tenma",
+    "aliases": ["Jun'ya Tenma"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "chanson singer",
+    "attrs": {
+     "age": 34,
+     "real_name": "Jun'ya Tenma",
+     "former_life": "a nameless musician in Japan who dated Misaki and disappeared without explanation ten years ago after she pushed him off a cliff",
+     "new_identity": "moved overseas, reinvented himself as the mysterious French chanson singer 'Gerard Tenma', whose personal history was unknown even to his fans",
+     "reconciliation": "secretly rewrote the flower-code lyrics of his own song from a message of hatred into one of forgiveness, and deliberately arranged the Japan contract to reconnect with Misaki",
+     "died_of": "stabbed in the back by a decorative sword dropped from the piano-room chandelier via a booby trap Misaki built"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Large reception hall, Kana mansion",
+    "attrs": {"use": "party venue for the contract-signing celebration"}
+   },
+   {
+    "id": "l2",
+    "name": "Piano room, Kana mansion (upstairs)",
+    "attrs": {"use": "murder scene", "reachable_only_via": "the adjoining waiting room"}
+   },
+   {
+    "id": "l3",
+    "name": "Misaki's bedroom, Kana mansion",
+    "attrs": {"use": "site of Misaki's self-staged fake stalker attack"}
+   },
+   {
+    "id": "l4",
+    "name": "Beach and cliff (unnamed)",
+    "attrs": {"significance": "where Misaki pushed Tenma off a cliff ten years ago"}
+   },
+   {
+    "id": "l5",
+    "name": "Fiji",
+    "attrs": {"significance": "site of Misaki and Yoshinori's wedding, ten years ago"}
+   },
+   {
+    "id": "l6",
+    "name": "Spiral corridor and balcony, Kana mansion",
+    "attrs": {"use": "connects the piano room and Misaki's bedroom floor; its railing was used to route the trap's fishing line, and later to physically re-enact the fake attack"}
+   },
+   {
+    "id": "l7",
+    "name": "Waiting room adjoining the piano room",
+    "attrs": {"use": "the only way in or out of the piano room; Yoshinori was seated here when Tenma was killed"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Bust of Beethoven",
+    "role": "tool",
+    "attrs": {
+     "normal_location": "the piano room",
+     "trick": "rigged on a fishing line and pole, swung down from the balcony above to look like a caped attacker lunging in the dark, then dropped into the sea below to destroy the evidence",
+     "was_missing_from_room": "confirmed absent in a photo secretly taken of the piano room the night before the party, proving the rig was prepared in advance"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Ornamental knight's sword",
+    "role": "weapon",
+    "attrs": {
+     "description": "a decoration made of the same materials and construction as a real sword",
+     "trick": "suspended point-down from the raised chandelier by a fishing line strung through its handle, released to fall straight down and impale Tenma in the back",
+     "raised_to_maximum_height_by_Misaki": "to make the falling sword harder to spot and to increase its killing force"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Fishing line and pole",
+    "role": "tool",
+    "attrs": {
+     "reused_mechanism": "the same fishing-line-with-a-weight trick was used both for the fake bedroom attack (dropping the Beethoven bust into the sea) and for the piano-room murder trap (dropping the disposal weight into the sea, and routing the line through the spiral corridor railing and chandelier)",
+     "physical_traces": "matching scrape scratches left on the window frame of Misaki's bedroom, the spiral corridor railing, and near the piano-room window"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Tuning fork",
+    "role": "tool",
+    "attrs": {
+     "normal_use": "used to tune the piano",
+     "trick": "planted on the floor beside the overturned piano bench so Tenma would pick it up and turn his back to the suspended sword; pulling it free released the line holding the sword up"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Piano bench",
+    "role": "tool",
+    "attrs": {
+     "trick": "deliberately overturned and wedged under the large sofa so that the gap between piano and bench left room for only one person, forcing Tenma into the exact spot under the chandelier"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Chandelier, piano room",
+    "role": "tool",
+    "attrs": {
+     "trick": "raised to its highest position by Misaki (confirmed by its position being lower when the party first entered the room) to hide the suspended sword and increase the force of its fall"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Hand-made French wine",
+    "role": "evidence",
+    "attrs": {
+     "brought_by": "Michel Anglade, as a gift; not sold in Japan",
+     "key_fact": "everyone but Misaki drank it at the toast (she had juice instead), yet wine residue was found staining the inside of the piano lid, matching wine spilled earlier on her brooch when Michel bumped into her -- proof she opened the piano lid herself despite her kitchen alibi"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Wedding photo of Misaki and Yoshinori",
+    "role": "evidence",
+    "attrs": {
+     "taken_at": "Fiji",
+     "years_before_present": 10
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Photo of Misaki and Gerard/Jun'ya Tenma together",
+    "role": "evidence",
+    "attrs": {
+     "dated": "two weeks before Misaki's wedding to Yoshinori, ten years before present",
+     "discovered_by": "Conan, tucked away in Misaki's room",
+     "effect": "publicly exposed Misaki's prior relationship with Tenma, triggering Yoshinori's jealous outburst that Misaki was counting on to frame him"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Two anonymous threatening letters",
+    "role": "evidence",
+    "attrs": {
+     "content": "'Those who do not realize my love will surely fall to the pits of hell' and 'The curtains will be opened to commence the party of revenge. Enjoy a party of terror to your heart's content...'",
+     "author": "self-sent by Misaki, styled after the flower-code lyrics of Tenma's own song, to build a false stalker narrative before the party"
+    }
+   },
+   {
+    "id": "o11",
+    "name": "Bouquets of flowers left as threats (rose, marigold, lobelia, dahlia)",
+    "role": "evidence",
+    "attrs": {
+     "language_of_flowers": "red rose = burning passion, marigold = hopelessness, lobelia = malice, dahlia = betrayal -- matching the flower sequence sung in Tenma's original 'Red Nocturne of Love'",
+     "self_delivered_by": "Misaki, as part of the fake-stalker frame-up"
+    }
+   },
+   {
+    "id": "o12",
+    "name": "Original lyrics of \"The Red Nocturne of Love\"",
+    "role": "evidence",
+    "attrs": {
+     "written_by_and_for": "composed by Jun'ya Tenma for Misaki, ten years before present",
+     "decoded_message": "on the surface a love song, but decoded via the language of flowers (red rose/marigold/lobelia/dahlia) it is a song of hatred aimed at someone who betrayed a lover",
+     "spoken_refrain": "Tenma always whispered 'Pour compenser ton cœur blessé' ('To compensate your wounded heart') after singing it at concerts"
+    }
+   },
+   {
+    "id": "o13",
+    "name": "New arrangement of \"The Red Nocturne of Love\"",
+    "role": "evidence",
+    "attrs": {
+     "requested_by": "Gerard Tenma himself, as a condition of the Japan publishing contract",
+     "decoded_message": "keeps the red rose but replaces marigold/lobelia/dahlia with hyacinth (sadness), laurel (peace) and olive (glory) -- a message of forgiveness and reconciliation rewritten for Misaki",
+     "significance": "reveals Tenma no longer hated Misaki and had engineered the contract to reconnect with her, not to threaten her"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The fake 'caped stalker' rig demonstrated by Conan (a bust flown on a fishing pole from the balcony above Misaki's bedroom, dropped into the sea) reproduces the exact scrape-mark pattern and disposal method used in Tenma's murder trap -- since only Misaki could have staged the attack on herself, the shared method ties her to the murder rig too.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Everyone drank Michel's French wine at the toast except Misaki, who took juice instead -- yet wine matching that exact bottle (residue also found where Michel earlier bumped her brooch) stains the inside of the piano lid, proving she personally opened the piano lid despite her claimed alibi of never leaving the kitchen.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "A photo secretly taken of the piano room the night before the party shows the Beethoven bust already missing from its usual spot, proving the fake-attack rig (and by extension the murder trap sharing its method) was prepared well before the blackout, not improvised in the dark.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "manager_of"},
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "formerly_dated"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "disapproves_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "rumored_affair_with"},
+
+  {"type": "written_by", "from": "o12", "to": "p6"},
+  {"type": "inscribed_to", "from": "o12", "to": "p2"},
+  {"type": "regarding", "from": "o9", "to": "p2"},
+  {"type": "regarding", "from": "o9", "to": "p6"},
+  {"type": "regarding", "from": "o8", "to": "p2"},
+  {"type": "regarding", "from": "o8", "to": "p1"},
+
+  {"type": "was_at", "from": "p2", "to": "l5", "order": 1, "temporal_frame": "backstory", "years_before_present": 10},
+  {"type": "was_at", "from": "p1", "to": "l5", "order": 1, "temporal_frame": "backstory", "years_before_present": 10},
+
+  {"type": "attempts_to_kill", "from": "p2", "to": "p6", "order": 2, "temporal_frame": "backstory", "years_before_present": 10, "method": "pushed him off a cliff at a beach", "circumstance_tags": ["cover_up", "attempted_murder"]},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 2, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p6", "to": "l4", "order": 2, "temporal_frame": "backstory"},
+
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "business_associate"},
+
+  {"type": "leaves_evidence", "from": "p2", "to": "o10", "order": 3, "temporal_frame": "present", "circumstance_tags": ["staged", "self_inflicted", "cover_up"]},
+  {"type": "leaves_evidence", "from": "p2", "to": "o11", "order": 3, "temporal_frame": "present", "circumstance_tags": ["staged", "self_inflicted", "cover_up"]},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 4, "temporal_frame": "present"},
+
+  {"type": "confronts", "from": "p5", "to": "p1", "order": 5, "temporal_frame": "present", "detail": "accuses Yoshinori of bringing Gerard to Japan for personal reasons connected to Misaki, and of an affair with Masayo"},
+
+  {"type": "stages_alibi_using", "from": "p2", "to": "o1", "order": 6, "temporal_frame": "present", "circumstance_tags": ["staged", "red_herring", "locked_room"]},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o3", "order": 6, "temporal_frame": "present", "circumstance_tags": ["staged", "red_herring", "locked_room"]},
+  {"type": "was_at", "from": "p2", "to": "l3", "order": 6, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l3", "order": 6, "temporal_frame": "present", "circumstance_tags": ["mistaken_witness_identification"]},
+
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+
+  {"type": "leaves_evidence", "from": "p2", "to": "o9", "order": 7, "temporal_frame": "present", "detail": "arranges for the old photo of her and Tenma to be found by Conan", "circumstance_tags": ["staged", "cover_up"]},
+  {"type": "confronts", "from": "p1", "to": "p6", "order": 7, "temporal_frame": "present", "detail": "publicly demands to know if Tenma had a past relationship with Misaki"},
+
+  {"type": "owns", "from": "p4", "to": "o7"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o7", "order": 8, "temporal_frame": "present", "detail": "bumps into Misaki during the toast, spilling wine onto her brooch"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l6", "order": 8, "temporal_frame": "present", "detail": "sent to the basement for the silver tea set while Misaki sets the trap"},
+
+  {"type": "inscribed_to", "from": "o13", "to": "p2"},
+  {"type": "written_by", "from": "o13", "to": "p6"},
+
+  {"type": "confronts", "from": "p2", "to": "p6", "order": 9, "temporal_frame": "present", "circumstance_tags": ["staged_argument"]},
+
+  {"type": "kills", "from": "p2", "to": "p6", "order": 10, "temporal_frame": "present", "method": "booby-trapped ornamental sword suspended from the piano-room chandelier, triggered when Tenma picked up a planted tuning fork", "circumstance_tags": ["locked_room", "booby_trap", "premeditated"]},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o4", "order": 10, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o5", "order": 10, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o6", "order": 10, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o3", "order": 10, "temporal_frame": "present", "detail": "reused the fishing-line-and-weight disposal method to drop the evidence into the sea after the sword fell"},
+  {"type": "was_at", "from": "p6", "to": "l2", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l7", "order": 10, "temporal_frame": "present"},
+
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o7", "to": "p2"},
+
+  {"type": "confronts", "from": "p5", "to": "p1", "order": 11, "temporal_frame": "present", "detail": "publicly accuses Yoshinori of Tenma's murder before the police"},
+
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+
+  {"type": "regarding", "from": "c2", "to": "o7"},
+  {"type": "regarding", "from": "c2", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+
+  {"type": "regarding", "from": "c3", "to": "o1"},
+  {"type": "regarding", "from": "c3", "to": "l2"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p6", "motive_type": "conceal_prior_attempted_murder"},
+  {"type": "has_motive_against", "from": "p1", "to": "p6", "motive_type": "sexual_jealousy_over_wifes_past (red herring, accused by Hideki)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "corporate_succession (red herring; stood to gain control of the company if Yoshinori were arrested)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,253 @@
+{
+ "case_id": "ep236-237_the_nanki_shirahama_mystery_tour",
+ "episode_number": "236-237",
+ "title": "The Nanki-Shirahama Mystery Tour",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Nanki_Shirahama_Mystery_Tour",
+ "subtitle_source": ["subs_resolved/0236.txt", "subs_resolved/0237.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Kogoro, Ran, Conan) omitted by convention. Rebuilt from the full two-part subtitle transcript; the old wiki-derived case file at cases/ep236-237_the_nanki_shirahama_mystery_tour.json had the correct culprit (Kanako Miyahara) and victim (Maki Shinjo) already, so label.murderer_id is unchanged, but it was missing almost everything else: the red-herring accusation against Kota Fuji (Kogoro wrongly accuses him mid-episode using nearly the same accusatory speech later redirected at the real culprit -- a deliberate misdirection by the show), Fuji's real secret (an affair with Madoka Mitsui, concealed from both Yura and the victim), the two police detectives (O'ura, Ando), the backstory of Kanako's fraudulent university admission arranged by Maki's father and the blackmail Maki held over her ever since, and the forensic/physical clue chain (coil-type keychain missing only the car key, doctored Adventure World photos vs. orca-trainer staffing testimony, saliva/blood-type match on Maki's irreplaceable Paris-imported lipstick) that the old file collapsed into a single vague 'gloves' clue. The old file also omitted that Maki herself had premeditated a murder of Madoka (the gloves in her jacket were for that), and that Kanako's crime was a betrayal of that very plan rather than incidental. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Maki Shinjo",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "4th-year student, Naniwa Medical University",
+    "attrs": {
+     "age": 21,
+     "nickname": "the queen of the group",
+     "wealth": "funds the whole group's trip (hotel, train tickets, rental car); orders new cosmetics from Paris every month",
+     "died_of": "stab wound to the heart",
+     "premeditated_plan": "secretly planned to murder Madoka Mitsui out of jealousy over Tatsuhiko Yura, and coerced Kanako Miyahara into acting as a body double to build her an alibi for it",
+     "public_alibi_scheme": "arranged, via friendly small talk with the Mouri family at Senjojiki the evening before, to be seen by them at a fixed time and place the next morning"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kanako Miyahara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "4th-year student, Naniwa Medical University",
+    "attrs": {
+     "age": 21,
+     "nickname": "the whiz kid of the group",
+     "secret": "gained admission to the university through an arrangement Maki's father made on her behalf rather than on merit; publicly claimed instead that Maki had simply tutored her in math",
+     "true_motive": "wanted to be free of years of being controlled and ordered around by Maki, who held the fraudulent admission over her as blackmail",
+     "disguise_used": "wig, hat, sunglasses and Maki's own Paris-imported makeup, to impersonate Maki Shinjo",
+     "confession": "killed Maki instead of Madoka, then used the disguise Maki had arranged for the alibi scheme to fake Maki's continued presence and stage a robbery-murder"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Madoka Mitsui",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "4th-year student, Naniwa Medical University",
+    "attrs": {
+     "age": 21,
+     "nickname": "the Madonna of the group",
+     "found_body": true,
+     "discovery_method": "heard Maki's cell phone playing a Beethoven ringtone from the bushes while sketching nearby, went to look, and found the body",
+     "secret_relationship": "secretly dating Kota Fuji while publicly seen as Tatsuhiko Yura's girlfriend",
+     "alibi_weakness": "was sketching alone near the murder scene the whole window, deliberately with no witnesses because she dislikes being watched while drawing",
+     "intended_victim_of": "Maki Shinjo's premeditated (but never carried out) plan to kill her"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kota Fuji",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "4th-year student, Naniwa Medical University",
+    "attrs": {
+     "age": 21,
+     "nickname": "the clown of the group",
+     "false_alibi": "showed police digital-camera photos from a previous visit to Adventure World, edited on his laptop to look like they were taken that day, to cover a temporary absence",
+     "real_reason_for_leaving": "snuck out of Adventure World to buy a Mr. Sour keychain for Madoka at the Shirahama Station shop, then detoured toward Sandambeki to secretly meet her, leaving behind a bottle of Shirahama sand as a gift",
+     "cleared": true,
+     "wrongly_accused": "Kogoro Mouri initially accuses him of the murder, believing he killed Maki to keep the affair with Madoka secret; this accusation turns out to be mistaken"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Tatsuhiko Yura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "4th-year student, Naniwa Medical University",
+    "attrs": {
+     "age": 21,
+     "nickname": "the group's gigolo",
+     "note": "broke up with Maki, disliking how much she spent and how she used her wealth to keep the group around her; now dating Madoka",
+     "alibi": "sketching at Shirarahama beach all morning, verified by an on-duty lifeguard who witnessed him the whole window"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Detective O'ura",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "Wakayama Prefectural Police detective",
+    "attrs": {"age": 35}
+   },
+   {
+    "id": "p7",
+    "name": "Detective Ando",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "Shirahama East Police Station detective",
+    "attrs": {"age": 29}
+   },
+   {
+    "id": "p8",
+    "name": "Maki Shinjo's father",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {"role_in_backstory": "arranged Kanako Miyahara's fraudulent admission to Naniwa Medical University at Kanako's request, which Maki later used to control her"}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Shirahama Station", "attrs": {}},
+   {"id": "l2", "name": "Minakata Kumagusu Memorial Hall", "attrs": {}},
+   {"id": "l3", "name": "Shirarahama beach", "attrs": {}},
+   {"id": "l4", "name": "Sandambeki", "attrs": {"significance": "crime scene; body found in the bushes near the cliffs"}},
+   {"id": "l5", "name": "Senjojiki", "attrs": {"significance": "sunset viewpoint where Maki approached the Mouris the evening before, setting up the alibi schedule"}},
+   {"id": "l6", "name": "Tore Tore Market", "attrs": {}},
+   {"id": "l7", "name": "Adventure World", "attrs": {}},
+   {"id": "l8", "name": "Restaurant near Engetsu Island", "attrs": {"significance": "Kanako's real (separate, unrelated) alibi location, 10:30-12:00"}},
+   {"id": "l9", "name": "Ruins of Marine Palace (vacant lot near the memorial hall tunnel)", "attrs": {"significance": "Kanako's claimed but unverified early-morning sketching spot"}},
+   {"id": "l10", "name": "Sansho Shrine", "attrs": {"significance": "where the stolen rental car was abandoned, 3 km from Sandambeki"}},
+   {"id": "l11", "name": "Shin'yuzaki Hotel", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Work gloves", "role": "evidence", "attrs": {"found_in": "Maki's own jacket pocket", "true_purpose": "gloves Maki intended to wear while attacking Madoka; their presence on Maki's own body is what tips off that she was the original planner"}},
+   {"id": "o2", "name": "Maki's wallet", "role": "evidence", "attrs": {"found": "empty, inside the abandoned rental car near Sansho Shrine", "staging_purpose": "taken to make the murder look like a robbery"}},
+   {"id": "o3", "name": "Knife", "role": "weapon", "attrs": {"wound": "single stab through the heart, cause of death"}},
+   {"id": "o4", "name": "Rental car", "role": "instrument", "attrs": {"fate": "driven to Sansho Shrine and abandoned, key left in the ignition"}},
+   {"id": "o5", "name": "Maki's keychain", "role": "evidence", "attrs": {"mechanism": "coil-type ring, hard to remove a key from without deliberately unwinding it", "anomaly": "only the rental car key is missing; the house keys are still attached", "deduction": "a robber grabbing the keychain in a struggle would take the whole ring; the selective removal means the car key was voluntarily handed over by Maki to someone she trusted"}},
+   {"id": "o6", "name": "Maki's lipstick", "role": "evidence", "attrs": {"origin": "custom-ordered from Paris, distinctive color with no substitute available in Japan", "forensic_result": "saliva/blood-type analysis of residue on the lipstick matches Kanako Miyahara, not Maki -- proof Kanako wore it while impersonating her"}},
+   {"id": "o7", "name": "Fuji's digital camera", "role": "evidence", "attrs": {"contents": "photos supposedly of the Adventure World orca/dolphin/seal shows all day", "flaw": "one photo shows a braided-hair woman who was not among the staff on duty that day, revealing the photos were taken on a different visit"}},
+   {"id": "o8", "name": "Fuji's laptop", "role": "tool", "attrs": {"use": "used to edit/relabel old Adventure World photos to fake a same-day alibi"}},
+   {"id": "o9", "name": "Adventure World re-entry hand stamp", "role": "evidence", "attrs": {"detection_method": "invisible ink, only visible under blacklight", "significance": "proves Fuji left the park temporarily and came back, contradicting his claim of never leaving"}},
+   {"id": "o10", "name": "Small glass bottle of Shirahama sand", "role": "evidence", "attrs": {"origin": "gift Fuji brought for Madoka, a promise from their sightseeing the day before", "found": "left by Fuji's easel visit, cracked, near where Madoka had been sketching"}},
+   {"id": "o11", "name": "Mr. Sour keychain", "role": "evidence", "attrs": {"origin": "souvenir sold only at the Shirahama Station shop, bought by Fuji for Madoka", "significance": "proves Fuji stopped at Shirahama Station -- placing him there at the same time the impersonator (Kanako) appeared"}},
+   {"id": "o12", "name": "Kanako's disguise kit", "role": "tool", "attrs": {"components": "wig, hat, sunglasses, and Maki's own imported makeup"}}
+  ],
+  "clues": [
+   {"id": "c1", "desc": "Maki's keychain is a coil-type ring (hard to strip a key from) yet only the rental car key is missing while her house keys remain attached -- a genuine robber grabbing the keys in a struggle would take the whole ring, so the car key must have been handed over voluntarily, meaning the killer was someone Maki trusted, not a stranger.", "clue_type": "physical"},
+   {"id": "c2", "desc": "Comparing Fuji's digital-camera photos (showing a braided-hair woman at the orca show) against the orca trainer's testimony that the same staff were on duty the entire day proves the photos were taken on a different visit and edited to look current -- his claimed unbroken alibi is fabricated.", "clue_type": "testimonial"},
+   {"id": "c3", "desc": "Maki's lipstick is a one-of-a-kind Paris import with no substitute sold in Japan, yet forensic saliva/blood-type analysis of the residue on it belongs to Kanako, not Maki -- proof Kanako was wearing Maki's lipstick while impersonating her at Shirahama Station.", "clue_type": "forensic"}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "formerly_dated"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "dating"},
+  {"type": "relationship", "from": "p4", "to": "p3", "relation_type": "secretly_dating", "circumstance_tags": ["concealed_affair"]},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "blackmail_victim_of"},
+  {"type": "relationship", "from": "p1", "to": "p8", "relation_type": "child_of"},
+
+  {"type": "facilitates_admission_of", "from": "p8", "to": "p2", "temporal_frame": "backstory"},
+  {"type": "coerces", "from": "p1", "to": "p2", "temporal_frame": "backstory", "circumstance_tags": ["blackmail", "coercive_control"], "detail": "threatens to expose Kanako's fraudulent university admission unless Kanako keeps obeying her"},
+
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l11", "order": 1, "temporal_frame": "present", "circumstance_tags": ["mentioned_only"]},
+  {"type": "was_at", "from": "p2", "to": "l11", "order": 1, "temporal_frame": "present", "circumstance_tags": ["mentioned_only"]},
+  {"type": "was_at", "from": "p3", "to": "l11", "order": 1, "temporal_frame": "present", "circumstance_tags": ["mentioned_only"]},
+  {"type": "was_at", "from": "p4", "to": "l11", "order": 1, "temporal_frame": "present", "circumstance_tags": ["mentioned_only"]},
+  {"type": "was_at", "from": "p5", "to": "l11", "order": 1, "temporal_frame": "present", "circumstance_tags": ["mentioned_only"]},
+
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l4", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l4", "order": 2, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l5", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l6", "order": 3, "temporal_frame": "present", "circumstance_tags": ["mentioned_only", "sets_up_alibi_schedule"]},
+
+  {"type": "was_at", "from": "p1", "to": "l8", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l8", "order": 4, "temporal_frame": "present"},
+  {"type": "recruits_accomplice", "from": "p1", "to": "p2", "order": 4, "temporal_frame": "present", "detail": "picks Kanako up at Engetsu Island and has her disguise as Maki in the car"},
+  {"type": "impersonates", "from": "p2", "to": "p1", "order": 4, "temporal_frame": "present", "circumstance_tags": ["disguise"]},
+
+  {"type": "was_at", "from": "p5", "to": "l3", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l7", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l4", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l9", "order": 5, "temporal_frame": "present", "circumstance_tags": ["claimed_alibi", "unverified"]},
+
+  {"type": "kills", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "method": "stabbed through the heart with a knife, at Sandambeki around 9:35am", "circumstance_tags": ["betrayal", "premeditated", "staged_robbery", "impersonation"]},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 6, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 6, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o3", "order": 6, "temporal_frame": "present"},
+
+  {"type": "takes", "from": "p2", "to": "o2", "order": 7, "temporal_frame": "present", "circumstance_tags": ["staged_robbery"]},
+  {"type": "takes", "from": "p2", "to": "o4", "order": 7, "temporal_frame": "present", "circumstance_tags": ["staged_robbery"]},
+
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 8, "temporal_frame": "present", "circumstance_tags": ["staged_alibi_appearance"]},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o12", "order": 8, "temporal_frame": "present"},
+  {"type": "buys", "from": "p4", "to": "o11", "order": 8, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p2", "to": "l10", "order": 9, "temporal_frame": "present"},
+  {"type": "hides_contraband_in", "from": "p2", "to": "o4", "order": 9, "temporal_frame": "present", "detail": "abandons the rental car with the key left in the ignition and the emptied wallet inside"},
+
+  {"type": "was_at", "from": "p2", "to": "l8", "order": 10, "temporal_frame": "present", "circumstance_tags": ["real_alibi"]},
+
+  {"type": "was_at", "from": "p4", "to": "l7", "order": 10, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o10", "order": 10, "temporal_frame": "present", "detail": "detours to Sandambeki hoping to secretly meet Madoka, finds her gone, leaves the sand bottle and keychain hanging on her easel"},
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l7", "order": 11, "temporal_frame": "present"},
+  {"type": "implicates", "from": "o9", "to": "p4"},
+
+  {"type": "finds_body_of", "from": "p3", "to": "p1", "order": 12, "temporal_frame": "present", "detail": "hears Maki's cell phone playing a Beethoven ringtone from the bushes and investigates"},
+  {"type": "notifies", "from": "p3", "to": "p4", "order": 13, "temporal_frame": "present", "detail": "calls Fuji, not her own boyfriend Yura, to report finding the body -- a detail that later tips off their secret relationship"},
+
+  {"type": "was_at", "from": "p6", "to": "l4", "order": 14, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p7", "to": "l4", "order": 14, "temporal_frame": "present"},
+
+  {"type": "stages_alibi_using", "from": "p4", "to": "o7", "order": 15, "temporal_frame": "present", "circumstance_tags": ["red_herring", "fabricated_evidence"]},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o8", "order": 15, "temporal_frame": "present", "circumstance_tags": ["red_herring", "fabricated_evidence"]},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "wrongly accused of killing Maki to keep his affair with Madoka secret (red herring, accused by Kogoro Mouri)"},
+  {"type": "has_motive_against", "from": "p1", "to": "p3", "motive_type": "jealousy over Yura, planned but never carried out"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "wanted freedom from years of blackmail and control"},
+
+  {"type": "implicates", "from": "o1", "to": "p1"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o10", "to": "p4"},
+  {"type": "implicates", "from": "o11", "to": "p4"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o5"},
+  {"type": "owns", "from": "p1", "to": "o6"},
+  {"type": "owns", "from": "p4", "to": "o7"},
+  {"type": "owns", "from": "p4", "to": "o8"},
+
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o7"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c3", "to": "o6"},
+  {"type": "implicates", "from": "c3", "to": "p2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

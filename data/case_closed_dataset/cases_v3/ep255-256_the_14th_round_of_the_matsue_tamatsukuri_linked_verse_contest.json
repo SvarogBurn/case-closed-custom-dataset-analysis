@@ -1,0 +1,286 @@
+{
+ "case_id": "ep255-256_the_14th_round_of_the_matsue_tamatsukuri_linked_verse_contest",
+ "episode_number": "255-256",
+ "title": "The 14th Round of the Matsue Tamatsukuri Linked Verse Contest",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_14th_Round_of_the_Matsue_Tamatsukuri_Linked_Verse_Contest",
+ "subtitle_source": ["subs_resolved/0255.txt", "subs_resolved/0256.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro, Ran) and case-specific procedural-only police (Hirose, Yasugi, Tsubaki) omitted by convention -- none of them are suspects/victims/witnesses with personal stakes in the plot; Tsubaki's shoe-fingerprint finding is represented as an attribute of the shoe object instead. The old wiki-derived case file (cases/ep255-256_...json) had the right culprit (Shiina) but reduced the whole case to 2 generic clue nodes and 3 event nodes, collapsing distinct facts (stolen phone, hidden camera, torn notebook page, planted eye drops, manipulated lots, the shoe-hook dying message, the acrostic confession, the recited-stolen-verse trap) into two vague clue blobs, and gave only a placeholder 'unspecified' motive. The transcript supports a much richer graph: Shiina rigged the location lots the night before so Ushikubo would draw the isolated Matsue Castle promenade and he himself would draw the distant Teien Art Museum for an easy alibi; he stole Ushikubo's spare phone and used it to lure Yagisawa (the framed red herring, who owed Ushikubo money) to Jozan Inari Shrine; he set up a hidden camera near the Teien Art Museum pond to fake continuous presence there; he killed Ushikubo with blunt trauma, planted Yagisawa's lost eye drops by the body, dumped the bloody raincoat and weapon in the Gessho-ji pond, tore the page with a plagiarized verse out of Ushikubo's notebook, and was caught only when Kogoro maneuvered him into reciting that exact stolen verse aloud during the contest and Officer Tsubaki matched Ushikubo's bloody dying fingerprint to the hook on Shiina's own shoe (the true meaning of the dying message, previously misread as pointing at bamboo/the samurai mansion). Mizuki Kawaguchi is a suspect who is also functionally a witness/red herring: out of unrequited love for Yagisawa she deviated from her assigned alibi location, actually reached the crime scene shortly after the murder, then fabricated a cover verse for an alibi location whose described autumn colors are not visible from where she claimed to be sitting -- exposed by Conan as a physical contradiction, not evidence of murder. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kozo Ushikubo",
+    "aliases": ["Ushikubo Kouzou"],
+    "roles": ["victim"],
+    "occupation": "investor",
+    "attrs": {
+     "age": 51,
+     "died_of": "blunt force trauma, multiple blows to the back of the head",
+     "time_of_death": "approx. 10:05am, inferred from his watch, broken when he raised his left arm to shield himself",
+     "dying_message": "extended his bloody right index finger; widely misread as pointing at bamboo, or across the canal toward the samurai mansions at Shiomi Nawate; in fact he had touched the hook on Shiina's own shoe, and separately his gesture encoded the number \"1\" -- the position of the linked-verse's first verse, the hokku, punning on \"hook\"",
+     "reputation": "known within the linked-verse circle to grift/scam people under the guise of investment talk; had loaned Yagisawa money on harsh terms and threatened to foreclose his shop",
+     "plagiarism": "copied a verse about a father's love for his daughter, actually composed by Tomonaga, into his own notebook and later showed it off as his own"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ryosuke Shiina",
+    "aliases": ["Shiina Ryousuke"],
+    "roles": ["suspect"],
+    "occupation": "dentist",
+    "attrs": {
+     "age": 38,
+     "confessed_motive": "could not forgive Ushikubo for swindling money out of the group's members, compounded by fury that Ushikubo had plagiarized a verse Shiina genuinely loved (a father's love for his daughter)",
+     "self_incrimination": "hid the acrostic phrase \"I am the culprit\" in his own verses as a taunt, and was maneuvered by Kogoro into publicly reciting, as his own, the exact stolen verse only the killer could have read in Ushikubo's notebook"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Takumi Yagisawa",
+    "aliases": ["Yagisawa Takumi"],
+    "roles": ["suspect"],
+    "occupation": "Japanese confectionery shop owner",
+    "attrs": {
+     "age": 32,
+     "financial_trouble": "in debt to Ushikubo, who threatened to foreclose his shop over the loan",
+     "family_backstory": "his wife left the household and took their daughter after he fell into debt",
+     "framed": "eye drops he had lost earlier were planted next to Ushikubo's body, and he was lured away from his alibi location to Jozan Inari Shrine by a text message faked using Ushikubo's stolen spare phone"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mizuki Kawaguchi",
+    "aliases": ["Kawaguchi Mizuki"],
+    "roles": ["suspect", "witness"],
+    "occupation": "librarian",
+    "attrs": {
+     "age": 27,
+     "false_alibi": "claimed to have composed her verse about autumn colors while sitting at the Shiomi Nawate samurai-estate rest area, but those autumn colors are not visible from that rest area, blocked by thick shrubs",
+     "true_movements": "out of worry for Yagisawa she deviated from her assigned route, saw him pass by on a bus heading toward Matsue Castle, followed him there, and arrived shortly after the murder to find Ushikubo already dead -- then fabricated the cover alibi out of panic"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Reiko Ando",
+    "aliases": ["Andou Reiko"],
+    "roles": ["suspect"],
+    "occupation": "junior college assistant professor, Department of Japanese Literature",
+    "attrs": {
+     "age": 43,
+     "role_in_group": "organizer/instructor of the linked-verse association; that day her task was gathering everyone's verses rather than composing her own",
+     "alibi": "says she walked along the lake shore and then went to the Shimane Prefecture Art Museum, wrote no verse, and has no witnesses to confirm it"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Tomonaga",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "employee, Naniwa Business (Okayama office)",
+    "attrs": {
+     "note": "a brief acquaintance of Ushikubo's who joined the group's dinner conversation only briefly; composed the flower-themed verse about a father's love for his daughter that Ushikubo later copied into his notebook and passed off as his own"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Karamete Park Section, Matsue Castle (the promenade)",
+    "attrs": {"role": "murder scene, assigned to Ushikubo by the (rigged) location draw"}
+   },
+   {
+    "id": "l2",
+    "name": "Teien Art Museum (Tiffany exhibit and English garden pond)",
+    "attrs": {"role": "Shiina's assigned/claimed alibi location; site of the hidden camera"}
+   },
+   {
+    "id": "l3",
+    "name": "Gessho-Ji (temple, turtle statue and pond)",
+    "attrs": {"role": "Yagisawa's assigned alibi location; also where Shiina dumped the raincoat and murder weapon"}
+   },
+   {
+    "id": "l4",
+    "name": "Shiomi Nawate samurai-estate rest area",
+    "attrs": {"role": "Mizuki's assigned/claimed alibi location; autumn colors are not actually visible from here"}
+   },
+   {
+    "id": "l5",
+    "name": "Shimane Prefecture Art Museum and lake shore",
+    "attrs": {"role": "Reiko's claimed, uncorroborated whereabouts"}
+   },
+   {
+    "id": "l6",
+    "name": "Jozan Inari Shrine",
+    "attrs": {"role": "part of the Matsue Castle grounds; where Yagisawa was lured to and left waiting"}
+   },
+   {
+    "id": "l7",
+    "name": "Tamatsukuri Shirasuna Inn, Tamatsukuri Onsen",
+    "attrs": {"role": "the group's hotel; site of the debt threat, the lot-drawing, and the linked-verse contest itself"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Ushikubo's verse/loan notebook",
+    "role": "evidence",
+    "attrs": {"content": "loan records plus verses he liked", "tampered": "a page was torn out after his death"}
+   },
+   {
+    "id": "o2",
+    "name": "Yagisawa's eye drops",
+    "role": "evidence",
+    "attrs": {"note": "Yagisawa is established early on as careless and prone to losing them; planted beside Ushikubo's body to frame him"}
+   },
+   {
+    "id": "o3",
+    "name": "Hidden video camera near the Teien Art Museum pond",
+    "role": "instrument",
+    "attrs": {"setup": "concealed under a hedge on a tripod", "purpose": "faked Shiina's continuous presence at the museum during the murder", "tripod_marks_found_under_hedge": true}
+   },
+   {
+    "id": "o4",
+    "name": "Bloodstained raincoat",
+    "role": "evidence",
+    "attrs": {"worn_during": "the murder, to avoid getting blood on his clothes", "blood_match": "identical to Ushikubo's blood", "disposal_location": "thrown into the Gessho-Ji pond"}
+   },
+   {
+    "id": "o5",
+    "name": "Murder weapon (blunt object)",
+    "role": "weapon",
+    "attrs": {"disposal_location": "thrown into the Gessho-Ji pond alongside the raincoat"}
+   },
+   {
+    "id": "o6",
+    "name": "Ushikubo's spare cellphone",
+    "role": "instrument",
+    "attrs": {"stolen_by": "Shiina", "used_for": "sending a fake text message to Yagisawa impersonating Ushikubo, luring him to Jozan Inari Shrine"}
+   },
+   {
+    "id": "o7",
+    "name": "Shiina's hiking shoes",
+    "role": "evidence",
+    "attrs": {"detail": "admired earlier at the hotel for their expensive-looking hooks and marks", "fingerprint_found": "Ushikubo's bloody index-finger print on the topmost hook of the left shoe"}
+   },
+   {
+    "id": "o8",
+    "name": "Flower-themed verse (\"someday my daughter and I will go to the temple with flowers\")",
+    "role": "evidence",
+    "attrs": {"theme": "a father's love for his daughter", "original_author": "Tomonaga", "significance": "Ushikubo copied it into his notebook and claimed it as his own; only someone who had read that notebook page could recite it, which is exactly what trapped Shiina"}
+   },
+   {
+    "id": "o9",
+    "name": "Acrostic hidden in Shiina's linked verses (7th/9th/11th)",
+    "role": "evidence",
+    "attrs": {"decoded_message": "I am the culprit", "decoding_method": "7th word of the 7th verse, 9th word of the 9th verse, 11th word of the 11th verse", "purpose": "a taunting, half-conscious confession"}
+   },
+   {
+    "id": "o10",
+    "name": "Location-drawing lots (paper slips)",
+    "role": "tool",
+    "attrs": {"created_by": "Shiina", "anomaly": "the lot-maker should draw last by custom, but Shiina drew second, letting him steer Ushikubo into the isolated Matsue Castle draw and himself into the farthest location for an easy alibi"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Ushikubo's dying gesture was assumed to point at nearby bamboo, or across the canal toward the samurai mansions -- but re-examined, it actually encoded the number \"1\" (the position of the hokku, the linked verse's first line, punning on \"hook\") and matches a bloody fingerprint recovered from the hook on Shiina's own shoe, the very shoe admired earlier at the hotel.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Mizuki's claimed alibi verse describes autumn colors she says she saw while composing at the Shiomi Nawate rest area, but thick shrubs actually block any view of autumn colors from that spot -- proving she was somewhere else (in fact, at the crime scene) when she says she wrote it.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "debtor_of"},
+  {"type": "relationship", "from": "p4", "to": "p3", "relation_type": "unrequited_love"},
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "former_colleague"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "mentor_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "mentor_of"},
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "mentor_of"},
+
+  {"type": "threatens", "from": "p1", "to": "p3", "order": 1, "temporal_frame": "present", "detail": "warns Yagisawa to repay his loan by the middle of next week or have his confectionery shop foreclosed"},
+  {"type": "was_at", "from": "p1", "to": "l7", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l7", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l7", "order": 1, "temporal_frame": "present", "detail": "watches Ushikubo berate Yagisawa, worried"},
+
+  {"type": "manipulates", "from": "p2", "to": "o10", "order": 2, "temporal_frame": "present", "detail": "draws second instead of last as the lot-maker, rigging Ushikubo into the Matsue Castle draw and himself into the farthest location"},
+  {"type": "owns", "from": "p2", "to": "o10"},
+  {"type": "was_at", "from": "p2", "to": "l7", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l7", "order": 2, "temporal_frame": "present"},
+
+  {"type": "owns", "from": "p1", "to": "o6"},
+  {"type": "steals", "from": "p2", "to": "o6", "order": 3, "temporal_frame": "present", "detail": "steals Ushikubo's spare cellphone"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 4, "temporal_frame": "present", "detail": "assigned location per the (rigged) lots"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 4, "temporal_frame": "present", "circumstance_tags": ["staged_alibi"]},
+  {"type": "was_at", "from": "p3", "to": "l3", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l5", "order": 4, "temporal_frame": "present"},
+
+  {"type": "stages_alibi_using", "from": "p2", "to": "o3", "order": 4, "temporal_frame": "present", "detail": "sets up a hidden camera under a hedge near the pond to fake continuous presence at the museum"},
+  {"type": "located_in", "from": "o3", "to": "l2"},
+
+  {"type": "lures", "from": "p2", "to": "p3", "order": 5, "temporal_frame": "present", "circumstance_tags": ["frame_up"], "detail": "texts Yagisawa from Ushikubo's stolen phone, posing as Ushikubo, summoning him to Jozan Inari Shrine"},
+
+  {"type": "was_at", "from": "p3", "to": "l6", "order": 6, "temporal_frame": "present", "detail": "waits 15 minutes; no one comes"},
+  {"type": "kills", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "method": "blunt force trauma, multiple blows to the back of the head", "circumstance_tags": ["premeditated", "staged_alibi"]},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 6, "temporal_frame": "present"},
+  {"type": "marks", "from": "p1", "to": "o7", "order": 6, "temporal_frame": "present", "detail": "dying, touches the hook on Shiina's shoe with his bloody index finger -- later misread as pointing at bamboo or the samurai mansion"},
+
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 7, "temporal_frame": "present", "circumstance_tags": ["discovers_body"]},
+  {"type": "discovers", "from": "p4", "to": "p1", "order": 7, "temporal_frame": "present", "circumstance_tags": ["discovers_body"]},
+  {"type": "plants_evidence", "from": "p2", "to": "o2", "order": 7, "temporal_frame": "present", "circumstance_tags": ["frame_up", "red_herring"], "detail": "places Yagisawa's lost eye drops beside Ushikubo's body"},
+  {"type": "frames", "from": "p2", "to": "p3", "order": 7, "temporal_frame": "present", "circumstance_tags": ["frame_up", "red_herring"]},
+
+  {"type": "was_at", "from": "p3", "to": "l3", "order": 8, "temporal_frame": "present", "detail": "returns to Gessho-Ji and composes his verse there"},
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 8, "temporal_frame": "present", "circumstance_tags": ["staged_alibi"], "detail": "hurries back to fake having been there the whole time"},
+
+  {"type": "tears_page_from", "from": "p2", "to": "o1", "order": 9, "temporal_frame": "present", "detail": "tears out the page with Tomonaga's flower verse that Ushikubo had copied and claimed as his own"},
+  {"type": "located_in", "from": "o8", "to": "o1"},
+  {"type": "disposes_of", "from": "p2", "to": "o4", "order": 9, "temporal_frame": "present"},
+  {"type": "disposes_of", "from": "p2", "to": "o5", "order": 9, "temporal_frame": "present"},
+  {"type": "located_in", "from": "o4", "to": "l3"},
+  {"type": "located_in", "from": "o5", "to": "l3"},
+
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 10, "temporal_frame": "present", "detail": "retrieves the hidden camera and its footage"},
+  {"type": "was_at", "from": "p2", "to": "l7", "order": 10, "temporal_frame": "present", "detail": "returns to the hotel appearing to have been at the museum all along"},
+
+  {"type": "embeds_message_in", "from": "p2", "to": "o9", "order": 11, "temporal_frame": "present", "circumstance_tags": ["taunt"], "detail": "hides the acrostic in the 7th, 9th and 11th verses of the contest"},
+
+  {"type": "recites_as_own", "from": "p2", "to": "o8", "order": 13, "temporal_frame": "present", "circumstance_tags": ["self_incrimination"], "detail": "recites, as his own 13th (flower-themed) verse, the exact stolen verse only the killer could have read in Ushikubo's notebook -- maneuvered into it by Kogoro after Yagisawa was taken into custody"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p3", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o7"},
+  {"type": "written_by", "from": "o8", "to": "p6"},
+
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "implicates", "from": "o2", "to": "p3"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o7", "to": "p2"},
+  {"type": "implicates", "from": "o8", "to": "p2"},
+  {"type": "implicates", "from": "o9", "to": "p2"},
+  {"type": "implicates", "from": "o10", "to": "p2"},
+
+  {"type": "regarding", "from": "cA", "to": "o7"},
+  {"type": "regarding", "from": "cA", "to": "p1"},
+  {"type": "implicates", "from": "cA", "to": "p2"},
+  {"type": "regarding", "from": "cB", "to": "p4"},
+  {"type": "regarding", "from": "cB", "to": "l4"},
+  {"type": "implicates", "from": "cB", "to": "p4"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "moral_outrage_over_fraud_and_plagiarism"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "debt_and_foreclosure_threat"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

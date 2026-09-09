@@ -1,0 +1,574 @@
+{
+ "case_id": "ep246-247_the_mystery_in_the_net",
+ "episode_number": "246-247",
+ "title": "The Mystery in the Net",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mystery_in_the_Net",
+ "subtitle_source": ["subs_resolved/0246.txt", "subs_resolved/0247.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan/Shinichi, Ran, Sonoko, Agasa, Haibara, Detective Boys, Detective Yokomizo) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. The old wiki-summary case file (cases/ep246-247_the_mystery_in_the_net.json) named the correct culprit (Noboru Shimojo) and victim (Giichi Aramaki), so label.murderer_id is unchanged, but it collapsed the whole backstory into one generic event node and missed: (1) that Aramaki is implied to have also murdered the sailor-witness who could have corroborated the sons' account of the boat collision (never confirmed on-screen, flagged as presumed/unconfirmed here); (2) that the murder weapon boat was the same boat Shimojo and Yoshizawa were seen handling on the beach earlier that afternoon, which is real physical opportunity evidence against both of them, not just Shimojo; (3) the actual trick was not 'net + rising tide' alone (explicitly proposed and refuted mid-episode) but 'net + the same boat, filled with seawater, used as a weight over a buried victim, that later floats free with the tide' -- letting the culprit have a remote alibi; (4) the real deductive clues were the impossible precision of Shimojo's stated time of death and his foreknowledge of the order of incoming calls, not the vague 'suspiciously precise time of death' the old file gestured at without explaining the mechanism. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Giichi Aramaki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "fisherman",
+    "attrs": {
+     "age": 51,
+     "died_of": "drowning",
+     "reputation": "uses an illegal dragnet to take fish indiscriminately regardless of season or size, ignoring the informal quota other local fishermen observe; a law against it exists but is not enforced in the area",
+     "backstory_crime": "eight years ago, while recklessly fishing despite an incoming storm, lost control of his own boat and rammed the boat carrying Shimojo's, Yoshizawa's, and Nezu's fathers, then left the three men to drown instead of helping",
+     "claimed_philosophy": "told Shimojo that the 'perfect crime' is two people going sailing and one pushing the other overboard, since the body disappears and there are no witnesses"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Noboru Shimojo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "fisherman",
+    "attrs": {
+     "age": 34,
+     "confession": "admits to killing Aramaki in revenge for his father's death, calling it 'divine punishment' he took on himself as a sacrifice for Yoshizawa and Nezu too",
+     "slip_that_exposed_him": "stated Aramaki died 'around 8:00', a precision the police could not have told him since wave action had destroyed the normal time-of-death indicators; also correctly guessed that Yoshizawa's call to Aramaki came before his own without being shown the phone log"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuuta Yoshizawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "fisherman",
+    "attrs": {
+     "age": 34,
+     "alibi": "at the Chinese restaurant Tonpu from 8:00 PM onward; called Aramaki's phone once at 7:02 PM before arriving",
+     "cleared_because": "the trick required no physical presence at the moment of death, but he has no equivalent guilty knowledge of the precise time of death or call order that Shimojo betrayed"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Nobutsugu Nezu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "fisherman",
+    "attrs": {
+     "age": 35,
+     "alibi": "visited his father's grave, then arrived at the Chinese restaurant Tonpu around 8:40 PM; called Aramaki's phone once at 8:41 PM",
+     "habit": "repeatedly retells the story of Aramaki sinking their fathers' boat, to his friends' visible annoyance"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Shimojo's father",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "fisherman",
+    "attrs": {
+     "died": "eight years ago, drowned at sea after Aramaki's boat rammed and disabled his boat during a storm and Aramaki left him and his crewmates to die"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yoshizawa's father",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "fisherman",
+    "attrs": {
+     "died": "eight years ago, drowned at sea after Aramaki's boat rammed and disabled his boat during a storm and Aramaki left him and his crewmates to die"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Nezu's father",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "fisherman",
+    "attrs": {
+     "died": "eight years ago, drowned at sea after Aramaki's boat rammed and disabled his boat during a storm and Aramaki left him and his crewmates to die"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Unnamed sailor (witness to the boat collision)",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "sailor, crew of Aramaki's boat",
+    "attrs": {
+     "testimony": "privately confirmed to Shimojo that Aramaki caused the collision that killed the three fathers and abandoned them",
+     "fate": "disappeared sometime afterward; Aramaki's own remark about the 'perfect crime' (pushing a sailing companion overboard, leaving no body and no witness) strongly implies Aramaki murdered him too, though this is never confirmed on-screen"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Izu beach",
+    "attrs": {
+     "role_in_case": "site of the murder (victim buried in a shoreline hole under the net and boat) and where the body washed up/was found tangled in the net"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Chinese restaurant Tonpu, Queen Hotel",
+    "attrs": {
+     "role_in_case": "meeting place the three sons arranged with Aramaki for 8:00 PM; doubles as each suspect's claimed alibi location"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Sea off Izu (site of the fatal boat collision)",
+    "attrs": {
+     "years_before_present": 8
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Nezu family grave",
+    "attrs": {
+     "role_in_case": "Nezu's alibi stop before the restaurant; visited on the anniversary of his father's death"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Fishing net (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "use": "wrapped around the drunk Aramaki to restrain him; he was tangled in it, not tied, so the net alone would not have prevented him from sitting up or crawling away"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Small boat (used as a drowning weight)",
+    "role": "weapon",
+    "attrs": {
+     "use": "filled with seawater and placed on top of the buried, net-wrapped Aramaki as a weight so that even if he woke up he could not push free; floated off on its own once the tide rose further, giving the culprit a remote alibi",
+     "contents_found": "a 1.8-liter bottle of alcohol, one of the victim's sandals, and a button matching the one missing from the victim's shirt -- planted to suggest Aramaki had been drinking aboard the drifting boat rather than to conceal that the boat had been used as a weight",
+     "provenance": "the same boat Shimojo and Yoshizawa were seen taking out onto the water earlier that afternoon before being stopped"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Aramaki's cell phone",
+    "role": "evidence",
+    "attrs": {
+     "found": "tangled in the net with the body",
+     "condition": "covered in scratches, matching scratches on the victim's own body",
+     "call_log": "Yoshizawa called 7:02 PM; Shimojo called 7:47 PM, 8:03 PM, and 8:18 PM; Nezu called 8:41 PM",
+     "mechanism_explained": "the 8:41 PM call was picked up and immediately cut off not by a person but because the surf kept rolling Aramaki's corpse against sea shells on the sand, once pressing the answer button and once pressing it again to hang up"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Aramaki's illegal dragnet",
+    "role": "tool",
+    "attrs": {
+     "dispute": "used to take as many fish as he wanted regardless of size or season, ignoring the informal limits other local fishermen kept to; the source of the confrontation on the beach and the dinner meeting that was supposed to 'teach him a lesson'"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The victim's cell phone and the victim's own body carry matching scratch patterns from sea shells on the beach -- proves the 8:41 PM 'answered' call was caused by waves rolling the corpse against a shell and pressing the buttons, not by Aramaki or the culprit actually picking up. This removes the sons' apparent alibi (that someone had to be alive/present with the phone), since the killer never needed to be there when any call came in.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Normal time-of-death indicators (post-mortem lividity, rigor mortis, body temperature) were all destroyed by the waves continuously repositioning and chilling/warming the corpse, so the police could only bracket death to the 6:00-9:30 PM window Aramaki was last seen alive to found dead -- yet Shimojo confidently stated Aramaki died 'around 8:00,' a precision only the actual killer could know.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cC",
+    "desc": "Shimojo assumed, without being shown the phone log, that Yoshizawa's call to Aramaki had come before his own first call at 7:47 PM (the real order: Yoshizawa 7:02 PM, then Shimojo 7:47/8:03/8:18 PM) -- he could only know that ordering because he personally heard Aramaki's phone ring at 7:02 PM while he was still at the beach setting up the net-and-boat trap.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p6",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p7",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "electoral_rival",
+   "symmetric": true
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p5",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 8,
+   "method": "rammed their boat with his own during a storm and left them to drown",
+   "circumstance_tags": ["cover_up", "manslaughter"]
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p6",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 8,
+   "method": "rammed their boat with his own during a storm and left them to drown",
+   "circumstance_tags": ["cover_up", "manslaughter"]
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p7",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 8,
+   "method": "rammed their boat with his own during a storm and left them to drown",
+   "circumstance_tags": ["cover_up", "manslaughter"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l3",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l3",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "confides_in",
+   "from": "p8",
+   "to": "p2",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "detail": "confirms that Aramaki caused the collision and abandoned the three fathers"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p8",
+   "order": 2,
+   "temporal_frame": "backstory",
+   "circumstance_tags": ["cover_up", "presumed", "unconfirmed"],
+   "method": "unconfirmed on-screen; strongly implied by Aramaki's own description of the 'perfect crime' (push a sailing companion overboard, leaving no body and no witness) after the witness who corroborated Shimojo's account disappeared"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge_for_fathers_death"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge_for_fathers_death"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_fathers_death"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "o2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "argument on the beach over Aramaki's illegal dragnet fishing",
+   "circumstance_tags": ["public_dispute"]
+  },
+  {
+   "type": "confronts",
+   "from": "p3",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "argument on the beach over Aramaki's illegal dragnet fishing",
+   "circumstance_tags": ["public_dispute"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "got Aramaki drunk, wrapped him in a fishing net, buried him in a shoreline hole, and weighted him down with the same seawater-filled boat so the rising tide drowned him without the culprit needing to be present; the boat floated free once the tide came in further, removing itself as evidence of the trick",
+   "circumstance_tags": ["remote_method", "staged_evidence", "cover_up"]
+  },
+  {
+   "type": "restrains_using",
+   "from": "p2",
+   "to": "o1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "calls",
+   "from": "p3",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "time": "7:02 PM"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 7,
+   "temporal_frame": "present",
+   "time": "a little after 7:00 PM"
+  },
+  {
+   "type": "calls",
+   "from": "p2",
+   "to": "p1",
+   "order": 8,
+   "temporal_frame": "present",
+   "time": "7:47 PM, 8:03 PM, 8:18 PM"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 9,
+   "temporal_frame": "present",
+   "time": "8:00 PM exactly"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 11,
+   "temporal_frame": "present",
+   "time": "around 8:40 PM"
+  },
+  {
+   "type": "calls",
+   "from": "p4",
+   "to": "p1",
+   "order": 12,
+   "temporal_frame": "present",
+   "time": "8:41 PM"
+  },
+  {
+   "type": "was_at",
+   "from": "o2",
+   "to": "l1",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "boat drifts away as the tide rises further, found floating offshore afterward"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 14,
+   "temporal_frame": "present",
+   "detail": "returns with Yoshizawa and Nezu after 9:30 PM to search for the missing Aramaki"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

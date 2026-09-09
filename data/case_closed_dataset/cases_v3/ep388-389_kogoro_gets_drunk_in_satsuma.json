@@ -1,0 +1,483 @@
+{
+ "case_id": "ep388-389_kogoro_gets_drunk_in_satsuma",
+ "episode_number": "388-389",
+ "title": "Kogoro Gets Drunk in Satsuma",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Kogoro_Gets_Drunk_in_Satsuma",
+ "subtitle_source": ["subs_resolved/0388.txt", "subs_resolved/0389.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Discrepancy vs. old cases/ file: the old file located the entire staged scene (blood + weapon) at Terayama Park. The transcript instead shows the blood and duplicate weapon statue were staged in Tatsumura's own living room (to fake an evening attack there); Terayama Park is only where Fumiko later dumped the body and, two days after, anonymously told police to find it -- deliberately timed so the delayed discovery would blur the estimated time of death and protect her all-day alibi with the Mouri party. The old file also omitted the two clues that actually crack the case (no volcanic ash on the victim's clothes despite continuous ashfall that day; the sedation injection mark hidden at the same site as his physical-checkup blood draw), the duplicate-statue clue, the backstory figures (the deceased former brewery president and Fumiko's late father, both establishing her motive and means), and Kogoro's initial wrong deduction naming journalist Hitomi Maezono as the culprit (a genuine red herring the show plays for comedy). The stated culprit (Fumiko Shiraishi) is confirmed correct against the transcript. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Satoshi Shiraishi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "brewery owner",
+    "attrs": {}
+   },
+   {
+    "id": "p2",
+    "name": "Fumiko Shiraishi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "owner's wife; former nurse",
+    "attrs": {
+     "former_workplace": "Chuo Hospital (nurse, until 5 years ago)",
+     "raised_by": "the predecessor president, after her own father died",
+     "motive_summary": "feared mass production would betray the brewery's values and the predecessor's legacy"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hitomi Maezono",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "magazine journalist, Weekly Etta",
+    "attrs": {
+     "note": "wrongly named the culprit by Kogoro's first, comedic deduction"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Daisuke Kosugi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "brewery employee",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Seiichi Orita",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "senior brewery employee",
+    "attrs": {
+     "note": "provides the backstory on the predecessor and Fumiko's father"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Shinsuke Tatsumura",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "managing director",
+    "attrs": {
+     "died_of": "single blow to the head",
+     "plan": "wanted to mechanize production for mass output"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Former brewery president",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "predecessor president, deceased",
+    "attrs": {
+     "died_of": "illness",
+     "death_time": "about one year before the case",
+     "decision": "chose to make one perfect final batch instead of shutting the brewery down, 10 years before the case"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Fumiko's father",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "sake brewer, deceased",
+    "attrs": {
+     "died_of": "illness",
+     "death_time": "while Fumiko was in middle school"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Officer Shinpuku",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police investigator",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Takakuma Brewery, Kagoshima",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Tatsumura's house, Kagoshima",
+    "attrs": {
+     "lock": "special key, not duplicable",
+     "entry": "no signs of forced entry"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Terayama Park, Kagoshima",
+    "attrs": {
+     "role_in_case": "body dumped here, found via an anonymous call two days later"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Kogoro's hotel, Kagoshima",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Sakurajima overlook",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Duplicate stone statue",
+    "role": "weapon",
+    "attrs": {
+     "prepared_by": "Fumiko, in advance",
+     "carries": "victim's own drawn blood, smeared on afterward"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Sedative syringe",
+    "role": "tool",
+    "attrs": {
+     "injection_site": "same arm spot as his physical-checkup blood draw the day before"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Tatsumura's house key",
+    "role": "tool",
+    "attrs": {
+     "stolen_by": "Fumiko, after drugging him"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Tatsumura's drawn blood",
+    "role": "evidence",
+    "attrs": {
+     "drawn_by": "Fumiko, using her nursing training",
+     "planted_at": "his living room, to fake an evening attack there"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Tatsumura's own statue",
+    "role": "evidence",
+    "attrs": {
+     "note": "the real one, untouched -- distinct physical object from the duplicate weapon"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ash fell continuously from noon to midnight per the weather report, but none was found on Tatsumura's clothes -- proves he was killed in the morning, before the ashfall, not in the evening as staged.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "The sedation injection mark lines up exactly with the prick mark from the physical checkup blood draw Fumiko herself had recommended the day before -- hides the needle mark inside an expected one.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "The statue used as the murder weapon is a duplicate Fumiko prepared beforehand, not the original statue Tatsumura actually owned.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p7",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p8",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p7",
+   "relation_type": "raised_by"
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p7",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p6",
+   "relation_type": "indebted_to"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p6",
+   "motive_type": "protect_brewery_legacy_and_repay_debt_to_predecessor"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p6",
+   "motive_type": "opposed_mass_production_conflicted_by_debt"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p6",
+   "motive_type": "denied_interview_access_public_hostility_red_herring"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p6",
+   "motive_type": "opposed_mass_production_vocal_hostility"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p6",
+   "motive_type": "opposed_mass_production_loyalty_to_predecessor"
+  },
+  {
+   "type": "drugs",
+   "from": "p2",
+   "to": "p6",
+   "method": "sedative injected via syringe in the same spot as his physical-checkup blood draw",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "draws_blood_from",
+   "from": "p2",
+   "to": "p6",
+   "circumstance_tags": ["staged_alibi", "forensic_deception"]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p6",
+   "method": "single blow to the head with a duplicate stone statue",
+   "circumstance_tags": ["staged_kidnapping", "locked_room", "misleading_time_of_death"]
+  },
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "stages_scene_at",
+   "from": "p2",
+   "to": "l2",
+   "circumstance_tags": ["staged_kidnapping"]
+  },
+  {
+   "type": "dumps_body_of",
+   "from": "p2",
+   "to": "p6",
+   "circumstance_tags": ["staged_kidnapping"]
+  },
+  {
+   "type": "reports_body_location_of",
+   "from": "p2",
+   "to": "p6",
+   "circumstance_tags": ["timing_trick", "staged_alibi"]
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p6",
+   "to": "o5"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p6"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l5"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

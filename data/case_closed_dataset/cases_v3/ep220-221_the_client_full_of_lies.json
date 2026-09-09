@@ -1,0 +1,511 @@
+{
+  "case_id": "ep220-221_the_client_full_of_lies",
+  "episode_number": "220-221",
+  "title": "The Client Full of Lies",
+  "source_url": "https://www.detectiveconanworld.com/wiki/The_Client_Full_of_Lies",
+  "subtitle_source": [
+    "subs_resolved/0220.txt",
+    "subs_resolved/0221.txt"
+  ],
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. Detective Yokomizo (the investigating officer for this case, analogous role to Inspector Megure but a distinct named character with real plot function -- he physically restrains Kyoko during her suicide attempt and delivers key dialogue) is kept as a person node since he is not one of the four blanket-omitted recurring leads and his actions are load-bearing for the ending. Hattori Heiji and Toyama Kazuha are also kept: the entire 'client full of lies' B-plot only resolves because Ikenami Shizuka turns out to be Kazuha's mother testing Kogoro's competence after Heiji got hurt on a case, which is the actual reason she fabricated her whole cover story (fake reasons for the visit, the dust allergy, disliking cooking, the accidental 'reikoo' Kansai-dialect slip). The old wiki-derived case file (cases/ep220-221_the_client_full_of_lies.json) got the culprit right (Kyoko Shibata) but was otherwise minimal: no murder weapon (bokken), no wedding-ring/bandage staging, no video-timer/breakfast staging mechanics, no book (The Thunder God's Door), no financial/gambling motive, no red-herring accusations against Ikenami and Yoshikawa, and the entire Ikenami/Heiji/Kazuha reveal was missing. case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Shiro Shibata",
+        "aliases": [],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "physical education teacher, Shizuoka High School",
+        "attrs": {
+          "died_of": "blunt force trauma from a bokken (wooden sword)",
+          "backstory": "kendo club member, won a middle-school kendo tournament in 7th grade holding a gold cup/championship plaque; classmate and kendo clubmate of Shizuka Ikenami thirty years before the case",
+          "vice": "compulsive mahjong gambler; sold the family computer, wife's jewelry, car, LD player, and speaker system to cover debts before the murder"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Kyoko Shibata",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "housewife",
+        "attrs": {
+          "age": 38,
+          "motive_detail": "husband's compulsive mahjong gambling had already stripped the household of its possessions and was about to take her father's dowry items next",
+          "post_arrest_incident": "attempted to take her own life with a blade after confessing; physically restrained by Detective Yokomizo"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Takezo Yoshikawa",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "unspecified; friend and mahjong companion of Shiro Shibata",
+        "attrs": {
+          "age": 47,
+          "alibi": "claims he was asleep alone at home at the estimated time of death, with no witness; cleared because he had no way of knowing there was evidence to remove and no reason to return to a scene half a day later and shout for others not to leave"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Shizuka Ikenami",
+        "aliases": [
+          "Toyama Shizuka (true identity: Kazuha Toyama's mother)"
+        ],
+        "roles": [
+          "witness",
+          "suspect"
+        ],
+        "occupation": "unspecified (introduced as a client)",
+        "attrs": {
+          "age": 42,
+          "true_purpose_of_visit": "secretly testing Kogoro Mouri's competence as a detective after her daughter's boyfriend, Heiji Hattori, was injured on a prior case, and because Kogoro never visited or apologized afterward",
+          "cover_story": "claimed to be looking for her lost middle-school first love, Shiro Shibata, to retrieve an old photograph",
+          "documented_lies": "claimed a dust allergy while actually enjoying cleaning; claimed to dislike cooking while instantly recognizing a fish (guji) by sight; concealed that she was married (bandage hid a mark from a ring on her left ring finger); slipped and said the Kansai-dialect 'reikoo' (iced coffee) instead of catching herself, revealing she was from Osaka",
+          "falsely_implicated": "briefly accused of the murder because the victim was found clutching her old photograph; cleared because as an outsider she would not have known the apartment door was already unlocked and would not have passed up the chance to retrieve the photo before police arrived"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Heiji Hattori",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "high school detective, Osaka",
+        "attrs": {
+          "note": "Kazuha's boyfriend; was injured on a previous case, which is what prompted Shizuka Ikenami to come test Kogoro's detective skill"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Kazuha Toyama",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "high school student, Osaka",
+        "attrs": {
+          "note": "Shizuka Ikenami's daughter; arrives at the end with Heiji Hattori and reveals Ikenami's true identity and motive"
+        }
+      },
+      {
+        "id": "p7",
+        "name": "Detective Yokomizo",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "police detective in charge of the investigation",
+        "attrs": {
+          "note": "physically restrains Kyoko Shibata when she tries to harm herself after confessing"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Shibata apartment (living room, corridor, and rear stairs)",
+        "attrs": {}
+      },
+      {
+        "id": "l2",
+        "name": "Mouri Detective Agency",
+        "attrs": {}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Photograph of Shizuka Ikenami holding the championship plaque",
+        "role": "evidence",
+        "attrs": {
+          "age_of_photo_years": 30,
+          "original_location": "used as a bookmark inside the novel 'The Thunder God's Door', which Shiro had borrowed from Ikenami thirty years earlier and never returned",
+          "staged_use": "planted by Kyoko into the victim's clenched right hand to fake a dying-message clue pointing at Ikenami and disguise the fact the hand had actually been holding his wedding ring",
+          "reason_it_was_sought": "Ikenami's real purpose for visiting the Mouri Detective Agency was to recover this old photograph after her grandmother accidentally threw away the original plaque"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Morning newspaper",
+        "role": "evidence",
+        "attrs": {
+          "delivery_time": "delivered to the building mailbox around 6:00 A.M.",
+          "staging_flaw": "found beside a half-eaten meal that was actually eaten at 3:00 A.M., not with breakfast; Kyoko retrieved it from the mailbox after returning home around 7:00 P.M. and placed it by the table to fake a later time of death"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Bloody bokken",
+        "role": "weapon",
+        "attrs": {
+          "normal_use": "kept on a counter near the apartment door to chase away salesmen",
+          "found_at": "hidden behind the stairs near the door"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Shiro Shibata's wedding ring",
+        "role": "evidence",
+        "attrs": {
+          "normal_location": "worn on the fourth finger of his left hand",
+          "dying_message": "found tightly clutched in his right hand as he died, the real dying message identifying his wife as the killer",
+          "staging": "removed by Kyoko and replaced in his hand with Ikenami's photograph; she likely kept the ring on her own person to dispose of later since she could not risk leaving chemical/blood residue in the apartment"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Bandage on Kyoko's ring finger",
+        "role": "evidence",
+        "attrs": {
+          "purpose": "concealed the pale mark/indentation left by her own wedding ring, and by extension her marriage to the victim, during questioning; extra bandages placed on other fingers too so the one hiding the mark would not stand out"
+        }
+      },
+      {
+        "id": "o6",
+        "name": "Novel 'The Thunder God's Door'",
+        "role": "evidence",
+        "attrs": {
+          "found_at": "under the victim's body",
+          "history": "borrowed by Ikenami from Shiro thirty years ago; she returned it with her photograph left inside as a bookmark",
+          "false_lead": "Ikenami claimed a character named 'Reiko' in the book resembled her personality; Conan established no such character exists, exposing another of her lies"
+        }
+      },
+      {
+        "id": "o7",
+        "name": "Video recorder and timer",
+        "role": "tool",
+        "attrs": {
+          "trick": "Kyoko set the timer to auto-record the victim's regular 8:00 A.M. show, so investigators would assume he was alive and watching TV at that hour"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "The bandaged ring finger vs. the other fingers: only the fourth finger bandage covers an actual injury-free indentation mark, while the surrounding bandages are unnecessary padding meant to make the real one look unremarkable -- comparing the fingers exposes the staging.",
+        "clue_type": "physical"
+      },
+      {
+        "id": "cB",
+        "desc": "Victim's left hand (blood on palm but none on the bandage over the fingers) compared against his right hand (clenched around the planted photograph): the mismatch shows the left-hand bandaging happened after the bleeding, and the right hand's contents were swapped after death -- together they reveal the dying-message photo was staged, not genuine.",
+        "clue_type": "forensic"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p4",
+      "relation_type": "classmate",
+      "symmetric": true
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p1",
+      "relation_type": "spouse_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p1",
+      "relation_type": "friend"
+    },
+    {
+      "type": "relationship",
+      "from": "p6",
+      "to": "p4",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p6",
+      "to": "p5",
+      "relation_type": "romantic_partner_of",
+      "symmetric": false
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o3"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o4"
+    },
+    {
+      "type": "owns",
+      "from": "p4",
+      "to": "o1"
+    },
+    {
+      "type": "written_by",
+      "from": "o1",
+      "to": "p4"
+    },
+    {
+      "type": "was_at",
+      "from": "o1",
+      "to": "l1",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": 30
+    },
+    {
+      "type": "confronts",
+      "from": "p1",
+      "to": "p4",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": 30,
+      "detail": "kendo clubmates and classmates in middle school; Shiro borrowed Ikenami's novel and never returned it, keeping her championship photo inside as a bookmark"
+    },
+    {
+      "type": "gambles_with",
+      "from": "p1",
+      "to": "p3",
+      "order": 1,
+      "temporal_frame": "present",
+      "detail": "regular mahjong games; the two had a mahjong session planned for the night of the murder"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "financial_ruin_from_gambling"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "confronts",
+      "from": "p2",
+      "to": "p1",
+      "order": 3,
+      "temporal_frame": "present",
+      "detail": "called him out to the corridor while he was eating a late-night meal around 3:00 A.M., then attacked him with the bokken"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p1",
+      "order": 3,
+      "temporal_frame": "present",
+      "method": "struck with a bokken in the corridor",
+      "circumstance_tags": [
+        "staged_alibi",
+        "cover_up"
+      ]
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1",
+      "order": 4,
+      "temporal_frame": "present",
+      "detail": "mortally wounded, Shiro crawled/struggled from the corridor into the living room toward the phone before dying there, disrupting Kyoko's staging plan"
+    },
+    {
+      "type": "stages_alibi_using",
+      "from": "p2",
+      "to": "o2",
+      "order": 5,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "stages_alibi_using",
+      "from": "p2",
+      "to": "o7",
+      "order": 5,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "fakes_time_of_death_of",
+      "from": "p2",
+      "to": "p1",
+      "order": 5,
+      "temporal_frame": "present",
+      "method": "left a late-night meal out to look like breakfast, added the 6:00 A.M. newspaper beside it, and set the video timer to record his regular 8:00 A.M. show, making it look like he was killed around 8:00 A.M. while she had an ironclad golf alibi"
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p2",
+      "to": "o4",
+      "order": 6,
+      "temporal_frame": "present",
+      "detail": "found the ring he had been clutching, removed it from his hand"
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p2",
+      "to": "o1",
+      "order": 6,
+      "temporal_frame": "present",
+      "detail": "took Ikenami's photo from inside the novel and placed it in the victim's hand to replace the ring and misdirect investigators",
+      "circumstance_tags": [
+        "red_herring",
+        "framed"
+      ]
+    },
+    {
+      "type": "hides_contraband_in",
+      "from": "p2",
+      "to": "o5",
+      "order": 6,
+      "temporal_frame": "present",
+      "detail": "bandaged her own ring finger to hide the mark left by her wedding ring"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 7,
+      "temporal_frame": "present",
+      "detail": "waited on the rear stairs after returning home, pretending to arrive later, once she overheard Yoshikawa's answering-machine message"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1",
+      "order": 8,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1",
+      "order": 8,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 8,
+      "temporal_frame": "present",
+      "detail": "re-entered pretending to arrive home for the first time, so someone else would be the one to 'discover' the body"
+    },
+    {
+      "type": "implicates",
+      "from": "o1",
+      "to": "p4",
+      "circumstance_tags": [
+        "red_herring"
+      ]
+    },
+    {
+      "type": "implicates",
+      "from": "o4",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o5",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "o5"
+    },
+    {
+      "type": "implicates",
+      "from": "cA",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o4"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o1"
+    },
+    {
+      "type": "implicates",
+      "from": "cB",
+      "to": "p2"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p4",
+      "motive_type": "framing_via_planted_photo (red herring, Ikenami is not actually a threat to Kyoko -- purely opportunistic misdirection)"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l2",
+      "order": 1,
+      "temporal_frame": "present",
+      "detail": "visits the Mouri Detective Agency under a false pretext to test Kogoro"
+    },
+    {
+      "type": "confronts",
+      "from": "p7",
+      "to": "p2",
+      "order": 9,
+      "temporal_frame": "present",
+      "detail": "restrains Kyoko when she grabs a blade to attempt suicide after confessing"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l2",
+      "order": 10,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l2",
+      "order": 10,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o6"
+    },
+    {
+      "type": "located_in",
+      "from": "o6",
+      "to": "l1",
+      "order": 4,
+      "temporal_frame": "present",
+      "detail": "found under Shiro's body in the living room after he was mortally wounded and crawled there; discovering it undisturbed (with the photo missing from inside it) helped establish the dying-message photo had been staged"
+    }
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

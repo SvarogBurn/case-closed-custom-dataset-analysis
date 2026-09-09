@@ -1,0 +1,414 @@
+{
+ "case_id": "ep161_the_murder_floating_in_the_water_stream_restaurant",
+ "episode_number": "161",
+ "title": "The Murder Floating in the Water Stream Restaurant",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Murder_Floating_in_the_Water_Stream_Restaurant",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0161.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Conan, Kogoro, Ran, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: actions are direct typed edges. Unlike other episodes in this batch, this transcript gives no red-herring motive material for the second suspect (Arai) -- he has a clean, corroborated alibi (a timestamped convenience-store receipt) and no stated grudge against the victim beyond mild annoyance at his attitude, so per the honesty rule no has_motive_against edge is fabricated for him; only the culprit carries a motive edge here. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryuichi Arai",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "physics instructor, Jomon University",
+    "attrs": {
+     "alibi": "sent by Iwama to buy a specific cigarette brand not sold at the restaurant register; a convenience-store receipt timestamped 7:52 PM, minutes after the estimated time of death, cleared him"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Nobuo Iwama",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "physics professor, Jomon University",
+    "attrs": {
+     "past_misconduct": "years earlier, put his own name on a student's thesis paper and passed it off as his own work"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Keizo Kaneda",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "assistant professor of physics, Jomon University (newly promoted the day of the murder)",
+    "attrs": {
+     "died_of": "stabbed through the heart with a dagger, died instantly",
+     "died_where": "Room 8, having been lured there under the pretense of a private conversation"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kyoko Anzai",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "cashier, Riyu Stream Restaurant",
+    "attrs": {
+     "note": "first to discover the body; confirmed the front door and bridge were the only way in on foot, and that she held the only room key -- ruling out an ordinary walk-in killer and pointing investigators toward the waterway"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Riyu Stream Restaurant, Room 8",
+    "attrs": {
+     "significance": "crime scene; found completely dry, ruling out anyone swimming in through the shallow (~50cm) waterway"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Riyu Stream Restaurant, Room 3",
+    "attrs": {
+     "significance": "Iwama and Arai's private room; staged with a rigged door and a tape recorder to fake Iwama's continuous presence"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Convenience store near the restaurant",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Restaurant waterway and boat dock",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Dagger",
+    "role": "weapon",
+    "attrs": {}
+   },
+   {
+    "id": "o2",
+    "name": "Large serving boat",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "big enough for a person to hide in after removing the serving boards and food; equipped with a small motor and a sensor that automatically returns it to the dock, which the culprit disabled and re-enabled with his foot to redirect it to Room 8 and back",
+     "staging_flaw": "the boat's waterline was unusually high for the small whiskey-and-ice order it carried on its return trip, proving it had been carrying a hidden passenger's weight"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Iwama's pocket tape recorder",
+    "role": "tool",
+    "attrs": {
+     "used_for": "played pre-recorded sounds (dishes clattering, a search for a dropped contact lens) from Room 3 to simulate his continued presence while he was actually in Room 8"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Rubber band, pin, chopstick wrapper and ice (door-closing rig)",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "a rubber band pinned between the sliding door and its frame was held open by a paper chopstick wrapper pinned in place; ice set on the wrapper slowly melted, softened the paper until it tore, and let the rubber band snap the door shut on its own, timed to look like Iwama closing it himself",
+     "staging_flaw": "a tiny pinhole and a leftover wet spot on the door frame in Room 3 survived Iwama's attempt to dispose of the rig, and gave the trick away"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Blowfish-milt sauce stain on Iwama's shirt/jacket",
+    "role": "evidence",
+    "attrs": {
+     "significance": "Kaneda had sauce on his thumb from spilled blowfish milt before he ever reached Room 8; the same sauce was found on Iwama's shirt where the jacket covered it, with Kaneda's fingerprints in it, from grabbing his attacker during the struggle",
+     "cover_story": "Iwama falsely claimed the stain came from spilling sauce himself while searching for a dropped contact lens"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Convenience-store cigarette receipt",
+    "role": "evidence",
+    "attrs": {
+     "timestamp": "7:52 PM, just after the 7:50 PM estimated time of death",
+     "significance": "corroborated Arai's alibi and confirmed Iwama had deliberately sent him on an errand timed to keep him away during the murder"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Waterline clue: the returning serving boat carried only a small whiskey-and-ice order, yet sat unusually low in the water -- the waterline was consistent with a hidden adult passenger's weight, not the light order alone, proving someone had ridden the boat.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Sauce/fingerprint clue: sauce from the victim's own spilled blowfish-milt order was found both on his thumb and, with his fingerprints pressed into it, on the culprit's jacket where he claims he never touched sauce -- placing the victim's hand on the culprit's clothing at the time of the struggle.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "Door-rig clue: a tiny pinhole and a leftover wet spot on the Room 3 door frame -- residue of the rubber-band-and-melting-ice mechanism used to snap the door shut unattended -- contradict the impression that Iwama closed the door himself while inside the whole time.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cD",
+    "desc": "Jacket-composure clue: Iwama was seen putting his jacket on as he emerged to the scene after Anzai's scream -- an oddly composed, deliberate action for someone supposedly reacting to a sudden emergency, consistent with covering a stain he needed hidden rather than genuine surprise.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "arranges_meeting_with",
+   "from": "p2",
+   "to": "p3",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "asked to speak with Kaneda privately and had him reserve Room 8 under his own name",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "sends_away",
+   "from": "p2",
+   "to": "p1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "asked for a specific cigarette brand not sold at the restaurant register, forcing a roughly 20-minute round trip to a convenience store",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o3",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o4",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "uses",
+   "from": "p2",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "hid in the large serving boat after unloading its food, disabled the return sensor with his foot to divert it to Room 8"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p3",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "stabbed through the heart with a dagger; the victim grabbed his attacker's jacket during the struggle, leaving sauce-stained fingerprints",
+   "circumstance_tags": [
+    "premeditated",
+    "locked_room"
+   ]
+  },
+  {
+   "type": "repositions_body_of",
+   "from": "p2",
+   "to": "p3",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "turned the body to face the doorway so investigators would assume the killer entered on foot, not by the waterway",
+   "circumstance_tags": [
+    "cover_up",
+    "staged_scene"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "rode the boat back, re-enabled the sensor so it returned automatically to the dock, then re-entered Room 3 through the rigged door"
+  },
+  {
+   "type": "destroys_evidence",
+   "from": "p2",
+   "to": "o3",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "erased the tape",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "discards",
+   "from": "p2",
+   "to": "o4",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "attempted to remove the rubber band and pins and dispose of the wrapper, but a pinhole and wet spot remained in the door frame",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "cashier who went in to check on Kaneda after he entered Room 8 but never placed an order, and discovered the body"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p3",
+   "motive_type": "blackmail_and_reputation (Kaneda knew Iwama had once plagiarized a student's thesis and threatened to expose it unless Iwama recommended him for assistant professor and paid him 5,000,000 yen)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,442 @@
+{
+ "case_id": "ep149_the_amusement_park_bungee_jumping_case",
+ "episode_number": "149",
+ "title": "The Amusement Park Bungee Jumping Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Amusement_Park_Bungee_Jumping_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0149.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Conan, Kogoro, Ran, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: actions are direct typed edges. This case is unusually rich in red herrings: three of the four other troupe members each carry a distinct, transcript-stated grudge against the victim (management dispute, debt/fear, an unpaid story-rights bribe), and the rigger Ishijima is accused purely on physical opportunity with no motive ever stated for him -- kept motive-free per the honesty rule rather than inventing one. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Akiyoshi Ishijima",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "bungee jump rigger, Nichiuri Land",
+    "attrs": {
+     "note": "attached the bungee cord to Yaiba's feet before every jump, giving him unique physical access to the ring; accused first on opportunity alone, no motive against Hosono is stated anywhere in the transcript"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Shinpei Okubo",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "performer (plays Black Planet Man), H.O. Company troupe",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Kanako Harukawa",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "performer (plays the Princess), H.O. Company troupe",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Wataru Otake",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "special-effects/explosives operator, H.O. Company troupe",
+    "attrs": {
+     "physical_evidence": "burn scar on his ankles/feet, consistent with the amount of explosive needed to sever the bungee cord being detonated close to his own body",
+     "true_grievance": "Hosono told him he could never play Kamen Yaiba, saying the role required natural authority and willpower he lacked, and treated him like a servant"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Seizou Fujita",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "show scheduler, Nichiuri Land",
+    "attrs": {
+     "alibi": "claims to have been alone doing paperwork during the show; uncorroborated"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yuta Hosono",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "actor, H.O. Company troupe (played Kamen Yaiba)",
+    "attrs": {
+     "died_of": "drowned before the show, in a location separate from where his death was staged to look like it happened"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Tomohiro Takata",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "child, Kamen Yaiba superfan",
+    "attrs": {
+     "note": "recognized from prior shows that this performance's Yaiba moved differently, detonated the stage explosion at the wrong moment, and struck an unfamiliar final pose"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Nichiuri Land amusement park -- Kamen Yaiba show stage and bungee jump platform",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "River/moat beneath the bungee jump",
+    "attrs": {
+     "significance": "where Hosono's body was found; also where the culprit surfaced and swam to escape after detonating the ring"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Backstage dressing room",
+    "attrs": {
+     "significance": "held two Kamen Yaiba costumes; the spare one, used by the culprit, later had one piece found wet"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Power center (approx. 100m from the bungee platform)",
+    "attrs": {
+     "significance": "underwater exit point the culprit swam to using a compact regulator before changing into dry clothes and rejoining the crowd"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Explosives hidden in the bungee-cord ring",
+    "role": "weapon",
+    "attrs": {
+     "staging_flaw": "the rubber ring's break marks were charred black, which a normal mechanical failure would not produce -- the first clue that the fall was not an accident"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Body-worn detonator",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "activated by a hand/fist clench mid-fall, timed to sever the cord while underwater cover was available"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Spare Kamen Yaiba costume",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "one piece of the spare costume was found wet, unlike Hosono's original costume, proving whoever wore it during the performance had already been in the water beforehand"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Compact underwater breathing regulator",
+    "role": "tool",
+    "attrs": {
+     "capability": "allowed roughly ten minutes underwater, enough to swim the ~100 meters from the platform to the power center unseen"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Spectator's video recording of the jump",
+    "role": "evidence",
+    "attrs": {
+     "content": "shows Yaiba touching the ring just before the jump, his left hand open and right hand clenched in a fist during the fall, and a puff of smoke consistent with an explosive charge, not a mechanical cord failure"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Video pose-asymmetry clue: footage of the fall shows the performer's left hand open and right hand clenched in a fist, a pose no one recognizes from any official Kamen Yaiba pose -- consistent with the right hand gripping a detonator rather than performing a stunt.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Performance-deviation clue (Tomohiro's testimony comparing this show to every prior one he'd watched): the stage explosion triggered early, on the 'hand on waist' beat instead of after the usual 'Yaiba!' call, and the closing pose used a fully closed fist instead of Hosono's signature index-finger-to-the-sky pose -- both consistent with a substitute performer secretly timing detonations to his own body rather than the choreography.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cC",
+    "desc": "Costume-wetness clue: of the two Kamen Yaiba costumes in the dressing room, only the spare one had a wet piece, proving whoever wore it during the show had already been in the water -- i.e. had already drowned Hosono and swapped costumes before the act began.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "assaults",
+   "from": "p4",
+   "to": "p6",
+   "order": 1,
+   "temporal_frame": "present",
+   "method": "found Hosono alone backstage and made him faint",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "drowns",
+   "from": "p4",
+   "to": "p6",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "moved Hosono's unconscious body, still in his original Kamen Yaiba costume, to the river and drowned him before the show began",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "impersonates",
+   "from": "p4",
+   "to": "p6",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "changed into the spare Kamen Yaiba costume and took over Hosono's role in the live show",
+   "circumstance_tags": [
+    "cover_up",
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "plants_explosives_in",
+   "from": "p4",
+   "to": "o1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "attached the explosive charge to the bungee-cord ring while appearing to check it, in view of the crowd but disguised as routine",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "detonates",
+   "from": "p4",
+   "to": "o1",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "triggered the body-worn detonator with a clenched right hand mid-fall, severing the cord to fake a fatal accident",
+   "circumstance_tags": [
+    "staged_accident"
+   ]
+  },
+  {
+   "type": "uses",
+   "from": "p4",
+   "to": "o4",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "swam underwater from the platform to the power center to escape unseen"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "changed into dry clothes and rejoined the spectators"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p6",
+   "motive_type": "jealousy_and_humiliation (Hosono told him he lacked the authority/willpower to ever play Kamen Yaiba and treated him like a servant)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p6",
+   "motive_type": "management_dispute (red herring; conflict over Hosono's handling/management of the troupe)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p6",
+   "motive_type": "debt_and_fear (red herring; owed Hosono money and felt cornered/intimidated by him)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p6",
+   "motive_type": "unpaid_bribe (red herring; Hosono used Fujita's story idea for the show and promised him a cut of the profits but never paid)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

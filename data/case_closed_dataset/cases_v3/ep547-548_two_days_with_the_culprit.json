@@ -1,0 +1,213 @@
+{
+ "case_id": "ep547-548_two_days_with_the_culprit",
+ "episode_number": "547-548",
+ "title": "Two Days with the Culprit",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Two_Days_with_the_Culprit",
+ "subtitle_source": ["subs_resolved/0547.txt", "subs_resolved/0548.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Takagi, Chiba, Professor Agasa) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Per the 2026-08 batch-8+ scoping change, temporal fields (order/temporal_frame/years_before_present) are omitted entirely. The old cases/ file already had the correct culprit (Kanda, vice president) and the right two-gun mechanic in outline, but modeled everything as generic event/knows/was_used_in scaffolding with only 4 person nodes; this rebuild adds the two bystanders present at the mall kidnapping (Kayoko, her mother Natsumi), makes Momoko's and Kanayama's red-herring motives and Momoko's unwitting role in forwarding Kanda's gun-sale website explicit as edges, splits the single 'gun' object into the five distinct physical items the transcript actually tracks (Oomine's purchased gun/blanks, Kanda's website, Kanda's live-round murder weapon, the window-washing machine that carried the discarded gun to the roof, and the separate exploded gun fragment from the basement shooting that bloodied Kanda's hand), and adds real relationship/has_motive_against edges for both red herrings (Kanayama: unpaid wages; Momoko: romantic rejection) plus Oomine's own has_motive_against Onda (blackmail/debt rage) even though he isn't the murderer. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kazuyoshi Onda",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "game company president",
+    "attrs": {
+     "reputation": "underpaid staff and outsourcers despite large profits",
+     "judo_background": "Olympic-candidate-level judo black belt"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ryousuke Oomine",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "gangster",
+    "attrs": {
+     "criminal_record": "jailed twice, known for blackmail and violence",
+     "framed_for": "Onda's murder -- actually fired only blanks"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Seiichi Kanayama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "game creator",
+    "attrs": {
+     "age": 24,
+     "grievance": "hit game earned Onda a fortune but Kanayama was paid a flat 3,000,000 yen salary"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Momoko Uemiya",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Onda's secretary",
+    "attrs": {
+     "age": 24,
+     "backstory": "called Onda \"Papa\", financially dependent on him, then dumped by him"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Satoshi Kanda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "vice president",
+    "attrs": {
+     "age": 32,
+     "hobby": "converts model guns into working homemade firearms and sells them online",
+     "grievance": "target of Onda's power harassment"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Kayoko Yuuki",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": null,
+    "attrs": {"age": 5, "role_in_case": "briefly kidnapped by Oomine as he fled the mall"}
+   },
+   {
+    "id": "p7",
+    "name": "Natsumi Yuuki",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": null,
+    "attrs": {"relation": "Kayoko's mother"}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Park near Shibuya-ku", "attrs": {"significance": "murder scene"}},
+   {"id": "l2", "name": "Shopping mall parking lot", "attrs": {"significance": "Oomine's kidnapping/car theft and Conan's hostage substitution"}},
+   {"id": "l3", "name": "Company building basement", "attrs": {"significance": "Oomine's hideout with Conan hostage; site of the second shooting"}},
+   {"id": "l4", "name": "Company building exterior", "attrs": {"significance": "where the discarded gun bounced and was later found via the window-washing machine's route"}},
+   {"id": "l5", "name": "Police station", "attrs": {"significance": "final reveal"}},
+   {"id": "l6", "name": "Kanayama's apartment", "attrs": {}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Gun sold to Oomine",
+    "role": "weapon",
+    "attrs": {
+     "ammo": "blanks, made by removing bullets from smuggled cartridges",
+     "believed_by_owner": "a real air pistol",
+     "bought_from": "Kanda's anonymous gun-sale website"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Gun-sale website",
+    "role": "instrument",
+    "attrs": {
+     "operator": "Kanda, disguised as an anonymous gun-maniac seller",
+     "forwarded_as": "spam-looking ad to Momoko"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Kanda's live-round gun",
+    "role": "weapon",
+    "attrs": {
+     "ammo": "live round, from smuggled cartridges",
+     "used": "fired at Onda from hiding, at the exact moment Oomine fired his blank shot"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Automatic window-washing machine",
+    "role": "tool",
+    "attrs": {"mechanism": "carried Oomine's discarded gun up the building exterior to the rooftop, out of easy reach"}
+   },
+   {
+    "id": "o5",
+    "name": "Exploded gun fragment",
+    "role": "evidence",
+    "attrs": {"found_at": "basement shooting scene", "note": "converted homemade guns are fragile and can explode when fired"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Dirt and detergent on Kanda's shoes match the wet residue left near the building by the window-washing machine -- placing him at the search for the discarded gun.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Blood on the fragment of the gun that exploded during the basement shooting matches Kanda's blood, tying him to the injury on his right hand.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "ex_partner"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "infatuated_with"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "former_lover"},
+  {"type": "relationship", "from": "p6", "to": "p7", "relation_type": "child_of"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "unpaid_wages_debt_and_blackmail_rage"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "unpaid_wages (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "romantic_rejection (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "power_harassment_revenge_and_succession"},
+
+  {"type": "badmouths", "from": "p3", "to": "p1", "detail": "vents to Oomine about Onda's underpayment, triggering Oomine's plan"},
+  {"type": "threatens", "from": "p2", "to": "p1", "detail": "confronts Onda demanding back pay for Kanayama, threatens exposure", "circumstance_tags": ["extortion"]},
+
+  {"type": "owns", "from": "p5", "to": "o2"},
+  {"type": "sends_link_to", "from": "p5", "to": "p4", "detail": "forwards the gun-sale website disguised as spam"},
+  {"type": "sends_link_to", "from": "p4", "to": "p2", "detail": "unwittingly passes the website link to Oomine", "circumstance_tags": ["red_herring"]},
+  {"type": "advises", "from": "p4", "to": "p2", "detail": "suggests Oomine arm himself since Onda is a judo master", "circumstance_tags": ["red_herring", "unwitting"]},
+  {"type": "manufactures", "from": "p5", "to": "o1", "detail": "converts a model gun and fills it with fake blanks"},
+  {"type": "buys", "from": "p2", "to": "o1"},
+
+  {"type": "fires_blank_at", "from": "p2", "to": "p1", "circumstance_tags": ["frame_up"]},
+  {"type": "owns", "from": "p5", "to": "o3"},
+  {"type": "kills", "from": "p5", "to": "p1", "method": "fires a live round from his own converted gun from hiding, at the exact moment Oomine fires his blank shot, framing Oomine as the shooter", "circumstance_tags": ["frame_up", "staged_murder_weapon", "simultaneous_gunfire"]},
+  {"type": "frames_for_murder", "from": "p5", "to": "p2", "circumstance_tags": ["frame_up"]},
+
+  {"type": "kidnaps", "from": "p2", "to": "p6", "circumstance_tags": ["hostage_taking"]},
+  {"type": "releases", "from": "p2", "to": "p6"},
+
+  {"type": "discards", "from": "p2", "to": "o1", "detail": "throws the gun away while fleeing near the company building"},
+  {"type": "transports", "from": "o4", "to": "o1", "detail": "gun lands on the window-washing machine and is carried up to the rooftop"},
+  {"type": "located_in", "from": "o1", "to": "l4"},
+
+  {"type": "wounds", "from": "p5", "to": "p2", "detail": "shoots at Oomine and Conan in the dark basement to silence them; Oomine takes the hit shielding Conan", "circumstance_tags": ["silencing_witness"]},
+  {"type": "fires", "from": "p5", "to": "o5", "detail": "the fragile converted gun explodes in his hand", "circumstance_tags": ["self_injury"]},
+
+  {"type": "implicates", "from": "o5", "to": "p5"},
+  {"type": "implicates", "from": "c1", "to": "p5"},
+  {"type": "implicates", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "regarding", "from": "c1", "to": "l4"},
+  {"type": "regarding", "from": "c2", "to": "o5"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p5", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+  {"type": "was_at", "from": "p5", "to": "l5"}
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

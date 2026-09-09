@@ -1,0 +1,257 @@
+{
+ "case_id": "ep549-550_the_revolving_sushi_mystery",
+ "episode_number": "549-550",
+ "title": "The Revolving Sushi Mystery",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Revolving_Sushi_Mystery",
+ "subtitle_source": ["subs_resolved/0549.txt", "subs_resolved/0550.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Professor Agasa, Ai/Haibara, Ayumi, Genta, Mitsuhiko, Detective Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Only 4 named case-specific persons appear in the transcript (victim + 3 suspects); the victim's wife is referenced but never named, so she gets no node. The old lower-fidelity case file's stated culprit (Osamu Aizono) is CONFIRMED correct against the transcript -- no culprit discrepancy. However the old file's clue c1/e1 description ('Agatsuma publicly humiliated Aizono ... correcting his sushi identification') understates what actually happened: the transcript reveals Agatsuma didn't just correct Aizono, he deliberately SWITCHED the sea bass and flounder plates beforehand to engineer Aizono's public embarrassment in front of his wife, then followed up with a sustained campaign of harassment on Aizono's food blog -- a premeditated targeting, not an honest correction, which better explains the intensity of Aizono's motive (his wife later divorced him partly over the fallout). The old file also omits the two other suspects' backstory motives (Takemura's shop closure, Namiki's career-ending wrist injury) captured here as red-herring has_motive_against edges, and omits the restaurant manager Namiki and customer Takemura almost entirely as narrative figures. Location name 'Sushi shop Senpuken' is carried over from the old file/wiki since it is not stated in the read transcript excerpt (flagged in the location's attrs). case_type: murder. Per the temporal-fields policy (2026-08, batch 8+), order/temporal_frame/years_before_present are omitted from all edges.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryuzo Agatsuma",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "food critic",
+    "attrs": {
+     "age": "43",
+     "died_of": "cyanide poisoning",
+     "handedness": "left",
+     "reputation": "biting reviews; positive ones boosted business, negative ones could close a restaurant"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Osamu Aizono",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "customer",
+    "attrs": {
+     "age": "32",
+     "seat_position": "immediately to the victim's left",
+     "outcome": "wife divorced him after the humiliation and harassment fallout"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Danji Namiki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "restaurant manager, former sushi chef",
+    "attrs": {
+     "injury": "wrist tendons cut while intervening in a fight involving Agatsuma, years earlier",
+     "career_change": "gave up being a chef after the injury; became a restaurant manager instead",
+     "seat_position": "stood behind the victim during the argument, able to see his order screen"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Sakiko Takemura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "former sushi shop owner",
+    "attrs": {
+     "age": "51",
+     "seat_position": "six seats to the victim's right",
+     "backstory": "her own sushi shop closed after Agatsuma's negative review drove customers away"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Sushi shop Senpuken",
+    "attrs": {
+     "type": "revolving (kaitenzushi) sushi restaurant",
+     "name_source": "carried over from wiki/old case file; not stated in the read transcript excerpt",
+     "mechanism": "conveyor belt with plate microcode scanner that auto-recycles plates judged to have circled too long"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned hand wipe",
+    "role": "weapon",
+    "attrs": {
+     "poison": "cyanide",
+     "delivery": "injected into the sealed disposable wipe packet with a syringe before the swap"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hand-wipe packet",
+    "role": "evidence",
+    "attrs": {
+     "recovered_from": "kitchen waste bin, after the belt auto-recycled it",
+     "fingerprint_match": "Aizono"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Already-cycled disposal plate",
+    "role": "tool",
+    "attrs": {
+     "trick": "swapped for the victim's first-taken plate so the belt's microcode scanner read it as having circled too long and recycled it immediately",
+     "destination": "kitchen waste bin"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Victim was left-handed and always set his used wipe down on his left -- only the seat to his immediate left (Aizono's) could plant a swapped wipe there.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "No hand wipe remained at the victim's seat, yet a torn corner of a wipe packet did -- shows the poisoned wipe+packet were deliberately removed, not simply used up.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "humiliates",
+   "from": "p1",
+   "to": "p2",
+   "detail": "deliberately switched the flounder plate for sea bass to make Aizono misidentify it in front of his wife"
+  },
+  {
+   "type": "harasses",
+   "from": "p1",
+   "to": "p2",
+   "detail": "posted repeated demeaning comments on Aizono's food blog afterward"
+  },
+  {
+   "type": "writes_negative_review_of",
+   "from": "p1",
+   "to": "p4",
+   "detail": "harsh review drove away customers and forced Takemura's sushi shop to close"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p3",
+   "detail": "one of two customers in an altercation Namiki tried to break up years earlier, which cost him his wrist and his chef career"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p3",
+   "detail": "loudly berated Namiki and disturbed other customers just before collapsing"
+  },
+  {
+   "type": "poisons",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": ["staged_random_murder", "evidence_disposal_trick"],
+   "method": "swapped the victim's disposable hand wipe for a cyanide-laced one during the argument with the manager; poison transferred from fingers to sushi"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "disposes_evidence_via",
+   "from": "p2",
+   "to": "o3",
+   "detail": "wrapped the victim's genuine wipe around the poisoned packet, set them on the already-cycled plate, and returned it to the belt while everyone was distracted by the collapse"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "carries",
+   "from": "o3",
+   "to": "o2"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "public_humiliation_and_online_harassment_that_ended_his_marriage"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "business_ruined_by_negative_review",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "career_ending_wrist_injury_from_altercation_involving_victim",
+   "circumstance_tags": ["red_herring"]
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

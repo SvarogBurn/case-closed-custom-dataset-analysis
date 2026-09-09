@@ -1,0 +1,484 @@
+{
+ "case_id": "ep098-099_the_famous_potter_murder_case",
+ "episode_number": "98-99",
+ "title": "The Famous Potter Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Famous_Potter_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0098.txt + case_closed_dataset/subs_resolved/0099.txt (two-episode arc, full transcripts read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro Mouri, Ran, Conan, Inspector Megure) omitted by convention. The 'Fusui-maru' that Masuko breaks is itself a counterfeit Seto secretly made and swapped in -- the real Fusui-maru is stored elsewhere -- which is why Seto shrugs off its destruction ('that thing can turn to dust for all I care'). Two pupils (Seto and Otani) each briefly left the stateroom that morning, giving genuine structural red herring material before the blood-spatter and lipstick evidence isolates Seto specifically. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryuichi Seto",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Kikuemon's pupil, designated to become the sixth-generation Kikuemon",
+    "attrs": {
+     "cover_story": "deliberately entered a fake artistic 'slump', producing little work on purpose, to avoid further damaging Kikuemon's reputation via Masuko's forgery scheme while she threatened to expel him if he stopped producing entirely"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masuko Tsuchiya",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "Kikuemon's son's widow; manages the household's business affairs, sales, and exhibition scheduling",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Kikuemon",
+    "aliases": [
+     "Mankichi Tsuchiya"
+    ],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "living national treasure ceramic artist, fifth-generation Kikuemon",
+    "attrs": {
+     "age": 78
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yoshihiko Arita",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Kikuemon's pupil",
+    "attrs": {
+     "note": "his skill has been improving; briefly left the stateroom to call Masuko's phone from the connecting hallway when she couldn't be found"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kaoru Otani",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Kikuemon's pupil",
+    "attrs": {
+     "note": "briefly left the stateroom (under 10 seconds, per witnesses) to go wake Masuko that morning; cleared due to the short time window"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Kikuemon's son",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "note": "not named in the available transcript; Masuko's late husband, meant to be Kikuemon's successor",
+     "died_of": "car accident",
+     "years_before_present": 2
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kikuemon's wife",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "note": "not named in the available transcript",
+     "died_of": "car accident",
+     "years_before_present": 2
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Tsuchiya household (Kikuemon's estate, West Tama)",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Storeroom",
+    "attrs": {
+     "features": "high shelves holding finished pottery, a ladder that doesn't reach the roof beams, packing rope"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Fusui-maru (counterfeit)",
+    "role": "evidence",
+    "attrs": {
+     "note": "a duplicate Seto secretly made of his master's latest work and swapped into the storeroom; the real Fusui-maru is stored elsewhere",
+     "backstory": "Masuko had been selling Seto's forged pottery to collectors as genuine Kikuemon works for years, without his consent or payment"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Marble",
+    "role": "tool",
+    "attrs": {
+     "trick": "placed by Seto under the counterfeit Fusui-maru on the storeroom shelf so it would easily roll and knock the piece down when Masuko went to retrieve it"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Rope",
+    "role": "weapon",
+    "attrs": {
+     "trick": "tied around Masuko's neck and the roof beam while she slept, positioned so that falling from the high shelf would hang her"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Double-bottomed pot",
+    "role": "tool",
+    "attrs": {
+     "trick": "a specially made pot with a hidden compartment, placed directly under the shelf where Masuko was left sleeping, to house the phone that would trigger her fall"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Cell phone (Seto's)",
+    "role": "instrument",
+    "attrs": {
+     "trick": "hidden inside the double-bottomed pot and called by Seto so it would ring near the sleeping Masuko; she reached for it out of habit (she used her own phone as an alarm), lost her balance on the narrow shelf, and fell to hang herself",
+     "later_use": "Seto also pretended to call Masuko's actual phone from the hallway extension to fake concern; since her real phone was off, a genuine call would have returned an out-of-service message instead of ringing out, exposing that he had dialed a different number"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Lipstick trace",
+    "role": "evidence",
+    "attrs": {
+     "found_on": "the back of Seto's jacket and a sitting cushion in the stateroom",
+     "significance": "transferred from Masuko while Seto carried her over his shoulder up the ladder to the shelf"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Protruding nail on the storeroom shelf",
+    "role": "evidence",
+    "attrs": {
+     "significance": "cut Masuko's calf as she lost her balance and fell -- an unplanned injury that produced a blood-spatter pattern inconsistent with the 'carried by arms and legs' story and pointed to her having been up on the shelf"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Blood drops found near the shelf show a splatter pattern consistent with falling more than a meter, but if Masuko's body had only been carried at floor level by her arms and legs (as the pupils claimed), the fall to the floor would be at most 50cm -- proving she had been up on the shelf, not just carried afterward.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Whoever called Masuko's phone that morning reported 'she's not answering' -- but her phone was later found turned off, and a genuinely off phone returns an out-of-service message, not silence. That mismatch means the caller actually dialed a different number: the one hidden in the pot.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cC",
+    "desc": "A lipstick smear turns up on the back of Seto's jacket and on a stateroom cushion, matching the mark left where Masuko's body was found -- consistent with her having been carried over his shoulder up a ladder, not merely lifted by arms and legs after the fact.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p3",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p3",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "student_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "student_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p3",
+   "relation_type": "student_of"
+  },
+  {
+   "type": "exploits",
+   "from": "p2",
+   "to": "p1",
+   "temporal_frame": "backstory",
+   "detail": "secretly sells Seto's pottery to collectors claiming it's Kikuemon's authentic work, pocketing the profit and refusing to credit or compensate him; threatens to expel him if he stops producing",
+   "circumstance_tags": [
+    "cover_up",
+    "exploitation",
+    "ongoing"
+   ]
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p2",
+   "temporal_frame": "backstory",
+   "detail": "questions her about the forgery sales once he discovers them; she mocks him instead of apologizing"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o2",
+   "order": 10,
+   "temporal_frame": "present",
+   "detail": "places the marble under the counterfeit Fusui-maru before the party"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "breaks",
+   "from": "p2",
+   "to": "o1",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "trips on the planted marble while retrieving the (secretly counterfeit) Fusui-maru and drops it",
+   "circumstance_tags": [
+    "staged_trap"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p2",
+   "order": 14,
+   "temporal_frame": "present",
+   "method": "carried her, drunk and asleep, up a ladder onto a high storeroom shelf and tied a rope from her neck to the roof beam, then rang a cell phone hidden nearby so she would wake, reach for it out of habit, lose her balance, and fall off the shelf to hang herself",
+   "circumstance_tags": [
+    "premeditated",
+    "staged_suicide",
+    "locked_room"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o4",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o6",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o5",
+   "order": 15,
+   "temporal_frame": "present",
+   "detail": "pretends to call Masuko's real number from the hallway phone, but actually rings his own phone hidden in the pot",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 15,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "red_herring"
+   ],
+   "detail": "briefly leaves the stateroom to go wake Masuko, giving him a moment of unaccounted time before being cleared"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o7"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "rage_and_betrayal (she sold his forged pottery as Kikuemon's genuine work for years without credit or payment, and threatened to expel him if he stopped producing)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

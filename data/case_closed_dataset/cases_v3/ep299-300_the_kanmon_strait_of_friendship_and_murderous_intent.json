@@ -1,0 +1,284 @@
+{
+ "case_id": "ep299-300_the_kanmon_strait_of_friendship_and_murderous_intent",
+ "episode_number": "299-300",
+ "title": "The Kanmon Strait of Friendship and Murderous Intent",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Kanmon_Strait_of_Friendship_and_Murderous_Intent",
+ "subtitle_source": [
+  "subs_resolved/0299.txt",
+  "subs_resolved/0300.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Kogoro, Ran, Conan) omitted by convention. case_type: murder. The old cases/ file's culprit call (s4/Akitaya) was actually correct and its two-strike structure (e2 non-fatal, e3 fatal) held up against the transcript, but it was thin: it missed the Hondou backstory entirely (the 13-years-prior arm-breaking and suicide that supplies everyone's motive), collapsed Ootsubo and Akane into passive 'knows' edges when they are active accessories who built a disguise/impersonation alibi scheme (Ootsubo wore Hario's clothes in the tunnel and used Hario's stolen phone to fake a post-11:00 'ghost' call; Akitaya wore Ootsubo's clothes at the ferry pier to be misidentified by the poor-sighted Eiko), and gave every suspect an identical generic 'was_at' with no location detail even though the transcript specifies distinct alibi locations for each. Eiko's role was also flattened: she did strike Hario first (genuinely believing she'd killed him) and later falsely confessed to shield her friends, but her blow was not the cause of death -- Akitaya's second blow, delivered after Hario regained consciousness, was. This is preserved here as separate assaults/kills edges rather than one merged 'kills' from Eiko. No order/temporal_frame/years_before_present fields per current build guidance.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Seiji Hario",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "businessman (company acquisitions)",
+    "attrs": {
+     "age": 33,
+     "hometown": "Tokyo",
+     "died_of": "cerebral contusion from two separate blows to the head with a rock"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Touru Akitaya",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "president, Akitaya Fisheries",
+    "attrs": {
+     "company": "Akitaya Fisheries, rebuilt from collapse by his father"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Keisuke Ootsubo",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "unspecified",
+    "attrs": {
+     "personality": "smart, not brave (per friends)"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Akane Isaka",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "unspecified",
+    "attrs": {
+     "personality": "smart, cold personality (per friends)"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Eiko Nojima",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "unspecified",
+    "attrs": {
+     "personality": "kind, timid (per friends)",
+     "vision": "poor eyesight, wears glasses only while driving",
+     "false_confession": "turned herself in claiming she alone killed Hario to protect Akitaya, Ootsubo, and Isaka"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Hondou",
+    "aliases": [
+     "Hondou-kun"
+    ],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "high school student, aspiring art university admission",
+    "attrs": {
+     "died_of": "suicide near the Kanmonkyo Bridge",
+     "circumstance": "arm broken by Hario and never fully healed, ending his art ambitions; the group treats Hario as responsible for driving him to suicide"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kusuda",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "police, Yamaguchi Prefecture",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Anzai",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "police, Shimonoseki Central Station",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beneath the Kanmonkyo Bridge",
+    "attrs": {
+     "significance": "crime scene; also where Hondou died by suicide years earlier"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Jindou Tunnel",
+    "attrs": {
+     "detail": "undersea pedestrian tunnel; surveillance cameras mounted in the ceiling only, filming from above"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Kaikyoukan Aquarium",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Karato Marketplace",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Moji ferry boarding docks",
+    "attrs": {}
+   },
+   {
+    "id": "l6",
+    "name": "Mojiko Retro District",
+    "attrs": {}
+   },
+   {
+    "id": "l7",
+    "name": "Hario's hotel",
+    "attrs": {}
+   },
+   {
+    "id": "l8",
+    "name": "Shimonoseki waterfront promenade",
+    "attrs": {
+     "detail": "where the group first met Kogoro's family, and where Hario confronted Akitaya and clashed with the group the evening before the murder"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rock (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "note": "fingerprints/trace evidence too degraded to extract; struck Hario's head twice, by two different people"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hario's stolen phone",
+    "role": "tool",
+    "attrs": {
+     "use": "used by Ootsubo to fake a frightened 'ghost is chasing me' call to Akitaya, implying Hario was still alive after 11:00 AM"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Ootsubo's clothing",
+    "role": "tool",
+    "attrs": {
+     "use": "worn by Akitaya at the ferry pier so poor-sighted Eiko would misidentify him as Ootsubo"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Hario's clothing",
+    "role": "tool",
+    "attrs": {
+     "use": "worn by Ootsubo in the Jindou Tunnel to impersonate the already-dead Hario on camera"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Dirt/grass under Hario's fingernails and scratch marks on his palm contradict Eiko's account that he 'fell and stopped moving' -- proves he revived and struggled to rise after her blow, before a second, fatal blow was struck.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Eiko wears glasses only while driving, but the aquarium employee confirms she had none on when she claimed to recognize Ootsubo waving from the distant ferry pier -- she could not actually have identified him at that range.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "The tunnel's surveillance camera is ceiling-mounted and only films from above, so the running man's face was never visible -- matching clothing alone cannot confirm the man seen at 11:00 AM was really Hario.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "dated"},
+  {"type": "assaults", "from": "p1", "to": "p6", "method": "broke his arm", "circumstance_tags": ["backstory"]},
+  {"type": "confronts", "from": "p1", "to": "p2", "detail": "demands Akitaya sell his company, threatens to destroy it otherwise"},
+  {"type": "confronts", "from": "p3", "to": "p1", "detail": "confronts Hario over refusing to apologize to Hondou's memory, is shoved off"},
+  {"type": "was_at", "from": "p1", "to": "l8"},
+  {"type": "was_at", "from": "p2", "to": "l8"},
+  {"type": "was_at", "from": "p3", "to": "l8"},
+  {"type": "was_at", "from": "p4", "to": "l8"},
+  {"type": "was_at", "from": "p5", "to": "l8"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l7"},
+  {"type": "was_at", "from": "p5", "to": "l7"},
+  {"type": "assaults", "from": "p5", "to": "p1", "circumstance_tags": ["red_herring"], "detail": "strikes Hario with the rock after he refuses to apologize to Hondou's memory; believes she has killed him and flees"},
+  {"type": "wields", "from": "p5", "to": "o1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "second blow to the head with the same rock, after Hario had regained consciousness and tried to rise", "circumstance_tags": ["cover_up", "staged_alibi"]},
+  {"type": "wields", "from": "p2", "to": "o1"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o3"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "stages_alibi_using", "from": "p3", "to": "o4"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "implicates", "from": "o4", "to": "p3"},
+  {"type": "stages_alibi_using", "from": "p3", "to": "o2"},
+  {"type": "implicates", "from": "o2", "to": "p3"},
+  {"type": "deceives", "from": "p4", "to": "p5", "detail": "calls Eiko to meet at the aquarium, then points out the disguised Akitaya at the pier as if he were Ootsubo, exploiting her poor vision"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "was_at", "from": "p4", "to": "l6"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "p5"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "p4"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "l2"},
+  {"type": "implicates", "from": "c3", "to": "p3"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "business_coercion_and_protecting_eiko"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "revenge_for_boyfriends_death"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "grudge_from_confrontation (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "grudge_from_confrontation (red herring)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

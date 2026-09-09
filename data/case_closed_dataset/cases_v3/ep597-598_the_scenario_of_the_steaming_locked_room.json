@@ -1,0 +1,454 @@
+{
+ "case_id": "ep597-598_the_scenario_of_the_steaming_locked_room",
+ "episode_number": "597-598",
+ "title": "The Scenario of the Steaming Locked Room",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Scenario_of_the_Steaming_Locked_Room",
+ "subtitle_source": [
+  "subs_resolved/0597.txt",
+  "subs_resolved/0598.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Professor Agasa, Ayumi, Genta, Mitsuhiko, Haibara, Inspector Yokomizo) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Discrepancies vs. the old lower-fidelity cases/ file: (1) the old file's event e1 says 'Tanzawa, disguised as Tetsuyama, tricks... Tetsuyama into hiding in the women's bath' -- this conflates two separate beats. The transcript actually has Tanzawa deceive Tetsuyama by PHONE the night before (falsely relaying that Natori Mishio would bathe there at dawn, so Tetsuyama should hide overnight to spy on her); the disguise (knit cap, glasses, towel-as-scarf, imitated limp) is a *separate* trick used the next morning so Tanzawa could walk through the bridge entrance impersonating Tetsuyama and re-enter the crime scene, not the mechanism that lured Tetsuyama into hiding. (2) the old file leaves Tanzawa's motive as 'unspecified (not stated in the available source excerpt)' -- the transcript states it plainly: Tetsuyama stripped Tanzawa of the lead 'middle-aged hitman' role in the Scarlet Wellspring remake five years earlier, ending his acting career and pushing him into managing Natori instead; when the remake was greenlit again Tetsuyama (drunk) didn't even recognize Tanzawa's voice on the phone begging for the role back. (3) the old file's clue c2 ('only the culprit could know no adult woman was inside') doesn't match the transcript's actual slip -- the real tell is Tanzawa (voicing Agasa's bowtie translator) blurting that he 'saw nothing but your butt', guilty knowledge of the children's presence in the women's bath that only someone who had actually been inside could have. The culprit identification itself (Tanzawa) matches the old file. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tetsuyama Ganji",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "scriptwriter, Blood Spray Hitman film series",
+    "attrs": {
+     "died_of": "acute subdural hematoma and cerebral contusion from blunt force trauma",
+     "famous_work": "Scarlet Wellspring, the unremade Midlife-era installment of the series",
+     "habit": "smokes a pipe held in his left hand (left-handed); calls people 'runt'",
+     "conduct": "persistent sexual harassment of actresses under him, including Natori"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Natori Mishio",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "actress, 28",
+    "attrs": {
+     "cast_as": "the hostess heroine in the Scarlet Wellspring remake",
+     "grievance": "target of Tetsuyama's sexual harassment and casting-couch pressure"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tanzawa Junsaku",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Natori Mishio's manager, 34; former actor",
+    "attrs": {
+     "motive_detail": "denied the lead 'middle-aged hitman' role in Scarlet Wellspring 5 years ago; quit acting and became Natori's manager",
+     "disguise": "knit cap, glasses, towel wrapped like a scarf; imitated Tetsuyama's distinctive limp and stern manner",
+     "handedness": "right-handed, but mimicked Tetsuyama's left-handedness while in disguise"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Teradou Unpei",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "actor, 33",
+    "attrs": {
+     "cast_as": "the current Midlife-part hitman lead in the Scarlet Wellspring remake",
+     "old_role": "played the same hitman's Youth-part, well reviewed"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Laketop outdoor spa, women's bath",
+    "attrs": {
+     "feature": "rare open-air bath built atop a lake",
+     "crime_scene": true
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Spa changing room",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Spa veranda / outside pathway",
+    "attrs": {
+     "access": "connects to an outside pathway past a ventilation fan and over a fence"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Lake beneath the spa",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Main building (lobby, front desk, rooms)",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Silver ring, soybean-sized jewel",
+    "role": "evidence",
+    "attrs": {
+     "provenance": "Tetsuyama's Nichiuri TV Newcomer Scenario Award ring, his lucky charm",
+     "anomaly": "blackened by silver sulfide from prolonged exposure to the sulfur spring, contradicting a claim of just having arrived",
+     "found_on": "worn on Tanzawa's left middle finger, jewel hidden in his palm, forgotten in his back left pocket"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Blunt weapon (spa rock)",
+    "role": "weapon",
+    "attrs": {
+     "disposal": "thrown into the lake along with the bloodstained yukata and tanzen"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Bloodstained yukata and tanzen",
+    "role": "evidence",
+    "attrs": {
+     "worn_by": "Tanzawa, stained during the killing"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Disguise kit (cap, glasses, towel)",
+    "role": "tool",
+    "attrs": {
+     "purpose": "let Tanzawa pass the dim bridge entrance impersonating Tetsuyama"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Green tea bottle refilled with water",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "behind a basket in the changing room",
+     "significance": "victim drank sink-water refills overnight to endure repeated dips"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Match cinders on the lake surface",
+    "role": "evidence",
+    "attrs": {
+     "significance": "victim smoked his pipe on the veranda overnight to stay awake and warm"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Broken wine glass",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "trash can in Natori's room",
+     "explanation": "innocuous; she acted out a scripted scene where her character throws a glass"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Left-hand golf glove",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "a bag in Tanzawa's room",
+     "explanation": "innocuous; a golf glove worn on the non-dominant hand to prevent slipping"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Crumpled script pages",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "desk in Natori's room",
+     "explanation": "innocuous; crumpled while rehearsing her role"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Tanzawa's ring is blackened by silver sulfide, evidence of long sulfur-spring exposure that contradicts his claim of only just having arrived at the bath.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Right-handed Tanzawa pressed the vending machine button left-handed and called Conan 'runt' at 4:30am -- both quirks belong to left-handed, pipe-smoking Tetsuyama, not to Tanzawa.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cC",
+    "desc": "Voicing Agasa's translator bowtie, Tanzawa blurts that he 'saw nothing but your butt' -- guilty knowledge of the children's presence in the women's bath that only someone who had actually been inside could have.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "manager_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "casts_in_lead_role"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "mentor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "casts_in_lead_role"
+  },
+  {
+   "type": "revokes_role_from",
+   "from": "p1",
+   "to": "p3",
+   "circumstance_tags": [
+    "motive_origin"
+   ],
+   "detail": "took the middle-aged hitman lead in Scarlet Wellspring away from Tanzawa 5 years ago, ending his acting career"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "resentment_over_lost_lead_role"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "sexual_harassment_retaliation (red herring)"
+  },
+  {
+   "type": "harasses",
+   "from": "p1",
+   "to": "p2",
+   "circumstance_tags": [
+    "ongoing"
+   ]
+  },
+  {
+   "type": "deceives",
+   "from": "p3",
+   "to": "p1",
+   "circumstance_tags": [
+    "pretext",
+    "staged_alibi"
+   ],
+   "detail": "calls Tetsuyama the night before, falsely relaying that Natori will bathe at the laketop spa at dawn, convincing him to hide overnight on the veranda to spy on her"
+  },
+  {
+   "type": "gives_false_alibi_for",
+   "from": "p2",
+   "to": "p3",
+   "circumstance_tags": [
+    "staged_alibi",
+    "protects_culprit"
+   ],
+   "detail": "falsely claims she was the one who spoke to Tetsuyama on the phone, to shield Tanzawa as the real caller"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o9"
+  },
+  {
+   "type": "disguises_as",
+   "from": "p3",
+   "to": "p1",
+   "circumstance_tags": [
+    "impersonation",
+    "staged_alibi"
+   ],
+   "detail": "wears a knit cap, glasses, and a towel wrapped like a scarf and imitates Tetsuyama's limp and stern manner to pass the dim bridge entrance before 5am, as if Tetsuyama himself were arriving"
+  },
+  {
+   "type": "uses",
+   "from": "p3",
+   "to": "o4"
+  },
+  {
+   "type": "steals",
+   "from": "p3",
+   "to": "o1",
+   "detail": "takes Tetsuyama's ring from his room to complete the impersonation, then forgets to discard it"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "method": "blunt force trauma to the head using the spa rock",
+   "circumstance_tags": [
+    "locked_room",
+    "staged_accident"
+   ]
+  },
+  {
+   "type": "stages_accident_of",
+   "from": "p3",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_accident",
+    "locked_room"
+   ],
+   "detail": "washes blood off the body's shoulders, back, and collarbone with hot-spring water so the death reads as an accidental slip on dropped soap"
+  },
+  {
+   "type": "disposes_of",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "disposes_of",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l4"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l4"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "l1"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

@@ -1,0 +1,353 @@
+{
+ "case_id": "ep368_the_candy_house_the_witch_lives_in",
+ "episode_number": "368",
+ "title": "The Candy House the Witch Lives In",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Candy_House_the_Witch_Lives_In",
+ "subtitle_source": [
+  "subs_resolved/0368.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Ran, Sonoko, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file (cases/ep368_...json) correctly identified Fujino as the murderer (s2), so no culprit discrepancy there -- but it flattened his motive to 'unspecified (partially cut off)'; the full transcript gives the real motive explicitly (Hashigaki repeatedly reneged on her promise to let him open his own store after he won a competition with his signature wood chocolate cake roll and worked for her three years). The old file also missed both red-herring motives entirely (Maeda's unpaid debt to the victim, Morimoto's audible pre-murder argument with her) and collapsed the murder weapon into one vague object; the transcript makes clear there are two distinct physical objects -- the wooden log (weapon) and the wood-chocolate cake roll Conan made during Fujino's earlier hands-on demo, which Fujino later 'fixed up' by hiding the log inside its cream and left on his own display stand as apparent evidence of innocence. That early demo scene (Fujino teaching Conan to fork-carve a wood-grain pattern into chocolate cream) is the Chekhov's-gun setup for the disguise trick and was not represented at all in the old file. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Sachiko Hashigaki",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "owner, Ecriture pastry shop",
+    "attrs": {
+     "died_of": "blunt force trauma to back of head",
+     "posthumous_nickname": "called 'the witch' by her killer"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tsuyoshi Maeda",
+    "aliases": [
+     "Iron Pastry",
+     "Warrior Pastry Chef"
+    ],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "pastry chef",
+    "attrs": {
+     "debt": "borrowed a large sum of money from Hashigaki, unpaid",
+     "alibi": "alone in the office ~12:25-12:35pm, took a phone call"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yasuo Fujino",
+    "aliases": [
+     "Prince of Pastries"
+    ],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "pastry chef",
+    "attrs": {
+     "motive_detail": "Hashigaki kept postponing her promise to let him open his own store after 3 years and a won competition",
+     "trick": "hid a wooden log inside a cake roll's cream to disguise the murder weapon"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yumi Morimoto",
+    "aliases": [
+     "Candy Magician"
+    ],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "pastry chef",
+    "attrs": {
+     "alibi": "alone in her own kitchen making candy, mixer running",
+     "cleared_by": "candy found in her kitchen shows she was still trying to win Hashigaki's approval, not covering up a crime"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Ecriture showroom floor",
+    "attrs": {
+     "detail": "dessert exhibition hall with three chefs' display stands"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Morimoto's kitchen",
+    "attrs": {
+     "detail": "partitioned booth; blocked from view of the other kitchens by a divider and a tree"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Fujino's kitchen/stand",
+    "attrs": {
+     "detail": "sits in the blind spot unseen from Morimoto's kitchen"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Ecriture office",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Street outside Ecriture",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Wooden log",
+    "role": "weapon",
+    "attrs": {
+     "size": "slightly smaller than the cake roll it was disguised as",
+     "staged_location": "stashed under the tray carrying Conan's cake before the attack"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Wood chocolate cake roll",
+    "role": "tool",
+    "attrs": {
+     "origin": "Conan carved its wood-grain pattern during Fujino's hands-on demo earlier that day",
+     "tampered": "Fujino later hid the log inside its chocolate cream and left it on his own display stand",
+     "found_by": "children cutting it as a gift, one slice too hard to cut"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Mixer in Morimoto's kitchen",
+    "role": "instrument",
+    "attrs": {
+     "function": "running while Morimoto prepared candy; its noise masked the sound of the attack elsewhere on the floor"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Candy made for Hashigaki",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "Morimoto wanted Hashigaki to taste and approve her flavor for the afternoon event",
+     "significance": "not a failed or abandoned batch -- undermines the theory she was distracted or fleeing"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Every standard dessert is ruled out as the weapon (cookies shatter, pie and chocolate are too soft, candy too hard to eat alone) -- pointing instead to a log merely disguised as the cake roll, not a dessert weapon at all.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Wood chips, expected only around the cake-carving demo on the showroom floor, also turn up in Fujino's own kitchen -- tying his stand to handling the real log.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "unpaid debt (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "workplace conflict (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "thwarted business ambition"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "argues_with",
+   "from": "p4",
+   "to": "p1",
+   "circumstance_tags": [
+    "red_herring"
+   ],
+   "detail": "loud argument heard from outside minutes before the murder; she refused to join the cake-making demo, confident in her own skill"
+  },
+  {
+   "type": "lures_away",
+   "from": "p3",
+   "to": "p2",
+   "detail": "placed a fake phone call to the office to draw Maeda away from the floor"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "method": "struck in the back of the head with a wooden log disguised as a cake roll",
+   "circumstance_tags": [
+    "cover_up",
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "conceals_weapon_in",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "concealed_within",
+   "from": "o1",
+   "to": "o2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "discovers_body_of",
+   "from": "p2",
+   "to": "p1"
+  },
+  {
+   "type": "operates",
+   "from": "p4",
+   "to": "o3"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l2"
+  },
+  {
+   "type": "made",
+   "from": "p4",
+   "to": "o4"
+  },
+  {
+   "type": "exonerates",
+   "from": "o4",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

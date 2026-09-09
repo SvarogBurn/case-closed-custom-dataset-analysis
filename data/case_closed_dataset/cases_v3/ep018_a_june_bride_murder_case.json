@@ -1,0 +1,368 @@
+{
+  "case_id": "ep018_a_june_bride_murder_case",
+  "episode_number": "18",
+  "title": "A June Bride Murder Case",
+  "source_url": "https://www.detectiveconanworld.com/wiki/A_June_Bride_Murder_Case",
+  "subtitle_source": "case_closed_dataset/subs_resolved/0018.txt (full episode transcript read)",
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. Sonoko Suzuki is kept as a node despite being a recurring side character, because her identical, mixed-up can of lemon tea is mechanically central to the murder method (the victim drank from Sonoko's can, not her own, which is why the superintendent's and Umemiya's fingerprints are absent from the poisoned can). case_type: attempted_murder -- the victim, Sayuri Matsumoto, survives; label.murderer_id still names the perpetrator per schema convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Sayuri Matsumoto",
+        "aliases": [
+          "Sensei"
+        ],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "middle school teacher",
+        "attrs": {
+          "outcome": "poisoned with sodium hydroxide at her own wedding; collapsed, hospitalized, survived, and was discharged two months later",
+          "secret_knowledge": "had already learned, before the wedding, that Takasugi was the boy from her childhood whose mother died in a hit-and-run her own father failed to prevent, and knew he might have poisoned her drink, but married him anyway three years later"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Toshihiko Takasugi",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "heir to the Takasugi Group; the groom",
+        "attrs": {
+          "backstory": "as a child, his mother was fatally struck by a car being chased by then-officer Kiyonaga Matsumoto, who did not stop to help; she died 15 minutes later. He was later adopted into the Takasugi family after his mother's death.",
+          "revenge_logic": "chose not to kill Matsumoto directly, reasoning that leaving him alive to lose his daughter would cause him the same grief Takasugi felt losing his mother"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Kazumi Takenaka",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": null,
+        "attrs": {
+          "family_tie": "Takasugi's adoptive sister within the Takasugi family; introduced Sayuri to him seven years before the wedding",
+          "role_in_climax": "reveals Takasugi's true identity and motive to the room after he is exposed"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Atsushi Umemiya",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": null,
+        "attrs": {
+          "backstory": "former schoolmate of Sayuri, one year ahead of her; openly states he believed only he could ever make her happy"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Kiyonaga Matsumoto",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "police superintendent; Sayuri's father",
+        "attrs": {
+          "note": "his fingerprints are absent from the poisoned can, initially suspicious; he insisted on being treated as a suspect like everyone else despite his rank"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Sonoko Suzuki",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": null,
+        "attrs": {
+          "note": "her can of lemon tea (a gift from Umemiya) was visually identical to Sayuri's own and got lined up next to it; Sayuri unknowingly drank from Sonoko's can, which is why Sonoko's fingerprints -- not the superintendent's or Umemiya's -- are on the poisoned can"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Bridal waiting room",
+        "attrs": {
+          "role_in_case": "poisoning scene"
+        }
+      },
+      {
+        "id": "l3",
+        "name": "Hallway outside the waiting room",
+        "attrs": {}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Sayuri's own can of lemon tea",
+        "role": "evidence",
+        "attrs": {
+          "origin": "bought for her by Kazumi",
+          "note": "the can she was supposed to drink from; ended up untouched/misplaced next to Sonoko's identical can"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Sonoko's can of lemon tea",
+        "role": "weapon",
+        "attrs": {
+          "origin": "given to Sonoko by Umemiya, who had a spare",
+          "staging_flaw": "the poisoned can lacks the superintendent's and Umemiya's fingerprints even though the video shows both had handled a can earlier -- proves the can Sayuri actually drank from was Sonoko's, not her own",
+          "note": "in the recorded video the two cans' labels face different directions, revealing there were two visually identical cans lined up, not one"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Delayed-dissolve poison capsule",
+        "role": "tool",
+        "attrs": {
+          "trick": "added to the can early as a timing decoy -- capsules of this type take 15-16 minutes to dissolve, so investigators assumed the poison was added at least 15 minutes before Sayuri collapsed, which would exclude Takasugi and Kazumi (who arrived after that window) and point at the superintendent and Umemiya instead",
+          "reality": "the capsule and the actual liquid poison were added separately; the real dose went in directly, much closer to when Sayuri drank it"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Glass jar of sodium hydroxide",
+        "role": "contraband",
+        "attrs": {
+          "found_at": "a trashcan in the hallway outside the waiting room",
+          "significance": "sodium hydroxide absorbs moisture and turns liquid within minutes of air exposure, so it had to be carried in an airtight container by whoever poisoned the tea -- and Sayuri herself never left the room to dispose of one"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "The poisoned can is missing the superintendent's and Umemiya's fingerprints even though the recorded video shows both men handled a can earlier that day -- the only way to reconcile this is that the can Sayuri actually drank from wasn't the one either of them touched, meaning two visually identical cans existed and got swapped.",
+        "clue_type": "forensic"
+      },
+      {
+        "id": "cB",
+        "desc": "Frame-by-frame review of the wedding video shows the lemon tea can's label facing one direction, then the other, across different shots -- proof there were two cans lined up so closely they read as one, not a single can that stayed in place.",
+        "clue_type": "physical"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p2",
+      "relation_type": "engaged_to",
+      "symmetric": true
+    },
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p5",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p2",
+      "relation_type": "adoptive_sibling_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p3",
+      "relation_type": "college_friend"
+    },
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p4",
+      "relation_type": "former_schoolmate_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p5",
+      "to": "p2",
+      "relation_type": "future_father_in_law_of"
+    },
+    {
+      "type": "kills",
+      "from": "p5",
+      "to": "p2",
+      "temporal_frame": "backstory",
+      "years_before_present": 20,
+      "method": "unintentional -- struck Takasugi's mother with a police car while pursuing another vehicle, then failed to render aid; she died roughly 15 minutes later",
+      "circumstance_tags": [
+        "accidental",
+        "cover_up_of_negligence"
+      ]
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o1"
+    },
+    {
+      "type": "owns",
+      "from": "p6",
+      "to": "o2"
+    },
+    {
+      "type": "located_in",
+      "from": "o1",
+      "to": "l1"
+    },
+    {
+      "type": "located_in",
+      "from": "o2",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "tampers_with",
+      "from": "p2",
+      "to": "o3",
+      "order": 2,
+      "temporal_frame": "present",
+      "detail": "slips the delayed-dissolve capsule into a can early, before the real poisoning, to fake an earlier time of poisoning"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 3,
+      "temporal_frame": "present",
+      "detail": "alone with Sayuri (and Conan) after Ran and Sonoko left the room to buy camera batteries"
+    },
+    {
+      "type": "poisons",
+      "from": "p2",
+      "to": "p1",
+      "order": 4,
+      "temporal_frame": "present",
+      "method": "adds liquid sodium hydroxide directly into the lemon tea can Sayuri mistakenly drank from (Sonoko's, not her own), separately from the decoy capsule already floating in it",
+      "circumstance_tags": [
+        "attempted_murder",
+        "staged_timeline",
+        "cover_up"
+      ]
+    },
+    {
+      "type": "consumes",
+      "from": "p1",
+      "to": "o2",
+      "order": 4,
+      "temporal_frame": "present",
+      "detail": "drinks from Sonoko's can, mistaking it for her own; collapses shortly after"
+    },
+    {
+      "type": "disposes_of",
+      "from": "p2",
+      "to": "o4",
+      "order": 5,
+      "temporal_frame": "present",
+      "detail": "discards the emptied sodium hydroxide jar in a hallway trashcan"
+    },
+    {
+      "type": "was_at",
+      "from": "o4",
+      "to": "l3",
+      "order": 5,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "o2",
+      "detail": "regarding fingerprint absence proving the can swap"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o2"
+    },
+    {
+      "type": "implicates",
+      "from": "cA",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "cB",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o4",
+      "to": "p2"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p5",
+      "motive_type": "revenge_for_mothers_death_in_hit_and_run_20_years_ago"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "used_as_proxy_for_revenge_against_her_father -- Takasugi married and poisoned her specifically to make Matsumoto suffer the loss of a daughter"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p4",
+      "to": "p1",
+      "motive_type": "unrequited_love_and_bitterness_over_her_marrying_someone_else (red herring -- resentment stated on screen, but no evidence of intent to harm her)"
+    }
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

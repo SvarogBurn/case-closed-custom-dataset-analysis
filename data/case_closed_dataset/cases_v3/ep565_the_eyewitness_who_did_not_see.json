@@ -1,0 +1,230 @@
+{
+  "case_id": "ep565_the_eyewitness_who_did_not_see",
+  "episode_number": "565",
+  "title": "The Eyewitness Who Did Not See",
+  "source_url": "https://www.detectiveconanworld.com/wiki/The_Eyewitness_Who_Did_Not_See",
+  "subtitle_source": ["subs_resolved/0565.txt"],
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Takagi) omitted by convention; Ayumi and Genta are kept as person nodes because their witness testimony (the clock sighting and the back-door alibi) is load-bearing to the mystery mechanism, not incidental. No `event` node type: every action is a directly typed edge between the entities involved. Discrepancy vs. the old cases/ file: the old file's motive text says Ebihara's betrayal caused 'Noda's wife to worry herself into suicide' -- the transcript (line ~345) states she 'developed neurosis' from the loan-shark threats, not suicide; corrected here. The old file also flattened the mystery to a single 'dart thrown from the alley outside' theory -- that theory is actually Kogoro's mistaken first read of the scene (a red herring baked into the staging), not the solution; the real mechanism is a locked-room/impersonation trick (Noda posed as Ebihara when Kogoro walked in, then swapped places with the body using the swim-school bus noise as cover) resolved via a clock-position paradox (the shop clock Ayumi saw through the window from outside is not visible from that same spot once Noda's replacement clock is up, proving the clock -- and the 'corrected' 5:50->6:10 reading built on it -- was swapped after her sighting, which clears Shimazaki/Koike and points at the only person who could have swapped it: the clock-shop-owning customer, Noda). case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Hideo Ebihara",
+        "aliases": [],
+        "roles": ["victim"],
+        "occupation": "barbershop owner",
+        "attrs": {
+          "died_of": "stabbed with a poison-tipped dart",
+          "wore_wig": "reason left unstated in the transcript",
+          "club_membership": "regular at the Darts Hearts club",
+          "sold_debtor_to_loan_sharks": "sold Noda's IOU to loan sharks to clear his own debt"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Noda Masao",
+        "aliases": [],
+        "roles": ["suspect"],
+        "occupation": "clock shop owner",
+        "attrs": {
+          "age": 43,
+          "in_shop_as": "customer, in the barber chair, at the time Kogoro arrived"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Shimazaki Nozomu",
+        "aliases": [],
+        "roles": ["suspect"],
+        "occupation": "linen services employee",
+        "attrs": {
+          "age": 28,
+          "accused_by_ebihara_of": "embezzling from his employer"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Koike Tatsutarou",
+        "aliases": [],
+        "roles": ["suspect"],
+        "occupation": "pharmacist",
+        "attrs": {
+          "age": 45,
+          "accused_by_ebihara_of": "selling drugs on the black market to cover debt",
+          "darts_skill": "most skilled player in the Darts Hearts club"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Ayumi",
+        "aliases": [],
+        "roles": ["witness"],
+        "occupation": null,
+        "attrs": {
+          "group": "Detective Boys",
+          "testimony": "saw Shimazaki leave the shop and read the shop clock through the window at the same moment"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Genta",
+        "aliases": [],
+        "roles": ["witness"],
+        "occupation": null,
+        "attrs": {
+          "group": "Detective Boys",
+          "testimony": "was playing in the vacant lot behind the shop; confirms no one left via the back door"
+        }
+      },
+      {
+        "id": "p7",
+        "name": "Noda's wife",
+        "aliases": [],
+        "roles": ["backstory_figure"],
+        "occupation": null,
+        "attrs": {
+          "condition": "developed neurosis under daily threats after Ebihara sold Noda's IOU to loan sharks"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Barber Ebihara",
+        "attrs": {"note": "murder scene; front door watched by bystanders, back door watched by kids playing in the lot behind it"}
+      },
+      {
+        "id": "l2",
+        "name": "Vacant lot behind the shop",
+        "attrs": {}
+      },
+      {
+        "id": "l3",
+        "name": "Darts bar",
+        "attrs": {"note": "site of the argument the night before the murder"}
+      },
+      {
+        "id": "l4",
+        "name": "Gasoline station",
+        "attrs": {"note": "Shimazaki's claimed alibi stop; self-serve, no manager saw him"}
+      },
+      {
+        "id": "l5",
+        "name": "Noda's clock shop",
+        "attrs": {"note": "referenced, not shown on screen; source of the flipped-display clock stocked the night before"}
+      },
+      {
+        "id": "l6",
+        "name": "Koike's drugstore",
+        "attrs": {"note": "Koike's claimed alibi location; uncorroborated, no customers, only his wife present"}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Poisoned dart",
+        "role": "weapon",
+        "attrs": {"detail": "tip dabbed with poison; used to stab Ebihara while restrained from behind"}
+      },
+      {
+        "id": "o2",
+        "name": "Distraction dart",
+        "role": "tool",
+        "attrs": {"purpose": "thrown by Noda to knock items off the counter, faking the noise that let him 'wake up' and be the co-discoverer"}
+      },
+      {
+        "id": "o3",
+        "name": "Darts Hearts sweatshirt",
+        "role": "evidence",
+        "attrs": {"anomaly": "found worn inside-out under Noda's shirt -- only explicable if he hastily redressed while swapping places with the body"}
+      },
+      {
+        "id": "o4",
+        "name": "Afro wig and mask",
+        "role": "tool",
+        "attrs": {"purpose": "disguise Noda used to impersonate Ebihara when Kogoro arrived unexpectedly"}
+      },
+      {
+        "id": "o5",
+        "name": "Original barbershop clock",
+        "role": "evidence",
+        "attrs": {"display": "regular, non-mirrored", "found_at": "stashed in the shoecase near the back door after being swapped out"}
+      },
+      {
+        "id": "o6",
+        "name": "Flipped mirror-display clock",
+        "role": "evidence",
+        "attrs": {"display": "left-right reversed, meant to read correctly via mirror", "stocked": "arrived at Noda's shop the night before", "actual_use": "prop that got Ebihara to sit in the chair to check its viewing angle, moments before he was killed there"}
+      },
+      {
+        "id": "o7",
+        "name": "Gas station receipt",
+        "role": "evidence",
+        "attrs": {"timestamp": "6:24 PM", "self_serve": true}
+      }
+    ],
+    "clues": [
+      {
+        "id": "c1",
+        "desc": "From Ayumi's outdoor viewing spot the shop clock was visible when she saw Shimazaki leave, but the same spot cannot see the clock now -- proving the clock was swapped/repositioned after her sighting, so the mirror-flip correction applied to her '5:50' reading was invalid.",
+        "clue_type": "physical"
+      }
+    ]
+  },
+  "edges": [
+    {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "acquaintance_via_darts_bar"},
+    {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "acquaintance_via_darts_bar"},
+    {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "creditor_of"},
+    {"type": "relationship", "from": "p2", "to": "p7", "relation_type": "married_to"},
+
+    {"type": "was_at", "from": "p1", "to": "l1"},
+    {"type": "was_at", "from": "p1", "to": "l3"},
+    {"type": "was_at", "from": "p2", "to": "l1"},
+    {"type": "was_at", "from": "p2", "to": "l5"},
+    {"type": "was_at", "from": "p3", "to": "l1"},
+    {"type": "was_at", "from": "p3", "to": "l3"},
+    {"type": "was_at", "from": "p3", "to": "l4"},
+    {"type": "was_at", "from": "p4", "to": "l1"},
+    {"type": "was_at", "from": "p4", "to": "l3"},
+    {"type": "was_at", "from": "p4", "to": "l6"},
+    {"type": "was_at", "from": "p5", "to": "l1"},
+    {"type": "was_at", "from": "p6", "to": "l2"},
+
+    {"type": "accuses", "from": "p1", "to": "p3", "detail": "accuses Shimazaki of embezzling from his employer, at the darts bar"},
+    {"type": "assaults", "from": "p3", "to": "p1", "detail": "grabs Ebihara by the chest in anger"},
+    {"type": "accuses", "from": "p1", "to": "p4", "detail": "accuses Koike of selling drugs on the black market to cover debt"},
+
+    {"type": "kills", "from": "p2", "to": "p1", "method": "restrained from behind and stabbed with a poison-tipped dart while Ebihara sat checking the new clock's angle", "circumstance_tags": ["locked_room", "staged_alibi", "impersonation"]},
+    {"type": "impersonates", "from": "p2", "to": "p1", "detail": "puts on wig, mask, and Ebihara's Darts Hearts sweatshirt to greet Kogoro as if he were the shop owner"},
+    {"type": "drags_body_of", "from": "p2", "to": "p1", "circumstance_tags": ["staged_scene"], "detail": "moves the body to the front counter chair, covered with a towel and apron, while switching himself back into his own identity"},
+    {"type": "stages_alibi_using", "from": "p2", "to": "o2", "detail": "throws the distraction dart to knock items off the counter, masking the body-swap under the shuttle bus noise and faking his own awakening"},
+    {"type": "hides", "from": "p2", "to": "o5", "detail": "stashes the original clock in the shoecase near the back door"},
+    {"type": "owns", "from": "p2", "to": "o6"},
+    {"type": "located_in", "from": "o6", "to": "l1"},
+    {"type": "owns", "from": "p1", "to": "o5"},
+    {"type": "inspects", "from": "p1", "to": "o6", "detail": "sits in the barber chair to check the new clock's viewing angle, moments before being killed"},
+    {"type": "wears", "from": "p2", "to": "o3", "detail": "worn inside-out after the hasty body swap"},
+    {"type": "uses", "from": "p2", "to": "o4"},
+
+    {"type": "implicates", "from": "o1", "to": "p2"},
+    {"type": "implicates", "from": "o3", "to": "p2"},
+    {"type": "implicates", "from": "o4", "to": "p2"},
+
+    {"type": "owns", "from": "p3", "to": "o7"},
+    {"type": "regarding", "from": "o7", "to": "p3"},
+
+    {"type": "regarding", "from": "c1", "to": "o5"},
+    {"type": "regarding", "from": "c1", "to": "o6"},
+    {"type": "regarding", "from": "c1", "to": "l1"},
+    {"type": "implicates", "from": "c1", "to": "p2"},
+    {"type": "exonerates", "from": "c1", "to": "p3"},
+
+    {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge (Ebihara sold Noda's loan IOU to loan sharks to clear his own debt, triggering threats that gave Noda's wife neurosis)"},
+    {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "public exposure (red herring) -- Ebihara accused him of embezzling from his employer at the darts bar the night before"},
+    {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "public exposure (red herring) -- Ebihara accused him of selling drugs on the black market to cover debt"}
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

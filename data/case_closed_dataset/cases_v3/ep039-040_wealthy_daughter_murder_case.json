@@ -1,0 +1,649 @@
+{
+ "case_id": "ep039-040_wealthy_daughter_murder_case",
+ "episode_number": "39-40",
+ "title": "Wealthy Daughter Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Wealthy_Daughter_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0039.txt, case_closed_dataset/subs_resolved/0040.txt (full two-part episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. Ran's near-drowning in the kitchen has no node on the other end since she's omitted -- captured as attrs on Ichieda's node plus a location-directed edge to the kitchen instead of a person-to-person edge. Correcting the v1 scaffold: it listed only Nikaido as a victim, but Reika Yotsui herself is also murdered (drowned in a rigged, slow-filling bathtub) -- both are added as victim nodes, since both are revealed to be the culprit's real, deliberately chosen targets from the same two-years-ago backstory, not a random spree as the killer tries to make it look. The 'random murders' framing and the kitchen attack on an arbitrary guest are the misdirection the killer engineers on purpose; has_motive_against is real (not a red herring) for both named victims, while Mifune and Rokuda's lack of alibi for the 5-6 AM window is the episode's actual red herring, captured as red-herring implicates edges rather than fabricated motives neither of them is shown to have. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Takashi Ichieda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "city bank, fundraising department",
+    "attrs": {
+     "backstory": "secretly loved Yaeko, the housekeeper's granddaughter, who drowned two years earlier in circumstances he later learns were not accidental",
+     "second_attack": "drugs the shared coffee with sleeping pills, then carries whichever guest happens to be affected (Ran, omitted from this graph) into the kitchen and holds her head under the sink faucet, to manufacture a third apparent 'drowning' from an ostensibly random, motiveless attacker -- not because he had any actual reason to target her",
+     "staging_flaw": "wet blotches on his shirt sleeves and elbows, in a rolled-up-sleeve pattern that doesn't match hand- or face-washing, from pulling Reika's soaked body out of the tub"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yuji Nikaido",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "advertising agent",
+    "attrs": {
+     "died_of": "drowned in the outdoor fountain",
+     "backstory": "stole Yaeko's life vest along with Reika during the storm two years earlier, then denied any knowledge of what happened to her",
+     "note": "made a cryptic remark shortly before his death that Reika's husband had \"already been decided two years ago\""
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Reika Yotsui",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "daughter of the Yotsui Group president",
+    "attrs": {
+     "died_of": "drowned in a bathtub, bound and gagged, slowly filled via the shower rather than the faucet so death was delayed roughly seven to eight hours",
+     "backstory": "took Yaeko's life vest along with Nikaido during the storm two years earlier, then denied any knowledge of what happened to her",
+     "note": "her birthday party is the occasion for the reunion at which she is killed"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Takuya Mifune",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "president, Mifune Electronics",
+    "attrs": {
+     "note": "no alibi for the 5:00-6:00 AM window; briefly left his room to wash his face"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Osamu Gojo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "general manager, Gojo Commerce",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Masashi Rokuda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Yotsui Group product director",
+    "attrs": {
+     "note": "no alibi for the 5:00-6:00 AM window; claims he never left his room"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Yone Nanao",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "Yotsui family housekeeper",
+    "attrs": {
+     "family_tie": "Yaeko's grandmother",
+     "reaction": "tells Ichieda that no one deserved to die once his revenge is exposed, without forgiving Reika and Nikaido either"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Yaeko",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "drowned after being stranded on a tide-submerged island during a storm, two years before the present case",
+     "circumstance": "took a life raft alone to rescue Reika from the island; found there by both Reika and Nikaido, who took her life vest between the two of them and left her without one"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Reika's father",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "president of the Yotsui Group",
+    "attrs": {
+     "note": "unnamed in the transcript; host of the birthday party"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Yotsui family mountain lodge",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Outdoor fountain, lodge grounds",
+    "attrs": {
+     "role_in_case": "Nikaido's murder scene"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Lodge kitchen",
+    "attrs": {
+     "role_in_case": "site of the staged random attack on a drugged guest (Ran, omitted)"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Lodge bathroom",
+    "attrs": {
+     "role_in_case": "Reika's actual murder scene; lights deliberately left burnt out to discourage anyone from checking the tub"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Forest surrounding the lodge",
+    "attrs": {}
+   },
+   {
+    "id": "l6",
+    "name": "Tide-submerged island (yacht club backstory)",
+    "attrs": {}
+   },
+   {
+    "id": "l7",
+    "name": "Trunk of a guest's car",
+    "attrs": {
+     "role_in_case": "where Reika's drugged, bound body was hidden between her 10:00 PM abduction and being moved to the bathtub"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Sleeping pills",
+    "role": "tool",
+    "attrs": {
+     "use": "dissolved in a shared pot of coffee; whichever guest happened to drink the dosed cup would have been attacked next -- the victim was genuinely arbitrary"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Bound, covered bathtub rig",
+    "role": "tool",
+    "attrs": {
+     "trick": "Reika was tied with rope, gagged with tape, and left in the tub while the shower (not the faucet) slowly filled it, timing her drowning to roughly 5:00-6:00 AM the next morning, hours after she was actually abducted",
+     "staging_flaw": "using the shower instead of the faucet is what tips off the trick once someone tries to run a bath normally and gets sprayed instead"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Six punctured car tires",
+    "role": "tool",
+    "attrs": {
+     "use": "stranded every guest's car (and, initially, appeared to strand Kogoro's rental too, before it was punctured as well) to force everyone to stay overnight at the lodge"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Rigged air conditioners and microwaves",
+    "role": "tool",
+    "attrs": {
+     "trick": "every air conditioner's timer set to switch on at the same moment (12:30), combined with microwaves left running, deliberately overloads the circuit and trips the breaker, faking an outside intruder cutting the power",
+     "staging_flaw": "the dial-type microwaves kept turning without power and were still warm afterward, and their timer bell was audible right after the blackout -- both timestamp the trick to 12:30 exactly"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Broken bathroom window",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "smashed from the inside right after the staged power outage to make it look like an intruder fled outside, prompting the group to give chase and split up"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Yaeko's life vest",
+    "role": "evidence",
+    "attrs": {
+     "history": "taken from her by Nikaido and Reika on the tide-submerged island so the two of them could survive, leaving her without one"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Trying to run a bath in the lodge's bathroom produces water from the shower head instead of the faucet -- the killer used the shower to quietly, slowly fill the tub around a bound victim rather than the faucet, which would have finished (and been noticed) too quickly.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Reika disappeared at 10:00 PM but wasn't killed until between 5:00 and 6:00 AM the next morning -- a seven-to-eight-hour gap inconsistent with a quick, opportunistic crime, pointing instead to a deliberately timed, delayed-drowning setup. Since only Mifune and Rokuda lack an alibi for that narrow window, suspicion initially falls on them.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "All the air conditioners' timers are still set to 12:30, and Conan recalls hearing a bell right after the blackout -- the lodge's dial-type microwaves kept turning without power and were still warm to the touch afterward. Together these prove the power outage was a deliberately engineered overload timed in advance, not an outside intruder cutting the line.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cD",
+    "desc": "Water blotches appear on all three men's clothes, but Gojo's are on his sleeves from washing his hands and Mifune's are on his collar from washing his face -- Ichieda's are on his rolled-up-sleeve elbows, a pattern that only makes sense if he pulled a soaking, submerged body out of the tub with his coat off.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cE",
+    "desc": "The attack on the drugged, randomly-affected guest in the kitchen initially reads as proof of an indiscriminate, motiveless killer loose in the lodge -- but its only real function is to put a first-hand account of \"my head was held underwater\" on record, manufacturing false testimony that ties Reika's and Nikaido's deaths to the same MO in witnesses' minds.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p7",
+   "relation_type": "grandchild_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p8",
+   "relation_type": "in_love_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p9",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p9",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "candidate_suitor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p3",
+   "relation_type": "candidate_suitor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p3",
+   "relation_type": "candidate_suitor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "accomplice_in_cover_up"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "o6",
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "detail": "takes Yaeko's life vest on the tide-submerged island during the storm"
+  },
+  {
+   "type": "steals",
+   "from": "p3",
+   "to": "o6",
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "detail": "takes Yaeko's life vest alongside Nikaido on the tide-submerged island during the storm"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p8",
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "method": "left without a life vest on a small island that was fully submerged at high tide during a storm",
+   "circumstance_tags": ["cover_up", "denial"]
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p8",
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "method": "left without a life vest on a small island that was fully submerged at high tide during a storm",
+   "circumstance_tags": ["cover_up", "denial"]
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l6",
+   "temporal_frame": "backstory",
+   "years_before_present": 2
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p1",
+   "to": "o3",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "punctures every guest's tires, including the detective's rental at first pass, to force everyone to stay the night",
+   "circumstance_tags": ["premeditated"]
+  },
+  {
+   "type": "tampers_with",
+   "from": "p1",
+   "to": "o4",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "sets every air conditioner's timer to 12:30 AM and leaves microwaves running to trigger a staged power overload later that night"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p3",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "corners Reika, drugs her, and binds and gags her before hiding her in a car trunk"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "ties Reika into the bathtub and sets the shower running to slowly fill it, timed to drown her roughly seven to eight hours later"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l7",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "joins the group searching the forest for the (deliberately absent) Reika, alongside Nikaido"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l5",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "lures him alone to the fountain claiming to have seen Reika there, and extracts a confession about Yaeko before attacking him"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p2",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "drowned in the outdoor fountain",
+   "circumstance_tags": ["premeditated", "revenge"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p1",
+   "to": "o1",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "drugs the shared pot of coffee, not knowing in advance which guest will end up drinking the dosed cup"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p1",
+   "to": "o5",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "smashes the bathroom window from the inside right after the staged power failure to fake an intruder fleeing"
+  },
+  {
+   "type": "assaults",
+   "from": "p1",
+   "to": "l3",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "carries the drugged, unconscious guest (Ran, omitted) into the kitchen and holds her head under the sink faucet to manufacture a third apparent drowning attack by a supposedly random killer",
+   "circumstance_tags": ["staged_alibi", "random_victim"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "pretends to use the bathroom at 7:00 AM in order to pull Reika's already-drowned body out of the tub"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p3",
+   "order": 8,
+   "temporal_frame": "present",
+   "method": "bound, gagged, and left in a bathtub slowly filled by the shower, timed to drown her between 5:00 and 6:00 AM while he had an alibi with the other guests",
+   "circumstance_tags": ["premeditated", "revenge", "staged_timing"]
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p1",
+   "to": "p3",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "pulls her soaked body from the tub with his coat off and sleeves rolled up, to avoid getting his coat wet"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p4",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p6",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cE",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cE",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "revenge_for_yaekos_death_two_years_ago"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p3",
+   "motive_type": "revenge_for_yaekos_death_two_years_ago"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

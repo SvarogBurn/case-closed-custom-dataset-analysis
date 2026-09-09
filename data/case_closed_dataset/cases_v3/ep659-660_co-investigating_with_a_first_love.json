@@ -1,0 +1,509 @@
+{
+ "case_id": "ep659-660_co-investigating_with_a_first_love",
+ "episode_number": "659-660",
+ "title": "Co-Investigating with a First Love",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Co-Investigating_with_a_First_Love",
+ "subtitle_source": [
+  "subs_resolved/0659.txt",
+  "subs_resolved/0660.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "No human victim -- this is a vigilante vandalism/hit-and-run case (case_type: vandalism), not a murder, so `label.murderer_id` here names the vandal/culprit rather than a killer, kept under that key name only for schema consistency with the other cases. No `event` node type: every action is a directly typed edge between the entities involved. Recurring fully-generic detective-cast nodes (Conan, Kogoro, Ran, Ai Haibara, Agasa, Detective Boys, Inspector Megure, Takagi) omitted by convention, but Chiba, Naeko Mi'ike, and Yumi Miyamoto are included despite also being recurring franchise characters because they carry the episode's actual B-plot (Chiba's own car is victim #4 of the serial vandal, and the matchmaking subplot runs through nearly every scene). The old lower-fidelity cases/ file got the core whodunit right (Tokuko Shigei, parking lot, spray-paint object) but was missing almost everything else that gives the case its shape: the backstory victim (her son, killed by a driver whose rear-view was blocked by beach gear), the unnamed driver responsible, the two forensic clues that actually crack the case (a child-car-seat sunburn mark on her own back seat, and lipstick from the airbag impact hidden under matching spray paint on her own windscreen), the trap car (Sato Miwako's FD, decorated as bait), and the full set of targeted vehicles and why each was or wasn't chosen (every target had an obstructed rear window; Meiwa's superficially similar car was spared because its spoiler sat high enough not to block the view).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tokuko Shigei",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "housewife",
+    "attrs": {
+     "age": 36,
+     "true_motive": "grief and rage over her infant son's death in a car accident caused by a driver's obstructed rear view"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Aketoshi Fukuchi",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "company employee",
+    "attrs": {
+     "age": 41,
+     "claimed_alibi": "lost consciousness after being rear-ended, before he could see the other driver"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Takerou Meiwa",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "part-time worker",
+    "attrs": {
+     "age": 22,
+     "claimed_alibi": "waiting in the parking lot for a friend"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Chiba",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "witness"
+    ],
+    "occupation": "police officer",
+    "attrs": {
+     "car_was_4th_vandalism_target": true
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Naeko Mi'ike",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "rookie police officer",
+    "attrs": {
+     "backstory": "Chiba's primary-school first love; he did not recognize her as an adult colleague"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yumi Miyamoto",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "Traffic Dept. officer",
+    "attrs": {
+     "role_in_plot": "engineered the pairing of Chiba and Mi'ike to investigate the break-ins together"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Miwako Sato",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "police officer",
+    "attrs": {
+     "note": "not physically present; her car was borrowed and used as the trap"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Tokuko Shigei's son",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "died": "struck by a reversing car while in his stroller, one month prior"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "High school teacher (driver)",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "high school teacher",
+    "attrs": {
+     "outcome": "admitted fault, settled out of court; not criminally targeted afterward"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Dept. store underground parking lot",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Tokuko Shigei's house",
+    "attrs": {
+     "role": "source of the spray paint and lockpicks used in the vandalism"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Street near train station",
+    "attrs": {
+     "role": "site of the trap car, on Shigei's route home"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Red spray paint can",
+    "role": "weapon",
+    "attrs": {
+     "brand_matches_all_incidents": true
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Lockpick set",
+    "role": "tool",
+    "attrs": {}
+   },
+   {
+    "id": "o3",
+    "name": "Itasha car (victim #1)",
+    "role": "evidence",
+    "attrs": {
+     "obstruction": "large anime character decal covering rear window",
+     "owner": "unnamed"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Golfer's car (victim #2)",
+    "role": "evidence",
+    "attrs": {
+     "obstruction": "golf bags (his own and friends') stacked against rear window",
+     "owner": "unnamed company employee"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Street racer's car (victim #3)",
+    "role": "evidence",
+    "attrs": {
+     "obstruction": "low-mounted rear spoiler blocking the rear window",
+     "owner": "unnamed"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Chiba's car (victim #4)",
+    "role": "evidence",
+    "attrs": {
+     "obstruction": "tokusatsu figures and models lined up against rear window"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Fukuchi's car",
+    "role": "evidence",
+    "attrs": {
+     "obstruction": "stuffed toys for his daughter lined up against rear window",
+     "rear_ended_by": "Shigei's car"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Shigei's own car",
+    "role": "evidence",
+    "attrs": {
+     "used_to_ram": "Fukuchi's car",
+     "staging_flaw": "\"Die!\" sprayed on her own windscreen in matching red paint to hide a lipstick smear left on the airbag during the collision"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Sato's FD (trap car)",
+    "role": "instrument",
+    "attrs": {
+     "purpose": "decorated as an itasha with an obstructed rear window and parked on Shigei's route home to bait her into a final, witnessed act"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Meiwa's own car",
+    "role": "evidence",
+    "attrs": {
+     "obstruction": "none -- spoiler mounted high enough not to block the rear window",
+     "significance": "explains why an outwardly similar car was never targeted"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Sunburn/tan-line pattern on the back seat of Shigei's own car matches a child car seat, contradicting her claim of having no kids or toys and revealing the son she never mentioned.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Lipstick transferred to the deployed airbag during the collision was hidden under fresh spray paint matching the \"Die!\" message, proving the message on her own windscreen was self-applied, not the work of an outside vandal.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Every targeted car (itasha decal, golf bags, low spoiler, toy figures) had its rear window obstructed, while Meiwa's similarly flashy car -- high spoiler, clear rear window -- was left alone, showing the vandal selects by blocked visibility, not by owner type.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p8",
+   "relation_type": "parent_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "first_love_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p4",
+   "relation_type": "first_love_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p9",
+   "motive_type": "grief_revenge_for_sons_accidental_death"
+  },
+  {
+   "type": "kills",
+   "from": "p9",
+   "to": "p8",
+   "method": "reversed car with rear view blocked by beach gear, struck the stroller",
+   "circumstance_tags": [
+    "backstory",
+    "accident",
+    "settled_out_of_court"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p7",
+   "to": "o9"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o10"
+  },
+  {
+   "type": "vandalizes",
+   "from": "p1",
+   "to": "o3",
+   "method": "picks door lock, sprays 'Die!' on ceiling",
+   "circumstance_tags": [
+    "serial",
+    "rear_window_obstruction_targeted"
+   ]
+  },
+  {
+   "type": "vandalizes",
+   "from": "p1",
+   "to": "o4",
+   "method": "picks door lock, sprays 'Die!' on ceiling",
+   "circumstance_tags": [
+    "serial",
+    "rear_window_obstruction_targeted"
+   ]
+  },
+  {
+   "type": "vandalizes",
+   "from": "p1",
+   "to": "o5",
+   "method": "picks door lock, sprays 'Die!' on ceiling",
+   "circumstance_tags": [
+    "serial",
+    "rear_window_obstruction_targeted"
+   ]
+  },
+  {
+   "type": "vandalizes",
+   "from": "p1",
+   "to": "o6",
+   "method": "picks door lock, sprays 'Die!' on ceiling",
+   "circumstance_tags": [
+    "serial",
+    "rear_window_obstruction_targeted"
+   ]
+  },
+  {
+   "type": "rams",
+   "from": "p1",
+   "to": "p2",
+   "circumstance_tags": [
+    "impulsive",
+    "reckless"
+   ]
+  },
+  {
+   "type": "rams",
+   "from": "p1",
+   "to": "o7",
+   "circumstance_tags": [
+    "impulsive",
+    "reckless"
+   ]
+  },
+  {
+   "type": "fakes_vandalism_on",
+   "from": "p1",
+   "to": "o8",
+   "circumstance_tags": [
+    "staged_alibi",
+    "cover_up"
+   ],
+   "detail": "sprays 'Die!' on her own windscreen after ramming Fukuchi's car, to look like a fellow victim rather than the culprit"
+  },
+  {
+   "type": "vandalizes",
+   "from": "p1",
+   "to": "o9",
+   "circumstance_tags": [
+    "trap",
+    "caught_in_the_act"
+   ]
+  },
+  {
+   "type": "located_in",
+   "from": "o9",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o8"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o8"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o10"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

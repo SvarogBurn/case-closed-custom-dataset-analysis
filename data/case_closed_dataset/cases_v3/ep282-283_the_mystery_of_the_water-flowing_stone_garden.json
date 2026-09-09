@@ -1,0 +1,306 @@
+{
+ "case_id": "ep282-283_the_mystery_of_the_water-flowing_stone_garden",
+ "episode_number": "282-283",
+ "title": "The Mystery of the Water-Flowing Stone Garden",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mystery_of_the_Water-Flowing_Stone_Garden",
+ "subtitle_source": ["subs_resolved/0282.txt", "subs_resolved/0283.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Detective Yokomizo) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved, sharing an `order` integer so edges belonging to the same real occurrence can be grouped without a reifying node. The old lower-fidelity case file (cases/ep282-283...) had the correct culprit (Tomonori Kiyama) but understated the backstory: it described the deaths of the previous director and driver as a generic 'causes the deaths...in a cliffside car crash', when the transcript is explicit that Majima deliberately sabotaged the brakes to murder his predecessor and seize the company -- a real backstory murder, not an accident, and the true motive for both Kiyama's and Ayaka's revenge/investigation arcs. The old file also said Kiyama 'strangles' Majima; the post-mortem in the transcript states death was instant from a snapped neck, not strangulation. The old file omitted Ayaka Honjo (undercover as the housekeeper, secretly the murdered driver's daughter), the two false accusations Mouri Kogoro makes on-screen before the real solution (Hashimoto via an impossible rod-throw, then Endo via an archery-and-rope glide that the corpse's neat posture disproves), Endo's genuine but uncompleted plot against Majima (blackmail note + prepared archery rig, abandoned when Majima never arrived at the rooftop), and the conclusive fountain-pen-ink-stain clue that actually clinches the case against Kiyama. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Michiyoshi Majima",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "director, Kiyama Furniture",
+    "attrs": {
+     "died_of": "instant death from a snapped neck",
+     "true_history": "years earlier sabotaged the previous director's car brakes, killing him and his driver, then took over as company director"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tomonori Kiyama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "travel writer and photographer",
+    "attrs": {
+     "family_tie": "son of the previous Kiyama Furniture director",
+     "method": "killed Majima in the mansion, floated the body on an air mat during the rock garden's fill cycle, then pushed it into place with the picking rod as the water drained while pulling the mat back, leaving no footprints",
+     "overheard": "overheard Majima boasting about sabotaging his father's brakes"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Nobuaki Endo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "director, Kiyama Interior; former national-level archer",
+    "attrs": {
+     "falsely_accused_by": "Mouri's second (wrong) theory: archery arrow with rope, glided Majima's body into the garden",
+     "true_role": "planned to kill Majima at a blackmailed rooftop meeting but Majima never arrived, since Kiyama had already killed him"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Masayuki Hashimoto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "employee, Kiyama Furniture",
+    "attrs": {
+     "falsely_accused_by": "Mouri's first (wrong) theory: snuck into Majima's room, killed him, then flung the body with the picking rod alone -- physically demonstrated impossible"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Ayaka Honjo",
+    "aliases": ["Ayaka Tanuma"],
+    "roles": ["witness", "suspect"],
+    "occupation": "housekeeper (undercover)",
+    "attrs": {
+     "real_identity": "daughter of Tanuma, the driver killed alongside the previous director",
+     "reason_for_employment": "took the housekeeper job to investigate rumors that Majima staged the crash"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Previous Kiyama director",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "previous director, Kiyama Furniture",
+    "attrs": {
+     "built": "built the rock garden with the waterfall on his breaks",
+     "died_of": "cliffside car crash, brakes sabotaged"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Tanuma",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "driver",
+    "attrs": {
+     "died_of": "cliffside car crash, same incident as the previous director"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Majima household rock garden",
+    "attrs": {
+     "mechanism": "waterfall overflows into the sand pool at set times, filling then draining over ~30 minutes without disturbing the raked pattern"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Main wing of the mansion",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Mansion rooftop",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Dining room",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Cliffside mountain road",
+    "attrs": {}
+   },
+   {
+    "id": "l6",
+    "name": "Main corridor",
+    "attrs": {}
+   },
+   {
+    "id": "l7",
+    "name": "Night-view spot",
+    "attrs": {}
+   },
+   {
+    "id": "l8",
+    "name": "Kiyama's guest room",
+    "attrs": {}
+   },
+   {
+    "id": "l9",
+    "name": "Kiyama Interior office",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Air mat",
+    "role": "tool",
+    "attrs": {
+     "used_for": "floating and positioning Majima's body without footprints",
+     "scratch_mark": "matches a button on Majima's pants",
+     "ink_stain": "matches ink from Kiyama's father's fountain pen"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Picking rod",
+    "role": "tool",
+    "attrs": {
+     "normal_use": "mansion garden tool for retrieving items from the sand without stepping on it",
+     "used_for": "pushing the floating body into its final position"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Kiyama's father's fountain pen",
+    "role": "evidence",
+    "attrs": {
+     "significance": "memento Kiyama always carries; leaking ink stained the air mat during the murder"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Blackmail note to Majima",
+    "role": "evidence",
+    "attrs": {
+     "content": "threatens to expose Majima's accounting fraud unless he comes to the rooftop at 11:00 PM",
+     "found": "discarded in a dining room trashcan"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Endo's archery rig",
+    "role": "tool",
+    "attrs": {
+     "components": "bow, arrow with a loop, long rope",
+     "intended_use": "prepared to kill Majima at the rooftop meeting; never used since Majima never arrived",
+     "found": "archery set in Endo's room, spent arrow in the woods behind the rock garden"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Photo exhibition ticket",
+    "role": "evidence",
+    "attrs": {
+     "origin": "one of the tickets Kiyama had been handing out to dinner guests that evening",
+     "found": "washed from Majima's pocket, stuck in the rock garden's drain"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "No footprints or drag marks around the body despite the freshly raked sand, yet marks are left on the rocks at the pool's edge -- shows the body was floated in and the mat dragged out, not carried across the sand.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The body was found lying face down with hands and legs neatly arranged, which is inconsistent with being dangled and dragged in on a rope as Mouri's archery theory required -- disproves that method and clears Endo of physically doing it.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "The stain on the air mat is the same ink as Kiyama's father's fountain pen, the memento he always carries -- ties the mat directly to Kiyama rather than to whoever it was found sitting in his room.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "Only the side of the body touching the ground was wet, and the rock garden is known to drain by ~9:00 PM -- together these fix the time and place of the killing to the fill/drain cycle, not a later dumping.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c5",
+    "desc": "The exhibition ticket found stuck in the drain matches the ones Kiyama had been personally handing to guests that night, including Majima -- places Majima and Kiyama together shortly before the killing.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p7", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "successor_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+
+  {"type": "kills", "from": "p1", "to": "p6", "order": 0, "temporal_frame": "backstory", "years_before_present": 1, "method": "sabotaged car brakes", "circumstance_tags": ["cover_up", "staged_accident"]},
+  {"type": "kills", "from": "p1", "to": "p7", "order": 0, "temporal_frame": "backstory", "years_before_present": 1, "method": "sabotaged car brakes", "circumstance_tags": ["cover_up", "staged_accident"]},
+  {"type": "was_at", "from": "p6", "to": "l5", "order": 0, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p7", "to": "l5", "order": 0, "temporal_frame": "backstory"},
+
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l4", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l4", "order": 1, "temporal_frame": "present"},
+
+  {"type": "confronts", "from": "p1", "to": "p4", "order": 2, "temporal_frame": "present", "detail": "demands repayment of a ~7 million yen debt with interest, threatens to fire him"},
+
+  {"type": "was_at", "from": "p4", "to": "l9", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l8", "order": 5, "temporal_frame": "present"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "method": "snapped neck", "circumstance_tags": ["cover_up"]},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 6, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 6, "temporal_frame": "present"},
+
+  {"type": "drags_body_of", "from": "p2", "to": "p1", "order": 7, "temporal_frame": "present", "method": "floated on an air mat, then pushed into place with a picking rod as the pool drained", "circumstance_tags": ["staged_scene", "no_footprints"]},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 7, "temporal_frame": "present"},
+  {"type": "uses", "from": "p2", "to": "o1", "order": 7, "temporal_frame": "present"},
+  {"type": "uses", "from": "p2", "to": "o2", "order": 7, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o1", "order": 7, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6", "order": 7, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p3", "to": "l4", "order": 8, "temporal_frame": "present"},
+  {"type": "blackmails", "from": "p3", "to": "p5", "order": 9, "temporal_frame": "present", "detail": "demands money, threatens to reveal her identity to Majima", "circumstance_tags": ["red_herring", "unrelated_subplot"]},
+  {"type": "was_at", "from": "p3", "to": "l6", "order": 9, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l6", "order": 9, "temporal_frame": "present"},
+
+  {"type": "obstructs_view_of", "from": "p3", "to": "p5", "order": 10, "temporal_frame": "present", "detail": "closes the corridor curtains so Ayaka won't see Majima heading to the roof; unwittingly gives Kiyama cover instead", "circumstance_tags": ["unwitting_accomplice"]},
+
+  {"type": "blackmails", "from": "p3", "to": "p1", "order": 11, "temporal_frame": "present", "detail": "note threatens to expose accounting fraud unless Majima comes to the rooftop at 11 PM", "circumstance_tags": ["red_herring", "attempted_not_completed"]},
+  {"type": "was_at", "from": "p3", "to": "l3", "order": 11, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p2", "to": "l7", "order": 12, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 13, "temporal_frame": "present"},
+
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o6"},
+  {"type": "owns", "from": "p3", "to": "o5"},
+  {"type": "written_by", "from": "o4", "to": "p3"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "located_in", "from": "o4", "to": "l4"},
+  {"type": "located_in", "from": "o5", "to": "l9"},
+  {"type": "located_in", "from": "o1", "to": "l8"},
+
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p3"},
+  {"type": "implicates", "from": "o5", "to": "p3"},
+
+  {"type": "regarding", "from": "c1", "to": "l1"},
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "l1"},
+  {"type": "regarding", "from": "c3", "to": "o1"},
+  {"type": "regarding", "from": "c3", "to": "o3"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+  {"type": "regarding", "from": "c4", "to": "p1"},
+  {"type": "regarding", "from": "c4", "to": "l1"},
+  {"type": "regarding", "from": "c5", "to": "o6"},
+  {"type": "implicates", "from": "c5", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge_for_fathers_murder"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "self_preservation_scapegoated_for_deficit_and_threatened_with_firing (red herring, attempted not completed)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "debt_and_threat_of_firing (red herring, wrongly accused by Mouri)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "revenge_for_fathers_death_in_staged_accident (red herring, briefly suspected)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

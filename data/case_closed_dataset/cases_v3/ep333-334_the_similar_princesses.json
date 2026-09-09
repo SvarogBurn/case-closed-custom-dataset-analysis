@@ -1,0 +1,205 @@
+{
+ "case_id": "ep333-334_the_similar_princesses",
+ "episode_number": "333-334",
+ "title": "The Similar Princesses",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Similar_Princesses",
+ "subtitle_source": ["subs_resolved/0333.txt", "subs_resolved/0334.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Eri Kisaki, Yukiko Kuroba/Fujimine, Yusaku Kudo, Inspector Megure, and officers Chiba/Takagi) omitted by convention, matching ep011 -- Eri and Yukiko drive most of the on-screen investigation here (Yukiko is the one who solves it), but structurally they play the same recurring-cast investigator role Kogoro/Conan normally play, so they're left out of the case graph itself. The 4 household maids are mentioned as cleared alibi-witnesses but are never individually named, so they get no nodes. No `event` nodes: every action is a directly typed edge between the people/locations/objects involved. The old lower-fidelity file (cases/ep333-334_the_similar_princesses.json) had the correct culprit (Ueki, the butler) and the correct broad mechanism (drug-induced collapse staged as a gun-threat, silenced first shot, decoy shots to fake the timeline), so no culprit/mechanism correction was needed here -- the main gaps filled in this rebuild are: the real motive (Ueki's devotion to Mikio's deceased first wife and her garden, which Mikio planned to demolish/pave over), the two red-herring suspects' actual motives (Shigeru's resentment over paying rent on his childhood home plus inheritance hopes; Motoka's marriage-for-money angle; Doi's resentment at Motoka's plan to replace the garden with a pool), the locked-room/alibi mechanics (surveillance-camera blind spots, Ueki's 'fetching the key' pretext), and generic `knows`/event-node edges replaced with real typed verbs and relationships. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Mikio Fujieda",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "businessman",
+    "attrs": {
+     "reputation": "married into wealth, ran unlawful businesses",
+     "habit": "reads with classical music on loud in the locked audio room every evening",
+     "will_clause": "leaves nothing to anyone who failed to protect his life; estate goes to the state instead"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Motoka Fujieda",
+    "aliases": ["Niizuma Motoka"],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "background": "young second wife; household consensus is she married Mikio for the house/property",
+     "wants": "convert the garden into a swimming pool"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Shigeru Fujieda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "mystery writer",
+    "attrs": {
+     "background": "younger brother of Mikio's late first wife; grew up in this house, now a paying houseguest under Mikio",
+     "grievance": "made to pay rent on his own childhood home since Mikio inherited it"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Sohachi Ueki",
+    "aliases": ["Ueki Souhachi"],
+    "roles": ["suspect"],
+    "occupation": "butler, 50 years' service to the household",
+    "attrs": {
+     "asthma": "recently worsened -- Mikio had him clean the dusty attic",
+     "behavior_tell": "avoids sitting down during questioning, keeping something hidden in his sock"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kozo Doi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "gardener",
+    "attrs": {
+     "activity_that_night": "tending the garden for the late madame's upcoming birthday",
+     "grievance": "resents Motoka's plan to pave the garden into a pool"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Mikio's late first wife",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died": "roughly half a year before the case, cause not stated as foul play",
+     "note": "brought the family wealth into the marriage; cherished and personally maintained the garden with Ueki and Doi"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Audio room", "attrs": {"note": "locked from inside; murder scene"}},
+   {"id": "l2", "name": "Garden", "attrs": {"note": "late madame's cherished garden; has an exterior window into the audio room"}},
+   {"id": "l3", "name": "Surveillance monitor room", "attrs": {}},
+   {"id": "l4", "name": "Ueki's room", "attrs": {}},
+   {"id": "l5", "name": "Shigeru's room", "attrs": {}},
+   {"id": "l6", "name": "Motoka's room", "attrs": {}},
+   {"id": "l7", "name": "Mikio's bedroom", "attrs": {"note": "decoy threats were planted under his pillow here"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Memo: \"Watch your back\"",
+    "role": "evidence",
+    "attrs": {"medium": "printed on a word processor", "planted_under": "Mikio's pillow", "note": "fingerprints inconclusive -- Mikio showed it to the whole household"}
+   },
+   {
+    "id": "o2",
+    "name": "Memo: \"Take it easy\"",
+    "role": "evidence",
+    "attrs": {"medium": "handwritten on memo paper", "planted_under": "Mikio's pillow"}
+   },
+   {
+    "id": "o3",
+    "name": "Decoy bullet",
+    "role": "evidence",
+    "attrs": {"planted_under": "Mikio's pillow", "note": "left with the two memos on 3 separate nights"}
+   },
+   {
+    "id": "o4",
+    "name": "Compact Colt 45",
+    "role": "weapon",
+    "attrs": {"cartridges_recovered": 3, "found_at": "outside the audio room window, in the garden"}
+   },
+   {
+    "id": "o5",
+    "name": "Burned towel",
+    "role": "tool",
+    "attrs": {"function": "muffled the gunshot and blocked gunpowder residue on the shooter", "concealment": "hidden in Ueki's sock"}
+   },
+   {
+    "id": "o6",
+    "name": "Mikio's book with cord bookmark",
+    "role": "evidence",
+    "attrs": {"anomaly": "cord placed exactly at the page where he stopped reading -- inconsistent with being interrupted at gunpoint"}
+   },
+   {
+    "id": "o7",
+    "name": "Coffee dosed with isoproterenol",
+    "role": "tool",
+    "attrs": {"drug": "isoproterenol (isoprenaline)", "effect": "induces sudden dizziness/fainting, timed to look like a gunpoint collapse", "served_by": "Ueki, shortly before locking the audio room door"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Doi heard the gunshot several seconds after he heard glass break, not at the same instant as it should be -- reveals the first shot was fired through a silencer and only the breaking glass was audible.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "The bookmark cord sits exactly at Mikio's stopping page, but someone being held at gunpoint wouldn't pause to mark their page -- shows he stood up on his own, mid-faint, not under threat.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "One of the three bullets pulled from the corpse has shallower rifling marks than the other two, and ballistics match it to the same gun that fired the decoy bullet under the pillow -- confirms a silencer on the first shot and ties the staged threats to the murder weapon.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p3", "to": "p6", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "tenant_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "devoted_to"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "protect_late_wifes_garden_from_demolition"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "resentment_over_rent_and_inheritance"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "stands_to_inherit_estate"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "opposes_garden_converted_to_pool"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l7"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l6"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+
+  {"type": "drugs", "from": "p4", "to": "p1", "agent": "isoproterenol", "vehicle": "coffee", "circumstance_tags": ["staged_alibi"]},
+  {"type": "kills", "from": "p4", "to": "p1", "method": "fired 3 shots at Mikio from outside the audio-room window while he was drug-induced dizzy; the first shot was silenced with a towel to disguise its sound and timing, then two audible shots followed moments later to mislead onlookers about when the shooting actually happened", "circumstance_tags": ["locked_room", "staged_alibi", "red_herring"]},
+  {"type": "plants", "from": "p4", "to": "o1", "circumstance_tags": ["red_herring", "staged_threat"]},
+  {"type": "plants", "from": "p4", "to": "o2", "circumstance_tags": ["red_herring", "staged_threat"]},
+  {"type": "plants", "from": "p4", "to": "o3", "circumstance_tags": ["red_herring", "staged_threat"]},
+  {"type": "owns", "from": "p4", "to": "o4"},
+  {"type": "owns", "from": "p4", "to": "o5"},
+  {"type": "hides", "from": "p4", "to": "o5"},
+  {"type": "located_in", "from": "o4", "to": "l2"},
+
+  {"type": "implicates", "from": "o4", "to": "p4"},
+  {"type": "implicates", "from": "o5", "to": "p4"},
+  {"type": "implicates", "from": "o7", "to": "p4"},
+
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "regarding", "from": "c1", "to": "p5"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "o6"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "regarding", "from": "c3", "to": "o3"},
+  {"type": "implicates", "from": "c3", "to": "p4"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

@@ -1,0 +1,193 @@
+{
+ "case_id": "ep992_murder_at_the_townhouse_cafe",
+ "episode_number": "992",
+ "title": "Murder at the Townhouse Café",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Murder_at_the_Townhouse_Caf%C3%A9",
+ "subtitle_source": "subs_resolved/0992.txt (420 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Inspector Megure, Detective Takagi, Detective Chiba) omitted by convention. case_type: attempted_murder (the victim, Tomita, survives the attack -- confirmed on-screen: 'Apparently the manager's all right.'). Correction vs. the old low-fidelity file: the old file's stated culprit (Sakai Chitose) is confirmed correct by the transcript, but its motive was wrong -- it claimed Sakai 'develops feelings for Tomita' (a romantic-rejection motive that never appears anywhere in the transcript). The actual, on-screen motive is professional/creative resentment: Sakai says outright 'I came up with the menu, the concept, and the eye-catching yard. But he kept me working part-time. He didn't give me anything.' No romantic angle is stated or implied. The old file was also missing essentially all mechanics of the case (the laxative slipped to Nonaka to force him from his seat, the stolen gloves planted to frame him, the yard-camouflage route used to fake an alibi, the torn-cloth/nail forensic evidence, the donut-timer alibi window, and the unrelated Furukawa dine-and-dash red herring) -- all reconstructed here from the full transcript.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tomita Satoshi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "café manager/owner",
+    "attrs": {
+     "age": 37,
+     "injury": "struck on the back of the head with a mop while alone in the men's bathroom",
+     "outcome": "survived the attack"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Sakai Chitose",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "part-time employee at the café",
+    "attrs": {
+     "age": 19,
+     "contribution": "came up with the café's menu, concept, and the eye-catching yard design",
+     "grievance": "kept working part-time with no recognition or advancement despite that contribution"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Nonaka Kenji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "manager of a nearby café (sells waffles)",
+    "attrs": {
+     "age": 42,
+     "business_trouble": "sales at his own café have declined recently; unsure it will survive more than a few months",
+     "accused_by_locals_of": "regularly scouting Tomita's café and stealing recipe ideas",
+     "framed": true,
+     "alibi_gap": "the only person who left his seat (to go to the bathroom) during the attack window"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Furukawa Yoshihisa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "customer",
+    "attrs": {
+     "age": 34,
+     "past_dispute": "had money problems with Tomita in the past",
+     "real_secret": "was planning to dine and dash without paying his bill, unrelated to the attack"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "\"Sweets\" café dining area",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Café kitchen",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Men's bathroom",
+    "attrs": {"role": "attack site"}
+   },
+   {
+    "id": "l4",
+    "name": "Café yard",
+    "attrs": {"note": "maintained by Sakai; foliage color matched by her camouflage uniform"}
+   },
+   {
+    "id": "l5",
+    "name": "Hallway/entrance",
+    "attrs": {"note": "connects the entrance, kitchen window route, yard, and bathroom"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Mop",
+    "role": "weapon",
+    "attrs": {"detail": "blunt object near the bathroom used to strike Tomita on the back of the head"}
+   },
+   {
+    "id": "o2",
+    "name": "Nonaka's work gloves",
+    "role": "evidence",
+    "attrs": {
+     "true_owner": "Nonaka Kenji",
+     "planted_by": "Sakai Chitose",
+     "note": "Nonaka had lost them a while ago; recognized on sight because he always wears them at the café"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Laxatives",
+    "role": "tool",
+    "attrs": {
+     "administered_to": "Nonaka Kenji",
+     "delivery": "slipped into the water on his table",
+     "purpose": "force him to leave his seat for the bathroom, casting suspicion on him"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Camouflage-colored uniform",
+    "role": "tool",
+    "attrs": {
+     "color_matched_to": "the café yard's foliage, which Sakai maintained and designed",
+     "purpose": "let Sakai cross the yard unnoticed while customers were focused on their food",
+     "borrowed_from": "the changing room"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Torn cloth snagged on a nail",
+    "role": "evidence",
+    "attrs": {
+     "found": "on a nail sticking out of the outside wall along the yard route",
+     "matches": "same color/fabric as Sakai's uniform",
+     "corroborated_by": "a matching scratch on Sakai's thigh"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Sakai began frying a fresh batch of donuts even though no new customers had entered the café",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "Timed reenactment of the kitchen-window -> yard -> entrance -> hallway -> bathroom round trip took about 2:50, fitting inside the ~3-minute donut-frying timer Sakai used as her alibi window",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "Furukawa unconsciously touched the wallet in his back pocket when accused of the attack, revealing his real secret was an unpaid bill, not the assault",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "business_rival"},
+
+  {"type": "assaults", "from": "p2", "to": "p1", "detail": "struck Tomita on the back of the head with a mop in the men's bathroom"},
+  {"type": "uses", "from": "p2", "to": "o1"},
+  {"type": "uses", "from": "p2", "to": "o3"},
+  {"type": "drugs", "from": "p2", "to": "p3", "substance": "laxative", "purpose": "force him to leave his seat toward the bathroom, making him look suspicious"},
+  {"type": "frames", "from": "p2", "to": "p3", "detail": "plants Nonaka's own missing gloves at the crime scene"},
+  {"type": "wears", "from": "p2", "to": "o4"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o5"},
+  {"type": "owns", "from": "p3", "to": "o2"},
+
+  {"type": "implicates", "from": "o2", "to": "p3", "circumstance_tags": ["red_herring", "framed"]},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "implicates", "from": "c3", "to": "p4", "detail": "clears him of the assault; implicates him only in an unrelated dine-and-dash"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "professional resentment (designed the menu, concept, and yard but was kept as a part-timer with no recognition)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "business rivalry / declining sales at his own café (red herring, no evidence tying him to the attack)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "past money/debt problems (red herring, unrelated secret was an unpaid bill)"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l1"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

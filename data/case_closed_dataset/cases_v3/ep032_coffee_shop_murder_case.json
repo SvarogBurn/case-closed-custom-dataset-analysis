@@ -1,0 +1,433 @@
+{
+ "case_id": "ep032_coffee_shop_murder_case",
+ "episode_number": "32",
+ "title": "Coffee Shop Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Coffee_Shop_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0032.txt (full episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. Eri Kisaki (Ran's mother, an attorney) is kept as a node -- she is one of the four suspects tested for the stall-gap fit and is central to the on-screen deduction, not a background cameo. Sonoko and the unrelated Wakaoji/Sonoko subplot are omitted as out of scope for the murder case itself. Correcting the v1 scaffold: the true mechanism is not \"the killer climbs over, then wipes the wall clean\" -- the killer never crossed the gap at all. He stabbed the victim outside the stall and threw her body over the gap to block the door from the inside, which is why blood is found above the door despite the killer being fully unbloodied and never having climbed anything; the stall-gap fit test (which only clears Sumeragi and Kisaki) is itself a red herring. The retrieval \"rope\" is Tonoyama's own ring-finger bandage, re-fastened after the murder to hide the victim's blood on it. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yayoi Himeno",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": null,
+    "attrs": {
+     "age": 24,
+     "died_of": "strangled unconscious, then stabbed once through the heart",
+     "behavior": "asks the bartender where the restroom is despite already having been told it's unisex moments earlier -- apparently a prearranged signal to Tonoyama that she was heading there",
+     "backstory": "having an affair with Tonoyama; threatened to tell his wife unless he left her and married Yayoi instead"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yuichi Sumeragi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "graduate student",
+    "attrs": {
+     "note": "came to the coffee shop to write a paper; used the restroom before the victim did, which clears him once the timeline is established"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Eri Kisaki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "attorney",
+    "attrs": {
+     "note": "one of only two people slim enough to fit through the stall gap in the initial (ultimately misleading) fit test; helps identify the real killer and states she could clear him in court within hours if wrongly arrested"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Juzo Tonoyama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "university rugby coach",
+    "attrs": {
+     "age": 38,
+     "cover_story": "claims a bandaged ring finger is from a rugby sprain that stopped his wedding ring from fitting",
+     "staging_flaw": "the bandage is on the correct finger for a wedding ring but was demonstrably re-fastened after he entered the coffee shop, in the restroom, right when the murder happened"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Shiro Wakaoji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "advertising agency employee",
+    "attrs": {
+     "note": "too large to fit through the stall gap in the fit test; unrelated to the murder"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Tonoyama's wife",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "note": "unnamed in the transcript; the person Yayoi threatened to expose the affair to"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Coffee shop, main seating area",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Coffee shop restroom (adjacent stalls)",
+    "attrs": {
+     "role_in_case": "murder scene; unisex, lockable, with a window in the victim's stall and a narrow gap above the shared stall wall"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Murder knife",
+    "role": "weapon",
+    "attrs": {
+     "staging_flaw": "blood coats the handle but a narrow section near the handle has none at all -- something was tied around exactly that spot, which is how the killer pulled the knife back out of the stall after throwing the body in"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Tonoyama's ring-finger bandage",
+    "role": "weapon",
+    "attrs": {
+     "trick": "doubled as the strangling cord and as a retrieval string tied to the knife handle; re-wrapped around his own finger afterward and passed off as a rugby injury to hide the victim's blood on it",
+     "staging_flaw": "positioned exactly where a wedding ring would sit, and re-fastened in the restroom at the time of the murder rather than before"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Victim's handbag",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "blood covers even the handle, except for one clean strip -- the same tie-point pattern as the knife, corroborating that a string/cord was used and pulled taut against both objects"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "String found on Sumeragi's table",
+    "role": "evidence",
+    "attrs": {
+     "note": "Sumeragi's own string for tying books together; unrelated to the murder, but briefly treated as suspicious given the retrieval-string theory"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Tonoyama's wedding ring",
+    "role": "evidence",
+    "attrs": {
+     "note": "the excuse for the finger bandage -- \"can't fit my ring on it now\""
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Victim's wallet",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "left emptied next to the murder weapon to fake a mugging-gone-wrong"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The restroom window, the supposed escape route for an outside mugger, is unnaturally clean -- given the amount of blood loss, a killer climbing out through it should have left traces, and a fleeing mugger who abandoned the murder weapon wouldn't have paused to wipe the glass. Rules out the outside-job theory.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Blood is found on top of the stall door that the body was blocking -- but the killer was never sprayed with blood at all. The blood got there because the victim's body, not the killer, went over the gap: she was stabbed outside the stall and thrown in afterward.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "The knife's handle is bloody but a narrow band near the handle is completely clean, as if something had been tied tightly around exactly that spot -- consistent with a cord used to pull the blade back out of the stall after the body was dumped.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cD",
+    "desc": "The same clean-strip-in-a-bloody-surface pattern from the knife handle also appears on the victim's handbag handle, corroborating that a cord was tied taut against multiple objects at the scene rather than the knife's pattern being incidental.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cE",
+    "desc": "Tonoyama's bandage sits on exactly the finger a wedding ring would occupy, and the timeline shows it was re-fastened after he arrived at the coffee shop -- during the window when the murder took place -- rather than before, contradicting his claimed rugby-practice injury.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cF",
+    "desc": "Yayoi asks the bartender where the restroom is even though she'd already been told, moments earlier, that it was unisex -- an odd question to ask twice unless it wasn't really a question, but a signal to someone waiting to know she was heading there.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cG",
+    "desc": "A physical fit test through the narrow gap above the stall wall clears everyone except Sumeragi and Kisaki, who can just barely squeeze through -- seemingly ruling out the larger Tonoyama and Wakaoji entirely, since the prevailing theory assumed the killer had to climb the gap in person.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "affair_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p6",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p4",
+   "temporal_frame": "backstory",
+   "detail": "threatens to tell his wife about the affair unless he leaves her and marries Yayoi instead"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "uses the restroom before the victim does"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "uses the restroom while the victim is already inside her stall"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p4",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "confronts her outside the stall over her threat to expose the affair to his wife"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "strangles her unconscious with his ring-finger bandage, then stabs her once through the heart with a knife tied to that same bandage, outside the stall",
+   "circumstance_tags": ["premeditated", "staged_robbery"]
+  },
+  {
+   "type": "dumps_body_of",
+   "from": "p4",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "throws the body over the gap above the stall wall so it blocks the door from the inside, faking that the killer must have climbed over instead",
+   "circumstance_tags": ["staged_alibi", "locked_room"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "pulls the knife back out through the gap by tugging the bandage tied to its handle"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o6",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "empties the victim's wallet next to the knife to fake a robbery gone wrong"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p4",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "re-wraps the bloodied bandage around his own ring finger and returns to his seat"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "last to use the restroom, after the body is already staged"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cE",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cE",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cF",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cG",
+   "to": "p2",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "cG",
+   "to": "p3",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p2",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "affair_partner_threatening_to_expose_him_to_his_wife_unless_he_married_her"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

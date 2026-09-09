@@ -1,0 +1,341 @@
+{
+ "case_id": "ep415-417_the_evil_spirit_appears_on_an_unlucky_day",
+ "episode_number": "415-417",
+ "title": "The Evil Spirit Appears on An Unlucky Day",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Evil_Spirit_Appears_on_An_Unlucky_Day",
+ "subtitle_source": ["subs_resolved/0415.txt", "subs_resolved/0417.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro, Ran) and the local police inspector (Yokomizo, a procedural walk-on with no plot-load-bearing action) omitted by convention. Episode 416 has no subtitle file locally -- only 0415 (setup: the five 'curse' incidents, house tour, Sekiguchi's hanging) and 0417 (room searches, deduction, confession, shipwreck backstory) were available; 0417 opens with an in-show recap that bridges most of the missing middle, but any incremental clue-gathering unique to 416 could not be verified and is not represented here. Discrepancies vs. the old cases/ file: (1) the old file's label.murderer_id pointed only to the public chauffeur identity (s2/Masashi Watabiki); the transcript makes clear the actual hands-on strangler/heart-attack-inducer is Masashi's twin brother, presumed drowned in the shipwreck 13 years ago but secretly alive -- both twins are culpable (Masashi drove the alibi run and pre-planted his own fingerprints on the weapon and medicine bottle to frame an outsider) but the twin is the one performing the kills edges, so murderer_id now points to him, with Masashi modeled as an equally-guilty co-conspirator. (2) the old file's event e3 (Kunitomo's induced heart attack) was flagged is_crime_event:false, but the transcript is explicit this is the second of 'two murders' Conan sets out to solve -- corrected here. (3) old file's has_motive_against motive_type was left 'unspecified'; transcript grounds it concretely: Sekiguchi murdered his company's previous president 13 years ago and staged/caused the Kunitomo family cruiser's sinking to dispose of the body, drowning three household relatives (the twins' father, Namika's father, Akatsuka's wife) in the process, and Kunitomo himself later told police to call off the wreck search -- both twins target Sekiguchi and Kunitomo for this. case_type: murder."
+,
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kenzo Akatsuka",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Kunitomo family butler",
+    "attrs": {
+     "trait": "extreme perfectionist/OCD, cannot tolerate anything crooked",
+     "backstory": "wife died in the cruiser sinking 13 years ago",
+     "cleared_by": "a straightened-card frame-up would be impossible for him to leave crooked"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masashi Watabiki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kunitomo family chauffeur",
+    "attrs": {
+     "age": 28,
+     "phobia": "mysophobia (fear of germs), wears gloves almost constantly",
+     "role_in_plot": "public/known twin; drove the master and mistress to the hospital to build the murder-window alibi, and pre-planted his own fingerprints on the rope and medicine bottle to frame an outside intruder"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Watabiki's twin brother",
+    "aliases": [],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "backstory": "believed drowned in the cruiser sinking 13 years ago; actually swam ashore with amnesia, wandered Japan, and reunited with Masashi two years ago",
+     "role_in_plot": "hidden twin who secretly lived in the house, took shifts as 'Watabiki' via a shared notebook, and physically strangled Sekiguchi and induced Kunitomo's fatal heart attack"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Namika Senzaki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Kunitomo family chef",
+    "attrs": {
+     "age": 28,
+     "phobia": "acrophobia, cannot approach windows above the second floor",
+     "cleared_by": "dust found undisturbed on her window sill"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Shigeko Senzaki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Kunitomo family housekeeper",
+    "attrs": {
+     "age": 52,
+     "phobia": "belonephobia, fear of sharp/pointed objects",
+     "cleared_by": "no sharp objects anywhere in her room; calendar held up with tape, not thumbtacks",
+     "backstory": "husband died in the cruiser sinking 13 years ago"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Toshimichi Sekiguchi",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "security company president",
+    "attrs": {
+     "died_of": "strangulation, staged as a hanging suicide from the third-floor balcony",
+     "backstory": "13 years ago murdered his company's previous president and used the annual Kunitomo family cruise as cover to dispose of the body, then lied to police about the wreck's true coordinates"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Atsuhiro Kunitomo",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "head of the Kunitomo family",
+    "attrs": {
+     "age": 56,
+     "died_of": "heart attack induced after crushed/tampered heart medication",
+     "backstory": "survived the shipwreck 13 years ago alongside his wife and Sekiguchi; later told police to call off the search for the sunken cruiser"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Yasue Kunitomo",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "age": 42,
+     "backstory": "survived the shipwreck 13 years ago; denies knowing about Sekiguchi's cover-up"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Missing security company president",
+    "aliases": ["the fifth soul"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "security company president (predecessor to Sekiguchi)",
+    "attrs": {
+     "died_of": "killed by Sekiguchi 13 years ago, days before the cruiser sinking",
+     "body_found": "bag containing his remains entangled in the cruiser's propeller, recovered 13 years later"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Namika's father",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "Kunitomo family chef (predecessor to Namika)",
+    "attrs": {
+     "relation": "Shigeko's husband",
+     "died_of": "drowned in the cruiser sinking 13 years ago"
+    }
+   },
+   {
+    "id": "p11",
+    "name": "Watabiki twins' father",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "drowned in the cruiser sinking 13 years ago"
+    }
+   },
+   {
+    "id": "p12",
+    "name": "Akatsuka's wife",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "drowned in the cruiser sinking 13 years ago"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kunitomo mansion",
+    "attrs": {"place": "Shizuoka"}
+   },
+   {
+    "id": "l2",
+    "name": "Third-floor bedroom & balcony",
+    "attrs": {
+     "access": "fingerprint-authenticated door, openable only by a registered household member or the master from inside",
+     "significance": "site of both murders"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Hospital",
+    "attrs": {"purpose": "Atsuhiro's monthly heart checkup, the trip used as the murder-window alibi"}
+   },
+   {
+    "id": "l4",
+    "name": "Suruga Bay wreck site",
+    "attrs": {"event": "Kunitomo family cruiser sank here 13 years ago"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Balcony rope",
+    "role": "weapon",
+    "attrs": {"use": "used to hang Sekiguchi's body from the balcony railing after strangulation"}
+   },
+   {
+    "id": "o2",
+    "name": "Kunitomo's heart medicine bottle",
+    "role": "weapon",
+    "attrs": {"tampering": "pills crushed/tampered to induce a fatal heart attack"}
+   },
+   {
+    "id": "o3",
+    "name": "Warning card #1 (mailed)",
+    "role": "evidence",
+    "attrs": {"message": "Repent of your sins before I awaken. I am the fifth soul.", "received": "left in the mailbox"}
+   },
+   {
+    "id": "o4",
+    "name": "Warning card #2 (on body)",
+    "role": "evidence",
+    "attrs": {"message": "Here I pay for my sins from 13 years ago", "found_on": "Sekiguchi's body"}
+   },
+   {
+    "id": "o5",
+    "name": "Sekiguchi's wristwatch",
+    "role": "evidence",
+    "attrs": {"carving": "letters E and N on the dial", "decoded_meaning": "45 minutes north latitude, 30 minutes east longitude -- the wreck's real coordinates"}
+   },
+   {
+    "id": "o6",
+    "name": "Akatsuka's compass",
+    "role": "tool",
+    "attrs": {"use": "reference showing N should precede E going clockwise, exposing the watch carving as coordinates, not initials"}
+   },
+   {
+    "id": "o7",
+    "name": "Shigeko's birthday calendar",
+    "role": "evidence",
+    "attrs": {"marks": "eight birthday circles kept for what should be nine known family members"}
+   },
+   {
+    "id": "o8",
+    "name": "Watabiki's shared notebook",
+    "role": "evidence",
+    "attrs": {"use": "logs every detail so the two twins can seamlessly take turns as a single 'Watabiki'"}
+   },
+   {
+    "id": "o9",
+    "name": "President's body bag",
+    "role": "evidence",
+    "attrs": {"found": "entangled in the cruiser's propeller, recovered with the wreck 13 years later"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Nine known relatives across the three households vs. only eight birthday marks on Shigeko's calendar -- a shared mark hides a ninth person.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Watabiki's left-hand tree-rescue scar, visible when Namika recalls it, is absent minutes later when he borrows Ran's pen -- two physically identical, distinct people.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "The handwriting in Watabiki's daily notebook looks consistent, but the circle drawn before each entry varies day to day -- two different hands wrote it.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "Sekiguchi's watch is carved 'E' then 'N', but Akatsuka's compass shows N should come before E -- the carving is coordinates, not initials.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "twin_sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "twin_sibling_of"},
+  {"type": "relationship", "from": "p2", "to": "p11", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p11", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p10", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p10", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p1", "to": "p12", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p7", "to": "p8", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p7", "to": "p6", "relation_type": "childhood_friend_of"},
+  {"type": "relationship", "from": "p8", "to": "p6", "relation_type": "friend_of"},
+  {"type": "relationship", "from": "p10", "to": "p11", "relation_type": "childhood_friend_of"},
+  {"type": "relationship", "from": "p11", "to": "p12", "relation_type": "childhood_friend_of"},
+  {"type": "relationship", "from": "p10", "to": "p12", "relation_type": "childhood_friend_of"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2", "detail": "came up at 7:45 PM to take the master and mistress down to the car; confirms Sekiguchi was alive then"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2", "detail": "hidden on the third floor for both killings, then blended into the search party disguised as Masashi"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p7", "to": "l3"},
+  {"type": "was_at", "from": "p8", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p6", "to": "l4"},
+  {"type": "was_at", "from": "p7", "to": "l4"},
+  {"type": "was_at", "from": "p8", "to": "l4"},
+  {"type": "was_at", "from": "p10", "to": "l4"},
+  {"type": "was_at", "from": "p11", "to": "l4"},
+  {"type": "was_at", "from": "p12", "to": "l4"},
+
+  {"type": "assists", "from": "p2", "to": "p3", "detail": "drove the master and mistress to the hospital to give both twins an alibi window while p3 committed the killings"},
+
+  {"type": "kills", "from": "p3", "to": "p6", "method": "strangulation, staged as a hanging suicide", "circumstance_tags": ["locked_room", "staged_suicide", "frame_up"]},
+  {"type": "stages_suicide_of", "from": "p3", "to": "p6", "circumstance_tags": ["staged_suicide"]},
+  {"type": "kills", "from": "p3", "to": "p7", "method": "induced fatal heart attack via tampered medication", "circumstance_tags": ["locked_room", "staged_natural_death"]},
+  {"type": "kills", "from": "p6", "to": "p9", "method": "unspecified, 13 years ago, to seize the company presidency", "circumstance_tags": ["cover_up"]},
+  {"type": "disposes_body_at", "from": "p6", "to": "l4"},
+  {"type": "covers_up_for", "from": "p7", "to": "p6", "circumstance_tags": ["cover_up"], "detail": "called off the police search for the sunken cruiser on a butsumetsu day, 13 years ago"},
+
+  {"type": "leaves_evidence", "from": "p2", "to": "o1", "circumstance_tags": ["frame_up", "red_herring"]},
+  {"type": "leaves_evidence", "from": "p2", "to": "o2", "circumstance_tags": ["frame_up", "red_herring"]},
+  {"type": "leaves_evidence", "from": "p3", "to": "o4", "detail": "planted the second warning card on Sekiguchi's body"},
+  {"type": "written_by", "from": "o3", "to": "p3"},
+  {"type": "written_by", "from": "o4", "to": "p3"},
+  {"type": "regarding", "from": "o3", "to": "p9"},
+  {"type": "regarding", "from": "o4", "to": "p9"},
+
+  {"type": "owns", "from": "p6", "to": "o5"},
+  {"type": "owns", "from": "p1", "to": "o6"},
+  {"type": "owns", "from": "p5", "to": "o7"},
+  {"type": "owns", "from": "p2", "to": "o8"},
+
+  {"type": "hides_body_in", "from": "p6", "to": "o9"},
+  {"type": "located_in", "from": "o9", "to": "l4"},
+  {"type": "regarding", "from": "o9", "to": "p9"},
+  {"type": "implicates", "from": "o9", "to": "p6"},
+
+  {"type": "regarding", "from": "c1", "to": "o7"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c3", "to": "o8"},
+  {"type": "implicates", "from": "c3", "to": "p3"},
+  {"type": "regarding", "from": "c4", "to": "o5"},
+  {"type": "regarding", "from": "c4", "to": "o6"},
+  {"type": "implicates", "from": "c4", "to": "p6"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p6", "motive_type": "revenge_for_fathers_death_in_coverup"},
+  {"type": "has_motive_against", "from": "p2", "to": "p7", "motive_type": "revenge_for_fathers_death_in_coverup"},
+  {"type": "has_motive_against", "from": "p3", "to": "p6", "motive_type": "revenge_for_fathers_death_in_coverup"},
+  {"type": "has_motive_against", "from": "p3", "to": "p7", "motive_type": "revenge_for_fathers_death_in_coverup"},
+  {"type": "has_motive_against", "from": "p6", "to": "p9", "motive_type": "corporate_takeover"},
+  {"type": "has_motive_against", "from": "p1", "to": "p6", "motive_type": "grief_over_wifes_death (red herring)"},
+  {"type": "has_motive_against", "from": "p1", "to": "p7", "motive_type": "grief_over_wifes_death (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p6", "motive_type": "grief_over_husbands_death (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p7", "motive_type": "grief_over_husbands_death (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p6", "motive_type": "grief_over_fathers_death (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p7", "motive_type": "grief_over_fathers_death (red herring)"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

@@ -1,0 +1,386 @@
+{
+ "case_id": "ep136-137_the_old_blue_castle_investigation_case",
+ "episode_number": "136-137",
+ "title": "The Old Blue Castle Investigation Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Old_Blue_Castle_Investigation_Case",
+ "subtitle_source": ["subs_resolved/0136.txt", "subs_resolved/0137.txt"],
+ "schema_version": "v3",
+ "notes": "Two-part episode, full transcript read for both parts. Recurring core cast (Conan Edogawa/Shinichi Kudo, Inspector Megure) omitted by the usual convention. Deviating from that convention for Agasa and the Detective Boys (Haibara, Ayumi, Mitsuhiko, Genta): they are included as person nodes here because this episode makes them direct present-day victims/investigators (kidnapped, attacked, and the ones who solve the case alongside the excluded Conan) rather than incidental bystanders, so omitting them would erase most of the present-day half of the graph. No `event` node type: every action is a directly typed edge between the entities involved, sharing an `order` integer per real-world occurrence. The old flattened wiki-derived file at cases/ep136-137_... got the broad strokes right (maid Mutsumi Nishikawa killed and impersonated the real Masuyo Mamiya, motivated by a hidden treasure) but wrongly implied she killed the family's eldest daughter and 'several long-time servants' gradually 'over the following years' -- the transcript shows the daughter and roughly 10-15 guests/staff all died together in a single arson (the tower fire, 4 years before present) staged immediately after Masuyo's murder, on the same day, to cover it up; a second death (a suspicious employee, 2 years before present) is only implied, not confirmed on-screen. The old file also omitted Sada'aki Mamiya (the historian ex-owner whose will and cipher drive the whole B-plot), Mitsuru and Takahito's real family relationships, the chess-cipher/treasure-room mechanics, and the fact the 'treasure' turns out to be nothing. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Masuyo Mamiya",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "Head of the Mamiya Family (matriarch)",
+    "attrs": {
+     "age": 83,
+     "died_of": "starvation, locked in a secret tunnel beneath the castle by Mutsumi Nishikawa",
+     "immobility": "had not walked in roughly a decade after breaking her legs -- later used as a forensic identifier of her skeleton",
+     "killed_because": "discovered Nishikawa's scheme to find the family's hidden treasure and had to be silenced",
+     "identity_stolen_by": "Mutsumi Nishikawa, who underwent plastic surgery and impersonated her publicly for the next 4 years"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Mamiya Eldest Daughter",
+    "aliases": ["the Mistress"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "relation": "Masuyo's daughter, mother of Takahito",
+     "died_of": "burned to death in the tower fire",
+     "died_because": "did not believe Nishikawa's disguise as her own mother Masuyo, threatening to expose the impersonation",
+     "note": "had recently remarried Mitsuru abroad and returned with her son Takahito to celebrate Masuyo's birthday the night she was killed"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Sada'aki Mamiya",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "historian; former head of the Mamiya family (adopted into the family by marriage)",
+    "attrs": {
+     "died": "6 years before present, unspecified/natural cause",
+     "will": "promised his 'greatest treasure' to whoever solved the mystery of the castle",
+     "legacy": "personally designed the garden chess-cipher and the castle's secret passages",
+     "nickname": "called an 'argumentative egghead' by his mother-in-law Masuyo"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mitsuru Mamiya",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unspecified; adopted into the family by marriage, previously lived abroad",
+    "attrs": {
+     "age": 49,
+     "motive_note": "openly suspected by his own stepson Takahito and mother-in-law Masuyo of caring more about the hidden treasure than the family",
+     "claim": "says he came to live at the castle out of affection for it and because of his late father-in-law's will"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Takahito Mamiya",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "painter",
+    "attrs": {
+     "age": 25,
+     "relation": "son of Sada'aki and the Eldest Daughter; educated abroad, arrived at the castle only 2-3 days before the fire",
+     "suspicious_behavior": "withdrawn and described as 'obsessed with something' by staff; kept old fire-related newspaper clippings in his workshop",
+     "true_reason": "revealed in the epilogue to have been secretly investigating whether the fire 4 years ago was really an accident"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Katsuo Tabata",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Mamiya Family Gardener",
+    "attrs": {
+     "age": 41,
+     "survivor_note": "one of only a few people who survived the tower fire 4 years ago, having been hired only shortly before it"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Mutsumi Nishikawa",
+    "aliases": ["Masuyo Mamiya (impersonated)"],
+    "roles": ["suspect"],
+    "occupation": "former Mamiya family housekeeper/maid (~20 years of service before her crime)",
+    "attrs": {
+     "status": "officially recorded as a missing person",
+     "disguise": "underwent plastic surgery to resemble Masuyo Mamiya and faked memory loss/senility from 'shock' to cover inconsistencies",
+     "tell": "casually referenced a passport photo-size change from 6 years ago, a detail someone truly secluded in the castle for a decade could not have known firsthand",
+     "outcome": "arrested by police after finding the promised 'treasure' was only an inscribed scenic view"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Missing Mamiya Employee",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "Mamiya household employee (hired approx. 2 years before present)",
+    "attrs": {
+     "disappearance": "vanished one night after telling co-workers something felt 'odd' about the burned tower",
+     "found": "found dead of starvation in the woods 10 days later; police ruled it an accident",
+     "rumor": "staff whispered that the souls of those who died in the tower fire had 'possessed' him"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Hiroshi Agasa",
+    "aliases": [],
+    "roles": ["victim", "witness"],
+    "occupation": "inventor",
+    "attrs": {
+     "outcome": "went missing overnight while investigating alone; found later with broken, bloodied glasses after being attacked by Nishikawa"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Ai Haibara",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {}
+   },
+   {
+    "id": "p11",
+    "name": "Ayumi Yoshida",
+    "aliases": [],
+    "roles": ["witness", "victim"],
+    "occupation": null,
+    "attrs": {}
+   },
+   {
+    "id": "p12",
+    "name": "Mitsuhiko Tsuburaya",
+    "aliases": [],
+    "roles": ["witness", "victim"],
+    "occupation": null,
+    "attrs": {}
+   },
+   {
+    "id": "p13",
+    "name": "Genta Kojima",
+    "aliases": [],
+    "roles": ["victim", "witness"],
+    "occupation": null,
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Castle Garden (chessboard lawn)", "attrs": {}},
+   {"id": "l2", "name": "Study (clock hides a secret passage entrance)", "attrs": {}},
+   {"id": "l3", "name": "Secret Tunnel / Basement", "attrs": {"fate": "where Masuyo Mamiya was locked and starved to death"}},
+   {"id": "l4", "name": "Burned Tower", "attrs": {"fate": "site of the fire that killed the Eldest Daughter and roughly 10-15 guests and staff 4 years before present"}},
+   {"id": "l5", "name": "Takahito's Workshop / Studio", "attrs": {}},
+   {"id": "l6", "name": "Final Secret Chamber", "attrs": {"reveal": "behind Sada'aki's portrait; contains no material treasure, only an inscription dedicating the castle's view to whoever solves the mystery first"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Masuyo's dying message",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "\"That person trapped me here and is trying to steal the castle's treas[ure]\" (unfinished)",
+     "written_in": "scratched into the tunnel stairs, interrupted by her death",
+     "found_by": "Conan Edogawa originally; found again the next day by Haibara and the others"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Garden chess-piece cipher",
+    "role": "evidence",
+    "attrs": {
+     "decoding_method": "the garden lawn is cut into a chessboard with statue chess pieces; viewed from the stone path marked by the knight statue, the white pieces spell letters (A-H) and numbers (1-8)",
+     "decoded_message": "points to the castle's former owner, Sada'aki, described via the cipher as 'an intellectual person who argues a lot'"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Sada'aki's portrait",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "rotates, per the arrangement of the black chess pieces, to open the passage to the final secret chamber"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Old fire newspapers",
+    "role": "evidence",
+    "attrs": {
+     "content": "clippings about the Mamiya residence fire from 4 years ago",
+     "found_in": "Takahito's workshop, ostensibly kept to cover paintings/dry brushes",
+     "significance": "initially made Takahito look suspicious; later explained as material from his own secret investigation into the fire"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Agasa's broken glasses",
+    "role": "evidence",
+    "attrs": {
+     "condition": "broken and bloodied",
+     "found_in": "the secret tunnel, near where Masuyo's dying message was written"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Detective Badges (with transmitters)",
+    "role": "tool",
+    "attrs": {
+     "feature": "radio transmitters",
+     "note": "the kids' own badges had run out of battery so they'd handed them to Agasa; he was still carrying them when captured"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Mitsuhiko's tracking glasses",
+    "role": "instrument",
+    "attrs": {
+     "feature": "tracking function, a gift from Dr. Agasa, used to follow the Detective Badges' transmitters and locate the captives"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "The castle's \"greatest treasure\"",
+    "role": "evidence",
+    "attrs": {
+     "promised_by": "Sada'aki's will",
+     "actual_nature": "an inscription reading \"I offer this wonderful view of the castle to the first person to arrive here\" -- no material treasure at all"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Testimonial inconsistency: 'Masuyo' casually complained about passport photo sizes changing six years ago and about bill designs changing -- details someone truly housebound in the castle for the past decade (per her own claimed broken legs) could not have experienced firsthand -- proving she had secretly been coming and going, i.e. she is not the real, housebound Masuyo.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Forensic comparison: the recovered skeleton's leg bones are unusually thin and its teeth worn in a way consistent with someone who hadn't walked in roughly a decade, with a build and hairstyle matching an elderly woman -- inconsistent with the physically mobile, publicly active 'Masuyo' seen day to day, proving the skeleton is the real Masuyo and the woman posing as her is an impostor.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p7", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p8", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p10", "to": "p11", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p10", "to": "p12", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p10", "to": "p13", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p11", "to": "p12", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p11", "to": "p13", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p12", "to": "p13", "relation_type": "classmate", "symmetric": true},
+
+  {"type": "kills", "from": "p7", "to": "p1", "order": 1, "temporal_frame": "backstory", "years_before_present": 4, "method": "locked in the secret tunnel/basement and left to starve", "circumstance_tags": ["locked_room", "cover_up"]},
+  {"type": "was_at", "from": "p1", "to": "l3", "order": 1, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p7", "to": "l3", "order": 1, "temporal_frame": "backstory"},
+  {"type": "written_by", "from": "o1", "to": "p1"},
+  {"type": "implicates", "from": "o1", "to": "p7"},
+  {"type": "impersonates", "from": "p7", "to": "p1", "order": 3, "temporal_frame": "backstory", "years_before_present": 4, "method": "plastic surgery + feigned memory loss/senility"},
+  {"type": "kills", "from": "p7", "to": "p2", "order": 4, "temporal_frame": "backstory", "years_before_present": 4, "method": "arson (tower fire)", "circumstance_tags": ["cover_up", "mass_casualty"]},
+  {"type": "burns", "from": "p7", "to": "l4", "order": 4, "temporal_frame": "backstory", "years_before_present": 4},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 4, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p7", "to": "l4", "order": 4, "temporal_frame": "backstory"},
+  {"type": "kills", "from": "p7", "to": "p8", "order": 6, "temporal_frame": "backstory", "years_before_present": 2, "method": "unconfirmed; official cause of death recorded as accidental starvation in the woods", "circumstance_tags": ["cover_up", "unconfirmed_by_confession"]},
+
+  {"type": "has_motive_against", "from": "p7", "to": "p1", "motive_type": "silence_witness_and_identity_theft (Masuyo discovered Nishikawa's scheme to find the family's hidden treasure)"},
+  {"type": "has_motive_against", "from": "p7", "to": "p2", "motive_type": "silence_witness (the Eldest Daughter did not believe Nishikawa's disguise as her mother, threatening exposure)"},
+  {"type": "has_motive_against", "from": "p7", "to": "p8", "motive_type": "silence_witness (implied; the employee had grown suspicious of the tower shortly before disappearing) -- not explicitly confirmed by Nishikawa's on-screen confession"},
+
+  {"type": "seeks", "from": "p7", "to": "o8", "circumstance_tags": ["true_motive"]},
+  {"type": "seeks", "from": "p4", "to": "o8", "circumstance_tags": ["red_herring"]},
+
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "located_in", "from": "o3", "to": "l2"},
+  {"type": "located_in", "from": "o4", "to": "l5"},
+  {"type": "located_in", "from": "o5", "to": "l3"},
+  {"type": "located_in", "from": "o8", "to": "l6"},
+
+  {"type": "owns", "from": "p9", "to": "o5"},
+  {"type": "owns", "from": "p11", "to": "o6"},
+  {"type": "owns", "from": "p12", "to": "o6"},
+  {"type": "owns", "from": "p13", "to": "o6"},
+  {"type": "owns", "from": "p12", "to": "o7"},
+
+  {"type": "implicates", "from": "o5", "to": "p7"},
+  {"type": "implicates", "from": "o4", "to": "p5", "circumstance_tags": ["red_herring"]},
+  {"type": "regarding", "from": "c1", "to": "p7"},
+  {"type": "implicates", "from": "c1", "to": "p7"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "implicates", "from": "c2", "to": "p7"},
+
+  {"type": "was_at", "from": "p9", "to": "l1", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p7", "to": "l2", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p10", "to": "l1", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l1", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p12", "to": "l1", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p13", "to": "l1", "order": 7, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p10", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p12", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p13", "to": "l1", "order": 8, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p9", "to": "l2", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 11, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p9", "to": "l3", "order": 12, "temporal_frame": "present"},
+  {"type": "assaults", "from": "p7", "to": "p9", "order": 12, "temporal_frame": "present", "circumstance_tags": ["off-screen", "cover_up"]},
+  {"type": "abducts", "from": "p7", "to": "p9", "order": 12, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p10", "to": "l2", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l2", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p12", "to": "l2", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p13", "to": "l2", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p10", "to": "l3", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l3", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p12", "to": "l3", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p13", "to": "l3", "order": 13, "temporal_frame": "present"},
+  {"type": "discovers", "from": "p10", "to": "o1", "order": 13, "temporal_frame": "present"},
+  {"type": "discovers", "from": "p12", "to": "o5", "order": 13, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p7", "to": "l3", "order": 14, "temporal_frame": "present", "circumstance_tags": ["locked_room"]},
+  {"type": "abducts", "from": "p7", "to": "p13", "order": 14, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p10", "to": "l5", "order": 15, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l5", "order": 15, "temporal_frame": "present"},
+  {"type": "discovers", "from": "p10", "to": "o4", "order": 15, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p12", "to": "l4", "order": 15, "temporal_frame": "present"},
+  {"type": "abducts", "from": "p7", "to": "p12", "order": 15, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p10", "to": "l4", "order": 16, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l4", "order": 16, "temporal_frame": "present"},
+
+  {"type": "assaults", "from": "p7", "to": "p11", "order": 17, "temporal_frame": "present", "circumstance_tags": ["attempted"]},
+  {"type": "rescues", "from": "p10", "to": "p11", "order": 17, "temporal_frame": "present"},
+
+  {"type": "relocates_body_of", "from": "p7", "to": "p1", "order": 18, "temporal_frame": "present", "circumstance_tags": ["cover_up"]},
+  {"type": "discovers", "from": "p10", "to": "p1", "order": 18, "temporal_frame": "present"},
+  {"type": "discovers", "from": "p11", "to": "p1", "order": 18, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p7", "to": "l4", "order": 19, "temporal_frame": "present"},
+  {"type": "deceives", "from": "p7", "to": "p10", "order": 19, "temporal_frame": "present"},
+  {"type": "deceives", "from": "p7", "to": "p11", "order": 19, "temporal_frame": "present"},
+
+  {"type": "confronts", "from": "p10", "to": "p7", "order": 20, "temporal_frame": "present"},
+  {"type": "confronts", "from": "p11", "to": "p7", "order": 20, "temporal_frame": "present"},
+
+  {"type": "threatens", "from": "p7", "to": "p10", "order": 21, "temporal_frame": "present"},
+  {"type": "threatens", "from": "p7", "to": "p11", "order": 21, "temporal_frame": "present"},
+
+  {"type": "locates", "from": "p12", "to": "p13", "order": 22, "temporal_frame": "present"},
+  {"type": "locates", "from": "p12", "to": "p9", "order": 22, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p12", "to": "l4", "order": 22, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p13", "to": "l4", "order": 22, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p9", "to": "l4", "order": 22, "temporal_frame": "present"},
+
+  {"type": "flees_to", "from": "p7", "to": "l2", "order": 23, "temporal_frame": "present"},
+
+  {"type": "decodes", "from": "p10", "to": "o2", "order": 24, "temporal_frame": "present"},
+  {"type": "opens", "from": "p10", "to": "l6", "order": 24, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p7", "to": "l6", "order": 25, "temporal_frame": "present"},
+
+  {"type": "investigates", "from": "p5", "to": "l4", "order": 26, "temporal_frame": "present", "circumstance_tags": ["red_herring", "self_directed_investigation"]}
+ ],
+ "label": {
+  "murderer_id": "p7"
+ }
+}

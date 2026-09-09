@@ -1,0 +1,220 @@
+{
+ "case_id": "ep993-995_makoto_kyogoku_the_understudy",
+ "episode_number": "993-995",
+ "title": "Makoto Kyogoku the Understudy",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Makoto_Kyogoku_the_Understudy",
+ "subtitle_source": "subs_resolved/0993.txt (393 lines) + subs_resolved/0995.txt (365 lines) = 758 lines, both read in full. subs_resolved/0994.txt (Part Two) does not exist in this dataset -- the middle third of the arc is not covered by any available transcript; the rebuild below is based only on Part One (setup, death of Tokuzono, opening of investigation) and Part Three (resolution, Odori's death revealed, culprit confession), so any material introduced uniquely in Part Two is missing from this file. This gap is noted rather than papered over.",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan/Kudo Shinichi, Ran, Sonoko, Sera Masumi) omitted by convention. case_type: murder (two victims, one culprit) staged partly as accident/self-inflicted-suicide. No correction needed to the old low-fidelity case file's headline claim: Hideka Aburai (makeup artist) is confirmed as the culprit in both deaths by her own on-screen confession in episode 995, matching the old file's s4. The rebuild adds fidelity the old file lacked: (1) the backstory figure Nishibe (a former AD who died in a car accident after being traumatized by one of Tokuzono's earlier pranks) is named and given his own node -- the old file's event e1 gestured at this but did not name him or link him to Aburai's grief/motive explicitly; (2) the old file collapsed the crime scene into a single 'Abandoned building' location, but the transcript distinguishes the fourth-floor classroom (trap site, Tokuzono's death) from the ground-floor filming area (Odori's poisoning) -- modeled as two locations; (3) the old file's single 'poisoned drinking straw' object is decomposed into the actual mechanism described on-screen: a poisoned straw-cap fashioned from a cut straw tip, later hidden inside one of Aburai's own allergy-medicine capsules -- these are separate physical evidence items now modeled as separate object nodes; (4) added Odori's stolen phone (taken by Aburai to erase her side of a threatening conversation) and the camera footage that visually catches her reacting wrong to Tokuzono's fall, both of which the old file omitted entirely despite being the two decisive proofs used in the on-screen deduction. Aburai's second attack (poisoning Odori) was originally staged by the police as Odori's own suicide out of guilt for an 'accidental' prank death; Sera/Conan's deduction (delivered through Sonoko) overturns that reading using the footage and the capsule.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Makoto Kyogoku",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "police sergeant, filling in as an action-scene stunt understudy",
+    "attrs": {
+     "context": "accidentally knocked out the drama's original stuntman, was recruited on the spot to replace him, and was the only person on the fourth floor with Tokuzono when he fell -- making him the first suspect"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Shigematsu Tomioka",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "TV drama director, age 50",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Saiya Tokuzono",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "actor, age 34",
+    "attrs": {
+     "died_of": "fell to his death from a fourth-floor window after being startled by a toy butterfly exploiting his known fear of bugs",
+     "habit": "notorious for playing practical jokes on cast and crew, without malice by his own account"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Nanako Jinmei",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "actress, age 29",
+    "attrs": {
+     "note": "insisted on doing her own fight-scene stunt on the fourth floor shortly before Tokuzono's death, leaving her oddly out of breath afterward"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hideka Aburai",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "makeup artist, age 26",
+    "attrs": {
+     "cover_story": "claimed she could not take her own allergy medicine so that Odori would go buy drinks, creating the window to swap in the poisoned straw",
+     "confession": "admitted on-screen to both killings once confronted with the footage and the hidden capsule"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yota Hoegi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "assistant director (AD), age 26",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Daisaku Odori",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "assistant director, age 48",
+    "attrs": {
+     "died_of": "poisoned via a rigged straw cap hidden on his milkshake straw",
+     "discovery": "secretly recovered the toy butterfly from the fourth-floor classroom after Tokuzono's fall, recognized it as the trap mechanism, and laughed on realizing who it implicated -- then tried to use it to threaten the real culprit",
+     "staged_as": "police initially read his death as guilt-driven suicide over Tokuzono's 'accidental' fall"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Nishibe",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "former assistant director",
+    "attrs": {
+     "died_of": "car accident while driving to a filming location, distressed and sleepless after one of Tokuzono's practical jokes",
+     "connection": "person Aburai Hideka grieved deeply; she tried to kill herself to join him after her own crimes were exposed"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Fourth-floor classroom",
+    "attrs": {
+     "role_in_case": "filming set for the drama's 'culprit falls from the window' scene; site of the phone-and-butterfly trap and of Tokuzono's death"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Ground-floor filming area",
+    "attrs": {
+     "role_in_case": "main cast/crew gathering area outside the building; site of the drink distribution during which Odori was poisoned"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Toy butterfly (practical joke device)",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "a fluttering wind-up prop planted outside the fourth-floor window to startle bug-phobic Tokuzono into falling when he leaned out for his phone"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Tokuzono's phone",
+    "role": "tool",
+    "attrs": {
+     "trick": "placed carefully on top of the butterfly outside the window so Tokuzono would lean out to retrieve it after calling it from another phone",
+     "anomaly": "found without a single scratch, proving it had been placed by hand rather than dropped or thrown"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Poisoned straw cap",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "the cut tip of a straw, coated in poison and slid onto a normal shake straw like a cap, so the shake and cup themselves tested clean"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Allergy-medicine capsule (poison hiding spot)",
+    "role": "evidence",
+    "attrs": {
+     "mechanism": "the removed poisoned cap was rolled up and hidden inside one of Aburai's own allergy capsules after the killing, which is why she could no longer take her allergy medicine"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Odori's stolen phone",
+    "role": "evidence",
+    "attrs": {
+     "status": "missing from Odori's belongings after his death",
+     "reason": "taken by Aburai to erase the record of the threatening conversation between them"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Footage of Tokuzono's fall",
+    "role": "evidence",
+    "attrs": {
+     "content": "camera roll shot for the drama, incidentally capturing Odori holding a phone he was never seen with again, and Aburai ignoring the fall entirely to stare up at the fourth-floor window"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "In the same footage, everyone reacts to Tokuzono's fall except Aburai, who stares fixedly up at the fourth-floor window instead -- and Odori is seen holding a phone that was never found among his belongings.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "No poison was found in Odori's shake or its cup -- only on the hidden cap fitted over the straw, which is why the 'suicide by drinking poison' story didn't hold up.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p7", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p8", "relation_type": "mourns"},
+  {"type": "pranks", "from": "p3", "to": "p8", "circumstance_tags": ["led_to_fatal_accident"], "detail": "Tokuzono's practical joke left Nishibe distressed and sleepless the night before Nishibe's fatal car accident"},
+  {"type": "has_motive_against", "from": "p5", "to": "p3", "motive_type": "revenge_for_nishibes_death"},
+  {"type": "has_motive_against", "from": "p5", "to": "p7", "motive_type": "silencing_a_blackmail_threat"},
+  {"type": "owns", "from": "p5", "to": "o1"},
+  {"type": "owns", "from": "p3", "to": "o2"},
+  {"type": "plants", "from": "p5", "to": "o1", "detail": "planted outside the fourth-floor window before the break ended"},
+  {"type": "uses_as_lure", "from": "p5", "to": "o2", "detail": "placed Tokuzono's own phone atop the butterfly to draw him to the window"},
+  {"type": "kills", "from": "p5", "to": "p3", "method": "startled him into falling from the fourth-floor window via a toy butterfly exploiting his bug phobia"},
+  {"type": "steals", "from": "p5", "to": "o5"},
+  {"type": "poisons", "from": "p5", "to": "o3"},
+  {"type": "hides_contraband_in", "from": "p5", "to": "o4"},
+  {"type": "kills", "from": "p5", "to": "p7", "method": "poisoned via a rigged straw cap hidden on his milkshake straw", "circumstance_tags": ["staged_suicide"]},
+  {"type": "recovers", "from": "p7", "to": "o1", "detail": "secretly took the butterfly from the classroom after the fall, recognizing it as the trap mechanism"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "implicates", "from": "o1", "to": "p5"},
+  {"type": "implicates", "from": "o4", "to": "p5"},
+  {"type": "implicates", "from": "o5", "to": "p5"},
+  {"type": "regarding", "from": "c1", "to": "o6"},
+  {"type": "regarding", "from": "c1", "to": "p7"},
+  {"type": "implicates", "from": "c1", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "implicates", "from": "c2", "to": "p5"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

@@ -1,0 +1,515 @@
+{
+ "case_id": "ep088-089_draculas_villa_murder_case",
+ "episode_number": "88-89",
+ "title": "Dracula's Villa Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Dracula%27s_Villa_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0088.txt + case_closed_dataset/subs_resolved/0089.txt (two-episode arc, full transcripts read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro Mouri, Ran, Conan) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved. Two distinct wooden-stake objects exist (the real murder weapon and a painted decoy swapped into the collection room to build a false alibi timeline) and are modeled as separate object nodes per schema's one-node-per-physical-instance rule. Kogoro's wife/lover-conspiracy theory and the editor's blackmail motive are both genuine red herrings the transcript spends real time on before the true culprit is revealed. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Toshiya Tadokoro",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "student and secret ghostwriter of Daisuke Torakura",
+    "attrs": {
+     "learned_truth_from": "Kaori's nurse secretly informed him about a month before the murder that Torakura had concealed Kaori's death and had bribed her doctor to keep her merely stable rather than treat her"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Daisuke Torakura",
+    "aliases": [
+     "Mr. Dracula"
+    ],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "horror novelist, most popular writer in the Japan Horror Novel Association",
+    "attrs": {
+     "habit": "writes while dressed as Dracula with vampire films playing",
+     "hired_kogoro_for": "to investigate his wife Etsuko for a suspected affair"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Etsuko Torakura",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Daisuke Torakura's wife",
+    "attrs": {
+     "background": "married Torakura 8 years ago after he financed her father's failing business in exchange for her hand; the business's downfall was actually secretly engineered by Torakura himself, and he later threatened to destroy the company if she divorced him",
+     "hobby": "oil painting"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Fumio Doi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "editor in chief, Horror Times Monthly (Daigakukan Publishing)",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Shuichi Hamura",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "folklore researcher, North Kanto University (vampire legends)",
+    "attrs": {
+     "cover_story": "visits Dracula Manor to consult Torakura's collection of old documents on historical vampire legends"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Kaori Tadokoro",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "note": "Toshiya's younger sister (10 years his junior), born with a weak heart; orphaned young",
+     "died_of": "her heart condition, one year before the present case",
+     "true_cause": "Torakura bribed her doctor to keep her merely stable rather than curing her, so she would stay hospitalized as leverage over Toshiya, and concealed her death from him for months afterward, claiming she had been sent to a better hospital in America"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Torakura household study room (\"Dracula Manor\")",
+    "attrs": {
+     "features": "octagonal room, blackout curtains, airtight rubber-sealed door, fixed windows except the ventilation window"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Dracula Collection room",
+    "attrs": {
+     "contents": "props and costumes from vampire films, including the wooden stake and cross from Banquet of Fresh Blood"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Real wooden stake",
+    "role": "weapon",
+    "attrs": {
+     "trick": "pre-hidden by Tadokoro in the study before the gathering, so he wouldn't need to visibly carry it there later"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Decoy wooden stake",
+    "role": "evidence",
+    "attrs": {
+     "trick": "a painted prop replica, swapped into the collection room so Ran and Conan would 'confirm' the stake was still there when Tadokoro fetched the film, faking the theft's timing",
+     "fake_blood": "oil paint, plausibly sourced from Etsuko's painting supplies"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Twig",
+    "role": "tool",
+    "attrs": {
+     "trick": "wedged between the ventilation window's spring stopper and the glass so the window looks locked but can still be opened freely"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Tree pruner with fruit-picking attachment",
+    "role": "tool",
+    "attrs": {
+     "trick": "used to reach two meters through the propped ventilation window and snag the real stake from outside, without leaving footprints in the room"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Ladder",
+    "role": "tool",
+    "attrs": {
+     "trick": "bridged the gap between the entrance-hall window (as high as the collection room roof) and the roof above the collection-room window, letting the killer cross without touching snow at ground level"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Film strip rigged with cellophane tape",
+    "role": "tool",
+    "attrs": {
+     "trick": "threaded over the blackout curtain rail by the door and taped to the door's lock; as the projector reeled the film back in, it pulled the lock shut from outside",
+     "forensic_trace": "a piece of tape caught on the curtain rail and was left behind, showing square perforation marks matching the film"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Cross prop",
+    "role": "evidence",
+    "attrs": {
+     "origin": "from the Dracula Collection, matches the cross the vampire was strung up on in the film Banquet of Fresh Blood",
+     "trick": "used to pose the body, staging the scene as a recreation of the film's final scene"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Wine bottle",
+    "role": "evidence",
+    "attrs": {
+     "note": "delivered to the study along with the film at 8:50pm; seal found unbroken, indicating Torakura never got to drink it and was likely already dead well before he was believed to be"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Projector",
+    "role": "instrument",
+    "attrs": {
+     "trick": "repositioned in front of the door and left running; ostensibly to light the staged body like the film's final scene, but really to hide the film-and-tape door-locking mechanism and its noise",
+     "contradiction": "Tadokoro claimed to hear the projector running from outside the airtight, soundproofed door -- something only possible if he already knew it was on"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "A faint smell of oil paint lingered near the collection room right after the body was found, but was gone by the next check -- the smell came from the decoy stake's fake blood, proving the stake shown to Ran and Conan earlier was a painted prop, not the real weapon.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "The study door was airtight and soundproofed with rubber sealing, yet Tadokoro claimed he could hear the projector running from outside it when the body was discovered -- he could only know that if he already knew the projector was on.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p6",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "student_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "has_affair_with"
+  },
+  {
+   "type": "extorts",
+   "from": "p2",
+   "to": "p4",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 7,
+   "detail": "took over Doi's stock-market debt in exchange for Doi leaking horror novels submitted to his magazine so Torakura could plagiarize them",
+   "circumstance_tags": [
+    "cover_up",
+    "ongoing"
+   ]
+  },
+  {
+   "type": "ghostwrites_for",
+   "from": "p1",
+   "to": "p2",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "detail": "Doi, no longer willing to keep leaking novels, introduced Tadokoro to Torakura instead; Torakura's fantasy novels from that point on were secretly written by Tadokoro"
+  },
+  {
+   "type": "funds_treatment_of",
+   "from": "p2",
+   "to": "p6",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "detail": "offered to pay for Kaori's hospital care in Tokyo in exchange for Tadokoro's ghostwriting"
+  },
+  {
+   "type": "sabotages_treatment_of",
+   "from": "p2",
+   "to": "p6",
+   "temporal_frame": "backstory",
+   "detail": "bribed Kaori's doctor to keep her merely stable rather than curing her, to keep her hospitalized and Tadokoro obligated for longer"
+  },
+  {
+   "type": "conceals_death_of",
+   "from": "p2",
+   "to": "p6",
+   "order": 2,
+   "temporal_frame": "backstory",
+   "years_before_present": 1,
+   "detail": "hid Kaori's death from Tadokoro for months, claiming she had been transferred to a hospital in America",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "hides",
+   "from": "p1",
+   "to": "o1",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "hides the real stake in the study in advance, before the gathering"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "shows the decoy stake to Ran and Conan in the collection room to establish it was 'still there' before the murder"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p2",
+   "order": 13,
+   "temporal_frame": "present",
+   "method": "knocked unconscious by a blow to the back of the head, then impaled through the heart with a wooden stake",
+   "circumstance_tags": [
+    "locked_room",
+    "premeditated",
+    "staged_ritual"
+   ]
+  },
+  {
+   "type": "poses_body_of",
+   "from": "p1",
+   "to": "p2",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "props the body on the cross from the collection to recreate the final scene of Banquet of Fresh Blood"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o7",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o6",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "locks the study door from outside using the film-and-tape rig, then lets the projector's own rewind pull it shut"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o9",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "repositions the projector in front of the door, ostensibly to light the staged body"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o9",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o9"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "revenge_for_sisters_death"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p2",
+   "motive_type": "coercive_marriage_and_inheritance (red herring, initially accused alongside Hamura by Kogoro)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p2",
+   "motive_type": "affair_and_inheritance (red herring, accused of conspiring with Etsuko)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p2",
+   "motive_type": "financial_leverage_and_exposure (red herring; Doi's plagiarism-leaking arrangement with Torakura gave him a motive too)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

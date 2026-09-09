@@ -1,0 +1,432 @@
+{
+  "case_id": "ep588_the_trap_of_the_rooftop_farm",
+  "episode_number": "588",
+  "title": "The Trap of the Rooftop Farm",
+  "source_url": "https://www.detectiveconanworld.com/wiki/The_Trap_of_the_Rooftop_Farm",
+  "subtitle_source": [
+    "subs_resolved/0588.txt"
+  ],
+  "schema_version": "v3",
+  "notes": "Detective-cast (Kogoro Mouri, Ran, Conan, Takagi, Chiba, Inspector) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Old cases/ep588 file's culprit (Marie Inoue) and locked-room mechanic are confirmed correct against the transcript, but its motive text was imprecise: it says the victim 'destroyed crops grown from her late father's final harvest' -- the transcript actually has Inoue growing vegetables from seeds her late father left behind after dying of illness, and Nakamura mistaking the young, scraggly plants for weeds and killing them with herbicide, which is what triggered her rage. The old file also collapsed the murder into one `event` node with a single generic `was_used_in`/`knows` edge set; this rebuild decomposes it into the phone lure, the rope-and-brick rig, the water-tank strike, and the dying-message/paint-smudge/slip-of-tongue clues as separate typed edges, and adds the two red-herring suspects' own motives plus Inoue's father as a backstory node. case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Takehiko Nakamura",
+        "aliases": [
+          "Annoying Old-Timer"
+        ],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "unemployed, 73",
+        "attrs": {
+          "reputation": "nicknamed 'Annoying Old-Timer' by fellow rooftop-farm renters for repeated sabotage of their patches",
+          "died_of": "blunt force trauma, back of head against water tank corner"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Misa Mejiro",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "office worker, 45",
+        "attrs": {
+          "farm_patch": "diagonally across from Nakamura's",
+          "alibi": "working alone in the first-floor office from 8:30 AM, unverifiable"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Shinichiro Taguchi",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "salaryman, 51",
+        "attrs": {
+          "farm_patch": "immediately next to Nakamura's",
+          "alibi": "claims he was alone at a home center before noon; his receipt is timestamped 11:00 AM, after the estimated time of death"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Marie Inoue",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "office lady, 26",
+        "attrs": {
+          "farm_patch": "directly across from Nakamura's",
+          "residence": "apartment on the floor directly below the rooftop farm",
+          "alibi": "claims she woke late and watched TV half-awake alone; unverifiable",
+          "confession": "admits to killing Nakamura out of rage after he destroyed the vegetables she grew from her late father's seeds"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Marie Inoue's father",
+        "aliases": [],
+        "roles": [
+          "backstory_figure"
+        ],
+        "occupation": "farmer",
+        "attrs": {
+          "died_of": "illness",
+          "significance": "left Marie seeds; the vegetables she grew from them were the ones Nakamura destroyed with herbicide"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Rooftop farm",
+        "attrs": {
+          "layout": "individually rented patches, a handrail along the edge, a drain and water tank, only reachable by elevator (stairs under maintenance, windows barred, no taller building nearby)"
+        }
+      },
+      {
+        "id": "l2",
+        "name": "Marie Inoue's apartment",
+        "attrs": {
+          "location": "directly below the rooftop farm's draining area"
+        }
+      },
+      {
+        "id": "l3",
+        "name": "Building's first-floor office",
+        "attrs": {
+          "note": "Mejiro's workplace, in the same building as the rooftop farm"
+        }
+      },
+      {
+        "id": "l4",
+        "name": "Home center",
+        "attrs": {
+          "note": "where Taguchi says he bought mulch"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Brick rigged with rope",
+        "role": "weapon",
+        "attrs": {
+          "construction": "hole drilled through the middle, rope threaded through and hung over the rooftop handrail",
+          "mechanism": "concealed by a hanging towel, yanked from the apartment below to swing into the victim's forehead",
+          "found": "smashed to pieces around the border of Nakamura's and Inoue's patches after hitting the paving stones"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Nakamura's own towel",
+        "role": "evidence",
+        "attrs": {
+          "detail": "carried around his neck, marked with his initials"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Rigging towel",
+        "role": "evidence",
+        "attrs": {
+          "detail": "no initials, unlike Nakamura's own towel",
+          "purpose": "hung between the handrail and the rope to hide the suspended brick from Nakamura's view",
+          "staging_flaw": "paint smudge on its inner side matches the handrail, scraped off when the rope was yanked and the towel fell to the floor"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Nakamura's cell phone",
+        "role": "evidence",
+        "attrs": {
+          "detail": "found beside the body; log shows an incoming call around 10:00 AM from a caller-ID-blocked prepaid number"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Prepaid cell phone",
+        "role": "tool",
+        "attrs": {
+          "purpose": "used by Inoue to confirm Nakamura was alone on the rooftop and lure him to the handrail"
+        }
+      },
+      {
+        "id": "o6",
+        "name": "Rope used to yank the brick",
+        "role": "tool",
+        "attrs": {
+          "found": "in Inoue's apartment; she had no time to dispose of it"
+        }
+      },
+      {
+        "id": "o7",
+        "name": "Water tank",
+        "role": "instrument",
+        "attrs": {
+          "detail": "corner struck by the back of Nakamura's head as he slipped, the actual fatal blow"
+        }
+      },
+      {
+        "id": "o8",
+        "name": "Taguchi's home center receipt",
+        "role": "evidence",
+        "attrs": {
+          "timestamp": "11:00 AM",
+          "problem": "issued after the 10:00 AM estimated time of death, so it cannot cover his claimed alibi window"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "c1",
+        "desc": "Paint smudge on the found towel's inner side matches the handrail's paint and is scraped as if rubbed hard against it, unlike Nakamura's own initialed towel around his neck -- shows a second, unmarked towel was rigged against the handrail itself.",
+        "clue_type": "physical"
+      },
+      {
+        "id": "c2",
+        "desc": "Nakamura's dying finger-point was first read as indicating a facial-kanji clue among the three suspects' names, but the angle actually pointed downward to the floor below -- the true message was 'killed by the person living underneath.'",
+        "clue_type": "behavioral"
+      },
+      {
+        "id": "c3",
+        "desc": "Before the police disclosed how Nakamura died, Inoue said he 'chose to hit his head and drop dead' -- a detail only the person who engineered that exact fall could have known.",
+        "clue_type": "testimonial"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p5",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "works_at",
+      "from": "p2",
+      "to": "l3"
+    },
+    {
+      "type": "resides_at",
+      "from": "p4",
+      "to": "l2"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p4",
+      "to": "p1",
+      "motive_type": "grief_driven_rage_over_destroyed_memorial_vegetables"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "patch_flooded_by_victim (red herring)"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p3",
+      "to": "p1",
+      "motive_type": "insect_net_sabotaged_by_victim (red herring)"
+    },
+    {
+      "type": "destroys",
+      "from": "p1",
+      "to": "p4",
+      "detail": "mistook Inoue's young vegetables, grown from her late father's seeds, for weeds and killed them with herbicide",
+      "circumstance_tags": [
+        "backstory"
+      ]
+    },
+    {
+      "type": "floods",
+      "from": "p1",
+      "to": "p2",
+      "detail": "flooded Mejiro's patch"
+    },
+    {
+      "type": "sabotages",
+      "from": "p1",
+      "to": "p3",
+      "detail": "sabotaged Taguchi's insect net"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l2"
+    },
+    {
+      "type": "calls",
+      "from": "p4",
+      "to": "p1",
+      "detail": "used the prepaid phone to confirm Nakamura was alone, then lured him toward the handrail with an excuse"
+    },
+    {
+      "type": "stages_trap_using",
+      "from": "p4",
+      "to": "o1"
+    },
+    {
+      "type": "conceals_trap_with",
+      "from": "p4",
+      "to": "o3"
+    },
+    {
+      "type": "positions",
+      "from": "p4",
+      "to": "o7",
+      "detail": "placed so a startled, slipping Nakamura would strike his head on its corner"
+    },
+    {
+      "type": "kills",
+      "from": "p4",
+      "to": "p1",
+      "method": "yanked a rope from her apartment below, swinging a rope-hung, towel-concealed brick into Nakamura's forehead so he slipped and struck his head fatally on the water tank corner",
+      "circumstance_tags": [
+        "locked_room",
+        "staged_accident",
+        "remote_trick"
+      ]
+    },
+    {
+      "type": "leaves_dying_message",
+      "from": "p1",
+      "to": "p4",
+      "detail": "pointed downward toward the floor below before dying, indicating his killer lived underneath"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o2"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o4"
+    },
+    {
+      "type": "owns",
+      "from": "p4",
+      "to": "o1"
+    },
+    {
+      "type": "owns",
+      "from": "p4",
+      "to": "o5"
+    },
+    {
+      "type": "owns",
+      "from": "p4",
+      "to": "o6"
+    },
+    {
+      "type": "owns",
+      "from": "p3",
+      "to": "o8"
+    },
+    {
+      "type": "located_in",
+      "from": "o1",
+      "to": "l1"
+    },
+    {
+      "type": "located_in",
+      "from": "o6",
+      "to": "l2"
+    },
+    {
+      "type": "regarding",
+      "from": "o4",
+      "to": "o5",
+      "detail": "Nakamura's phone log shows the incoming call from the prepaid number"
+    },
+    {
+      "type": "undermines_alibi_of",
+      "from": "o8",
+      "to": "p3"
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p4"
+    },
+    {
+      "type": "implicates",
+      "from": "o6",
+      "to": "p4"
+    },
+    {
+      "type": "regarding",
+      "from": "c1",
+      "to": "o3"
+    },
+    {
+      "type": "regarding",
+      "from": "c1",
+      "to": "o2"
+    },
+    {
+      "type": "implicates",
+      "from": "c1",
+      "to": "p4"
+    },
+    {
+      "type": "regarding",
+      "from": "c2",
+      "to": "p1"
+    },
+    {
+      "type": "implicates",
+      "from": "c2",
+      "to": "p4"
+    },
+    {
+      "type": "regarding",
+      "from": "c3",
+      "to": "p1"
+    },
+    {
+      "type": "implicates",
+      "from": "c3",
+      "to": "p4"
+    }
+  ],
+  "label": {
+    "murderer_id": "p4"
+  }
+}

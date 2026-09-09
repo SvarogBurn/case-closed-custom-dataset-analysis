@@ -1,0 +1,242 @@
+{
+ "case_id": "ep476-477_gentas_certain_kill_shot",
+ "episode_number": "476-477",
+ "title": "Genta's Certain Kill Shot",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Genta%27s_Certain_Kill_Shot",
+ "subtitle_source": ["subs_resolved/0476.txt", "subs_resolved/0477.txt"],
+ "schema_version": "v3",
+ "notes": "case_type: attempted_murder (victim Ludger Heinen survives and reappears in Part 2's coda, cheesecake gift in hand). Recurring core-4 detective cast (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention -- Megure appears only as a throwaway fat-joke reference, not as a case participant. The rest of the Detective Boys (Genta, Ayumi, Mitsuhiko, Haibara), Professor Agasa, and Officer Takagi are all included since they are named, present, and functionally load-bearing (Genta is both the accidental witness and the accusation target; Takagi runs the suspect roundup and later confirms the motive by phone; Agasa drives, buys the cake, and calls the ambulance). No `event` node type: crime actions are direct typed edges between the real people/objects/locations. The old low-fidelity `cases/` file's culprit (Kanji Kojima), victim (Ludger Heinen), suspect trio, and weapon (metal rod / steel pipe) all check out against the transcript -- unlike several other rebuilt episodes, this one's wiki-derived hypothesis was correct on the core facts. What the old file missed entirely: the linguistic double-meaning clue ('Elf' = German for eleven, matching Kojima's jersey number 11, vs. English for a mischievous fairy, the reason Ludger pointed at Genta first) that is the episode's actual centerpiece deduction; the two red-herring suspects' accusations were pure wordplay (name-sound-alikes and a kanji anagram), not motive-based, so no fabricated `has_motive_against` edges were added for them -- captured instead as `accuses` edges tagged red_herring. Old file also had Genta accused via `knows` edges and a generic robbery-attempt event; here that's decomposed into `assaults`, `steals`, `wields`, and the three clue nodes that actually break the case (the elf/eleven pun, the alibi-knowledge contradiction, and the horse-race name test).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ludger Heinen",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "employee of a German sports equipment manufacturer, dispatched to Japan",
+    "attrs": {
+     "age": 42,
+     "injuries": "struck twice with a steel pipe, once from behind and once from the front",
+     "current_wife": "Japanese",
+     "ex_wife": "British, living in England with their son",
+     "languages": "German, English, Japanese",
+     "recovers": true
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kojima Kanji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unemployed, fleeing loan sharks",
+    "attrs": {
+     "age": 28,
+     "claimed_alibi": "listening to a horse race alone in his parked car",
+     "true_actions": "attacked Ludger for money, grabbed his coin purse, hid in his car pretending to have never left it",
+     "shirt_detail": "wears a Tokyo Spirits fan jersey numbered 11 on the back",
+     "coincidence": "shares the surname Kojima with Genta, purely coincidental"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Genda Tatsuzou",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unspecified",
+    "attrs": {
+     "age": 44,
+     "alibi": "stuck at the parking lot's broken exit gate while it was being repaired",
+     "accusation_basis": "his name 'Genda' sounds like 'Genta'; he is also overweight like Genta"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Inagaki Hiromasa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "attending an idol's press event on the 6th floor",
+    "attrs": {
+     "age": 35,
+     "alibi": "hurrying to the press event, dropped his driver's license near the elevator",
+     "accusation_basis": "kanji for 'Hiromasa' also reads 'Taishou'; minus 'Ina' it spells 'Gakidaisho' (neighborhood kids' boss), plus his cap has a large 'L' (idol merchandise logo)"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kojima Genta",
+    "aliases": ["Genta"],
+    "roles": ["witness", "suspect"],
+    "occupation": "elementary school student",
+    "attrs": {
+     "note": "kicked his ball around alone in the parking lot, heard a loud sound, fell and was briefly knocked out, then found Ludger bleeding",
+     "false_accusation": "Ludger pointed at him and said 'criminal' -- actually using him as a reference point for 'mischievous, like an elf,' not accusing him"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Ayumi Yoshida",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "elementary school student",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Mitsuhiko Tsuburaya",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "elementary school student",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Ai Haibara",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "elementary school student",
+    "attrs": {}
+   },
+   {
+    "id": "p9",
+    "name": "Hiroshi Agasa",
+    "aliases": ["Professor", "Agasa-san"],
+    "roles": ["witness", "bystander"],
+    "occupation": "inventor",
+    "attrs": {
+     "note": "drove the group, bought the cheesecake, called the ambulance and police"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Wataru Takagi",
+    "aliases": ["Officer Takagi"],
+    "roles": ["witness"],
+    "occupation": "police detective",
+    "attrs": {
+     "note": "rounds up the three suspects, later phones Agasa to confirm the motive"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Parking lot",
+    "attrs": {"note": "crime scene; contains Ludger's car and the broken exit gate"}
+   },
+   {
+    "id": "l2",
+    "name": "Ikenaka cheesecake shop",
+    "attrs": {"note": "second or third floor depending on British vs American floor numbering"}
+   },
+   {
+    "id": "l3",
+    "name": "Elevator lobby",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Steel pipe",
+    "role": "weapon",
+    "attrs": {"found": "lying near the crime scene"}
+   },
+   {
+    "id": "o2",
+    "name": "Kojima's #11 jersey",
+    "role": "evidence",
+    "attrs": {"detail": "Tokyo Spirits fan jersey, number 11 on the back"}
+   },
+   {
+    "id": "o3",
+    "name": "Stolen coin purse",
+    "role": "evidence",
+    "attrs": {"contents": "held Ludger's parking ticket", "fate": "grabbed in a hurry, likely discarded, never recovered"}
+   },
+   {
+    "id": "o4",
+    "name": "Inagaki's driver's license",
+    "role": "evidence",
+    "attrs": {"detail": "dropped near the elevator while running; kanji for name doubles as a pun, red herring only"}
+   },
+   {
+    "id": "o5",
+    "name": "Genta's soccer ball",
+    "role": "instrument",
+    "attrs": {"note": "rolled toward the scene right after the attack, prompting Genta to go looking for it and find Ludger"}
+   },
+   {
+    "id": "o6",
+    "name": "Ludger's car",
+    "role": "evidence",
+    "attrs": {"note": "coin purse normally sat open on the passenger seat; loose change scattered on the seats after the theft"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ludger's dying word 'El-' has two readings: English 'elf' (a mischievous fairy, why he pointed at Genta first) and German 'elf' (eleven, matching the number 11 on Kojima's jersey) -- one syllable encoding two separate hints at once.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Kojima knows Genta was first to find Ludger's body, a detail the police never told him and he could not have learned while genuinely isolated in his car as claimed.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "Kojima cannot name the horse that won today's main race, despite claiming to have been listening to it live during the exact window of the attack.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p7", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p8", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p6", "to": "p7", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p6", "to": "p8", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p7", "to": "p8", "relation_type": "classmate", "symmetric": true},
+
+  {"type": "assaults", "from": "p2", "to": "p1", "method": "struck twice with a steel pipe, once from behind and once from the front", "circumstance_tags": ["staged_alibi", "interrupted_robbery"]},
+  {"type": "wields", "from": "p2", "to": "o1"},
+  {"type": "steals", "from": "p2", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o6"},
+  {"type": "located_in", "from": "o3", "to": "o6"},
+  {"type": "owns", "from": "p5", "to": "o5"},
+  {"type": "owns", "from": "p4", "to": "o4"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l2"},
+  {"type": "was_at", "from": "p9", "to": "l1"},
+  {"type": "was_at", "from": "p9", "to": "l2"},
+  {"type": "was_at", "from": "p10", "to": "l1"},
+
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "p5"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "financial_desperation (fleeing loan sharks, robbery escalated to assault)"},
+
+  {"type": "accuses", "from": "p6", "to": "p2", "circumstance_tags": ["red_herring"], "basis": "shares surname Kojima with Genta -- coincidental, reasoning later proven wrong even though the target was guilty"},
+  {"type": "accuses", "from": "p6", "to": "p3", "circumstance_tags": ["red_herring"], "basis": "name sounds like Genta, also overweight"},
+  {"type": "accuses", "from": "p6", "to": "p4", "circumstance_tags": ["red_herring"], "basis": "kanji pun on his name plus an 'L' logo on his cap"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

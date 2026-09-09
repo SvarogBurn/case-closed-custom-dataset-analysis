@@ -1,0 +1,285 @@
+{
+ "case_id": "ep194-195_the_significant_music_box",
+ "episode_number": "194-195",
+ "title": "The Significant Music Box",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Significant_Music_Box",
+ "subtitle_source": ["subs_resolved/0194.txt", "subs_resolved/0195.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Officer Takagi) omitted by convention. IMPORTANT correction vs. the old lower-fidelity case file: this is NOT a murder or attempted murder. Nobody dies during the present-day case -- Ogata Shuugo (the grandfather) died of illness/old age before the story begins, off-screen, unrelated to any crime. The 'crime' is Kazuko Ogata rigging a scare trap (a koto suspended by thread/hairpin/fan, plus a fake shadow-cutting-in-headlights hoax and threatening pocket-bell messages) to frighten Yuuki Haruna away from digging further into the family's hidden 200-million-yen stamp collection; her son Minoru was injured only by accident when he happened to be in the trapped room in the dark. The old file's culprit ID (s1 = Kazuko) was correct, so label.murderer_id is unchanged, but it should be read as 'principal culprit/trap-setter,' not 'killer.' The old file also entirely omitted: Yuuki Haruna (the visitor whose POV drives the case), Ogata Shirou's parallel subplot of secretly impersonating his dying grandfather via pocket bell for over a year (out of kindness, at the grandfather's own request), the deceased grandfather and grandmother backstory figures, the real solution to the missing-notes puzzle (an Iroha-syllable cipher spelling 'Ihai' / memorial tablet -- the actual hiding place of the stamps, after an initial false lead of 'Model'), and the substitute-koto swap Kazuko used to protect the genuine heirloom. case_type: non-lethal staged-hoax / accidental-injury case with a treasure-hunt subplot.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yuuki Haruna",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "fine arts major, university student, age 21",
+    "attrs": {
+     "backstory": "felt lonely as a new university student 3 years ago and randomly messaged a stranger on her pocket bell asking to be friends; the recipient replied that his first love was also named Haruna, and the two became long-distance 'bell buddies'",
+     "financial_pressure": "was struggling to pay tuition and considering dropping out",
+     "resembles": "physically/by name reminds the elderly Shuugo Ogata of his own late wife Haruna"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ogata Kazuko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "homemaker, head of household, age 50",
+    "attrs": {
+     "financial_pressure": "family finances 'burnt up' on a new kitchen system, a new car, and Minoru's computer; considering selling the music box",
+     "confession": "admits to rigging the koto trap, taping up the fake old-man shadow cutout, and sending the threatening pocket-bell messages; says she used her children's childhood pranks as the basis for the setup"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Ogata Tsuneo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Shuugo Ogata's son, age 53",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Ogata Shirou",
+    "aliases": [],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": "second son of the Ogata family, age 22",
+    "attrs": {
+     "secret": "impersonated his grandfather Shuugo in pocket-bell correspondence with Yuuki Haruna from roughly the time Shuugo was hospitalized until the Christmas he met her in person and gave her the music box and pocket bell, at Shuugo's own dying request",
+     "identified_by_conan_because": "instantly singled out Haruna and addressed her by name/role at the front door despite the two families never having been introduced"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Ogata Minoru",
+    "aliases": [],
+    "roles": ["suspect", "victim"],
+    "occupation": "first son of the Ogata family, age 28, runs a struggling company",
+    "attrs": {
+     "injury": "struck on the forehead and knocked out by a koto that fell from the ceiling of his grandfather's darkened room",
+     "reason_present_in_dark_room": "secretly trying to feel his way to the koto to check whether the stamps were hidden inside it, without turning on the light because he didn't know where the pull-cord was"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Ogata Shuugo",
+    "aliases": ["Shuugo-san"],
+    "roles": ["backstory_figure"],
+    "occupation": "retired, family patriarch",
+    "attrs": {
+     "died_of": "illness; hospitalized and largely immobile since the previous spring",
+     "death_date": "December 6, the year before the present case",
+     "quirk": "carried a pocket bell in old age, given to him by the family after his wife's death so he could be reached during his late-night walks",
+     "hidden_treasure": "hid a hand-carved 200-million-yen stamp set, encoding its hiding place as missing notes in a music box gifted to Yuuki Haruna",
+     "final_wish": "asked grandson Shirou to look after Yuuki Haruna in his place because she reminded him of his late wife Haruna"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Ogata Haruna (Shuugo's late wife)",
+    "aliases": ["Grandma"],
+    "roles": ["backstory_figure"],
+    "occupation": "koto player",
+    "attrs": {
+     "died": "3 years before the present case",
+     "signature_piece": "used to play \"Haru yo Koi\" (Come, Dear Spring) on her koto"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Ogata household (foyer/gate/exterior)", "attrs": {"detail": "back door lock is broken and swings open by itself in the wind; no footprints found on the rain-softened ground anywhere around the house"}},
+   {"id": "l2", "name": "Grandfather Shuugo's room", "attrs": {"detail": "houses the koto; ceiling light pull-cord location unfamiliar to guests; site of the koto-drop trap and Minoru's injury"}},
+   {"id": "l3", "name": "Ran's guest room", "attrs": {"detail": "adjoins the corridor; its door was rigged as the trap's trigger point via a hairpin"}},
+   {"id": "l4", "name": "Hallway outside the bedrooms", "attrs": {"detail": "has a window facing the front gate and a shouji paper screen opposite it; site of the fake old-man shadow"}},
+   {"id": "l5", "name": "Kitchen / dining area", "attrs": {"detail": "where Tsuneo, Kazuko, and Shirou interrogated Yuuki Haruna about the stamps over dinner"}},
+   {"id": "l6", "name": "Storage room", "attrs": {"detail": "where Kazuko hid the genuine heirloom koto after swapping in a cheaper substitute"}},
+   {"id": "l7", "name": "Shibuya Station (front)", "attrs": {"detail": "arranged meeting point where Shirou, posing as Shuugo, met Yuuki Haruna in person for the only time, identifying her by a red muffler"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Music box",
+    "role": "evidence",
+    "attrs": {
+     "tune": "\"Haru yo Koi\" (Come, Dear Spring)",
+     "condition": "several pins forcibly removed from the drum, not worn off naturally",
+     "missing_notes": "Ra, Do, Ra",
+     "key_signature": "3 sharps -- the detail that tipped Conan off to re-derive the notes",
+     "false_decode": "mapping the missing notes to the sung syllables of the song's lyrics at those positions spells 'Mo-De-Ru' = \"Model\" -- a plausible but dead-end reading chased through most of part 1",
+     "true_decode": "the same three notes read via the Iroha solfège naming system (ha-ni-ho-he-to-i-ro-ha for do-re-mi-fa-so-la-ti) spell 'I-ha-i' = Ihai (memorial tablet) -- the real hiding place of the stamps",
+     "given_by": "Ogata Shirou, posing as his grandfather, at Shibuya Station last Christmas",
+     "appraisal": "an antique-shop appraiser dismissed it as just a broken old souvenir, unaware of the coded message"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Shuugo's pocket bell (given to Haruna with the music box)",
+    "role": "evidence",
+    "attrs": {
+     "message_left_on_it": "\"This is a very valuable music box. Use it to pay for your schooling and don't give up on your dreams, Haruna-san.\""
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Substitute koto (used in the trap)",
+    "role": "weapon",
+    "attrs": {
+     "note": "a cheaper koto Kazuko swapped in specifically so the genuine heirloom wouldn't be damaged when it was dropped"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Genuine heirloom koto (grandmother's)",
+    "role": "instrument",
+    "attrs": {"note": "the koto Shuugo's late wife Haruna used to play \"Come, Dear Spring\" on; moved to storage before the trap was set"}
+   },
+   {
+    "id": "o5",
+    "name": "Rigging thread",
+    "role": "tool",
+    "attrs": {"mechanism": "one long thread hung from the ceiling light fitting, looped under the koto's strings on a shelf, then run through the transoms of Shirou's, Minoru's, and the Ogata couple's rooms into Ran's guest room, with both ends held together by a hairpin wedged in Ran's door -- opening that door pulls the hairpin free and drops the koto"}
+   },
+   {
+    "id": "o6",
+    "name": "Hairpin",
+    "role": "evidence",
+    "attrs": {"found_at": "wedged in the doorway of Ran's guest room, where the rigging string was held; physical trace of who released the trap"}
+   },
+   {
+    "id": "o7",
+    "name": "Electric fan",
+    "role": "tool",
+    "attrs": {"mechanism": "one end of the rigging thread was taped to the back of its blade so that switching it on automatically reeled the incriminating thread back in after the trap fired"}
+   },
+   {
+    "id": "o8",
+    "name": "Black paper cutout of an old man with a cane",
+    "role": "tool",
+    "attrs": {"mechanism": "taped over the hallway window; passing car headlights shining through the front gate projected its shape onto the shouji screen opposite, mimicking a person's shadow", "inspired_by": "Kazuko recalled a previous houseguest mistaking wind-blown leaf shadows for a person and reused the idea deliberately", "demo": "Conan later taped a second cutout, shaped like Ran, to the same window to reenact the mechanism for the family during the reveal"}
+   },
+   {
+    "id": "o9",
+    "name": "Shuugo's memorial tablet (Ihai)",
+    "role": "evidence",
+    "attrs": {"location": "family Buddhist altar", "significance": "the true hiding place encoded by the music box's missing notes"}
+   },
+   {
+    "id": "o10",
+    "name": "Hand-carved stamp set (four stamps)",
+    "role": "evidence",
+    "attrs": {"value": "approximately 200 million yen", "hidden_in": "o9, Shuugo's memorial tablet", "discovered": "by the family (prompted by Kogoro/Conan) once the Ihai decode was revealed, resolving the family's debts"}
+   },
+   {
+    "id": "o11",
+    "name": "Yuuki Haruna's own pocket bell",
+    "role": "evidence",
+    "attrs": {
+     "messages_received_before_the_visit": ["\"I have something to ask you. Come to the location I tell you now, alone.\" (sender unconfirmed in the transcript; she got scared and did not go)", "\"Cat Burglar!\" sent more than 10 times in one night (later confirmed sent by Kazuko)"],
+     "message_received_during_the_visit": "\"I've been waiting for you, Haruna.\" -- sent by Kazuko right after the koto trap fired, to frighten Haruna into not returning"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Timeline contradiction: Haruna insists she received the music box in person from 'Shuugo' last Christmas, but Shuugo had been hospitalized and largely immobile since the previous spring and died December 6 -- before that Christmas ever came. Comparing her account against his medical/death timeline proves whoever met her at Shibuya Station was not actually Shuugo.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cB",
+    "desc": "Behavioral tell: at the front door, Shirou immediately singled out and addressed Haruna specifically, even though the two families had never been introduced and Ran is roughly the same age as her. Comparing that instant recognition against the fact no introduction had occurred implies Shirou already knew what she looked like.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p6", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p7", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p3", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p6", "to": "p7", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p7", "to": "p6", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "sibling"},
+
+  {"type": "resembles", "from": "p1", "to": "p7"},
+
+  {"type": "corresponds_with", "from": "p6", "to": "p1", "order": 1, "temporal_frame": "backstory", "years_before_present": 3, "detail": "Shuugo began an anonymous pocket-bell friendship with Yuuki Haruna, coincidentally sharing his late wife's name"},
+  {"type": "requests", "from": "p6", "to": "p4", "order": 2, "temporal_frame": "backstory", "detail": "hospitalized and immobile, Shuugo asks grandson Shirou to look after Haruna in his place, since she reminds him of his late wife"},
+  {"type": "impersonates", "from": "p4", "to": "p6", "order": 3, "temporal_frame": "backstory", "detail": "Shirou takes over the pocket-bell correspondence with Haruna in Shuugo's name, out of kindness, without revealing the switch"},
+  {"type": "dies", "from": "p6", "to": "l2", "order": 4, "temporal_frame": "backstory", "detail": "Shuugo dies of illness at the household, December 6"},
+  {"type": "gives", "from": "p4", "to": "p1", "order": 5, "temporal_frame": "backstory", "circumstance_tags": ["deception", "posed_as_deceased_relative"], "detail": "meets Haruna in person for the only time at Shibuya Station (identifying her by a red muffler), still posing as Shuugo, and gives her the music box and Shuugo's pocket bell"},
+  {"type": "was_at", "from": "p4", "to": "l7", "order": 5, "temporal_frame": "backstory"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o1", "order": 5, "temporal_frame": "backstory"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o2", "order": 5, "temporal_frame": "backstory"},
+
+  {"type": "sends_message_to", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "detail": "sends 'Cat Burglar!' more than 10 times to Haruna's pocket bell before Haruna ever visits the Ogata house, having grown suspicious after Haruna mentioned collecting stamps"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 10, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l5", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l5", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l5", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l5", "order": 11, "temporal_frame": "present"},
+  {"type": "accuses", "from": "p5", "to": "p1", "order": 11, "temporal_frame": "present", "circumstance_tags": ["red_herring"], "detail": "accuses Haruna of coming to the house because Shuugo told her where the family's hidden stamps are"},
+
+  {"type": "relocates", "from": "p2", "to": "o4", "order": 12, "temporal_frame": "present", "detail": "moves the genuine heirloom koto to storage to protect it before rigging the trap"},
+  {"type": "located_in", "from": "o4", "to": "l6"},
+  {"type": "owns", "from": "p7", "to": "o4"},
+  {"type": "rigs_trap_using", "from": "p2", "to": "o3", "order": 12, "temporal_frame": "present"},
+  {"type": "rigs_trap_using", "from": "p2", "to": "o5", "order": 12, "temporal_frame": "present"},
+  {"type": "rigs_trap_using", "from": "p2", "to": "o6", "order": 12, "temporal_frame": "present"},
+  {"type": "rigs_trap_using", "from": "p2", "to": "o7", "order": 12, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 12, "temporal_frame": "present"},
+  {"type": "located_in", "from": "o3", "to": "l2"},
+  {"type": "owns", "from": "p1", "to": "o11"},
+  {"type": "regarding", "from": "p2", "to": "o11"},
+
+  {"type": "stages_hoax_using", "from": "p2", "to": "o8", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 13, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l3", "order": 14, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l5", "order": 14, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l5", "order": 14, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l5", "order": 14, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l2", "order": 14, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p2", "to": "l3", "order": 15, "temporal_frame": "present", "detail": "runs to check on the scream and innocently opens the door to Ran's guest room, unwittingly pulling the hairpin and releasing the trap"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6", "order": 15, "temporal_frame": "present"},
+
+  {"type": "injures", "from": "p2", "to": "p5", "order": 16, "temporal_frame": "present", "circumstance_tags": ["unintended_victim", "booby_trap"], "method": "the rigged koto (o3) fell from the ceiling and struck Minoru on the forehead while he was groping for it in the dark, having no idea the room was booby-trapped"},
+
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 17, "temporal_frame": "present", "detail": "removes the paper cutout from the window while the family is occupied with Minoru"},
+  {"type": "sends_message_to", "from": "p2", "to": "p1", "order": 17, "temporal_frame": "present", "detail": "sends 'I've been waiting for you, Haruna' to scare her off from returning to the house"},
+
+  {"type": "regarding", "from": "cA", "to": "p1"},
+  {"type": "regarding", "from": "cA", "to": "p6"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+  {"type": "regarding", "from": "cB", "to": "p4"},
+  {"type": "regarding", "from": "cB", "to": "p1"},
+  {"type": "implicates", "from": "cB", "to": "p4"},
+
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o7", "to": "p2"},
+  {"type": "implicates", "from": "o8", "to": "p2"},
+  {"type": "implicates", "from": "o1", "to": "o9"},
+  {"type": "regarding", "from": "o1", "to": "o9"},
+  {"type": "located_in", "from": "o10", "to": "o9"},
+  {"type": "located_in", "from": "o9", "to": "l1"},
+  {"type": "hides", "from": "p6", "to": "o10", "temporal_frame": "backstory"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "financial (family finances were exhausted; feared Haruna would find and claim the hidden 200-million-yen stamp collection before the family)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

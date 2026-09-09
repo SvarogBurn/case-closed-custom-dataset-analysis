@@ -1,0 +1,193 @@
+{
+ "case_id": "ep726_a_happy_e-mail_brings_sadness",
+ "episode_number": "726",
+ "title": "A Happy E-mail Brings Sadness",
+ "source_url": "https://www.detectiveconanworld.com/wiki/A_Happy_E-mail_Brings_Sadness",
+ "subtitle_source": ["subs_resolved/0726.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Two-layer mystery: Migita commits an attempted murder (strangles Nana believing he has killed her, then fakes an alibi by briefly disabling his shop's surveillance cameras) that the old low-fidelity case file mistook for the completed murder; the real, fatal act is a second strangling committed shortly after by Samon, who had engineered the whole setup (sent fake harassing messages to Migita from Nana's phone to provoke the attack, then finished her off and staged a dying message pointing at Migita using her hand). The old `cases/` file names Migita (s2) as sole murderer and invents a rope as murder weapon -- neither is supported by the transcript: no rope appears (she is strangled by hand each time), and Migita's strangling is the attempted, not completed, murder. Corrected here: murderer_id is Samon (p2); Migita is a suspect/attempted-murderer only. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Nana Hirose",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "door-to-door insurance saleswoman",
+    "attrs": {
+     "age": 27,
+     "died_of": "strangulation, inflicted twice (near-fatal by Migita, then fatal by Samon)",
+     "estimated_time_of_death": "10:00-10:30 PM",
+     "e-mail_writing_habit": "never used punctuation, always signed messages 'Nana', wrote Migita's name in katakana"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Osamu Samon",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "primary school teacher",
+    "attrs": {
+     "age": 27,
+     "relationship_to_victim": "fiance, engagement recently called off by Nana",
+     "engagement_ring_worn_on": "right hand, unmatched by Nana who wore no ring"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Toshihiko Migita",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "bookshop owner",
+    "attrs": {
+     "age": 32,
+     "relationship_to_victim": "ex-boyfriend, kept pursuing her after breakup",
+     "getaway_vehicle": "scooter, ~10 minutes each way to the park"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Park",
+    "attrs": {"role_in_case": "crime scene, both strangulations occurred here"}
+   },
+   {
+    "id": "l2",
+    "name": "Migita's bookshop",
+    "attrs": {"has_surveillance_cameras": true, "cameras_show_timestamp": false}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Dying message in the dirt",
+    "role": "evidence",
+    "attrs": {
+     "surface_reading": "ambiguous partial kanji, first read as katakana 'na', then as 'migi' (Migita)",
+     "true_author": "not Nana -- traced by stroke order to Samon, written post-mortem using the victim's finger"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Harassing e-mails to Migita",
+    "role": "evidence",
+    "attrs": {
+     "sent_from": "Nana's phone/account, impersonating her",
+     "style_anomaly": "contains punctuation and lacks her usual 'Nana' signature, unlike her genuine e-mails",
+     "purpose": "provoke Migita into attacking Nana"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Wedding-party photo on Samon's phone",
+    "role": "evidence",
+    "attrs": {
+     "shows": "Samon's students pulling party poppers to congratulate him that day",
+     "significance": "party poppers use gunpowder and leave gunshot-like residue"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Nana's e-mail to Samon",
+    "role": "evidence",
+    "attrs": {
+     "text": "I'll be a bit late. Talking with Migita in the park. Nana.",
+     "received_at": "9:45 PM",
+     "genuine": true
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Migita's scooter",
+    "role": "tool",
+    "attrs": {"used_for": "round trip to the park during the faked toilet break"}
+   },
+   {
+    "id": "o6",
+    "name": "Bookshop surveillance camera",
+    "role": "tool",
+    "attrs": {"tampering": "briefly switched off and back on to hide a ~20 minute gap"}
+   },
+   {
+    "id": "o7",
+    "name": "Gunshot residue on Nana's clothing",
+    "role": "evidence",
+    "attrs": {"cause": "transferred from Samon's clothes during the fatal strangling"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Stroke order of the dying message's kanji matches only the order Samon (a teacher) demonstrates for 'migi', not the order Migita writes it in -- proves Samon, not Migita or Nana, wrote the message.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Nana's genuine e-mails never use punctuation and always sign 'Nana'; the e-mails that enraged Migita use punctuation and drop the signature -- proves those weren't written by Nana.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cC",
+    "desc": "A TV news report timestamps a nearby car crash at 10:30, but the bookshop's surveillance footage shows no reaction to the noise -- reveals that segment of footage is missing, not continuous.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cD",
+    "desc": "Migita's hair is messy right before he drops out of camera view and neatly flattened, helmet-like, when he reappears -- reveals he left the shop and rode somewhere in between.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cE",
+    "desc": "Gunshot residue on Nana's strangled body matches residue from the party poppers pulled at Samon's in-class celebration that day, contradicting his claim of never having met her.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "engaged_to", "symmetric": true, "status": "called off by Nana shortly before her death"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "ex_partner", "detail": "dated before Nana became engaged to Samon"},
+  {"type": "harasses", "from": "p3", "to": "p1", "detail": "kept following her, pleading for her to come back"},
+  {"type": "sends", "from": "p2", "to": "p3", "circumstance_tags": ["impersonation", "incites_violence"], "detail": "sends fake e-mails/photos to Migita while impersonating Nana"},
+  {"type": "written_by", "from": "o2", "to": "p2"},
+  {"type": "regarding", "from": "o2", "to": "p1"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "written_by", "from": "o4", "to": "p1"},
+  {"type": "regarding", "from": "o4", "to": "p3"},
+  {"type": "assaults", "from": "p3", "to": "p1", "method": "manual strangulation", "circumstance_tags": ["attempted_murder", "near_fatal", "provoked"]},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "disables", "from": "p3", "to": "o6"},
+  {"type": "stages_alibi_using", "from": "p3", "to": "o6", "circumstance_tags": ["staged_alibi"]},
+  {"type": "uses", "from": "p3", "to": "o5"},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "manual strangulation (fatal blow, after Nana briefly revived)", "circumstance_tags": ["cover_up", "framed_another", "staged_evidence"]},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "written_by", "from": "o1", "to": "p2", "circumstance_tags": ["staged_evidence", "framed_another"], "detail": "traced in the dirt using the victim's finger, post-mortem"},
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "regarding", "from": "o3", "to": "p2"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o7"},
+  {"type": "implicates", "from": "o7", "to": "p2"},
+  {"type": "regarding", "from": "cA", "to": "o1"},
+  {"type": "regarding", "from": "cA", "to": "p3"},
+  {"type": "regarding", "from": "cA", "to": "p2"},
+  {"type": "implicates", "from": "cA", "to": "p2"},
+  {"type": "regarding", "from": "cB", "to": "o2"},
+  {"type": "regarding", "from": "cB", "to": "o4"},
+  {"type": "implicates", "from": "cB", "to": "p2"},
+  {"type": "regarding", "from": "cC", "to": "o6"},
+  {"type": "regarding", "from": "cC", "to": "l2"},
+  {"type": "implicates", "from": "cC", "to": "p3"},
+  {"type": "regarding", "from": "cD", "to": "p3"},
+  {"type": "implicates", "from": "cD", "to": "p3"},
+  {"type": "regarding", "from": "cE", "to": "o7"},
+  {"type": "regarding", "from": "cE", "to": "o3"},
+  {"type": "implicates", "from": "cE", "to": "p2"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "resentment over her calling off their engagement"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "obsessive unrequited love after breakup"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

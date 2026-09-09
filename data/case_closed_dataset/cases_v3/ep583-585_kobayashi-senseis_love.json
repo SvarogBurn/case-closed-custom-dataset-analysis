@@ -1,0 +1,200 @@
+{
+ "case_id": "ep583-585_kobayashi-senseis_love",
+ "episode_number": "583-585",
+ "title": "Kobayashi-sensei's Love",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Kobayashi-sensei%27s_Love",
+ "subtitle_source": ["subs_resolved/0583.txt", "subs_resolved/0585.txt"],
+ "schema_version": "v3",
+ "notes": "Episode 584's subtitle file is missing from subs_resolved/ (only 0583 and 0585 exist locally) -- the middle episode, likely covering deeper suspect interrogation and the voice-identification scene, was not available and is not represented here beyond what 583/585 recap. The tail of 0585.txt (from roughly the timestamp of the lunch-bento scene onward) bleeds into an unrelated Kaitou Kid heist subplot ('Kirin's Horn') that is a different case entirely; it was excluded from this file. Unlike the ep011 convention of omitting all recurring detective-cast nodes, Shiratori and Sato are INCLUDED here because they are not incidental furniture in this episode: Sato physically impersonates Kobayashi as a decoy to trap the culprit, and Shiratori's misremembered/miscommunicated backstory with Kobayashi is literally the episode's titular plot thread. Conan, Kogoro, Ran, Megure, Takagi, and the other Detective Boys are omitted per the standard convention since they play no distinct action role beyond banter. The old lower-fidelity case file correctly identified Kodama Ryuusuke as the culprit and the baseball-bat school attack, but its clue description ('a witness mistakes him for a woman due to long hair and arm position') collapses what the transcript shows is a two-layer misdirection: (1) the bellowed threat Kobayashi-sensei heard in a feminine register was actually the victim's voice, not the culprit's -- Sumida presented masculine but the shirt's right-over-left buttoning and the name's ambiguity confirmed her as female to police -- and Kobayashi mistook the body she found for a man's; (2) the fleeing silhouette she took for a woman's chest was actually Kodama's elbow pressed against his old pitching-shoulder injury while running. Neither element is captured by 'long hair and arm position' alone, so the new file separates them into two clues. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kobayashi Sumiko",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Teitan Elementary Class 1-B homeroom teacher",
+    "attrs": {
+     "resemblance": "near-identical lookalike of Assistant Inspector Sato Miwako",
+     "role_in_case": "sole eyewitness; heard the argument and found the body"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Sumida Akira",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "pawn shop owner",
+    "attrs": {
+     "died_of": "stabbed with a bladed weapon",
+     "appearance_note": "frequently mistaken for a man; shirt buttons right-over-left, confirming female to detectives",
+     "reputation": "vicious/predatory business dealings, resented by many debtors",
+     "alleged_scheme": "per Kodama's confession, was pressuring him to sign a life insurance policy naming her beneficiary before killing him for the payout -- not independently corroborated in the available transcript"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kagitani Kikuna",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "ex-leader of a ladies' racing gang",
+    "attrs": {"alibi": "none", "interrogation_note": "foul-mouthed"}
+   },
+   {
+    "id": "p4",
+    "name": "Takimoto Ryouko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "small restaurant manager",
+    "attrs": {"alibi": "none", "interrogation_note": "had a cold at questioning"}
+   },
+   {
+    "id": "p5",
+    "name": "Kodama Ryuusuke",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "former Koshien baseball star, now host club worker",
+    "attrs": {
+     "injury": "permanently damaged left shoulder, ended his baseball comeback hopes",
+     "debt": "owed Sumida five million yen for medical bills and trainer fees",
+     "silencing_attempt": "impersonated a police officer to lure Kobayashi-sensei to the school music room"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Shiratori Ninzaburou",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "police inspector",
+    "attrs": {
+     "backstory": "as a boy, was given a straw-wrapper sakura charm by Kobayashi after she stood up to shoplifters at a bookstore; later retold the story emphasizing only her bravery, which she took as being about Sato instead"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Sato Miwako",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "assistant inspector, Criminal Investigation Section 3",
+    "attrs": {"decoy_role": "disguised as Kobayashi-sensei to draw out and arrest Kodama"}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Alley near the festival", "attrs": {}},
+   {"id": "l2", "name": "Night fair / firework festival", "attrs": {}},
+   {"id": "l3", "name": "Police HQ meeting room", "attrs": {}},
+   {"id": "l4", "name": "Teitan Elementary music room", "attrs": {"note": "renovated last year; Kodama's 'nostalgia' claim about it was a lie"}},
+   {"id": "l5", "name": "Teitan Elementary hallway", "attrs": {}},
+   {"id": "l6", "name": "Bookstore", "attrs": {"note": "site of the childhood shoplifter incident"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Bladed weapon",
+    "role": "weapon",
+    "attrs": {"used_on": "Sumida Akira", "legal_note": "used with intent to kill, which is why Kodama's self-defense claim (Article 36) was rejected"}
+   },
+   {
+    "id": "o2",
+    "name": "Baseball bat",
+    "role": "weapon",
+    "attrs": {"symbolism": "Kodama's own tool for pursuing his baseball dream, turned into a weapon to silence a witness"}
+   },
+   {
+    "id": "o3",
+    "name": "Kodama's personal seal",
+    "role": "evidence",
+    "attrs": {"demanded_for": "signing a life insurance policy application Sumida wanted him to sign, naming her as beneficiary"}
+   },
+   {
+    "id": "o4",
+    "name": "Moving truck signage",
+    "role": "evidence",
+    "attrs": {
+     "perceived_as": "the numbers 0 and 9",
+     "actually_reads": "the letters O and S, from OSAKA NICO-NICO TRANSPORTATION, romaji lettering obscured by a wall",
+     "significance": "the truck driver corroborated seeing Kodama and Sumida enter the alley together"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Straw sakura charm",
+    "role": "evidence",
+    "attrs": {"meaning": "given to Shiratori by Kobayashi as a child; the real reason he joined the police, though he told her a different version of the story"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Kobayashi heard a feminine-toned bellow ('hand it over or I'll kill you'), but that voice belonged to the masculine-presenting victim Sumida, not the culprit -- she mistook the body she found for a man's, so she assumed a woman had killed him.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "The fleeing silhouette Kobayashi described as having 'a full figure' was actually Kodama's elbow pressed against his injured left shoulder while running, not a woman's chest.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "The '0' and '9' Kobayashi saw on the truck were really the letters 'O' and 'S' from OSAKA NICO-NICO TRANSPORTATION, distorted by a wall blocking her view -- tracing the truck led to a driver who placed Kodama and Sumida entering the alley together.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "romantic_interest"},
+  {"type": "relationship", "from": "p1", "to": "p7", "relation_type": "physical_lookalike"},
+
+  {"type": "confronts", "from": "p5", "to": "p2", "circumstance_tags": ["argument_overheard"]},
+  {"type": "coerces", "from": "p2", "to": "p5", "detail": "demanded he bring his personal seal and sign a life insurance policy naming her as beneficiary"},
+  {"type": "wields", "from": "p5", "to": "o1"},
+  {"type": "kills", "from": "p5", "to": "p2", "method": "stabbed with a bladed weapon in the alley", "circumstance_tags": ["self_defense_claim_rejected", "premeditated_weapon"]},
+  {"type": "owns", "from": "p5", "to": "o3"},
+
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+  {"type": "was_at", "from": "p7", "to": "l3"},
+
+  {"type": "impersonates", "from": "p5", "to": "p6", "detail": "phoned the school claiming to be with the police, to lure Kobayashi to the music room"},
+  {"type": "was_at", "from": "p5", "to": "l4"},
+  {"type": "poses_as", "from": "p7", "to": "p1", "detail": "took Kobayashi's place as the decoy teacher in the music room"},
+  {"type": "was_at", "from": "p7", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p6", "to": "l5", "detail": "kept the real Kobayashi safely away from the trap"},
+  {"type": "protects", "from": "p6", "to": "p1"},
+  {"type": "wields", "from": "p5", "to": "o2"},
+  {"type": "assaults", "from": "p5", "to": "p7", "circumstance_tags": ["attempted_silencing", "impersonation_trap"]},
+  {"type": "apprehends", "from": "p7", "to": "p5"},
+
+  {"type": "was_at", "from": "p1", "to": "l6", "circumstance_tags": ["backstory"]},
+  {"type": "was_at", "from": "p6", "to": "l6", "circumstance_tags": ["backstory"]},
+  {"type": "rescues", "from": "p1", "to": "p6", "circumstance_tags": ["backstory"], "detail": "scolded shoplifters threatening a young Shiratori"},
+  {"type": "gives", "from": "p1", "to": "p6", "circumstance_tags": ["backstory"]},
+  {"type": "given_to", "from": "o5", "to": "p6"},
+  {"type": "crafted_by", "from": "o5", "to": "p1"},
+
+  {"type": "implicates", "from": "o4", "to": "p5"},
+  {"type": "regarding", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "implicates", "from": "c1", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "implicates", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "implicates", "from": "c3", "to": "p5"},
+
+  {"type": "has_motive_against", "from": "p5", "to": "p2", "motive_type": "debt_pressure_and_self_preservation"},
+  {"type": "has_motive_against", "from": "p3", "to": "p2", "motive_type": "unspecified_grudge_pawnshop_business (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p2", "motive_type": "unspecified_grudge_pawnshop_business (red herring)"}
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

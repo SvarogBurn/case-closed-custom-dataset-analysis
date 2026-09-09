@@ -1,0 +1,298 @@
+{
+ "case_id": "ep185-186_the_murdered_famous_detective",
+ "episode_number": "185-186",
+ "title": "The Murdered Famous Detective",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Murdered_Famous_Detective",
+ "subtitle_source": ["subs_resolved/0185.txt", "subs_resolved/0186.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Yokomizo) omitted by convention, matching the ep011 precedent of omitting Megure. The old wiki-derived case file (cases/ep185-186_the_murdered_famous_detective.json) had the right culprit (Tahara) but flattened the mechanism into two generic objects/events and missed most of the cast and structure: it omitted victim Sunaoka's actual death mechanism (a bowgun-fired, screw-threaded bullet fashioned to mimic rifle rifling, not simply 'a bullet extracted from a test mattress' fired from a crossbow at range), omitted lodge owner Akashi entirely, omitted the red-herring motives against Nagatsuka (embezzlement accusation) and Tanigawa (agency-switch threat + romantic-humiliation jab), omitted Tanigawa's archery near-miss (a plausible weapon-skill red herring given the real weapon turns out to be a bow), omitted the recorded-dialogue phone trick and firecracker used to fake the time/location of the shooting, and omitted the shoe-glass and coconut-fiber clues that actually break the case. No `event` node type: every action is a directly typed, attributed edge between the entities involved, sharing an `order` integer so edges from the same real-world occurrence group without a reifying node. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kazuyoshi Sunaoka",
+    "aliases": ["Sabao Banai", "Bannai Kujirao"],
+    "roles": ["victim"],
+    "occupation": "actor (age 30), plays detective character 'Urban Hunter / Sabao Banai' in a TV series",
+    "attrs": {
+     "died_of": "pierced through the forehead by a bowgun bolt tipped with a modified bullet, staged to look like a long-range rifle shot",
+     "personality": "arrogant toward the crew; publicly humiliates producer, scriptwriter, and manager at dinner"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Katsuaki Nagatsuka",
+    "aliases": ["Atsuaki Nagatsuka"],
+    "roles": ["suspect", "witness"],
+    "occupation": "TV producer, age 40",
+    "attrs": {
+     "accused_of": "pocketing part of the production budget (accusation made publicly by Sunaoka at dinner; denies it)",
+     "alibi": "took a long-distance phone call from Tokyo/the station at the lodge's private corded front-desk phone right around the time of the fake gunshot; confirmed by the caller and phone records"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Noe Tanigawa",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "owner/CEO of Sunaoka's talent management agency, age 27",
+    "attrs": {
+     "accused_of": "possible romantic grudge (needled by Nagatsuka at dinner about being 'dumped')",
+     "skill": "practices archery; nearly struck a stranger with a stray arrow at the lodge's archery ground earlier that day -- a red herring given the real murder weapon turns out to be a bow",
+     "alibi_gap": "no witness for the time right after the gunshot was heard (was showering, then came out to the veranda alone) -- moot, since the true time of death was earlier"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Toshiaki Tahara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "scenario writer for Sunaoka's TV series, age 35",
+    "attrs": {
+     "claimed_alibi": "said he stayed in his room all afternoon writing, then went to the garden restaurant kitchen for more drinks around 7:50pm",
+     "true_activity": "spent the afternoon secretly stealing a rifle and rope, faking a sniper scene across the valley, and manufacturing a fake bullet-tipped arrow; killed Sunaoka around 7:50pm and faked a call and gunshot around 8:00pm",
+     "confession": "wanted to prove -- to the producers, the actor, the police, and even the most famous detective -- that he could commit a perfect, unsolvable crime, after being mocked and blamed for bad ratings by Sunaoka"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yusaku Akashi",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "owner/innkeeper of the mountain lodge, age 60",
+    "attrs": {
+     "alibi": "was alone, washing dishes in the kitchen with the ventilation fan running at the time of the fake gunshot; ruled out early since he is lodge staff, not one of the three guests who could have needed a false alibi"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Mountain lodge (Sansou)",
+    "attrs": {"description": "secluded lodge accessible by a single mountain road, run alone by Akashi"}
+   },
+   {
+    "id": "l2",
+    "name": "Archery ground",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Sunaoka's room (3rd floor)",
+    "attrs": {"found_locked_from_inside": true}
+   },
+   {
+    "id": "l4",
+    "name": "Garden restaurant (outdoor dining area)",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Front desk / lobby",
+    "attrs": {"has_private_corded_phone": true}
+   },
+   {
+    "id": "l6",
+    "name": "Rocky cliff across the valley",
+    "attrs": {"description": "site staged to look like the sniper's position; about a 30-minute round trip from the lodge, visible from the garden restaurant"}
+   },
+   {
+    "id": "l7",
+    "name": "Room 304 (Tahara's room)",
+    "attrs": {"floor_marks": "scratches/drag marks on the floor from moving the heavy bowgun in and out, noticed by Conan"}
+   },
+   {
+    "id": "l8",
+    "name": "Hunting ground management office",
+    "attrs": {"description": "source of the rifle and rope later found staged on the cliff"}
+   },
+   {
+    "id": "l9",
+    "name": "Kitchen",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rifle (stolen from the hunting management office)",
+    "role": "weapon",
+    "attrs": {
+     "staging_flaw": "underside found dry despite the evening rain -- proves it was planted on the cliff before the rain, hours earlier than the claimed 8:00pm shooting",
+     "purpose": "used once, in secret, to fire a test bullet into the mattress propped at Sunaoka's window so a bullet bearing the rifle's rifling marks would exist; then left on the cliff as a decoy"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Rope (stolen from the hunting management office)",
+    "role": "tool",
+    "attrs": {"purpose": "tied to a tree on the cliff to fake a rope-and-boat escape route down to the stream"}
+   },
+   {
+    "id": "o3",
+    "name": "Mattress (propped against Sunaoka's window)",
+    "role": "tool",
+    "attrs": {
+     "purpose": "used to catch the test bullet fired by the rifle without a body present, and to break the window glass realistically",
+     "material": "coconut-fiber stuffing, later found mixed into the glass shards at the scene"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Modified bullet (test-fired into the mattress, then drilled and sharpened)",
+    "role": "weapon",
+    "attrs": {
+     "origin": "fired from rifle o1 into mattress o3 to acquire a bullet with matching rifling marks",
+     "modification": "a screw-threaded hole drilled into its base and its tip filed to a point, so it could be screwed onto an arrow shaft as a makeshift arrowhead",
+     "recovered_from": "Sunaoka's forehead wound, extracted during autopsy",
+     "anomaly": "forensics flagged the drilled screw threads as inexplicable on a rifle bullet -- the detail that tips Conan off"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Bowgun (crossbow)",
+    "role": "weapon",
+    "attrs": {"found": "hidden in Tahara's room 304 during a police search ordered after Conan's tip"}
+   },
+   {
+    "id": "o6",
+    "name": "Blood-stained arrow with screw-threaded tip",
+    "role": "weapon",
+    "attrs": {
+     "found": "hidden alongside the bowgun in room 304",
+     "match": "screw threads on the tip match the drilled modification on the bullet recovered from the body"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Firecracker",
+    "role": "tool",
+    "attrs": {"purpose": "thrown toward the valley around 8:00pm to fake the sound of the sniper's gunshot and its apparent distant location/timing"}
+   },
+   {
+    "id": "o8",
+    "name": "Recorded playback of Sunaoka's own TV-show dialogue",
+    "role": "tool",
+    "attrs": {
+     "line": "\"How about it? Why don't you come up to my room and we'll talk detective?\" ... \"Huh? Hold on a second, what is that?\"",
+     "purpose": "played over the phone to Kogoro Mouri to impersonate a still-alive Sunaoka and fake an interrupted call, planting a false, later time of death"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Kogoro Mouri's business card",
+    "role": "evidence",
+    "attrs": {"handed_out": "at dinner, giving Tahara Kogoro's phone number for the faked call"}
+   },
+   {
+    "id": "o10",
+    "name": "Curtain (Sunaoka's room)",
+    "role": "tool",
+    "attrs": {"purpose": "drawn to hide the broken window hole after cleanup, then reopened later to stage the final scene"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The glass shards collected from Sunaoka's broken window were mixed with coconut/plant fibers that don't belong to window glass but match the stuffing of the room's mattress -- proving a mattress had been used to catch a test bullet fired through the window, rather than the window simply having been shot out from across the valley.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Shards of glass matching the crime-scene window were found stuck in the sole of Tahara's shoe, even though only investigators approached the body after the scene was found -- meaning Tahara must have been in the room around the broken glass earlier, while gathering it up as part of staging the scene, before the police 'discovery.'",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "The rifle staged on the cliff was dry underneath despite the evening rain that soaked everything else at the scene, while the timeline claimed it was left there around 8:00pm (after the rain had already stopped) -- the dryness only makes sense if the rifle was actually planted hours earlier, in the afternoon, before the rain.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cD",
+    "desc": "No footprints were found on either side of the mountain road/bridge crossing to the cliff, even though everyone had to cross it after the rain -- ruling out any outsider physically walking to or from the sniper position, and undermining the entire across-the-valley sniper narrative.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "employee_of"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "temporal_frame": "present", "detail": "the famous-detective TV drama's cast and crew are all staying together at the secluded mountain lodge for filming"},
+  {"type": "was_at", "from": "p2", "to": "l1", "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "temporal_frame": "present", "detail": "Akashi runs the lodge alone"},
+
+  {"type": "was_at", "from": "p2", "to": "l5", "order": 3, "temporal_frame": "present", "detail": "takes a long-distance call from Tokyo on the lodge's private corded front-desk phone around the time of the fake gunshot, giving him his alibi"},
+
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "endangers", "from": "p3", "to": "l2", "order": 1, "temporal_frame": "present", "circumstance_tags": ["red_herring"], "detail": "loosed a stray arrow at the archery ground that nearly struck a passerby, establishing her as bow-skilled ahead of the reveal that the real weapon is a bowgun"},
+
+  {"type": "steals", "from": "p4", "to": "o1", "order": 2, "temporal_frame": "present"},
+  {"type": "steals", "from": "p4", "to": "o2", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l8", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l3", "order": 2, "temporal_frame": "present"},
+  {"type": "rigs_evidence_using", "from": "p4", "to": "o3", "order": 2, "temporal_frame": "present", "detail": "props the mattress against Sunaoka's window as a bullet catcher"},
+  {"type": "was_at", "from": "p4", "to": "l6", "order": 2, "temporal_frame": "present"},
+  {"type": "fires", "from": "p4", "to": "o1", "order": 2, "temporal_frame": "present", "detail": "fires the stolen rifle at Sunaoka's empty room from across the valley, lodging a bullet in the propped mattress"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o1", "order": 2, "temporal_frame": "present", "detail": "leaves the rifle on the cliff as a decoy"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o2", "order": 2, "temporal_frame": "present", "detail": "ties the rope to a tree to fake a rope-and-boat escape route"},
+  {"type": "extracts", "from": "p4", "to": "o4", "order": 2, "temporal_frame": "present", "detail": "retrieves the fired bullet from the mattress"},
+  {"type": "hides_evidence_using", "from": "p4", "to": "o10", "order": 2, "temporal_frame": "present", "detail": "cleans up the broken glass and draws the curtain to hide the hole after restoring the mattress"},
+  {"type": "was_at", "from": "p4", "to": "l7", "order": 2, "temporal_frame": "present"},
+  {"type": "modifies", "from": "p4", "to": "o4", "order": 2, "temporal_frame": "present", "detail": "drills screw threads into the base and sharpens the tip"},
+  {"type": "owns", "from": "p4", "to": "o5"},
+  {"type": "assembles", "from": "p4", "to": "o6", "order": 2, "temporal_frame": "present", "detail": "screws the modified bullet onto an arrow shaft, loaded into the bowgun"},
+
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l4", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l9", "order": 3, "temporal_frame": "present"},
+  {"type": "confronts", "from": "p1", "to": "p2", "order": 3, "temporal_frame": "present", "detail": "publicly accuses Nagatsuka of pocketing production budget money"},
+  {"type": "confronts", "from": "p1", "to": "p4", "order": 3, "temporal_frame": "present", "detail": "mocks Tahara's scripts and blames him for falling ratings"},
+  {"type": "confronts", "from": "p1", "to": "p3", "order": 3, "temporal_frame": "present", "detail": "threatens to leave her agency for a rival production company that offered him a bigger contract"},
+  {"type": "confronts", "from": "p2", "to": "p3", "order": 3, "temporal_frame": "present", "circumstance_tags": ["red_herring", "unrelated_subplot"], "detail": "needles Tanigawa about a rumored breakup in front of everyone"},
+
+  {"type": "was_at", "from": "p1", "to": "l3", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l3", "order": 4, "temporal_frame": "present", "detail": "walks Sunaoka back to his room, then leaves for her own room to shower"},
+  {"type": "was_at", "from": "p4", "to": "l3", "order": 4, "temporal_frame": "present", "detail": "sneaks in under the pretense of getting more drinks"},
+  {"type": "kills", "from": "p4", "to": "p1", "order": 4, "temporal_frame": "present", "method": "pierced through the forehead at close range with a bowgun-fired arrow tipped with the rifle-marked, screw-threaded bullet", "circumstance_tags": ["locked_room", "impossible_crime", "staged_alibi"]},
+  {"type": "stages_crime_scene_of", "from": "p4", "to": "p1", "order": 4, "temporal_frame": "present", "detail": "repositions the body to face the window, reopens the curtain, rescatters the pre-collected glass shards, and removes the arrow shaft, leaving only the bullet-shaped tip embedded to mimic a gunshot wound", "circumstance_tags": ["staged_evidence"]},
+  {"type": "leaves_evidence", "from": "p4", "to": "o4", "order": 4, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 5, "temporal_frame": "present", "detail": "returns to the garden restaurant acting normal, deliberately sitting apart from the group"},
+
+  {"type": "stages_alibi_using", "from": "p4", "to": "o8", "order": 6, "temporal_frame": "present", "detail": "secretly calls Kogoro Mouri and plays a recording of Sunaoka's own TV dialogue to fake a still-alive Sunaoka and an interrupted call"},
+  {"type": "regarding", "from": "p4", "to": "o9", "detail": "got Kogoro's phone number off the business card handed out at dinner"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o7", "order": 6, "temporal_frame": "present", "detail": "throws a firecracker toward the valley to fake the sound, timing, and apparent location of the gunshot"},
+
+  {"type": "was_at", "from": "p1", "to": "l6", "order": 7, "temporal_frame": "present", "detail": "investigators and Mouri's party cross the 30-minute route to the cliff after the fake gunshot is heard, find the rifle and rope staged there"},
+
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "implicates", "from": "o4", "to": "p4"},
+  {"type": "implicates", "from": "o5", "to": "p4"},
+  {"type": "implicates", "from": "o6", "to": "p4"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+  {"type": "implicates", "from": "cB", "to": "p4"},
+  {"type": "implicates", "from": "cC", "to": "p4"},
+  {"type": "implicates", "from": "cD", "to": "p4"},
+  {"type": "regarding", "from": "cA", "to": "o3"},
+  {"type": "regarding", "from": "cA", "to": "l3"},
+  {"type": "regarding", "from": "cB", "to": "l3"},
+  {"type": "regarding", "from": "cC", "to": "o1"},
+  {"type": "regarding", "from": "cD", "to": "l6"},
+
+  {"type": "located_in", "from": "o5", "to": "l7"},
+  {"type": "located_in", "from": "o6", "to": "l7"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "professional/artistic pride -- mocked and blamed for bad ratings, wanted to prove he could commit a perfect, unsolvable crime that would fool everyone including the police and the most famous detective"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "financial (publicly, humiliatingly accused of embezzling production budget) -- red herring"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "professional and personal (his threat to switch agencies would ruin her business; also publicly needled about a romantic breakup) -- red herring"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

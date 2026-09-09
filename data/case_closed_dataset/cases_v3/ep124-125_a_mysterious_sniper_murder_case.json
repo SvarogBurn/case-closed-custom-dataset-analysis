@@ -1,0 +1,478 @@
+{
+  "case_id": "ep124-125_a_mysterious_sniper_murder_case",
+  "episode_number": "124-125",
+  "title": "A Mysterious Sniper Murder Case",
+  "source_url": "https://www.detectiveconanworld.com/wiki/A_Mysterious_Sniper_Murder_Case",
+  "subtitle_source": "/home/reo/Faks/GNN/case_closed/case_closed_dataset/subs_resolved/0124.txt, /home/reo/Faks/GNN/case_closed/case_closed_dataset/subs_resolved/0125.txt (full two-episode transcript read)",
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan, Ran, Kogoro Mouri, Inspector Megure, Takagi) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved. case_type: murder. Two distinct false accusations occur before the reveal: Shibata (real grudge motive against Ishimoto, but a solid alibi) is accused first, then the detective sets a deliberate trap by publicly accusing Ishimoto himself to provoke the true culprit, Niikura, into a slip of the tongue about where the remote was found. Both are preserved as has_motive_against / accusation material distinct from the true culprit's motive.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Masao Takada",
+        "aliases": [],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "member of the Japan House of Representatives",
+        "attrs": {
+          "died_of": "gunshot to the chest from a remotely triggered gun rigged to a stage spotlight",
+          "succession_context": "publicly seen as Niikura's mentor and expected to hand his political seat to him eventually, but was not actually planning to retire"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Tsuneaki Niikura",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "personal secretary to Politician Takada",
+        "attrs": {
+          "age": 32,
+          "motive_summary": "expected to succeed Takada as his political heir, but Takada had no plans to retire; grew impatient and orchestrated his murder",
+          "method_summary": "rigged a gun with a motor-and-string trigger onto a stage light whose spotlight auto-tracked Takada's chest microphone, so remotely firing it whenever Takada passed a chosen spot would look precise without requiring a hidden sniper; timed the shot for the moment Takada was led past Ishimoto so the murder would be read as a botched hit on Ishimoto instead; hired blackmailer Hiraoka Shiro as an accomplice to retrieve the physical rig afterward, then killed Hiraoka to silence him and planted a spare remote in Ishimoto's office as a backup frame-up"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Seiji Ishimoto",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "president, Ishimoto Precision Device",
+        "attrs": {
+          "age": 54,
+          "blackmail_backstory": "blackmailed by Hiraoka Shiro over a secret tax-evasion account, demanding roughly a billion yen; refused to pay and hired Kogoro Mouri as a bodyguard instead",
+          "injury": "grazed in the shoulder by the same bullet that then killed Takada",
+          "note": "briefly accused first by Shibata, then deliberately (and falsely) accused again by the detective as a trap to provoke the true culprit into a slip; cleared both times"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Yukiko Tanaka",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "President Ishimoto's secretary",
+        "attrs": {
+          "age": 25,
+          "note": "briefly considered a suspect in Hiraoka's death for lacking a confirmed alibi during the window he died, having left the hospital suite unobserved"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Kenichi Shibata",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": null,
+        "attrs": {
+          "age": 29,
+          "motive": "avenging his father's suicide, which followed his father's company being bankrupted by Ishimoto's business dealings",
+          "alibi": "went straight to work after leaving the party the night of the murder; multiple colleagues confirm, and he had never even seen Hiraoka's face",
+          "note": "accused first (episode 1 cliffhanger), then cleared by alibi"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Hiraoka Shiro",
+        "aliases": [
+          "Piranha Hiraoka"
+        ],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "blackmailer specializing in uncovering and exploiting trade secrets",
+        "attrs": {
+          "age": 35,
+          "died_of": "pushed down a stairwell in an abandoned building by Niikura to silence him; initially ruled an accidental fall",
+          "role_in_plot": "hired by Niikura as an accomplice to help stage the shooting and retrieve the gun rig afterward; independently also blackmailing Ishimoto over the tax-evasion account",
+          "note": "hid the rig's motor in a floor crack of the abandoned building as insurance before he was killed"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Banquet/event hall (including stage and lighting control room)",
+        "attrs": {}
+      },
+      {
+        "id": "l2",
+        "name": "Ishimoto's hospital suite",
+        "attrs": {}
+      },
+      {
+        "id": "l3",
+        "name": "Abandoned building",
+        "attrs": {}
+      },
+      {
+        "id": "l4",
+        "name": "Ishimoto Precision Device, president's office",
+        "attrs": {}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Automatic gun rigged to a stage light (motor-and-string trigger)",
+        "role": "weapon",
+        "attrs": {
+          "mechanism": "a gun strapped to one of the stage lights, with a motor taped to it and tied to the trigger by a string; starting the motor winds the string and pulls the trigger",
+          "recovery": "retrieved by Hiraoka right after the shot; the motor was later hidden by him in a floor crack of the abandoned building, insurance in case Niikura turned on him"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Auto-tracking stage spotlight",
+        "role": "tool",
+        "attrs": {
+          "mechanism": "state-of-the-art lighting system that automatically follows the movement of a wireless microphone worn on the speaker's chest -- since the rigged gun (o1) was mounted on this same fixture, whoever controlled the remote controlled where the bullet would point"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Remote control (for the gun's motor)",
+        "role": "weapon",
+        "attrs": {
+          "outer_surface": "wiped clean of fingerprints",
+          "battery_fingerprints": "carries Niikura's fingerprints, left when he dropped the remote while exchanging business cards with Kogoro Mouri the night of the party and reinserted the battery bare-handed",
+          "final_location": "planted in Ishimoto's presidential office by Niikura as a backup plan to frame him if the rig were ever found"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Hiraoka's blackmail threat to Ishimoto",
+        "role": "evidence",
+        "attrs": {
+          "content": "threatened to expose Ishimoto's secret tax-evasion account unless paid roughly a billion yen",
+          "outcome": "Ishimoto refused to pay and hired Kogoro Mouri as a bodyguard instead"
+        }
+      },
+      {
+        "id": "o8",
+        "name": "Takada's chest microphone (shattered)",
+        "role": "evidence",
+        "attrs": {
+          "note": "struck and destroyed by the same bullet that killed Takada; its shards were found at the scene and its wireless signal was what the auto-tracking spotlight had been following"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "The spotlight lighting Takada's path to the stage was designed to automatically track the wireless microphone clipped to his chest. Since the rigged gun (o1) was mounted on that exact light fixture, the shooter never needed line of sight on the crowd -- they only needed to time a remote trigger for the moment Takada's tracked position drew level with Ishimoto.",
+        "clue_type": "physical"
+      },
+      {
+        "id": "cB",
+        "desc": "Niikura, presenting himself as having independently found evidence, said only that the remote was recovered 'at Ishimoto's company' -- he never specified which room. Yet he referred to it as having come from Ishimoto's presidential office specifically, information only the person who hid it there could have known.",
+        "clue_type": "testimonial"
+      },
+      {
+        "id": "cC",
+        "desc": "The remote's outer casing had been wiped clean, but its battery had not: Niikura personally reinserted it bare-handed after dropping the remote during a business-card exchange the night of the party, leaving his own fingerprints on the one part he'd overlooked.",
+        "clue_type": "forensic"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p1",
+      "relation_type": "designated_successor_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p3",
+      "relation_type": "employee_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p5",
+      "to": "p4",
+      "relation_type": "dating"
+    },
+    {
+      "type": "hires",
+      "from": "p2",
+      "to": "p6",
+      "temporal_frame": "backstory",
+      "detail": "hires blackmailer Hiraoka Shiro to help stage a shooting that can be blamed on a failed hit against Ishimoto"
+    },
+    {
+      "type": "blackmails",
+      "from": "p6",
+      "to": "p3",
+      "temporal_frame": "backstory",
+      "detail": "blackmails Ishimoto over a secret tax-evasion account, demanding roughly a billion yen; Ishimoto refuses to pay"
+    },
+    {
+      "type": "regarding",
+      "from": "o5",
+      "to": "p6",
+      "detail": "the blackmail threat Hiraoka issued, demanding roughly a billion yen over Ishimoto's secret tax-evasion account"
+    },
+    {
+      "type": "regarding",
+      "from": "o5",
+      "to": "p3",
+      "detail": "the blackmail threat targeting Ishimoto; he refused to pay and hired Kogoro Mouri as a bodyguard instead"
+    },
+    {
+      "type": "installs",
+      "from": "p2",
+      "to": "o1",
+      "order": 1,
+      "temporal_frame": "present",
+      "detail": "rigs a gun with a motor-and-string trigger onto one of the stage lights, wired to fire via remote wherever the auto-tracking spotlight (o2) points"
+    },
+    {
+      "type": "located_in",
+      "from": "o1",
+      "to": "l1"
+    },
+    {
+      "type": "located_in",
+      "from": "o2",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "drops",
+      "from": "p2",
+      "to": "o3",
+      "order": 3,
+      "temporal_frame": "present",
+      "detail": "drops the remote while exchanging business cards with Kogoro Mouri and reinserts the battery bare-handed after picking it back up"
+    },
+    {
+      "type": "leads",
+      "from": "p2",
+      "to": "p1",
+      "order": 4,
+      "temporal_frame": "present",
+      "detail": "leads Takada across the floor toward the stage, walking him directly past Ishimoto"
+    },
+    {
+      "type": "triggers",
+      "from": "p2",
+      "to": "o1",
+      "order": 5,
+      "temporal_frame": "present",
+      "detail": "remotely fires the rigged gun via the motor at the instant Takada draws level with Ishimoto"
+    },
+    {
+      "type": "assaults",
+      "from": "p2",
+      "to": "p3",
+      "order": 5,
+      "temporal_frame": "present",
+      "circumstance_tags": [
+        "collateral",
+        "staged_evidence"
+      ],
+      "detail": "the same bullet grazes Ishimoto's shoulder on its way to Takada, reinforcing the illusion Ishimoto was the real target"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p1",
+      "order": 5,
+      "temporal_frame": "present",
+      "method": "remotely fired a gun rigged to the auto-tracking stage spotlight the instant Takada passed close to Ishimoto, so the shot (which shattered Takada's chest microphone) would read as a failed attempt on Ishimoto's life",
+      "circumstance_tags": [
+        "staged_evidence",
+        "framing"
+      ]
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o8"
+    },
+    {
+      "type": "located_in",
+      "from": "o8",
+      "to": "l1"
+    },
+    {
+      "type": "retrieves",
+      "from": "p6",
+      "to": "o1",
+      "order": 6,
+      "temporal_frame": "present",
+      "detail": "slips into the lighting control room right after the shot to retrieve the gun-and-motor rig and flee, per Niikura's plan"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l2",
+      "order": 7,
+      "temporal_frame": "present",
+      "detail": "visits Ishimoto's hospital suite and urges him to tell the police everything he knows, subtly steering the investigation"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l3",
+      "order": 8,
+      "temporal_frame": "present",
+      "detail": "hides out with the motor after the shooting, stashing it in a floor crack as insurance"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l3",
+      "order": 9,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p6",
+      "order": 9,
+      "temporal_frame": "present",
+      "method": "pushes Hiraoka down a stairwell in the abandoned building to silence him about the murder plot, staged to look like an accidental fall",
+      "circumstance_tags": [
+        "cover_up",
+        "staged_accident"
+      ]
+    },
+    {
+      "type": "hides_contraband_in",
+      "from": "p2",
+      "to": "o3",
+      "order": 10,
+      "temporal_frame": "present",
+      "detail": "unable to find the motor Hiraoka hid, plants the spare remote control in Ishimoto's presidential office as a backup plan to frame him if the rig is ever found"
+    },
+    {
+      "type": "located_in",
+      "from": "o3",
+      "to": "l4"
+    },
+    {
+      "type": "implicates",
+      "from": "o1",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "o1"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "o2"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "p1"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o3"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "l4"
+    },
+    {
+      "type": "implicates",
+      "from": "cB",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "cC",
+      "to": "o3"
+    },
+    {
+      "type": "implicates",
+      "from": "cC",
+      "to": "p2"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "impatience over political succession; Takada was not planning to retire (true motive)"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p5",
+      "to": "p3",
+      "motive_type": "revenge for his father's suicide, caused by Ishimoto's business dealings bankrupting his father's company (red herring, first accused)"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p6",
+      "to": "p3",
+      "motive_type": "suspected extortion-driven retaliation after Ishimoto refused to pay blackmail (initial police theory; Hiraoka was in fact a hired accomplice in Niikura's separate plot, not acting alone on this motive)"
+    }
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

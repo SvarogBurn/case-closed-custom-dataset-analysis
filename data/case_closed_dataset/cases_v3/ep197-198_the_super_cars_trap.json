@@ -1,0 +1,285 @@
+{
+ "case_id": "ep197-198_the_super_cars_trap",
+ "episode_number": "197-198",
+ "title": "The Super Car's Trap",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Super_Car%27s_Trap",
+ "subtitle_source": ["subs_resolved/0197.txt", "subs_resolved/0198.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Yokomizo) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same real-world occurrence can be grouped without a reifying node. The old wiki-summary case file (cases/ep197-198_the_super_cars_trap.json) named the correct culprit (Hisashi Suguro, s1) but was extremely thin: it omitted that Suguro himself was a fourth scam victim (Teraizumi swindled him out of the Ferrari Dino that became the murder weapon/scene) -- the real motive is identical in kind to the three red-herring suspects', not just 'a documented grievance'. It also collapsed the actual trick (car-cover-as-gas-chamber over the Dino, muffled engine sound mistaken by the guard for an unknown car, staged as a driving accident) into a vague single 'traps him in the car' event, missed the coal-tar-stain / headlight-crack-and-thread / engine-sound-test physical clues entirely, omitted witness Kazuo Noda, and had only one generic clue node with no comparative content. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Daigo Teraizumi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Kirigamine Hotel President",
+    "attrs": {
+     "age": 60,
+     "died_of": "carbon monoxide poisoning",
+     "personality": "car maniac; renovated his own hotel to host a historic car exhibition",
+     "background": "swindled at least four men (Suguro, Ootake, Sagara, Kameoka) out of their prized cars via predatory loans and fraud, then displayed the cars as trophies in his exhibition"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Hisashi Suguro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kirigamine Hotel front desk clerk",
+    "attrs": {
+     "age": 28,
+     "true_motive": "Teraizumi had previously swindled him out of his own Ferrari Dino 206GT, the very car later used as the murder scene",
+     "concealment": "posed as a loyal employee with no grudge against the owner while secretly the original owner of the murder car"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Zenkichi Kuroiwa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kirigamine Hotel manager",
+    "attrs": {
+     "age": 45,
+     "note": "was about to be laid off by Teraizumi; explicitly states he did not hate Teraizumi despite this"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Ichirou Ootake",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "travel agency manager",
+    "attrs": {
+     "age": 55,
+     "note": "tried to smash his own Cadillac rather than see it displayed in Teraizumi's exhibition; has an alibi (with the group after Teraizumi's last phone call)"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Shinsuke Sagara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "auto body/car repair factory manager",
+    "attrs": {
+     "age": 37,
+     "note": "drove to Tokyo overnight to borrow money and buy back his car before the exhibition; found the body the next morning; alibi corroborated by the friend who lent him the money",
+     "shoes_flashback_detail": "Conan notices his shoes while overhearing a suspicious balcony conversation about 'sticking to the plan' -- turns out to be about the loan, unrelated to the murder"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Jouji Kameoka",
+    "aliases": ["Jiyouji Kameoka", "Jyouji Kameoka"],
+    "roles": ["suspect"],
+    "occupation": "car realtor company manager",
+    "attrs": {
+     "age": 40,
+     "note": "has an alibi (with the group after Teraizumi's last phone call)"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kazuo Noda",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "hotel grounds guardsman",
+    "attrs": {
+     "age": 50,
+     "testimony": "around 10:00am saw an unfamiliar grayish car with an unrecognized engine sound parked where the Dino should have been; was sent by Suguro to check the hotel's front entrance instead of investigating it directly",
+     "key_evidence": "confirms via an on-site listening test that the muffled sound he heard matches the Dino's engine running under the plastic car cover"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kirigamine Hotel parking lot",
+    "attrs": {"role": "murder scene; where the covered Dino was found the next morning"}
+   },
+   {
+    "id": "l2",
+    "name": "Kirigamine Hotel historic car exhibition hall",
+    "attrs": {"role": "newly built wing displaying the owner's classic car collection, off-limits until the opening ceremony"}
+   },
+   {
+    "id": "l3",
+    "name": "Tokyo (Sagara's friend's residence)",
+    "attrs": {"role": "where Sagara borrowed money overnight, giving him an alibi"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Ferrari Dino 206GT",
+    "role": "instrument",
+    "attrs": {
+     "background": "only 152 ever produced; named after Enzo Ferrari's son Alfredino, who died at 24; Teraizumi's most prized possession",
+     "original_owner": "Hisashi Suguro, before Teraizumi swindled it from him",
+     "murder_role": "victim was drugged and seated in the driver's seat with the window cracked open and the engine left running under a sealed car cover, so the trapped exhaust suffocated him",
+     "headlight_damage": "left headlight cover cracked with a thread caught inside, from the culprit accidentally striking it while sealing the cover",
+     "engine_sound_note": "muffled by the cover to the point a witness mistook it for an unfamiliar, unrelated car"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Cadillac Eldorado Convertible (1953)",
+    "role": "evidence",
+    "attrs": {
+     "background": "limited production of 500 units",
+     "original_owner": "Ichirou Ootake, before Teraizumi took it as loan collateral and never returned it",
+     "incident": "Ootake tried to smash it to pieces the night before the murder rather than see it exhibited"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Mercedes-Benz 300SL Gullwing",
+    "role": "evidence",
+    "attrs": {
+     "original_owner": "Shinsuke Sagara, before Teraizumi took it as loan collateral"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Jaguar XK120",
+    "role": "evidence",
+    "attrs": {
+     "original_owner": "Jouji Kameoka, before Teraizumi took it as loan collateral"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Threatening letter",
+    "role": "evidence",
+    "attrs": {
+     "message": "Don't open the exhibition. You'll regret it.",
+     "sent": "a few days before the group's arrival",
+     "accused_senders": "Teraizumi publicly accused Ootake, Sagara, and Kameoka of sending it; all three denied it",
+     "dismissed_as": "Kuroiwa calls it just a prank; never definitively tied to the murder"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Plastic car cover",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "sealed over the Dino and staked to the ground to trap the exhaust, forcing it back in through the cracked-open driver's window instead of letting it dissipate",
+     "trace_evidence": "a coal-tar smear near the muffler area on its underside, in the exact cut-off shape as the stain on the Dino's exhaust pipe",
+     "borrowed_from": "part of the ordinary set of covers Suguro used nightly on the exhibition cars, so its use drew no suspicion"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Hisashi Suguro's trousers",
+    "role": "evidence",
+    "attrs": {
+     "stain_origin": "red wine spilled at dinner the night before",
+     "anomaly": "Suguro told the Mouris he'd changed out of them immediately, but was later found wearing the same stained pair again after the murder",
+     "torn": true,
+     "thread_match": "a thread caught in the crack on the Dino's headlight cover matches the tear in these trousers"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The coal-tar stain leaking from the Dino's exhaust pipe is cut off in a perfectly straight line, and an identical straight-edged tar smear is found on the underside of Suguro's car cover near the muffler area -- the two stains match, proving that specific cover was sealed over the Dino at the time the exhaust was running.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Noda testifies the unfamiliar grayish car he saw around 10am had an engine sound he'd never heard before, unlike the Dino's; a live test starting the Dino's engine and then draping the same plastic cover over it reproduces exactly the muffled sound Noda heard, proving the 'unknown car' was the cover-shrouded Dino all along.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "A thread snagged in the fresh crack on the Dino's headlight cover matches a tear in the trousers Suguro claimed to have changed out of the night before, placing him physically striking the car while sealing the cover.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "loan_creditor_of"},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "loan_creditor_of"},
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "loan_creditor_of"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "fellow_scam_victims"},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "fellow_scam_victims"},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "fellow_scam_victims"},
+
+  {"type": "scams", "from": "p1", "to": "p2", "order": 0, "temporal_frame": "backstory", "circumstance_tags": ["fraud", "cover_up"], "detail": "swindled Suguro out of his Ferrari Dino 206GT"},
+  {"type": "scams", "from": "p1", "to": "p4", "order": 0, "temporal_frame": "backstory", "circumstance_tags": ["fraud"], "detail": "lent money against the Cadillac as collateral, then manipulated Ootake's travel agency into insolvency so it could never be repaid"},
+  {"type": "scams", "from": "p1", "to": "p5", "order": 0, "temporal_frame": "backstory", "circumstance_tags": ["fraud"], "detail": "lent money against the Mercedes as collateral, then manipulated Sagara's business into insolvency"},
+  {"type": "scams", "from": "p1", "to": "p6", "order": 0, "temporal_frame": "backstory", "circumstance_tags": ["fraud"], "detail": "lent money against the Jaguar as collateral, then manipulated Kameoka's business into insolvency"},
+  {"type": "seizes", "from": "p1", "to": "o1", "order": 0, "temporal_frame": "backstory"},
+  {"type": "seizes", "from": "p1", "to": "o2", "order": 0, "temporal_frame": "backstory"},
+  {"type": "seizes", "from": "p1", "to": "o3", "order": 0, "temporal_frame": "backstory"},
+  {"type": "seizes", "from": "p1", "to": "o4", "order": 0, "temporal_frame": "backstory"},
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "regarding", "from": "o5", "to": "p1"},
+  {"type": "implicates", "from": "o5", "to": "p4", "circumstance_tags": ["red_herring", "disputed"]},
+  {"type": "implicates", "from": "o5", "to": "p5", "circumstance_tags": ["red_herring", "disputed"]},
+  {"type": "implicates", "from": "o5", "to": "p6", "circumstance_tags": ["red_herring", "disputed"]},
+
+  {"type": "attempts_to_destroy", "from": "p4", "to": "o2", "order": 2, "temporal_frame": "present", "circumstance_tags": ["public_outburst", "red_herring"]},
+  {"type": "confronts", "from": "p4", "to": "p1", "order": 2, "temporal_frame": "present"},
+  {"type": "confronts", "from": "p5", "to": "p1", "order": 2, "temporal_frame": "present"},
+  {"type": "confronts", "from": "p6", "to": "p1", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l2", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l2", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l2", "order": 2, "temporal_frame": "present"},
+
+  {"type": "stains", "from": "p2", "to": "o7", "order": 3, "temporal_frame": "present", "detail": "spills wine on his own trousers while serving dinner"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 4, "temporal_frame": "present", "detail": "drives off alone in the Dino into thick fog for the night"},
+  {"type": "was_at", "from": "p5", "to": "l3", "order": 4, "temporal_frame": "present", "circumstance_tags": ["alibi"]},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 5, "temporal_frame": "present", "detail": "returns from his night drive"},
+  {"type": "drugs", "from": "p2", "to": "p1", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 5, "temporal_frame": "present", "circumstance_tags": ["opportunity", "concealed"]},
+
+  {"type": "traps_body_of", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "circumstance_tags": ["staged_accident"]},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o6", "order": 6, "temporal_frame": "present"},
+  {"type": "damages", "from": "p2", "to": "o1", "order": 6, "temporal_frame": "present", "detail": "accidentally cracks the headlight cover while sealing the tarp to the ground, tearing his own trousers on it"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "order": 7, "temporal_frame": "present", "method": "carbon monoxide poisoning, exhaust trapped under a sealed car cover", "circumstance_tags": ["staged_accident", "cover_up"]},
+
+  {"type": "was_at", "from": "p7", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "misdirects", "from": "p2", "to": "p7", "order": 8, "temporal_frame": "present", "detail": "sends Noda to check the hotel's front entrance instead of the parking lot"},
+
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 9, "temporal_frame": "present", "circumstance_tags": ["arrived_last", "red_flag"], "detail": "returns to remove the cover, panics at Ran's scream in the fog, and forgets to close the window before rushing to the scene"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 9, "temporal_frame": "present", "detail": "returns from Tokyo and finds the body"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 9, "temporal_frame": "present", "circumstance_tags": ["alibi_group"]},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 9, "temporal_frame": "present", "circumstance_tags": ["alibi_group"]},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 9, "temporal_frame": "present", "circumstance_tags": ["alibi_group"]},
+
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "regarding", "from": "c1", "to": "o6"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "o6"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "o1"},
+  {"type": "regarding", "from": "c3", "to": "o7"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+  {"type": "implicates", "from": "o7", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge_for_stolen_car"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "revenge_for_stolen_car (red herring, has alibi)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "revenge_for_stolen_car (red herring, has alibi)"},
+  {"type": "has_motive_against", "from": "p6", "to": "p1", "motive_type": "revenge_for_stolen_car (red herring, has alibi)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "anticipated_layoff (weak, red herring; explicitly denies hating him)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

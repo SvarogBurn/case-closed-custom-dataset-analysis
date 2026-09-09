@@ -1,0 +1,462 @@
+{
+  "case_id": "ep046_alpine_hut_in_the_snowy_mountain_murder_case",
+  "episode_number": "46",
+  "title": "Alpine Hut in the Snowy Mountain Murder Case",
+  "source_url": "https://www.detectiveconanworld.com/wiki/Alpine_Hut_in_the_Snowy_Mountain_Murder_Case",
+  "subtitle_source": "case_closed_dataset/subs_resolved/0046.txt (379 dialogue lines, full transcript read)",
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. The staged robbery (scratched safe, untouched watch, taped window/footprints) is itself a red herring the culprit built into the scene; Kanazawa's weak alibi (alone in the bath) is a second red herring the transcript supports only as suspicion, with no stated motive against the victim, so no fabricated has_motive_against edge was added for him. case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Masashi Oyama",
+        "aliases": [],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "Toto University medical professor",
+        "attrs": {
+          "age": 53,
+          "died_of": "suffocation, after both lungs were punctured by repeated knife stabs",
+          "time_of_death": "between 9:30pm and 10:00pm"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Kaori Nakahara",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "Toto University medical assistant to Dr. Oyama",
+        "attrs": {
+          "age": 30,
+          "personal_motivation": "her father died of large-intestine cancer when she was young; she became a doctor specializing in it and spent six years writing a paper on gene therapy for the disease, in his memory"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Tomoyasu Kanazawa",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "Toto University medical assistant to Dr. Oyama",
+        "attrs": {
+          "age": 48,
+          "tenure": "studying under Dr. Oyama for dozens of years",
+          "alibi_status": "unverifiable -- alone in the bath from 9:30 to shortly after 10:00pm, no witnesses; no motive against the victim is stated in the available transcript excerpt"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Ginji Tobita",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "Toto University medical assistant to Dr. Oyama",
+        "attrs": {
+          "age": 31,
+          "tenure": "transferred to Dr. Oyama's lab three years ago",
+          "cleared_because": "night-ski lift ticket is dated and timestamped for the murder window, a fake alibi that would have been trivially disprovable"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Kaho Ezumi",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "Toto University medical assistant to Dr. Oyama",
+        "attrs": {
+          "age": 30,
+          "cleared_because": "spent the murder window cleaning up with Ran and Conan, only stepping out for 2-3 minutes to throw out trash -- not enough time to commit the murder"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Dr. Oyama's mountain cabin",
+        "attrs": {}
+      },
+      {
+        "id": "l2",
+        "name": "Convenience store at the base of the mountain",
+        "attrs": {}
+      },
+      {
+        "id": "l3",
+        "name": "Night-ski slope",
+        "attrs": {}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Knife",
+        "role": "weapon",
+        "attrs": {}
+      },
+      {
+        "id": "o2",
+        "name": "Bloodstained tablecloth",
+        "role": "evidence",
+        "attrs": {
+          "staging_flaw": "the blood on the table stops cleanly, and the sofa where the bloodied lighter later sat has no blood at all -- proof the tablecloth was moved only after the blood had dried"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Gold watch",
+        "role": "evidence",
+        "attrs": {
+          "staging_flaw": "left untouched despite being valuable and easily visible, inconsistent with a robbery-motivated killer who supposedly couldn't get the safe open"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Safe",
+        "role": "evidence",
+        "attrs": {
+          "staging_flaw": "deliberately scratched up to look forced open, to make the murder appear motivated by robbery"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Window with tape and footprints",
+        "role": "evidence",
+        "attrs": {
+          "staging_flaw": "taped to muffle the sound of breaking in, with footprints deliberately left outside leading straight to the room -- too neat and confident for an intruder unsure if the room was occupied, suggesting the 'break-in' was staged by someone who already knew Oyama would be alone"
+        }
+      },
+      {
+        "id": "o6",
+        "name": "Lighter",
+        "role": "evidence",
+        "attrs": {
+          "significance": "originally on the table, bloodied by Dr. Oyama as part of his dying message; found later moved onto the blood-free sofa"
+        }
+      },
+      {
+        "id": "o7",
+        "name": "Kaori's paper, \"Gene Therapy as Treatment for Cancer of the Large Intestine\"",
+        "role": "evidence",
+        "attrs": {
+          "written_over": "six years",
+          "significance": "Dr. Oyama presented it to the university as his own work; the true motive behind the murder"
+        }
+      },
+      {
+        "id": "o8",
+        "name": "Tobita's night-ski lift ticket",
+        "role": "evidence",
+        "attrs": {
+          "significance": "dated and timestamped for the murder window, corroborating his alibi"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "The blood on the table stops in a clean line, and the sofa where the bloodied lighter was later found has no blood on it at all -- proving the tablecloth and lighter were moved to their found positions only after the blood had already dried, i.e. someone returned to the scene after the murder.",
+        "clue_type": "forensic"
+      },
+      {
+        "id": "cB",
+        "desc": "Each of the four assistants' and the victim's names contains a kanji character used for a different shogi piece, missing only the 'horse' (knight) that Dr. Oyama had earlier joked about; the one square on the tablecloth with long blood trails (the edge of the table) matches the starting square of the 'lance' piece, spelling out Kaori Nakahara's name as Dr. Oyama's dying message.",
+        "clue_type": "testimonial"
+      },
+      {
+        "id": "cC",
+        "desc": "Nakahara could not say how much the snacks she supposedly just bought cost, because she had actually purchased them in bulk that same afternoon while shopping for dinner, then only pretended to drive to the store that evening to build her alibi window.",
+        "clue_type": "behavioral"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p1",
+      "relation_type": "protege_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p1",
+      "relation_type": "protege_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p1",
+      "relation_type": "protege_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p5",
+      "to": "p1",
+      "relation_type": "protege_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p3",
+      "relation_type": "colleague"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p4",
+      "relation_type": "colleague"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p5",
+      "relation_type": "colleague"
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p4",
+      "relation_type": "colleague"
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p5",
+      "relation_type": "colleague"
+    },
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p5",
+      "relation_type": "colleague"
+    },
+    {
+      "type": "written_by",
+      "from": "o7",
+      "to": "p2"
+    },
+    {
+      "type": "claims_credit_for",
+      "from": "p1",
+      "to": "o7",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": null,
+      "detail": "presents Kaori's gene-therapy paper to the university as his own work"
+    },
+    {
+      "type": "dismisses",
+      "from": "p1",
+      "to": "p2",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": null,
+      "detail": "tells her no one would listen if she claimed authorship herself, but society would pay attention if a famous professor published it"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l2",
+      "order": 2,
+      "temporal_frame": "present",
+      "detail": "buys large quantities of snacks that afternoon while shopping for dinner, ahead of the requests she would 'take' that evening"
+    },
+    {
+      "type": "fakes_alibi_using",
+      "from": "p2",
+      "to": "l2",
+      "order": 3,
+      "temporal_frame": "present",
+      "detail": "takes everyone's snack orders around 9:00pm and pretends to drive to the convenience store, actually doubling back with the snacks she had pre-bought that afternoon"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l3",
+      "order": 3,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "sabotages",
+      "from": "p2",
+      "to": "o4",
+      "order": 4,
+      "temporal_frame": "present",
+      "circumstance_tags": [
+        "red_herring",
+        "premeditated"
+      ],
+      "detail": "scratches the safe to make the murder look like a botched robbery"
+    },
+    {
+      "type": "sabotages",
+      "from": "p2",
+      "to": "o5",
+      "order": 4,
+      "temporal_frame": "present",
+      "circumstance_tags": [
+        "red_herring",
+        "premeditated"
+      ],
+      "detail": "tapes the window and leaves staged footprints outside to fake a break-in"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p1",
+      "order": 4,
+      "temporal_frame": "present",
+      "method": "ties him up, then repeatedly stabs him, puncturing both lungs so he suffocates over 10-15 minutes",
+      "circumstance_tags": [
+        "premeditated",
+        "staged_robbery"
+      ]
+    },
+    {
+      "type": "leaves_dying_message",
+      "from": "p1",
+      "to": "o2",
+      "order": 5,
+      "temporal_frame": "present",
+      "detail": "while dying, marks the tablecloth with a bloodied lighter at the shogi-piece square corresponding to Kaori's name"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 6,
+      "temporal_frame": "present",
+      "detail": "returns to the scene around 11pm to 'discover' the body"
+    },
+    {
+      "type": "conceals_evidence_using",
+      "from": "p2",
+      "to": "o2",
+      "order": 6,
+      "temporal_frame": "present",
+      "detail": "notices the dying message, removes the tablecloth from the table, and moves the bloodied lighter onto the sofa"
+    },
+    {
+      "type": "discovers_body_of",
+      "from": "p2",
+      "to": "p1",
+      "order": 6,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "implicates",
+      "from": "o1",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o2",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "o8",
+      "to": "p4"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "o2"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "o6"
+    },
+    {
+      "type": "implicates",
+      "from": "cA",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o2"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o6"
+    },
+    {
+      "type": "implicates",
+      "from": "cB",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "cC",
+      "to": "p2"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "revenge for stealing and publishing under his own name the gene-therapy paper she spent six years writing in memory of her father, who died of the disease it addressed"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o3"
+    },
+    {
+      "type": "located_in",
+      "from": "o3",
+      "to": "l1"
+    }
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

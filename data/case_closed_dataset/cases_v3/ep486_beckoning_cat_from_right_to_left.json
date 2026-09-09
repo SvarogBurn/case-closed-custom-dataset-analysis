@@ -1,0 +1,203 @@
+{
+ "case_id": "ep486_beckoning_cat_from_right_to_left",
+ "episode_number": "486",
+ "title": "Beckoning Cat from Right to Left",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Beckoning_Cat_from_Right_to_Left",
+ "subtitle_source": ["subs_resolved/0486.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Kogoro Mouri, Haibara, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Unlike several other rebuilt episodes, the old lower-fidelity case file's stated culprit (Tamotsu Ishigami) matches the transcript's actual killer -- but the old file's single `e2` bludgeoning event flattens a genuinely two-attack structure that the mystery hinges on: Chika Murai struck Kanemaru with a shelf figurine (o1, right paw, non-fatal, knocks him unconscious) around 12:30-12:40pm and fled with her loan agreement; Ishigami arrived shortly before his own 1:00pm appointment, found Kanemaru conscious again, was mocked and threatened with eviction, and delivered the actual fatal second blow in the president's inner office using a beckoning cat he'd brought as a gift (o2, left paw -- the only cat in the room not part of Kanemaru's uniformly right-paw-raised collection). Ishigami then staged the scene by dragging the body to the main room to pin everything on Chika, vacuumed up blood/shards and took the dust bag, and tore out a memo page recording his own appointment. The old file also omits the brief false lead against the janitor Fumie Imaoka (accused on camera by an officer purely for being the one who found the body, before the memo evidence redirects the investigation) and the red-herring debt motives for both Imaoka and Murai. Old file's `has_motive_against` for the culprit was left as 'unspecified' -- transcript makes the motive explicit (Kanemaru was about to evict Ishigami from his cafe over unpaid debt and mocked his conciliatory gift). case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kenzou Kanemaru",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "loan shark, president of Office Kanemaru",
+    "attrs": {
+     "age": 65,
+     "died_of": "blunt force trauma from a beckoning cat figurine",
+     "hobby": "collects beckoning cat figurines, all with the right (money-beckoning) paw raised, out of greed"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tamotsu Ishigami",
+    "aliases": ["Tomotsu Ishigami"],
+    "roles": ["suspect"],
+    "occupation": "cafe owner, across the street from Kanemaru's office",
+    "attrs": {
+     "age": 35,
+     "debt": "owed Kanemaru money on his shop; threatened with eviction for nonpayment",
+     "pet": "owns a kitten, Cha-Cha, whose right front paw was already bandaged earlier that day"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Fumie Imaoka",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "janitor, cleans Kanemaru's office weekly",
+    "attrs": {
+     "age": 65,
+     "debt": "owed Kanemaru 300,000 yen; interest waived in exchange for weekly cleaning",
+     "note": "discovered the body around 1:30pm; briefly accused on scene simply for being the finder"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Chika Murai",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "university student (Motojo University)",
+    "attrs": {
+     "age": 22,
+     "debt": "accumulated debt to Kanemaru buying designer clothes and accessories; quit college for a part-time job to try to cover it",
+     "confession": "admits to striking Kanemaru once with a shelf figurine and fleeing with her loan agreement; denies killing him"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Park near the cafe",
+    "attrs": {"note": "where Ishigami's lost kitten Cha-Cha was found with an already-injured right paw"}
+   },
+   {
+    "id": "l2",
+    "name": "Ishigami's cafe",
+    "attrs": {"note": "across the street from Kanemaru's office"}
+   },
+   {
+    "id": "l3",
+    "name": "Kanemaru office, main room",
+    "attrs": {"contents": "sofa, safe, shelf of beckoning cat figurines (all right paw raised)"}
+   },
+   {
+    "id": "l4",
+    "name": "Kanemaru office, president's inner room",
+    "attrs": {"contents": "flip-panel clock, barred window", "note": "true site of the fatal second attack, at 12:59pm"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Shelf beckoning cat (right paw)",
+    "role": "weapon",
+    "attrs": {"used_by": "Chika Murai, non-fatal first blow", "part_of": "Kanemaru's collection"}
+   },
+   {
+    "id": "o2",
+    "name": "Gift beckoning cat (left paw)",
+    "role": "weapon",
+    "attrs": {
+     "brought_by": "Ishigami, as an apology gift for late payment",
+     "used_for": "the actual fatal second blow",
+     "fragment_found_at": "under the sofa in the main room",
+     "staging_flaw": "left paw raised, unlike every other figurine in Kanemaru's collection"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Vacuum cleaner dust bag",
+    "role": "evidence",
+    "attrs": {"note": "Ishigami used the vacuum to collect small shards and blood, then removed the bag itself"}
+   },
+   {
+    "id": "o4",
+    "name": "Flip-panel clock",
+    "role": "evidence",
+    "attrs": {
+     "mechanism": "panels flip forward as displayed time changes; blood spray only reaches the panel exposed at the moment of impact",
+     "decoded_time": "12:59pm, when reset to that display blood was found on it",
+     "significance": "proves the fatal blow happened in this room, after Chika had already left, and after Ishigami's cleanup (he never saw the blood since the panel had since flipped)"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Torn memo page",
+    "role": "evidence",
+    "attrs": {
+     "recovered_text": "September 3rd, 1:00pm -- Ishigami",
+     "method": "pencil-shading recovered the indentation left on the page beneath the torn one",
+     "note": "the page recording Ishigami's own appointment was torn out by the culprit"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Chika's loan agreement",
+    "role": "evidence",
+    "attrs": {"note": "she grabbed it back before fleeing after striking Kanemaru"}
+   },
+   {
+    "id": "o7",
+    "name": "Handkerchief (bandage)",
+    "role": "evidence",
+    "attrs": {"note": "used earlier that day to bandage Cha-Cha's injured paw; carries her blood pawprint"}
+   },
+   {
+    "id": "o8",
+    "name": "Cha-Cha (Ishigami's kitten)",
+    "role": "evidence",
+    "attrs": {
+     "injury": "right front paw injured before the murder, bandaged, re-bled during the crime",
+     "note": "could not have entered the barred window from outside -- must have walked in through the door with Ishigami"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Weapon fragment under the sofa has its left paw raised, but every figurine in Kanemaru's own collection has only the right paw raised -- it came from outside, not his shelf.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Bloody pawprint on the inner office window matches the pawprint on the handkerchief used earlier to bandage Cha-Cha's paw -- proves Ishigami's cat, and so Ishigami, was in that room.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "debtor_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "debtor_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "debtor_of"},
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o8"},
+  {"type": "assaults", "from": "p4", "to": "p1", "circumstance_tags": ["non_fatal", "red_herring"]},
+  {"type": "takes", "from": "p4", "to": "o6"},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "blunt force with a beckoning cat figurine (o2)", "circumstance_tags": ["frame_up", "cover_up"]},
+  {"type": "drags_body_of", "from": "p2", "to": "p1", "circumstance_tags": ["staged_scene"]},
+  {"type": "leaves_evidence", "from": "p2", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o4"},
+  {"type": "destroys_evidence", "from": "p2", "to": "o3"},
+  {"type": "destroys_evidence", "from": "p2", "to": "o5"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o7", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "l3"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o7"},
+  {"type": "regarding", "from": "c2", "to": "l4"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "located_in", "from": "o8", "to": "l1"},
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "located_in", "from": "o4", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "financial_desperation_eviction_threat"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "debt_collection_harassment (red herring, accused as body-finder)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "debt_collection_harassment"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

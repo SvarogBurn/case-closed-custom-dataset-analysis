@@ -1,0 +1,623 @@
+{
+ "case_id": "ep379-380_the_case_of_the_furisode_at_the_hidden_hot_spring_on_a_snowy_night",
+ "episode_number": "379-380",
+ "title": "The Case of the Furisode at the Hidden Hot Spring on a Snowy Night",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Case_of_the_Furisode_at_the_Hidden_Hot_Spring_on_a_Snowy_Night",
+ "subtitle_source": [
+  "subs_resolved/0379.txt",
+  "subs_resolved/0380.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: murder. The old lower-fidelity case file (cases/ep379-380...) actually named the correct culprit (Eri Akechi) and roughly the correct kill order (Asuka before Ema), so no culprit-flip correction was needed here -- unlike some other rebuilds. What it got wrong/omitted: (1) it never captured that 'Eri Akechi' is a public misreading of the culprit's real name, Chieri Ake, and that she is the older sister of Sakurako Suzuka, the university student whose suicide five years earlier is the entire motive -- without that identity reveal the case has no solvable motive layer; (2) its single event e2 conflates two distinct physical tricks into one action ('freezes obi sashes to slide the weapon and a prop doll down a slope to the pond' as part of stabbing Asuka) when the transcript actually separates them: wooden planks were used to fake shallow footprints while Eri walked to/from the shrine to kill Ema, and separately, ice-frozen obi sashes (which melt back into ordinary cloth on contact with hot spring water) were used afterward to slide the murder knife and Ema's blood-stained bandana down the cliff from Eri's room into the women's hot spring, faking the kill order and building her own alibi; (3) it omitted the forged letter that framed producer Kyoichi Bando, the dry-ice-timed prop doll that faked the Furisode-Hannya curse at the moment of discovery, the red-herring accusation against Harumi Fukatsu (grief-driven suspicion, formally raised but false), and the tribute dolls Eri left at the shrine before the murders as a foreshadowing detail; (4) it had zero named characters beyond the four suspects and two victims -- Sakurako Suzuka (the actual reason for everything) wasn't a node at all.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Eri Akechi",
+    "aliases": [
+     "Chieri Ake"
+    ],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "romance novelist",
+    "attrs": {
+     "public_name_origin": "her real name, Chieri Ake, is rarely seen and commonly misread as 'Akechi Eri'",
+     "relation_to_sakurako": "older sister",
+     "alibi_claim": "living and writing in Boston when her sister died; learned of the death a year later"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Sakurako Suzuka",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "university student",
+    "attrs": {
+     "died_of": "suicide, jumped from a university rooftop",
+     "circumstance": "accused of dealing drugs found in her locker; jumped in an attempt to prove her innocence",
+     "family": "parents died in a fire; adopted by the Suzuka family while her older sister Chieri was not",
+     "personality": "kind, strong sense of justice, loved sakura blossoms"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Asuka Shibasaki",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "fashion model, active in Paris and New York",
+    "attrs": {
+     "family": "daughter of a sitting senator"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Ema Anzai",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "oil painter, Kyoto Art Show newcomer award",
+    "attrs": {
+     "family": "daughter of the Anzai Group's president"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Harumi Fukatsu",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "singer-songwriter",
+    "attrs": {
+     "relation_to_sakurako": "trusted and admired her as a senpai; never believed the drug accusation"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yoriko Yasuda",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "editor, Daigakukan Publishing",
+    "attrs": {
+     "unwitting_role": "Eri used her as the pretext to gather Asuka and Ema for the interview weekend"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kyoichi Bando",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "TV producer, Nichiuri TV",
+    "attrs": {
+     "framed_via": "a forged letter signed with his name lured Ema to the shrine"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Officer Masaki",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "police officer",
+    "attrs": {}
+   },
+   {
+    "id": "p9",
+    "name": "Omura",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "village patrolman",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Women's hot spring",
+    "attrs": {
+     "note": "open-air; built on a mountainside cliff"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Furisode shrine",
+    "attrs": {
+     "note": "garden shrine to Furisode-sama, god of vengeance"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Recreation room",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Storage room",
+    "attrs": {
+     "note": "holds spare furisodes and obis; normally left unlocked"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Eri's room",
+    "attrs": {
+     "note": "overlooks the cliff above the women's hot spring"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Lobby",
+    "attrs": {}
+   },
+   {
+    "id": "l7",
+    "name": "Oodou University",
+    "attrs": {
+     "note": "rooftop here is where Sakurako jumped to her death"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Holy knife",
+    "role": "weapon",
+    "attrs": {
+     "origin": "donated to the Furisode shrine",
+     "stolen": "taken by Eri before the night of the murders"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Stun gun",
+    "role": "weapon",
+    "attrs": {
+     "found_at": "bottom of the women's hot spring"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Two wooden planks",
+    "role": "tool",
+    "attrs": {
+     "trick": "stepped on alternately to press already-made footprints shallower while walking to and from the shrine, and along the eaves to/from the back door, leaving no fresh prints of her own"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Frozen obi sashes",
+    "role": "tool",
+    "attrs": {
+     "trick": "obis soaked in water and frozen overnight until ice-hard, used as a rigid sled to send the knife and bandana down the cliff from Eri's room into the hot spring; melt back into ordinary cloth on contact with the hot water, hiding the mechanism",
+     "sound": "the splash heard from the recreation room around 10:50pm was the sled landing, not a scream"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Dry ice",
+    "role": "tool",
+    "attrs": {
+     "trick": "small pieces wedged into a ceiling crack, timed to melt and drop a prop doll at a chosen moment",
+     "obtained_via": "Eri had the owner buy cakes daily as a pretext to keep dry ice on hand"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Chiyogami prop doll",
+    "role": "evidence",
+    "attrs": {
+     "note": "dropped from the ceiling crack via the dry-ice trick, felt cold to the touch when found -- reinforced the Furisode-Hannya curse story"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Furisode robes",
+    "role": "evidence",
+    "attrs": {
+     "note": "taken from the storage room and arranged at the shrine and hot spring to imitate the Furisode-Hannya legend and disguise the real trick"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Forged letter",
+    "role": "evidence",
+    "attrs": {
+     "content": "asked Ema to meet at the shrine at 10:30pm, signed 'Bando'",
+     "forged_by": "Eri, to lure Ema to the murder scene and cast suspicion on Bando"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Ema's earring",
+    "role": "evidence",
+    "attrs": {
+     "value": "roughly 200,000 yen per earring, brand name",
+     "note": "one of the pair went missing, dropped during the struggle at the shrine"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Harumi's pendant",
+    "role": "evidence",
+    "attrs": {
+     "note": "same brand as Ema's earrings; presented as a bluff to make Eri believe the missing earring had been found and tested"
+    }
+   },
+   {
+    "id": "o11",
+    "name": "Tribute dolls (shrine)",
+    "role": "evidence",
+    "attrs": {
+     "note": "two new chiyogami dolls appeared at the Furisode shrine before the murders, one per intended target -- Eri's tribute visit, spotted by the guests as foreshadowing"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ema's boots should press ~15cm into the snow; the shrine footprints were only 7-8cm deep -- proves the prints were pressed shallow after the fact by someone walking the same route on wooden planks",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "A fresh wound on Eri's foot lines up with the spot Ema's dropped earring would have landed, and Eri kept her slippers on afterward even indoors while it bled",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "older_sister_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p2",
+   "relation_type": "admired_senpai_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "rumored_framer_of",
+   "detail": "suspected but never confirmed on screen as the source of the drug-dealing frame that drove Sakurako to suicide"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "rumored_framer_of",
+   "detail": "suspected but never confirmed on screen as the source of the drug-dealing frame that drove Sakurako to suicide"
+  },
+  {
+   "type": "studied_at",
+   "from": "p1",
+   "to": "l7"
+  },
+  {
+   "type": "studied_at",
+   "from": "p2",
+   "to": "l7"
+  },
+  {
+   "type": "studied_at",
+   "from": "p3",
+   "to": "l7"
+  },
+  {
+   "type": "studied_at",
+   "from": "p4",
+   "to": "l7"
+  },
+  {
+   "type": "studied_at",
+   "from": "p5",
+   "to": "l7"
+  },
+  {
+   "type": "studied_at",
+   "from": "p6",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "circumstance_tags": [
+    "concealed"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l6"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l6"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "stuns",
+   "from": "p1",
+   "to": "p3",
+   "circumstance_tags": [
+    "locked_room"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p3",
+   "method": "stabbed with the holy knife after being stunned",
+   "circumstance_tags": [
+    "locked_room",
+    "staged_alibi",
+    "framed_as_curse"
+   ]
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p1",
+   "to": "p3",
+   "circumstance_tags": [
+    "locked_room"
+   ]
+  },
+  {
+   "type": "forges",
+   "from": "p1",
+   "to": "o8"
+  },
+  {
+   "type": "impersonates",
+   "from": "p1",
+   "to": "p7",
+   "detail": "forged a letter under his name and signature to lure Ema to the shrine"
+  },
+  {
+   "type": "written_by",
+   "from": "o8",
+   "to": "p1"
+  },
+  {
+   "type": "inscribed_to",
+   "from": "o8",
+   "to": "p4"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p4",
+   "method": "stabbed with the same holy knife at the shrine",
+   "circumstance_tags": [
+    "locked_room",
+    "staged_scene"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o9"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o9"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o10"
+  },
+  {
+   "type": "stages_scene_using",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "takes",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l4"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o4",
+   "circumstance_tags": [
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "takes",
+   "from": "p1",
+   "to": "o7"
+  },
+  {
+   "type": "located_in",
+   "from": "o7",
+   "to": "l4"
+  },
+  {
+   "type": "stages_scene_using",
+   "from": "p1",
+   "to": "o7",
+   "circumstance_tags": [
+    "framed_as_curse"
+   ]
+  },
+  {
+   "type": "stages_scene_using",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "stages_scene_using",
+   "from": "p1",
+   "to": "o6",
+   "circumstance_tags": [
+    "framed_as_curse"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o11"
+  },
+  {
+   "type": "located_in",
+   "from": "o11",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p7",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o9"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p3",
+   "motive_type": "revenge_for_sisters_frame_and_suicide"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p4",
+   "motive_type": "revenge_for_sisters_frame_and_suicide"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p3",
+   "motive_type": "grief_over_senpais_suicide (red herring, formally accused)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p4",
+   "motive_type": "grief_over_senpais_suicide (red herring, formally accused)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

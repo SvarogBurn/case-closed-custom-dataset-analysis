@@ -1,0 +1,370 @@
+{
+ "case_id": "ep457-458_sonokos_red_handkerchief",
+ "episode_number": "457-458",
+ "title": "Sonoko's Red Handkerchief",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Sonoko%27s_Red_Handkerchief",
+ "subtitle_source": [
+  "subs_resolved/0457.txt",
+  "subs_resolved/0458.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Professor Agasa, investigating Officer Yamamura) omitted by convention, matching ep011. Kyougoku Makoto (Sonoko's boyfriend) is also omitted: his only on-screen actions (fighting off gang members) target exclusively omitted cast members (Ran, Sonoko) and don't touch the murder-mystery graph (victim, culprit, evidence, motive). No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file (cases/ep457-458_sonokos_red_handkerchief.json) got the culprit right (Watanuki Tatsuzou) but its clue c1 ('victim's name misread as a date, explaining why police couldn't find him on a crew list') garbles the actual dying-message trick: the transcript's date/kanji pun (calendar entry for April 1st, unusually read 'Watanuki') is the dying message identifying the KILLER's surname, not an explanation of the victim's absence from a crew list -- that's a separate, never-fully-resolved thread in the transcript (the production company said it had no Assistant Director named Hozumi; a part-timer's staff-list copy had mixed-up dates, and the scene leaves it ambiguous whether that staffer or Hozumi himself was mistaken/lying). The old file also omitted the backstory murder entirely (the gang-leadership killing that led to the original burial + handkerchief), added here as its own victim node. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Hozumi",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "self-described Assistant Director on \"The Maple Leaves of Winter\"; local handler for fan/press inquiries about the filming location",
+    "attrs": {
+     "name_reading_trivia": "kanji for \"August 1st\" is unusually read \"Hozumi\", which is why he was used to writing his own name in katakana",
+     "staff_list_discrepancy": "production company said it had no Assistant Director named Hozumi; a part-timer's staff-list copy had the dates mixed up -- left unresolved on screen whether the staffer or Hozumi was mistaken",
+     "cause_of_death": "stabbed twice, first in the abdomen then the chest",
+     "id_missing": "no ID found on the body; police believe the culprit took it"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Watanuki Tatsuzou",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "guest at Akagi Inn (age 63); secretly leader of a criminal gang",
+    "attrs": {
+     "false_alibi": "claimed he was bathing alone in his room; no one can confirm it",
+     "suspected_reason": "described as \"an old man with glasses\"; theorized to have requested katakana because kanji is hard on his eyes"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Okuma Isamu",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "guest at Akagi Inn (age 25)",
+    "attrs": {
+     "false_alibi": "claimed he was asleep in his room; no one can confirm it",
+     "suspected_reason": "nose ring, rough demeanor; theorized to be unable to read kanji"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hans Burkly",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "guest at Akagi Inn (age 41), foreign tourist",
+    "attrs": {
+     "false_alibi": "claimed he was walking outside; no one can confirm it",
+     "suspected_reason": "foreigner; theorized to be unable to read kanji, hence the katakana request"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Unnamed former gang leader",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "member of Watanuki's gang, rival for its leadership",
+    "attrs": {
+     "cause_of_death": "killed by Watanuki in a leadership succession dispute",
+     "burial_marker": "a red handkerchief tied to the maple tree above the grave, which later inspired the TV drama's key prop"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Maple forest (mountain)",
+    "attrs": {
+     "note": "site of the drama filming, the handkerchief hunt, and where Hozumi's body was found; blanketed in copycat red handkerchiefs left by fans"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Rock (drama's last scene)",
+    "attrs": {
+     "note": "agreed meeting point between Watanuki and Hozumi; over 500m from the real grave tree"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Original maple tree / grave site",
+    "attrs": {
+     "note": "true burial spot, deliberately avoided by the drama's film crew so the original and a copycat handkerchief wouldn't both appear in shot"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Akagi Inn",
+    "attrs": {
+     "note": "near the train station; Watanuki, Okuma, and Burkly all checked in the same morning"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Original red handkerchief",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "tied by Watanuki to mark the grave for later retrieval; inspired the drama's iconic prop once fans found and copied it"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hozumi's planner",
+    "role": "evidence",
+    "attrs": {
+     "found_location": "about 100 meters from the body",
+     "dying_message": "blood smeared over the April 1st calendar entry; kanji for \"April 1st\" is unusually read \"Watanuki\", naming the killer",
+     "own_name_written": "\"Hozumi\" also appears in katakana in the planner"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Akagi Inn guestbook",
+    "role": "evidence",
+    "attrs": {
+     "message_text": "\"I found the tree you seek. Meet me at the rock used for the drama's last scene.\"",
+     "signature": "signed \"Hozumi\" in katakana, per his own instruction"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Buried remains",
+    "role": "evidence",
+    "attrs": {
+     "found_by": "Hozumi, while digging at the base of the real tree"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Hozumi's planner has blood smeared specifically over the April 1st entry; the kanji for \"April 1st\" is an unusual reading of the surname \"Watanuki\" -- a dying message naming the killer, not a random smear.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Hozumi's own name in his planner and the guestbook signature he dictated are both in katakana; his surname's kanji (\"August 1st\") is unusually read \"Hozumi\", explaining his personal habit -- the foreigner/old-man katakana theories were coincidental misdirection.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "The real grave tree is over 500 meters from the rock used in the drama's last scene, which the film crew deliberately avoided shooting near to keep both red handkerchiefs out of frame -- explaining why Watanuki, searching only near the rock, never found his own marker.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "rival_gang_leader"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p5",
+   "method": "unspecified, in a leadership succession dispute",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "buries",
+   "from": "p2",
+   "to": "p5"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l3"
+  },
+  {
+   "type": "hires",
+   "from": "p2",
+   "to": "p1",
+   "detail": "posing as a fan willing to pay Hozumi to relocate the original handkerchief tree, obscured by years of copycat handkerchiefs"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "finds",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p2",
+   "circumstance_tags": [
+    "blackmail"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "stabbed twice, abdomen then chest",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "detail": "searched near the rock for the tree after killing Hozumi, without success"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o2",
+   "detail": "checked the planner, didn't understand the April 1st mark, and discarded it near the scene"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "written_by",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "blackmail_silencing"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p5",
+   "motive_type": "gang_leadership_succession_dispute"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "l2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

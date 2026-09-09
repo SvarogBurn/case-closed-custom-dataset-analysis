@@ -1,0 +1,259 @@
+{
+ "case_id": "ep987_the_company_dissolution_party",
+ "episode_number": "987",
+ "title": "The Company Dissolution Party",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Company_Dissolution_Party",
+ "subtitle_source": "subs_resolved/0987.txt (259 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Takagi) omitted by convention. case_type: murder (double homicide -- Koshimoto secretly poisons company president Kureno, then Narita kills Koshimoto in a rage upon learning this). Correction vs. old cases/ep987 file: the old file's culprit id (Narita) and core clue (only suspect without a corroborated alibi) both hold up against the transcript, so no culprit/clue reversal here -- but the old file was structurally broken: it never created a node for the first victim, company president Kureno Jiro, at all. It mislabeled its lone victim node 'v1' with Koshimoto's name while its own event text describes Koshimoto poisoning 'him' (the president) -- i.e. it conflated perpetrator-of-murder-1 and victim-of-murder-2 into one row and dropped Kureno entirely. This rebuild adds Kureno as p1 (poisoning victim) and keeps Koshimoto as p2 (poisoner of Kureno, then strangled by Narita). Also added: the restaurant waitress who corroborates Kamijo's alibi (unnamed but individualized on-screen witness), full was_at coverage for all named persons across the party room / hallway / restroom / back room, and the red-herring motive accusations suspects leveled at each other (Toda vs. Kamijo, Narita vs. Toda) that the old file omitted.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kureno Jiro",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "president, online shopping site \"Clerno\"",
+    "attrs": {
+     "age": 38,
+     "died_of": "poison needle hidden inside a rose bouquet handed to him at the party",
+     "backstory": "secretly planned to keep working with the same team on his next project after dissolving the company, but never told most of them"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Koshimoto Eiji",
+    "aliases": [],
+    "roles": ["suspect", "victim"],
+    "occupation": "Clerno employee, merchandise",
+    "attrs": {
+     "age": 38,
+     "backstory": "friends with Kureno since college, frequently clashed with him",
+     "secretly_did": "smuggled a poison in with imported merchandise and hid it on a needle inside the bouquet, resentful that Kureno always took sole credit for the team's success",
+     "died_of": "strangled by Narita, then the scene was staged as his suicide",
+     "found_with": "a forged/coerced suicide note confessing to Kureno's murder"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Toda Junnosuke",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Clerno employee, public relations",
+    "attrs": {
+     "age": 33,
+     "prepared_the_bouquet": true,
+     "alibi": "left the room to make a phone call to a recruiting client and ran into a boy (Conan) during the window Koshimoto was killed"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kamijo Hiroo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Clerno employee, web designer",
+    "attrs": {
+     "age": 30,
+     "financial_pressure": "repeatedly took salary advances from Kureno, opposed the dissolution",
+     "alibi": "left the room and stood in the hallway talking with a restaurant waitress during the window Koshimoto was killed"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Narita Mayu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Clerno employee, accounting",
+    "attrs": {
+     "age": 34,
+     "backstory": "dated Kureno years earlier; he ended it for someone else, but she still deeply admired him and was glad he valued her work",
+     "alibi": "claimed she went to the restroom during the window Koshimoto was killed, but no one saw her there"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Restaurant waitress",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "restaurant employee",
+    "attrs": {
+     "role_in_case": "confirms she was talking with Kamijo in the hallway during the window Koshimoto was killed, corroborating his alibi"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Clerno private party room",
+    "attrs": {"venue": "restaurant private room rented for the dissolution party"}
+   },
+   {
+    "id": "l2",
+    "name": "Restaurant hallway",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Restaurant back room",
+    "attrs": {"role_in_case": "where Koshimoto's body was dragged and his death staged as suicide"}
+   },
+   {
+    "id": "l4",
+    "name": "Restaurant restroom",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rose bouquet with hidden poison needle",
+    "role": "weapon",
+    "attrs": {
+     "assembled_by": "Toda, as a surprise gift, unaware of the hidden needle",
+     "tampered_by": "Koshimoto, who crouched over it and hid a poisoned needle inside before it was presented",
+     "effect": "pricked Kureno's neck when he took it in his hands, leaving a mark"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Suicide note found by Koshimoto's body",
+    "role": "evidence",
+    "attrs": {
+     "content": "\"I killed Kureno. The team succeeded because of me. He claimed credit for everything. I couldn't forgive him.\"",
+     "handwriting_confirmed_as": "Koshimoto's",
+     "staging_flaw": "genuine confession to Kureno's murder, but the death scene around it was staged by someone else -- Koshimoto did not kill himself"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Wine napkin found hanging off the door",
+    "role": "weapon",
+    "attrs": {
+     "used_for": "re-strangling Koshimoto's neck after the true ligature, to disguise the actual murder weapon",
+     "initial_police_theory": "assumed to be the murder weapon (incorrect)"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Narita's bag with shoulder strap",
+    "role": "weapon",
+    "attrs": {
+     "significance": "the strap is thin enough to match the raised skin just inside the ligature marks on Koshimoto's neck -- the true murder weapon"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Imported poison",
+    "role": "contraband",
+    "attrs": {
+     "found_in": "Koshimoto's jacket pocket after his death",
+     "origin": "smuggled in among Clerno's imported merchandise stock"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Koshimoto's dislodged shoe",
+    "role": "evidence",
+    "attrs": {
+     "significance": "came off while his body was dragged across the floor, leaving a faint smudge -- proves the body was moved and the murder was unplanned"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Photo of Narita and Kureno",
+    "role": "evidence",
+    "attrs": {
+     "content": "shows the two together from when they were secretly dating, before Kureno broke up with her for someone else",
+     "found_in": "Narita's belongings during the police search"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Restaurant staff testimony: a tall man was seen crouched over the bouquet fiddling with it during the meal -- points to Koshimoto (tall), not bouquet-preparer Toda, as the one who hid the needle.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "The skin is raised just inside the ligature marks on Koshimoto's neck, showing he was strangled twice: once with something much thinner than the wine napkin, then again with the napkin to mask the real weapon.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Narita's bag strap matches the true (thinner) ligature marks on Koshimoto's neck exactly.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c4",
+    "desc": "A faint drag-smudge on the back room floor plus Koshimoto's shoe left behind show his body was dragged to the door post-mortem -- the murder was unplanned and staged as suicide afterward.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c5",
+    "desc": "Of the three suspects who each left the party room after Koshimoto did, Toda's alibi (met the boy during a phone call) and Kamijo's alibi (with the waitress in the hallway) are both corroborated; Narita's claimed restroom trip is the only one nobody witnesses.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "close_friend_since_college"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "former_romantic_partner"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+
+  {"type": "gives", "from": "p3", "to": "p1", "detail": "hands Kureno the surprise bouquet, unaware it was rigged"},
+  {"type": "hides_contraband_in", "from": "p2", "to": "o1"},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "poison needle hidden in a rose bouquet", "circumstance_tags": ["concealed_weapon"]},
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "written_by", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "resentment (felt Kureno always claimed sole credit for the team's success)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "financial (opposed dissolution; deep in salary advances)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "financial (alleged by Kamijo to have also been borrowing money from Kureno; unconfirmed, red herring)", "circumstance_tags": ["red_herring"]},
+  {"type": "has_motive_against", "from": "p5", "to": "p2", "motive_type": "outrage (Koshimoto confessed to killing Kureno and then insulted his memory, calling him 'trash' who was 'using' them both)"},
+
+  {"type": "kills", "from": "p5", "to": "p2", "method": "strangled with her bag's shoulder strap", "circumstance_tags": ["staged_suicide", "cover_up"]},
+  {"type": "drags_body_of", "from": "p5", "to": "p2", "circumstance_tags": ["cover_up"]},
+  {"type": "stages_suicide_of", "from": "p5", "to": "p2", "circumstance_tags": ["staged_suicide", "cover_up"]},
+  {"type": "disguises_weapon_with", "from": "p5", "to": "o3"},
+  {"type": "owns", "from": "p5", "to": "o4"},
+  {"type": "implicates", "from": "o4", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "regarding", "from": "c2", "to": "o4"},
+  {"type": "implicates", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "implicates", "from": "c3", "to": "p5"},
+  {"type": "regarding", "from": "c4", "to": "o6"},
+  {"type": "implicates", "from": "c4", "to": "p5"},
+  {"type": "regarding", "from": "c5", "to": "p3"},
+  {"type": "regarding", "from": "c5", "to": "p4"},
+  {"type": "implicates", "from": "c5", "to": "p5"},
+
+  {"type": "owns", "from": "p5", "to": "o7"},
+  {"type": "regarding", "from": "o7", "to": "p1"}
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

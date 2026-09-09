@@ -1,0 +1,343 @@
+{
+ "case_id": "ep774_munchs_missing_scream",
+ "episode_number": "774",
+ "title": "Munch's Missing Scream",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Munch%27s_Missing_Scream",
+ "subtitle_source": ["subs_resolved/0774.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Sonoko) omitted by convention; Sonoko has one cameo line with no plot function. No `event` node type: every action is a directly typed edge between the entities involved. No human victim -- this is an art-theft/unauthorized-viewing case (Shimamura intended to return 'Scream', not keep it), so no has_motive_against edges toward a victim person; his motive was obsessive love of the painting itself, captured on his person node's attrs. case_type: temporary unauthorized possession of a loaned painting (staged as a theft/disappearance), not permanent robbery -- the old cases/ep774 file's summary of 'robbery' undersells this; the resolution hinges on Shimamura secretly rerouting the truck through his own house (disguised as an official checkpoint) to hang and photograph the painting before repacking it, not on any intent to keep or sell it. The old file's culprit (s2 Shimamura) matches the transcript -- no culprit correction needed. Discrepancies/gaps versus the old file: (1) the 'Advisor' character who receives every status report and hosts the gallery is never named on-screen in the subtitles (only Numajiri and Shimamura get on-screen name cards); 'Munenori Kato' is carried over from the old file's suspect list as his presumed identity since no other figure fits the role, but this identification is inferred, not shown in text -- flagged here rather than silently presented as certain. (2) The old file omitted the comparative packing-style clue (Despair/Anxiety packed differently at Narita; Scream's Haneda packing matches Despair's 'boss+employee' style, tipping off that Shimamura personally repacked it), the GPS 'satellite lost' cover mechanism, Narita vs Haneda as distinct locations, and the entire epilogue subplot where Kato leverages Shimamura's US connections to arrange a future loan of one of Van Gogh's Sunflowers paintings in exchange for not reporting the incident.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Hiroshi Numajiri",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "curator, Suzuki Art Museum",
+    "attrs": {
+     "age": "35",
+     "role_in_case": "first to notice the packing-style discrepancy between airports"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Keiji Shimamura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "president, painting transport company",
+    "attrs": {
+     "age": "50",
+     "motive": "obsessive love of Munch's 'Scream'; wanted to hang and photograph the real painting in his own house",
+     "outcome": "confesses, painting undamaged and returned; no charges pressed in exchange for arranging a future Sunflowers loan"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Munenori Kato",
+    "aliases": ["Advisor"],
+    "roles": ["witness"],
+    "occupation": "advisor / gallery head, Suzuki Art Museum",
+    "attrs": {
+     "identification_note": "referred to only as 'Advisor' throughout the subtitles; name never shown on-screen, carried over from the old case file's suspect list"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Suzuki Art Museum",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Haneda Airport",
+    "attrs": {
+     "role_in_case": "arrival point for 'Scream'"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Narita Airport",
+    "attrs": {
+     "role_in_case": "arrival point for 'Despair' and 'Anxiety'"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Shimamura's house",
+    "attrs": {
+     "disguised_as": "official transport checkpoint",
+     "why_it_worked": "sits inside a GPS dead zone where car navigators lose satellite signal"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "\"Scream\" (Munch)",
+    "role": "evidence",
+    "attrs": {
+     "estimated_value": "tens of billions of yen",
+     "arrival_point": "Haneda Airport"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "\"Despair\" (Munch)",
+    "role": "evidence",
+    "attrs": {
+     "arrival_point": "Narita Airport",
+     "packed_by": "Shimamura and an employee together"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "\"Anxiety\" (Munch)",
+    "role": "evidence",
+    "attrs": {
+     "arrival_point": "Narita Airport",
+     "packed_by": "employee alone"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Truck carrying \"Scream\"",
+    "role": "instrument",
+    "attrs": {
+     "trick": "diverted to Shimamura's house instead of the real checkpoint; delivered roughly 30 minutes late"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Truck's car navigator",
+    "role": "tool",
+    "attrs": {
+     "trick": "Shimamura pre-registered a route through the GPS dead zone around his house, set to auto-delete on arrival, leaving only an innocuous 'satellite lost' record instead of the true detour"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Photo of Shimamura with \"Scream\"",
+    "role": "evidence",
+    "attrs": {
+     "taken_at": "Shimamura's house",
+     "discovered_via": "a courier delivered the developed photo to Shimamura's house in front of the assembled group"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Photo of Van Gogh's Sunflowers",
+    "role": "keepsake",
+    "attrs": {
+     "gifted_as": "thanks for a painting transport job Shimamura did in the US when he was young",
+     "depicts": "the first of Van Gogh's Sunflowers, painted in Arles"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Van Gogh's first Sunflowers",
+    "role": "evidence",
+    "attrs": {
+     "owned_by": "an unnamed US-based friend of Shimamura's",
+     "significance": "one of six Sunflowers paintings; Kato wants to borrow all six for a future exhibition"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "'Despair' (packed by Shimamura+employee at Narita) and 'Anxiety' (packed by employee alone at Narita) show different packing styles, but 'Scream' packed at Haneda by different handlers matches Despair's boss+employee style exactly -- the only way is if Shimamura himself repacked Scream later.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cB",
+    "desc": "Numajiri lost sight of the Scream truck at a 'satellite lost' GPS dead zone, yet the truck's package was later confirmed checked at 'the checkpoint' -- since it never got back on the official route, the checkpoint itself must be inside that dead zone, not on the road.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "business_contractor"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "diverts",
+   "from": "p2",
+   "to": "o4",
+   "circumstance_tags": ["staged_disappearance", "cover_up"]
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l4"
+  },
+  {
+   "type": "unpacks",
+   "from": "p2",
+   "to": "o1",
+   "circumstance_tags": ["unauthorized_access"]
+  },
+  {
+   "type": "photographs",
+   "from": "p2",
+   "to": "o6",
+   "circumstance_tags": ["unauthorized_access"]
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "repacks",
+   "from": "p2",
+   "to": "o1",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5",
+   "circumstance_tags": ["cover_up", "fabricated_evidence"]
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p2"
+  },
+  {
+   "type": "notices",
+   "from": "p1",
+   "to": "cA"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l4"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "regarding",
+   "from": "o7",
+   "to": "o8"
+  },
+  {
+   "type": "knows_owner_of",
+   "from": "p2",
+   "to": "o8"
+  },
+  {
+   "type": "coerces",
+   "from": "p3",
+   "to": "p2",
+   "circumstance_tags": ["non_prosecution_deal"]
+  },
+  {
+   "type": "requests_loan_of",
+   "from": "p3",
+   "to": "o8",
+   "circumstance_tags": ["future_exhibition"]
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

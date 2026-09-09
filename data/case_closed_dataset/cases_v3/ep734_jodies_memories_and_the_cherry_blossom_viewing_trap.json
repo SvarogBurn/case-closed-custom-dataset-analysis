@@ -1,0 +1,378 @@
+{
+ "case_id": "ep734_jodies_memories_and_the_cherry_blossom_viewing_trap",
+ "episode_number": "734",
+ "title": "Jodie's Memories and the Cherry Blossom Viewing Trap",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Jodie%27s_Memories_and_the_Cherry_Blossom_Viewing_Trap",
+ "subtitle_source": ["subs_resolved/0734.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro, Ran, Megure, Takagi, the Detective Boys) and the unrelated Black Organization/Bourbon-Vermouth-Jodie subplot (burn-scarred decoy, Amuro twin reveal) are omitted as unrelated to this case's suspect pool, consistent with the old file's own framing. Agasa is kept in (unlike the usual detective-cast omission) because his eyewitness account -- rod length, hat shape, dragging feet -- is the load-bearing testimony the whole solve is built on. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity file (cases/ep734...) had the correct culprit (Yoriko Dan'no) and correct victim, but was thin: no witnesses at all (Agasa/Jodie missing despite being central to elimination), generic `knows` edges instead of real relationships, a single undifferentiated 'Shrine grounds' location instead of the distinct murder site/bell area/purification trough/fortune racks the transcript actually distinguishes, and it omitted the two mechanisms that make the trick work (the GPS transmitter Yoriko planted in her own wallet to get pickpocketed on purpose and track Kurobee, and the elimination-by-physical-trait logic that clears Benzaki and Sakamaki). Those are added here; no culprit correction was needed. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ikuyo Yatani",
+    "aliases": ["Kurobee"],
+    "roles": ["victim"],
+    "occupation": "pickpocket",
+    "attrs": {
+     "age": 50,
+     "mo": "leaves three five-yen coins blackened with marker pen in each victim's bag, a pun on 'gokurosan' (thank you for your trouble)",
+     "never_caught_by": "Division Three of the Criminal Investigation Department, for years"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yoriko Dan'no",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 29,
+     "headwear_seen_after": "knit cap",
+     "shoe_detail": "one shoelace missing during the murder, relaced afterward with the same lace"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tohei Benzaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 35,
+     "wearing_mask_for": "genuine cold, not a disguise",
+     "backstory": "hostage in the same bank robbery as Jodie Starling"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shigemori Sakamaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 66,
+     "headwear_seen_after": "hunting cap",
+     "needs_cane_to_walk": true
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Jodie Starling",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "FBI agent",
+    "attrs": {
+     "cleared_reason": "never left the children's side after Ikuyo bumped into her, so had no chance to commit the murder"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Agasa",
+    "aliases": ["Doc", "Doctor"],
+    "roles": ["witness"],
+    "occupation": "professor / inventor",
+    "attrs": {
+     "eyewitness_account": "saw a hatted silhouette beating the victim with a ~30cm rod near the restrooms, then drag their feet away"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Yoriko Dan'no's son",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "had_asthma": true,
+     "died_of": "asthma attack after being locked in the car for hours",
+     "years_before_present": 1
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Motoe",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": null,
+    "attrs": {
+     "pregnant": true,
+     "came_to": "buy an easy-childbirth charm"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Shrine grounds, general area",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Secluded spot behind the restrooms",
+    "attrs": {
+     "note": "murder site, shaded by trees"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Bell and offering box area",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Fortune-tying racks",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Purification trough",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Shoelace strung with ~200 five-yen coins",
+    "role": "weapon",
+    "attrs": {
+     "construction": "coins fed onto a shoelace via their center holes, forming a rigid ~30cm rod",
+     "coins_sourced_from": "the shrine's own offering box",
+     "disposed_by": "untying the knot and dangling the string over the offering box, mixing the coins back in with legitimate offerings",
+     "shoelace_reused": "relaced into her own shoe afterward; recovered with the victim's blood still on it"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "GPS transmitter wrapped in banknotes",
+    "role": "tool",
+    "attrs": {
+     "range": "locatable to within 5 meters via phone",
+     "planted_where": "hidden inside a bundle of notes in Yoriko's own wallet",
+     "found_where": "recovered from Ikuyo's wallet after the murder, since pickpockets keep the cash and discard the wallet"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Killer's hat and coat",
+    "role": "evidence",
+    "attrs": {
+     "condition": "blood-splattered",
+     "hidden_under": "fallen cherry blossom petals",
+     "hat_style": "alpinist-style hat, unlike any suspect's own headwear"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Three blackened coins kept from the original theft",
+    "role": "evidence",
+    "attrs": {
+     "origin": "found in Yoriko's pocket after her wallet and car keys were stolen a year earlier",
+     "left_beside_body_as": "a symbolic 'you can have them back' message, not robbery"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Ikuyo's purse of blackened five-yen coins",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "supply of her calling-card coins",
+     "identifies_her_as": "Kurobee"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Jodie's blue wallet",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "a bin near the fortune-tying racks"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Benzaki's black wallet",
+    "role": "evidence",
+    "attrs": {
+     "contained": "driving license",
+     "found_in": "a bin near the purification trough"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Yoriko's wallet with photo sticker",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "a bin near the bell area"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Sakamaki's red wallet",
+    "role": "evidence",
+    "attrs": {
+     "contained": "a 'pretty good luck' fortune slip",
+     "found_in": "a bin near the murder site"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Agasa's dragging-feet silhouette matches only Yoriko: Sakamaki cannot walk at all without his cane (let alone drag his feet), and Benzaki's cough was a real cold, not a disguise adopted before he knew anyone was watching.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cB",
+    "desc": "The coins left beside the body were Yoriko's year-old kept coins from her own theft, not the fresh blackened coins Kurobee had just stolen from her that day -- proof the killing was personal revenge, not another victim's retaliation.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Yoriko made an offering and rang the bell without ever noticing her wallet was missing; a real pickpocketing victim would have noticed reaching for coins, meaning she wasn't making a real offering at all -- she was dumping the murder weapon's coins into the box.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p2",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p8",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge_for_sons_death"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "p2",
+   "detail": "steals Yoriko's wallet and car keys a year before the murder"
+  },
+  {
+   "type": "causes_death_of",
+   "from": "p1",
+   "to": "p7",
+   "circumstance_tags": ["backstory", "indirect"],
+   "detail": "with the car keys gone, the asthmatic boy was locked in the car for hours before reaching a hospital"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "p5",
+   "detail": "picks Jodie's pocket while pretending to be startled/bumped into her"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "p3",
+   "detail": "pickpockets Benzaki sometime during the flower viewing"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "p2",
+   "detail": "steals Yoriko's wallet a second time, present day -- this time deliberately allowed, to plant the GPS transmitter"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "p4",
+   "detail": "pickpockets Sakamaki sometime during the flower viewing"
+  },
+  { "type": "owns", "from": "p5", "to": "o6" },
+  { "type": "owns", "from": "p3", "to": "o7" },
+  { "type": "owns", "from": "p2", "to": "o8" },
+  { "type": "owns", "from": "p4", "to": "o9" },
+  { "type": "owns", "from": "p1", "to": "o5" },
+  { "type": "owns", "from": "p2", "to": "o4" },
+  { "type": "owns", "from": "p2", "to": "o2" },
+  { "type": "owns", "from": "p2", "to": "o1" },
+  {
+   "type": "plants",
+   "from": "p2",
+   "to": "o2",
+   "detail": "hides the GPS transmitter in a wad of banknotes inside her own wallet as bait"
+  },
+  {
+   "type": "tracks",
+   "from": "p2",
+   "to": "p1",
+   "detail": "uses a phone to follow the planted transmitter to within 5 meters, waiting until Ikuyo was somewhere isolated"
+  },
+  {
+   "type": "constructs",
+   "from": "p2",
+   "to": "o1",
+   "detail": "strings roughly 200 coins from the offering box onto a shoelace to make an improvised rod"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "beaten with the coin-and-shoelace rod",
+   "circumstance_tags": ["premeditated", "disguised_assailant", "revenge_killing"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o4",
+   "detail": "deliberately left beside the body"
+  },
+  {
+   "type": "hides",
+   "from": "p2",
+   "to": "o3",
+   "detail": "conceals the blood-spattered hat and coat under fallen cherry blossom petals"
+  },
+  { "type": "implicates", "from": "o1", "to": "p2" },
+  { "type": "implicates", "from": "o4", "to": "p2" },
+  { "type": "implicates", "from": "o2", "to": "p2" },
+  { "type": "implicates", "from": "o3", "to": "p2" },
+  { "type": "implicates", "from": "o5", "to": "p1" },
+  { "type": "implicates", "from": "o6", "to": "p1" },
+  { "type": "implicates", "from": "o7", "to": "p1" },
+  { "type": "implicates", "from": "o8", "to": "p1" },
+  { "type": "implicates", "from": "o9", "to": "p1" },
+  { "type": "was_at", "from": "p1", "to": "l1" },
+  { "type": "was_at", "from": "p1", "to": "l2" },
+  { "type": "was_at", "from": "p2", "to": "l1" },
+  { "type": "was_at", "from": "p2", "to": "l2" },
+  { "type": "was_at", "from": "p2", "to": "l3" },
+  { "type": "was_at", "from": "p3", "to": "l1" },
+  { "type": "was_at", "from": "p3", "to": "l5" },
+  { "type": "was_at", "from": "p4", "to": "l1" },
+  { "type": "was_at", "from": "p4", "to": "l4" },
+  { "type": "was_at", "from": "p5", "to": "l1" },
+  { "type": "was_at", "from": "p5", "to": "l2" },
+  { "type": "was_at", "from": "p6", "to": "l1" },
+  { "type": "was_at", "from": "p6", "to": "l2" },
+  { "type": "was_at", "from": "p8", "to": "l1" },
+  { "type": "regarding", "from": "cA", "to": "p2" },
+  { "type": "regarding", "from": "cA", "to": "p3" },
+  { "type": "regarding", "from": "cA", "to": "p4" },
+  { "type": "implicates", "from": "cA", "to": "p2" },
+  { "type": "regarding", "from": "cB", "to": "o4" },
+  { "type": "regarding", "from": "cB", "to": "o5" },
+  { "type": "implicates", "from": "cB", "to": "p2" },
+  { "type": "regarding", "from": "cC", "to": "p2" },
+  { "type": "regarding", "from": "cC", "to": "o1" },
+  { "type": "implicates", "from": "cC", "to": "p2" }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

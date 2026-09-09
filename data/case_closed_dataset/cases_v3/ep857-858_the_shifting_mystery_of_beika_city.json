@@ -1,0 +1,290 @@
+{
+ "case_id": "ep857-858_the_shifting_mystery_of_beika_city",
+ "episode_number": "857-858",
+ "title": "The Shifting Mystery of Beika City",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Shifting_Mystery_of_Beika_City",
+ "subtitle_source": ["subs_resolved/0857.txt", "subs_resolved/0858.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Takagi, Chiba) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's murderer_id (Kanemitsu Toyoko) was actually CORRECT, unlike some other rebuilt episodes, but the old file was extremely thin: it used a single generic 'knows' edge for every suspect->victim link, had no framing mechanics, no locked-room/staged-suicide circumstance detail, and omitted several plot-load-bearing named characters entirely (Chino Yosuke, the framed academic; Eiko Hayama, the housekeeper whose timing testimony narrows the culprit's window; Koyuki Gamo, the waitress-witness; Ichimura Zetto, the magazine editor who confirms the motive chain). The old file's single clue (books removed from the café) is now decomposed into two genuinely comparative clue nodes: the two magazines sharing the pen name Dorosue Yamiyo, and the housekeeper's before/after account of the lighter under the sofa. case_type: murder. The real motive (literary revenge against critic Chino Yosuke) only surfaces via a secondary pen-name investigation thread the old file's 'mystery books' object gestured at but never explained.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Amagi Tatsuya",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "unemployed, living off inheritance",
+    "attrs": {
+     "age": 24,
+     "nuisance_behavior": "rode a loud motorcycle at all hours, was rude and dismissive when neighbors complained",
+     "died_of": "stabbed multiple times in the torso with an awl-like weapon",
+     "time_of_death": "around 9 PM"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Bando Hikoichi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "neighborhood association president",
+    "attrs": {
+     "age": 35,
+     "family_status": "his family owns more than half the neighborhood's property, which is why he was pressured into the president role",
+     "phobia": "severe fear of needles/pointed objects -- could not have physically used an awl",
+     "died_of": "pesticide poisoning, mixed into his alcohol bottle",
+     "staged_as": "suicide out of guilt for killing Amagi"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Fukuda Tameo",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 33,
+     "found_body": "discovered Amagi's body while passing through the area",
+     "alibi": "works night shifts, making it hard for him to have committed the nighttime murders"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kanemitsu Toyoko",
+    "aliases": ["Dorosue Yamiyo"],
+    "roles": ["suspect"],
+    "occupation": "café manager",
+    "attrs": {
+     "age": 68,
+     "secret": "writes mystery fiction under the pen name Dorosue Yamiyo and submits to New Author Award contests",
+     "confession": "did not personally dislike Amagi or Bando; killed them only because their deaths conveniently built the frame against Chino",
+     "final_act": "voluntarily surrendered a hardware-store receipt proving she bought the awl and pesticide"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Ezaki Hiro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "college student",
+    "attrs": {
+     "age": 20,
+     "school": "Haido College",
+     "note": "pestered Bando more than anyone else about making Amagi stop; cleared of the murders but is hiding an unrelated personal secret (seen with a man, asks not to be told to Ruriko)"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Chino Yosuke",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "college professor, Japanese history",
+    "attrs": {
+     "age": 35,
+     "school": "Haido College",
+     "mystery_hobby": "former college mystery-club president, occasionally judges New Author Award submissions for mystery magazines",
+     "framed_evidence": "his stolen lighter was planted at Bando's house; he had no alibi witness for the murder night"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Koyuki Gamo",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "waitress",
+    "attrs": {
+     "age": 23,
+     "note": "worked at Kanemitsu's café; confirmed which customers were present the afternoon Bando and Chino visited"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Eiko Hayama",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "housekeeper",
+    "attrs": {
+     "age": 55,
+     "note": "worked for Bando; confirmed the lighter found under the sofa was not there when she left the house at dusk"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Ichimura Zetto",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "magazine editor",
+    "attrs": {
+     "age": 32,
+     "magazine": "Monthly Magazine Labyrinths",
+     "note": "confirmed Dorosue Yamiyo's manuscript existed and that Chino Yosuke was the judge who reviewed it"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Park near the condominium",
+    "attrs": {"note": "Amagi was lured here by a phone call and killed; his body was found here the next day"}
+   },
+   {
+    "id": "l2",
+    "name": "Bando's mansion",
+    "attrs": {"note": "includes the storehouse Chino examined for appraisable antiques"}
+   },
+   {
+    "id": "l3",
+    "name": "Kanemitsu's café",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Chino's home study",
+    "attrs": {"note": "Chino's claimed location the night of the murders, judging contest submissions alone -- no one could verify it"}
+   },
+   {
+    "id": "l5",
+    "name": "Haido College",
+    "attrs": {"note": "Chino teaches here; Ezaki is a student here"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Awl",
+    "role": "weapon",
+    "attrs": {
+     "used_on": "Amagi Tatsuya, stabbed multiple times",
+     "staging_logic": "deliberately chosen because Bando's well-known needle phobia would eventually clear him and redirect suspicion toward Chino once the planted lighter was found"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Pesticide poison",
+    "role": "weapon",
+    "attrs": {
+     "used_on": "Bando Hikoichi, mixed into his alcohol bottle",
+     "staging_flaw": "mixed into the bottle rather than a glass, which would dilute it -- a real suicide would have poured it into a glass, proving murder"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Bando's medical exam card",
+    "role": "evidence",
+    "attrs": {"found": "next to Amagi's body, planted to point suspicion at Bando"}
+   },
+   {
+    "id": "o4",
+    "name": "Chino's lighter",
+    "role": "evidence",
+    "attrs": {"found": "under the sofa at Bando's mansion, stolen from Chino at the café earlier that day and planted to frame him"}
+   },
+   {
+    "id": "o5",
+    "name": "Monthly Magazine Labyrinths (Jan.)",
+    "role": "evidence",
+    "attrs": {"content": "New Author Award submissions issue featuring 'The Melting Weapon' by Dorosue Yamiyo"}
+   },
+   {
+    "id": "o6",
+    "name": "Mystery World (last May)",
+    "role": "evidence",
+    "attrs": {"content": "another issue also featuring the author Dorosue Yamiyo"}
+   },
+   {
+    "id": "o7",
+    "name": "Hardware store receipt",
+    "role": "evidence",
+    "attrs": {"proves": "purchase of the awl and the pesticide", "surrendered": "handed to police voluntarily by Kanemitsu after her confession"}
+   },
+   {
+    "id": "o8",
+    "name": "\"The Melting Weapon\" manuscript",
+    "role": "evidence",
+    "attrs": {"submitted_under": "pen name Dorosue Yamiyo", "contest": "New Author Award, judged in the first round by Chino Yosuke"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Both a Labyrinths magazine and a Mystery World magazine displayed at Kanemitsu's café feature the same little-known author name, Dorosue Yamiyo -- an unusual pattern that identifies Kanemitsu as that pen name's owner.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The housekeeper confirms Chino's lighter was not under the sofa when she left Bando's house at dusk but was there when police searched -- proving it was planted by whoever visited that evening, not by Chino during his earlier afternoon visit.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "kills", "from": "p4", "to": "p1", "method": "stabbed multiple times with an awl", "circumstance_tags": ["staged_alibi", "frame_up"]},
+  {"type": "kills", "from": "p4", "to": "p2", "method": "pesticide mixed into his alcohol bottle", "circumstance_tags": ["staged_suicide", "frame_up"]},
+  {"type": "stages_suicide_of", "from": "p4", "to": "p2", "circumstance_tags": ["staged_suicide"]},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o1"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o3"},
+  {"type": "steals", "from": "p4", "to": "o4"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o4"},
+  {"type": "confronts", "from": "p3", "to": "p1", "detail": "visited with other neighbors to ask him to quiet down"},
+  {"type": "berates", "from": "p1", "to": "p3", "detail": "responded to the noise complaint with hostility and contempt"},
+  {"type": "pesters", "from": "p5", "to": "p2", "detail": "repeatedly pressured him to make Amagi stop"},
+  {"type": "rejects", "from": "p6", "to": "o8", "detail": "harshly mocked both the story and the pen name during first-round judging, not knowing the author's identity"},
+  {"type": "handles", "from": "p9", "to": "o8", "detail": "processed the submission as the magazine's editor"},
+  {"type": "testifies_about", "from": "p8", "to": "o4", "detail": "confirmed the lighter was absent when she left the house at dusk"},
+  {"type": "surrenders", "from": "p4", "to": "o7", "detail": "voluntarily gave police the receipt after confessing"},
+  {"type": "owns", "from": "p4", "to": "o1"},
+  {"type": "owns", "from": "p4", "to": "o2"},
+  {"type": "owns", "from": "p4", "to": "o5"},
+  {"type": "owns", "from": "p4", "to": "o6"},
+  {"type": "owns", "from": "p4", "to": "o7"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "owns", "from": "p6", "to": "o4"},
+  {"type": "located_in", "from": "o5", "to": "l3"},
+  {"type": "located_in", "from": "o6", "to": "l3"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+  {"type": "located_in", "from": "o4", "to": "l2"},
+  {"type": "located_in", "from": "o3", "to": "l1"},
+  {"type": "written_by", "from": "o5", "to": "p4"},
+  {"type": "written_by", "from": "o6", "to": "p4"},
+  {"type": "written_by", "from": "o8", "to": "p4"},
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "implicates", "from": "o2", "to": "p4"},
+  {"type": "implicates", "from": "o3", "to": "p4"},
+  {"type": "implicates", "from": "o4", "to": "p4"},
+  {"type": "implicates", "from": "o7", "to": "p4"},
+  {"type": "implicates", "from": "o8", "to": "p4"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+  {"type": "implicates", "from": "cB", "to": "p4"},
+  {"type": "regarding", "from": "cA", "to": "o5"},
+  {"type": "regarding", "from": "cA", "to": "o6"},
+  {"type": "regarding", "from": "cB", "to": "o4"},
+  {"type": "regarding", "from": "cB", "to": "l2"},
+  {"type": "has_motive_against", "from": "p4", "to": "p6", "motive_type": "revenge_for_manuscript_rejection"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "resentment_neighborhood_nuisance (red herring)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p2", "motive_type": "resentment_for_negligence (red herring, speculative)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "resentment_neighborhood_nuisance (red herring)"},
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "friend_of"},
+  {"type": "relationship", "from": "p4", "to": "p7", "relation_type": "employer_of"},
+  {"type": "relationship", "from": "p9", "to": "p6", "relation_type": "works_with"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l5"},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l4"},
+  {"type": "was_at", "from": "p6", "to": "l5"},
+  {"type": "was_at", "from": "p7", "to": "l3"},
+  {"type": "was_at", "from": "p8", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

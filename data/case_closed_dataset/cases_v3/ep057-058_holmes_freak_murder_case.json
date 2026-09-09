@@ -1,0 +1,589 @@
+{
+ "case_id": "ep057-058_holmes_freak_murder_case",
+ "episode_number": "57-58",
+ "title": "Holmes Freak Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Holmes_Freak_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0057.txt, case_closed_dataset/subs_resolved/0058.txt (full two-episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Heiji Hattori, Ran, Kogoro Mouri) omitted by convention even though Heiji is the guest deducer this episode. Three linked incidents at the isolated Mycroft Lodge, all committed by the same culprit: (1) owner Kanaya killed and his corpse rigged to 'drive itself' off a cliff using a rigor-mortis/heater trick, (2) a second car in the garage rigged as a gasoline-fume trap originally meant for Fujisawa but which killed Ayako Oki instead when she searched it independently, (3) a staged blackout during which Fujisawa was attacked with an ice pick and survived. No event nodes: every action is a directly typed edge between the entities involved, sharing an order integer. Two red-herring has_motive_against/implicates edges are included (Kawatsu via the coffee-pack wire, Toda via Kogoro's joking hypnosis theory) since Heiji's live deduction visibly considers and discards both before landing on the true culprit. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Hiroyuki Kanaya",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Mycroft Lodge owner, tour director, self-published Holmes author",
+    "attrs": {
+     "died_of": "unspecified in available transcript excerpt (killed off-screen; only the approximate time window is established via rigor-mortis reasoning)",
+     "false_public_narrative": "appeared to have driven his own car off a cliff and died, either by suicide or accident"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ayako Oki",
+    "aliases": [],
+    "roles": ["victim", "witness"],
+    "occupation": "university student, Logic Studies Club member",
+    "attrs": {
+     "died_of": "burned/killed in a gasoline-fume explosion while searching a rigged car for the tour's first-edition book prize",
+     "discovery": "saw a blank, unanswered Holmes test in Kento Togano's room the afternoon before she was killed, and separately deduced his rigor-mortis trick"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Toshiaki Fujisawa",
+    "aliases": [],
+    "roles": ["victim", "witness"],
+    "occupation": "train station attendant",
+    "attrs": {
+     "survived": "attacked with an ice pick during a staged blackout; survived",
+     "connection_to_victim": "helped Kanaya publish his self-authored Holmes book"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Nanako Shimizu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "librarian",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Ikuo Kawatsu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "high school gym teacher",
+    "attrs": {
+     "cleared_by": "had a verified alibi for the first incident, ruling him out despite the coffee-pack wire evidence"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Hitomi Iwai",
+    "aliases": ["Maid"],
+    "roles": ["witness"],
+    "occupation": "lodge employee (maid)",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Maria Toda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "fortuneteller",
+    "attrs": {
+     "cleared_by": "accusation was Kogoro Mouri's tongue-in-cheek 'hypnotized the owner into driving' theory; never substantiated"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Kento Togano",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "university student, Logic Studies Club president",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Mycroft Lodge garage",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Cliff-side road near the lodge",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Lodge living room",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Lodge kitchen",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Kento Togano's guest room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Kanaya's car (driven off the cliff)",
+    "role": "instrument",
+    "attrs": {
+     "trick": "heater left running under a blanket accelerates the loosening of rigor mortis, so the corpse's foot slips off the brake pedal and the car rolls forward by itself",
+     "fate": "driven off the cliff with the corpse still at the wheel and exploded, destroying the body so its rigor-mortis state could never be checked",
+     "false_lead": "the hissing sound and blanket were initially assumed to be the air conditioner, not the heater"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Second car (garage gasoline-fume trap)",
+    "role": "instrument",
+    "attrs": {
+     "trick": "gas tank punctured and battery removed so the back seat is pitch dark; anyone searching it needs a lighter, and the flame ignites leaked gasoline fumes",
+     "intended_target": "Toshiaki Fujisawa, lured via a note promising the tour's first-edition book prize hidden under the back seat",
+     "actual_victim": "Ayako Oki, who searched the car independently after Kento told her the same hiding spot during a private hallway conversation"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Lure note stuck in Fujisawa's door",
+    "role": "evidence",
+    "attrs": {
+     "message": "If you want the book, then come to the garage at 5 AM tomorrow. I'll put it beneath the back seat.",
+     "found": "stuck in Fujisawa's door when he returned from dinner the first night"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "First-edition copy of \"A Study in Scarlet\"",
+    "role": "evidence",
+    "attrs": {
+     "significance": "the tour's promised prize; stolen from the owner's room the same night as the first murder, alongside every guest's confiscated phone"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Wire from a coffee pack, wrapped around a wall outlet",
+    "role": "tool",
+    "attrs": {
+     "use": "wrapped around the outlet's plug prongs to short the circuit and blow the fuse, causing the blackout used to attack Fujisawa",
+     "match": "width and length matched the wire on the kitchen's coffee packs exactly; only Kawatsu and Togano were known to have opened packs that day"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Ice pick",
+    "role": "weapon",
+    "attrs": {
+     "used_on": "Toshiaki Fujisawa, in the dark during the staged blackout; he survived"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Living-room chair",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "found unnaturally pushed back under the table at its narrow end, with glass shards embedded in it, even though the window had supposedly just been smashed by a fleeing intruder",
+     "significance": "no fleeing intruder pauses to tidy furniture; the culprit held it bare-handed while breaking the window and hid it to wipe off fingerprints later, proving they never actually left the room"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Kento Togano's Holmes Cult Test (1000 Questions)",
+    "role": "evidence",
+    "attrs": {
+     "state_when_seen": "completely blank, with no answers written at all",
+     "significance": "proves Kento never intended to finish the real test, because he already knew the grader, Kanaya, was dead and no one would ever check it"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "\"The Disparagement of Irene Adler\" (Kanaya's self-published book)",
+    "role": "evidence",
+    "attrs": {
+     "content": "argues Sherlock Holmes was ultimately a failure as a detective",
+     "significance": "Kento regarded it as an unforgivable insult, since Irene Adler was the one woman Holmes ever admired"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Standard rigor mortis (onset 30min-2h, full rigidity by 9-12h, loosening from ~30h, gone by ~70h) doesn't fit the timeline unless heat is factored in: at roughly 35 degrees C the loosening accelerates to 24-30h, which matches the owner vanishing after 10 PM two nights before and the car moving on its own about 29 hours later, near 3:30 AM -- pins the killing to shortly after he vanished and proves only someone absent from the group after dinner that night could have staged it.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "The living-room chair used to escape through the smashed window was found neatly pushed back under the table with glass shards still in it -- no one fleeing outside stops to tidy furniture, so the killer never left the room and staged the break-in from inside, hiding the chair only to wipe fingerprints off later.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Heiji invents a fake question #241 (\"what did the Dancing Men code say to the killer?\") that never appeared on the real 1000-question test; Kento confidently 'recalls' answering it. Since Ayako had already seen his real copy sitting blank, his confident answer to a nonexistent question proves he never filled it out because he already knew Kanaya, the grader, was dead.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "editorial_collaborator"
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p2",
+   "relation_type": "dating"
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p2",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "written_by",
+   "from": "o9",
+   "to": "p1"
+  },
+  {
+   "type": "written_by",
+   "from": "o3",
+   "to": "p8"
+  },
+  {
+   "type": "inscribed_to",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "assists_creation_of",
+   "from": "p3",
+   "to": "o9",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 1
+  },
+  {
+   "type": "kills",
+   "from": "p8",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "method": "unspecified in available transcript excerpt (killed off-screen sometime after 10 PM the night he vanished; the transcript establishes the timing window via rigor mortis reasoning but never states the means of death)",
+   "circumstance_tags": ["cover_up", "staged_accident"]
+  },
+  {
+   "type": "positions_body_of",
+   "from": "p8",
+   "to": "p1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "seated the corpse in the driver's seat with its foot on the brake pedal, to be released once rigor mortis began loosening"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p8",
+   "to": "o1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "destroys",
+   "from": "p8",
+   "to": "o1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "sent the rigged car, with the owner's rigor-mortis-stiffened corpse at the wheel, off the cliff to make the body unrecoverable",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "rigs_trap_in",
+   "from": "p8",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "drained the gas tank and removed the battery so the back seat would be pitch dark, intending a lighter flame to ignite leaked fumes"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p8",
+   "to": "o3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p8",
+   "to": "p2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "corners her near the bathroom after she announces she knows the killer's identity, and tells her the first-edition book is hidden under the back seat of the garage car"
+  },
+  {
+   "type": "kills",
+   "from": "p8",
+   "to": "p2",
+   "order": 6,
+   "temporal_frame": "present",
+   "method": "lured into the gasoline-leaking, battery-less rigged car meant for Fujisawa; used her own lighter to search the dark back seat, igniting the leaked fumes",
+   "circumstance_tags": ["trap_originally_set_for_another_victim", "staged_accident"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "rigs_trap_in",
+   "from": "p8",
+   "to": "o5",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "wrapped the coffee-pack wire around the kitchen outlet to short it and blow the fuse on cue"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l4",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p8",
+   "to": "o6"
+  },
+  {
+   "type": "assaults",
+   "from": "p8",
+   "to": "p3",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "attacked with an ice pick in the dark during the staged blackout, guided by the flame of Fujisawa's own lighter",
+   "circumstance_tags": ["attempted_murder", "failed"]
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l3",
+   "order": 8,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 8,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p8",
+   "to": "o7",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "smashed the living-room window and pushed the chair back under the table to hide his fingerprints until he could wipe them off unnoticed"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "steals",
+   "from": "p8",
+   "to": "o4",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "took the first-edition book from the owner's room the same night as the first murder, along with every guest's confiscated phone, to destroy the evidence of the prize he could never actually let anyone win",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l5",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "went to Kento's guest room the afternoon before her death to copy his test answers, and instead found his copy of the Holmes Cult Test completely blank"
+  },
+  {
+   "type": "located_in",
+   "from": "o8",
+   "to": "l5"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p8"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o7"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p8"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o8"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p8"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p8"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p5",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p8"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p8"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p8"
+  },
+  {
+   "type": "implicates",
+   "from": "o9",
+   "to": "p8"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p8",
+   "to": "p1",
+   "motive_type": "outraged_by_victims_self-published_book_perceived_as_demeaning_sherlock_holmes_and_irene_adler"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p8",
+   "to": "p3",
+   "motive_type": "same_grudge_over_the_book_--_fujisawa_helped_kanaya_publish_it"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p8",
+   "to": "p2",
+   "motive_type": "witness_elimination_--_she_had_discovered_his_blank_test_and_the_rigor_mortis_trick"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "unspecified (red herring: coffee-pack wire evidence briefly implicated him before his alibi for the first incident cleared him)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p7",
+   "to": "p1",
+   "motive_type": "unspecified (red herring: accused per Kogoro Mouri's tongue-in-cheek 'hypnotized the owner into driving' theory; no motive ever stated)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p8"
+ }
+}

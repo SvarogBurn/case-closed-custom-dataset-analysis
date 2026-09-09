@@ -1,0 +1,224 @@
+{
+ "case_id": "ep592-593_the_detective_memoir_of_monkey_and_rake",
+ "episode_number": "592-593",
+ "title": "The Detective Memoir of Monkey and Rake",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Detective_Memoir_of_Monkey_and_Rake",
+ "subtitle_source": ["subs_resolved/0592.txt", "subs_resolved/0593.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Inspector Megure, Detective Takagi) omitted by convention; Ran and Sonoko are included as person nodes despite being core cast because they are direct plot participants -- Sonoko is the original theft victim whose stolen bag kicks off the case, and Ran is both the one who recovers the key button evidence and the target of a second attempted murder near the end. No `event` node type: every action is a directly typed edge between the entities involved. case_type: attempted_murder (no one dies on-screen). The old lower-fidelity case file (cases/ep592-593...) actually had the correct culprit (Mizunoe Shinji / s3) and the correct broad mechanic (Masuko was the original Rooster Man, Mizunoe impersonated the persona to stab him) -- unlike several other rebuilds, no culprit correction was needed here. What the old file missed entirely: Sonoko as the original theft victim; Ran being physically attacked a second time by Mizunoe near the dry cleaners (a second attempted-murder beat, resolved by a karate kick Ran learned earlier from Kazumi Tsukamoto in the cold open -- a genuine Chekhov's-gun backstory figure the old file dropped completely); the bankbook/embezzlement blackmail motive (Masuko had been extorting Mizunoe using bankbook evidence of embezzlement, which is Mizunoe's actual motive to kill him); the wet-receipt behavioral clue; the restroom evidence (knife, down jacket, mask) found in the utility closet; and the mechanism by which Ran's picked-up button was later matched to Masuko's own clothing (not Mizunoe's) to prove Masuko was the real Day-1/Day-2 Rooster Man. The old file's single object node 'Rooster costume/button, impersonation clue' has been split into distinct physical objects (mask, knife, jacket, daypack, bankbook, button, receipt) per schema v3's one-node-per-physical-instance rule.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Mizunoe Shinji",
+    "aliases": ["The Rooster Man (Third Rooster Day)"],
+    "roles": ["suspect", "victim"],
+    "occupation": "company employee",
+    "attrs": {
+     "embezzlement": "recurring monthly deposits to a nonexistent shell company",
+     "alibi_day2": "claimed business trip to Nagasaki",
+     "filed_report": "reported his own bag stolen by the Rooster Man on the First Rooster Day (true -- he really was robbed)"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masuko Shirou",
+    "aliases": ["The Rooster Man (First/Second Rooster Day)"],
+    "roles": ["victim", "suspect"],
+    "occupation": "high school graduate, university applicant",
+    "attrs": {
+     "applying_to": "Tohto University, Literature Department",
+     "secret_identity": "the original Rooster Man bag-snatcher on the First and Second Rooster Days",
+     "post_recovery_lie": "claimed to remember nothing about the 'monkey'/'nine' message to avoid exposing his own thefts"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hino Tatsuo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "shrine visitor, age 45",
+    "attrs": {
+     "alibi_day1": "on a family trip to Sendai",
+     "accusation_basis": "his face was joked to resemble a monkey's"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Sarukawa Hisami",
+    "aliases": ["Kyuu-chan"],
+    "roles": ["suspect"],
+    "occupation": "part-time worker, age 20",
+    "attrs": {
+     "alibi_day1_2": "working his shift both times",
+     "accusation_basis": "surname Saru ('monkey') plus nickname Kyuu-chan ('nine', from Hisa->Kyuu reading)"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Ran Mouri",
+    "aliases": [],
+    "roles": ["witness", "victim"],
+    "occupation": "student",
+    "attrs": {
+     "picked_up": "a clothing button after the Rooster Man bumped into her on the Second Rooster Day",
+     "attacked_by": "Mizunoe, near the dry cleaners, to retrieve the button"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Sonoko Suzuki",
+    "aliases": [],
+    "roles": ["victim", "witness"],
+    "occupation": "student",
+    "attrs": {
+     "robbed_by": "the Rooster Man on the Second Rooster Day"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kazumi Tsukamoto",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "former karate club captain, age 18",
+    "attrs": {
+     "taught_technique": "Rounding Heel Kick, later used by Ran against Mizunoe"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Sandei Shrine", "attrs": {"context": "First Rooster Day site"}},
+   {"id": "l2", "name": "Ranburi Shrine grounds", "attrs": {"context": "Second and Third Rooster Day site"}},
+   {"id": "l3", "name": "Park near Ranburi Shrine", "attrs": {"context": "stabbing site, Third Rooster Day"}},
+   {"id": "l4", "name": "Park public restroom", "attrs": {"context": "Rooster Man's hideout; evidence found in utility closet"}},
+   {"id": "l5", "name": "Street near the dry cleaners", "attrs": {"context": "Mizunoe's second attack, on Ran"}},
+   {"id": "l6", "name": "Teitan High School gym", "attrs": {"context": "cold-open karate scene"}},
+   {"id": "l7", "name": "Sendai", "attrs": {"context": "Hino's alibi trip, First Rooster Day"}},
+   {"id": "l8", "name": "Nagasaki", "attrs": {"context": "Mizunoe's alibi business trip, Second Rooster Day"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Firebreather mask",
+    "role": "tool",
+    "attrs": {"found_at": "park restroom utility closet", "used_by": "Mizunoe on the Third Rooster Day"}
+   },
+   {
+    "id": "o2",
+    "name": "Bloody knife",
+    "role": "weapon",
+    "attrs": {"found_at": "park restroom utility closet"}
+   },
+   {
+    "id": "o3",
+    "name": "Down jacket",
+    "role": "tool",
+    "attrs": {"found_at": "park restroom utility closet", "note": "prepared change of clothes but no time to change pants"}
+   },
+   {
+    "id": "o4",
+    "name": "Rooster Man's daypack",
+    "role": "evidence",
+    "attrs": {"contents": "stolen items from all three Rooster Days, mixed together, plus Mizunoe's bankbook", "thrown_at": "pursuers while fleeing"}
+   },
+   {
+    "id": "o5",
+    "name": "Mizunoe's bankbook",
+    "role": "evidence",
+    "attrs": {"shows": "recurring deposits to a nonexistent company -- embezzlement", "stolen_by": "Masuko, First Rooster Day", "used_as": "blackmail leverage against Mizunoe"}
+   },
+   {
+    "id": "o6",
+    "name": "Missing clothing button",
+    "role": "evidence",
+    "attrs": {"found_by": "Ran, after the Rooster Man bumped into her, Second Rooster Day", "matched_to": "clothing found at Masuko's house"}
+   },
+   {
+    "id": "o7",
+    "name": "Wet convenience-store receipt",
+    "role": "evidence",
+    "attrs": {"claimed_by": "Mizunoe, as a lunch alibi", "flaw": "never produced; would have been wet from sweat while running as the Rooster Man"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "'Monkey' (kanji 申, read 'Shin') plus 'nine' (the 9th sexagenary-cycle year Jinshin, native reading Mizunoesaru) together spell Mizunoe Shinji's name.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cB",
+    "desc": "The Rooster Man's daypack held mixed-up belongings from all three robbed victims in one bag, proving a single daypack/persona linked all three incidents even though two different people wore it.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "teaches", "from": "p7", "to": "p5", "technique": "Rounding Heel Kick"},
+  {"type": "robs", "from": "p2", "to": "p1", "items_stolen": "bag containing wallet and bankbook", "circumstance_tags": ["identity_theft_of_persona"]},
+  {"type": "robs", "from": "p2", "to": "p6", "items_stolen": "bag containing Lovely Fortune oracle and belongings"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6"},
+  {"type": "picks_up", "from": "p5", "to": "o6"},
+  {"type": "steals", "from": "p2", "to": "o5"},
+  {"type": "owns", "from": "p1", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p1", "reason": "shows embezzlement"},
+  {"type": "blackmails", "from": "p2", "to": "p1", "leverage": "bankbook evidence of embezzlement"},
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "silence_blackmailer"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "financial_extortion"},
+  {"type": "lures", "from": "p1", "to": "p2", "pretext": "offered to settle the blackmail if Masuko brought the bankbook and all stolen bags to the Third Rooster Day"},
+  {"type": "impersonates", "from": "p1", "to": "p2", "reason": "adopts Masuko's established Rooster Man persona to frame him and preserve his own alibi", "circumstance_tags": ["frame_up"]},
+  {"type": "delivers", "from": "p2", "to": "o4"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "stabs", "from": "p1", "to": "p2", "circumstance_tags": ["attempted_murder", "frame_up", "staged_alibi"]},
+  {"type": "discards", "from": "p1", "to": "o4", "circumstance": "thrown at pursuers while fleeing"},
+  {"type": "discards", "from": "p1", "to": "o1"},
+  {"type": "discards", "from": "p1", "to": "o2"},
+  {"type": "discards", "from": "p1", "to": "o3"},
+  {"type": "located_in", "from": "o1", "to": "l4"},
+  {"type": "located_in", "from": "o2", "to": "l4"},
+  {"type": "located_in", "from": "o3", "to": "l4"},
+  {"type": "located_in", "from": "o4", "to": "l3"},
+  {"type": "located_in", "from": "o5", "to": "o4"},
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "implicates", "from": "o4", "to": "p2", "reason": "contains items originally stolen from First/Second Rooster Day victims, tracing to Masuko"},
+  {"type": "implicates", "from": "o4", "to": "p1", "reason": "thrown by the person fleeing as Rooster Man on the Third Rooster Day"},
+  {"type": "owns", "from": "p1", "to": "o7"},
+  {"type": "implicates", "from": "o7", "to": "p1", "reason": "never produced; would have been wet from sweat while fleeing as the Rooster Man"},
+  {"type": "implicates", "from": "o6", "to": "p2", "reason": "button later matched to clothing found at Masuko's house"},
+  {"type": "accuses", "from": "p6", "to": "p3", "basis": "resembles a monkey's face", "circumstance_tags": ["red_herring"]},
+  {"type": "accuses", "from": "p6", "to": "p4", "basis": "surname Saru (monkey) and nickname Kyuu-chan (nine)", "circumstance_tags": ["red_herring"]},
+  {"type": "regarding", "from": "cA", "to": "p1"},
+  {"type": "implicates", "from": "cA", "to": "p1", "decoding": "monkey=kanji Shin + nine=9th sexagenary year Jinshin, native reading Mizunoesaru"},
+  {"type": "regarding", "from": "cB", "to": "o4"},
+  {"type": "implicates", "from": "cB", "to": "p2"},
+  {"type": "implicates", "from": "cB", "to": "p1"},
+  {"type": "confronts", "from": "p1", "to": "p5", "circumstance_tags": ["attempted_murder"]},
+  {"type": "has_motive_against", "from": "p1", "to": "p5", "motive_type": "witness_silencing_evidence_button"},
+  {"type": "confesses_to", "from": "p1", "to": "p5", "content": "admits stabbing Masuko and embezzling company funds"},
+  {"type": "subdues", "from": "p5", "to": "p1", "technique": "Rounding Heel Kick", "taught_by": "p7"},
+  {"type": "was_at", "from": "p7", "to": "l6"},
+  {"type": "was_at", "from": "p5", "to": "l6"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l7"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l8"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p5", "to": "l5"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

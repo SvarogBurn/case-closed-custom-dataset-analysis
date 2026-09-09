@@ -1,0 +1,466 @@
+{
+ "case_id": "ep240-241_the_shinkansen_transport_case",
+ "episode_number": "240-241",
+ "title": "The Shinkansen Transport Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Shinkansen_Transport_Case",
+ "subtitle_source": ["subs_resolved/0240.txt", "subs_resolved/0241.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Heiji, Kazuha, Officer Sato, Officer Takagi, Inspector Megure) omitted by convention, consistent with the old case file. The Yumi/Takagi/Sato romance-teasing B-plot is unrelated to the murder and is left out entirely. case_type: murder. Culprit identity (Akashi Akira) matches the old wiki-derived case file -- no correction needed there -- but the old file's motive ('unspecified (not stated in the available source excerpt)') was in fact stated on screen: Akashi killed Ogura to keep him from naming the drug ring's leader to police, since Ogura was about to be interrogated in Tokyo. The old file also asserted flat 'knows' edges between all three suspects and the victim with no textual support; the transcript never establishes that Iwakuni or Tokuyama knew Ogura at all -- they were only briefly suspected because they, like Akashi, walked past carrying a newspaper/coffee during the relevant window, and both are cleared once the newspapers are compared (Iwakuni's horse-racing paper and Tokuyama's Daily Morning Press paper contain no 'W.C.'-adjacent headline). Those unsupported edges were dropped and replaced with `was_at` opportunity edges tagged `red_herring`. Two v1 event nodes are decomposed into direct verb edges with an `order` sequence and no event nodes, per schema v3. The single-object 'only one suspect had the fake-bomb prop' and 'he described crime-scene details only the killer could know' clues from the old file are replaced by three genuinely comparative clue nodes (newspaper headline-print-run mismatch, blood-consistency mismatch, and the W.C./World Cup signal comparison across all three suspects' reading material) that better match what the transcript actually uses to break the case.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ogura Senzo",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "drug dealer",
+    "attrs": {
+     "backstory": "evaded an arrest warrant in Tokyo, was tracked down and arrested at an old hideout house in Kansai, and was being transported back to Tokyo by train because a large cache of drugs had been found at his Tokyo residence",
+     "leverage": "police hoped he would give up the drug ring's leader once interrogated in Tokyo",
+     "restrained_with": "handcuffed to the bathroom safety bar by the escorting officer after his staged self-stabbing, which left him unable to use his left hand without standing up",
+     "forensic_note": "a faint newspaper-page imprint pattern was found on his right hand, proving he was holding a newspaper up in front of himself when he was actually stabbed",
+     "died_of": "stabbing -- first faked (fake knife + premixed blood paste, no real injury) as a self-inflicted 'suicide' per Akashi's instructions, then made genuinely fatal when Akashi returned and stabbed him for real through the same held newspaper"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Akashi Akira",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 29,
+     "suspected_affiliation": "member of Ogura's drug trafficking ring, sent to silence him before he could name the ring's leader to police in Tokyo",
+     "premeditation": "bought his train ticket at the same time as the transporting officers and waited until all three of them boarded, giving him time to plan and stage the murder",
+     "alibi_claim": "claimed to have simply switched seats after hearing about the bomb, like the other passengers"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Iwakuni Tatsuro",
+    "aliases": [],
+    "roles": ["suspect", "bystander"],
+    "occupation": null,
+    "attrs": {
+     "age": 47,
+     "alibi_claim": "moved four rows forward to escape the commotion so he could keep listening to horse racing on the radio",
+     "cleared_because": "his 'Horse Racing 7' newspaper contains no wording that abbreviates to W.C."
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Tokuyama Norio",
+    "aliases": [],
+    "roles": ["suspect", "bystander"],
+    "occupation": null,
+    "attrs": {
+     "age": 51,
+     "alibi_claim": "was returning to his seat after buying a canned coffee from the vending machine when he heard about the bomb",
+     "cleared_because": "his 'Daily Morning Press' newspaper contains no wording that abbreviates to W.C."
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Shinkansen \"Nozomi\" bullet train, New Osaka Station to Tokyo",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Rear bathroom of the train car",
+    "attrs": {
+     "features": "a baby changing board with a hidden space behind it, and a sink area with a curtain a person could hide behind",
+     "note": "the same bathroom where the fake bomb was planted was later used for the staged-then-real murder, once it had been cleared as a prank"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Fake bomb (analog alarm clock rigged in a bag)",
+    "role": "tool",
+    "attrs": {
+     "label": "\"This is a bomb. Do not touch!\"",
+     "purpose": "decoy to draw Officer Sato away from Officer Takagi and Ogura, splitting up the two escorting officers"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Knife (fake collapsible blade, later used for real)",
+    "role": "weapon",
+    "attrs": {
+     "trick": "a prop knife with a retractable/removable blade, used first for Ogura's staged self-stabbing and then for real by Akashi",
+     "wound_direction_anomaly": "the knife's final position could only be explained by someone standing and using both hands to reposition it -- impossible for Ogura himself since his left hand was handcuffed to the safety bar"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Blood paste (real blood mixed with heparin)",
+    "role": "tool",
+    "attrs": {
+     "composition": "human blood mixed with the anticoagulant heparin so it stays soft and portable instead of clotting solid",
+     "purpose": "smuggled onto the train in a bag to fake a fresh stab wound without needing a live donor on board",
+     "forensic_tell": "the blood on the knife and around most of the body had hardened solid like jelly (aged, pre-mixed), while the blood on Ogura's hand was still liquid -- proving two separate blood applications at two different times"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Instruction memo left for Ogura",
+    "role": "evidence",
+    "attrs": {
+     "content": "a written lie telling Ogura to fake his own suicide with the hidden knife and blood paste, promising Akashi would cut off his handcuffs and free him amid the 'explosion'",
+     "timing_instruction": "told him to act when the train entered Shintanna Tunnel, when the escorting officers would be unable to phone for help",
+     "fate": "not recovered on screen -- presumed destroyed along with the rest of the staging"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Akashi's first \"Nichiuri Sports\" newspaper",
+    "role": "evidence",
+    "attrs": {
+     "headline": "World Cup Hero Arrested",
+     "used_to": "held up in front of Ogura as a shield while stabbing him for real, and earlier pointed at while passing Takagi to silently signal 'W.C.' via the 'World Cup' headline",
+     "fate": "torn up and flushed down the bathroom toilet tank afterward to destroy the blood stains and knife holes"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Akashi's second \"Nichiuri Sports\" newspaper",
+    "role": "evidence",
+    "attrs": {
+     "headline": "World Cup Hero Questioned",
+     "purchased": "bought later at the New Osaka station kiosk, whose later print deadline meant the headline had already been updated since the first copy was printed",
+     "purpose": "kept clean and presented as his own newspaper when questioned, since it has no blood or knife holes"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Comparison \"Nichiuri Sports\" newspaper (bought earlier, same morning)",
+    "role": "evidence",
+    "attrs": {
+     "headline": "World Cup Hero Arrested",
+     "purpose": "an earlier-printed copy of the same paper used to prove Akashi's currently-held copy (o6) must have been bought later, at a second location"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Iwakuni's \"Horse Racing 7\" newspaper",
+    "role": "evidence",
+    "attrs": {}
+   },
+   {
+    "id": "o9",
+    "name": "Tokuyama's \"Daily Morning Press\" newspaper",
+    "role": "evidence",
+    "attrs": {}
+   },
+   {
+    "id": "o10",
+    "name": "Tokuyama's canned coffee",
+    "role": "evidence",
+    "attrs": {}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Akashi's currently-held \"Nichiuri Sports\" copy (o6) reads \"World Cup Hero Questioned\" while an earlier-bought copy of the same paper (o7) reads \"World Cup Hero Arrested\" -- station kiosks have a later print deadline than store copies, so the mismatch proves Akashi's held copy was purchased separately and later, exposing that his original copy (o5, used to shield the stabbing) must have been swapped out.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Blood at the crime scene was inconsistent: the blood on the knife and soaked into most of the body was hardened solid like jelly, while the blood on Ogura's hand was still liquid -- two different blood applications at two different times, exposing that the first 'suicide' was staged with premixed heparin blood paste and the fatal wound came later.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Comparing all three suspects' reading material: Iwakuni's 'Horse Racing 7' and Tokuyama's 'Daily Morning Press' contain no wording that abbreviates to W.C., but Akashi's 'Nichiuri Sports' headline reads 'World Cup,' which abbreviates to the same initials as 'Water Closet' -- the only one of the three that could have silently signaled 'go to the bathroom.'",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "silence_before_ring_exposure"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "drug_ring_associate"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o9"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o10"
+  },
+  {
+   "type": "plants",
+   "from": "p2",
+   "to": "o1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l2"
+  },
+  {
+   "type": "signals",
+   "from": "p2",
+   "to": "p1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "silently points to the 'World Cup' headline on o5 while walking past Officer Takagi, using the W.C. abbreviation to tell Ogura to go to the bathroom"
+  },
+  {
+   "type": "regarding",
+   "from": "o5",
+   "to": "p1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["red_herring"],
+   "detail": "moved seats past Takagi/Ogura carrying his 'Horse Racing 7' newspaper during the same window"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["red_herring"],
+   "detail": "returned to his seat past Takagi/Ogura carrying a newspaper and canned coffee during the same window"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_suicide"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o3",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_suicide"]
+  },
+  {
+   "type": "regarding",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "emerged from a hiding spot behind the sink curtain once Takagi had left to fetch Officer Sato"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "stabbing, restaging the fake wound as a real one",
+   "circumstance_tags": ["locked_room", "staged_suicide", "cover_up"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "held the newspaper up in front of Ogura as a shield while stabbing him, so no blood would splatter onto himself"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "destroys_evidence",
+   "from": "p2",
+   "to": "o5",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "tore up the blood- and knife-marked newspaper and flushed the pieces down the bathroom toilet tank"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o7"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o8"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o9"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,190 @@
+{
+ "case_id": "ep687_the_unsolvable_ice_trap",
+ "episode_number": "687",
+ "title": "The Unsolvable Ice Trap",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Unsolvable_Ice_Trap",
+ "subtitle_source": ["subs_resolved/0687.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Haibara, Agasa, the Detective Boys, and the local Niigata Prefectural Police inspector who runs the formal interrogation) omitted by convention. No `event` node type: the murder mechanism is a delayed, killer-absent remote-trigger rig (ice-embedded weighted glass block + string garrote freed by a burning magnesium ribbon once the ice refreezes around it), represented as direct typed edges. Old cases/ep687 file got the culprit ID right (Shiota) but reduced the whole plot to three generic `knows` edges and a single-object motive field marked 'unspecified' -- the transcript is explicit: Shiota overheard mayor Yamaguchi and secretary Ogi discussing that they had cut the brakes on former mayor Itakura's car (Mika's father) to cover up their embezzlement of festival funds after Itakura discovered it, and killed Yamaguchi in revenge while also collapsing the festival's main gate the night before to manufacture an ironclad overnight group alibi for Mika (Itakura's daughter, whom he was protecting). None of that backstory murder, conspiracy, or alibi-engineering existed in the old file. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tarō Yamaguchi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "village mayor",
+    "attrs": {
+     "died_of": "strangulation via remote ice-trap mechanism",
+     "secret": "embezzled village festival funds with his secretary Ogi"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tetsuya Shiota",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "ice sculptor",
+    "attrs": {
+     "skill": "world-championship-caliber ice sculptor",
+     "alibi_claim": "left gate-repair work twice overnight to fetch tools, ~10 min each trip",
+     "burn_injury": "hand burn, claimed from a bonfire drum"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Mika Itakura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Ice Festival Executive Committee chairman",
+    "attrs": {
+     "alibi": "worked on main-gate repair all night with the village group"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kazuyuki Ogi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "mayor's secretary",
+    "attrs": {
+     "key_access": "sole holder of the one duplicate key to the mayor's locked VIP dome",
+     "alibi": "alone doing paperwork in his office, unwitnessed"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Former Mayor Itakura",
+    "aliases": ["Mika's father"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "village mayor (former)",
+    "attrs": {
+     "died_of": "car crash after brake sabotage, staged as an accident",
+     "circumstance": "discovered Yamaguchi and Ogi's embezzlement of festival funds shortly before his death"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Ice Festival grounds", "attrs": {"includes": "main gate, bonfire drums"}},
+   {"id": "l2", "name": "VIP dome, Ice Hotel", "attrs": {"note": "custom-built to the mayor's height, locked from inside"}},
+   {"id": "l3", "name": "City Hall", "attrs": {}},
+   {"id": "l4", "name": "Village outskirts road", "attrs": {}},
+   {"id": "l5", "name": "Mayor's office", "attrs": {}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Glass block disguised as ice",
+    "role": "tool",
+    "attrs": {"function": "true counterweight; indistinguishable from ice so it could be left in place unnoticed"}
+   },
+   {
+    "id": "o2",
+    "name": "Magnesium ribbon",
+    "role": "tool",
+    "attrs": {"function": "burns even while embedded in ice; used to free the refrozen string after the kill"}
+   },
+   {
+    "id": "o3",
+    "name": "Thin string garrote",
+    "role": "weapon",
+    "attrs": {"mechanism": "ran through the ice, pulled taut around the victim's neck as pressure-melted ice refroze and the weight dropped"}
+   },
+   {
+    "id": "o4",
+    "name": "Duplicate VIP dome key",
+    "role": "tool",
+    "attrs": {"custom_made": true, "held_by": "Ogi only, besides the master key"}
+   },
+   {
+    "id": "o5",
+    "name": "Custom-sized VIP bed",
+    "role": "evidence",
+    "attrs": {"anomaly": "small relative to the spacious dome; built to exactly fit the mayor's short height and sleeping position"}
+   },
+   {
+    "id": "o6",
+    "name": "Former mayor's car",
+    "role": "weapon",
+    "attrs": {"sabotage": "brakes cut", "staged_as": "accident on the village outskirts road"}
+   },
+   {
+    "id": "o7",
+    "name": "Magnesium oxide residue",
+    "role": "evidence",
+    "attrs": {"found_on": "Shiota's sleeve", "cause": "byproduct of burning the magnesium ribbon"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Magnesium oxide on Shiota's sleeve matches the same compound found inside the VIP dome -- ties the man who burned the trigger free to the residue left by the burn itself.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "The VIP bed is oddly small for such a spacious dome, sized to the mayor's exact height and sleep position -- only the hotel's designer could have known that placement well enough to aim the rig.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "secret_business_partner", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "sponsored_by"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "devoted_to"},
+
+  {"type": "kills", "from": "p1", "to": "p5", "method": "brakes cut, staged as a car accident", "circumstance_tags": ["cover_up", "staged_accident"]},
+  {"type": "kills", "from": "p4", "to": "p5", "method": "brakes cut, staged as a car accident", "circumstance_tags": ["cover_up", "staged_accident"]},
+  {"type": "sabotages", "from": "p1", "to": "o6", "temporal_frame": "backstory", "detail": "overheard in flashback vowing 'I'll cut their brakes, just like Itakura's' to silence anyone else who noticed the embezzlement", "circumstance_tags": ["cover_up", "staged_accident"]},
+  {"type": "sabotages", "from": "p4", "to": "o6", "temporal_frame": "backstory", "detail": "co-conspirator in the brake-cutting cover-up overheard by Shiota at City Hall", "circumstance_tags": ["cover_up", "staged_accident"]},
+  {"type": "causes_accident_at", "from": "o6", "to": "l4", "temporal_frame": "backstory", "circumstance_tags": ["staged_accident"]},
+  {"type": "implicates", "from": "o6", "to": "p1"},
+  {"type": "implicates", "from": "o6", "to": "p4"},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "delayed self-triggering garrote: ice-embedded weighted glass block plus a magnesium-burned string, killer never entered the room", "circumstance_tags": ["locked_room", "staged_alibi", "remote_mechanism"]},
+
+  {"type": "sabotages", "from": "p2", "to": "l1", "detail": "collapsed the festival's main gate overnight, forcing a group all-night repair that doubled as his and Mika's shared alibi", "circumstance_tags": ["staged_alibi", "diversion"]},
+  {"type": "crafts_alibi_for", "from": "p2", "to": "p3", "detail": "engineered the remote-trigger kill and gate collapse so Mika would have an unbreakable overnight group alibi"},
+
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "owns", "from": "p4", "to": "o4"},
+
+  {"type": "leaves_evidence", "from": "p2", "to": "o1"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o7"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "located_in", "from": "o5", "to": "l2"},
+
+  {"type": "implicates", "from": "o7", "to": "p2"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p4"},
+
+  {"type": "regarding", "from": "cA", "to": "o7"},
+  {"type": "regarding", "from": "cA", "to": "l2"},
+  {"type": "implicates", "from": "cA", "to": "p2"},
+  {"type": "regarding", "from": "cB", "to": "o5"},
+  {"type": "regarding", "from": "cB", "to": "l2"},
+  {"type": "implicates", "from": "cB", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge_for_sponsors_murder"},
+  {"type": "has_motive_against", "from": "p1", "to": "p5", "motive_type": "cover_up_embezzlement"},
+  {"type": "has_motive_against", "from": "p4", "to": "p5", "motive_type": "cover_up_embezzlement"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "suspected_fathers_death (red herring; accused Yamaguchi to his face)"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l5"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,536 @@
+{
+ "case_id": "ep260_the_shaking_restaurant",
+ "episode_number": "260",
+ "title": "The Shaking Restaurant",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Shaking_Restaurant",
+ "subtitle_source": ["subs_resolved/0260.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, and the police officers Megure/Takagi/Chiba who appear only in routine investigative capacities) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved. The episode actually layers TWO plots: (1) Reiko Hanaoka and cook Minoru Wada, having an affair that Shigeru Hanaoka had begun investigating via a private detective, rig an elaborate delayed-fall trap using a frozen replica of the restaurant's display vase, a fishing line, and a metal bar at the adjacent construction site, intending it to look like an accident caused by the construction shaking; (2) waitress Saki Yoshizawa -- secretly Hanaoka's daughter by Aiko Morimura, a woman he abandoned pregnant on Hachijou Island 21 years earlier -- independently kills him with a frozen sea bream shortly before the vase trap ever triggers, then rushes off to establish an alibi with Ran/Conan at a video shop. The vase falls hours later on an already-dead body, which is what exposes Reiko/Wada's scheme as a separate, failed murder attempt rather than the actual cause of death; fish-scale residue in the head wound (matching the sea bream, not the ceramic vase) is the pivotal clue separating the two plots. The old wiki-summary case file got the culprit right (Saki/s2) but flattened Reiko and Wada's scheme into 'an unrelated staged prank others had planned' -- it was in fact its own attempted-murder plot with a real motive (the affair, and Hanaoka's PI investigation of it) -- and omitted Aiko Morimura and Yamamoto entirely, plus collapsed all evidence into one generic clue/knows edges instead of the several independently-informative physical clues the transcript actually supports.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shigeru Hanaoka",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "owner and head chef of \"Karantei\" Restaurant",
+    "attrs": {
+     "died_of": "blunt force trauma to the head, struck with a frozen sea bream; the killing was then obscured when an unrelated staged-accident vase trap fell on his already-dead body",
+     "hobby": "swordfish fishing, about 25 years, since he lived on Hachijou Island",
+     "former_residence": "Hachijou Island"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Reiko Hanaoka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "proprietress of \"Karantei\" Restaurant, Shigeru's wife",
+    "attrs": {
+     "responsible_for": "changing the water in the restaurant's flower vases -- the cover used to swap in the rigged frozen vase",
+     "cleared_of": "the murder itself -- her vase trap was triggered on a body that was already dead from an unrelated cause"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Minoru Wada",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "cook at \"Karantei\" Restaurant",
+    "attrs": {
+     "cleared_of": "the murder itself -- same as Reiko, his vase trap fell on an already-dead body"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Saki Yoshizawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "newly hired waitress at \"Karantei\" Restaurant",
+    "attrs": {
+     "true_identity": "daughter of Shigeru Hanaoka and Aiko Morimura, born and raised without Hanaoka's knowledge",
+     "cover": "took a waitressing job at the restaurant to get close to Hanaoka, apparently under her mother's surname"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Aiko Morimura",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died": "last spring, after raising her daughter alone",
+     "location": "Hachijou Island",
+     "fate": "never told Hanaoka she was pregnant when he left; waited for his return for over 20 years and raised Saki by herself",
+     "keepsake": "took a photograph of a young Hanaoka that he kept displayed in the restaurant, signed with a mark resembling the numeral \"1\", her monogram"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yamamoto",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "fellow swordfish angler and close friend of Hanaoka's",
+    "attrs": {
+     "role_in_plot": "had a fishing trip planned with Hanaoka for the next morning; came to the restaurant with Reiko that night when Hanaoka never showed up or answered at home"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "\"Karantei\" Restaurant",
+    "attrs": {
+     "layout": "dining area, kitchen, spare refrigerator, and a staircase with a display vase mounted above Hanaoka's usual seat",
+     "context": "shaking constantly that night due to bypass road construction next door"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Adjacent construction site (bypass road work)",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Video shop",
+    "attrs": {
+     "context": "where Ran and Conan waited that night while Kogoro was out drinking/at mahjong"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Hachijou Island",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Frozen sea bream",
+    "role": "weapon",
+    "attrs": {
+     "used_by": "the real murderer, to strike Hanaoka from behind",
+     "evidence": "sea bream scales found embedded in the wound on the victim's head and neck",
+     "disposal": "rushed back into the restaurant's spare refrigerator immediately after the killing"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Rubber gloves (lipstick-stained)",
+    "role": "evidence",
+    "attrs": {
+     "worn_by": "the murderer, while striking Hanaoka, to avoid leaving prints",
+     "stain": "a red lipstick mark on one fingertip, matching the shade Saki wore the previous day",
+     "forensic_note": "saliva residue on the same fingertip, from biting down to pry the stuck glove off"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Display vase (rigged frozen replica)",
+    "role": "tool",
+    "attrs": {
+     "normal_location": "top of the stairs, directly above Hanaoka's usual seat",
+     "swap": "Reiko and Wada substituted an identical vase, pre-frozen around a fork and fishing line, using the flower-water-changing routine as cover",
+     "trigger_mechanism": "as the ice inside melted over several hours, the line paid out and let the vase fall on its own, timed to look like an accident",
+     "staging_flaw": "it fell on a body that was already dead of an unrelated cause"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Fishing line, fork, and metal bar rig",
+    "role": "tool",
+    "attrs": {
+     "found_at": "the construction site",
+     "mechanism": "the fork's tangled swordfishing line ran from the ceiling beam, through the frozen vase, out the window, and was tied to a metal bar at the site; slowly pressing the bar down drew the vase into position above Hanaoka's seat"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Photograph of a young Hanaoka on a swordfishing trip",
+    "role": "evidence",
+    "attrs": {
+     "display_location": "hung near Hanaoka's usual seat in the restaurant",
+     "anomaly": "framed on Hanaoka's smiling face rather than the swordfish, unlike the fishing group's other photos, which suggests it was taken by someone close to him",
+     "signature": "a mark resembling the numeral \"1\" in the corner, actually Aiko Morimura's monogram"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Private detective's surveillance report (envelope)",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "Hanaoka's locker at the restaurant",
+     "content": "surveillance records and a photograph documenting Reiko's affair with Wada",
+     "commissioned_by": "Shigeru Hanaoka"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "A scratch mark on the ceiling beam above the stairs matches a second scratch on the window frame facing the construction site -- showing the same taut line ran from the beam, through the vase, out the window, to the site.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The flowers scattered from the fallen vase were still fresh, inconsistent with the vase having fallen hours earlier during the pre-10:30pm construction shaking -- proving the fall was deliberately delayed and timed rather than a genuine accident.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "The autopsy placed Hanaoka's time of death between 11pm and 1am, but the construction crew's shaking-causing drilling had already stopped at 10:30pm due to a machine malfunction -- proving the vase could not have fallen on its own from the shaking and the 'accident' was staged.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "Fish scales matching the frozen sea bream, not ceramic vase fragments, were found embedded in the wound on Hanaoka's head and neck -- proving the fatal blow was struck by the sea bream and that the vase (found broken beside him) fell on a body already dead.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "affair_partner"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "close_friend"
+  },
+  {
+   "type": "abandons",
+   "from": "p1",
+   "to": "p5",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 21,
+   "detail": "leaves Hachijou Island to pursue a cooking career, not knowing Aiko was pregnant",
+   "circumstance_tags": ["abandonment"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "detail": "born and raised on Hachijou Island by Aiko after Hanaoka left"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge for abandoning her pregnant mother Aiko Morimura 21 years ago, leaving her to raise Saki alone and die without ever reconciling"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "affair with Wada; Hanaoka had hired a private detective and was closing in on exposing her"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "same affair; assisting Reiko to remove Hanaoka as an obstacle to their relationship"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o3",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_accident", "red_herring"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o4",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_accident", "red_herring"]
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "swaps the display vase for the frozen rigged one under cover of changing the flower water"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "seen by Yamamoto at the construction site rigging the line to a metal bar the night of the murder"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "struck from behind with a frozen sea bream",
+   "circumstance_tags": ["cover_up", "staged_over_by_unrelated_plot"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "preparing his fishing gear for the next morning's trip"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "rushes to meet Ran and Conan at the video shop immediately after the killing, establishing her alibi"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "arrives with Reiko looking for Hanaoka after he never showed up for their planned fishing trip"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p2",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "method": "delayed-fall vase trap, triggered as the ice melted",
+   "circumstance_tags": ["staged_accident", "victim_already_deceased", "red_herring"]
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p3",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "method": "delayed-fall vase trap, triggered as the ice melted",
+   "circumstance_tags": ["staged_accident", "victim_already_deceased", "red_herring"]
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p4"
+  },
+  {
+   "type": "written_by",
+   "from": "o5",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "o5",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p4"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

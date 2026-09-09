@@ -1,0 +1,455 @@
+{
+ "case_id": "ep770-771_the_tense_tea_party",
+ "episode_number": "770-771",
+ "title": "The Tense Tea Party",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Tense_Tea_Party",
+ "subtitle_source": ["subs_resolved/0770.txt", "subs_resolved/0771.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Amuro/Bourbon, Officer Takagi) omitted by convention. The Rikumichi Kusuda / Black Organization subplot threaded through both episodes is unrelated to the tea-party murder and involves only recurring-cast characters, so it is omitted entirely. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file correctly identified Juri Kosaka as the culprit (unlike several other rebuilt episodes) but spelled the co-suspect 'Katsuki Beppu' where on-screen captions in both episodes read 'Kazuki Beppu' -- corrected here. The old file's motive text for Kosaka ('resentment... and other unstated grievances') undersold the real driver: the transcript reveals Kosaka was pregnant when she caught the same influenza (passed son-to-son) and suffered a nervous breakdown and miscarriage, and that Suto had deliberately sent her sick son to study with Kosaka's son to sabotage his exam chances -- this, not just the failed exam, is the actual motive. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Reina Suto",
+    "aliases": ["Reina Sato"],
+    "roles": ["victim"],
+    "occupation": null,
+    "attrs": {
+     "age": 42,
+     "residence": "Haidocho",
+     "cause_of_death": "cyanide poisoning, suffocation",
+     "personality": "described by the others as dominant, selfish, and nonchalant"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Juri Kosaka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 42,
+     "status": "hospital patient, due to be discharged the next day",
+     "cup_habit": "polishes her personal teacup with baking soda to keep it looking new"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kazuki Beppu",
+    "aliases": ["Katsuki Beppu"],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 41
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Tokie Happo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 42,
+     "grudge": "Suto's husband was formerly her boyfriend before Suto married him"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Toji",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "relation": "Kosaka's son",
+     "outcome": "failed his junior high entrance exam after catching influenza"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Tsuneo",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "relation": "Suto's son",
+     "confession": "privately admitted he knew he had influenza when his mother sent him to study with Toji anyway"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kosaka's hospital room",
+    "attrs": {
+     "hospital": "Haido Central Hospital",
+     "note": "Kosaka's individual/private unit; site of the tea party and the poisoning"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Hospital restroom",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Convenience store",
+    "attrs": {
+     "note": "near the hospital; Happo bought tea-party sweets here"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Kosaka's poisoned teacup",
+    "role": "weapon",
+    "attrs": {
+     "poison": "cyanide, laced on the rim on the side drunk with the left hand",
+     "prepared": "before the other guests arrived, while Suto was out fetching hot water",
+     "recovered": "found cracked on the floor by the victim's body"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Switched cup with baking-soda residue",
+    "role": "evidence",
+    "attrs": {
+     "origin": "originally served to Suto, disguised as Hibiscus tea",
+     "after_swap": "ended up at Kosaka's seat, colored back to blue with baking soda",
+     "significance": "excess baking soda residue inside proves the color was chemically reverted"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Lemon",
+    "role": "tool",
+    "attrs": {
+     "chemical_effect": "turns Butterfly Pea tea from blue to red, mimicking Hibiscus tea",
+     "dual_use": "added to Suto's disguised tea at serving, then again to Kosaka's own poisoned cup during the swap"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Baking-soda-laced sugar cubes",
+    "role": "tool",
+    "attrs": {
+     "purpose": "reverts the swapped cup's color from red back to blue",
+     "concealment": "hidden among ordinary sugar cubes on the table"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Disguised Hibiscus teabag",
+    "role": "tool",
+    "attrs": {
+     "trick": "wrapper reads Hibiscus but contents are Butterfly Pea leaves, so the served tea visually matches Hibiscus once lemon is added"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Suto's cell phone",
+    "role": "instrument",
+    "attrs": {
+     "contents": "old school-festival photos",
+     "function": "distraction that occupied the victim's right hand and attention during the cup swap"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Lipstick on the right side of the cracked cup's handle, yet chopsticks (and presumably the cup) are normally held right-handed -- the victim was drinking left-handed, meaning her right hand was occupied (holding her phone) when she picked up the swapped cup.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The red stain on Kosaka's left-hand ring exactly matches the victim's lipstick shade -- proof Kosaka wiped incriminating lipstick off the swapped cup with her bare hand.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p2",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "sabotages",
+   "from": "p1",
+   "to": "p5",
+   "circumstance_tags": ["backstory", "deliberate"],
+   "detail": "Suto knowingly sent the ill Tsuneo to study with Toji the day before the entrance exam, to eliminate an exam rival"
+  },
+  {
+   "type": "infects",
+   "from": "p6",
+   "to": "p5",
+   "circumstance_tags": ["backstory"],
+   "detail": "Tsuneo passed his influenza to Toji, who then failed his entrance exam"
+  },
+  {
+   "type": "infects",
+   "from": "p5",
+   "to": "p2",
+   "circumstance_tags": ["backstory"],
+   "detail": "Toji passed the influenza to Kosaka, who was pregnant; she had a nervous breakdown and miscarried"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "detail": "left the tea party briefly to use the restroom"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "detail": "left the tea party briefly to buy sweets, kept the receipt"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "poisons",
+   "from": "p2",
+   "to": "o1",
+   "circumstance_tags": ["premeditated"],
+   "detail": "laced cyanide on the rim before the other guests arrived, while Suto was out fetching hot water"
+  },
+  {
+   "type": "prepares",
+   "from": "p2",
+   "to": "o5",
+   "detail": "swapped the teabag's contents to Butterfly Pea while keeping the Hibiscus wrapper"
+  },
+  {
+   "type": "serves",
+   "from": "p2",
+   "to": "p1",
+   "detail": "served a cup of disguised Butterfly Pea tea (o5 + o3) passed off as genuine Hibiscus tea"
+  },
+  {
+   "type": "disguises_using",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "disguises_using",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "exploits",
+   "from": "p2",
+   "to": "o6",
+   "circumstance_tags": ["distraction"],
+   "detail": "used the group's absorption in Suto's phone photos to cover the cup swap"
+  },
+  {
+   "type": "views",
+   "from": "p3",
+   "to": "o6"
+  },
+  {
+   "type": "views",
+   "from": "p4",
+   "to": "o6"
+  },
+  {
+   "type": "swaps_cup_with",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": ["staged", "distraction", "premeditated"],
+   "detail": "swapped her poisoned cup (colored red with lemon) for Suto's disguised cup while both were absorbed in the phone photos"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "cyanide poisoning via disguised, swapped teacup",
+   "circumstance_tags": ["premeditated", "staged_deception"]
+  },
+  {
+   "type": "frames",
+   "from": "p2",
+   "to": "p3",
+   "circumstance_tags": ["red_herring", "frame_up"],
+   "detail": "Kosaka later admitted she hoped Beppu and Happo's alternating departures from the room would make them look guilty"
+  },
+  {
+   "type": "frames",
+   "from": "p2",
+   "to": "p4",
+   "circumstance_tags": ["red_herring", "frame_up"]
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge_for_miscarriage_and_sabotaged_exam"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "financial_loss_from_bad_stock_tip (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "stolen_boyfriend_now_husband (red herring)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,226 @@
+{
+ "case_id": "ep697_the_window_at_the_girls_school",
+ "episode_number": "697",
+ "title": "The Window at the Girls' School",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Window_at_the_Girls%27_School",
+ "subtitle_source": ["subs_resolved/0697.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Sonoko, Inspector Megure, Detective Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Temporal fields (order/temporal_frame/years_before_present) intentionally omitted per current build scope. Discrepancy vs. the old lower-fidelity case file: the old file listed a third suspect, 'Takako Yanai' (the school director, Nagisa's mother), in the same formal suspect pool as Kodama and Shibagaki. The transcript never actually implicates her in the murder -- she is only discussed as one of several people who, per Takagi, 'lose out' from the death (the scandal-implicated Kodama/Shibagaki, and the grieving director who closes the school), which is the detectives' argument that nobody had an ostensible motive before the twist. She is present at the reconstruction/explanation scene and at the alibi meeting with Shibagaki, but is never questioned as a suspect or accused. Kept her node but reclassified her role from suspect to bystander/witness to match what the transcript actually supports. The old file also collapsed all actions into generic `event`/`knows` nodes and edges; this rebuild decomposes them into direct typed edges per schema v3 (e.g. `triggers`, `instructs`, `bribes`, `embezzles_from`, `locks`, `arranges`) and adds `was_at` edges for every named person shown present in a scene, not just the three original suspects.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Misaki Yanai",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "high school student",
+    "attrs": {
+     "relation_to_victim": "younger sister",
+     "role_in_case": "client who insists the ruled suicide was murder"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Nagisa Yanai",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "theater club member",
+    "attrs": {
+     "engaged_to": "Toichiro Shibagaki",
+     "cast_as": "lead in next year's anniversary festival play",
+     "died_of": "hanging, ruled suicide, actually staged act turned real by remote sabotage"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Harue Kodama",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "theater and university club advisor",
+    "attrs": {
+     "past_relationship": "formerly dated Shibagaki at university",
+     "compromised_by": "took hush money from Shibagaki over his embezzlement, then broke off contact out of fear"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Toichiro Shibagaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "model club advisor, school finance officer",
+    "attrs": {
+     "engaged_to": "Nagisa Yanai",
+     "embezzled_from": "Yanai Seibi Educational Institute",
+     "collection": "donated his war-miniature collection, including the tank, to the model club"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Takako Yanai",
+    "aliases": [],
+    "roles": ["bystander", "witness"],
+    "occupation": "school director",
+    "attrs": {
+     "relation_to_victim": "mother",
+     "reaction": "in shock after the death, announces the school will close",
+     "note": "old case file listed her as a formal suspect; transcript never treats her as one -- see case notes"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Model club clubroom",
+    "attrs": {
+     "features": "soundproofed, exposed ceiling beams, window overlooking the back garden",
+     "access": "back door locked only on the day of the death"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Back garden",
+    "attrs": {
+     "features": "several benches; all but one were freshly painted the day of the death"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Director's office",
+    "attrs": {
+     "note": "where Shibagaki was in a finance meeting with the director at the time of death, his stated alibi"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Yanai Seibi Educational Institute",
+    "attrs": {
+     "status": "director threatened closure after the death, which would have buried the embezzlement investigation"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Remote-controlled model Elefant tank",
+    "role": "weapon",
+    "attrs": {
+     "origin": "donated to the model club by Shibagaki along with his collection",
+     "claimed_state": "Shibagaki claimed he removed the motor from every donated model to stop pranks",
+     "actual_state": "motor had been reinstalled and the antenna rerouted internally, found on inspection"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Rope tied to a ceiling beam",
+    "role": "tool",
+    "attrs": {
+     "source": "packaging rope used by the model club"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Stool with casters",
+    "role": "tool",
+    "attrs": {
+     "note": "originally the intended step, but too tall for the exact silhouette Nagisa needed at the window; rolled into a corner behind a partition"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Engraved bracelet",
+    "role": "evidence",
+    "attrs": {
+     "inscription": "Nagisa",
+     "timing": "sent to be resized the morning of the day she died, so she'd wear it forever after the wedding"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Hidden remote control",
+    "role": "tool",
+    "attrs": {
+     "concealment": "kept in Shibagaki's pocket while his other hand operated a calculator during the alibi meeting"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Reconstruction showed Nagisa's witnessed silhouette matched a spot too close to the window for the stool, but that exact spot was physically occupied that day by a large display model -- proving a shorter step than the stool was used, and that her position was deliberately staged for the garden witnesses' sightline.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Nagisa had her engagement bracelet resized that same morning so she could wear it forever after the wedding, but the affair scandal used to explain her 'suicide motive' only became public through the police investigation after her death -- she could not have known about it beforehand.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "Shibagaki insisted the donated tank was immobilized because he'd stripped its motor, but inspection found the motor reinstalled and the antenna rerouted inside the shell -- the 'unmovable' model could move.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "sister_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "mother_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "mother_of"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "ex_partner_of", "detail": "dated while at the same university"},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "employee_of"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p2", "motive_type": "cover_up_embezzlement", "detail": "Nagisa's death led the grieving director to move toward closing the school, which would have buried the embezzlement investigation"},
+
+  {"type": "bribes", "from": "p4", "to": "p3", "detail": "paid hush money to keep her quiet about his embezzlement"},
+  {"type": "embezzles_from", "from": "p4", "to": "l4", "detail": "embezzled large, unspecified sums from the school's finances"},
+  {"type": "threatens_closure_of", "from": "p5", "to": "l4", "detail": "grief-driven decision to shut the school down after her daughter's death"},
+
+  {"type": "performs_for", "from": "p2", "to": "p3", "detail": "staged a fake one-woman 'suicide' act, visible from the garden, to convince Kodama a tragedy could work for the anniversary play"},
+  {"type": "rigs", "from": "p2", "to": "o2", "detail": "tied the rope to the ceiling beam for the staged act"},
+  {"type": "instructs", "from": "p4", "to": "p2", "detail": "told her to stand on the model tank instead of the stool, to get the exact silhouette wanted for the garden witnesses"},
+  {"type": "stands_on", "from": "p2", "to": "o1"},
+
+  {"type": "kills", "from": "p4", "to": "p2", "method": "remotely triggered the model tank to roll out from under her, turning her staged fake hanging into a real one", "circumstance_tags": ["staged_suicide", "remote_triggered", "premeditated"]},
+  {"type": "stages_suicide_of", "from": "p4", "to": "p2", "circumstance_tags": ["staged_suicide"]},
+  {"type": "triggers", "from": "p4", "to": "o1", "detail": "operated the hidden remote from his pocket during the alibi meeting in the director's office", "circumstance_tags": ["remote_triggered"]},
+  {"type": "locks", "from": "p4", "to": "l1", "detail": "had the clubroom's back door locked only on the day of the death", "circumstance_tags": ["premeditated", "restricts_access"]},
+  {"type": "arranges", "from": "p4", "to": "l2", "detail": "had all garden benches but one freshly painted to funnel witnesses to the one clear sightline", "circumstance_tags": ["premeditated", "staged_alibi"]},
+
+  {"type": "owns", "from": "p4", "to": "o1"},
+  {"type": "owns", "from": "p4", "to": "o5"},
+  {"type": "owns", "from": "p2", "to": "o4"},
+  {"type": "resizes", "from": "p1", "to": "o4", "detail": "took the bracelet to be resized at Nagisa's request the morning she died"},
+
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "located_in", "from": "o3", "to": "l1"},
+
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "implicates", "from": "o5", "to": "p4"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+  {"type": "implicates", "from": "c3", "to": "p4"},
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "l1"},
+  {"type": "regarding", "from": "c2", "to": "o4"},
+  {"type": "regarding", "from": "c3", "to": "o1"},
+
+  {"type": "witnesses", "from": "p1", "to": "p2", "detail": "watched the apparent suicide through the clubroom window from the garden"},
+  {"type": "witnesses", "from": "p3", "to": "p2", "detail": "watched the apparent suicide through the clubroom window from the garden"},
+
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l1", "detail": "arrived after the phone call, saw the stool leaning against the partition"},
+  {"type": "was_at", "from": "p1", "to": "l1", "detail": "broke in / arrived immediately after"},
+  {"type": "was_at", "from": "p3", "to": "l1", "detail": "arrived immediately after"},
+  {"type": "was_at", "from": "p5", "to": "l1", "detail": "rushed over from the director's office after the phone call"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

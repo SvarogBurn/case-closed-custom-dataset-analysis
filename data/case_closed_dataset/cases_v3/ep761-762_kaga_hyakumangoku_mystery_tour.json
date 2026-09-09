@@ -1,0 +1,495 @@
+{
+ "case_id": "ep761-762_kaga_hyakumangoku_mystery_tour",
+ "episode_number": "761-762",
+ "title": "Kaga Hyakumangoku Mystery Tour",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Kaga_Hyakumangoku_Mystery_Tour",
+ "subtitle_source": [
+  "subs_resolved/0761.txt",
+  "subs_resolved/0762.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Kogoro, Ran) omitted by convention except where their actions are the only stated source of an edge (kept minimal). case_type: attempted_murder (Akiyama survives, hospitalized overnight). No `event` node type: actions are direct typed edges. Discrepancies vs. the old cases/ file: (1) the old file's motive text says 'Kuranishi and an accomplice assaulted an elderly person' -- the transcript never mentions an accomplice; only Kuranishi is named as the true culprit of the 2010 assault-robbery, and a separate, different man was wrongly arrested for it four years later (the news report Akiyama reacts to). (2) the old file frames the code cards as simply 'secretly encoding details of that assault' -- the transcript is more specific: Akiyama had PRE-WRITTEN accusing code cards (dropped from her bag, recovered by Conan) that decode to '2010/5/6, case, culprit, Kuranishi-san' when combined, and lied about losing them, hastily writing innocuous replacement cards to hide the originals' existence while still routing the group through the same checkpoints. (3) the old file omits that Akiyama already knew Kuranishi was guilty and had stayed silent for years (implicitly complicit by concealment) while engaged to him, and only decided to confess after an innocent man was arrested for his crime -- Kuranishi attacked her specifically to stop that confession, using the commotion of a staged candid-camera 'thief' chase as cover, then stole her watch afterward because it contained a hidden camera he feared had recorded the attack.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Harumi Akiyama",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "event staff",
+    "attrs": {
+     "age": 29,
+     "engaged_to": "Osamu Kuranishi",
+     "secret": "knew Kuranishi was the real culprit of a 2010 robbery-assault and stayed silent for years",
+     "watch": "wore a large men's watch, claimed as a hand-me-down from her brother, actually a hidden camera for the tour's candid-camera filming",
+     "outcome": "attacked and hospitalized overnight; survives"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Osamu Kuranishi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "event staff",
+    "attrs": {
+     "age": 33,
+     "engaged_to": "Harumi Akiyama",
+     "secret": "true culprit of the 2010 robbery-assault of an elderly man"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuzo Tanimoto",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Tourist Bureau staff",
+    "attrs": {
+     "age": 57,
+     "note": "grows visibly defensive when the police are mentioned, insisting he isn't the culprit"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Moeko Miyazawa",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Tourist Bureau staff",
+    "attrs": {
+     "age": 27,
+     "note": "secretly filmed the group from a hidden camera in her bag for the candid-camera segment"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yuya Tadokoro",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "CEO, event planning company",
+    "attrs": {
+     "age": 48
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Elderly robbery victim",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "date_attacked": "2010-05-06",
+     "amount_stolen_yen": 5000000,
+     "lived_alone": true
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Falsely arrested suspect",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "note": "arrested the day before the tour, four years after the 2010 crime; denies all charges and is in fact innocent -- the real culprit is Kuranishi"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kaga Yuzen Industry Centre",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Ishikawa Tourist Centre",
+    "attrs": {
+     "note": "site of the first staged purse-snatching (candid camera)"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Kenroku-en (Kinjo Reitaku)",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Kanazawa Castle",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "21st Century Museum of Art",
+    "attrs": {
+     "note": "site of the second staged purse-snatching (candid camera) and, in the same commotion, the real attack on Akiyama"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Kanazawa East Hospital",
+    "attrs": {}
+   },
+   {
+    "id": "l7",
+    "name": "Yamashiro Hot Spring footbath",
+    "attrs": {
+     "note": "Rosanjin's Iroha Soan; site of the final confrontation where Kuranishi is lured out"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Modified camera watch",
+    "role": "instrument",
+    "attrs": {
+     "worn_by": "Harumi Akiyama",
+     "cover_story": "hand-me-down men's watch from her brother",
+     "actual_function": "hidden camera used for the event's candid-camera filming",
+     "missing_after_attack": true
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Original code cards",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "2010/5/6, case, culprit, Kuranishi-san",
+     "decoding_method": "checkpoint codes read as a date, a rebus for 'hoshi' (police jargon for culprit) + saddle = 'Hoshikura', and a literal reading 'nishi-san', combining to name Kuranishi",
+     "true_origin": "pre-written by Akiyama before the tour began, not lost as she claimed"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Replacement code cards",
+    "role": "evidence",
+    "attrs": {
+     "written_by": "Harumi Akiyama",
+     "purpose": "innocuous decoys handed out after she falsely claimed to have lost the originals, so the accusing originals would go unnoticed"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Original code cards decode to '2010/5/6, case, culprit, Kuranishi-san' combined; the rewritten cards Akiyama handed out after claiming she'd lost the originals are innocuous checkpoint-only decoys -- the untouched originals, dropped from her bag at the crime scene, prove she was secretly accusing Kuranishi all along.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Akiyama was seen wearing her large watch throughout the tour but it was gone when she was carried to the stretcher; only Kuranishi touched her body afterward, feigning a pulse check -- he took it because it held a hidden camera he feared had filmed the attack.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "coworker_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l6"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l7"
+  },
+  {
+   "type": "assaults",
+   "from": "p2",
+   "to": "p6",
+   "temporal_frame": "backstory",
+   "method": "robbery assault",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "threatens",
+   "from": "p2",
+   "to": "p1",
+   "detail": "text message: 'If they find out, you'll be complicit, too.'"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p2",
+   "detail": "tells him she intends to confess to Kogoro Mouri: 'Let's pay for our crime and start over together.'"
+  },
+  {
+   "type": "assaults",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": [
+    "cover_up"
+   ],
+   "detail": "attacked her near the 21st Century Museum of Art during the commotion of a staged candid-camera chase, to stop her confessing"
+  },
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "o1",
+   "circumstance_tags": [
+    "cover_up"
+   ],
+   "detail": "removed her watch afterward, feigning a pulse check, fearing its hidden camera had recorded the attack"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "silence_witness"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "written_by",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "written_by",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l5"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p7"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

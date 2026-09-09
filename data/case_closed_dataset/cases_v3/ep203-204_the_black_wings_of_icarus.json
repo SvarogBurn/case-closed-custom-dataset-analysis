@@ -1,0 +1,358 @@
+{
+ "case_id": "ep203-204_the_black_wings_of_icarus",
+ "episode_number": "203-204",
+ "title": "The Black Wings of Icarus",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Black_Wings_of_Icarus",
+ "subtitle_source": ["subs_resolved/0203.txt", "subs_resolved/0204.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention even though Ran is the key witness who accompanies Arimori to the plateau all day and sees the butterfly land on his shoulder -- her testimony is represented indirectly through the edges it establishes (e.g. o8 lands_on p1, p1 was_at l4). The old lower-fidelity case file (cases/ep203-204_the_black_wings_of_icarus.json) had the correct culprit (Mitsuyuki Arimori/s1) and correct broad trick (hang glider + pollen/scale evidence), confirmed against the full transcript, so label.murderer_id is unchanged. However it was thin: it collapsed the whole crime into 2 generic murder events, omitted Arimori's true motive entirely (his late brother Teruhiko, never mentioned in the old file), omitted the two red-herring suspects' motives (Shiromoto's divorce/debt dispute, Miyabe's forced recast of Chizuru), omitted the locked-room staging mechanics (door guard removed/reinstalled with a screwdriver, no footprints on the stool table), omitted the unwitting-accomplice trick (hiding in Shinobu's car trunk to get back to the plateau undetected, since flying a hang glider back uphill is aerodynamically impossible per Kogoro), and mislabeled the culprit's stun-gun+rope as generic 'was_used_in' rather than direct honest verbs. Character-card romanization 'Shimokasa' (not the old file's 'Shimogasa') and 'Kouichi Mito' are used here as the higher-fidelity source. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Mitsuyuki Arimori",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "hotel manager, Hotel Arimori",
+    "attrs": {
+     "age": 32,
+     "true_motive": "revenge for his younger brother Teruhiko's death, which he blames on Chizuru",
+     "trick": "used a hang glider to fly from the plateau to the hotel roof and back, staging Chizuru's murder as a locked-room suicide while appearing to never have left the group"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Chizuru Bizen",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "actress",
+    "attrs": {
+     "age": 30,
+     "cause_of_death": "suffocation from a blocked airway (strangled/hanged with a rope)",
+     "estimated_time_of_death": "1:30 P.M. - 2:30 P.M.",
+     "staged_as": "suicide by hanging in a locked hotel room"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hidehiko Shiromoto",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "businessman",
+    "attrs": {
+     "age": 46,
+     "note": "was finalizing a development plan for 'Vager Land' near the plateau; in a divorce/compensation dispute with Chizuru over her company's huge loans"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kouta Miyabe",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "drama production company president",
+    "attrs": {
+     "age": 35,
+     "note": "under pressure from sponsors to drop Chizuru from a movie lead in favor of a younger actress, Reika"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Minaho Shimokasa",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "hotel employee",
+    "attrs": {
+     "age": 21
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Honami Shimokasa",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "hotel employee",
+    "attrs": {
+     "age": 21
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Shinobu Shimon",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "chef, Hotel Arimori",
+    "attrs": {
+     "age": 27,
+     "note": "publicly humiliated by Chizuru over a soup complaint the night before the murder; unknowingly used by Arimori as an old hang-gliding-friend alibi prop and later as unwitting transport back to the plateau"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Kouichi Mito",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Nagano Province detective",
+    "attrs": {
+     "age": 33,
+     "note": "leads the on-scene investigation; initially calls it a suicide, then a locked-room murder, before Kogoro identifies the culprit"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Teruhiko Arimori",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "university student (Tokyo University) at time of death",
+    "attrs": {
+     "died_of": "hang glider crash",
+     "circumstances": "miscalculated a flight while in a deep depression after Chizuru moved on to wealthier men despite him spending heavily to keep her; sold the family hotel (inherited from his and Mitsuyuki's father) to fund her without telling his brother",
+     "relation_to_case": "Mitsuyuki Arimori's younger brother; his death is the true motive for the murder"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Reika",
+    "aliases": [],
+    "roles": ["backstory_figure", "bystander"],
+    "occupation": "actress",
+    "attrs": {
+     "note": "the younger actress sponsors wanted in Chizuru's movie role instead; surname not given in the transcript"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Hotel Arimori",
+    "attrs": {
+     "note": "plateau-country hotel; recently sold by Teruhiko Arimori before his death, Mitsuyuki kept on as manager by the new owner's goodwill"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Chizuru's suite, Hotel Arimori",
+    "attrs": {
+     "features": "door guard (chain lock) found engaged; window locked from inside; a table had been moved beneath the window as an apparent suicide platform; air conditioning found off despite a warm room, indicating Chizuru had not actually been present since around noon"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Restaurant, Hotel Arimori",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Plateau (mountain highland)",
+    "attrs": {
+     "note": "site of an old hang-gliding cliff, now off-limits due to land development; habitat of the rare Miyama white butterfly, which cannot survive unless the water is clean"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Lake",
+    "attrs": {
+     "note": "fishing spot roughly 15 minutes by car from the hotel"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Roof and roof storage room, Hotel Arimori",
+    "attrs": {
+     "note": "storage room held the hang gliders Arimori and his late brother used to fly; roof is lit well enough at night to navigate a landing"
+    }
+   },
+   {
+    "id": "l7",
+    "name": "Veranda outside Chizuru's room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Hang glider",
+    "role": "instrument",
+    "attrs": {
+     "origin": "recovered from the roof storage room; historically used by Arimori, his brother Teruhiko, and Shinobu",
+     "setup_time": "at least fifteen minutes to assemble"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Rope",
+    "role": "weapon",
+    "attrs": {
+     "uses": "used to strangle/hang Chizuru at the micro-bus, and separately to descend from the roof to the veranda outside her room",
+     "evidence": "left a rope mark on the roof directly above the victim's room"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Stun gun",
+    "role": "weapon",
+    "attrs": {
+     "use": "used to knock Chizuru unconscious in her room before abducting her"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Micro-bus (hotel vehicle)",
+    "role": "tool",
+    "attrs": {
+     "used_by": "Arimori, to secretly transport the unconscious Chizuru and the hang glider up to the plateau",
+     "cover_story": "claimed engine trouble to justify staying behind alone at the plateau at day's end"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Door guard (chain lock), Chizuru's room",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "removed from outside with a screwdriver, then reinstalled and re-screwed through the gap in the door as the culprit stepped into the hall; screws were left loose enough that a single tackle displaced it",
+     "tool_used": "screwdriver"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Table (moved beneath the window)",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "no footprints found on it despite Chizuru's feet being bare -- proves she never stood on it herself to hang, disproving suicide"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Butterfly wing scale on Chizuru's skirt",
+    "role": "evidence",
+    "attrs": {
+     "desc": "white powder later identified as the scale of a Miyama white butterfly",
+     "significance": "this butterfly only exists on top of the plateau, proving her body had been at the plateau despite everyone believing she never left the hotel"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Miyama white butterfly (landed on Arimori's shoulder)",
+    "role": "evidence",
+    "attrs": {
+     "desc": "landed on Arimori's shoulder at the plateau in front of witnesses, then died there",
+     "significance": "source of the matching wing scale later found on Chizuru's skirt"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Old photograph (Arimori, Shinobu, and Teruhiko hang gliding)",
+    "role": "evidence",
+    "attrs": {
+     "desc": "shown to Ran and Conan at check-in, establishing Arimori's hang-gliding history and his late brother's identity"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Shinobu's car",
+    "role": "tool",
+    "attrs": {
+     "owner": "Shinobu Shimon",
+     "note": "unknowingly used by Arimori to hide in the trunk and be driven back to the plateau undetected, since flying the hang glider back uphill against the wind is not physically possible"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "A Miyama white butterfly (o8), a species found only atop the plateau, landed on Arimori's shoulder in front of witnesses during the day and died there; a matching wing scale (o7) was later found on Chizuru's skirt -- proving Arimori had personally carried her body while he still had that scale on him, even though everyone believed Chizuru had never left the hotel.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Chizuru's feet were bare, yet no footprints were found on the table (o6) pushed beneath the window that she supposedly stood on and kicked away to hang herself -- proves she never climbed it herself, meaning the hanging was staged after death rather than a suicide.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p9", "to": "p2", "relation_type": "dated"},
+  {"type": "relationship", "from": "p1", "to": "p9", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p10", "to": "p4", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p7", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p1", "to": "p7", "relation_type": "old_hang_gliding_friend"},
+
+  {"type": "was_at", "from": "p9", "to": "l4", "order": 1, "temporal_frame": "backstory", "years_before_present": 5},
+  {"type": "was_at", "from": "p1", "to": "l3", "order": 2, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p2", "to": "l3", "order": 2, "temporal_frame": "backstory"},
+  {"type": "confronts", "from": "p1", "to": "p2", "order": 2, "temporal_frame": "backstory", "circumstance_tags": ["decisive_moment"], "detail": "Arimori reveals himself as Teruhiko's older brother and asks Chizuru to say a single word at his grave; she dismisses him, refusing to acknowledge any responsibility, which is when Arimori decides to kill her"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p7", "to": "o10"},
+  {"type": "located_in", "from": "o1", "to": "l6"},
+  {"type": "located_in", "from": "o2", "to": "l6", "detail": "rope mark left on the roof directly above the victim's room, from where Arimori descended by rope to the veranda"},
+  {"type": "located_in", "from": "o5", "to": "l2"},
+  {"type": "located_in", "from": "o6", "to": "l2"},
+  {"type": "implicates", "from": "o2", "to": "p1"},
+  {"type": "regarding", "from": "o9", "to": "p1"},
+  {"type": "regarding", "from": "o9", "to": "p7"},
+  {"type": "regarding", "from": "o9", "to": "p9"},
+
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 10, "temporal_frame": "present"},
+  {"type": "assaults", "from": "p1", "to": "p2", "order": 11, "temporal_frame": "present", "method": "stun gun", "circumstance_tags": ["premeditated"]},
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 11, "temporal_frame": "present"},
+  {"type": "abducts", "from": "p1", "to": "p2", "order": 12, "temporal_frame": "present", "circumstance_tags": ["premeditated"]},
+  {"type": "loads_body_into", "from": "p1", "to": "o4", "order": 12, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p7", "to": "l4", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l5", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l5", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 13, "temporal_frame": "present"},
+
+  {"type": "lands_on", "from": "o8", "to": "p1", "order": 14, "temporal_frame": "present", "detail": "witnessed by Ran; the butterfly dies on Arimori's shoulder, leaving a wing scale on him"},
+
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 14, "temporal_frame": "present", "detail": "returned to hotel at 12:30 P.M. for a forgotten bento, ate lunch in the lobby, tried Chizuru's door with no answer, left again at 1:30 P.M."},
+
+  {"type": "kills", "from": "p1", "to": "p2", "order": 15, "temporal_frame": "present", "method": "strangled/hanged with a rope inside the parked micro-bus at the plateau", "circumstance_tags": ["premeditated"]},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 15, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 16, "temporal_frame": "present", "detail": "feigns micro-bus engine trouble to stay behind alone as the rest of the group starts down the mountain around 6:05 P.M."},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o4", "order": 16, "temporal_frame": "present"},
+
+  {"type": "flies_to", "from": "p1", "to": "l6", "order": 17, "temporal_frame": "present", "method": "hang glider (o1)", "detail": "carries Chizuru's body in tow from the plateau to the hotel roof"},
+  {"type": "descends_to", "from": "p1", "to": "l7", "order": 18, "temporal_frame": "present", "method": "rope (o2), from the roof"},
+  {"type": "stages_suicide_of", "from": "p1", "to": "p2", "order": 19, "temporal_frame": "present", "circumstance_tags": ["staged_suicide", "locked_room"], "detail": "hangs the body inside Chizuru's room"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 19, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o5", "order": 20, "temporal_frame": "present", "circumstance_tags": ["locked_room"], "detail": "removes and reinstalls the door guard from outside using a screwdriver"},
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 21, "temporal_frame": "present", "detail": "leaves the hotel via an emergency exit, which auto-locks but opens freely from inside"},
+  {"type": "hides_in", "from": "p1", "to": "o10", "order": 22, "temporal_frame": "present", "circumstance_tags": ["staged_alibi", "unwitting_accomplice"]},
+  {"type": "transports_unknowingly", "from": "p7", "to": "p1", "order": 23, "temporal_frame": "present", "circumstance_tags": ["unwitting_accomplice"], "detail": "drives back toward the plateau with Arimori hidden in the trunk, unaware he was ever gone"},
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 24, "temporal_frame": "present", "detail": "slips out of the trunk once Ran and Shinobu are distracted, then reappears claiming to have been stargazing"},
+
+  {"type": "discovers_body_of", "from": "p7", "to": "p2", "order": 25, "temporal_frame": "present"},
+  {"type": "discovers_body_of", "from": "p3", "to": "p2", "order": 25, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p8", "to": "l2", "order": 26, "temporal_frame": "present"},
+
+  {"type": "implicates", "from": "o5", "to": "p1"},
+  {"type": "implicates", "from": "o6", "to": "p1"},
+  {"type": "implicates", "from": "o7", "to": "p1"},
+  {"type": "implicates", "from": "o8", "to": "p1"},
+  {"type": "regarding", "from": "cA", "to": "o7"},
+  {"type": "regarding", "from": "cA", "to": "o8"},
+  {"type": "regarding", "from": "cA", "to": "p1"},
+  {"type": "implicates", "from": "cA", "to": "p1"},
+  {"type": "regarding", "from": "cB", "to": "o6"},
+  {"type": "regarding", "from": "cB", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "revenge_for_brothers_death"},
+  {"type": "has_motive_against", "from": "p3", "to": "p2", "motive_type": "financial_dispute_divorce (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p2", "motive_type": "professional_conflict_recast (red herring)"},
+  {"type": "has_motive_against", "from": "p7", "to": "p2", "motive_type": "public_humiliation (red herring, not pursued -- alibied out)"},
+
+  {"type": "insults", "from": "p2", "to": "p7", "order": 3, "temporal_frame": "backstory", "circumstance_tags": ["red_herring"], "detail": "publicly humiliates Shinobu over a soup complaint in front of the other guests"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

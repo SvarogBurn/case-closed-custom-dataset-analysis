@@ -1,0 +1,498 @@
+{
+ "case_id": "ep048-049_diplomat_murder_case",
+ "episode_number": "48-49",
+ "title": "Diplomat Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Diplomat_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0048.txt (407 dialogue lines) + case_closed_dataset/subs_resolved/0049.txt (370 dialogue lines), full two-part transcript read",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan/Shinichi, Heiji Hattori, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. The apparent locked-room mechanism (fishing line threading the key into the victim's pocket) is itself a red herring the culprit planted throughout the house to frame the victim's father, who then falsely confesses for reasons the transcript never states -- the real trick is a 'psychological locked room': the victim was only drugged, not dead, when investigators assumed he'd already been murdered half an hour earlier, and the culprit killed him herself while alone with him during the 'discovery'. The character-card label calls p6 the victim's 'Grandfather', but his own line ('I was the one who killed my son Isao') identifies him as Isao's father; the father relationship is used here as the more authoritative source. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Isao Tsujimura",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "diplomat",
+    "attrs": {
+     "age": 54,
+     "died_of": "fast-acting poison delivered by a needle, after first being drugged unconscious",
+     "time_of_death_estimate_initial": "investigators initially assumed roughly half an hour before the body was found, based on body warmth and lack of rigor mortis -- actually incorrect, since he had only been drugged, not yet killed, during most of that window"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kimie Tsujimura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "wife of Isao Tsujimura",
+    "attrs": {
+     "age": 50,
+     "secret": "Yukiko Katsuragi's biological mother, from her first marriage to Kenji Yamashiro"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Fumio Koike",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "butler of the Tsujimura household",
+    "attrs": {
+     "age": 48,
+     "cleared_because": "spoke with neighbors at the front door for the entire murder window (3:30-4:00), then greeted the whole group arriving together"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yukiko Katsuragi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "medical student, Toto Medical University; Takayoshi Tsujimura's girlfriend",
+    "attrs": {
+     "age": 24,
+     "cleared_because": "arrived with Takayoshi just before Kimie and the group, but was gone from the study for only a minute or two -- not enough time to commit the murder",
+     "true_parentage": "biological daughter of Kimie Tsujimura and the late Kenji Yamashiro, adopted out after her father's imprisonment; unaware of the connection until the case's resolution"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Takayoshi Tsujimura",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "legal trainee; Isao Tsujimura's son",
+    "attrs": {
+     "age": 27,
+     "cleared_because": "arrived with Yukiko just before Kimie and the group, but was gone from the study for only a minute or two -- not enough time to commit the murder"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Toshimitsu Tsujimura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "former university professor; Isao Tsujimura's father",
+    "attrs": {
+     "age": 78,
+     "hobby": "fishing",
+     "false_confession": "falsely confesses to killing his own son after the fishing-line evidence surfaces; the transcript never states why he does this, only that he 'knowingly stepped into the killer's trap'",
+     "note": "the opening character card mislabels him as Isao's grandfather, but his own line ('I was the one who killed my son Isao') identifies him as Isao's father; treated here as his father"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kenji Yamashiro",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "diplomat",
+    "attrs": {
+     "died_of": "died in prison after being framed for corruption by Isao Tsujimura (assisted by Isao's father), 20 years before the murder",
+     "note": "Kimie Tsujimura's first husband and Yukiko Katsuragi's biological father"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Tsujimura household study (staged locked room)",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Japanese-style room, Tsujimura household",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned needle",
+    "role": "weapon",
+    "attrs": {
+     "hidden_in": "a custom groove inside Kimie's key holder, sized exactly to conceal it",
+     "mechanism": "fast-acting poison; pricked into the victim's hairline while he was already unconscious from an earlier sleeping drug, killing him almost instantly"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Sleeping drug",
+    "role": "weapon",
+    "attrs": {
+     "administered": "given to Isao that morning/afternoon before Kimie left for the Mouri Detective Agency, leaving him unconscious in his study"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Fishing-line rig",
+    "role": "evidence",
+    "attrs": {
+     "found": "one set staged in the study (needle-ended line taped to the key holder, meant to thread the key under the door into the victim's pocket), plus several more discarded copies planted throughout the house, including the Japanese-style room the grandfather/father used",
+     "staging_flaw": "physically the key could not flip over to join its holder inside a snug, tightly-fitted pocket without the pocket folding and blocking it; the rig was a fabricated locked-room trick planted purely to mislead investigators and implicate a fisherman in the house"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Opera playing on the study stereo",
+    "role": "tool",
+    "attrs": {
+     "purpose": "left playing loudly to mask any sound the victim might have made while being poisoned"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Stacked books beside the body",
+    "role": "tool",
+    "attrs": {
+     "purpose": "piled up to hide the victim's face in case his expression had contorted from the poison"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Kimie's and Isao's matching key holders",
+    "role": "evidence",
+    "attrs": {
+     "significance": "identical outward design; only Kimie's holder conceals a hidden internal groove built to hold the poison needle"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "20-year-old photograph of young Kimie",
+    "role": "evidence",
+    "attrs": {
+     "shows": "Kimie as a young woman, strikingly resembling Yukiko Katsuragi apart from hair color",
+     "significance": "the piece of evidence that exposes Kimie as Yukiko's biological mother, and therefore her motive"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "For the key to end up fully inside the victim's tight double pocket (as found), it would have had to flip over after entering key-first -- but the snug pocket folds and blocks exactly that motion (demonstrated live on Inspector Megure's own pants), meaning the key must have been placed inside by hand beforehand, not pulled in on a thread from outside a locked room.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Kimie's key holder is identical in outward design to the victim's, but conceals a hidden groove sized exactly for the poison needle -- proof she carried the murder weapon in plain sight the whole time.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "A 20-year-old photograph of a young Kimie is nearly identical to Yukiko Katsuragi except for hair color, revealing Kimie is secretly Yukiko's biological mother from her first marriage to Kenji Yamashiro -- the diplomat Isao framed and destroyed two decades earlier.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "step_parent_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "parent_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p7",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p7",
+   "relation_type": "widow_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p4",
+   "relation_type": "dating"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p7",
+   "relation_type": "electoral_rival",
+   "symmetric": true
+  },
+  {
+   "type": "frames",
+   "from": "p1",
+   "to": "p7",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 20,
+   "circumstance_tags": ["cover_up"],
+   "detail": "frames rival diplomat Kenji Yamashiro for corruption, with his own father's help, to eliminate him professionally and clear the way to marry his widow"
+  },
+  {
+   "type": "assists",
+   "from": "p6",
+   "to": "p1",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 20,
+   "detail": "helps fabricate the corruption case against Yamashiro"
+  },
+  {
+   "type": "courts",
+   "from": "p1",
+   "to": "p2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 20,
+   "detail": "cajoles the widowed, emotionally devastated Kimie into marrying him"
+  },
+  {
+   "type": "confesses",
+   "from": "p1",
+   "to": "p2",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "admits under pressure, after Kimie notices Yukiko's resemblance to her late husband, that he framed Yamashiro for corruption with his father's help"
+  },
+  {
+   "type": "forbids",
+   "from": "p1",
+   "to": "p4",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "refuses to let his son be with the daughter of the man he framed"
+  },
+  {
+   "type": "distances_from",
+   "from": "p2",
+   "to": "p4",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "treats her own daughter harshly and denies any connection in public, to avoid revealing the truth while plotting revenge"
+  },
+  {
+   "type": "sabotages",
+   "from": "p2",
+   "to": "o3",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated", "red_herring", "frame_up"],
+   "detail": "plants matching fishing-line rigs throughout the house, including near where the fisherman father-in-law spends his time, to fabricate a false locked-room mechanism"
+  },
+  {
+   "type": "drugs",
+   "from": "p2",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated"],
+   "detail": "drugs Isao unconscious before leaving for the Mouri Detective Agency"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "arrives around 2:00pm, finds Isao already 'holed up' (drugged) in the study, watches TV in the next room for about an hour, then leaves"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "arrives with Yukiko shortly before Kimie's return; finds the study door locked and unanswered, goes back downstairs"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "arrives with Takayoshi shortly before Kimie's return; finds the study door locked and unanswered, goes back downstairs"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "speaks with neighbors at the front door between 3:00 and 4:00"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "directed to wait in the Japanese-style room after the body is discovered; found there discarding one of the planted fishing-line rigs in the garbage, which is used to falsely implicate him"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l2",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "a discarded copy of the fishing-line rig is found thrown away in the garbage of the Japanese-style room the father/grandfather was using"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "returns around 3:30-4:00 with the Mouri group, enters the study first and alone"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "method": "pricks him with a poison-coated needle hidden in her key holder while pretending to wake him from what everyone assumed was a nap; he was already unconscious from the earlier sleeping drug and died almost instantly",
+   "circumstance_tags": ["premeditated", "psychological_locked_room"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o4",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "discovers_body_of",
+   "from": "p2",
+   "to": "p1",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confesses",
+   "from": "p6",
+   "to": "p1",
+   "order": 8,
+   "temporal_frame": "present",
+   "circumstance_tags": ["red_herring", "false_confession"],
+   "detail": "falsely confesses to killing his own son once the fishing-line evidence surfaces; the reason is never stated in the available transcript"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1",
+   "detail": "the sleeping drug is administered to Isao in his study, leaving him unconscious there until Kimie returns to kill him with the needle"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2",
+   "detail": "the sleeping drug's presence is what reveals Isao was only drugged, not yet dead, when investigators assumed the murder had already occurred -- exposing Kimie's psychological locked-room trick"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "o3",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "o7",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o7"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge for framing and effectively killing her first husband Kenji Yamashiro, manipulating her into marrying him afterward, and forbidding their daughter Yukiko's relationship with his son"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

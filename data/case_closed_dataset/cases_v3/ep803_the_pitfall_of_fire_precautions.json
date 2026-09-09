@@ -1,0 +1,136 @@
+{
+ "case_id": "ep803_the_pitfall_of_fire_precautions",
+ "episode_number": "803",
+ "title": "The Pitfall of Fire Precautions",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Pitfall_of_Fire_Precautions",
+ "subtitle_source": ["subs_resolved/0803.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Haibara, Genta, Mitsuhiko, Ayumi, Kogoro) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Discrepancy vs. the old lower-fidelity `cases/ep803...json` file: it claimed 'No human victim (property arson) so no motive/knows edges are generated' -- this is wrong. The transcript is explicit that the original run of arsons a year earlier had a fatal casualty (an office worker who wrapped himself in a plastic equipment-repair sheet at the fourth site and died), which is both the reason the original spree stopped and the reason Kamaishi (a burglar who witnessed it but never came forward) is driven to catch the arsonist himself this time. The old file's murderer_id (Harue Yatabe / s2) is correct and matches the transcript. case_type: arson (with one prior-year fatality).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Suguru Kamaishi",
+    "aliases": ["the lone detective squad"],
+    "roles": ["suspect", "witness"],
+    "occupation": "unemployed; former burglar",
+    "attrs": {
+     "age": 25,
+     "handedness": "left",
+     "self_description": "a lone detective squad protecting the town",
+     "past_crime": "burglary, self-stopped after witnessing the fatal arson"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Harue Yatabe",
+    "aliases": ["Madam"],
+    "roles": ["suspect"],
+    "occupation": "bento shop worker; former head of Iroha Toys factory",
+    "attrs": {
+     "age": 48,
+     "handedness": "left",
+     "fired_reason": "company blamed her after a child was seriously hurt by faulty playground equipment",
+     "motive": "wanted an apology from Iroha Toys; escalated to arson for revenge"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Unnamed office worker (fire victim)",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "office worker",
+    "attrs": {
+     "died_of": "fire",
+     "circumstance": "wrapped himself in a plastic equipment-repair sheet at the fourth arson site and was caught in the blaze; no witnesses came forward at the time"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Sumire Park", "attrs": {"site_number": 1, "burned_last_year": "swing", "burned_this_year": "seesaw"}},
+   {"id": "l2", "name": "Tsutsuji Park", "attrs": {"site_number": 2, "burned_last_year": "monkey bar", "burned_this_year": "arched bridge"}},
+   {"id": "l3", "name": "Himawari Park", "attrs": {"site_number": 3, "burned_last_year": "horse", "burned_this_year": "jungle gym"}},
+   {"id": "l4", "name": "Ninja Fortress park", "attrs": {"site_number": 4, "note": "site of last year's fatal fire; this year's fire was extinguished before harm"}},
+   {"id": "l5", "name": "Iroha Toys factory", "attrs": {"site_number": 5, "note": "final intended target; fire stopped before major damage"}},
+   {"id": "l6", "name": "Bento shop", "attrs": {"note": "Yatabe's workplace"}},
+   {"id": "l7", "name": "House near Ninja Fortress", "attrs": {"note": "burglarized by Kamaishi the night of last year's fatal arson"}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Burned kanji at Sumire Park", "role": "evidence", "attrs": {"character": "To (と)"}},
+   {"id": "o2", "name": "Burned kanji at Tsutsuji Park", "role": "evidence", "attrs": {"character": "He (へ)"}},
+   {"id": "o3", "name": "Burned kanji at Himawari Park", "role": "evidence", "attrs": {"character": "Ho (ほ)"}},
+   {"id": "o4", "name": "Burned kanji at Ninja Fortress", "role": "evidence", "attrs": {"character": "Ni (に)"}},
+   {"id": "o5", "name": "Bento-shop delivery van", "role": "evidence", "attrs": {"note": "only Yatabe knows how to drive it"}},
+   {"id": "o6", "name": "Kerosene smell at bento shop", "role": "evidence", "attrs": {"detected_by": "Conan, in the shop kitchen"}},
+   {"id": "o7", "name": "Newspaper clipping on house burglary", "role": "evidence", "attrs": {"headline": "Nearby House Robbed!"}}
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Burned characters at sites 1-4, read backward, spell 'Iroha' -- matching the 'Iroha Toys' brand stamped on all the burned equipment -- pointing to the toy factory as the fifth and final target.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The fleeing arsonist is left-handed, matching both Kamaishi and Yatabe, but only Yatabe can drive the delivery van used to reach the factory -- narrowing it to her.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "regular_customer_of"},
+
+  {"type": "burns", "from": "p2", "to": "l1", "detail": "seesaw and swing burned in two consecutive years", "circumstance_tags": ["repeat_offense"]},
+  {"type": "burns", "from": "p2", "to": "l2", "detail": "monkey bar and arched bridge burned in two consecutive years", "circumstance_tags": ["repeat_offense"]},
+  {"type": "burns", "from": "p2", "to": "l3", "detail": "horse and jungle gym burned in two consecutive years", "circumstance_tags": ["repeat_offense"]},
+  {"type": "burns", "from": "p2", "to": "l4", "detail": "fatal fire last year; extinguished by Kamaishi this year before anyone was hurt", "circumstance_tags": ["fatal", "repeat_offense"]},
+  {"type": "burns", "from": "p2", "to": "l5", "detail": "poured oil and used a torch at the factory; stopped before major damage", "circumstance_tags": ["attempted", "prevented"]},
+
+  {"type": "kills", "from": "p2", "to": "p3", "method": "fire", "circumstance_tags": ["unintended_casualty"]},
+
+  {"type": "extinguishes", "from": "p1", "to": "l4"},
+  {"type": "burgles", "from": "p1", "to": "l7"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p1", "to": "l6"},
+  {"type": "was_at", "from": "p1", "to": "l7"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p2", "to": "l6"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+
+  {"type": "owns", "from": "p2", "to": "o5"},
+  {"type": "owns", "from": "p1", "to": "o7"},
+
+  {"type": "leaves_evidence", "from": "p2", "to": "o1"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o3"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o4"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6"},
+
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "regarding", "from": "c1", "to": "l5"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o5"},
+  {"type": "regarding", "from": "o7", "to": "l7"},
+  {"type": "regarding", "from": "o7", "to": "p1"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

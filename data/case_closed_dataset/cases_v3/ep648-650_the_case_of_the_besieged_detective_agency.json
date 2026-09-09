@@ -1,0 +1,227 @@
+{
+ "case_id": "ep648-650_the_case_of_the_besieged_detective_agency",
+ "episode_number": "648-650",
+ "title": "The Case of the Besieged Detective Agency",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Case_of_the_Besieged_Detective_Agency",
+ "subtitle_source": ["subs_resolved/0648.txt", "subs_resolved/0650.txt"],
+ "schema_version": "v3",
+ "notes": "Case spans episodes 648-650 but only 648 and 650 subtitle files exist locally (0649.txt is missing from subs_resolved); the framing/hostage-negotiation scenes and any content unique to 649 could not be read, so this rebuild is based on 648 (setup: hostage-taking, evidence dump, SNS dying-message reveal) and 650 (resolution: false suicide bluff, true culprit reveal, confession) only. Recurring detective-cast nodes (Conan/Kudo Shin'ichi, Kogoro Mouri, Ran, and new-this-episode Masumi Sera) omitted by convention, per CONSTRUCTION.md -- none of them are suspects, victims, or motive-holders in the underlying murder; Sera's only function is a red-herring subplot about Ran being seen with 'a guy', unrelated to the murder graph. Unlike several other rebuilds, the OLD case file's stated culprit (s2 = Shinobu Yuchi) is CORRECT and matches the transcript -- Yuchi (nicknamed 'Fox') is confirmed the killer in 650, not Mitsui ('Rat'), who was the initial red-herring suspect purely because she was literally the last of the three to visit Miku's room per the dying-message order. The old file's event order (Nihei, then Yuchi, then Mitsui visit the room) also matches. What the old file flattened: the SNS dying-message decoding required a second layer (the post ending on Fox's visit with 'still here... getting sleepy' was written before Rat/Mitsui ever arrived, meaning the last person actually in the room before Miku fell asleep was Fox, not the literal last visitor Rat); the physical evidence trail (filed book fore-edge hiding bloodied fingerprints, swapped bath slippers); and Yuchi's real motive (she ghostwrote/co-wrote Miku's award-winning debut novel and was denied credit, offered only an anonymous ghostwriter role going forward). No `event` node type: every action is a directly typed edge between the entities involved. Multigraph: multiple parallel edges exist between the same node pairs (e.g. Yuchi->Miku carries both `kills` and `has_motive_against` and a prior `relationship`). Temporal fields (order/temporal_frame/years_before_present) intentionally omitted per current build guidance. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Sawaguri Miku",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "mystery writer, Naomoto Award winner",
+    "attrs": {
+     "death_staged_as": "wrist-slit suicide in the bathtub of her hot spring inn room",
+     "sns_habit": "nicknamed same-day visitors after animals in her live SNS posts",
+     "friend_group_pact": "first of the four writer friends to hit 1 million book sales treats the others to a hot spring trip"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Sawaguri Isao",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "leader of survival-game team 'Green Cap'",
+    "attrs": {
+     "action": "held the Mouri Detective Agency hostage at gunpoint with body-worn bombs, demanding the truth about his sister's death",
+     "discovered_body": true,
+     "bomb_deadline": "next morning"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Mitsui Tamami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "amateur novelist, family stonemasonry business",
+    "attrs": {
+     "age": 41,
+     "nickname_meaning": "'Rat' -- family business handles rat-colored stone",
+     "cleared_reason": "rushed out only to use the restroom; premeditated murderer returning to the room afterward is implausible"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yuchi Shinobu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "amateur novelist, neighborhood bakery worker",
+    "attrs": {
+     "age": 36,
+     "nickname_meaning": "'Fox' -- bakery sells fox-colored/golden-brown bread",
+     "motive_detail": "ghostwrote/co-wrote Miku's award-winning debut novel; Miku refused public credit and offered her only an anonymous ghostwriter role going forward"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Nihei Sumika",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "amateur novelist, housewife",
+    "attrs": {
+     "age": 39,
+     "nickname_meaning": "'Elephant' -- husband is a seal craftsman who carves ivory-colored seals",
+     "cleared_reason": "methodical, high-strung personality inconsistent with mixing up someone else's slippers with her own"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Room 205, Furitsukaya Ryokan",
+    "attrs": {
+     "note": "Miku's hot-spring inn room; entrance door requires turning a key, not auto-lock -- found effectively sealed"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Isao's room, Furitsukaya Ryokan",
+    "attrs": {
+     "note": "adjoins Miku's room via a shared balcony"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Mouri Detective Agency",
+    "attrs": {
+     "note": "site of the hostage standoff"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Yuchi's signed debut-novel copy",
+    "role": "evidence",
+    "attrs": {
+     "fore_edge": "sanded smooth, unlike the jagged fore edge on every other copy from the same print run",
+     "cover": "swapped for a clean replacement cover",
+     "hidden_content": "Miku's bloody fingerprint smears from gripping the book as she was carried to the bathroom"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Bloodied bathmat (crime-scene photo)",
+    "role": "evidence",
+    "attrs": {
+     "marks": "two full bloody handprints near the bathroom door plus a fingertip smear trail further in, consistent with gripping an object while being moved"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Broken balcony window glass",
+    "role": "evidence",
+    "attrs": {
+     "location": "fragments found outside on the balcony",
+     "significance": "contradicts Isao's claim of breaking the glass from outside in; consistent with someone exiting through the window afterward"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Isao's handgun",
+    "role": "weapon",
+    "attrs": {}
+   },
+   {
+    "id": "o5",
+    "name": "Isao's body-worn bombs",
+    "role": "weapon",
+    "attrs": {
+     "timer": "set to detonate the following morning"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Miku's printed SNS posts",
+    "role": "evidence",
+    "attrs": {
+     "content_summary": "describes visitors in order Elephant, then Fox ('still here... getting sleepy'), then Rat",
+     "posted_via": "Isao's account, at Miku's request, so her SNS friends wouldn't see them live"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Mixed-up bath slippers",
+    "role": "evidence",
+    "attrs": {
+     "detail": "Yuchi's own damp bath slippers ended up worn by Mitsui, while Miku's slippers went missing because Yuchi took them into hiding in the bathroom"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "SNS post order matches the nicknames (Elephant, Fox, Rat), but the final 'still here, getting sleepy' line was posted during Fox's visit, before Rat ever arrived -- proving Fox, not the literal-last-visitor Rat, was the one still in the room as Miku fell asleep.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cB",
+    "desc": "Slipper mismatch: Yuchi's own damp slippers ended up on Mitsui's feet while Miku's slippers went missing -- proof Yuchi, not Nihei, was the one hiding barefoot in the bathroom.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Fore-edge comparison: every copy of the debut novel's first printing has a jagged trimmed edge except Yuchi's signed copy, which is sanded smooth -- proof she filed it down and swapped the cover to hide Miku's bloody fingerprints.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "sns_friend_group_member"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "sns_friend_group_member"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "sns_friend_group_member"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "uncredited_co_author_of_debut_work"},
+
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+
+  {"type": "confronts", "from": "p4", "to": "p1", "detail": "argued with Miku after getting an autograph, refusing to leave; Mitsui's arrival interrupted the quarrel"},
+  {"type": "kills", "from": "p4", "to": "p1", "method": "drugged her, then slit her wrist and staged it as a bathtub suicide", "circumstance_tags": ["locked_room", "staged_suicide", "cover_up"]},
+  {"type": "stages_suicide_of", "from": "p4", "to": "p1", "circumstance_tags": ["staged_suicide"]},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o3", "circumstance_tags": ["locked_room"]},
+  {"type": "leaves_evidence", "from": "p4", "to": "o1"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o2"},
+  {"type": "owns", "from": "p4", "to": "o1"},
+  {"type": "owns", "from": "p4", "to": "o7"},
+
+  {"type": "confronts", "from": "p2", "to": "p3", "circumstance_tags": ["hostage_situation"]},
+  {"type": "confronts", "from": "p2", "to": "p4", "circumstance_tags": ["hostage_situation"]},
+  {"type": "confronts", "from": "p2", "to": "p5", "circumstance_tags": ["hostage_situation"]},
+  {"type": "owns", "from": "p2", "to": "o4"},
+  {"type": "owns", "from": "p2", "to": "o5"},
+
+  {"type": "written_by", "from": "o6", "to": "p1"},
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "implicates", "from": "o2", "to": "p4"},
+  {"type": "implicates", "from": "o7", "to": "p4"},
+  {"type": "implicates", "from": "o6", "to": "p3", "circumstance_tags": ["red_herring"]},
+
+  {"type": "regarding", "from": "cA", "to": "o6"},
+  {"type": "regarding", "from": "cA", "to": "p3"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+  {"type": "regarding", "from": "cB", "to": "o7"},
+  {"type": "implicates", "from": "cB", "to": "p4"},
+  {"type": "regarding", "from": "cC", "to": "o1"},
+  {"type": "implicates", "from": "cC", "to": "p4"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "resentment over uncredited ghostwriting/plagiarism of her literary style in Miku's award-winning debut"},
+  {"type": "has_motive_against", "from": "p2", "to": "p3", "motive_type": "believed her the last visitor 'Rat' before the body was discovered (red herring)", "circumstance_tags": ["red_herring"]},
+  {"type": "has_motive_against", "from": "p2", "to": "p4", "motive_type": "revenge for his sister's murder, once the true culprit was revealed"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

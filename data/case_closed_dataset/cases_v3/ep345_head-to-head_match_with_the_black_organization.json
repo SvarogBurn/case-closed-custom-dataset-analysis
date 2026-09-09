@@ -1,0 +1,791 @@
+{
+  "case_id": "ep345_head-to-head_match_with_the_black_organization",
+  "episode_number": "345",
+  "title": "Head-to-Head Match with the Black Organization: A Dual Mystery on a Full Moon Night",
+  "source_url": "https://www.detectiveconanworld.com/wiki/Head-to-Head_Match_with_the_Black_Organization:_A_Dual_Mystery_on_a_Full_Moon_Night",
+  "subtitle_source": [
+    "subs_resolved/0345.txt"
+  ],
+  "schema_version": "v3",
+  "notes": "Rebuilt from the full 2.5-hour special's subtitle transcript. The episode braids two plots: (1) a solvable whodunit -- producer Senzou Fukuura, playing 'Captain Gold' on his own haunted-ship Halloween party, is shot with a crossbow from the crow's nest -- and (2) the season's big Black Organization confrontation, where Vermouth (real identity Chris Vineyard, revealed to be one and the same as her supposed 'mother' Sharon Vineyard) is unmasked as the FBI's target and as the coerced mastermind behind the ship murder. Recurring detective-cast nodes (Conan/Shin'ichi Kudo, Kogoro Mouri, Ran, Professor Agasa) are omitted by convention as in ep011/ep176-178, even though Conan is the one secretly feeding deductions the whole episode: the on-screen 'solver' is Hattori Heiji in disguise as Kudo Shin'ichi (a wired collaboration with Conan and Agasa), which IS encoded as a person node since he is the one physically present, accused, and unmasked ('You're -- Hattori Heiji!'). The old low-fidelity case file (cases/ep345...) correctly identified the Werewolf-costumed guest as the killer and the crossbow/Silver-Bullet mechanics, so no whodunit correction was needed there; it did, however, present the cast only as costume labels with a flat 'knows' edge to the victim and completely omitted the Black-Organization half of the episode (Vermouth, Jodie Starling, Akai Shuichi, the blackmail of the killer, and the 20-year-old murder of Jodie's parents), which this rebuild adds in full. One coda beat is compressed: after Heiji's cover is blown, the real Conan (still recurring-cast-omitted) confronts Vermouth alone using a wired heart-rate transmitter to threaten exposing her boss's phone number if she kills him -- this exchange reinforces facts already captured elsewhere (Vermouth sparing Haibara's pursuit) and was left out of the edge list rather than inventing a workaround node for it. case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Senzou Fukuura",
+        "aliases": [
+          "Captain Gold"
+        ],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "movie producer",
+        "attrs": {
+          "known_for": "produced \"The Thirteenth Unlucky Day\" and the \"Captain Ghost\" franchise",
+          "role_at_party": "hosts the Halloween cruise in his own Captain Gold costume, gives riddle-hints from the crow's nest speaker"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Werewolf guest",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": null,
+        "attrs": {
+          "costume": "Werewolf",
+          "real_name": "never stated on screen",
+          "motive_origin": "posted a wish for revenge against Fukuura on an internet forum after Fukuura canceled the horror franchise he loved"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Mummy guest (framed)",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "movie staff, talent scout",
+        "attrs": {
+          "costume": "Mummy",
+          "framed_via": "drugged, mask-swapped, and stripped of his THE DEVIL card while unconscious in the bathroom"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Mummy #2 guest",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "movie staff, talent scout",
+        "attrs": {
+          "costume": "Mummy"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Frankenstein guest",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": null,
+        "attrs": {
+          "costume": "Frankenstein",
+          "significance": "was doing an acting routine by the bathroom sink and saw the Werewolf, not the Mummy, leave the stall"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Sonoko Suzuki",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": null,
+        "attrs": {
+          "costume": "witch (played the Medusa card)"
+        }
+      },
+      {
+        "id": "p7",
+        "name": "Ai Haibara",
+        "aliases": [
+          "Sherry"
+        ],
+        "roles": [
+          "witness",
+          "backstory_figure"
+        ],
+        "occupation": "scientist, former Black Organization member",
+        "attrs": {
+          "target_of": "Vermouth wants her found and eliminated"
+        }
+      },
+      {
+        "id": "p8",
+        "name": "Hattori Heiji",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "high school detective, Osaka",
+        "attrs": {
+          "disguise": "posed as Kudo Shin'ichi via an Agasa-built voice-relay rig; deductions whispered by Conan and repeated aloud"
+        }
+      },
+      {
+        "id": "p9",
+        "name": "Vermouth",
+        "aliases": [
+          "Chris Vineyard",
+          "Sharon Vineyard",
+          "disguised as Dr. Araide"
+        ],
+        "roles": [
+          "suspect",
+          "backstory_figure"
+        ],
+        "occupation": "Black Organization agent, actress",
+        "attrs": {
+          "codename_meaning": "an alcohol, like Gin and Vodka",
+          "epithet": "Witch of a Thousand Faces",
+          "secret": "Chris Vineyard and her supposed mother Sharon Vineyard are the same person, never aging"
+        }
+      },
+      {
+        "id": "p10",
+        "name": "Jodie Starling",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "FBI special agent, undercover as an English teacher at Teitan High",
+        "attrs": {
+          "personal_stake": "daughter of an FBI agent killed by Vermouth twenty years ago"
+        }
+      },
+      {
+        "id": "p11",
+        "name": "Akai Shuichi",
+        "aliases": [
+          "Calvados"
+        ],
+        "roles": [
+          "witness",
+          "backstory_figure"
+        ],
+        "occupation": "FBI agent undercover inside the Black Organization",
+        "attrs": {
+          "backstory": "clashed with a rival FBI target under his serial-killer cover in New York a year earlier"
+        }
+      },
+      {
+        "id": "p12",
+        "name": "Bunzaemon Araide",
+        "aliases": [],
+        "roles": [
+          "backstory_figure"
+        ],
+        "occupation": "clinic doctor",
+        "attrs": {
+          "fate": "Vermouth staged his family's deaths in a car crash off a coastal guardrail (played by her diver colleagues) to assume his identity; the real Araide is alive and hidden"
+        }
+      },
+      {
+        "id": "p13",
+        "name": "Jodie's father",
+        "aliases": [],
+        "roles": [
+          "victim",
+          "backstory_figure"
+        ],
+        "occupation": "FBI agent investigating the Black Organization",
+        "attrs": {}
+      },
+      {
+        "id": "p14",
+        "name": "Jodie's mother",
+        "aliases": [],
+        "roles": [
+          "victim",
+          "backstory_figure"
+        ],
+        "attrs": {}
+      },
+      {
+        "id": "p15",
+        "name": "Vodka",
+        "aliases": [],
+        "roles": [
+          "backstory_figure"
+        ],
+        "occupation": "Black Organization member",
+        "attrs": {}
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Sea Phantom (party ship)",
+        "attrs": {}
+      },
+      {
+        "id": "l2",
+        "name": "Ship's unisex bathroom",
+        "attrs": {
+          "condition": "dark, spider-webbed, mirrors smashed"
+        }
+      },
+      {
+        "id": "l3",
+        "name": "Ship's crow's nest / mast",
+        "attrs": {}
+      },
+      {
+        "id": "l4",
+        "name": "Coastal cliff road",
+        "attrs": {
+          "feature": "guardrail above the ocean"
+        }
+      },
+      {
+        "id": "l5",
+        "name": "Jodie's childhood house",
+        "attrs": {
+          "fate": "burned down"
+        }
+      },
+      {
+        "id": "l6",
+        "name": "Professor Agasa's house",
+        "attrs": {}
+      },
+      {
+        "id": "l7",
+        "name": "Araide Clinic",
+        "attrs": {}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Crossbow",
+        "role": "weapon",
+        "attrs": {
+          "fate": "lost overboard, never recovered"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Werewolf's THE DEVIL card",
+        "role": "evidence",
+        "attrs": {
+          "pinned_to": "the crossbow bolt in the victim",
+          "trick": "the killer's own uniquely-numbered card, planted as reverse-psychology misdirection"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "\"Silver Bullet\" cocktail",
+        "role": "evidence",
+        "attrs": {
+          "instruction": "Fukuura told the Werewolf guest specifically to order this drink",
+          "significance": "silver famously kills werewolves; no genuine monster-fan would order one"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Upside-down chicken hint",
+        "role": "instrument",
+        "attrs": {
+          "decoding": "\"kenchic\" read backward suggests cock's-tail, i.e. cocktail",
+          "purpose": "Fukuura's planned riddle for the party game, pointing at the Silver Bullet"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Werewolf mask/speaker rig",
+        "role": "tool",
+        "attrs": {
+          "mechanism": "prerecorded howl triggered by a remote switch, worn over the sedated Mummy's bandages"
+        }
+      },
+      {
+        "id": "o6",
+        "name": "Sedative spray",
+        "role": "tool",
+        "attrs": {
+          "used": "sprayed under the bathroom stall divider to knock out the Mummy"
+        }
+      },
+      {
+        "id": "o7",
+        "name": "Broken bathroom mirrors",
+        "role": "evidence",
+        "attrs": {
+          "purpose": "smashed so the drugged Mummy could not see the mask swapped onto him",
+          "staging_flaw": "guests confirm the mirrors were intact when the ship left harbor"
+        }
+      },
+      {
+        "id": "o8",
+        "name": "Mummy's bandage ink mark",
+        "role": "evidence",
+        "attrs": {
+          "mark": "\"human\" written under the bandages by Fukuura, identifying the party game's designated human"
+        }
+      },
+      {
+        "id": "o9",
+        "name": "Jodie's father's glasses",
+        "role": "evidence",
+        "attrs": {
+          "clue": "fingerprints lifted from the lenses after they landed unnaturally at the staged-suicide scene"
+        }
+      },
+      {
+        "id": "o10",
+        "name": "Burned FBI records",
+        "role": "evidence",
+        "attrs": {
+          "contents": "Jodie's father's secret dossier on Vermouth and her associates, destroyed in the house fire"
+        }
+      },
+      {
+        "id": "o11",
+        "name": "Blackmail dossier",
+        "role": "evidence",
+        "attrs": {
+          "contents": "surveillance photos and wiretapped calls of the Werewolf guest's family, used to coerce him"
+        }
+      },
+      {
+        "id": "o12",
+        "name": "Dart-pierced photo",
+        "role": "evidence",
+        "attrs": {
+          "subject": "a brown-haired woman about twenty, resembling Sherry/Haibara"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "Fingerprints lifted from Jodie's father's glasses at his staged-suicide scene twenty years ago match prints newly taken from Chris Vineyard, which in turn match Sharon Vineyard's -- proving the two women who should be a generation apart are the same person.",
+        "clue_type": "forensic"
+      },
+      {
+        "id": "cB",
+        "desc": "Shards from the bathroom's smashed mirrors should be lodged in the soles of whoever stood there right before climbing to the crow's nest; comparing that to the Mummy, who never went near the broken glass, points the mast-climb at the Werewolf instead.",
+        "clue_type": "forensic"
+      },
+      {
+        "id": "cC",
+        "desc": "The bar's order log shows the Werewolf-costumed guest ordered the instructed \"Silver Bullet\" while the Mummy never did -- yet Detective Mouri was accidentally served one too after copying the Werewolf's order, exposing which costume had actually been standing at the bar.",
+        "clue_type": "behavioral"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p10",
+      "to": "p13",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p10",
+      "to": "p14",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p11",
+      "to": "p10",
+      "relation_type": "colleague_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p15",
+      "to": "p9",
+      "relation_type": "organization_colleague",
+      "detail": "radios Vermouth mid-chase, reminding her they already killed 'that brat' with the Organization's poison; she brushes him off"
+    },
+    {
+      "type": "impersonates",
+      "from": "p9",
+      "to": "p12"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "resentment_over_canceled_movie_franchise"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p9",
+      "to": "p1",
+      "motive_type": "orchestrated_via_coerced_proxy (demonstration of control, not personal grievance)"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p9",
+      "to": "p7",
+      "motive_type": "eliminate_organization_traitor"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p9",
+      "to": "p10",
+      "motive_type": "eliminate_witness_hunting_her"
+    },
+    {
+      "type": "blackmails",
+      "from": "p9",
+      "to": "p2",
+      "circumstance_tags": [
+        "coercion"
+      ],
+      "detail": "sends the blackmail dossier (o11) and threatens the Werewolf guest's family unless he kills Fukuura"
+    },
+    {
+      "type": "arms",
+      "from": "p9",
+      "to": "p2",
+      "detail": "supplies the crossbow and kill instructions"
+    },
+    {
+      "type": "owns",
+      "from": "p2",
+      "to": "o11"
+    },
+    {
+      "type": "sedates",
+      "from": "p2",
+      "to": "p3",
+      "circumstance_tags": [
+        "staged_alibi"
+      ],
+      "detail": "sprays sedative under the bathroom stall divider"
+    },
+    {
+      "type": "frames",
+      "from": "p2",
+      "to": "p3",
+      "circumstance_tags": [
+        "frame_up"
+      ],
+      "detail": "swaps the werewolf mask onto the unconscious Mummy and takes his THE DEVIL card"
+    },
+    {
+      "type": "owns",
+      "from": "p2",
+      "to": "o2"
+    },
+    {
+      "type": "owns",
+      "from": "p2",
+      "to": "o5"
+    },
+    {
+      "type": "owns",
+      "from": "p2",
+      "to": "o6"
+    },
+    {
+      "type": "owns",
+      "from": "p2",
+      "to": "o1",
+      "attrs": {
+        "detail": "the crossbow supplied by Vermouth, used to shoot Fukuura and lost overboard afterward"
+      }
+    },
+    {
+      "type": "breaks",
+      "from": "p2",
+      "to": "o7",
+      "detail": "smashes the bathroom mirrors so the Mummy cannot see the mask swap"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p1",
+      "method": "crossbow bolt fired at close range from the crow's-nest platform",
+      "circumstance_tags": [
+        "staged_frame",
+        "impossible_distance_illusion",
+        "locked_room"
+      ]
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p2",
+      "to": "o2"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p8",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p8",
+      "to": "l3"
+    },
+    {
+      "type": "witnesses",
+      "from": "p5",
+      "to": "p2",
+      "detail": "sees the Werewolf, not the Mummy, come out of the Mummy's bathroom stall"
+    },
+    {
+      "type": "startles",
+      "from": "p6",
+      "to": "p2",
+      "detail": "calls out near the stall, forcing the Werewolf to bolt out before finishing the mask swap unnoticed"
+    },
+    {
+      "type": "written_by",
+      "from": "o4",
+      "to": "p1"
+    },
+    {
+      "type": "regarding",
+      "from": "o4",
+      "to": "o3"
+    },
+    {
+      "type": "regarding",
+      "from": "cC",
+      "to": "o3"
+    },
+    {
+      "type": "implicates",
+      "from": "cC",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o7"
+    },
+    {
+      "type": "implicates",
+      "from": "cB",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o7",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o2",
+      "to": "p2"
+    },
+    {
+      "type": "confirms_identity_of",
+      "from": "o8",
+      "to": "p3"
+    },
+    {
+      "type": "kills",
+      "from": "p9",
+      "to": "p13",
+      "method": "staged to look like a self-inflicted death",
+      "circumstance_tags": [
+        "staged_suicide",
+        "cover_up"
+      ]
+    },
+    {
+      "type": "kills",
+      "from": "p9",
+      "to": "p14",
+      "method": "died in the house fire set to destroy her husband's investigation records",
+      "circumstance_tags": [
+        "cover_up"
+      ]
+    },
+    {
+      "type": "burns",
+      "from": "p9",
+      "to": "l5"
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p9",
+      "to": "o9"
+    },
+    {
+      "type": "implicates",
+      "from": "o9",
+      "to": "p9"
+    },
+    {
+      "type": "located_in",
+      "from": "o10",
+      "to": "l5"
+    },
+    {
+      "type": "was_at",
+      "from": "p13",
+      "to": "l5"
+    },
+    {
+      "type": "was_at",
+      "from": "p14",
+      "to": "l5"
+    },
+    {
+      "type": "was_at",
+      "from": "p10",
+      "to": "l5",
+      "detail": "lived there; stepped out to buy juice just before the fire, survived by chance"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "o9"
+    },
+    {
+      "type": "implicates",
+      "from": "cA",
+      "to": "p9"
+    },
+    {
+      "type": "stages_death_of",
+      "from": "p9",
+      "to": "p12",
+      "circumstance_tags": [
+        "faked_death",
+        "identity_theft_setup"
+      ],
+      "detail": "arranges a staged car crash off a coastal guardrail, using diver colleagues in place of the family, to assume Araide's identity"
+    },
+    {
+      "type": "abducts",
+      "from": "p9",
+      "to": "p7",
+      "circumstance_tags": [
+        "attempted_elimination"
+      ],
+      "detail": "collects Haibara from Agasa's house under pretext of a hospital visit while disguised as Dr. Araide"
+    },
+    {
+      "type": "was_at",
+      "from": "p9",
+      "to": "l6"
+    },
+    {
+      "type": "was_at",
+      "from": "p7",
+      "to": "l6"
+    },
+    {
+      "type": "was_at",
+      "from": "p7",
+      "to": "l4"
+    },
+    {
+      "type": "confronts",
+      "from": "p10",
+      "to": "p9",
+      "detail": "intercepts the car and demands to know where Haibara is being taken"
+    },
+    {
+      "type": "was_at",
+      "from": "p10",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p9",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p11",
+      "to": "l4"
+    },
+    {
+      "type": "detains",
+      "from": "p11",
+      "to": "p9",
+      "detail": "holds Vermouth for the FBI before her leverage becomes clear"
+    },
+    {
+      "type": "abducts",
+      "from": "p9",
+      "to": "p10",
+      "circumstance_tags": [
+        "hostage"
+      ],
+      "detail": "shoots out the getaway car's gas tank using a mirror and flees with Jodie as a hostage"
+    },
+    {
+      "type": "located_in",
+      "from": "o12",
+      "to": "l7"
+    },
+    {
+      "type": "regarding",
+      "from": "o12",
+      "to": "p7"
+    },
+    {
+      "type": "implicates",
+      "from": "o12",
+      "to": "p9"
+    }
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

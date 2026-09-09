@@ -1,0 +1,389 @@
+{
+ "case_id": "ep961_the_glamping_mystery",
+ "episode_number": "961",
+ "title": "The Glamping Mystery",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Glamping_Mystery",
+ "subtitle_source": "subs_resolved/0961.txt (396 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Inspector Megure, Detective Takagi) omitted by convention; Sonoko is the one who actually delivers the solution on-screen this episode, but per the standing convention her deduction is represented only via the resulting edges, not a person node. case_type: murder. The old low-fidelity file (cases/ep961_the_glamping_mystery.json) got the culprit right (Mika Miura, s3/here p4) -- no identity correction needed. What it missed, corrected here: (1) it modeled a single generic location and a single 'murder' event/clue, collapsing away the episode's actual structure, which is a three-way body-relay -- Miura killed Keidai in her own tent, then each of the other two suspects independently found the body, tampered with it to frame someone else, and dumped it in a different tent, until it landed back in Miura's tent and finally in the open where the cast found it; that relay is now modeled as distinct `location` nodes and `frames`/`dumps_body_of`/`leaves_evidence` edges instead of being flattened. (2) the old file's single clue ('the specific allergen matches her breakup, a detail only she would know') is not quite what the transcript uses to convict her -- the actual clincher is behavioral exclusion (the two people who admitted knowing about the allergy were the least likely suspects; the real killer needed guilty knowledge without ever admitting it) plus a forensic cookie-bitterness comparison (fragments in Miura's tent tested non-bitter, matching Ran's plain chocolate cookies rather than the cacao-heavy batch needed to mask crab, disproving Miura's claim that no cookie evidence remained). Both are now separate `clue` nodes.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Keidai Tosaki",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "company president",
+    "attrs": {
+     "age": 46,
+     "died_of": "anaphylactic shock",
+     "allergy": "severe crab allergy; had once nearly died from accidental crab exposure before"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kyoko Tosaki",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": null,
+    "attrs": {
+     "age": 38,
+     "relation_to_victim": "wife",
+     "tampering": "found the body first, put a crab leg in its mouth to make it look like the chef did it, then moved it to the chef's room"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hiroshi Tanabe",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "chef",
+    "attrs": {
+     "age": 44,
+     "relation_to_victim": "friend and regular client's chef; knew about the crab allergy",
+     "tampering": "found the body in his room, scribbled on its face with a pen to implicate the makeup artist, then moved it to her tent"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mika Miura",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "makeup artist",
+    "attrs": {
+     "age": 27,
+     "relation_to_victim": "former affair partner",
+     "motive_detail": "Keidai promised to leave his wife for her, then cut her off; she used the same crab allergy that ended their affair to kill him and ruin his company"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Okuhoku Glamping Park (grounds)",
+    "attrs": {
+     "note": "shared grounds for canoeing, barbecue, and tea; also where the body was finally left in the open and found by the main cast"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Tosaki couple's tent",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Tanabe's room",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Miura's tent",
+    "attrs": {
+     "note": "where Keidai was actually killed, and where the body ended up again after being passed between all three suspects"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Crab-laced cookies",
+    "role": "weapon",
+    "attrs": {
+     "baked_by": "Mika Miura",
+     "allergen": "crab, hidden in the dough",
+     "masking_agent": "extra cacao added to hide the crab smell/flavor, which made the cookies noticeably bitter"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Ran's chocolate cookies",
+    "role": "evidence",
+    "attrs": {
+     "baked_by": "Ran (recurring cast, omitted as a node per convention)",
+     "note": "an ordinary, non-bitter batch handed out earlier the same afternoon; used as the forensic comparison sample"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Cookie fragments recovered from Miura's tent",
+    "role": "evidence",
+    "attrs": {
+     "tested_result": "not bitter",
+     "identified_as": "matches Ran's plain chocolate cookies, not Miura's cacao-heavy crab batch"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Lunchtime photo showing the cookies",
+    "role": "evidence",
+    "attrs": {
+     "shows": "Miura's cookies already present and being served during the afternoon barbecue"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Crab leg (from Tanabe's freezer)",
+    "role": "evidence",
+    "attrs": {
+     "used_by_kyoko_to": "stage it in the victim's mouth to implicate the chef"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Forged dying message ('My wife did it')",
+    "role": "evidence",
+    "attrs": {
+     "written_by": "Mika Miura",
+     "note": "placed in the victim's hand to implicate Kyoko"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Cookie fragments in Miura's tent test non-bitter, matching Ran's plain cookies, not the cacao-heavy batch needed to mask crab -- disproves Miura's claim that no evidence of her real cookies remained.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Kyoko and Tanabe both openly admitted knowing about the crab allergy, which is exactly why using it would immediately implicate them; the real killer needed that knowledge while staying unsuspected, pointing to Miura, who never admitted knowing.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "had_affair_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "friend_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "alleged troubled marriage (per Tanabe's testimony); red herring -- Kyoko is guilty only of evidence tampering, not the killing"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge for ending their affair; wanted to kill him and ruin his company using the crab allergy that broke them up"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "method": "anaphylactic shock from crab allergen baked into cookies, fed to him in her own tent",
+   "circumstance_tags": [
+    "poisoning"
+   ]
+  },
+  {
+   "type": "bakes",
+   "from": "p4",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p4"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l4"
+  },
+  {
+   "type": "dumps_body_of",
+   "from": "p4",
+   "to": "p1",
+   "location": "l2",
+   "detail": "initial dump: abandoned the body in the Tosaki couple's tent after the killing"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "frames",
+   "from": "p2",
+   "to": "p3",
+   "detail": "planted a crab leg from the chef's freezer in the victim's mouth to implicate him"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p3"
+  },
+  {
+   "type": "dumps_body_of",
+   "from": "p2",
+   "to": "p1",
+   "location": "l3",
+   "detail": "moved the body to the chef's room after staging the crab leg"
+  },
+  {
+   "type": "frames",
+   "from": "p3",
+   "to": "p4",
+   "detail": "scribbled on the victim's face with a pen to implicate the makeup artist"
+  },
+  {
+   "type": "dumps_body_of",
+   "from": "p3",
+   "to": "p1",
+   "location": "l4",
+   "detail": "moved the body to the makeup artist's tent after scribbling on the face"
+  },
+  {
+   "type": "frames",
+   "from": "p4",
+   "to": "p2",
+   "detail": "wrote a fake dying message ('My wife did it') and placed it in the victim's hand"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "dumps_body_of",
+   "from": "p4",
+   "to": "p1",
+   "location": "l1",
+   "detail": "final dump: too heavy to carry to the Tosaki tent as planned, so left the body out in the open, where the main cast found it"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

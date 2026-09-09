@@ -1,0 +1,422 @@
+{
+ "case_id": "ep512_the_broken_horoscope",
+ "episode_number": "512",
+ "title": "The Broken Horoscope",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Broken_Horoscope",
+ "subtitle_source": [
+  "subs_resolved/0512.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, the investigating Inspector) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ep512 file had the correct culprit (Katsuragi) but was thin: it collapsed the whole trick into three generic `event` nodes and one clue, and entirely missed the tape-recorder voice-playback trick (Ran recognizing 'I'm working right now, I'll call later' as a repeated recording, not Reika speaking live) which is the transcript's actual mid-episode reveal that Reika was dead before Kurara's 5:00 visit -- that clue is added here as cB. It also gave every suspect a bare `knows` edge to the victim instead of the real, distinct extortion/blackmail relationships each of them had with her (financial extortion of Katsuragi, blackmail of Kurara over a witnessed secret, career obstruction of Yuuka), which are now `extorts`/`blackmails`/`blocks_career_of` edges plus `has_motive_against`. case_type: murder, locked room."
+ ,
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shijou Reika",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "astrologist",
+    "attrs": {
+     "death_estimate": "found dead in her locked office, dead roughly 3 to 3.5 hours before discovery, putting the killing around 5:00pm",
+     "cause_of_death": "unspecified in available transcript",
+     "business_practice": "extorts money and secrets from clients under the guise of astrology readings"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Katsuragi Kensuke",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "president, Starry Sky Weekly magazine",
+    "attrs": {
+     "alibi_claim": "on the phone at reception until 5:00pm, then in the living room with Tamura and Mouri",
+     "motive_detail": "owed Reika full repayment of investments; she threatened to leak his insider trading to the press if he didn't pay"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tamura Machio",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "editor, Starry Sky Weekly",
+    "attrs": {
+     "alibi_claim": "in the living room with Mouri from around 5:00pm",
+     "ambition": "was promised the astrology column by Katsuragi, but Reika opposed it",
+     "role_in_case": "his tape recorder (running during the interview) is what the culprit exploited; he is briefly suspected purely for owning it"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shiraishi Yuuka",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "Reika's apprentice",
+    "attrs": {
+     "alibi_claim": "brief chat with Katsuragi, then in the kitchen helping with dinner, corroborated by kitchen staff",
+     "relationship_note": "Reika's niece and apprentice, treated like a servant, blocked from writing the astrology column, and stood to inherit Reika's legacy as closest relative"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Midorikawa Kurara",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "actress",
+    "attrs": {
+     "alibi_claim": "arrived at Reika's office around 5:00 for a scheduled fortune-telling appointment; believed she heard Reika's live voice through the door",
+     "motive_detail": "Reika saw her leaving her room a month earlier and threatened to expose whatever secret that implied"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Reika's office",
+    "attrs": {
+     "features": "barred window, veranda, stained-glass skylight in the roof above",
+     "lock_type": "one-of-a-kind hollow-point key, manufacturer-only duplication"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Villa living room",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Villa kitchen",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Villa reception area",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Villa roof",
+    "attrs": {
+     "feature": "stained-glass skylight above Reika's office, her own design, with a Scorpio image at its center"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Reika's office key",
+    "role": "evidence",
+    "attrs": {
+     "uniqueness": "hollow-point key, only one exists, duplicates can only be ordered with the original credit card",
+     "found": "in a mixed pile of keys and glass on the office floor after the group broke in"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Sapphire pendant charm",
+    "role": "evidence",
+    "attrs": {
+     "origin": "normally kept on Reika's key ring",
+     "given_away": "removed from the key ring and given away as a good-luck charm just before Reika went into her office for the day's last reading"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Stained-glass roof skylight",
+    "role": "evidence",
+    "attrs": {
+     "damage": "small hole cracked in the middle of the Scorpio image before the group later broke the rest of the window to get in",
+     "missing_piece": "no red shard from the Scorpio image was recovered among the debris"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Red-flanked blue tail feather",
+    "role": "evidence",
+    "attrs": {
+     "sighting": "the bird was seen flying to the roof around 5:30pm",
+     "found_position": "on the office floor, underneath the later-broken glass shards"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Tamura's tape recorder",
+    "role": "instrument",
+    "attrs": {
+     "recorded_line": "captured Reika saying 'I'm working right now, I'll call later' to Yuuka about an incoming TV call, earlier in the day",
+     "misuse": "a recording of that line was played back near Reika's office door to make Kurara believe Reika answered her at 5:00pm, though Reika was already dead"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "A bird seen flying to the roof at 5:30 left a feather found on the office floor UNDER the later-broken window glass, and no red shard from the Scorpio image turned up among the debris -- proves a small hole was cut in the skylight before the window was fully broken to enter the room.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The line Kurara heard through the door at 5:00, 'I'm working right now, I'll call later,' was word-for-word what Reika had said earlier to her apprentice about a TV call -- it was a recorded playback, not Reika speaking live.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cC",
+    "desc": "Katsuragi picked the correct office key from a mixed pile by its sapphire pendant, but Reika had already given that pendant away as a charm before she entered her office -- only the killer could have known which key was hers.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "niece_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "apprentice_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "extorts",
+   "from": "p1",
+   "to": "p2",
+   "detail": "demanded full repayment of investments; threatened to leak his insider trading to the press otherwise"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p5",
+   "detail": "saw Kurara leaving her room a month earlier and threatened to expose whatever secret that implied unless Kurara found a replacement client"
+  },
+  {
+   "type": "blocks_career_of",
+   "from": "p1",
+   "to": "p4",
+   "detail": "vetoed Katsuragi's promise to let Yuuka take over the astrology column"
+  },
+  {
+   "type": "berates",
+   "from": "p1",
+   "to": "p4",
+   "detail": "regularly takes her anger out on Yuuka despite treating her as an apprentice/relative"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "unspecified in available transcript excerpt",
+   "circumstance_tags": [
+    "locked_room"
+   ]
+  },
+  {
+   "type": "locks",
+   "from": "p2",
+   "to": "l1",
+   "detail": "locked the office door from outside using Reika's key after killing her"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5",
+   "circumstance_tags": [
+    "staged_alibi"
+   ],
+   "detail": "played back a recording of Reika's earlier voice near the office door to make Kurara think Reika answered her at 5:00pm"
+  },
+  {
+   "type": "cracks_hole_in",
+   "from": "p2",
+   "to": "o3",
+   "circumstance_tags": [
+    "locked_room",
+    "staged_evidence"
+   ],
+   "detail": "cracked a small hole in the stained-glass skylight, in the middle of the Scorpio image"
+  },
+  {
+   "type": "drops",
+   "from": "p2",
+   "to": "o1",
+   "detail": "dropped the office key back inside through the hole in the skylight to make the room look locked from inside"
+  },
+  {
+   "type": "accuses",
+   "from": "p2",
+   "to": "p4",
+   "circumstance_tags": [
+    "red_herring",
+    "misdirection"
+   ],
+   "detail": "suggested Yuuka must have a spare key, intending her to take the blame for the sealed room -- no spare actually exists"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "financial_extortion"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "blackmail_threat (red herring, briefly accused)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "career_obstruction_and_inheritance (red herring, accused by Katsuragi)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,336 @@
+{
+ "case_id": "ep119_the_kamen_yaiba_murder_case",
+ "episode_number": "119",
+ "title": "The Kamen Yaiba Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Kamen_Yaiba_Murder_Case",
+ "subtitle_source": "/home/reo/Faks/GNN/case_closed/case_closed_dataset/subs_resolved/0119.txt (full episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Inspector Megure, and the Detective Boys including Genta) omitted by convention. Genta's accidental fingerprint transfer onto the victim's original gun is preserved as the mechanism behind clue cA, described in the clue text, without adding a person node for him. No `event` node type: every action is a directly typed, attributed edge between the entities involved. case_type: murder. Transcript gives no established motive for the other two fan-club suspects (Tsutsumi, Saotome) -- v1's flat suspect pool for them is left thin here rather than fabricated; the only has_motive_against edge is on the true culprit.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Katsuji Mishima",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "3rd-year physical education student, Tohto University",
+    "attrs": {
+     "died_of": "gunshot wound to the head, manipulated into believing it would be a harmless blank as the second beat of a rehearsed 'surprise' skit",
+     "fan_obsession": "obsessive Kamen Yaiba fan; spent about six months converting a normal motorcycle into a Kamen Yaiba replica"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Osamu Honda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "3rd-year engineering student, Jonan University; joined the Kamen Yaiba fan club about six months before the case",
+    "attrs": {
+     "motive_summary": "believed Mishima was responsible for the incident that led to the death of Honda's younger brother Hiroshi two years earlier",
+     "method_summary": "prepared two identical modified prop guns (one loaded with a real bullet, one with a blank), swapped Mishima's gun for the real-bullet one just before the party under the guise of a 'final check', then had Mishima unknowingly shoot himself with it during a rehearsed two-part skit where the first shot (fired at Honda) was blank and Honda wore a hidden bulletproof vest as extra insurance"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yasuyuki Tsutsumi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "law student, Jonan University",
+    "attrs": {
+     "note": "cosplayed as a fake Kamen Yaiba earlier that day at Beika Shrine; no motive against Mishima is established in the available transcript"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Madoka Saotome",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "3rd-year literature student, Shirakaba Women's College; president of the Kamen Yaiba fan club",
+    "attrs": {
+     "note": "hosted the costume party at her family's mansion; no motive against Mishima is established in the available transcript"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Hiroshi Honda",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "relationship": "Osamu Honda's younger brother",
+     "death": "died two days after a confrontation in which his Kamen Yaiba signboard (won in a magazine contest) was taken from him, about two years before the case; the exact cause of death is unspecified in the available transcript excerpt",
+     "last_words": "\"Get Kamen Yaiba to catch him...\""
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Shrine",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Madoka Saotome's mansion (party basement)",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Modified prop gun (blank-loaded, later plugged)",
+    "role": "tool",
+    "attrs": {
+     "history": "originally given to Mishima for skit rehearsals; taken back by Honda at Beika Shrine during the gun swap and worn openly by him for the rest of the party",
+     "note": "Honda plugged its barrel before wearing it -- an odd precaution for a self-described gun aficionado that became a key clue"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Modified prop gun (real-bullet-loaded, unplugged)",
+    "role": "weapon",
+    "attrs": {
+     "history": "swapped onto Mishima at Beika Shrine just before the party under the guise of a final check",
+     "outcome": "fired first at Honda (survived thanks to a hidden bulletproof vest) then turned on Mishima himself, delivering the fatal shot; the precise chamber/round arrangement beyond one real bullet is unspecified in the available transcript excerpt",
+     "fingerprint_evidence": "carries fingerprints matching a child who briefly touched Mishima's original gun at Beika Shrine hours before the swap -- proof Honda had possession of Mishima's original gun at some point, which only makes sense if he swapped it out afterward"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Bulletproof vest (Honda's)",
+    "role": "tool",
+    "attrs": {
+     "purchased_from": "a security store",
+     "purpose": "worn under his Laser Police costume as insurance in case the plan went wrong"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Kamen Yaiba signboard",
+    "role": "evidence",
+    "attrs": {
+     "origin": "won by Hiroshi Honda in a magazine contest",
+     "history": "taken from Hiroshi during a confrontation about two years before the case; Mishima later showed the same signboard to Osamu Honda, falsely claiming an 'older brother' had won it and given it to him -- but Mishima has no brother named Hiroshi, tipping Honda off that Mishima was connected to his brother's death"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Fingerprints on the gun found on Mishima's body did not belong to Mishima; they matched a child's fingerprints already on file (from a Detective Boys badge) after the child briefly touched Mishima's ORIGINAL gun at Beika Shrine hours earlier. Since that gun ended up with different fingerprints than the one on the body, the gun must have been swapped after the shrine encounter -- and only Honda had access to do so.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "No burn mark was found on Mishima's temple, even though firing a blank at point-blank range still produces a small flame. This means Mishima deliberately held the gun slightly away from his head when he fired -- behavior consistent with someone expecting a harmless blank per a rehearsed script, not a person in a genuine, spontaneous suicidal moment.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "A fellow fan-club member described Honda as a genuine gun aficionado, yet Honda's own gun at the party had its barrel deliberately plugged -- an unusual precaution for a prop he had no plan to fire, suggesting he was hiding a more consequential reason for handling guns so cautiously that night.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "friend",
+   "detail": "described by a fellow fan-club member as actually very good friends"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "takes",
+   "from": "p1",
+   "to": "o4",
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "detail": "takes Hiroshi's signboard from him in a confrontation"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p6",
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "detail": "confrontation over the signboard; Hiroshi died two days later of causes unspecified in the available transcript excerpt"
+  },
+  {
+   "type": "shows",
+   "from": "p1",
+   "to": "p2",
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "shows Honda the same signboard about half a year before the case, falsely claiming an 'older brother' had won it and given it to him"
+  },
+  {
+   "type": "gives",
+   "from": "p2",
+   "to": "p1",
+   "temporal_frame": "backstory",
+   "detail": "hands Mishima the gun loaded with blanks (o1) for skit rehearsals, having secretly also prepared an identical gun loaded with a real bullet (o2)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "swaps",
+   "from": "p2",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "meets Mishima at Beika Shrine just before the party and swaps his blank-loaded gun for the identical-looking real-bullet gun, under the guise of doing final checks"
+  },
+  {
+   "type": "plugs",
+   "from": "p2",
+   "to": "o1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "plugs the barrel of the blank gun he took back, before openly wearing it as part of his Laser Police costume"
+  },
+  {
+   "type": "uses",
+   "from": "p2",
+   "to": "o3",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "wears a bulletproof vest under his costume as insurance"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "assaults",
+   "from": "p1",
+   "to": "p2",
+   "order": 4,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_suicide", "manipulation"],
+   "detail": "storms up and fires the swapped gun at Honda point-blank as the first beat of their rehearsed skit, unaware it now holds a real bullet"
+  },
+  {
+   "type": "uses",
+   "from": "p1",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "manipulated Mishima into believing the shooting was a harmless scripted skit; after 'shooting' Honda (who survived thanks to a hidden bulletproof vest), Mishima turned the same swapped gun on himself per the rehearsed second beat and fired the real round into his own head",
+   "circumstance_tags": ["staged_suicide", "manipulation"]
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge_for_brothers_death"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

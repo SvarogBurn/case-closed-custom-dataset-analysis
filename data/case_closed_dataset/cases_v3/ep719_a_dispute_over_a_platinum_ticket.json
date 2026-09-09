@@ -1,0 +1,234 @@
+{
+ "case_id": "ep719_a_dispute_over_a_platinum_ticket",
+ "episode_number": "719",
+ "title": "A Dispute Over a Platinum Ticket",
+ "source_url": "https://www.detectiveconanworld.com/wiki/A_Dispute_Over_a_Platinum_Ticket",
+ "subtitle_source": ["subs_resolved/0719.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Kogoro, Inspector Megure, Detective Sato) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Discrepancy vs. the old lower-fidelity case file: the old file claimed the killing was 'a push causing a fatal fall onto a table corner' -- this specific mechanism is never stated or shown in the transcript, which only shows a confrontation cutting to Masako's collapse ('M-Masako?'); the `kills` edge here notes the mechanism as unspecified rather than inventing detail the source doesn't support. The old file's culprit (Kaori Kosuda) and overall theft/apron-swap mechanics are otherwise confirmed correct by the transcript. Two distinct physical aprons are modeled as separate object nodes (o2, o11) since the whole clue hinges on telling them apart: Kosuda's own apron (which carried the stolen tickets and rode through the dye-tainted wash cycle before she pulled it back out) vs. Masako's own apron (substituted into the machine afterward, never exposed to the dye). case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kaori Kosuda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "coffee shop part-timer, university student",
+    "attrs": {"age": 20}
+   },
+   {
+    "id": "p2",
+    "name": "Jiro Kirima",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "coffee shop manager",
+    "attrs": {"age": 26, "shop": "Marin Coffee"}
+   },
+   {
+    "id": "p3",
+    "name": "Haruka Kona",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "office worker",
+    "attrs": {"age": 23, "tickets_stolen_from_her": true}
+   },
+   {
+    "id": "p4",
+    "name": "Masako Mooka",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "coffee shop part-timer, university student",
+    "attrs": {"age": 20}
+   },
+   {
+    "id": "p5",
+    "name": "Ten Uruma",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {"age": 30, "relation": "Masako's next-door neighbor"}
+   },
+   {
+    "id": "p6",
+    "name": "Rin Manda",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "building landlady",
+    "attrs": {"age": 50}
+   },
+   {
+    "id": "p7",
+    "name": "Kaori's boyfriend",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "unsuccessful guitarist",
+    "attrs": {"name_given_in_transcript": false, "two_timing": true}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Masako Mooka's apartment",
+    "attrs": {"role": "murder scene"}
+   },
+   {
+    "id": "l2",
+    "name": "Marin Coffee",
+    "attrs": {"role": "coffee shop where all four suspects worked or were customers"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Black Roses concert tickets",
+    "role": "evidence",
+    "attrs": {"detail": "two arena seats, resold online for 5x face value overnight"}
+   },
+   {
+    "id": "o2",
+    "name": "Kaori's apron",
+    "role": "evidence",
+    "attrs": {"owner": "Kaori Kosuda", "care_label_color": "pink, dyed during the wash cycle"}
+   },
+   {
+    "id": "o3",
+    "name": "Online auction listing",
+    "role": "evidence",
+    "attrs": {"seller_username": "Coffee rumba", "note": "styled like a barista's handle"}
+   },
+   {
+    "id": "o4",
+    "name": "Masako's washing machine",
+    "role": "tool",
+    "attrs": {"anomaly": "water valve closed despite the load not being fully removed"}
+   },
+   {
+    "id": "o5",
+    "name": "Red felt-tip pen",
+    "role": "evidence",
+    "attrs": {"used_for": "marking special orders on shop receipts", "effect": "bleeds pink dye onto wet fabric"}
+   },
+   {
+    "id": "o6",
+    "name": "Gas bill payment slip",
+    "role": "evidence",
+    "attrs": {"detail": "payment overdue as of yesterday, left on the table"}
+   },
+   {
+    "id": "o7",
+    "name": "Marin Coffee shift schedule",
+    "role": "evidence",
+    "attrs": {"detail": "shows Kirima and Masako sharing the same days off, and Kosuda as the only staff member off the Sunday tickets went on sale"}
+   },
+   {
+    "id": "o8",
+    "name": "Ransacked cabinet",
+    "role": "evidence",
+    "attrs": {"staging_flaw": "drawers opened top-down, not the bottom-up order a professional burglar would use"}
+   },
+   {
+    "id": "o9",
+    "name": "Masako's purse",
+    "role": "evidence",
+    "attrs": {"detail": "banknotes taken to fake a burglary"}
+   },
+   {
+    "id": "o10",
+    "name": "Masako's bag",
+    "role": "evidence",
+    "attrs": {"detail": "packed, found beside the body, showing she meant to go back out"}
+   },
+   {
+    "id": "o11",
+    "name": "Masako's apron",
+    "role": "evidence",
+    "attrs": {"owner": "Masako Mooka", "care_label_color": "white, never exposed to the dyed wash"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Apron in the washing machine has a white care label; the apron Kosuda is carrying has a pink-dyed one -- proves the aprons were swapped after the crime.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Shift schedule shows only Kosuda was off the Sunday tickets went on sale, contradicting her claim her boyfriend's colleague supplied them.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "Kirima's phone saves Masako as 'Masa-chan', and the shift schedule shows them sharing days off -- reveals their hidden relationship.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "secretly_dating", "attrs": {"duration": "two months", "has_spare_key": true}},
+  {"type": "relationship", "from": "p1", "to": "p7", "relation_type": "dating"},
+  {"type": "relationship", "from": "p7", "to": "p3", "relation_type": "secretly_dating"},
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "neighbor"},
+  {"type": "relationship", "from": "p6", "to": "p4", "relation_type": "landlady_of"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "concealment - caught mid-retrieval of stolen tickets from the washing machine, panicked and killed her"},
+  {"type": "has_motive_against", "from": "p1", "to": "p7", "motive_type": "betrayal - boyfriend secretly two-timing her with Haruka, drove her to steal the tickets back"},
+  {"type": "has_motive_against", "from": "p2", "to": "p4", "motive_type": "romantic dispute over ticket resale (Conan's initial hypothesis; ultimately unsubstantiated)", "attrs": {"status": "cleared"}},
+
+  {"type": "confronts", "from": "p1", "to": "p4", "attrs": {"context": "caught tampering with the washing machine mid-cycle"}},
+  {"type": "kills", "from": "p1", "to": "p4", "circumstance_tags": ["staged_burglary", "cover_up"], "attrs": {"method": "physical confrontation; exact killing mechanism not detailed in the transcript"}},
+
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2", "attrs": {"detail": "restocked shop supplies including pens, left around 10 PM the night of the murder"}},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+
+  {"type": "owns", "from": "p1", "to": "o1", "attrs": {"detail": "originally bought as a birthday gift for p7"}},
+  {"type": "gives", "from": "p7", "to": "p3", "attrs": {"item": "o1", "pretext": "claimed as his own present, concealing that Kosuda bought them and that he owed a colleague"}},
+  {"type": "owns", "from": "p3", "to": "o1"},
+  {"type": "steals", "from": "p1", "to": "o1", "attrs": {"occasion": "stolen from Haruka's bag at the coffee shop"}, "circumstance_tags": ["red_herring"]},
+  {"type": "hides_contraband_in", "from": "p1", "to": "o2", "attrs": {"contains": "o1"}},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p4", "to": "o11"},
+  {"type": "mistakenly_takes_home", "from": "p4", "to": "o2", "attrs": {"note": "grabbed Kosuda's apron along with her own after closing"}},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "loads_into", "from": "p4", "to": "o4", "attrs": {"items": "o2, plus pants containing o5, and other laundry"}},
+  {"type": "located_in", "from": "o5", "to": "o4", "attrs": {"container": "pants pocket"}},
+  {"type": "stains", "from": "o5", "to": "o2", "attrs": {"effect": "care label turned pink"}},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o4", "attrs": {"action": "swapped o2 out for o11, reset the spin-dry cycle", "flaw": "forgot to turn the water valve back on"}},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o8"},
+  {"type": "steals", "from": "p1", "to": "o9", "attrs": {"occasion": "took banknotes post-murder to fake a burglary"}},
+  {"type": "recovers", "from": "p1", "to": "o1", "attrs": {"occasion": "retrieved from the apron pocket after the murder"}},
+  {"type": "forgets", "from": "p4", "to": "o6", "attrs": {"reason": "returned home to fetch it and interrupted the culprit"}},
+  {"type": "located_in", "from": "o6", "to": "l1"},
+  {"type": "owns", "from": "p4", "to": "o10"},
+  {"type": "located_in", "from": "o10", "to": "l1", "attrs": {"note": "found beside the body"}},
+  {"type": "creates", "from": "p1", "to": "o3", "attrs": {"posted": "the same night, before the murder, attempting to resell the tickets"}},
+  {"type": "regarding", "from": "o3", "to": "o1"},
+  {"type": "implicates", "from": "o3", "to": "p1", "attrs": {"scope": "broadly implicated any Marin Coffee staff member, not uniquely Kosuda"}},
+  {"type": "reports_on", "from": "p5", "to": "o4", "attrs": {"testimony": "washing machine unusually loud, ran 10:20-11 PM, stopped once about five minutes in"}},
+
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "o11"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+
+  {"type": "regarding", "from": "c2", "to": "o7"},
+  {"type": "regarding", "from": "c2", "to": "p7"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+
+  {"type": "regarding", "from": "c3", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "o7"},
+  {"type": "implicates", "from": "c3", "to": "p2"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

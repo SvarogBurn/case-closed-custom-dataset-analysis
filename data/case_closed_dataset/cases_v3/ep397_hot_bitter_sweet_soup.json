@@ -1,0 +1,266 @@
+{
+ "case_id": "ep397_hot_bitter_sweet_soup",
+ "episode_number": "397",
+ "title": "Hot, Bitter, Sweet Soup",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Hot,_Bitter,_Sweet_Soup",
+ "subtitle_source": ["subs_resolved/0397.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Officers Sato/Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: murder. Old low-fidelity file (cases/ep397_hot_bitter_sweet_soup.json) named the correct culprit (Shimizu) but had a key mechanism detail backwards: its event e3 says a 'shelved book' falls and hits the mouse to fake-send the email, but the transcript (~19:37-20:00) is explicit that it is Ozawa's own vibrating cell phone -- left balanced half off the shelf -- that gets knocked onto the mouse by an incoming call, not a book; corrected here as `o3` with the trick recorded in its attrs and reflected in clue c3. The old file also omitted Kinoshita (first-responding officer, whose 'unlocked door' observation is a real plot beat) and Inoue (the iceman whose testimony confirms the ice-purchase mechanism) entirely, and gave Aikawa's frame-up of Shimizu (photo relocation, forged calendar, hidden cash) no edges at all -- both restored here.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Fumie Ozawa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "secretary, trading company",
+    "attrs": {
+     "age": 24,
+     "died_of": "strangulation by wire, staged as a delayed hanging",
+     "embezzled_amount": "30 million yen"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ryota Shimizu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "CEO, consumer loan company",
+    "attrs": {
+     "age": 30,
+     "alibi_claimed": "elementary school reunion the prior evening, then Haneda-bound flight the next morning",
+     "relationship_to_victim": "secret lover and direct boss"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Etsuko Aikawa",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "owner, Yuuzuki confection shop",
+    "attrs": {
+     "age": 58,
+     "reason_for_framing": "believed Shimizu killed Fumie but had no proof, so fabricated evidence against him"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kinoshita",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police officer, first responder",
+    "attrs": {
+     "initial_ruling": "suicide"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Inoue",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "ice vendor",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Ozawa's apartment bathroom",
+    "attrs": {
+     "door_state": "unlocked when Kinoshita first arrived"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Ozawa's apartment entryway",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Inoue's ice stall",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Haneda Airport",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "School reunion venue",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Wire (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "tied_to": "shower head, looped around victim's neck",
+     "embedded_hair": "single straight black hair strand, not the victim's"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Block ice, four packs",
+    "role": "tool",
+    "attrs": {
+     "weight": "about 15 kg",
+     "melt_time": "about half a day at room temperature",
+     "purchased_from": "Inoue"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Ozawa's cell phone",
+    "role": "tool",
+    "attrs": {
+     "trick": "left on vibrate, balanced half off a bookshelf; an incoming call vibrated it onto the mouse, clicking send on a pre-drafted email hours after death"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Fishing photo of Shimizu & Ozawa",
+    "role": "evidence",
+    "attrs": {
+     "normal_location": "photo album",
+     "moved_to": "entryway, to point at Shimizu"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Calendar, forged dentist entry",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "cast doubt on the suicide theory",
+     "handwriting": "does not match Ozawa's own"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Fish scale",
+    "role": "evidence",
+    "attrs": {
+     "found": "under the bathtub cover",
+     "origin": "Shimizu's cooler box, used to carry the ice"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "5 million yen cash",
+    "role": "evidence",
+    "attrs": {
+     "brought_by": "Aikawa, meant to help Fumie repay the embezzled funds"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Sleeping pill",
+    "role": "tool",
+    "attrs": {
+     "used_for": "sedating Fumie before she was moved to the bathroom"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Fumie's confession email",
+    "role": "evidence",
+    "attrs": {
+     "addressed_to": "Shimizu-sama",
+     "content": "confesses the 30-million-yen embezzlement, frames it as a suicide note"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Gas meter box",
+    "role": "tool",
+    "attrs": {
+     "used_by": "Aikawa, to hide the 5 million yen"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Calendar's dentist-appointment handwriting does not match Ozawa's known handwriting -- someone else wrote it.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Calendar shows a dentist appointment, but the exam finds nothing wrong with her teeth -- the appointment was invented.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Email send time matches an incoming call log entry, not a moment a living hand would click send.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "secret_lovers"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employer_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "close_family_friend_of"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "silence_before_confession"},
+  {"type": "has_motive_against", "from": "p3", "to": "p2", "motive_type": "believed_responsible_for_murder (red herring accusation)"},
+
+  {"type": "drugs", "from": "p2", "to": "p1", "circumstance_tags": ["premeditated"]},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "delayed hanging via a melting-ice mechanism", "circumstance_tags": ["staged_suicide", "delayed_mechanism"]},
+  {"type": "stages_suicide_of", "from": "p2", "to": "p1", "circumstance_tags": ["staged_suicide"]},
+  {"type": "fakes_time_of_death_of", "from": "p2", "to": "p1", "method": "phone-vibration trick sent a pre-written email hours after death"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o3", "circumstance_tags": ["staged_alibi"]},
+  {"type": "calls", "from": "p2", "to": "o3", "circumstance_tags": ["staged_alibi"]},
+
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o8"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o6", "to": "l1"},
+
+  {"type": "sells_to", "from": "p5", "to": "p2", "detail": "sold 4 packs (~15 kg) of ice"},
+
+  {"type": "leaves_evidence", "from": "p2", "to": "o1"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6"},
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "o3"},
+
+  {"type": "hides_object_in", "from": "p3", "to": "o10", "circumstance_tags": ["cover_up"]},
+  {"type": "owns", "from": "p3", "to": "o7"},
+  {"type": "located_in", "from": "o7", "to": "o10"},
+
+  {"type": "leaves_evidence", "from": "p3", "to": "o4", "circumstance_tags": ["frames_shimizu", "red_herring"]},
+  {"type": "leaves_evidence", "from": "p3", "to": "o5", "circumstance_tags": ["frames_shimizu", "red_herring"]},
+  {"type": "forges", "from": "p3", "to": "o5"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "regarding", "from": "c2", "to": "o5"},
+  {"type": "accuses", "from": "p3", "to": "p2", "circumstance_tags": ["red_herring", "false_accusation"]},
+
+  {"type": "written_by", "from": "o9", "to": "p1"},
+  {"type": "inscribed_to", "from": "o9", "to": "p2"},
+
+  {"type": "examines", "from": "p4", "to": "p1", "detail": "initial ruling of suicide, later reversed"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l3"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

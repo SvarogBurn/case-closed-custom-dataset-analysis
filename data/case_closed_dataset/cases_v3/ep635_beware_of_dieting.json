@@ -1,0 +1,164 @@
+{
+ "case_id": "ep635_beware_of_dieting",
+ "episode_number": "635",
+ "title": "Beware of Dieting",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Beware_of_Dieting",
+ "subtitle_source": ["subs_resolved/0635.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Inspector Chiba) omitted by convention, matching ep011. No `event` node type: every action is a directly typed edge between the entities involved. Cookie the studio dog is modeled as an `object` node (role: evidence) rather than a `person`, since she is an animal, not a named human character -- but she is load-bearing to the plot as the unwitting carrier of the poisoned wrap, so she is kept as a node rather than folded into an attr. Old cases/ep635 summary is largely accurate on the culprit and core mechanism (Satoyama, poisoned plastic wrap, dog hiding the evidence, revenge for her parents' suicide) but collapsed the plot to 3 skeletal events and 1 clue: it omitted the moonlight-yoga lure (needed to get Degawa's dinner into her room unsupervised), the wrap-swap sleight-of-hand (removing the roll without disturbing the torn strip via the box's side tab), the two red herrings' independent motives (Kaoru was fired from a prior job over one of Degawa's complaints; Yasuko secretly loathed Degawa despite posing as her friend and was seen trampling her clothes), and the locked-room key-accounting clue that clears Yasuko. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tsukiko Satoyama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "yoga diet studio owner/instructor",
+    "attrs": {"age": 34, "studio_name": "Chandni"}
+   },
+   {
+    "id": "p2",
+    "name": "Kaoru Iimori",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "chef at Chandni",
+    "attrs": {"age": 29}
+   },
+   {
+    "id": "p3",
+    "name": "Yasuko Inomata",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Atsuko Degawa's companion",
+    "attrs": {"age": 26}
+   },
+   {
+    "id": "p4",
+    "name": "Atsuko Degawa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "diet training participant",
+    "attrs": {
+     "age": 26,
+     "family": "daughter of the Degawa Corporation president",
+     "reputation": "notorious complainer; sued by multiple people; lost a lawsuit the afternoon she died"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Satoyama's parents",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "ran a yoga training studio",
+    "attrs": {
+     "died_of": "suicide",
+     "circumstance": "fell into debt and shut down after Degawa's complaint 3 years earlier, then died by suicide"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Chandni buffet/dining hall", "attrs": {}},
+   {"id": "l2", "name": "Degawa's room (locked)", "attrs": {}},
+   {"id": "l3", "name": "Studio yard", "attrs": {}},
+   {"id": "l4", "name": "Vegetable patch", "attrs": {"distance": "10 minute walk from studio"}},
+   {"id": "l5", "name": "Studio kitchen", "attrs": {}},
+   {"id": "l6", "name": "Laundry room", "attrs": {}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned plastic wrap",
+    "role": "weapon",
+    "attrs": {
+     "trick": "cyanide painted on a wrap segment, dried, rerolled; swapped in without disturbing the torn starter strip via the box's side tab",
+     "triggered_by": "steam condensation while microwaving dripped the poison into the food"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Cyanide poison bottle",
+    "role": "tool",
+    "attrs": {"planted_to": "stage the death as a suicide"}
+   },
+   {
+    "id": "o3",
+    "name": "Cookie (studio dog)",
+    "role": "evidence",
+    "attrs": {
+     "note": "unwittingly carried the used poisoned wrap hidden in her pocket by Satoyama; her agitation at the smell foiled disposal, so it was found and became evidence"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Yellow Queen-of-the-Night pollen absent on Kaoru's shoulder before she left for the patch, present after she returned -- confirms she genuinely went there, clearing her.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "No used plastic wrap turned up in the trash despite Degawa microwaving her food -- the wrap she used had been swapped out beforehand.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Both room keys (one in Degawa's pocket, the spare in the safe) were accounted for -- no one could have locked the door from outside, clearing Yasuko.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "feigned_friend_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "client_of"},
+
+  {"type": "ruins_business_of", "from": "p4", "to": "p5", "circumstance_tags": ["backstory"]},
+  {"type": "causes_firing_of", "from": "p4", "to": "p2", "circumstance_tags": ["backstory"]},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "revenge_for_parents_suicide"},
+  {"type": "has_motive_against", "from": "p2", "to": "p4", "motive_type": "resentment_for_job_loss (red herring)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p4", "motive_type": "resentment_for_humiliation (red herring)"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+
+  {"type": "vandalizes_property_of", "from": "p3", "to": "p4", "circumstance_tags": ["red_herring"]},
+  {"type": "discovers_body_of", "from": "p1", "to": "p4"},
+
+  {"type": "taints", "from": "p1", "to": "o1"},
+  {"type": "gives", "from": "p1", "to": "p4", "method": "opened the box's side tab to swap in the pre-poisoned roll without disturbing the torn starter strip"},
+  {"type": "poisons", "from": "p1", "to": "p4", "circumstance_tags": ["locked_room", "staged_suicide", "delayed_action_trap"], "method": "cyanide-laced plastic wrap dripped into her food when microwaved"},
+  {"type": "stages_suicide_of", "from": "p1", "to": "p4", "circumstance_tags": ["staged_suicide", "locked_room"]},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o2"},
+  {"type": "hides_contraband_in", "from": "p1", "to": "o3"},
+  {"type": "microwaves_food_with", "from": "p4", "to": "o1"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+
+  {"type": "implicates", "from": "o1", "to": "p1"},
+  {"type": "regarding", "from": "cA", "to": "p2"},
+  {"type": "regarding", "from": "cA", "to": "l4"},
+  {"type": "regarding", "from": "cB", "to": "o1"},
+  {"type": "regarding", "from": "cB", "to": "p4"},
+  {"type": "implicates", "from": "cB", "to": "p1"},
+  {"type": "regarding", "from": "cC", "to": "p3"},
+  {"type": "regarding", "from": "cC", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

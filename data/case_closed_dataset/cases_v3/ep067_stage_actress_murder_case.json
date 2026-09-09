@@ -1,0 +1,408 @@
+{
+ "case_id": "ep067_stage_actress_murder_case",
+ "episode_number": "67",
+ "title": "Stage Actress Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Stage_Actress_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0067.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Detective Takagi, guest legendary detective Heihachiro Shiota) omitted by convention even though Shiota drives the on-screen deduction. No event nodes: every action is a directly typed edge between the entities involved, sharing an order integer. Unusually rich in red herrings: Kogoro Mouri himself publicly (and wrongly) accuses Yuichi Uda first; Eiko Nakayama is briefly suspected via the water pitcher (which turns out clean, since the cyanide was in the glass); and props man Junichi Tateoka is a genuine secondary culprit for a *different* crime (the threat letter and a curtain-rigging attempt to injure Shoko) who is not the poisoner. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shoko Oide",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "leading stage actress",
+    "attrs": {
+     "died_of": "cyanide poisoning"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kazuo Motoki",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "theater director",
+    "attrs": {
+     "cleared_by": "questioned during the final reveal (everyone made to show their hands) but not up above the stage/backstage at the moment the fishing line was pulled, so could not have rigged the trap; his motive was only Tateoka's in-the-moment accusation"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hitomi Sasaki",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Shoko Oide's manager",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Eiko Nakayama",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "supporting actress",
+    "attrs": {
+     "cleared_by": "she carried out the water pitcher, but the pitcher tested clean; the cyanide was found only in Shoko's specific glass"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Junichi Tateoka",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "props crew",
+    "attrs": {
+     "confessed_crime": "wrote the threat letter and rigged the stage curtain hoping to injure Shoko, after she caught him peeking at her changing and demanded he be fired -- a real crime, but not the poisoning",
+     "prior_incident": "a lighting rig had nearly fallen on Shoko the week before; he denied doing it on purpose"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yuichi Uda",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "leading man",
+    "attrs": {
+     "cleared_by": "publicly (and wrongly) accused first by Kogoro Mouri, based only on his breakup with Shoko and their frequent arguments over her acting"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Theatrical Stage",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Backstage area",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Fishing line rigged from the suspended star prop",
+    "role": "instrument",
+    "attrs": {
+     "trick": "threaded up through a star prop raised higher than the others on the ceiling, so a weighted cyanide capsule could be lowered from backstage into whichever glass Shoko's stage 'marking' put in front of her, then reeled back up",
+     "recovered": "found still in Sasaki's pocket after everyone was ordered to stay put on scene"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Threat letter (\"Cancel the show or it will become a terrible tragedy.\")",
+    "role": "evidence",
+    "attrs": {}
+   },
+   {
+    "id": "o3",
+    "name": "Cyanide-loaded weight",
+    "role": "weapon",
+    "attrs": {
+     "use": "tied to the end of the fishing line and dipped into Shoko's glass during the blackout moment when the spotlight held everyone's attention on the two leads"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Raised star prop",
+    "role": "tool",
+    "attrs": {
+     "significance": "positioned noticeably higher than the other ceiling stars; a torn length of fishing line was found wrapped around its cord after the line snagged while being reeled in"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Water pitcher",
+    "role": "evidence",
+    "attrs": {
+     "test_result": "clean -- the cyanide was found only in the water remaining in Shoko's glass, not in the pitcher"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Rigged stage curtain",
+    "role": "tool",
+    "attrs": {
+     "purpose": "Tateoka's separate, unrelated attempt to injure Shoko by rigging the curtain; not the murder weapon"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Writing pad with pen imprints",
+    "role": "evidence",
+    "attrs": {
+     "significance": "indentation impressions on the pad match the threat letter's text, identifying Tateoka as the letter's author"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Marks on Hitomi Sasaki's hands match forcibly detaching a taut fishing line, consistent with reeling the poisoned weight back up in a hurry.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The fishing line used in the murder is still in Sasaki's pocket after everyone present is ordered to stay exactly where they were -- she never had a chance to dispose of it.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Pen-imprint indentations on a backstage writing pad match the wording of the threat letter, identifying Tateoka as its author -- a real, separate crime uncovered mid-investigation that is not the murder.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "Cyanide kills almost instantly, yet Shoko drank water normally after swallowing a prop capsule earlier and the rehearsal ran uninterrupted for 40 minutes -- rules out any method that introduces the poison significantly before she actually drank, and rules out the pitcher (clean) in favor of something added directly to her glass moments before.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p6",
+   "relation_type": "dated"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "dated"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "professional_rival"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "taunts",
+   "from": "p1",
+   "to": "p3",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "mockingly tells Hitomi she can have Uda back now that she's grown bored of him, after having taken him from her in the first place",
+   "circumstance_tags": [
+    "humiliation"
+   ]
+  },
+  {
+   "type": "threatens",
+   "from": "p5",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "written_by",
+   "from": "o2",
+   "to": "p5"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p5",
+   "to": "o2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "rigs_trap_in",
+   "from": "p5",
+   "to": "o6",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "attempted_assault",
+    "unrelated_subplot"
+   ],
+   "detail": "rigs the stage curtain hoping to injure Shoko, unrelated to the poisoning"
+  },
+  {
+   "type": "rigs_trap_in",
+   "from": "p3",
+   "to": "o1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "threads a fishing line up through the raised star prop, weighted with a cyanide capsule, so it can be lowered from backstage into Shoko's marked glass"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "during the play's climax, while the spotlight held everyone's attention on the two leads and left the table dark, lowered a cyanide-loaded weight on a fishing line into her water glass, then reeled it back up before anyone noticed",
+   "circumstance_tags": [
+    "staged_scene",
+    "locked_room"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o4",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "the line snags on the star prop's cord while being reeled in, tearing off a length that stays wrapped around it"
+  },
+  {
+   "type": "conceals",
+   "from": "p3",
+   "to": "o1",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "keeps the fishing line in her pocket instead of disposing of it, not expecting everyone to be held on the scene"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o7"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p4",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p5"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "jealousy_revenge_--_shoko_manipulatively_stole_and_then_discarded_hitomis_ex-boyfriend_uda"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "resentment_after_being_caught_peeking_at_her_changing_and_shoko_demanding_he_be_fired (real motive, but for the threat letter and curtain rigging, not the murder)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p6",
+   "to": "p1",
+   "motive_type": "unspecified (red herring: accused publicly by Kogoro Mouri, citing their breakup and constant arguments over her acting; he denies wanting her dead)"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "resentment_of_her_attitude_as_a_rising_star_undermining_his_direction_--_accused_by_tateoka_mid-argument_of_wanting_her_dead_too (red herring: he denies it, citing he'd lose the most if the play flopped, and is cleared since he was not positioned to rig the trap)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

@@ -1,0 +1,615 @@
+{
+ "case_id": "ep243-244_kogoro_mouris_imposter",
+ "episode_number": "243-244",
+ "title": "Kogoro Mouri's Imposter",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Kogoro_Mouri%27s_Imposter",
+ "subtitle_source": ["subs_resolved/0243.txt", "subs_resolved/0244.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector-equivalent Detective Yamamura of Gunma Prefecture Police) omitted by convention. case_type: murder. Two-part episode; both transcripts read in full. The old wiki-derived case file at cases/ep243-244_kogoro_mouris_imposter.json correctly identified Jinbo (s2) as the culprit, but mischaracterized the 5-years-ago crime as 'embezzlement' when the transcript is explicit it was extortion/blackmail against a confectionery company ('two men threatened a confectionery company and stole 100 million yen'). It also completely omitted the unrelated 4-years-ago forest suicide victim (here p6) whose milk carton, red bean bread, cigarettes and convenience-store receipt Jinbo scavenged and planted on the long-haired man's remains -- this fake-time-of-death trick (not a fake-identity trick, as the old file's object o1 description implied) is the mechanical core of Jinbo's alibi and had to be modeled with its own backstory victim and provenance chain. The old file also had no witness/backstory nodes for Onda or Urakawa beyond generic suspect stubs, missed the red-herring accusation Kogoro briefly levels at Onda, and missed both resolving clues (the Ran-Mouri-labeled cell phone handed over without hesitation, and the dusty old fingerprints vs. fresh footprints on the shogi board/desk). murderer_id in label matches the old file's s2 (Jinbo) -- transcript confirms this, no discrepancy to document there.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yoshiro Onda",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Aoiya Inn owner, age 58",
+    "attrs": {
+     "role_in_case": "entrusted with the long-haired man's attache case five years ago; later calls in Kogoro Mouri to investigate it; briefly suspected because he is the only person confirmed to know both the case's existence and its true owner"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masao Jinbo",
+    "aliases": ["Echigo Mitsuemon (fake historical-drama alias, unrelated joke identity)", "the bearded proxy in hat and sunglasses"],
+    "roles": ["suspect"],
+    "occupation": "Aoiya Inn employee, age 34; formerly co-extorted a confectionery company with the long-haired man",
+    "attrs": {
+     "hired_at_inn": "four years ago in spring, specifically to search the inn's grounds for the buried 100 million yen",
+     "disguise": "wore a hat, sunglasses and a fake beard to pose as the long-haired man's 'proxy' at the inn the day after the murder"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Eiji Urakawa",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Aoiya Inn employee, age 37",
+    "attrs": {
+     "role_in_case": "discovers the long-haired man's skeletal remains in Kashiragami Forest while gathering wild vegetables, present day"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Tatsuo Mori",
+    "aliases": ["the fake Mouri Kogoro", "Kogoro's imposter"],
+    "roles": ["victim"],
+    "occupation": "unemployed / behind on rent; hired by Jinbo to impersonate Kogoro Mouri",
+    "attrs": {
+     "identified_by": "a 'Ran Mouri' sticker discovered later on an unrelated phone leads to unraveling; his own identity is confirmed via a phone call to him picked up at the inn, name overheard as 'Tatsuo', surname 'Mori' inferred from a name sticker on his phone",
+     "backstory": "mentioned a 'get rich quick scheme' on a phone call and was behind on his apartment rent shortly before his death"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "The long-haired man in the red jacket",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "unnamed; co-extorted a confectionery company with Jinbo five years ago",
+    "attrs": {
+     "died_of": "hanging, staged to look like accidental suicide (branch broke)",
+     "suspicion_before_death": "sensed Jinbo meant to kill him and keep all the money, so entrusted the attache case (with the map) to Onda and a threatening memo to be delivered only if someone other than himself came to collect it",
+     "remains_discovered": "present day, by Eiji Urakawa, turned to bones by then"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Unidentified forest suicide victim",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "unrelated genuine suicide near the Maedaore Jizo statue, four years ago at the end of the inn's company trip",
+     "discovered_by": "Jinbo, who scavenged his belongings (milk carton, red bean bread, cigarette pack, convenience-store receipt dated July 10) instead of reporting them",
+     "significance": "his belongings were later planted on the long-haired man's remains to fake the long-haired man's time of death as four years ago, giving Jinbo an alibi via the company trip"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Aoiya Inn (lobby / guest rooms)",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Room 209, Aoiya Inn",
+    "attrs": {
+     "significance": "where Tatsuo Mori is found hanged, staged as suicide"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Women's bath, Aoiya Inn",
+    "attrs": {
+     "significance": "Jinbo posts a fake 'cleaning' sign here to keep people out while he collects hair from the drain"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Kashiragami Forest (Maedaore Jizo statue site)",
+    "attrs": {
+     "local_legend": "said to be haunted by a jinx god and is famous for suicides; the fallen Maedaore Jizo statue calms the forest's spirits and is never supposed to be stood back up",
+     "significance": "site of the long-haired man's murder five years ago, of the unrelated suicide four years ago, and of the buried 100 million yen"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Unnamed confectionery company",
+    "attrs": {
+     "significance": "extorted for 100 million yen by Jinbo and the long-haired man five years ago"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Attache case",
+    "role": "evidence",
+    "attrs": {
+     "entrusted_by": "the long-haired man, to Onda, five years ago",
+     "instructions": "return the case itself only to the long-haired man in person; give a separate sealed envelope to anyone else who comes claiming to be his proxy",
+     "contents_found": "an old sports newspaper (and, planted much later, a bundle of hair)"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Sports newspaper (dated September, five years ago)",
+    "role": "evidence",
+    "attrs": {
+     "headline": "sumo wrestler Akagimaru wins a championship as East Maegashira Number 5, with a black-star (thrust-down) loss recorded on day eight",
+     "decoded_message": "a treasure map: from the fallen Maedaore Jizo statue, walk five steps east (Maegashira = five), then turn right and walk eight steps (day-eight loss), then dig -- marks the burial spot of the stolen 100 million yen",
+     "true_function": "the long-haired man's insurance -- proof of where he hid the extortion money, left with a neutral third party instead of on his person"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Bundle of long, brown, permed hair from the bath drain",
+    "role": "evidence",
+    "attrs": {
+     "planted_by": "Jinbo, to mimic 'a curse from the long-haired man' and mislead the investigation toward someone emotionally tied to the dead man",
+     "anomaly": "still wet and clearly recently gathered, not five-year-old hair"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Torn memo from the sealed envelope",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "I shall kill you with my curse.",
+     "written_in": "blood-like red ink",
+     "fate": "read, torn apart in anger and thrown in the lobby trash can by Jinbo posing as the long-haired man's proxy the day after the murder"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Milk carton (crushed, no straw)",
+    "role": "evidence",
+    "attrs": {
+     "origin": "scavenged from p6's belongings after his unrelated suicide four years ago",
+     "staging_flaw": "no straw present -- proves someone refilled a discarded carton, resealed the spout with glue, and planted it, since no one carries an already-opened milk carton in their bag"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Red bean bread (crushed)",
+    "role": "evidence",
+    "attrs": {
+     "origin": "scavenged from p6's belongings"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Cigarette pack found on the long-haired man's remains",
+    "role": "evidence",
+    "attrs": {
+     "origin": "scavenged from p6's belongings",
+     "anomaly": "no lighter or matches found with it, and the body was wearing a sweater despite the apparent summer date -- both point to staging"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Convenience store receipt (dated July 10, four years ago)",
+    "role": "evidence",
+    "attrs": {
+     "origin": "scavenged from p6's belongings",
+     "function": "planted to fix the long-haired man's apparent death date to a day Jinbo could alibi via the inn's company trip"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Shogi board and desk in Room 209",
+    "role": "tool",
+    "attrs": {
+     "use": "stacked and climbed barefoot to reach ceiling height while hanging Mori's body",
+     "forensic_finding": "fresh bare footprints matching Jinbo found on top of both pieces of furniture"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Light bulb in Room 209",
+    "role": "evidence",
+    "attrs": {
+     "forensic_finding": "carries Jinbo's fingerprints, but under a thick layer of dust -- proving they are old, from a genuine light-bulb change long before the murder, not from the night of the killing"
+    }
+   },
+   {
+    "id": "o11",
+    "name": "Ran Mouri's cell phone",
+    "role": "evidence",
+    "attrs": {
+     "left_in": "Kogoro's car",
+     "identifying_sticker": "Ran Mouri"
+    }
+   },
+   {
+    "id": "o12",
+    "name": "Buried urn containing 100 million yen",
+    "role": "contraband",
+    "attrs": {
+     "buried_at": "five steps east and eight steps right of the fallen Maedaore Jizo statue, per the newspaper's decoded directions",
+     "origin": "the money extorted from the confectionery company five years ago"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "When Jinbo returns Ran's cell phone (found in Kogoro's car) directly to the real Kogoro without a moment's hesitation or asking which of the two men it belongs to -- reading the 'Ran Mouri' sticker and matching daughter to father instantly -- it contradicts his claim of never having seen the real Kogoro's face before; he could only know this because he'd already distinguished the real Kogoro from the imposter he hired.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cB",
+    "desc": "Jinbo's fingerprints on Room 209's light bulb are old and buried under a thick layer of dust (consistent with a long-past light-bulb change), while his bare footprints on the shogi board and desk beneath the ceiling beam are fresh -- no inn would let a light collect that much dust while otherwise keeping the room clean, so the footprints must date to the murder, not the innocent light-changing excuse he offers.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "secret_business_partner",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "extorts",
+   "from": "p2",
+   "to": "l5",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "detail": "threatens the confectionery company alongside the long-haired man and steals 100 million yen"
+  },
+  {
+   "type": "extorts",
+   "from": "p5",
+   "to": "l5",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 5
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p5",
+   "motive_type": "greed_wants_all_stolen_money"
+  },
+  {
+   "type": "entrusts",
+   "from": "p5",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "detail": "gives the attache case (containing the map) and a sealed envelope (containing the threatening memo), with instructions on who may reclaim which"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o1"
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p5",
+   "to": "o2",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "detail": "encodes the treasure map inside the sports newspaper, sealed inside the attache case"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p5",
+   "order": 2,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "method": "hanging, staged as suicide (branch broke)",
+   "circumstance_tags": ["staged_suicide", "cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "detail": "returns to the inn disguised in a hat, sunglasses and fake beard, claims to be the long-haired man's proxy, and receives the sealed envelope"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o4",
+   "order": 3,
+   "temporal_frame": "backstory",
+   "detail": "reads the memo, tears it up in anger, discards it in the lobby trash"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 4,
+   "temporal_frame": "backstory",
+   "years_before_present": 4,
+   "detail": "searching the forest for the hidden money, finds p6's genuine suicide"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l4",
+   "order": 4,
+   "temporal_frame": "backstory",
+   "years_before_present": 4
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of",
+   "order": 4,
+   "temporal_frame": "backstory",
+   "years_before_present": 4
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p2",
+   "to": "o5",
+   "order": 5,
+   "temporal_frame": "backstory",
+   "years_before_present": 4,
+   "detail": "scavenges milk, bread, cigarettes and the receipt from p6's remains and plants them on the long-haired man's remains to fake his time of death"
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p2",
+   "to": "o6",
+   "order": 5,
+   "temporal_frame": "backstory",
+   "years_before_present": 4
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p2",
+   "to": "o7",
+   "order": 5,
+   "temporal_frame": "backstory",
+   "years_before_present": 4
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p2",
+   "to": "o8",
+   "order": 5,
+   "temporal_frame": "backstory",
+   "years_before_present": 4
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 5,
+   "temporal_frame": "backstory",
+   "years_before_present": 4,
+   "detail": "removes the long-haired man's driver's license, which would otherwise have proven he'd been dead over a year and exposed the fake alibi timeline"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "discovers the long-haired man's skeletal remains while gathering wild vegetables"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p2",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "Onda decides to finally call in Kogoro Mouri to open the long-kept attache case, alarming Jinbo"
+  },
+  {
+   "type": "hires",
+   "from": "p2",
+   "to": "p4",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "pays Tatsuo Mori to impersonate Kogoro Mouri and retrieve the attache case before the real Kogoro arrives"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p4",
+   "order": 10,
+   "temporal_frame": "present",
+   "detail": "Onda hands over the attache case, believing p4 to be the real Kogoro Mouri"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p2",
+   "motive_type": "blackmail_threatens_to_expose_jinbo_unless_paid"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p4",
+   "order": 12,
+   "temporal_frame": "present",
+   "method": "strangled with a belt, staged as a hanging suicide",
+   "circumstance_tags": ["staged_suicide", "cover_up"]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p2",
+   "to": "p4",
+   "order": 12,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_suicide"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o9",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "climbs the shogi board and desk barefoot to reach the ceiling beam"
+  },
+  {
+   "type": "implicates",
+   "from": "o9",
+   "to": "p2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "hangs a fake 'cleaning' sign to keep the women's bath empty and gathers wet hair from the drain"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o3",
+   "order": 13,
+   "temporal_frame": "present",
+   "circumstance_tags": ["red_herring", "cover_up"],
+   "detail": "inserts the stolen hair into the newspaper inside the attache case to fake a 'curse' from someone tied to the long-haired man"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 16,
+   "temporal_frame": "present",
+   "detail": "returns to the forest to dig up the buried money now that the map has been decoded"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o11"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o10"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o9"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2",
+   "detail": "leads investigators to the burial site where Jinbo is caught digging"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p5",
+   "motive_type": "sole_knowledge_of_briefcase_secret (red herring -- Kogoro briefly suspects Onda as the only person confirmed to know both the attache case's existence and its true owner, before Jinbo's hidden extortion past and forest-grounds search surface)"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o12",
+   "detail": "the long-haired man was the one who carried and buried the 100 million yen from the confectionery-company extortion"
+  },
+  {
+   "type": "located_in",
+   "from": "o12",
+   "to": "l4",
+   "detail": "buried five steps east and eight steps right of the fallen Maedaore Jizo statue, per the newspaper's decoded directions"
+  },
+  {
+   "type": "implicates",
+   "from": "o12",
+   "to": "p2",
+   "detail": "the serial numbers on the recovered bills tie the money to the confectionery-company extortion, identifying Jinbo as one of the two extortionists"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

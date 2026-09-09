@@ -1,0 +1,235 @@
+{
+ "case_id": "ep916-917_the_kendo_tournament_of_love_and_mystery",
+ "episode_number": "916-917",
+ "title": "The Kendo Tournament of Love and Mystery",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Kendo_Tournament_of_Love_and_Mystery",
+ "subtitle_source": "subs_resolved/0916.txt, subs_resolved/0917.txt (839 combined lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Heiji, Kazuha, Officers Takagi/Sato) and the unrelated romance-subplot characters (Momiji, Iori, Onimaru, Namakoshi) omitted by convention as not part of the murder case. case_type: murder. Corrections vs. the old low-fidelity file: (1) murder weapon was wrong -- the old file said a 'sabre' (bladed weapon); the transcript's actual weapon is a single sharpened piece of bamboo (a shinai stave, belonging to the culprit's late son), swung horizontally so centrifugal force opens the throat -- no bladed sword exists anywhere in this episode. (2) The coded 'cutter' clue was misattributed -- the old file's desc implies the killer spoke the line; the transcript makes clear it was the VICTIM Nukitani's own last phone call to his wife asking for a fresh dress shirt ('cutter' = Kansai dialect for dress shirt) after an unrelated nosebleed stained his own shirt, not anything the culprit said or a phrase traceable to them. (3) The old file's stated culprit (Norimura Nenji) is confirmed correct by the transcript. (4) The old file left the motive as 'unspecified'; the real motive is revenge -- Nukitani's biased officiating drove Norimura's son to suicide two years earlier. (5) The old file gave the two other suspects only a generic unspecified motive/knows edge; the transcript grounds each in a real, distinct minor crime (Sadamori secretly laced Nukitani's drink with laxatives after he rejected her; Yokote stalked and secretly photographed Nukitani to embarrass him after being publicly humiliated) -- both are genuine red herrings, not the killer.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Nukitani Shido",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "high school gym teacher, kendo club adviser, tournament referee",
+    "attrs": {
+     "died_of": "single horizontal slash to the throat, no defensive wounds",
+     "backstory": "refereed the team match final two years ago where Norimura's son's win was invalidated for an accidental victory pose; also seen showing apparent favoritism at yesterday's final by not invalidating a similar pose from a fellow Kansai student"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Norimura Nenji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "tournament referee, ranked kendo swordsman",
+    "attrs": {
+     "true_motive": "revenge for his son's suicide, which he blames on Nukitani's officiating",
+     "disguise": "deliberately wore a stolen student uniform/armor set with the thigh-skirt backwards, to make the fatal blow look like an amateur's lucky strike rather than an expert's",
+     "confession": "admits to cutting Nukitani's throat with his dead son's bamboo sword"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yokote Tsuneyuki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "freelance writer",
+    "attrs": {
+     "secondary_crime": "stalked and secretly photographed Nukitani in the bathroom to embarrass him, then deleted the photos after the body was discovered",
+     "grudge": "Nukitani had publicly exposed his lie about winning a kendo tournament, in front of his girlfriend at a cafe"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Sadamori Akane",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "former Self-Defense Force official",
+    "attrs": {
+     "secondary_crime": "laced a warm beverage in Nukitani's bag with laxatives out of spite after he rejected her romantic feelings, then retrieved the bottle after finding him dead so it would not be traced to her",
+     "former_student_of": "p1 (three years in the high school kendo club Nukitani advised)"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yasuoka Katsunari",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "retired kendo enthusiast",
+    "attrs": {
+     "blind_since": "3 years ago",
+     "habit": "sits outside listening to the tournament sounds since losing his sight",
+     "testimony": "heard a hoarse-voiced man on the phone say a bloodied 'cutter' was useless and to bring another; misheard/misreported this as a request for a replacement box cutter, when it was actually Nukitani's own last call to his wife about his stained dress shirt"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Okita Soshi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Kyoto Senshin High School kendo team, second-year",
+    "attrs": {
+     "contribution": "identified the victim's blazer/necktie as a referee's uniform and deduced the killer must be a ranked swordsman; later demonstrated proper thigh-armor technique that exposed the backwards-worn skirt"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Norimura's son",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "high school kendo team member",
+    "attrs": {
+     "died_of": "suicide, two years before the present case",
+     "circumstance": "won a decisive team-match bout but accidentally struck a forbidden victory pose; the win was invalidated by referee Nukitani, his team lost, and he could not bear the humiliation"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Toto Gymnasium, Tokyo",
+    "attrs": {"event": "30th National High School Spring Kendo Tournament"}
+   },
+   {
+    "id": "l2",
+    "name": "Bathrooms near the north entrance, Toto Gymnasium",
+    "attrs": {"note": "crime scene; body found beside the bathrooms; bloody disguise thrown out the bathroom window into the space behind it"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Sharpened bamboo sword",
+    "role": "weapon",
+    "attrs": {
+     "origin": "belonged to Norimura's late son",
+     "mechanism": "a single unassembled bamboo stave sharpened at the tip; swung horizontally, centrifugal force is enough to cut a throat",
+     "disposal": "washed in the bathroom sink afterward, but blood traces remained inside the lining of its carrying bag"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Stolen Kyoto Senshin uniform and armor set",
+    "role": "tool",
+    "attrs": {
+     "provenance": "a spare set reported missing after yesterday's team match, worn by multiple students that day so DNA testing was useless",
+     "staging_flaw": "thigh-skirt worn backwards -- a mistake only a true novice would make by accident, staged deliberately by an expert to mislead about the killer's skill",
+     "blood_pattern": "blood on the thigh armor and the back/seat of the skirt but none on the gauntlets; worn correctly, the blood should show on the front",
+     "disposal": "thrown out of the bathroom window immediately after the killing"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "India ink bottle",
+    "role": "tool",
+    "attrs": {
+     "owner_reason_given": "referees keep a spare bottle to paint over eliminated competitors' names",
+     "actual_intent": "Norimura meant to stain Nukitani's shirt with it to lure him alone to the bathroom, but Nukitani's shirt was already stained by an unrelated nosebleed, making it unnecessary"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Norimura's sword bag",
+    "role": "evidence",
+    "attrs": {"contains": "two practice swords plus the india ink bottle; blood traces found in the lining despite an attempted washing"}
+   },
+   {
+    "id": "o5",
+    "name": "Plastic bottle of laxative-laced warm beverage",
+    "role": "contraband",
+    "attrs": {"owner": "Sadamori Akane", "intent": "to inconvenience Nukitani after he rejected her romantic feelings, not to kill him"}
+   },
+   {
+    "id": "o6",
+    "name": "Melted chocolate in Sadamori's bag",
+    "role": "evidence",
+    "attrs": {"anomaly": "only the pieces along one edge of the bar were melted, not the whole bar, which body heat alone could not explain"}
+   },
+   {
+    "id": "o7",
+    "name": "Yokote's phone photos of Nukitani",
+    "role": "evidence",
+    "attrs": {"content": "secret photos taken of Nukitani in the bathroom", "fate": "deleted by Yokote after the body was discovered"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Only the edge of Sadamori's chocolate bar was melted, not the whole thing -- proves a separate warm object, not body heat, was pressed against it, exposing the hidden hot laxative-laced bottle in the same bag.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The phone line the blind witness overheard about a bloody 'cutter' needing replacement was assumed to be the killer arranging a new box cutter, but 'cutter' is Kansai dialect for a dress shirt and the call was actually the victim's own last call to his wife about his nosebleed-stained shirt -- there was never a box cutter at all.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "Demonstrated on Yokote, correctly tied thigh-armor shows blood on the front of the skirt; the real bloodstains were on the back/seat, proving whoever wore it -- someone who clearly knew proper technique -- put it on backwards on purpose to fake a novice's mistake.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p7", "to": "p2", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "referee_colleague"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "teacher_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "unrequited_love"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "method": "single horizontal throat slash with a sharpened bamboo sword", "circumstance_tags": ["staged_novice_appearance", "cover_up", "revenge"]},
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o4"},
+  {"type": "disguises_using", "from": "p2", "to": "o2", "circumstance_tags": ["staged_novice_appearance"]},
+  {"type": "disposes_of", "from": "p2", "to": "o2"},
+  {"type": "conceals_evidence_in", "from": "p2", "to": "o4"},
+  {"type": "regarding", "from": "o3", "to": "p1", "detail": "Norimura intended to stain Nukitani's shirt with this ink to lure him alone to the bathroom"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge_for_sons_suicide"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "professional_resentment_over_officiating (surface motive Norimura gave first, obscuring the real one)"},
+
+  {"type": "poisons", "from": "p4", "to": "p1", "attrs": {"substance": "laxative", "lethality": "non-lethal"}, "circumstance_tags": ["attempted", "red_herring"]},
+  {"type": "owns", "from": "p4", "to": "o5"},
+  {"type": "removes_from_scene", "from": "p4", "to": "o5"},
+  {"type": "implicates", "from": "o6", "to": "p4"},
+  {"type": "implicates", "from": "o5", "to": "p4"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "unrequited_love_rejection (red herring)"},
+
+  {"type": "photographs", "from": "p3", "to": "p1", "detail": "secretly photographed Nukitani in the bathroom hoping to embarrass him", "circumstance_tags": ["red_herring"]},
+  {"type": "owns", "from": "p3", "to": "o7"},
+  {"type": "destroys_evidence", "from": "p3", "to": "o7"},
+  {"type": "confronts", "from": "p1", "to": "p3", "detail": "publicly exposed Yokote's lie about winning a kendo tournament, in front of his girlfriend at a cafe"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "public_humiliation_by_victim (red herring)"},
+
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "regarding", "from": "c1", "to": "o6"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c3", "to": "o2"},
+  {"type": "regarding", "from": "c3", "to": "p3"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

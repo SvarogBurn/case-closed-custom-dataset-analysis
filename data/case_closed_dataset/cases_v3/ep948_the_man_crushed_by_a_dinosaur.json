@@ -1,0 +1,442 @@
+{
+ "case_id": "ep948_the_man_crushed_by_a_dinosaur",
+ "episode_number": "948",
+ "title": "The Man Crushed by a Dinosaur",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Man_Crushed_by_a_Dinosaur",
+ "subtitle_source": "subs_resolved/0948.txt (374 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Detective Takagi, the Detective Boys, Professor Agasa) omitted by convention; Ayumi's role as the accidental carrier of the coating-agent stain is preserved as an object attribute/clue rather than a person node, matching the precedent set for the Detective Boys elsewhere in the dataset. No `event` node type: every action is a directly typed edge between the entities involved. The old low-fidelity `cases/ep948_...json` file already had the correct culprit (Naito) and correct core motive (Shida reneged on repaying the money Naito used to help him acquire the museum, then tried to run Naito over with a car) -- no correction needed there. This rebuild adds the substantial detail the old file was missing: the two red-herring suspects' motives (Yua blackmailed over her mother's medical bills; Kuchiki's resentment at Shida discarding academically significant fossils for flashy shows), the frame-up of Kuchiki via a forged note and planted coating-agent spill, and the physical trail (confetti, fossil fragments on Naito's shoe, the stained costume pocket, the wireless headset and sound-remote alibi trick) that the detectives actually use to unmask Naito. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Nobuhisa Shida",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Beika Dinosaur Museum director",
+    "attrs": {
+     "died_of": "crushed by a rigged brachiosaurus skeleton, staged to look like a construction accident",
+     "conduct": "discarded academically significant fossils in favor of flashy kid-oriented shows; blackmailed a subordinate; reneged on a debt and tried to kill his creditor"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tatsuki Naito",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Beika Dinosaur Museum show host",
+    "attrs": {
+     "injury": "right arm hurt after Shida tried to run him over with a car",
+     "alibi_trick": "briefly showed himself onstage at the start and end of the single daily show, using a wireless headset to keep narrating while physically absent in between"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yua Katsuragawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Beika Dinosaur Museum clerk",
+    "attrs": {
+     "coerced_by": "Shida offered to pay her ill mother's medical bills if she became his girlfriend"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yoshito Kuchiki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Beika Dinosaur Museum curator",
+    "attrs": {
+     "grievance": "Shida called his academically significant plesiosaur fossils worthless garbage and had them thrown away",
+     "framed_via": "forged note in his name plus a coating-agent spill matching resin he uses regularly"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Central Event Hall (show stage)",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Exhibition Hall 2 (brachiosaurus display)",
+    "attrs": {
+     "status": "closed for construction/temporary assembly at the time of the murder"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Director's office",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Staff room office",
+    "attrs": {
+     "note": "back room where Yua was working; leaving unnoticed was established as impossible"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Museum prep room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rigged brachiosaurus suspension wires",
+    "role": "weapon",
+    "attrs": {
+     "trick": "most wires cut in advance; the last one cut right after the director arrived, dropping the skeleton on him"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Wire-cutting tool",
+    "role": "tool",
+    "attrs": {
+     "found_at": "next to the collapsed fossil"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Forged note signed 'Kuchiki'",
+    "role": "evidence",
+    "attrs": {
+     "content": "We need to talk. Come to the brachiosaurus in exhibition hall 2.",
+     "found_at": "trash can in the director's office",
+     "forged": true
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Spilled fossil coating agent (resin)",
+    "role": "evidence",
+    "attrs": {
+     "detail": "highly transparent resin used to preserve fossils; forensics judged the spill on the exhibition-hall floor recent",
+     "normally_used_by": "Kuchiki, regularly, which is why it was chosen to frame him"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Naito's wireless headset",
+    "role": "instrument",
+    "attrs": {
+     "trick": "let him keep narrating the show while physically away from the stage"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Sound system remote",
+    "role": "instrument",
+    "attrs": {
+     "found_at": "pocket of Naito's show costume",
+     "trick": "used to play a recording of the fossil collapsing after the show had already ended, faking the timing of the incident"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Confetti fragment",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "hallway in front of the director's office",
+     "detail": "matched confetti from the show, stuck to Naito when he detoured there"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Fossil fragments on Naito's shoe",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "near the rear entrance of exhibition hall 2",
+     "detail": "stuck to the sole of his shoe after stepping near the display"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Naito's show costume",
+    "role": "evidence",
+    "attrs": {
+     "detail": "coating agent carried in the pocket leaked, staining the pocket"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The coating-agent stain on Naito's costume pocket matches both the resin spilled at the crime scene and a stain accidentally left on Ayumi's clothes when he helped her up mid-show -- ties the same substance, carried on his person during the show, to the crime scene.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Naito claimed to be onstage the entire single daily show, but was only actually seen for a few seconds at the start and end; his wireless headset let him narrate while away, and confetti plus fossil fragments trace the gap to the director's office and exhibition hall 2.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "secret_business_partner",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "self_preservation_and_revenge (Shida refused to repay the money Naito used to help him acquire the museum, then tried to run him over with a car)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "coercion_blackmail (red herring, accused by Kuchiki; Shida offered to pay her mother's medical bills only if she became his girlfriend)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "professional_resentment (red herring; Shida discarded Kuchiki's academically significant fossils for flashy shows)"
+  },
+  {
+   "type": "cuts",
+   "from": "p2",
+   "to": "o1",
+   "detail": "cuts most of the suspension wires in advance, then cuts the last one when Shida arrives, dropping the skeleton"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "forges",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "frames",
+   "from": "p2",
+   "to": "p4",
+   "detail": "plants the forged note and spills Kuchiki's usual coating agent at the scene to redirect suspicion"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o9"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "fakes_time_of_death_of",
+   "from": "p2",
+   "to": "p1",
+   "method": "plays a remote-triggered recording of the fossil collapsing after the show ended, so witnesses believe the incident happened then rather than during his earlier absence from the stage"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "crushed by a rigged brachiosaurus skeleton, staged as a construction accident",
+   "circumstance_tags": ["staged_accident", "framed_another", "cover_up"]
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o7",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o8",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o9",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o9"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

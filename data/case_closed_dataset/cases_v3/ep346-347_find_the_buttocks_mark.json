@@ -1,0 +1,218 @@
+{
+ "case_id": "ep346-347_find_the_buttocks_mark",
+ "episode_number": "346-347",
+ "title": "Find the Buttock's Mark",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Find_the_Buttock%27s_Mark",
+ "subtitle_source": ["subs_resolved/0346.txt", "subs_resolved/0347.txt"],
+ "schema_version": "v3",
+ "notes": "case_type: serial_assault (not murder -- narration explicitly states the 'phantom killer's' four slashing incidents produced no fatalities; the culprit is a random-victim knife-slasher, not a killer). Recurring detective-cast members who are only incidental facilitators (Conan, Ran, Kogoro Mouri, Inspector Megure) are omitted by convention; Ayumi, Genta, and Mitsuhiko are kept as full person nodes because the physical marks found on Ayumi's hand/sleeve and Genta's pants are themselves the load-bearing clues that crack the case, and Detectives Sato and Takagi are kept because Sato's car becomes a genuine (if comedic) red herring and Takagi executes the Luminol tests on-screen. The episode's opening/closing act (Jodie's kidnapping-case debrief, the Vermouth/Witness Protection Program subplot) is an unrelated serialized B-plot wrapped around this case and is out of scope -- it shares no nodes or evidence with the phantom-killer investigation, so it is excluded rather than force-fit in. Unnamed slashing victims (a woman with a slashed arm, three earlier unnamed victims) are not given person nodes per the named-persons rule; their existence is captured in Naokazu Fukuchi's attrs instead. Checked against the old cases/ep346-347_find_the_buttocks_mark.json: its culprit id (Fukuchi/s2) and both listed clues (driving-skill contradiction, keyhole Luminol anomaly) match the transcript -- no discrepancy found, this rebuild only adds the swapped-cylinder mechanism, the mud-vs-blood mark comparison (Sato's car vs. the culprit's key), and the full suspect/witness cast the old file omitted.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Naokazu Fukuchi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "car mechanic",
+    "attrs": {
+     "disguise": "gray raincoat and hood",
+     "motive_stated": "wanted to commit a noteworthy crime for attention and to spice up a mundane life",
+     "modus_operandi": "serial slasher targeting random pedestrians on rainy days; four incidents total, no fatalities"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Hiroshi Enomoto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "university student, part-time sushi shop employee",
+    "attrs": {
+     "alibi": "drove alone in the mountains to relax after being scolded by his parents",
+     "car_condition": "dented and mud-covered, consistent with his claimed reckless mountain driving"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Toshiaki Degawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "lock shop owner",
+    "attrs": {
+     "alibi": "drove around downtown searching for a locked-out client's house, never found her",
+     "car_condition": "spotlessly clean, consistent with his obsessive car care"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Ayumi Yoshida",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "elementary school student",
+    "attrs": {
+     "injury": "mirrored S/5-shaped mark left on her palm and sleeve from colliding with the fleeing culprit"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Genta Kojima",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "elementary school student",
+    "attrs": {
+     "mark": "identical mirrored mark found on the seat of his pants, traced to mud from Sato's car"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Mitsuhiko Tsuburaya",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "elementary school student",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Miwako Sato",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Beika police detective",
+    "attrs": {
+     "note": "briefly suspected by Genta since the mark matched her car; her car shares the culprit's make and was unwashed after a muddy drive"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Wataru Takagi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Beika police detective",
+    "attrs": {
+     "note": "executed the Luminol tests and interrogations at Conan's direction; briefly mistaken by the kids for the fleeing culprit due to his raincoat"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Rainy street (crime scene)", "attrs": {}},
+   {"id": "l2", "name": "Mountain road", "attrs": {"claimed_by": "Enomoto's alibi"}},
+   {"id": "l3", "name": "Downtown shopping district", "attrs": {"claimed_by": "Fukuchi's alibi (test drive)"}},
+   {"id": "l4", "name": "Roadside vehicle checkpoint", "attrs": {}},
+   {"id": "l5", "name": "Fukuchi's repair shop", "attrs": {"claimed_by": "Fukuchi's alibi (car repair)"}},
+   {"id": "l6", "name": "Client's neighborhood", "attrs": {"claimed_by": "Degawa's alibi"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Bloodstained master key",
+    "role": "evidence",
+    "attrs": {
+     "emblem_shape": "car-make logo, mirror image of a '5' or 'S'",
+     "significance": "held in the culprit's bloodied hand while fleeing; blood transferred onto Ayumi's sleeve"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Swapped key cylinder",
+    "role": "evidence",
+    "attrs": {
+     "material": "vinyl-tape-wrapped cylinder salvaged from a different car",
+     "purpose": "conceal blood in the real driver-door cylinder from the Luminol test",
+     "staging_flaw": "car parked exceptionally close to its neighbor specifically to block the door panel from being removed and the swap discovered"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Fukuchi's car",
+    "role": "evidence",
+    "attrs": {
+     "make": "discontinued model, out of production 7-8 years",
+     "ignition_keyhole": "untouched by the cylinder swap, predicted to react positive for blood"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Raincoat and hood",
+    "role": "tool",
+    "attrs": {"worn_during": "all four phantom-killer incidents"}
+   },
+   {
+    "id": "o5",
+    "name": "Sato's car",
+    "role": "evidence",
+    "attrs": {
+     "same_make_as": "the culprit's car",
+     "condition": "unwashed after a muddy road trip",
+     "source_of_gentas_mark": true
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "No Luminol reaction on Fukuchi's driver-door keyhole despite the matching car and his claimed lost key, yet the ignition keyhole was left untouched and predicted positive -- exposed a swapped, vinyl-taped fake cylinder hiding the real bloodstained one.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Genta's mark was mud from sitting on Sato's unwashed same-make car; Ayumi's identical mark was dried blood from the culprit's cut hand gripping his own key -- same emblem shape, different substance, same true source: a car's master key.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Fukuchi claimed poor driving yet parked with exact precision beside the next car, unlike Enomoto's dented, mud-caked car (matches his mountain-driving story) and Degawa's spotless car (matches his obsessive care) -- only Fukuchi's own car contradicts his story.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "classmate", "symmetric": true},
+
+  {"type": "collides_with", "from": "p1", "to": "p4", "detail": "fleeing culprit rushed into Ayumi, dropping and snatching back his master key"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l4"},
+
+  {"type": "sat_on", "from": "p5", "to": "o5", "detail": "sat on the hood of Sato's car, picking up the muddy emblem-shaped mark"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o2", "circumstance_tags": ["cover_up", "staged_alibi"]},
+  {"type": "located_in", "from": "o2", "to": "o3"},
+
+  {"type": "implicates", "from": "o1", "to": "p1"},
+  {"type": "implicates", "from": "o2", "to": "p1"},
+  {"type": "implicates", "from": "o3", "to": "p1"},
+
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "o5"},
+  {"type": "regarding", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+
+  {"type": "implicates", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "o3"},
+  {"type": "regarding", "from": "c3", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "p3"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

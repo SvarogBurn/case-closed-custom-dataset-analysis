@@ -1,0 +1,419 @@
+{
+ "case_id": "ep235_the_locked_wine_cellar",
+ "episode_number": "235",
+ "title": "The Locked Wine Cellar",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Locked_Wine_Cellar",
+ "subtitle_source": ["subs_resolved/0235.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Officers Chiba/Takagi) omitted by convention. case_type: murder. Discrepancies vs. the old wiki-derived case file (cases/ep235_the_locked_wine_cellar.json): (1) the old file's clue c2 states Nonaka 'relocked the door with the victim's own key' referring to the wine cellar door -- per transcript the wine cellar door has an automatic electronic lock with no spare keys and was never manually relocked with a key at all; the key Nonaka stole from Kusaka's pocket was used to relock the BACK DOOR of the house (his own separate escape/alibi route from the backyard), not the cellar. (2) the old file's clue c1 implies the wine-soaked handkerchief was already 'found on him' -- in the actual confrontation Conan never recovers the handkerchief on-screen; he deduces Nonaka must still be carrying it (since discarding a monogrammed gift would itself be suspicious) and demands he produce it, which triggers Nonaka's confession rather than the handkerchief being pre-existing physical evidence in hand. (3) the old file omits Toshiko Kusaka (the victim's wife, who discovers the body with Kogoro and supplies the alibi-narrowing fact that reaching the wine cellar from the kitchen requires passing through the living room) and omits the fingerprint sub-clue (Tonomura's and Takano's prints on the cellar door, Nonaka's conspicuously absent) that Conan uses to eliminate the two red herrings before naming Nonaka. Murderer identity (Takeo Nonaka) itself is confirmed correct by the transcript.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shohei Kusaka",
+    "aliases": ["Shouhei Kusaka"],
+    "roles": ["victim"],
+    "occupation": "president of a financial business, wine collector",
+    "attrs": {
+     "age": 52,
+     "died_of": "strangulation with a rope",
+     "habit": "gives a monogrammed handkerchief (embroidered by his wife with the recipient's initials) to guests he particularly likes"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Toshiko Kusaka",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "homemaker",
+    "attrs": {
+     "role_in_discovery": "went with Kogoro to check on her husband after he failed to return from the wine cellar for forty minutes; found the body",
+     "alibi": "in the kitchen the whole time; reaching the wine cellar from there requires passing through the living room, where Kogoro was seated the whole time"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Takeo Nonaka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "company president",
+    "attrs": {
+     "age": 42,
+     "debt_to_victim": "lost all his money gambling; borrowed heavily from Kusaka at high interest",
+     "confession": "Kusaka imposed a high interest rate and then suddenly demanded repayment by the next day; Nonaka needed the money to pay his own employees"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Jyoukichi Tonomura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "sommelier (in training)",
+    "attrs": {
+     "age": 40,
+     "debt_to_victim": "borrows money from Kusaka to fund his sommelier training",
+     "party_role": "correctly identified every wine Kusaka served in an impromptu blind-tasting game",
+     "alibi": "went to the wine cellar door to ask Kusaka for more money but did not go inside"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yukari Takano",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "art museum owner",
+    "attrs": {
+     "age": 38,
+     "debt_to_victim": "borrows money from Kusaka to run her art museum",
+     "alibi": "went to the wine cellar door to ask for an extension on her repayment deadline but did not go inside"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kusaka household wine cellar",
+    "attrs": {
+     "door_lock": "automatic electronic lock, no spare keys exist, only Kusaka and his wife carry keys",
+     "window": "handle only on the inside; forcing it open from outside trips a security alarm unless disarmed with the key fob",
+     "fingerprints_on_door": ["Jyoukichi Tonomura", "Yukari Takano"],
+     "dust_on_shelves": "undisturbed, no sign of forced entry"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Backyard of the Kusaka household",
+    "attrs": {
+     "features": "borders the wine cellar's window and the house's back door"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Living room of the Kusaka household",
+    "attrs": {
+     "note": "only through-route between the kitchen and the wine cellar"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Kitchen of the Kusaka household",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Two metal clothesline poles",
+    "role": "tool",
+    "attrs": {
+     "trick": "threaded through the victim's belt to secure the body, pushed through the wine cellar window, then tilted to lower the body into place between the shelves without the killer ever entering the room"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Nonaka's wine-soaked handkerchief",
+    "role": "evidence",
+    "attrs": {
+     "origin": "gift from Toshiko Kusaka, monogrammed with Nonaka's own initials",
+     "use": "used to wipe wine off the clothesline poles after the victim's feet knocked bottles off a shelf during the lowering",
+     "status": "not recovered at the scene; Conan deduces Nonaka must still be carrying it because discarding a monogrammed gift would itself look suspicious -- confronting him with this demand triggers his confession"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Thin wire",
+    "role": "tool",
+    "attrs": {
+     "use": "lassoed around the window's inside hook from outside and pulled to swing the window shut and re-latch it after the body was placed inside"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Kusaka's electronic house key",
+    "role": "tool",
+    "attrs": {
+     "trick": "taken from the victim's body after the murder, used to relock the house's BACK DOOR (not the wine cellar, which locks automatically on its own), then returned to the victim's pocket",
+     "significance": "electronic keys cannot be copied at an ordinary hardware store, ruling out an outside intruder with a duplicate"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Smashed wine bottles on the cellar floor",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "bottles only fell from the single low shelf the body's feet caught while being lowered through the window; nothing else in the cramped cellar was disturbed, which is inconsistent with a real struggle between two people",
+     "initial_misreading": "police first assumed the breakage was from a physical fight between Kusaka and his killer"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Fingerprint comparison on the wine cellar door: Tonomura's and Takano's prints are present (matching their own admissions that they approached the door to ask Kusaka for money but never went in), while Nonaka's are conspicuously absent -- not because he was never near the crime, but because his method (clothesline poles through the window) never required him to touch the door at all, which both clears the two red herrings and points to a killer who accessed the room a different way.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "debtor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "debtor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "debtor_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "financial (crushing gambling debt at high interest, given an impossible one-day repayment deadline while needing the money to pay his own employees)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "financial (red herring -- needed further loans from Kusaka to fund sommelier training)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "financial (red herring -- needed a repayment extension to keep her art museum running)"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["approached_door_only"]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["approached_door_only"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p3",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "knocks on the wine cellar window from the backyard; Kusaka disarms the alarm and opens the window, then Nonaka lures him out into the backyard with a fabricated story about Tonomura cheating at the tasting game"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "strangulation with a rope, in the backyard, away from the wine cellar",
+   "circumstance_tags": ["locked_room", "staged_alibi"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o4",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "steals the victim's key, uses it to relock the house's back door (not the wine cellar), and returns it to the victim's pocket"
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p3",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "circumstance_tags": ["locked_room", "staged_alibi"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "threads the poles through the victim's belt, pushes them through the wine cellar window, tilts them to lower the body into place between the shelves"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o3",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "lassoes the window's inside hook with the wire and pulls it shut from outside to restore the locked-room appearance"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o5",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "the victim's feet knock bottles off the low shelf during the lowering, later misread by police as signs of a struggle"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "wipes spilled wine off the poles with his own monogrammed handkerchief to hide the trick"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "discovers the body with Kogoro after Kusaka fails to return for forty minutes"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p3",
+   "detail": "isolated breakage on a single shelf, inconsistent with a real struggle, tips off Conan that the scene was staged"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

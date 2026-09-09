@@ -1,0 +1,430 @@
+{
+ "case_id": "ep245_the_gunshot_at_the_sunflower_estate",
+ "episode_number": "245",
+ "title": "The Gunshot at the Sunflower Estate",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Gunshot_at_the_Sunflower_Estate",
+ "subtitle_source": ["subs_resolved/0245.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention, matching the old wiki-derived case file's choice to drop Kogoro even though he is briefly named a 'suspect' by the local police in the source dialogue. The old case file's culprit (Amamori/s2) is confirmed correct against the full transcript -- no discrepancy with label.murderer_id. What the old file missed: (1) the theft of the rifle from the victim himself a week prior, (2) that the pine-tree rifle rig was physically placed there *before* the evening rain (6:00-6:30 PM) while Amamori's 7:25 PM 'coal run' only involved a ~1-minute action at the building's base (hooking the pre-laid wire onto an oiled decorative ledge with an extendable newspaper-and-tape pole) -- the mud-on-dry-wire contradiction is the actual key clue, reduced in the old file to a vague 'mechanical delay' fact; (3) Amamori's fabricated 3-month stalker-photo campaign against the victim, invented to misdirect the investigation toward an outside intruder; (4) the backstory motive itself -- Amamori, not Kanazawa, designed the Shanghai Museum of Modern Art submission that won Kanazawa an international prize, and Kanazawa threatened Amamori into silence over it. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryuichiro Kanazawa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "architect (32); recently won an international prize for the Shanghai Museum of Modern Art design)",
+    "attrs": {
+     "died_of": "gunshot to the head",
+     "cause_of_death_confirmed": "instant death, single bullet, weapon not found in the room at time of discovery",
+     "designed_own_house": "the rotating 'Sunflower Estate', whose second floor completes one full revolution every 12 hours",
+     "public_narrative": "believed to be the true designer of the Shanghai Museum of Modern Art, and to be the target of an anonymous stalker who mailed him threatening photographs weekly for three months"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Makoto Hayashida",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kanazawa Architecture Office employee, age 26",
+    "attrs": {
+     "alibi_window": "left the party at approx. 7:20 PM to fetch beer from the kitchen, gone about 5 minutes"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Masaya Amamori",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kanazawa Architecture Office employee, age 25",
+    "attrs": {
+     "alibi_window": "left the party at approx. 7:25 PM to fetch coal, gone about 4 minutes",
+     "true_role": "actual designer of the Shanghai Museum of Modern Art submission that Kanazawa took public credit for"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mitsuko Kanazawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kanazawa's wife, age 38",
+    "attrs": {
+     "alibi_window": "left the party for the bathroom at approx. 7:30 PM, returned 5 minutes later, hearing the gunshot on her way back"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Detective Yokomizo",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Shizuoka Prefectural Police detective",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Sunflower Estate (building and grounds)",
+    "attrs": {
+     "architectural_gimmick": "second floor rotates a full 360 degrees every 12 hours",
+     "diameter_meters": 20
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Second-floor library/study",
+    "attrs": {
+     "notes": "Kanazawa's habitual spot to watch a live Chinese-lesson TV broadcast every evening; windows and door found locked from the inside after the shot"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Backyard barbecue/party area",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Pine tree outside the estate",
+    "attrs": {
+     "distance_from_building_meters": 10,
+     "notes": "rifle and trigger mechanism found tied here; no footprints found approaching it after 6:30 PM, when rain began falling"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Kitchen",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rifle (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "owner": "Ryuichiro Kanazawa",
+     "theft_reported_by_owner": "one week before the murder",
+     "condition_when_found": "damp, consistent with having been placed at the pine tree before the evening rain began",
+     "firing_mechanism": "trigger tied to a fishing line, remotely pulled taut by a weighted line running to the second-floor decorative ledge"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Fishing wire / weighted trigger line",
+    "role": "tool",
+    "attrs": {
+     "length": "10 meters 2 centimeters, matching the 10-meter distance from the pine tree to the building",
+     "condition_when_found": "covered in mud on both the wire and the trigger",
+     "staging_flaw": "the mud should have been washed off by the evening rain (6:00-6:30 PM) if the mechanism had been pulled directly during or after the storm -- proves it was set up and left exposed to the rain, then triggered later by a delayed, remote mechanism rather than by someone physically at the tree at 7:35 PM",
+     "delay_mechanism": "hooked over an oiled second-floor decorative ledge; gravity and the oil let the weighted end slide down over roughly 10 minutes before finally yanking the trigger"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Newspaper-sheet extension pole",
+    "role": "tool",
+    "attrs": {
+     "construction": "hardened rolled newspaper sheets formed into a pipe/pole with double-sided tape, extended to reach the second-floor decoration from ground level",
+     "cover_story": "disguised as the stick Amamori used to carry coal back from his 'coal run'",
+     "use": "used to hook the pre-laid fishing wire onto the oiled decorative ledge without needing to approach the pine tree itself"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Double-sided tape",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "on the ground near the trigger",
+     "matches": "the tape used to construct the newspaper-sheet pole"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Oil residue on the second-floor decoration",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "applied (via an oil-soaked tissue on the end of the newspaper pole) to the decorative ledge so the weighted wire would slide smoothly and complete the delayed pull",
+     "confirmed_as": "oil, by police analysis"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Fabricated stalker photographs",
+    "role": "evidence",
+    "attrs": {
+     "campaign_length": "mailed weekly to Kanazawa for three months before the murder",
+     "true_origin": "invented and sent by Amamori himself to build a false narrative of an outside threat and misdirect any investigation",
+     "staging_flaw": "no real stalker existed"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The fishing wire and trigger were caked in mud when found, but the pine-tree area saw heavy rain from roughly 6:00-6:30 PM that should have washed any mud away if the mechanism had been set up and pulled around the same time as the shot (7:35 PM). This timing contradiction proves the rifle/wire rig was placed at the tree before the rain (i.e., before the guests even arrived) and was fired later by a slow, remote, oil-assisted delay mechanism -- not by an outside intruder physically present at the tree during the shooting window.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "spouse"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "professional (Kanazawa publicly took credit for Amamori's prize-winning Shanghai Museum of Modern Art design and threatened him into silence)"
+  },
+  {
+   "type": "threatens",
+   "from": "p1",
+   "to": "p3",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "After Amamori objected to Kanazawa taking public credit for his design, Kanazawa warned him that his position at the firm depended on staying quiet."
+  },
+  {
+   "type": "fabricates",
+   "from": "p3",
+   "to": "o6",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "Begins mailing himself-authored 'stalker' photographs to Kanazawa weekly, three months before the murder."
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p1"
+  },
+  {
+   "type": "steals",
+   "from": "p3",
+   "to": "o1",
+   "order": 2,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "Steals the rifle from Kanazawa's own collection approximately one week before the murder; Kanazawa reports it stolen."
+  },
+  {
+   "type": "rigs",
+   "from": "p3",
+   "to": "o1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "Ties the stolen rifle and trigger to the fishing wire and plants it at the pine tree before the evening rain begins, hours before the party."
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l5",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "Hayashida leaves the party ~7:20 PM to fetch beer, gone about 5 minutes."
+  },
+  {
+   "type": "rigs",
+   "from": "p3",
+   "to": "o2",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "Leaves the party ~7:25 PM under the pretext of fetching coal; in under a minute, hooks the pre-laid fishing wire onto the oiled second-floor decoration using the newspaper-sheet pole, arming the delayed-pull mechanism, then returns to the party."
+  },
+  {
+   "type": "applies",
+   "from": "p3",
+   "to": "o5",
+   "order": 8,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o3",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "Uses the same newspaper-and-tape pole as his cover story's coal-carrying stick."
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 8,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "Kanazawa goes up alone to the second-floor library at 7:29 PM to watch his usual live Chinese-lesson broadcast."
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5",
+   "order": 10,
+   "temporal_frame": "present",
+   "detail": "Mitsuko leaves the party for the bathroom at 7:30 PM, returns about 5 minutes later."
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "order": 11,
+   "temporal_frame": "present",
+   "method": "delayed, remotely-triggered rifle shot: a weighted fishing line hooked to an oiled decorative ledge slid down over roughly 10 minutes before finally pulling the trigger of a rifle tied at the base of a pine tree 10 meters from the building",
+   "circumstance_tags": ["locked_room", "staged_alibi", "mechanical_delay", "staged_outsider_intrusion"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "Body discovered ~7:39-7:40 PM after the door, locked from the inside, is broken down with an axe."
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "Leads the on-site investigation with the Shizuoka Prefectural Police after the body is found."
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

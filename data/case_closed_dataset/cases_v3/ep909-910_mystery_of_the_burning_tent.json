@@ -1,0 +1,149 @@
+{
+ "case_id": "ep909-910_mystery_of_the_burning_tent",
+ "episode_number": "909-910",
+ "title": "Mystery of the Burning Tent",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Mystery_of_the_Burning_Tent",
+ "subtitle_source": "subs_resolved/0909.txt, subs_resolved/0910.txt (743 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Conan, Detective Boys, Kogoro/Ran, Inspector Yuminaga, Managing Officer Kuroda, teacher Wakasa Rumi) omitted by convention; Kuroda's and Wakasa's ongoing season-arc suspicion subplot plays out in these episodes but is unrelated to this case's culprit. After being exposed, Ashizawa takes a Detective Boys member hostage with the box cutter and is subdued by Kuroda; omitted here as it involves only omitted-convention nodes. case_type: murder. Old low-fidelity `cases/ep909-910_mystery_of_the_burning_tent.json` held up on re-read: culprit (Ashizawa), victim (Urushibara), and the two forensic clues (tape/DNA, canvas fibers on the cutter) all match the transcript. Minor precision fixes only: the binding material is medical/athletic tape (not 'plasters'), and the culprit cuts INTO the tent to rig the device (not 'out' to escape) -- he enters and exits through the same knife-cut, leaving the zipper untouched and locked exactly as the victim had left it, which is what made the tent look like a locked room."
+ ,
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Fumiaki Urushibara",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "university basketball player (defense specialist), Shiraami University",
+    "attrs": {
+     "died_of": "smoke inhalation and burns in a fire staged to look like a drunken accident",
+     "blackmail_leverage": "knew Ashizawa had asked him to injure Danno; threatened to expose it unless paid once Ashizawa turned pro",
+     "state_at_time_of_death": "heavily drunk (five servings of curry, plus drinking alone in his tent), passed out"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Sumito Ashizawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "university basketball player, rising star scouted by professional teams",
+    "attrs": {
+     "confession": "admits to setting the fire; states he had no personal grudge against Urushibara but was being blackmailed",
+     "tell": "removed the athletic tape from his own right hand mid-visit and never explained the fresh mud on his right elbow"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Midori Furuoka",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "basketball team manager, Shiraami University",
+    "attrs": {
+     "cleared_reason": "first to visit; tent lights were already off and the shadow-squat device had not yet been started"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kuninori Danno",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "former team ace, now basketball team manager",
+    "attrs": {
+     "injury": "partial vision loss in his right eye from Urushibara's elbow during practice, ended his playing career",
+     "cleared_reason": "last to visit, after the shadow-squat device was already running and Urushibara was unresponsive"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Toto Forest Campground",
+    "attrs": {"description": "newly opened campsite; shared dinner and argument took place here"}
+   },
+   {
+    "id": "l2",
+    "name": "Urushibara's tent",
+    "attrs": {
+     "fate": "destroyed by fire",
+     "features": "entrance zipped shut and locked from the moment Urushibara went in to read comics; culprit entered/exited through a separate knife-cut in the tent wall, never touching the zipper"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Candle-seesaw ignition device",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "two candles joined end-to-end by a bamboo skewer through holes poked in candles balanced on stacked comic books; as each end burns down it tips up and down like a seesaw, casting a rising-and-falling shadow that mimics squats, and eventually ignites nearby cloth/books",
+     "materials_source": "built entirely from candles, matches, and comic books already inside Urushibara's tent",
+     "built_by": "Ashizawa",
+     "concealment": "extra candles were scattered around the device afterward so its melted parts would blend into the wreckage"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Athletic tape moved to victim's left hand",
+    "role": "evidence",
+    "attrs": {
+     "trick": "removed from Ashizawa's own right hand and used to bind Urushibara's hands behind his head so his silhouette would look like it was doing squats",
+     "inconsistency": "witnesses agree Urushibara had tape only on his right hand while alive (a basketball habit); his corpse had tape on both hands",
+     "expected_forensic_result": "victim's skin and hair, consistent with Ashizawa's DNA, expected on the tape's adhesive side"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Box cutter",
+    "role": "weapon",
+    "attrs": {
+     "used_for": "cutting into the tent wall to enter and rig the device without touching the locked zipper, then used again afterward to threaten a hostage once Ashizawa was exposed",
+     "expected_forensic_result": "tent canvas fibers expected on the blade",
+     "still_in_possession": true
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Visit-order testimony: Furuoka (1st) found the tent already dark and quiet; Ashizawa (2nd) also claims it was dark, but the shadow-squats started right after he left; Danno (3rd) found the squats already in progress -- narrows the device's start to Ashizawa's own visit.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Unexplained fresh mud on Ashizawa's right elbow, in a posture consistent with reaching through a knife-cut in the tent wall, contradicts his claim it came from an unrelated trip earlier that night.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "dating"},
+  {"type": "orders", "from": "p2", "to": "p1", "detail": "asks Urushibara to elbow Danno during practice so Ashizawa can take the starting spot"},
+  {"type": "injures", "from": "p1", "to": "p4", "detail": "elbows Danno in the eye during practice, ending his competitive playing career", "circumstance_tags": ["backstory"]},
+  {"type": "threatens", "from": "p1", "to": "p2", "detail": "drunkenly demands money once Ashizawa goes pro, or he'll expose the injury conspiracy"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "concealment (silencing a blackmailing accomplice in the injury conspiracy)"},
+  {"type": "restrains", "from": "p2", "to": "p1", "detail": "binds Urushibara's hands behind his head with tape while he is passed out drunk, so his shadow will look like it's doing squats", "circumstance_tags": ["staged_accident"]},
+  {"type": "builds", "from": "p2", "to": "o1"},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "staged accidental tent fire via a timed candle-seesaw ignition device", "circumstance_tags": ["locked_room", "staged_accident", "cover_up"]},
+  {"type": "burns", "from": "p2", "to": "l2"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o3"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,306 @@
+{
+ "case_id": "ep840_the_last_gift",
+ "episode_number": "840",
+ "title": "The Last Gift",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Last_Gift",
+ "subtitle_source": ["subs_resolved/0840.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector, Detective Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Discrepancies vs. the old cases/ep840_the_last_gift.json file: (1) the old file's e1 event ('Katsui was supposed to kill Hirose but failed') is not supported anywhere in the transcript -- invented, dropped here; (2) the old file's object o1 was a 'clock, reset to falsify the time of death' but the transcript is explicit the manipulated timepiece is Katsui's own wristwatch, which Hirose set to 8:00 and broke, not a clock; (3) the old file's motive_type undersells the plot -- Hirose's scheme was two-layered: she killed Katsui to end his blackmail, then deliberately let herself look guilty of an 8 PM murder (a time she could not have committed it) specifically to make her ex-boyfriend Matsubayashi, the one person who could clear her, either stay silent (letting an innocent woman go to prison, out of self-interest) or come forward (wrecking his engagement) -- either way a 'last gift' of psychological revenge for his abandoning her for a richer woman. Both motives are represented as separate has_motive_against edges. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Katsui Masaru",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "serial blackmailer",
+    "attrs": {
+     "died_of": "unspecified violence, staged to look like it happened at 8 PM",
+     "blackmail_target": "Hirose Junko, repeatedly demanded money from her"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Hirose Junko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 25,
+     "false_confession": "initially confessed to killing Katsui at 8 PM, a time she could not have done it, to make it look like a coincidence rather than a plan"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Matsubayashi Atsuro",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 28,
+     "denied_ex_visit": "publicly denied Hirose had come to his home, out of fear his fiancee would find out"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Oguchi Hamako",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "landlady",
+    "attrs": {"age": 52}
+   },
+   {
+    "id": "p5",
+    "name": "Matsubayashi's fiancee",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {"family": "daughter of an executive at Matsubayashi's company"}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Concealed spot behind a park, Tonkoro City",
+    "attrs": {"role_in_case": "where Katsui's body was found"}
+   },
+   {
+    "id": "l2",
+    "name": "Tonkoro Station",
+    "attrs": {"role_in_case": "security camera placed Katsui here at 7:20 PM"}
+   },
+   {
+    "id": "l3",
+    "name": "Matsubayashi Atsuro's home, Beika City",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Hirose Junko's apartment",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Tonkoro Station police interrogation room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Katsui's wristwatch",
+    "role": "evidence",
+    "attrs": {
+     "found_state": "stopped at 8:00 PM",
+     "trick": "set to 8:00 and broken by the killer after the real, later killing, to falsify time of death"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Garbage bag of cigarettes",
+    "role": "evidence",
+    "attrs": {
+     "contents": "ten smoked cigarette butts plus a box of ten unsmoked cigarettes, all bearing Katsui's fingerprints",
+     "also_bears": "Hirose Junko's fingerprints on the bag itself",
+     "found_by": "Conan, in landlady Oguchi Hamako's uncollected Friday-night trash"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ten cigarette butts plus an unsmoked pack, all print-matched to Katsui, inside a trash bag print-matched to Hirose -- proves Katsui spent hours waiting alive inside Hirose's apartment, not killed at 8 PM as her confession claimed.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Katsui's watch stopped at 8:00, yet station cameras place his arrival at 7:20 and the autopsy sets death between 7 and 9 -- the watch time is too conveniently exact, implying it was set and broken after a later killing.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "former_partner_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "landlady_of"
+  },
+  {
+   "type": "extorts",
+   "from": "p1",
+   "to": "p2",
+   "circumstance_tags": ["ongoing"],
+   "detail": "repeatedly demanded money from Hirose, including the night of his death"
+  },
+  {
+   "type": "lures",
+   "from": "p2",
+   "to": "p1",
+   "detail": "invited Katsui to Tonkoro City and had him wait, hidden, at her apartment"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "unspecified, at the concealed spot behind the park, around 9 PM",
+   "circumstance_tags": ["staged_alibi", "cover_up"]
+  },
+  {
+   "type": "fakes_time_of_death_of",
+   "from": "p2",
+   "to": "p1",
+   "method": "set his watch to 8:00 and broke it after the killing",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "detail": "caught on security camera arriving around 7:20 PM"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "detail": "hidden inside Hirose's apartment, waiting, before the murder"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "detail": "murdered here, around 9 PM"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "circumstance_tags": ["unintended_alibi_witness"],
+   "detail": "visited Matsubayashi's home just after 7 PM to remove old mementos; unexpectedly seen leaving by a passerby around 8 PM"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "detail": "returned to Tonkoro City and killed Katsui here around 9 PM"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "detail": "own apartment, where Katsui was hidden and killed"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l5",
+   "detail": "questioned and initially confessed here"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "detail": "own home; let Hirose in, then publicly denied it"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3",
+   "detail": "present when Hirose confronted Matsubayashi; asked 'who is that?'"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "detail": "landlady of the building; put out Hirose's Friday-night trash"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l4"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "eliminate_blackmailer"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p3",
+   "motive_type": "revenge_for_abandonment (staged her own arrest to force him into an impossible choice: stay silent and let an innocent woman go to prison, or come forward and wreck his engagement)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

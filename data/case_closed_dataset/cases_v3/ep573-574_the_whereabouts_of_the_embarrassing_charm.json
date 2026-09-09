@@ -1,0 +1,168 @@
+{
+ "case_id": "ep573-574_the_whereabouts_of_the_embarrassing_charm",
+ "episode_number": "573-574",
+ "title": "The Whereabouts of the Embarrassing Charm",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Whereabouts_of_the_Embarrassing_Charm",
+ "subtitle_source": [
+  "subs_resolved/0573.txt",
+  "subs_resolved/0574.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Heiji, Kazuha, Ran, Detective Takagi) omitted by convention, consistent with the old case file. case_type: attempted murder (victim Kunisue survives, regains consciousness by the end). No `event` node type: every action is a directly typed edge between the entities involved. Corrections vs. the old lower-fidelity file: (1) the old file omitted a victim node entirely per its stated convention for attempted-murder cases -- the new file adds Kunisue Teruaki as a `person` node since he is a named, central figure with extensive screen time, matching the broadened node-coverage bar. (2) The old file's `owns` edge ran from the culprit (s3/Kyuma) to the home-run baseball -- the transcript shows the opposite: Kunisue caught and owned the ball, and Kyuma stole it from him during the assault; the new file corrects this to `owns: Kunisue->ball` plus a separate `steals: Kyuma->ball` edge. (3) The old file's single clue (baseball terminology used to describe a claimed soccer game) is accurate and kept, but a second genuinely comparative clue was added: the asymmetric pocket bulge (victim's empty right jacket pocket vs. an overstuffed back pants pocket), which is what let Conan and Heiji deduce a spherical object had been stolen and stuffed elsewhere to hide the missing bulge. The charm/photo B-plot involving Kazuha and Heiji is left out of the graph (per the detective-cast omission convention) since it does not involve any non-cast character and is orthogonal to the assault case itself; it is only referenced in Kunisue's attrs for context.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kunisue Teruaki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "university student, tennis player",
+    "attrs": {
+     "injury": "blunt-force head trauma in a restroom, found unconscious and bleeding, critical then regains consciousness",
+     "pre_existing_injury": "left wrist fractured during tennis practice, arm in a sling",
+     "unrelated_subplot": "unwittingly received Kazuha's own charm by mistake and swapped its photo as a prank, revealing unspoken feelings for her"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Satsuma Kazuo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 51,
+     "claimed_activity": "watched a sumo match, fan of Akashouryu who lost"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Harufuji Kengo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 44,
+     "claimed_activity": "watched beach volleyball"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kyuma Takuya",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 26,
+     "smoker": true,
+     "false_alibi": "claimed to have watched a soccer game (Tokyo Spirits vs. Big Osaka) but used baseball terms instead of soccer terms, revealing he was really at the baseball game",
+     "motive_detail": "wanted a home-run ball as a keepsake for his girlfriend, who died of illness the night before"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kyuma's girlfriend",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "illness, the night before the case",
+     "wish": "wanted a home-run ball from the player who hit it, said with her last breath"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Sports Café CLUB Be",
+    "attrs": {"context": "first-anniversary party-cracker celebration held here at 8:00 PM"}
+   },
+   {
+    "id": "l2",
+    "name": "CLUB Be restroom",
+    "attrs": {"role": "crime scene"}
+   },
+   {
+    "id": "l3",
+    "name": "Shinjuku Stadium",
+    "attrs": {"context": "baseball day game, final score 1-10, home run in the bottom of the ninth"}
+   },
+   {
+    "id": "l4",
+    "name": "Sumo arena",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Beach volleyball venue",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Home-run baseball",
+    "role": "evidence",
+    "attrs": {
+     "origin": "caught by Kunisue during the bottom-of-the-ninth home run at Shinjuku Stadium",
+     "concealment": "stuffed into a popcorn bag by Kyuma after the theft, nearly thrown out by a café employee"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Mop",
+    "role": "weapon",
+    "attrs": {"found_at": "restroom utility closet"}
+   },
+   {
+    "id": "o3",
+    "name": "TV sports news footage",
+    "role": "evidence",
+    "attrs": {"shows": "Kyuma standing directly behind Kunisue at the moment of the catch"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Kyuma claimed to be a soccer fan who watched the soccer game, but used baseball vocabulary (visitor, fan, ground) instead of the soccer equivalents (away, supporter, pitch) -- proves he was actually at the baseball game.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "Kunisue's right jacket pocket was empty while his back pants pocket was abnormally stuffed with wallet, phone, and cigarettes -- the mismatch shows someone deliberately over-packed the pocket to hide that a round object had been removed from it.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "romantic_partner"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "obtain_baseball_keepsake_for_dying_girlfriend"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "suspected_grudge_over_sumo_outcome (speculative, denied by Satsuma)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "suspected_conflict_over_ogling_players (speculative, denied by Harufuji)"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "confronts", "from": "p4", "to": "p1", "detail": "begged repeatedly for the ball at the stadium after the catch, was refused and mocked"},
+  {"type": "assaults", "from": "p4", "to": "p1", "method": "blunt-force strikes with a mop", "circumstance_tags": ["impulsive_attack"]},
+  {"type": "steals", "from": "p4", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+  {"type": "implicates", "from": "o3", "to": "p4"},
+  {"type": "regarding", "from": "o3", "to": "l3"},
+  {"type": "regarding", "from": "c1", "to": "l3"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "implicates", "from": "c2", "to": "p4"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

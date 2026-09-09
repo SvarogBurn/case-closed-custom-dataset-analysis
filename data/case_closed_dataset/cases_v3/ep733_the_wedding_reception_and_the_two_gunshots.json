@@ -1,0 +1,256 @@
+{
+ "case_id": "ep733_the_wedding_reception_and_the_two_gunshots",
+ "episode_number": "733",
+ "title": "The Wedding Reception and the Two Gunshots",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Wedding_Reception_and_the_Two_Gunshots",
+ "subtitle_source": ["subs_resolved/0733.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Megure, Takagi, Chiba) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved (person/location/object). The old cases/ file's culprit (s1 Yoshifumi Ito) was correct, but its event description had the deception backwards: e2's desc says Ito timed the killings 'so it appears Masaru died after Miho,' when the transcript establishes the opposite -- inheritance law (stated on-screen: Masaru's fortune passes to Miho only if he dies BEFORE her, and then to her own family when she dies after him) meant Ito needed it to look like Masaru died FIRST and Miho SECOND, even though he actually killed Miho first and faked a second gunshot (the suzume-odoshi/bird-scarer) to make it look like Miho died later. This reversed-clue error is corrected here. The old file also romanized the uncle as 'Shiro Hatakeyama'; the transcript's character card gives 'Kenshiro Hatakeyama,' used here. The old file omitted several named reception guests (Yuuko Hatakeyama, Kenshiro Hatakeyama) and the mutual Arisa/Rikako red-herring accusations, both restored here. Two unnamed background characters (the villa's farmer-caretaker who explains local monkey-scarer devices, and the hotel employee/lamp-repairman who witnessed someone leaving Miho's cottage) are not given person nodes since they are never named in the transcript; the repairman's sighting is captured as clue c1 instead. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yoshifumi Ito",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "debt": "several million yen in debt to various banks",
+     "motive_note": "needed Masaru's fortune to pass through Miho to himself, which legally required Masaru to die before Miho"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Miho Ito",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "bride",
+    "attrs": {
+     "killed_order": "first, though made to look like she died second",
+     "death_scene": "her hotel cottage"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Masaru Hatakeyama",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Head of the Hatakeyama Group",
+    "attrs": {
+     "killed_order": "second, though made to look like he died first",
+     "death_scene": "villa car park",
+     "note": "marriage to Miho had been registered at the ward office the day before, announced at the reception"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yuuko Hatakeyama",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "Masaru's mother",
+    "attrs": {
+     "reaction": "shocked to learn the marriage was already registered; left to lie down after the murders"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kenshiro Hatakeyama",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "president of Hatakeyama Bank, Masaru's uncle",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Arisa Hatakeyama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Masaru's cousin",
+    "attrs": {
+     "background": "one of many women who wanted to marry Masaru",
+     "note": "was drinking heavily at the reception"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Tatsuya Ishihara",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Masaru's brother-in-law",
+    "attrs": {
+     "alibi": "was with Rikako beside Masaru's body when the second (fake) gunshot sound was heard"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Rikako Ishihara",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Masaru's sister",
+    "attrs": {
+     "alibi": "was with Tatsuya beside Masaru's body when the second (fake) gunshot sound was heard",
+     "resentment": "angry the marriage registration bypassed the family"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Villa reception hall",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Villa car park",
+    "attrs": {
+     "detail": "flower bed near the entrance is where the gun was later found"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Hotel (across the river)",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Miho's cottage",
+    "attrs": {
+     "detail": "individual hotel room where Miho was taken to rest and was murdered"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Yoshifumi's shed",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Gun",
+    "role": "weapon",
+    "attrs": {
+     "ballistics": "bullets recovered from both bodies matched this single gun",
+     "hidden_beforehand": "hidden in Miho's cottage before the wedding",
+     "final_location": "thrown across the river to land in the villa's flower bed"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Bamboo stalk",
+    "role": "tool",
+    "attrs": {
+     "use": "used to catapult the gun across the river to the villa side"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Suzume-odoshi",
+    "role": "tool",
+    "attrs": {
+     "purpose": "local firework device used to scare sparrows/monkeys off crops",
+     "setting": "set to fire only once",
+     "trick": "triggered from across the river to sound like a second gunshot, faking Miho's time of death"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Cushion",
+    "role": "tool",
+    "attrs": {
+     "use": "muffled the gunshot that killed Miho"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Miho's phone",
+    "role": "tool",
+    "attrs": {
+     "use": "used by the killer to call Masaru and lure him to the car park after Miho was already dead"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "A lamp repairman saw someone leaving Miho's cottage around 9:45pm, about 30 minutes before Masaru's body was found -- proving Miho died first, the opposite of the assumed order.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Surveillance footage shows no one ever approached the flower bed, yet the gun turned up there -- it must have been thrown in from across the river, not placed by hand.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Only Yoshifumi's debt is resolved by Masaru dying before Miho -- no other suspect gains anything from that specific death order.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p8", "to": "p3", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p7", "to": "p8", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p6", "to": "p3", "relation_type": "cousin_of"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "uncle_of"},
+  {"type": "relationship", "from": "p6", "to": "p3", "relation_type": "unrequited_romantic_interest_in"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "financial_inheritance (needed Masaru's fortune routed through Miho to himself; faked murder order to satisfy inheritance law)"},
+  {"type": "has_motive_against", "from": "p1", "to": "p3", "motive_type": "financial_inheritance (needed Masaru's fortune routed through Miho to himself; faked murder order to satisfy inheritance law)"},
+  {"type": "has_motive_against", "from": "p6", "to": "p2", "motive_type": "romantic_rivalry (red herring, accused by Rikako of killing Miho to clear the way to Masaru)"},
+  {"type": "has_motive_against", "from": "p6", "to": "p3", "motive_type": "cover_up (red herring, accused by Rikako of killing Masaru when he found out)"},
+  {"type": "has_motive_against", "from": "p8", "to": "p3", "motive_type": "financial_via_husband (red herring, accused by Arisa of wanting Tatsuya to run the Hatakeyama Group)"},
+
+  {"type": "accuses", "from": "p8", "to": "p6", "detail": "accuses Arisa of killing Miho to clear her path to Masaru, then killing Masaru when he found out", "circumstance_tags": ["red_herring"]},
+  {"type": "accuses", "from": "p6", "to": "p8", "detail": "accuses Rikako of wanting Masaru dead so her husband Tatsuya could run the Hatakeyama Group", "circumstance_tags": ["red_herring"]},
+
+  {"type": "kills", "from": "p1", "to": "p2", "method": "shot at close range in her hotel cottage, muffled with a cushion", "circumstance_tags": ["staged_timeline", "cover_up"]},
+  {"type": "uses", "from": "p1", "to": "o4", "detail": "muffles the gunshot that kills Miho"},
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "located_in", "from": "o1", "to": "l4"},
+  {"type": "lures", "from": "p1", "to": "p3", "detail": "calls Masaru from Miho's phone, drawing him to the villa car park about ten minutes before he's found dead"},
+  {"type": "uses", "from": "p1", "to": "o5", "detail": "uses Miho's phone to place the call luring Masaru"},
+  {"type": "kills", "from": "p1", "to": "p3", "method": "shot at close range in the villa car park", "circumstance_tags": ["staged_timeline", "false_alibi"]},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o3", "detail": "triggers the sparrow-scarer to fire once from across the river, timed to sound like a second gunshot while he stands with the group at the villa"},
+  {"type": "disposes_of", "from": "p1", "to": "o1", "detail": "throws the gun across the river using the bamboo stalk so it lands in the villa's flower bed, faking it was discarded there"},
+  {"type": "uses", "from": "p1", "to": "o2", "detail": "bamboo stalk used to catapult the gun across the river"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "located_in", "from": "o3", "to": "l5"},
+
+  {"type": "implicates", "from": "o1", "to": "p1"},
+  {"type": "implicates", "from": "o3", "to": "p1"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "implicates", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "l4"},
+  {"type": "regarding", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "l2"},
+  {"type": "regarding", "from": "c3", "to": "p1"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+  {"type": "was_at", "from": "p8", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+  {"type": "was_at", "from": "p8", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

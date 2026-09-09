@@ -1,0 +1,401 @@
+{
+ "case_id": "ep176-178_reunion_with_the_black_organization",
+ "episode_number": "176-178",
+ "title": "Reunion with the Black Organization",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Reunion_with_the_Black_Organization",
+ "subtitle_source": ["subs_resolved/0176.txt", "subs_resolved/0178.txt"],
+ "schema_version": "v3",
+ "notes": "Rebuilt from the full available transcripts of episodes 176 and 178. Episode 177 (the middle episode, presumably containing the party's early scenes, full Character Card introductions for the seven suspects, and more detail on Haibara's kidnapping) has NO subtitle file locally and is missing from this rebuild -- some suspect occupations (Nanjo, Mihei, Tarumi, Tawara, Mugikura) are therefore left null/unspecified because 176+178 never pair those names with an occupation (only Chris Vineyard='American actress' and Masuyama='big fish in finances' are explicitly tied to an occupation on screen). Neither available file contains a single (Flashback)-tagged line, so every edge below is temporal_frame:'present' (Haibara's opening nightmare about Gin killing the Detective Boys is tagged (Thoughts), i.e. an imagined dream, not a real backstory event, so it was NOT encoded as a kills/assault edge). Recurring detective-cast nodes (Conan/Shin'ichi Kudo, Kogoro Mouri, Ran, Inspector Megure, Professor Agasa) omitted by convention as in ep011, even though Conan is the one who plants the transceiver bug and solves the case -- his role is implicit in the object/clue edges (e.g. the bug o7, the deduction clues cA-cC implicating Masuyama directly). The old wiki-summary case file (cases/ep176-178...) got the core whodunit right (Kenzo Masuyama a.k.a. Pisco killed lawyer Shigehiko Nomiguchi with a chandelier rigged via a silenced, handkerchief-muffled gunshot to its chain) but was drastically under-built: it had no event-free direct edges, invented a generic 'was_used_in'/'occurred_before' event-node schema now superseded, said only 'two witnesses cleared by alibi' when the transcript actually gives six suspects six DISTINCT, specific alibi reasons (Tawara & Chris directly under the chandelier with no angle to shoot; Mihei had the shot-through chain fragment flung into his own mouth; Mugikura was watched on stage; Tarumi & Nanjo were photographed embracing each other), and it completely omitted the larger Black-Organization frame story that makes up roughly half of both episodes: Conan and Haibara bugging Gin's Porsche, Gin/Vodka's phone call revealing the hit on Nomiguchi and codename 'Pisco', Haibara being captured and locked in a hotel wine cellar, her escape via a chimney, Gin shooting and nearly executing her on a rooftop, Vermouth (undercover in this case as suspect Chris Vineyard) secretly rescuing her AND secretly having supplied Masuyama's replacement handkerchief before police questioning (a fabricated-alibi prop, since his real one flew off with his bullet during the murder), and Gin's own execution of Masuyama on the Organization leadership's direct order after a photographer's candid shot exposed him -- followed by a cover-up (Masuyama's house burned down, Nomiguchi's family disappeared). Some details are genuinely ambiguous in the available transcript and are flagged in attrs rather than asserted as fact: whether Masuyama or someone else physically kidnapped Haibara, and the exact ignition source of the room 404 fire (likely tied to Conan's warning about the spilled Spirytus alcohol, but this is never shown on screen in 176/178). case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shigehiko Nomiguchi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "lawyer; press reports suggest he may have been profiting from bribes and was expected to be arrested soon",
+    "attrs": {
+     "died_of": "crushed by a chandelier deliberately dropped on him",
+     "organization_tie": "Gin describes him on the phone as a target who must be killed 'before he rats us out'; dialogue leaves ambiguous whether Nomiguchi was himself an Organization associate or simply a liability who knew too much"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Mika Nanjo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "alibi": "photographed embracing Naoya Tarumi right before the chandelier fell, clearing them both",
+     "cleared": true
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yasuo Mihei",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "alibi": "a fragment of the chandelier's shot-through support chain was flung into his mouth when it fell, proving he was hit by falling debris rather than being the shooter",
+     "cleared": true
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Naoya Tarumi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "alibi": "photographed embracing Mika Nanjo right before the chandelier fell, clearing them both",
+     "cleared": true
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Chris Vineyard",
+    "aliases": ["Vermouth"],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": "American actress; secretly a senior Black Organization operative",
+    "attrs": {
+     "alibi": "was standing directly beneath the chandelier with no angle to shoot the chain, physically clearing her of the murder",
+     "cleared": true,
+     "true_identity": "Black Organization codename Vermouth",
+     "covert_actions": "secretly supplied Masuyama with a replacement purple handkerchief before he was questioned by police, so the handkerchief headcount would still add up; later shot Gin with a tranquilizer needle on the old building's rooftop to stop him executing Haibara, then told Haibara to hide in the chimney",
+     "unresolved_thread": "hints to Gin she is separately interested in 'the man embraced by that woman' (seen with Haibara) -- not resolved in the available transcript"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yoshiharu Tawara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "alibi": "was standing directly beneath the chandelier with no angle to shoot the chain, physically clearing him of the murder",
+     "cleared": true
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kenzo Masuyama",
+    "aliases": ["Pisco"],
+    "roles": ["suspect"],
+    "occupation": "company president / financier; secretly a Black Organization operative",
+    "attrs": {
+     "true_identity": "Black Organization codename Pisco",
+     "method": "marked the chandelier's support chain and the floor beneath it with fluorescent paint in advance; during the memorial slideshow's blackout he shot the chain with a silencer-equipped handgun muffled by a purple handkerchief, dropping the chandelier onto Nomiguchi, whom he had lured to the glowing marked spot with a false promise of helping him dodge arrest",
+     "exposed_by": "a photographer's candid shot of him aiming the gun at the ceiling, published on a swapped front page of the next day's early edition",
+     "fate": "executed by Gin on direct order of the Organization's leadership; his house was burned down afterward as cover-up"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Naomichi Mugikura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "alibi": "was on stage the whole time, watched continuously by the other guests",
+     "cleared": true
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Ai Haibara",
+    "aliases": ["Shiho Miyano", "Sherry"],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "elementary-school-aged (physically shrunk); former Black Organization pharmacologist, creator of Apotoxin 4869",
+    "attrs": {
+     "condition": "shrunk into a child's body by her own drug, Apotoxin 4869, while fleeing the Organization",
+     "targeted_by": "hunted by her former organization as a traitor ('Sherry')",
+     "ordeal": "captured and locked in the hotel's old-building wine cellar, temporarily regained her adult body via a strong liquor found there, escaped up the chimney to the roof, was confronted and shot by Gin, and was on the verge of being executed when Vermouth intervened"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Gin",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "senior Black Organization operative",
+    "attrs": {
+     "actions": "relays Pisco's target and plan to Vodka by phone; discovers Conan's transceiver bug in his car; confronts, shoots, and nearly executes Haibara on the old building's rooftop; ultimately shoots Masuyama dead on direct order from the Organization's leadership after Masuyama is photographed mid-crime",
+     "vehicle": "drives a black Porsche 356A nicknamed 'the German Rainfrog'"
+    }
+   },
+   {
+    "id": "p11",
+    "name": "Vodka",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "Black Organization operative, Gin's subordinate and driver"
+   },
+   {
+    "id": "p12",
+    "name": "Director Sakamaki",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "film director (deceased)",
+    "attrs": {
+     "relevance": "the memorial/mourning party held in his honor at Haido City Hotel is the setting of Nomiguchi's murder; the purple handkerchiefs distributed to his memorial guests are the item Masuyama used to muffle his gunshot flash, and are what narrows the suspect pool to seven"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Haido City Hotel memorial party hall",
+    "attrs": {
+     "event": "memorial/mourning party for the late film director Sakamaki, attended by celebrities including a novelist, a pro baseball team owner, a music producer, an American actress, a university professor, and a financier"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Old building wine cellar / storage room (room 404), Haido City Hotel",
+    "attrs": {
+     "features": "a temporary storage room with a chimney, in a part of the hotel due to be rebuilt",
+     "incidents": "Haibara was held here after the murder; a fire later broke out here, presumably connected to the spilled Spirytus alcohol; Masuyama was executed by Gin nearby afterward"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Old building rooftop, Haido City Hotel",
+    "attrs": {
+     "reachable_via": "the wine cellar's chimney"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Street corner near Block 4",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Gin's Porsche 356A (\"the German Rainfrog\")",
+    "attrs": {
+     "description": "a 50-year-old classic car, Gin's favorite, parked on the street where Haibara and Conan first spotted it"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Fluorescent paint",
+    "role": "tool",
+    "attrs": {
+     "use": "marks the chandelier's support chain and the floor beneath it, invisible until the room lights go out"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Silenced handgun",
+    "role": "weapon",
+    "attrs": {
+     "feature": "fitted with a silencer; its muzzle flash was hidden by wrapping a handkerchief over the barrel, which flew off with the fired bullet"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Original purple handkerchief (used in the murder)",
+    "role": "tool",
+    "attrs": {
+     "fate": "flew off with the bullet when Masuyama fired, lost at or near the murder scene",
+     "origin": "one of many purple handkerchiefs distributed to attendees of Director Sakamaki's memorial party"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Replacement purple handkerchief",
+    "role": "evidence",
+    "attrs": {
+     "origin": "secretly supplied to Masuyama by Vermouth before he was questioned by police",
+     "staging_flaw": "not his original handkerchief -- the original had flown off with his bullet during the murder -- so its presence during the police headcount is a fabricated alibi prop"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Chandelier",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "dropped from the ceiling onto Nomiguchi when its support chain was shot through during a blackout slideshow"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Chandelier chain fragment",
+    "role": "evidence",
+    "attrs": {
+     "burn_mark": "a gunpowder burn on the severed link proves the chain was shot through rather than failing by accident",
+     "found": "flung into Mihei's mouth when the chandelier fell"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Chewing-gum transceiver bug",
+    "role": "instrument",
+    "attrs": {
+     "origin": "secretly planted inside Gin's car with toothmarks removed beforehand",
+     "discovered": "found by Gin and Vodka soon after; forensic analysis of the saliva could only reveal a blood type, not an identity"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Photographer's candid photo of Tarumi and Nanjo",
+    "role": "evidence",
+    "attrs": {
+     "content": "shows the two suspects embracing right before the chandelier fell",
+     "published": "printed on the entertainment page of the early edition of the next day's paper",
+     "effect": "clears both of them"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Photographer's candid photo of Masuyama aiming his gun",
+    "role": "evidence",
+    "attrs": {
+     "content": "shows Masuyama aiming his silenced handgun at the ceiling",
+     "published": "swapped onto the front page of the early edition of the next day's paper",
+     "effect": "exposes Masuyama as the shooter and triggers the Organization's decision to have him killed"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "MO disc (Apotoxin 4869 data copy)",
+    "role": "evidence",
+    "attrs": {
+     "content": "a copy of Haibara's research data on the shrinking drug Apotoxin 4869",
+     "fate": "hidden by Haibara in the wine cellar/room 404; presumed destroyed in the fire that later breaks out there"
+    }
+   },
+   {
+    "id": "o11",
+    "name": "Spirytus (96% alcohol)",
+    "role": "tool",
+    "attrs": {
+     "property": "extremely flammable, 96% alcohol content",
+     "role_in_case": "present on the floor of room 404 near Masuyama when Conan warns him about it; a fire breaks out in that room shortly after, though the exact ignition moment is not shown in the available transcript"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Of all the guests who received a purple handkerchief at Director Sakamaki's memorial party, most had already gone home by the time of the murder -- comparing the full guest list against who still possessed their handkerchief narrows the suspect pool down to just seven people, one of whom must be the shooter Pisco.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Masuyama's original purple handkerchief flew off with his bullet during the murder and was never recovered at the scene, yet he still had a matching handkerchief on him during the later police headcount -- the mismatch between the handkerchief that should be missing and the one he actually produced points to a secretly supplied replacement.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "Cross-checking each of the seven remaining suspects' positions and alibis at the moment of the chandelier drop -- Tawara and Chris directly underneath with no angle to shoot, Mihei hit in the mouth by the falling chain itself, Mugikura watched on stage, Tarumi and Nanjo photographed embracing each other -- eliminates six of the seven, leaving Masuyama as the only suspect who could have fired the shot.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "romantic_partner"},
+  {"type": "relationship", "from": "p11", "to": "p10", "relation_type": "subordinate_of"},
+  {"type": "relationship", "from": "p5", "to": "p10", "relation_type": "fellow_organization_member"},
+  {"type": "relationship", "from": "p7", "to": "p10", "relation_type": "fellow_organization_member"},
+
+  {"type": "owns", "from": "p7", "to": "o1"},
+  {"type": "owns", "from": "p7", "to": "o2"},
+  {"type": "owns", "from": "p7", "to": "o3"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o5", "to": "l1"},
+  {"type": "located_in", "from": "o7", "to": "l5"},
+  {"type": "located_in", "from": "o10", "to": "l2"},
+  {"type": "located_in", "from": "o11", "to": "l2"},
+
+  {"type": "has_motive_against", "from": "p7", "to": "p1", "motive_type": "silence a liability before he could be arrested and talk (per Gin's phone order)"},
+  {"type": "has_motive_against", "from": "p10", "to": "p9", "motive_type": "eliminate_organization_traitor"},
+  {"type": "has_motive_against", "from": "p10", "to": "p7", "motive_type": "organization_ordered_elimination_of_compromised_agent"},
+
+  {"type": "marks", "from": "p7", "to": "o5", "order": 0, "temporal_frame": "present", "detail": "marks the chain and the floor beneath it with fluorescent paint (o1), invisible until the lights go out"},
+  {"type": "was_at", "from": "p7", "to": "l1", "order": 0, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p9", "to": "l4", "order": 1, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p10", "to": "l5", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l5", "order": 2, "temporal_frame": "present"},
+
+  {"type": "discovers", "from": "p10", "to": "o7", "order": 3, "temporal_frame": "present", "detail": "discovers the transceiver bug hidden in the car and, on the phone with Vodka's contact, relays the plan to kill Nomiguchi at Haido City Hotel and the codename Pisco"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p7", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p8", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p9", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p10", "to": "l1", "order": 4, "temporal_frame": "present", "detail": "waiting undercover, expecting Sherry to show up to try to stop the murder"},
+  {"type": "was_at", "from": "p11", "to": "l1", "order": 4, "temporal_frame": "present"},
+
+  {"type": "kills", "from": "p7", "to": "p1", "order": 5, "temporal_frame": "present", "method": "chandelier dropped via a shot-through support chain", "circumstance_tags": ["premeditated", "disguised_as_accident", "staged_lure"]},
+  {"type": "stages_alibi_using", "from": "p7", "to": "o3", "order": 5, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p7", "to": "o6", "order": 5, "temporal_frame": "present"},
+
+  {"type": "gives", "from": "p5", "to": "p7", "order": 6, "temporal_frame": "present", "detail": "secretly supplies the replacement purple handkerchief (o4) so the headcount will still add up before he is questioned"},
+  {"type": "owns", "from": "p7", "to": "o4"},
+
+  {"type": "captures", "from": "p7", "to": "p9", "order": 8, "temporal_frame": "present", "circumstance_tags": ["kidnapping", "uncertain_attribution"], "detail": "Vodka later speculates she might instead have snuck into the room herself while Pisco was elsewhere; the available transcript doesn't resolve which"},
+  {"type": "was_at", "from": "p9", "to": "l2", "order": 8, "temporal_frame": "present"},
+
+  {"type": "hides", "from": "p9", "to": "o10", "order": 9, "temporal_frame": "present", "detail": "conceals the MO disc in room 404/the wine cellar for later retrieval"},
+
+  {"type": "was_at", "from": "p9", "to": "l3", "order": 10, "temporal_frame": "present", "detail": "escapes the wine cellar via its chimney, temporarily regaining her adult body from a strong liquor found there"},
+
+  {"type": "was_at", "from": "p10", "to": "l3", "order": 12, "temporal_frame": "present"},
+  {"type": "confronts", "from": "p10", "to": "p9", "order": 12, "temporal_frame": "present", "detail": "demands to know how she escaped the Organization's gas room years earlier", "circumstance_tags": ["interrogation"]},
+
+  {"type": "assaults", "from": "p10", "to": "p9", "order": 13, "temporal_frame": "present", "method": "gunshot wound", "circumstance_tags": ["attempted_murder", "near_execution"]},
+
+  {"type": "was_at", "from": "p5", "to": "l3", "order": 14, "temporal_frame": "present"},
+  {"type": "assaults", "from": "p5", "to": "p10", "order": 14, "temporal_frame": "present", "method": "tranquilizer needle dart", "circumstance_tags": ["rescue"]},
+  {"type": "rescues", "from": "p5", "to": "p9", "order": 14, "temporal_frame": "present", "detail": "tells Haibara to flee back into the chimney before Gin recovers"},
+
+  {"type": "was_at", "from": "p7", "to": "l2", "order": 16, "temporal_frame": "present", "detail": "a fire breaks out in room 404, near spilled Spirytus (o11)"},
+
+  {"type": "was_at", "from": "p10", "to": "l2", "order": 17, "temporal_frame": "present"},
+  {"type": "kills", "from": "p10", "to": "p7", "order": 17, "temporal_frame": "present", "method": "gunshot execution, ordered by the Organization's leadership", "circumstance_tags": ["execution", "cover_up", "organization_ordered"]},
+
+  {"type": "implicates", "from": "o6", "to": "p7"},
+  {"type": "implicates", "from": "o9", "to": "p7"},
+  {"type": "implicates", "from": "o4", "to": "p7"},
+  {"type": "implicates", "from": "o4", "to": "p5"},
+  {"type": "regarding", "from": "o8", "to": "p2"},
+  {"type": "regarding", "from": "o8", "to": "p4"},
+
+  {"type": "regarding", "from": "cA", "to": "p2"},
+  {"type": "regarding", "from": "cA", "to": "p3"},
+  {"type": "regarding", "from": "cA", "to": "p4"},
+  {"type": "regarding", "from": "cA", "to": "p5"},
+  {"type": "regarding", "from": "cA", "to": "p6"},
+  {"type": "regarding", "from": "cA", "to": "p7"},
+  {"type": "regarding", "from": "cA", "to": "p8"},
+
+  {"type": "regarding", "from": "cB", "to": "o3"},
+  {"type": "regarding", "from": "cB", "to": "o4"},
+  {"type": "implicates", "from": "cB", "to": "p7"},
+  {"type": "implicates", "from": "cB", "to": "p5"},
+
+  {"type": "regarding", "from": "cC", "to": "p2"},
+  {"type": "regarding", "from": "cC", "to": "p3"},
+  {"type": "regarding", "from": "cC", "to": "p4"},
+  {"type": "regarding", "from": "cC", "to": "p5"},
+  {"type": "regarding", "from": "cC", "to": "p6"},
+  {"type": "regarding", "from": "cC", "to": "p8"},
+  {"type": "implicates", "from": "cC", "to": "p7"},
+
+  {"type": "memorial_held_at", "from": "p12", "to": "l1", "temporal_frame": "backstory", "circumstance_tags": ["memorial"], "detail": "the mourning party held in his honor at Haido City Hotel is the setting of Nomiguchi's murder; the purple handkerchiefs distributed there in his memory become the item Masuyama used to muffle his gunshot"}
+ ],
+ "label": {
+  "murderer_id": "p7"
+ }
+}

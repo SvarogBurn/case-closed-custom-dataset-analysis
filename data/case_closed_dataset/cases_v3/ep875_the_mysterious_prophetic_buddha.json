@@ -1,0 +1,249 @@
+{
+ "case_id": "ep875_the_mysterious_prophetic_buddha",
+ "episode_number": "875",
+ "title": "The Mysterious Prophetic Buddha",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mysterious_Prophetic_Buddha",
+ "subtitle_source": ["subs_resolved/0875.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Kogoro Mouri, Ran) omitted by convention; several lines are tagged generically '(DCMain)' in the raw subtitle file with no per-character attribution, so a few investigative actions are attributed to the temple's local police (Hayashi/Shimokawa) rather than invented onto a named suspect. No event nodes: actions are direct typed edges. The old cases/ file actually had the correct culprit (Masako Fukuhara, s1) and roughly the right motive text ('tired of her husband's behavior'), but it was missing the entire mechanical red-herring subplot: Junko Wakuda secretly rigged a bell-triggered string-and-knife trap (baited past a tanuki with salami to erase the string) intending only to frighten Eikyo into ending her forced arranged marriage/training, and had moved his prayer table so the falling knife would miss him. Conan proves by reenactment that the trap could only injure, never kill, which exonerates Junko and points to Masako, who had actually entered the shrine and stabbed her husband herself, leaving a fingerprint trace of rice powder (from rice cakes only she and Conan had eaten) on the edge of the table -- powder Eikyo himself would have wiped away had it been there before he started praying. The old file also omitted the alibi subplot (Eizen Fukuhara's embezzled temple funds and the hostess-club witness Sakurai Manami who clears him) and the naturalistic explanation for the turning Buddha statue (waterfall infrasound), which the old file's brevity note flagged as missing. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Eikyo Fukuhara",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "head priest, Hoto Temple",
+    "attrs": {
+     "age": 56,
+     "personality": "harsh and controlling; scolded and belittled his family",
+     "died_of": "stabbed in the neck"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masako Fukuhara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "head priest's wife",
+    "attrs": {
+     "age": 53,
+     "confessed_motive": "years of being yelled at and treated like a slave by her husband"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuka Fukuhara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "head priest's daughter",
+    "attrs": {
+     "age": 26,
+     "arranged_wedding": "set for September, to Junko Wakuda, by her father's decision"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Eizen Fukuhara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "head priest's son",
+    "attrs": {
+     "age": 23,
+     "debt": "borrowed 300,000 yen from the reception-hall renovation fund to cover hostess-club debts",
+     "scolded_by_father": "hours before the murder, over the money and his gallivanting"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Junko Wakuda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "trainee monk, Hoto Temple",
+    "attrs": {
+     "age": 28,
+     "secret": "already engaged to someone else but felt obligated to accept the arranged marriage to Yuka",
+     "confessed_to": "rigging a trap to frighten Eikyo into calling off her training/marriage, not to kill him"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Sakurai Manami",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "hostess at club 'Romance'",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Detective Hayashi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Yamanashi Prefectural Police detective",
+    "attrs": {"age": 32}
+   },
+   {
+    "id": "p8",
+    "name": "Detective Shimokawa",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Yamanashi Prefectural Police detective",
+    "attrs": {"age": 48}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Hoto Temple shrine hall",
+    "attrs": {
+     "note": "no signs of forced entry found on the door or windows",
+     "table_moved": "Junko moved Eikyo's prayer table to the right so the falling trap knife would miss him"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Temple dining room",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Bell tower and waterfall path",
+    "attrs": {"feature": "tanuki den along the path; automatic bell striker in the tower"}
+   },
+   {
+    "id": "l4",
+    "name": "Hostess club Romance",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Eleven-faced Kannon statue",
+    "role": "instrument",
+    "attrs": {
+     "natural_cause": "low-frequency infrasound from the waterfall, louder after heavy rain or snowmelt, resonates inside the shrine and slowly turns it",
+     "deliberate_use": "Junko turned it herself the night of the murder to make the household think another omen was coming"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Bell-string trap device",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "salami baits a tanuki near the bell tower; the automatic bell striker pulls a string threaded through a hole and into the shrine and over the canopy; a knife taped to the string's end drops when the string is pulled taut",
+     "built_by": "Junko Wakuda",
+     "intended_effect": "frighten Eikyo, not kill him"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Knife",
+    "role": "weapon",
+    "attrs": {
+     "trap_role": "taped to the string end and dropped from the canopy by Junko's device",
+     "reenactment_result": "a test drop from the same height only injures, since the table had been moved -- proves the trap alone could not have killed Eikyo",
+     "actual_cause_of_death": "Eikyo was stabbed in the neck directly by Masako, not by the falling trap knife"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Tape",
+    "role": "evidence",
+    "attrs": {"found": "stuck to the inner left side of the canopy above the shrine"}
+   },
+   {
+    "id": "o5",
+    "name": "Salami",
+    "role": "tool",
+    "attrs": {"purpose": "bait so the tanuki would carry off the string and erase the trap's traces"}
+   },
+   {
+    "id": "o6",
+    "name": "Rice powder",
+    "role": "evidence",
+    "attrs": {
+     "found": "on the edge of the prayer table",
+     "origin": "dusted rice cakes eaten after dinner only by Masako and Conan",
+     "inference": "Eikyo would have wiped the powder off before praying if it had been there earlier, so only the killer could have left it there"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Reception hall fund",
+    "role": "evidence",
+    "attrs": {"amount_taken": "300,000 yen", "taken_by": "Eizen Fukuhara"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Only Masako and Conan ate the rice-powder-dusted rice cakes; that powder later found on the prayer table's edge means someone touched it after dinner, but Eikyo -- fastidious in prayer -- would have wiped it off had it been there before he started, so the powder traces to Masako, not an intruder.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Reenacting the trap by dropping a knife from the same height it was taped at only injures, never kills, proving Junko's frightening trick is not what actually killed Eikyo.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "trains_under"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "years of verbal abuse and control by her husband"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "financial dispute over misappropriated temple funds (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "forced arranged marriage and unwanted monastic training (red herring, non-lethal intent)"},
+
+  {"type": "stages_trap_against", "from": "p5", "to": "p1", "circumstance_tags": ["red_herring", "staged"]},
+  {"type": "turns", "from": "p5", "to": "o1"},
+  {"type": "builds", "from": "p5", "to": "o2"},
+  {"type": "uses", "from": "p5", "to": "o5"},
+  {"type": "uses", "from": "p5", "to": "o4"},
+  {"type": "rigs", "from": "p5", "to": "o3"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "located_in", "from": "o5", "to": "l3"},
+  {"type": "implicates", "from": "o4", "to": "p5"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "method": "stabbed in the neck, using the knife from Junko's trap after realizing it would only injure him", "circumstance_tags": ["locked_room", "staged", "framed"]},
+  {"type": "uses", "from": "p2", "to": "o3"},
+  {"type": "frames", "from": "p2", "to": "p5"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+
+  {"type": "misappropriates", "from": "p4", "to": "o7"},
+  {"type": "implicates", "from": "o7", "to": "p4"},
+  {"type": "confirms_alibi_of", "from": "p6", "to": "p4"},
+
+  {"type": "regarding", "from": "c1", "to": "o6"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "exonerates", "from": "c2", "to": "p5"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p6", "to": "l4"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

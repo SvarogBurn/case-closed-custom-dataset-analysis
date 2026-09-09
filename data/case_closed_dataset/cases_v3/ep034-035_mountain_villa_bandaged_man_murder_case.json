@@ -1,0 +1,565 @@
+{
+ "case_id": "ep034-035_mountain_villa_bandaged_man_murder_case",
+ "episode_number": "34-35",
+ "title": "Mountain Villa Bandaged Man Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Mountain_Villa_Bandaged_Man_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0034.txt, case_closed_dataset/subs_resolved/0035.txt (full two-part episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko) omitted by convention, matching the v1 scaffold's own grouping. This creates two gaps that can't be represented as edges: the accidental door-opening where Ran glimpses Takahashi's real (slim) build, and his two follow-up attacks on her to keep her silent -- both captured instead as attrs/detail text on Takahashi's node and on the room edges, since the other party (Ran) has no node. No `event` node type. Honest gap: no red-herring motive material exists in the transcript for Ota, Sumiya, or Ayako -- none of them are shown with any grievance against Chikako, so has_motive_against is left on the culprit only for this case; the red herring here is structural (everyone was 'inside the lodge' when the bandaged man appeared outside, seemingly clearing all of them) rather than a false motive. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Chikako Ikeda",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "scriptwriter",
+    "attrs": {
+     "died_of": "decapitated and dismembered in the forest",
+     "career": "her award-winning debut script, \"Blue Kingdom\", launched her career while she was still in college",
+     "secret": "the story was actually plagiarized from a manuscript (\"Azure Country\") that her friend and fellow club member Atsuko Tokumoto had privately shown her"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ryoichi Takahashi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "food company employee; formerly the filmmaking club's stage manager/set designer",
+    "attrs": {
+     "cover_costume": "normally pads his shirt to look heavier (about 100 kg) than he actually is, a detail the group treats as a running joke",
+     "exposure": "Ran accidentally opened his door while he was changing early in the visit and glimpsed his true, slimmer build without realizing its significance at the time",
+     "first_attack": "dons the bandaged-man cape and attacks Ran in the forest during the storm, to keep her from remembering what she saw",
+     "confession": "did it to avenge Atsuko Tokumoto, whose suicide he believes Chikako's plagiarism caused"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Masaru Ota",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "import car broker; formerly the filmmaking club's lead actor",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Hiroki Sumiya",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "film magazine editor; formerly the filmmaking club's cameraman",
+    "attrs": {
+     "note": "still films everything on a habit from his club days; his own footage inadvertently captures the puppet swinging past the window"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Ayako Suzuki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "graduate student; formerly the filmmaking club's makeup/wardrobe person",
+    "attrs": {
+     "note": "Sonoko's older sister; organized the reunion at her family's mountain villa and found Chikako's choker by the front door"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Atsuko Tokumoto",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "aspiring novelist; former member of the same filmmaking club",
+    "attrs": {
+     "died_of": "suicide (hanged herself in the club's meeting room)",
+     "circumstance": "took her life the day after Chikako won a scriptwriting award for a story secretly identical to the manuscript Atsuko had shown only to Takahashi; told Takahashi by phone the day before that she \"couldn't trust anyone anymore\""
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Suzuki family mountain villa",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Forest surrounding the villa",
+    "attrs": {
+     "role_in_case": "site of both the first staged \"bandaged man\" attack and Chikako's actual murder/dismemberment"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Bridge (only route off the mountain)",
+    "attrs": {
+     "staging_flaw": "chopped supports show blade marks, proving it was deliberately destroyed rather than collapsing on its own"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Ran and Conan's room",
+    "attrs": {
+     "role_in_case": "site of two further attacks; second-floor, balcony-accessible"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Chikako's room",
+    "attrs": {
+     "role_in_case": "adjacent to Ran and Conan's room, sharing balcony access; entry/exit point for the puppet trick and where the blackmail note was slipped under the door"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Villa roof and central balcony",
+    "attrs": {
+     "role_in_case": "where Takahashi was ostensibly fixing the roof, giving him access to rig the piano wires"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Inflatable dummy in cape and bandages",
+    "role": "tool",
+    "attrs": {
+     "trick": "rigged with Chikako's severed head and swung past the dining room window on piano wires to look like the \"bandaged man\" was carrying her off, in view of everyone inside the lodge"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Piano wires",
+    "role": "tool",
+    "attrs": {
+     "trick": "two wires run through the central balcony's railing, tied off above the window, then one was cut to swing the dummy across and both were used to retrieve it afterward",
+     "staging_flaw": "leaves two distinct wire-groove marks on the outside railing"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Chikako's severed head",
+    "role": "evidence",
+    "attrs": {
+     "trick": "stuffed under Takahashi's shirt in place of his usual fake padding, letting him carry it back into the lodge and later out to the forest disguised as his normal bulky silhouette"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Chikako's choker",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "found by the front door after everyone had gone outside chasing the \"bandaged man\" -- but the bandaged man supposedly carried her straight into the forest, so it should never have been anywhere near the front door unless someone actually carried her body/head through the house"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Blackmail note referencing Atsuko",
+    "role": "tool",
+    "attrs": {
+     "content": "slipped under Chikako's door; made her turn pale and leave quietly through the back door alone"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Sumiya's video camera footage",
+    "role": "evidence",
+    "attrs": {
+     "content": "incidentally recorded the dummy/head swinging past the window, later reviewed to confirm the choker was on the head at that moment"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Phone line",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "cut to prevent anyone from calling for help, then blamed on \"the bandaged man\""
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "It was pouring rain when the bandaged man supposedly climbed a tree onto the balcony and broke into Ran's room, yet there are no muddy tracks anywhere inside -- inconsistent with someone actually climbing in from outside in a storm.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "On the second break-in, the window is smashed but one of its locks is already undone -- if an intruder had really broken the glass to get in, the lock should still be latched. It was unlocked from the inside first, then the glass was broken afterward to fake outside entry.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Two distinct wire-groove marks are cut into the central balcony's outside railing -- consistent with a two-wire rig used to swing an object past a window and retrieve it, not with any person's actual passage.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cD",
+    "desc": "Chikako's choker turns up by the front door after the bandaged man supposedly carried her straight into the forest -- proving her body (or at least her head) passed back through the lodge itself, which only someone already inside could have arranged.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cE",
+    "desc": "Ran describes tackling a bandaged man with an average, unremarkable build, but Takahashi is known by the whole group as noticeably overweight -- a mismatch that only makes sense if his usual bulk is fake padding, hollow at the moment of the attack because his abdomen was occupied by Chikako's head instead.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cF",
+    "desc": "Chikako's slippers are found at the back door, not the front, even though she was seen retreating to her room -- she must have deliberately snuck out the back, unseen, matching the theory that a note lured her outside quietly rather than her leaving normally.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "close_friend_of"
+  },
+  {
+   "type": "plagiarizes",
+   "from": "p1",
+   "to": "p6",
+   "temporal_frame": "backstory",
+   "detail": "her award-winning debut script is secretly identical to a manuscript Atsuko privately showed only to Takahashi",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l6",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "volunteers to fix the roof, giving him access to rig the balcony"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p2",
+   "to": "l3",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "chops through the bridge supports to strand everyone at the villa overnight",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "tampers_with",
+   "from": "p2",
+   "to": "o7",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "cuts the phone line so no one can call for help"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o5",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "slips the blackmail note referencing Atsuko under Chikako's door"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "sneaks out the back door alone after reading the note"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "confronts her over the plagiarized story and Atsuko's suicide"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "decapitates and dismembers her with a blade in the forest",
+   "circumstance_tags": ["premeditated", "dismemberment"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o3",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "stuffs the severed head under his shirt in place of his usual fake padding to carry it back into the lodge disguised as his normal bulky silhouette"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o1",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "attaches the head to the inflatable dummy, dressed in the bandaged-man cape"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o2",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "swings the rigged dummy past the dining room window on piano wires so the whole group sees the \"bandaged man\" carry Chikako off, then retrieves it"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o4",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "the choker falls off while he carries the head/body back through the house",
+   "circumstance_tags": ["staging_flaw"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "rejoins the group with feigned unawareness once everyone chases the dummy sighting toward the forest"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p2",
+   "to": "l4",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "breaks in via the shared balcony a second time to silence Ran, then smashes the window from inside afterward to stage it as an outside break-in",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "l4",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "attacks again with an axe during a blackout, chasing toward the dining room"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l4"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cE",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "cE",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cF",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "avenging_atsukos_suicide_after_chikako_plagiarized_her_story"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

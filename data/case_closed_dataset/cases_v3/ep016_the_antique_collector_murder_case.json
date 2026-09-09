@@ -1,0 +1,395 @@
+{
+ "case_id": "ep016_the_antique_collector_murder_case",
+ "episode_number": "16",
+ "title": "The Antique Collector Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Antique_Collector_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0016.txt (full episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention, including the final scene where Suwa attacks Kogoro after being exposed -- that beat has no non-recurring-cast participants so it is not representable as an edge under this convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved. case_type: murder. Maru held both Suwa's and Akutsu's valuables as loan collateral; Suwa's true motive (secretly selling the pawned family sword after threatening to kill Maru if he did) and Akutsu's near-identical red-herring motive (unpaid debt + an almost identical threat over his own pawned carving) are intentionally parallel in the transcript, which is what makes Akutsu a strong false suspect before the answering-machine-tape and dying-message evidence resolve it onto Suwa.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Denjiro Maru",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "antique collector; 3rd-degree Iai swordsmanship practitioner",
+    "attrs": {
+     "died_of": "single sword strike during a fight in his cottage",
+     "lending_practice": "held valuables (a family heirloom sword, a wood carving) from acquaintances as collateral against loans he made them"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ineko Maru",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "secret": "having an affair with Dr. Hatano; paid Kogoro Mouri extra to keep the affair he was hired to investigate quiet"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuji Suwa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "swordsmanship dojo master",
+    "attrs": {
+     "tell": "small scar between thumb and index finger from sword-sheathing practice, marking him as an expert swordsman",
+     "claimed_alibi": "says he was meditating alone at his dojo between 3:00 and 5:00, with no one to verify it"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Ikuya Hatano",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "doctor; Denjiro Maru's personal physician",
+    "attrs": {
+     "claimed_alibi": "says he was at a movie theater in Ginza at 3:00, alone"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Makoto Akutsu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "engraver / wood sculptor",
+    "attrs": {
+     "claimed_alibi": "says he was alone at his studio between 3:00 and 5:00",
+     "false_suspicion": "wrongly accused mid-episode: the staged sword-grip flaw and his own untouched carving made him look like the killer, and he told the truth about leaving a phone message that nobody could initially verify"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Maru household, main house",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Maru household cottage",
+    "attrs": {
+     "role_in_case": "murder scene; kept separate from the main house so Maru could meet visitors privately"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Suwa's dojo",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Movie theater in Ginza",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Akutsu's studio",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Maru's decorative katana",
+    "role": "weapon",
+    "attrs": {
+     "normal_use": "displayed in the cottage alcove",
+     "staging_flaw": "found positioned backwards in the victim's hands relative to a photo taken earlier -- proves someone repositioned it after death"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Kikuchiyo sword",
+    "role": "evidence",
+    "attrs": {
+     "description": "Suwa family heirloom sword, passed down for generations",
+     "history": "left with Maru as collateral against a loan; Maru secretly sold it despite Suwa's explicit threat to kill him if he did"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Dragon wood carving",
+    "role": "evidence",
+    "attrs": {
+     "description": "Akutsu's own work, left with Maru as collateral against a 10-million-yen loan",
+     "anomaly": "the only object in the cottage left undamaged amid an otherwise thoroughly sword-slashed room"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Answering machine tape",
+    "role": "evidence",
+    "attrs": {
+     "original_content": "Akutsu's genuine call, made shortly before 4:00, about the loan and his threatened carving -- it rang many times unanswered because the killer was mid-murder, then rolled to the machine",
+     "tampering": "rewound and recorded over by Suwa, erasing Akutsu's message and replacing it with Suwa's own message claiming he'd arrive earlier than his 6:00 appointment"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Drawer chest in the cottage",
+    "role": "evidence",
+    "attrs": {
+     "dying_message": "Maru, dying, carved \"Suwa\" into the drawers with the murder sword",
+     "tampering": "Suwa discovered the message, physically swapped several drawers out of order, and added extra sword cuts on top to scramble the carved name",
+     "staging_flaw": "the large sword cuts covering the room don't connect across the swapped drawers -- the pattern only makes sense once the drawers are moved back to their original positions, revealing \"Suwa\" again"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Maru's appointment organizer",
+    "role": "evidence",
+    "attrs": {
+     "content": "lists four visitors scheduled for the day of the murder: Kogoro Mouri, Yuji Suwa, Ikuya Hatano, and Makoto Akutsu"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "A photo taken candidly of the crime scene shows the murder sword held one way in the victim's hands; by the time the body was formally examined the grip was reversed -- proves someone repositioned the sword post-mortem, which points at whoever staged the scene rather than whoever actually fought Maru.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Of three phone calls placed to the Maru residence that afternoon, two rang once and stopped (callers who got through and hung up or left quickly); the earliest, placed before 4:00, rang on and on before finally rolling to the answering machine -- timestamps the murder to that window, since only someone busy committing it would fail to pick up for that long.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "affair_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "debtor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "debtor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "physician_of"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o3"
+  },
+  {
+   "type": "sells",
+   "from": "p1",
+   "to": "o2",
+   "temporal_frame": "backstory",
+   "detail": "sold the pawned Kikuchiyo sword instead of returning it, breaking his promise to Suwa"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l2"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p5"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "waits in the main house while her husband receives his visitor in the cottage, and orders the housekeepers to fetch him when he doesn't return"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p3",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "confronts Maru over secretly selling the pawned Kikuchiyo heirloom sword despite Suwa's earlier threat"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "method": "cut down with Maru's own decorative katana, taken from the cottage alcove, during a sword fight",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o5",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "dying, Maru carves \"Suwa\" into the drawer chest with the murder sword as a dying message"
+  },
+  {
+   "type": "leaves_message",
+   "from": "p5",
+   "to": "o4",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "calls the Maru residence about the loan and his threatened carving; the phone rings unanswered for a long time because Suwa is mid-murder, and the call rolls to the answering machine",
+   "circumstance_tags": ["timestamp_evidence"]
+  },
+  {
+   "type": "tampers_with",
+   "from": "p3",
+   "to": "o4",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "rewinds the answering machine tape and records his own message over Akutsu's, erasing the evidence that Akutsu called and faking that he himself would arrive earlier than planned"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p3",
+   "to": "o5",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "discovers the dying message, swaps drawers out of order, and adds new sword cuts to scramble the carved name \"Suwa\""
+  },
+  {
+   "type": "vandalizes",
+   "from": "p3",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "slashes walls, ceiling, and furniture throughout the cottage so the drawer damage doesn't stand out as singled out",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "places the sword backwards in the victim's hands so the scene will look like someone else tried to frame him, giving himself a built-in escape route"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present",
+   "circumstance_tags": ["unverified_alibi", "false_alibi_claim"]
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 1,
+   "temporal_frame": "present",
+   "circumstance_tags": ["unverified_alibi"]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l5",
+   "order": 1,
+   "temporal_frame": "present",
+   "circumstance_tags": ["unverified_alibi"]
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "betrayal_after_selling_pawned_family_heirloom_despite_death_threat"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "unpaid_debt_and_near-identical_threat_over_his_own_pawned_carving (red herring -- prime suspect for most of the episode due to staged evidence)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

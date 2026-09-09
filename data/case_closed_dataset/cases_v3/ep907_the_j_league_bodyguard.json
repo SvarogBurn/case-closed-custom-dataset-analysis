@@ -1,0 +1,154 @@
+{
+ "case_id": "ep907_the_j_league_bodyguard",
+ "episode_number": "907",
+ "title": "The J League Bodyguard",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_J_League_Bodyguard",
+ "subtitle_source": "subs_resolved/0907.txt (489 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Ayumi, Genta, Mitsuhiko) omitted by convention; Kogoro Mouri is kept as he is the story's actual poisoning victim, not just narrator. case_type corrected from the old file's 'attempted_murder' to 'attempted_poisoning' (sabotage/doping): the transcript explicitly states the substance (rhubarb, aloe, senna, bisacodyl) was 'just laxatives' and 'won't kill him', and Inspector-adjacent dialogue notes there is 'no victim or physical evidence' in a legal sense -- this was a J-League anti-doping/match-fixing sabotage, not a murder attempt. The culprit identity (Miyamoto Risa) in the old file holds up -- she is not a red herring, she confesses on-screen. However the old file's flat 3-suspect list and vague 'unspecified' motive undersell the transcript: Tonozuka and Iwasada are written as suspicious-seeming background characters (Tonozuka in particular is repeatedly called 'a creep' by the kids) but neither is ever actually implicated by evidence or accusation, so they are reclassified here as witnesses rather than suspects. Miyamoto's real motive is added from the transcript: she was blackmailed via a loan-shark scheme (a disappeared former co-signer friend and a 'Rodriguez-sensei' loan advisor, both later revealed to be part of an illegal soccer-betting/match-fixing syndicate) into lacing Akagi's sports drink -- she then deliberately handed the tampered drink to Kogoro instead of Akagi as a silent plea for him to notice and stop the scheme, which he does.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kogoro Mouri",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "private detective, honorary opening-ceremony kicker",
+    "attrs": {
+     "incapacitated_by": "laxative-laced sports drink swapped in for his own by Miyamoto",
+     "effect": "sudden diarrhea attack during the live penalty-kick opening ceremony"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Risa Miyamoto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Tokyo Spirits roupeiro (equipment manager), 22",
+    "attrs": {
+     "debt": "co-signed a loan with a fellow roupeiro-in-training while studying abroad; that friend disappeared, leaving her with the debt",
+     "coerced_by": "a loan advisor calling himself 'Rodriguez-sensei', later revealed to be a handler for a match-fixing gambling syndicate",
+     "true_intent": "deliberately redirected the tampered drink from Akagi to Kogoro, hoping he would notice and stop the scheme rather than let Akagi be sabotaged"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuichi Tonozuka",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Tokyo Spirits senior roupeiro, 45",
+    "attrs": {
+     "narrative_note": "written as an off-putting, suspicious 'creep' figure (strict about drink rules, orders checks for 'unfamiliar squeeze bottles', oddly praises Miyamoto) but never actually implicated in the sabotage"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yasuaki Iwasada",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "J League employee, 40",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Hideo Akagi",
+    "aliases": ["Hide"],
+    "roles": ["bystander"],
+    "occupation": "Tokyo Spirits forward, #11, returning from injury",
+    "attrs": {
+     "intended_target": true
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yasuhito Endo",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "Gamba Osaka player, 38",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Rodriguez-sensei",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "posed as a loan advisor; actually a handler for a match-fixing syndicate",
+    "attrs": {
+     "organization": "illegal soccer-betting (totocalcio) syndicate",
+     "outcome": "arrested along with the rest of the organization shortly after the episode's events"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Miyamoto's missing friend",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "aspiring roupeiro, studied abroad with Miyamoto",
+    "attrs": {
+     "fate": "disappeared about two years ago after co-signing a loan with Miyamoto; later revealed to be part of Rodriguez's syndicate"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Toto Stadium entrance & hallway", "attrs": {}},
+   {"id": "l2", "name": "Tokyo Spirits locker room / lounge", "attrs": {}},
+   {"id": "l3", "name": "Stadium pitch / practice field", "attrs": {}},
+   {"id": "l4", "name": "Doping-control testing bathroom", "attrs": {}},
+   {"id": "l5", "name": "Locker-room kitchen", "attrs": {}},
+   {"id": "l6", "name": "VIP room", "attrs": {}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Tampered sports drink",
+    "role": "weapon",
+    "attrs": {
+     "contents": "rhubarb, aloe, senna, bisacodyl (laxative compounds)",
+     "tampering_method": "cap cut off, plastic softened in hot water, resealed after lacing",
+     "intended_recipient": "Hideo Akagi",
+     "actual_recipient": "Kogoro Mouri",
+     "disposal": "cut-open bottle found discarded in the locker-room kitchen trash can"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The drink-checker deliberately handed Kogoro the bottle meant for Akagi instead of leaving it at Akagi's locker or bringing Kogoro his own -- a substitution only someone managing the locker room's drinks could arrange.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p2", "to": "p8", "relation_type": "loan_co_signer"},
+  {"type": "relationship", "from": "p8", "to": "p7", "relation_type": "same_criminal_organization"},
+  {"type": "blackmails", "from": "p7", "to": "p2", "detail": "posed as a trustworthy loan advisor to manipulate her debt-ridden situation into forcing her to sabotage Akagi's drink for the syndicate's match-fixing bets"},
+  {"type": "tampers_with", "from": "p2", "to": "o1", "detail": "cuts open and laces the sealed sports drink with laxatives"},
+  {"type": "poisons", "from": "p2", "to": "p1", "detail": "deliberately hands Kogoro the laced drink meant for Akagi instead, as a silent plea for him to notice and intervene"},
+  {"type": "has_motive_against", "from": "p2", "to": "p5", "motive_type": "coerced sabotage for the syndicate's match-fixing bets, no personal grudge"},
+  {"type": "has_motive_against", "from": "p7", "to": "p5", "motive_type": "match-fixing / illegal betting profit"},
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "p5"},
+  {"type": "regarding", "from": "o1", "to": "p5"},
+  {"type": "located_in", "from": "o1", "to": "l5"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l6"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l6"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l6"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p6", "to": "l3"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

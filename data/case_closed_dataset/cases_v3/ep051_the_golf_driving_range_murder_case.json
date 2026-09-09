@@ -1,0 +1,320 @@
+{
+ "case_id": "ep051_the_golf_driving_range_murder_case",
+ "episode_number": "51",
+ "title": "The Golf Driving Range Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Golf_Driving_Range_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0051.txt (309 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. The culprit staged two layers of misdirection -- a fake exploded-ball fragment planted at the scene, and a second 'backup' bomb ball planted in Yasui's bag -- to frame a coworker; both are represented as regarding/red-herring evidence rather than implicates, since they are fabrications, not real clues. A second red-herring has_motive_against edge (Okubo, whose product ideas Tachibana took credit for) sits alongside the culprit's real motive and the framed suspect's alleged-but-denied one, fixing v1's near-total label leak. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Eisuke Tachibana",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "director of product development, Itsui Electronics",
+    "attrs": {
+     "age": 56,
+     "died_of": "black-powder bomb explosion",
+     "note": "the murder happened on his last day before an overseas promotion to head the New York branch"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Minoru Yasui",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "section manager, product development, Itsui Electronics",
+    "attrs": {
+     "age": 44,
+     "cleared_because": "a second, 'backup' bomb ball was planted in his bag to frame him, and his absence during the explosion (fetching Tachibana's coffee, a routine ten-minutes-early errand) was engineered by the real culprit, not a real alibi gap"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tatsuya Okubo",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "product development chief, Itsui Electronics",
+    "attrs": {
+     "age": 35,
+     "cleared_because": "caught in the blast himself, with injuries across nearly his entire body"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Tomofumi Minami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "employee, product development, Itsui Electronics",
+    "attrs": {
+     "age": 28,
+     "injury_pattern": "injuries confined to the outside of his left elbow and leg, consistent with shielding his eyes with his left arm and ducking behind a pillar an instant before the blast -- unlike Okubo's all-over injuries"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Driving range",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Black-powder bomb",
+    "role": "weapon",
+    "attrs": {
+     "hidden_in": "the head of Tachibana's own driver",
+     "mechanism": "detonates when the club strikes a ball, timed to the victim's own swing rather than to any particular golf ball"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Pre-made ball fragment with fuse",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "planted at the scene after the explosion so investigators would assume the bomb had been hidden inside a golf ball rather than the driver itself"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Backup bomb ball, planted in Yasui's bag",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "planted to look like Yasui kept a spare in case the first 'bomb ball' turned out to be a dud, framing him once the fake exploded-ball fragment was found"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Tachibana's driver",
+    "role": "weapon",
+    "attrs": {
+     "history": "a gift from the current CEO 15 years earlier; had a cracked shaft that Minami was asked to get repaired, converting it from a wood head to a carbon shaft",
+     "note": "in Minami's sole possession for a full day and night before being returned to Tachibana the morning of the murder"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Blue-striped golf ball recovered by a far post",
+    "role": "evidence",
+    "attrs": {
+     "significance": "the actual ball Tachibana hit when the bomb went off -- an ordinary blue-striped ball, not the marked red-crossed 'bomb ball', but still faintly smelling of explosives, proving the explosive was in the club, not the ball"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The ball recovered by the far post has an ordinary blue stripe, not the red crossed lines marking the supposed 'bomb ball', yet it still smells faintly of explosives -- proving the explosion did not come from a planted ball at all, and that the fragment with a fuse found at the scene was staged afterward.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Minami's injuries were confined to the outside of his left elbow and leg, consistent with instinctively shielding his eyes with his left arm and taking cover behind a pillar an instant before the blast -- behavior that requires knowing almost exactly when the explosion would happen.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cC",
+    "desc": "Minami specifically warned a bystander (a small child) to stay back because the range was 'dangerous', moments before the explosion -- a warning inconsistent with someone who would be genuinely caught off guard by it.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "colleague"
+  },
+  {
+   "type": "sabotages",
+   "from": "p4",
+   "to": "o4",
+   "order": 0,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated"],
+   "detail": "hides a black-powder bomb inside the driver's head while ostensibly repairing a cracked shaft, during the one full day and night the club was in his sole possession"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "fakes_illness",
+   "from": "p4",
+   "to": "p1",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated", "frame_up"],
+   "detail": "feigns a stomachache to pass his usual task of collecting Tachibana's golf balls onto Yasui instead"
+  },
+  {
+   "type": "gives",
+   "from": "p4",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "hands Tachibana the sabotaged driver just as Yasui leaves to order the director's usual after-practice coffee"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "black-powder bomb hidden inside the driver's head, detonating when Tachibana swung it",
+   "circumstance_tags": ["premeditated", "staged_evidence", "framed_coworker"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "caught in the blast, injured across nearly his entire body"
+  },
+  {
+   "type": "conceals_evidence_using",
+   "from": "p4",
+   "to": "o2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "sets down a pre-made ball fragment with a fuse at the scene to suggest the bomb had been in a golf ball"
+  },
+  {
+   "type": "conceals_evidence_using",
+   "from": "p4",
+   "to": "o3",
+   "order": 5,
+   "temporal_frame": "present",
+   "circumstance_tags": ["frame_up", "red_herring"],
+   "detail": "plants a second 'backup' bomb ball in Yasui's bag to frame him"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "professional resentment -- Tachibana never acknowledged his skill or ideas, compounded by contempt for Yasui's sycophancy toward the director"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "Tachibana took credit for three of his product ideas",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "alleged old grudge over a girlfriend Tachibana was rumored to have taken from him, which Yasui denies ever happened",
+   "circumstance_tags": ["red_herring"]
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

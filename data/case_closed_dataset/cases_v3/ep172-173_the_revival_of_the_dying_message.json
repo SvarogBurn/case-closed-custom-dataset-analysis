@@ -1,0 +1,473 @@
+{
+ "case_id": "ep172-173_the_revival_of_the_dying_message",
+ "episode_number": "172-173",
+ "title": "The Revival of the Dying Message",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Revival_of_the_Dying_Message",
+ "subtitle_source": ["subs_resolved/0172.txt", "subs_resolved/0173.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Kogoro, Inspector Megure, Chiba) omitted by convention -- Sonoko's restroom-door testimony and Chihiro's phone are preserved via clue/object nodes instead of a person node for her. No `event` node type: every action is a directly typed, attributed edge between the entities involved. The old wiki-derived case file already named the correct murderer (Izumi Sano) but flattened the plot: (1) its clue c2 says the blood-on-skate-blade belonged to the VICTIM's own skates -- the transcript is explicit the blood trail is on the KILLER Izumi's skate blade, left when she stepped in the pool of blood while forging the wall message, which is the actual clinching physical clue; getting whose skate it was backwards is a real error, not just a simplification. (2) It omits the entire middle act: Kogoro/Conan's first S-based accusation of Sano is shown to be logically broken (a victim shot instantly through the chest cannot write a message in her own blood afterward), so Conan deliberately stages a FALSE public accusation of Kunitomo Oda-san (announced 'this time I'm certain!') purely to smoke out the real killer's reaction, before pivoting back to the true, evidence-backed case against Izumi -- modeled here as circumstance_tags [\"red_herring\",\"staged_accusation\"] on the relevant implicates edges. (3) It omits the five-yen-coin trick (whistling through a coin held to the lips reproduces the whistle of an incoming firework, letting Izumi mask the timing of the gunshot as the first of the three-firework opening sequence) and the reverse-psychology logic behind the self-incriminating 'S': Izumi wrote her own initial in blood banking on the deduction 'no real killer frames herself,' which was intended to throw suspicion onto Oda, the one clay-shooting-club member without a fireworks alibi. (4) It omits the deeper motive layer -- Izumi's target wasn't just 'the victim was mean to her ex'; Narita (the ex, dead by suicide 6 months prior) told Izumi by phone, while she was sick in bed, that Chihiro had dumped him AND that Chihiro was secretly seeing Oda (Izumi's own boyfriend at the time) -- Oda denies the affair, calling it a lie Chihiro told to make Narita jealous, and admits he brushed off Narita's confrontation because he was preoccupied caring for Izumi's illness. label.murderer_id unchanged from the old file (p3, Izumi Sano) -- the old file's culprit was correct. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Chihiro Itami",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "daughter of a corporate executive",
+    "attrs": {
+     "age": 27,
+     "died_of": "shotgun blast to the chest",
+     "club": "clay pigeon shooting club"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yasuharu Misawa",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "banker",
+    "attrs": {
+     "age": 29,
+     "club": "clay pigeon shooting club",
+     "cleared_by": "airport-code name mapping does not fit; had fireworks alibi"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Izumi Sano",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 28,
+     "club": "clay pigeon shooting club",
+     "false_alibi": "rejoined the group at the rink just before the real fireworks began, claiming she had been watching from the start"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yoriko Komatsu",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "housewife",
+    "attrs": {
+     "age": 30,
+     "club": "clay pigeon shooting club",
+     "cleared_by": "airport-code name mapping does not fit; had fireworks alibi"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kunitomo Oda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "firefighter",
+    "attrs": {
+     "age": 29,
+     "club": "clay pigeon shooting club",
+     "framed_detail": "left with no fireworks alibi because he stepped away alone to smoke, facing away from the show -- exactly the gap Izumi's plan needed",
+     "falsely_accused_by": "Conan (via Kogoro), as a deliberate bluff to provoke the real killer, before the true evidence-backed accusation of Izumi"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Narita",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "club": "clay pigeon shooting club",
+     "died_of": "self-inflicted shotgun wound",
+     "false_public_narrative": "believed by the group to have died in an accident while cleaning his gun",
+     "real_cause": "suicide, roughly six months before the present case, after Chihiro dumped him and, in his final call to Izumi, after he became convinced Chihiro and Oda were secretly seeing each other"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Restroom, Tropical Land ice-skating rink",
+    "attrs": {
+     "note": "the only restroom on the premises you can enter while still wearing skates"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Tropical Land ice-skating rink",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Locker room (electronic-lock gun lockers)",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Trash bin between the restroom and the rink",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Izumi's shotgun",
+    "role": "weapon",
+    "attrs": {
+     "registered_to": "Izumi Sano",
+     "storage": "disassembled inside a leather bag disguised as an ordinary purse, per gun-case regulations",
+     "muzzle_evidence": "wet with saliva -- the muzzle was pressed into the victim's mouth to keep her silent before the shot"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Bloody \"S\" written on the restroom wall",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "S",
+     "trick": "written by Izumi herself in the victim's blood, betting investigators would reason 'no real killer would incriminate herself with her own initial' and instead suspect the one clay-shooting-club member without a fireworks alibi",
+     "staging_flaw": "the victim died instantly from a shotgun blast to the chest, so she physically could not have written it herself"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Chihiro's cell phone / redial display",
+    "role": "evidence",
+    "attrs": {
+     "display_text": "KIX########",
+     "decoded_message": "KIX = IATA code for Kansai International Airport, located in Izumi-Sano City, Osaka -- pointing at Izumi Sano",
+     "trick": "with the gun muzzle in her mouth, the victim typed the message one-handed from inside her pocket and kept mashing Send, which fills the number field with # characters, in hopes whoever she last called on redial would see it"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Five-yen coin",
+    "role": "tool",
+    "attrs": {
+     "trick": "whistling through the coin held to the lips reproduces the whistle of a firework going up, letting Izumi mask the gunshot as the first of the show's opening three-firework sequence"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Hooded coat and scarf",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "disguise worn to hide the killer's face and hair leaving the restroom",
+     "found_at": "discarded in a trash bin between the restroom and the rink"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Gun locker (electronic lock)",
+    "role": "tool",
+    "attrs": {
+     "password": "9017 (\"kurei nakama\" / \"clay friends\")",
+     "known_to": "all four present clay-shooting-club members (Misawa, Sano, Komatsu, Oda)"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The victim was shot in the chest and died instantly, which is physically incompatible with her then writing a message in her own blood on the wall -- proves the \"S\" was staged by someone else after the fact, not left by the dying victim.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Traces of the victim's blood are found on the blade of Izumi Sano's ice skate in the corridor between the restroom and the rink -- she stepped in the pool of blood while forging the wall message and unknowingly tracked it out with her, proving she was in the restroom after the killing.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "A witness's description of a hooded, scarved figure leaving the restroom right after what she took for a firework whistle-and-bang matches the coat and scarf later found discarded in a trash bin between the restroom and the rink.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p6",
+   "relation_type": "dated"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p3",
+   "relation_type": "dating"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "rumored_affair_with",
+   "disputed": true,
+   "detail": "Oda denies it, calling it a lie Chihiro told to make Narita jealous"
+  },
+  {
+   "type": "dumps",
+   "from": "p1",
+   "to": "p6",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "detail": "approximately six months before the present case"
+  },
+  {
+   "type": "confronts",
+   "from": "p6",
+   "to": "p3",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "detail": "calls Izumi, who is home sick, devastated and convinced Chihiro and Oda are secretly together"
+  },
+  {
+   "type": "confronts",
+   "from": "p6",
+   "to": "p5",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "detail": "Narita confronts Oda about the rumored affair; Oda brushes him off, preoccupied with caring for sick Izumi",
+   "circumstance_tags": ["disputed"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge_for_narita's_suicide"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 10,
+   "temporal_frame": "present",
+   "detail": "steps away alone to smoke, back to the fireworks -- the only one left without a fireworks alibi"
+  },
+  {
+   "type": "has_access_to",
+   "from": "p2",
+   "to": "o6",
+   "detail": "knows the shared locker password 9017"
+  },
+  {
+   "type": "has_access_to",
+   "from": "p3",
+   "to": "o6",
+   "detail": "knows the shared locker password 9017"
+  },
+  {
+   "type": "has_access_to",
+   "from": "p4",
+   "to": "o6",
+   "detail": "knows the shared locker password 9017"
+  },
+  {
+   "type": "has_access_to",
+   "from": "p5",
+   "to": "o6",
+   "detail": "knows the shared locker password 9017"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "lures",
+   "from": "p3",
+   "to": "p1",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "asks Chihiro to meet her in the restroom, hangs a fake cleaning sign on the door, then leaves to retrieve her disassembled shotgun"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "assaults",
+   "from": "p3",
+   "to": "p1",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "presses the shotgun muzzle into the victim's mouth to keep her from screaming while waiting for the fireworks"
+  },
+  {
+   "type": "sends_dying_message_via",
+   "from": "p1",
+   "to": "o3",
+   "order": 14,
+   "temporal_frame": "present",
+   "detail": "one-handed, from inside her pocket, while the gun is in her mouth"
+  },
+  {
+   "type": "disguises_sound_using",
+   "from": "p3",
+   "to": "o4",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "order": 14,
+   "temporal_frame": "present",
+   "method": "shotgun blast to the chest, timed with the whistle of the first opening firework",
+   "circumstance_tags": ["staged_alibi", "premeditated", "timed_with_fireworks"]
+  },
+  {
+   "type": "fabricates_evidence",
+   "from": "p3",
+   "to": "o2",
+   "order": 15,
+   "temporal_frame": "present",
+   "circumstance_tags": ["frames_third_party", "staged_message"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o5",
+   "order": 15,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 15,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "l2",
+   "order": 16,
+   "temporal_frame": "present",
+   "detail": "rejoins the group at the rink just before the real fireworks show begins"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 16,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3",
+   "detail": "literal reading: the initial S names Izumi Sano"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p5",
+   "circumstance_tags": ["red_herring", "staged_accusation"],
+   "detail": "reverse-psychology reading Izumi banked on: investigators assume no killer frames herself, so they suspect the one alibi-less suspect, Oda, instead"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

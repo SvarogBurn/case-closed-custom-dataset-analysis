@@ -1,0 +1,386 @@
+{
+ "case_id": "ep042_karaoke_box_murder_case",
+ "episode_number": "42",
+ "title": "Karaoke Box Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Karaoke_Box_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0042.txt (352 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Kogoro Mouri, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. Two red-herring has_motive_against edges are included (Sumii on professional jealousy, Shibazaki on rejected romantic feelings) alongside the true culprit's motive, correcting v1's near-total label leak. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tatsuya Kimura",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "rock band vocalist (Lex)",
+    "attrs": {
+     "public_persona": "arrogant, insulting toward bandmates and manager, heavy drinker",
+     "died_of": "potassium cyanide poisoning"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Katsumi Yamada",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "drummer (Lex)",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Mieko Shibazaki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "guitarist (Lex)",
+    "attrs": {
+     "cleared_because": "she sang the song immediately before Tatsuya's fatal performance but had no way of knowing he'd perform Bloody Venus next, and the poison was not delivered through the microphone at all"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mari Terahara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "band manager (Lex)",
+    "attrs": {
+     "plastic_surgery": "underwent surgery years earlier to change her appearance for Tatsuya after he invited her to be his manager, believing he wanted her as his girlfriend",
+     "public_treatment_by_victim": "constantly called 'ugly' and mocked by Tatsuya after the surgery, including being made to sing the Rudolph the Red-Nosed Reindeer song as a public jab at her",
+     "true_feelings_revealed": "Tatsuya had secretly been in love with her all along and wrote an unreleased love song about her, but never expressed it, instead treating her cruelly"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Go Sumii",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "karaoke box manager; former leader of the band Tatsuya and Mari were both in before Tatsuya went pro",
+    "attrs": {
+     "cleared_because": "initial jealousy motive (former bandmate eclipsed by Tatsuya's success) was ruled out once it was established every guest ate the same food safely, so the poison was not in the food he brought"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Private room, karaoke box",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Tatsuya's poisoned staff jacket",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "potassium cyanide smeared on the inside of the left elbow, exploiting Tatsuya's habit of removing the jacket and touching that exact spot only during his performance of 'Bloody Venus'",
+     "disposed_of": true
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Tatsuya's actual staff jacket (worn by Terahara after the murder)",
+    "role": "evidence",
+    "attrs": {
+     "contains": "Tatsuya's missing lighter",
+     "staging_flaw": "Terahara was wearing this jacket claiming it was her own, but it was provably Tatsuya's -- she had swapped it for her own poisoned jacket right after the murder to dispose of the weapon"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Tatsuya's microphone",
+    "role": "evidence",
+    "attrs": {
+     "poison_residue": true,
+     "note": "cyanide traces found here and on his clothes before he ate, proving the poison reached him via contact, not via the food"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Rice ball eaten by Tatsuya",
+    "role": "evidence",
+    "attrs": {
+     "poison_residue": "secondary transfer from his already-poisoned hand, not poisoned itself; everyone else ate the same food safely"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Old band photograph from Tatsuya's locker",
+    "role": "evidence",
+    "attrs": {
+     "shows": "Sumii's old band, including Tatsuya and a young, pre-surgery Mari Terahara",
+     "reveals": "Terahara's long history with Tatsuya predating her role as his manager, and how much her face had changed since"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Tatsuya's unreleased solo song",
+    "role": "evidence",
+    "attrs": {
+     "lyrics_excerpt": "I want to talk with the real you",
+     "reveals": "written about Mari Terahara; shows Tatsuya secretly loved her and wanted the person she used to be back, contradicting his outward cruelty toward her"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Cyanide traces were found on Tatsuya's clothes and microphone before he ate, and everyone present had safely eaten the same food -- proving the poison reached him through contact with something he touched (his jacket), not through the food itself.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "The jacket Terahara was wearing after the murder contained Tatsuya's missing lighter, proving it was actually his jacket -- she had swapped it for her own poisoned jacket immediately after the murder to dispose of the weapon.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "bandmate",
+   "attrs": {"note": "former band, before Tatsuya went pro"}
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "bandmate",
+   "attrs": {"note": "former band, before Tatsuya went pro"}
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "bandmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "bandmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "bandmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "in_love_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "in_love_with",
+   "attrs": {"note": "secret; never expressed to her, revealed only after his death via his unreleased song"}
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "unrequited_love"
+  },
+  {
+   "type": "recruits",
+   "from": "p1",
+   "to": "p4",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "Tatsuya asks Mari to leave Sumii's band and become his manager when he goes pro"
+  },
+  {
+   "type": "torments",
+   "from": "p1",
+   "to": "p4",
+   "order": 2,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "circumstance_tags": ["emotional_abuse"],
+   "detail": "repeatedly calls her ugly and mocks her after her plastic surgery, including forcing her to sing the Rudolph song as a jab about her changed appearance"
+  },
+  {
+   "type": "rejects",
+   "from": "p1",
+   "to": "p3",
+   "order": 2,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "turns down Mieko's romantic confession, saying he is waiting for someone else (unknowingly referring to Mari)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "insults",
+   "from": "p1",
+   "to": "p4",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["public_humiliation"],
+   "detail": "requests the Rudolph song for her to sing, mocking her in front of the group"
+  },
+  {
+   "type": "insults",
+   "from": "p1",
+   "to": "p2",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "criticizes his drumming and calls him hopeless"
+  },
+  {
+   "type": "insults",
+   "from": "p1",
+   "to": "p3",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "criticizes her guitar playing"
+  },
+  {
+   "type": "poisons",
+   "from": "p4",
+   "to": "o1",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated"],
+   "detail": "smears potassium cyanide inside the jacket's left elbow before Tatsuya's performance"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "indirect potassium cyanide poisoning via a jacket pre-smeared on the inside elbow; Tatsuya touched the spot removing the jacket mid-performance and later ingested the residue via food/microphone contact",
+   "circumstance_tags": ["premeditated", "indirect_poisoning"]
+  },
+  {
+   "type": "conceals_evidence_using",
+   "from": "p4",
+   "to": "o2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "swaps her own poisoned jacket for Tatsuya's actual staff jacket immediately after the murder to dispose of the weapon and explain away any poison residue on her as accidental contact with the body"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p4"
+  },
+  {
+   "type": "written_by",
+   "from": "o6",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "o5",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge for years of public humiliation and emotional abuse following plastic surgery she underwent for him, compounded by his refusal to ever tell her he loved her"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "heartbreak from romantic rejection",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "professional jealousy toward a former bandmate who went on to fame while he stayed behind running a karaoke box",
+   "circumstance_tags": ["red_herring"]
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

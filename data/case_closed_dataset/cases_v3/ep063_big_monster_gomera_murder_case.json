@@ -1,0 +1,386 @@
+{
+ "case_id": "ep063_big_monster_gomera_murder_case",
+ "episode_number": "63",
+ "title": "Big Monster Gomera Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Big_Monster_Gomera_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0063.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Detective Boys, Professor Agasa) omitted by convention. No event nodes: every action is a directly typed edge between the entities involved, sharing an order integer. Two red-herring signals are captured on non-culprit suspects: Adachi is briefly implicated by the paint used for the footprint trick before his short absence clears him, and Mikami is treated as a live suspect on an unverifiable solo alibi plus nervous sweating, with no stated motive ever surfacing against him. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Osamu Kamei",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "movie producer",
+    "attrs": {
+     "announced": "declared this Gomera film the franchise's last, publicly citing high costs and 'childish' monster movies as outdated"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Daisuke Mikami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "movie director, creator of Gomera",
+    "attrs": {
+     "unverified_alibi": "claims to have been alone on the studio's first floor doing final continuity checks around the time of the murder, with no one able to vouch for him; also visibly sweats under questioning -- treated as a live suspect before the case is pinned on Matsui, despite no motive against Kamei ever surfacing"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Ryota Adachi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "set artist",
+    "attrs": {
+     "cleared_by": "snuck out of the screening room for only 4-5 minutes, not enough time to don the suit, kill Kamei, and return"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shugo Matsui",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Gomera suit actor",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Tomomi Sakaguchi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "actress (plays the fairy Emera)",
+    "attrs": {
+     "recognized_the_killer": "recognized Matsui's running gait when she glimpsed the Gomera suit fleeing, from having been his acting partner for ten years, but initially lied to protect him"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Gomera miniature film set / studio",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Storeroom",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Roof stairwell",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Screening room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Gomera costume (worn during the murder, later burned)",
+    "role": "instrument",
+    "attrs": {
+     "fate": "removed near the roof stairwell, carried down the opposite stairs, and burned out a window to destroy sweat traces that would prove who had been running in it"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Real knife swapped in for the studio prop knife",
+    "role": "weapon",
+    "attrs": {}
+   },
+   {
+    "id": "o3",
+    "name": "Second knife hidden in the storeroom prop box",
+    "role": "weapon",
+    "attrs": {
+     "use": "used by Matsui to genuinely stab his own leg after the murder, making his earlier fake wound consistent with a real injury"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Studio (fake) blood",
+    "role": "tool",
+    "attrs": {
+     "use": "used by Matsui to fake a stab wound on his own leg in front of the children, before the real murder, so he would appear to be an early Gomera victim rather than the killer"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Can of paint left on the set",
+    "role": "tool",
+    "attrs": {
+     "use": "pre-placed during morning rehearsal so the killer could step in it and leave a trail of footprints on the stairs in advance, faking an escape route",
+     "initial_suspicion": "Adachi was accused of planting it deliberately before he explained he'd simply forgotten it there after rehearsal"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Matsui's sweat-soaked shirt (changed and hidden in his bag)",
+    "role": "evidence",
+    "attrs": {
+     "significance": "the shirt he was wearing when questioned had no sweat stains and no trace of juice Ayumi had spilled on him earlier, proving he had changed shirts after fleeing the murder scene in the costume"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "There is a Gomera tail-drag mark in the hallway but none on the stairs leading to the roof, even though the same 'Gomera' supposedly went that way -- proves only the legs of the costume were carried up (to plant footprints) while the culprit had already shed the suit and gone down the opposite stairwell.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Ayumi had spilled juice on Matsui's shirt earlier, but the shirt he is wearing when questioned afterward is unstained and unsweated despite his claim of having been immobilized in the storeroom the whole time -- proves he changed shirts after running in the costume.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "Adachi's unaccounted absence from the screening room lasted only 4-5 minutes, not enough time to don the suit, commit the murder, and return -- rules him out despite the paint trail pointing toward him at first.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "Mikami's alibi (alone on the first floor doing continuity checks) is unverifiable, and he visibly sweats under questioning -- both read as suspicious, but no motive against Kamei is ever found for him, and the case is ultimately built entirely on Matsui instead.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p4",
+   "relation_type": "long_time_costar"
+  },
+  {
+   "type": "slanders",
+   "from": "p1",
+   "to": "p4",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "told the crew Matsui personally wanted to quit playing Gomera, as cover for cancelling the franchise; Matsui only learned this was a lie two weeks before the murder"
+  },
+  {
+   "type": "fakes_wound_using",
+   "from": "p4",
+   "to": "o4",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "fakes a stab wound on his own leg in the storeroom in front of Conan and the Detective Boys, staging himself as an early Gomera victim before the real murder"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "wears",
+   "from": "p4",
+   "to": "o1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "dons the actual Gomera costume once the children run off to chase 'Gomera' elsewhere"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "stabbed with a real knife swapped in for the prop knife, while disguised in the Gomera costume",
+   "circumstance_tags": ["disguise", "staged_scene"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o5",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "steps in the pre-placed paint to leave a fake trail of Gomera-leg footprints up the stairs toward the roof"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "destroys",
+   "from": "p4",
+   "to": "o1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "sheds the costume at the stairwell, carries it down the opposite side, and burns it out a window to destroy sweat traces inside",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o3",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "returns to the storeroom and genuinely stabs his own leg with a second knife, making his earlier fake wound consistent with a real injury"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o6",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "changes out of his sweat-soaked shirt and hides it in his bag"
+  },
+  {
+   "type": "covers_for",
+   "from": "p5",
+   "to": "p4",
+   "order": 7,
+   "temporal_frame": "present",
+   "circumstance_tags": ["cover_up"],
+   "detail": "recognizes Matsui's running gait but initially lies about what she saw and vouches for details of his story"
+  },
+  {
+   "type": "covers_for",
+   "from": "p3",
+   "to": "p4",
+   "order": 7,
+   "temporal_frame": "present",
+   "circumstance_tags": ["cover_up"],
+   "detail": "unknowingly echoes Sakaguchi's cover story about the paint and the footprint timeline"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["unverified_alibi", "red_herring"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p3",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_being_slandered_--_kamei_lied_to_the_crew_that_matsui_wanted_to_quit_gomera_to_justify_ending_the_franchise"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

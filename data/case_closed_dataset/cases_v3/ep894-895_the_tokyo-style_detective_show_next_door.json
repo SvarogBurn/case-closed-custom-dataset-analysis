@@ -1,0 +1,297 @@
+{
+ "case_id": "ep894-895_the_tokyo-style_detective_show_next_door",
+ "episode_number": "894-895",
+ "title": "The Tokyo-Style Detective Show Next Door",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Tokyo-Style_Detective_Show_Next_Door",
+ "subtitle_source": "subs_resolved/0894.txt, subs_resolved/0895.txt (852 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention even though Kogoro is the one who ultimately solves the case (the episode's twist is that the 'real' detective outperforms the newly introduced rival). No murder occurs; case_type: theft (pickpocketing on a train + concealment of evidence). Corrections vs. the old low-fidelity case file: (1) the old file's event description said Munechika 'injured his wrist as she caught him' -- this is wrong/fabricated. The transcript shows the victim Suzuyo, not Munechika, was the injured party: she had cut her own finger peeling an apple and grabbed the thief's sleeve with her bloodstained band-aid, transferring her blood onto him. (2) The old file called the cleared, wrongly-accused party simply 'a red herring suspect' without a name/node; that suspect is a distinct, named character (Tsunetaka Harashima) who was accused by a second character not previously modeled at all -- Wakita Kanenori, a new one-eyed drifter cook at Irohazushi who poses as a rival amateur detective, proposes the wrong theory (pickled ginger juice removes the bloodstain but leaves color; Harashima's sleeve had no ginger-colored stain, clearing him), then explicitly defers to Kogoro to solve it correctly. Both are added as nodes here. (3) A third suspect present at the scene, Natsume Ashino, was entirely missing from the old file despite being questioned and cleared (was_at completeness rule). (4) The old file's core solution -- Munechika Tameshige stole the pouch on the train and used a grated-radish (daikon) protease trick, not ginger, to remove the bloodstain from his sleeve without leaving color -- holds up against the transcript and required no correction. Munechika is unmasked when he lets slip that he knows the train Suzuyo rode was 'full', which only the thief who was aboard it would know; he confesses the theft was a moment of financial desperation before a dinner with his wealthy, strict in-laws.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Suzuyo Hijirisawa",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": null,
+    "attrs": {
+     "age": 47,
+     "detail": "cut her finger peeling an apple shortly before the theft and had a bloodstained band-aid on that hand; grabbed the thief's sleeve with it while trying to stop him"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tameshige Munechika",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "unspecified salaryman",
+    "attrs": {
+     "age": 42,
+     "motive_detail": "deep in debt supporting his wife's expensive tastes; overheard Suzuyo announce her million-yen winning ticket on the crowded train while on his way to meet his strict, wealthy in-laws for dinner",
+     "unmasking_detail": "claimed he avoided trains and took a taxi/bus, but let slip that he knew the train Suzuyo rode was 'full' -- knowledge only the thief who was aboard it would have"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tsunetaka Harashima",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": null,
+    "attrs": {
+     "age": 25,
+     "detail": "ordered cola and extra pickled ginger with his sushi; wrongly accused by Wakita of using the ginger's juice to remove a bloodstain; cleared because pickled ginger leaves a visible color on fabric and his sleeve showed none; wanted to leave early to watch a kids' show (Kamen Yaiba)"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Natsume Ashino",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": null,
+    "attrs": {
+     "age": 33,
+     "detail": "restaurant regular, wanted to leave in time to bid in an online auction closing at ten; searched and cleared of holding the cash or the missing ticket"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Wakita Kanenori",
+    "aliases": [],
+    "roles": [
+     "bystander"
+    ],
+    "occupation": "cook (front-of-house while recovering), Beika Irohazushi",
+    "attrs": {
+     "age": 56,
+     "detail": "newly arrived drifter employee, self-described mystery fan; poses as a rival detective, floats an incorrect theory pinning the theft on Harashima, then defers to Kogoro to name the real culprit",
+     "unrelated_detail": "has an injured left eye of unstated cause; Conan privately wonders if this connects to a one-eyed member of the Black Organization ('Rum') mentioned earlier -- an unresolved aside from the larger series arc, not part of this theft case"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Crowded train",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Beika Irohazushi",
+    "attrs": {
+     "detail": "sushi restaurant next door to the Mori Detective Agency"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Irohazushi bathroom",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Suzuyo's stolen pouch",
+    "role": "evidence",
+    "attrs": {
+     "contents": "wallet and phone",
+     "recovered_via": "victim tracked its GPS-enabled phone to Irohazushi",
+     "found_location": "emptied and dumped in the restaurant bathroom trash can"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Stolen dark horse payout ticket",
+    "role": "evidence",
+    "attrs": {
+     "value_yen": 1000000,
+     "detail": "the only item taken from Suzuyo's wallet; cash was left untouched"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Grated radish garnish",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "contains protease enzymes that break down bloodstain proteins without leaving color, unlike pickled ginger",
+     "served_with": "the grilled horse mackerel special Munechika ordered"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Pickled ginger (Gari)",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "also contains protease enzymes that remove bloodstains, but leaves a visible color/stain on fabric",
+     "significance": "basis of Wakita's incorrect theory against Harashima"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Both pickled ginger and grated radish contain protease that removes bloodstains, but only ginger leaves a visible color -- Harashima's uncolored, unstained sleeve clears him, while Munechika (who ordered the radish-garnished grilled fish) had a clean sleeve consistent with the colorless method.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Munechika claims he avoided the train (took a bus/taxi instead), yet he independently knows the train Suzuyo rode was 'full' -- a detail only someone who was actually aboard it would know.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "p1",
+   "detail": "picks Suzuyo's pouch from her bag on a crowded train"
+  },
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "o2",
+   "detail": "takes only the winning ticket from her wallet, leaving the cash"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "conceals_evidence_using",
+   "from": "p2",
+   "to": "o3",
+   "detail": "uses the grated radish's protease to strip the bloodstain from his sleeve in the restaurant bathroom"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o1",
+   "detail": "abandons the emptied pouch in the restaurant bathroom"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "confronts",
+   "from": "p5",
+   "to": "p3",
+   "detail": "wrongly theorizes Harashima used pickled-ginger juice to remove the bloodstain",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "orders",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "orders",
+   "from": "p3",
+   "to": "o4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "financial_desperation"
+  },
+  {
+   "type": "confesses_to",
+   "from": "p2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

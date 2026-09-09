@@ -1,0 +1,284 @@
+{
+ "case_id": "ep865_the_foul-mouthed_myna_bird",
+ "episode_number": "865",
+ "title": "The Foul-Mouthed Myna Bird",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Foul-Mouthed_Myna_Bird",
+ "subtitle_source": ["subs_resolved/0865.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Kogoro, Megure, Detective Boys) omitted by convention; the unnamed neighborhood children who verify Mamoru's alibi and the unnamed mother/passersby who fail to verify Emi's are referenced only in attrs since they're never named. case_type: murder. The old cases/ file's culprit call (Sayama) is confirmed correct by the transcript -- no reversal needed. Two corrections vs. the old file: (1) the old file's clue text calls the marker 'red string'; the transcript is explicit that the point of the clue is Sayama correctly identifying it as 'yarn' (not string/a natural marking) despite claiming to have only glimpsed the bird in passing, and that the yarn was tied on 'this morning' -- knowledge only available to someone already at the house. (2) the old file captured only that one clue; the transcript has a second, equally load-bearing testimonial clue (Nine parroting Sayama's own remark that a room -- the pickle basement -- 'stinks', which he could only know by having explored past the rear-entrance flowerpot task he claimed was his only reason for being on that side of the house), which is added here as a second clue node.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Naoko Kokubo",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "picture book author",
+    "attrs": {
+     "age": 70,
+     "died_of": "strangled with her own stole",
+     "temperament": "trusted no one after being betrayed; taught her pet myna bird only insults, believing compliments to be lies",
+     "backstory": "publicly accused of plagiarizing her mentor; insiders say it was actually the mentor who plagiarized her, but the media sided with the bigger name and she was forced to stop writing"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Mamoru Kokubo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unemployed, aspiring children's author",
+    "attrs": {
+     "age": 30,
+     "discovered_body": true,
+     "alibi": "seen entering the house at 13:55 by neighborhood children playing in the park across the street",
+     "note": "frequently asked his aunt for money despite her scolding him; she nonetheless told others she believed he'd be successful"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Emi Yahagi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "live-in maid",
+    "attrs": {
+     "age": 18,
+     "financial_pressure": "mother long-term ill; medical bills piling up, was asking Naoko for a raise",
+     "alibi": "claims she was shopping 13:00-14:00 but was delayed helping search for the mother of an abandoned stroller-bound baby; could not name the mother or the two passersby who helped her",
+     "key_access": "one of only two people with a key to the side entrance, along with the victim"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yotaro Sayama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "used book seller",
+    "attrs": {
+     "age": 60,
+     "claimed_injury": "dominant hand/arm injured; claimed he could not drive or grip anything for three more days per his doctor",
+     "alibi": "on the phone with the victim from Midoridai Station at 12:55, walking to Midoridai Hospital while the call continued until 13:35",
+     "true_alibi": "used the ongoing phone call to mask that he detoured to the victim's house instead of continuing straight to the hospital"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Naoko Kokubo's house",
+    "attrs": {
+     "side_entrance": "semi-automatic lock, only two keys existed (victim and Emi); locks itself shut on exit",
+     "basement": "used to store the victim's pickles; source of the stench Sayama was overheard describing"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Midoridai Station",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Midoridai Hospital",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "White stole",
+    "role": "weapon",
+    "attrs": {
+     "detail": "worn around the victim's neck; used to strangle her"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Nine, the pet myna bird",
+    "role": "evidence",
+    "attrs": {
+     "trained_speech": "only ever taught insults by the victim, who believed compliments were lies",
+     "leg_marker": "victim tied a red yarn band to Nine's leg that same morning to make him identifiable if he escaped again",
+     "escape": "got out through a window left open during the on-scene investigation, after the murder"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Forged antique book",
+    "role": "evidence",
+    "attrs": {
+     "detail": "book Sayama unknowingly sold Naoko as genuine; discovering the forgery is what triggered her demand for restitution"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Flowerpot",
+    "role": "evidence",
+    "attrs": {
+     "detail": "victim had Sayama carry it in through the rear/side entrance after summoning him there; its presence in the kitchen proves he used that entrance, not the main door"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Sayama describes seeing Nine trailing red yarn (not string) 'on the way to the hospital', and knows it was tied on 'this morning' -- details only available if he had already been at the house after the bird's post-murder escape, not merely passing by on the road hours earlier.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Nine parrots Sayama's own remark that a room 'stinks' -- the pickle-storage basement -- which he could only have said if he'd explored past the rear entrance where he claims he only set down a flowerpot.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "nephew_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "debtor_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "circumstance_tags": ["concealed_presence"]
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "sold_forgery_to",
+   "from": "p4",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "humiliation/revenge -- publicly humiliated and forced into demeaning restitution tasks despite his arm injury"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "financial desperation (red herring) -- mounting medical bills for her mother, denied a raise"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "financial resentment (red herring) -- unemployed, repeatedly asked her for money and was refused"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p4",
+   "detail": "summons him to the side entrance and orders him to bring in a flowerpot via the rear entrance while berating him over the unpaid restitution",
+   "circumstance_tags": ["backstory"]
+  },
+  {
+   "type": "relocates",
+   "from": "p4",
+   "to": "o4"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p4"
+  },
+  {
+   "type": "strangles",
+   "from": "p4",
+   "to": "p1",
+   "method": "strangled her with her own stole despite his claimed inability to use his dominant hand",
+   "circumstance_tags": ["locked_room", "staged_alibi", "false_injury_claim"]
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

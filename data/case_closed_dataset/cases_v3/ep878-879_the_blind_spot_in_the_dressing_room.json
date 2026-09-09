@@ -1,0 +1,201 @@
+{
+ "case_id": "ep878-879_the_blind_spot_in_the_dressing_room",
+ "episode_number": "878-879",
+ "title": "The Blind Spot in the Dressing Room",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Blind_Spot_in_the_Dressing_Room",
+ "subtitle_source": ["subs_resolved/0878.txt", "subs_resolved/0879.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Masumi Sera, Sonoko, Ran, Inspector Megure) omitted by convention. No `event` node type: actions are direct typed edges. The old cases/ file correctly identified Yamaki as the culprit and the debt/humiliation motive, but it collapsed the entire mechanism into a single generic murder event and left out: the dying-message decoding (victim's own nails + Chinese finger-counting spelling 'Ya' for Yamaki), the fabricated decoy sandals (built on the spot from a shoe insole, ribbon, tape and a phone to fake a fourth customer's presence and free up the middle changing room), the chloroform-soaked face-cover trick used to silently knock the victim out before strangling her, and a first, botched attempt the prior week where the same chloroform trap knocked out the wrong woman (Nitsuka) instead of the intended victim. The old file's summary of the humiliation ('dressing her pet dog in the same outfit as her assistant') also has the direction backwards: per the transcript, the president had Yamaki's own clothes remade into dog clothes and put a collar/leash on Yamaki herself, i.e. she dressed the *employee* to match the dog, not the other way around. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ritsuko Sashihara",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "cosmetics company president",
+    "attrs": {
+     "died_of": "strangulation with a rope",
+     "personality": "domineering, publicly humiliates subordinates and other customers",
+     "travel_habit": "flies internationally almost every week for business"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ayami Yamaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "employee of Sashihara's cosmetics company",
+    "attrs": {
+     "debt": "owes a large debt that Sashihara took on, which is how Sashihara forced her into the job",
+     "humiliation": "Sashihara had Yamaki's own clothes remade into matching dog clothes and put a collar on her, calling her 'my pet for life'"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tomoyo Nitsuka",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "customer",
+    "attrs": {
+     "dog_allergy": true,
+     "collapsed_previously": "collapsed in the same changing room a week earlier, believed at the time to be an allergic reaction to dog hair but actually chloroform exposure from Yamaki's first, misfired attempt on Sashihara"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Reia Nanbu",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "store employee",
+    "attrs": {
+     "tenure": "assigned to the store only a month earlier",
+     "found_body": true
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Shimusa Clothing store",
+    "attrs": {"floor": "4th floor of the department store"}
+   },
+   {
+    "id": "l2",
+    "name": "Middle changing room",
+    "attrs": {"note": "where Sashihara was chloroformed and strangled"}
+   },
+   {
+    "id": "l3",
+    "name": "Left changing room",
+    "attrs": {"note": "Yamaki's room; adjoins the middle room"}
+   },
+   {
+    "id": "l4",
+    "name": "Right changing room",
+    "attrs": {"note": "Nitsuka's room; kept blocked by the decoy sandals"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rope",
+    "role": "weapon",
+    "attrs": {"used_for": "strangling Sashihara"}
+   },
+   {
+    "id": "o2",
+    "name": "Chloroform-soaked face cover",
+    "role": "tool",
+    "attrs": {
+     "purpose": "disposable makeup cover kept in the changing room, soaked in chloroform so the victim knocked herself out putting it on",
+     "detection_gap": "investigators initially didn't know changing rooms stock face covers, mistaking the dispenser box for a tissue box"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Chloroform-filled straw",
+    "role": "tool",
+    "attrs": {
+     "construction": "straw with both ends heat-sealed with a hair iron after chloroform was poured in, then one end cut open with scissors when needed",
+     "cover_story": "matches a real travel trick for carrying liquid cosmetics with less luggage"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Scissors",
+    "role": "tool",
+    "attrs": {"used_for": "cutting open the sealed end of the chloroform straw", "found_at": "trash can near the changing rooms"}
+   },
+   {
+    "id": "o5",
+    "name": "Fake white sandals",
+    "role": "tool",
+    "attrs": {
+     "construction": "shoe insole with a white ribbon crossed and taped on to look like sandal straps",
+     "staging_flaw": "propped up with a hidden cell phone under the heel so they appeared to have height when viewed from above",
+     "purpose": "made the right changing room look occupied so the middle room, chloroform-trapped, would be the only free one for Sashihara to choose"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Adhesive tape fragments",
+    "role": "evidence",
+    "attrs": {"found_at": "trash can near the changing rooms", "source": "removed from the fake sandals after the murder", "note": "hard to remove without bare hands, so may carry fingerprints"}
+   },
+   {
+    "id": "o7",
+    "name": "Gift box wrapped in white ribbon",
+    "role": "evidence",
+    "attrs": {"contents": "perfume, meant as a gift for the department store's president", "note": "ribbon was stripped off to build the fake sandals, then retied around this box afterward"}
+   },
+   {
+    "id": "o8",
+    "name": "Five-star nail decoration",
+    "role": "evidence",
+    "attrs": {"owner": "Sashihara's own manicure", "note": "used with her own lipstick to leave a dying message"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Victim's right thumb, reddened with her own lipstick around her five-star nail art, forms the Chinese flag; her left-hand shape, otherwise misreadable as a European number or a gun, matches the Chinese one-hand count for 'eight' -- the first sound of 'Yamaki'.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Nitsuka, Nanbu, and Yamaki independently sketch the same distinctive white sandals supposedly left by a fourth customer, but store security footage never shows anyone wearing them leaving -- the sandals never existed as a real customer's shoes.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "debtor_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "customer_service_contact"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "acquaintance"},
+
+  {"type": "humiliates", "from": "p1", "to": "p2", "circumstance_tags": ["ongoing_abuse"], "detail": "had Yamaki's own clothes remade into dog clothes, put a collar on her, called her 'my pet for life'"},
+  {"type": "humiliates", "from": "p1", "to": "p3", "detail": "publicly mocked Nitsuka's dog allergy and left dog hair in the changing room"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "escape_from_debt_bondage_and_ongoing_humiliation"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "public_humiliation_over_dog_allergy (red herring, treated as a suspect due to the argument)"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+
+  {"type": "chloroforms", "from": "p2", "to": "p3", "circumstance_tags": ["unintended_target", "first_attempt"], "detail": "a week earlier, Yamaki's chloroformed face cover was inhaled by Nitsuka instead of Sashihara, mistaken at the time for a dog-hair allergy attack"},
+  {"type": "chloroforms", "from": "p2", "to": "p1", "circumstance_tags": ["locked_room"], "detail": "Sashihara knocked herself unconscious putting on the chloroform-soaked face cover Yamaki had planted in the middle room"},
+  {"type": "strangles", "from": "p2", "to": "p1", "circumstance_tags": ["locked_room", "staged_alibi", "cover_up"], "method": "rope around the neck, victim already unconscious from chloroform"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o5", "circumstance_tags": ["staged_alibi"], "detail": "planted the fake sandals in front of the right room so the middle room would be the only one free for Sashihara"},
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o7"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o4"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "located_in", "from": "o6", "to": "l1"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+
+  {"type": "owns", "from": "p1", "to": "o8"},
+  {"type": "regarding", "from": "c1", "to": "o8"},
+  {"type": "regarding", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o5"},
+  {"type": "regarding", "from": "c2", "to": "l4"},
+  {"type": "implicates", "from": "c2", "to": "p2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

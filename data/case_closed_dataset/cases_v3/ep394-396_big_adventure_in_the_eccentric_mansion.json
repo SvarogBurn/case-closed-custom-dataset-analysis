@@ -1,0 +1,423 @@
+{
+ "case_id": "ep394-396_big_adventure_in_the_eccentric_mansion",
+ "episode_number": "394-396",
+ "title": "Big Adventure in the Eccentric Mansion",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Big_Adventure_in_the_Eccentric_Mansion",
+ "subtitle_source": ["subs_resolved/0394.txt", "subs_resolved/0396.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ayumi, Genta, Mitsuhiko, Professor Agasa) omitted by convention, matching the old case file. Episode 395 ('Karakuri Part', the middle installment) has no subtitle file locally -- only 0394 ('Sealing Part') and 0396 ('Solution Part') were read, so the real-time on-screen accusation scene is only partially reconstructable; the culprit identification below is pieced together from 0396's climax dialogue (the gunman is confronted with having known the magatama's specific engraving before it was publicly shown, proven via a pencil-impression clue on Tamai's notebook) plus the old case file's naming. This is a Kaitou Kid heist-arc episode where the murder is a subplot: three treasure hunters (Akutsu Sarina, Sutou Unzou, and an old woman who is later confirmed to be Kaitou Kid in disguise as 'Senju Eri') converge on the mansion Bakumatsu-era karakuri-maker Samizu Kichiemon built, chasing a diamond ('Two Kings' Stone') hidden via a Three-Imperial-Regalia riddle. Old file's culprit (Sarina Akutsu, strangulation, gun) is not contradicted by the available transcript and is retained; old file's event/clue text has been decomposed into direct typed edges and node attrs per schema v3. case_type: murder (embedded in a treasure-hunt/heist episode).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tamai Teruhisa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "treasure hunter",
+    "attrs": {
+     "age": 42,
+     "died_of": "strangulation",
+     "body_found": "submerged in the mansion pond, weighted down with Japanese stone lanterns thrown in to keep it from surfacing",
+     "notebook_excerpt": "wrote that his partner ('this little rat') planned to kill him and take the treasure alone"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Akutsu Sarina",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "treasure hunter",
+    "attrs": {
+     "age": 29,
+     "weapon_used": "handgun",
+     "held_detective_boys_and_rivals_at_gunpoint": true
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Sutou Unzou",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "treasure hunter",
+    "attrs": {
+     "age": 40,
+     "suspicious_behavior": "had already hidden the stone mirror piece of the riddle before 'admitting' he'd never been to the mansion, implying a prior visit"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kaitou Kid",
+    "aliases": ["Senju Eri (disguise)"],
+    "roles": ["witness"],
+    "occupation": "phantom thief",
+    "attrs": {
+     "disguise": "posed as a 72-year-old treasure hunter, 'Senju Eri', to shadow the group without revealing himself",
+     "took_the_diamond": "left his signature calling card and put the diamond back once he confirmed it was a flood-trap trigger"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Samizu Kichiemon",
+    "aliases": ["Karakuri Kichiemon"],
+    "roles": ["backstory_figure"],
+    "occupation": "karakuri doll maker, Bakumatsu era",
+    "attrs": {
+     "built_mansion_traps": "designed the basement dungeon, hot-spring tunnel, and blade trap to protect his fortune, including a diamond-triggered flood gate",
+     "historical_motive": "hid his wealth after the Shogunate's collapse to keep it from seizure"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Pond near Eccentric Mansion",
+    "attrs": {
+     "contains": "sunken Japanese stone lanterns, Tamai's body, and later the hidden diamond"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Eccentric Mansion",
+    "attrs": {
+     "condition": "dilapidated, roughly 200 years old, apparently unoccupied for decades"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Mansion basement dungeon",
+    "attrs": {
+     "features": "hot-spring tunnel, indoor carp stream, and a waterfall room rigged with a four-directional blade trap"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Inscribed stone lantern base",
+    "role": "evidence",
+    "attrs": {
+     "inscription": "riddle describing the resting place of the 'Two Kings' Stone', deliberately thrown in the pond with other lanterns to hide it"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Comma-shaped magatama",
+    "role": "evidence",
+    "attrs": {
+     "found_on": "Tamai's body",
+     "engraving": "honoo (flame) -- one of three characters from a Three Imperial Regalia riddle"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Stone mirror",
+    "role": "evidence",
+    "attrs": {
+     "engraving": "part of the Three Imperial Regalia riddle set",
+     "found_by": "Sutou Unzou, who had it suspiciously pre-hidden"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Engraved sword",
+    "role": "evidence",
+    "attrs": {
+     "engraving": "ryuu (dragon)",
+     "found_in": "the basement blade-trap room, retrieved by Conan"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Two Kings' diamond",
+    "role": "instrument",
+    "attrs": {
+     "true_nature": "the riddle's treasure, but also the physical trigger for a flood gate Kichiemon built to prevent anyone from actually taking it"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Tamai's notebook",
+    "role": "evidence",
+    "attrs": {
+     "content": "treasure notes and maps, plus an accusation that his partner ('this little rat') meant to kill him",
+     "torn_page": "a page was torn out, but a drawing of the magatama with the honoo character was still legible as a pencil impression on the following page"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Sarina's gun",
+    "role": "weapon",
+    "attrs": {}
+   },
+   {
+    "id": "o8",
+    "name": "Kid's calling card",
+    "role": "evidence",
+    "attrs": {
+     "message": "\"I've taken the Two Kings' Stone.\"",
+     "left_at": "behind the basement waterfall"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Basement gravestone",
+    "role": "evidence",
+    "attrs": {
+     "inscription": "\"Wandering person, offer me the Three Imperial Regalia\" -- a hint pointing to the sanzui (water) radical trick"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Tamai's notebook had a page torn out, but the pencil pressure from the missing page's drawing (a magatama with the honoo character) was still visible as an impression on the next page -- proving whoever read that impression knew the magatama's specific engraving before it was ever shown to the group.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Sarina insisted she had only told the group she'd 'found a stone from the Regalia', never which piece -- but she had already referred to it specifically as the magatama with the honoo engraving, a detail no one had stated aloud yet.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "The mansion's basement walls sat higher than the leak that flooded the tunnel, the mysterious old woman kept warning the group to abandon the treasure hunt, and she left without ever taking the jewel despite tracking it down first -- together these single out 'Senju Eri' as Kaitou Kid in disguise.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "treasure_hunting_partner"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "rival_treasure_hunter"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "strangulation",
+   "circumstance_tags": ["betrayal", "cover_up"]
+  },
+  {
+   "type": "conceals_body_of",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "threatens",
+   "from": "p2",
+   "to": "p3",
+   "circumstance_tags": ["hostage_situation"]
+  },
+  {
+   "type": "threatens",
+   "from": "p2",
+   "to": "p4",
+   "circumstance_tags": ["hostage_situation"]
+  },
+  {
+   "type": "tranquilizes",
+   "from": "p4",
+   "to": "p2"
+  },
+  {
+   "type": "steals",
+   "from": "p4",
+   "to": "o5"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o8"
+  },
+  {
+   "type": "hides",
+   "from": "p3",
+   "to": "o3",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "builds",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o8",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o9",
+   "to": "l3"
+  },
+  {
+   "type": "written_by",
+   "from": "o1",
+   "to": "p5"
+  },
+  {
+   "type": "written_by",
+   "from": "o9",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o8"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "l3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "greed_for_treasure"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "greed_for_treasure (red herring, suspected of concealing a prior visit and evidence)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

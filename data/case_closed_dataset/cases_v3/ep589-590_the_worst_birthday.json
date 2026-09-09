@@ -1,0 +1,212 @@
+{
+ "case_id": "ep589-590_the_worst_birthday",
+ "episode_number": "589-590",
+ "title": "The Worst Birthday",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Worst_Birthday",
+ "subtitle_source": ["subs_resolved/0589.txt", "subs_resolved/0590.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran Mouri, Inspector Yokomizo) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: murder. The old cases/ep589-590 file's culprit (Takehiko Kokubu) and its car-misidentification clue both check out against the transcript -- no culprit correction needed here, unlike some other rebuilds. What the old file missed: it had zero named relationships or specific motives (everything was a generic 'knows' edge to the victim), omitted the ashtray-swap trick and the shaken-soda-can trap that were central to how the locked room was actually pulled off, omitted Eri Kisaki being questioned as a suspect herself before the mechanism was found, and omitted the cigarette-butt evidence that placed Seiji in his mother's room. One transcript inconsistency: subs give Takehiko's own room as '306' early on (0589 line ~122) but the finale's ashtray-swap reveal (0590 line ~300) mislabels it '309' (the crime scene's own number) -- treated as a subtitle/OCR slip and resolved using the earlier, internally-consistent '306' for Takehiko's room, since the crime-scene ashtray (weapon) and the swapped-in replacement cannot both have ended up in the same room per the deduction's own logic.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kokubu Akiho",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "former race queen",
+    "attrs": {
+     "died_of": "blunt force trauma to the back of the head",
+     "stalker_complaint": "hired Eri Kisaki to negotiate a settlement against a stalker",
+     "age": 28
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kokubu Takehiko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "hobby": "collects and lines up mini toy cars",
+     "age": 30
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Eri Kisaki",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "attorney",
+    "attrs": {
+     "briefly_accused": "Inspector Yokomizo floated that she killed Akiho and used reverse psychology to invite Kogoro in as a witness to fake a locked room"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hino Midori",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "role_in_case": "opposing party in the stalking settlement negotiation; Seiji's mother",
+     "age": 51
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hino Seiji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "role_in_case": "accused of stalking Akiho",
+     "age": 26
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Eri's hotel room (309)",
+    "attrs": {"note": "crime scene; body concealed under a moved bed"}
+   },
+   {
+    "id": "l2",
+    "name": "Takehiko's hotel room (306)",
+    "attrs": {"note": "shared by Takehiko and Akiho until their fight"}
+   },
+   {
+    "id": "l3",
+    "name": "Hino's hotel room (302)",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Hotel restaurant",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Hotel rooftop lounge",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Porsche 550 Spyder toy car",
+    "role": "tool",
+    "attrs": {
+     "gift_from": "Akiho, as a birthday present to Takehiko",
+     "taunt": "meant to imply Takehiko was only married for his money and that Akiho wanted him dead to inherit it",
+     "trick_use": "its open convertible seat well was wedged onto a bed leg to stabilize and roll it",
+     "damage": "seats broken by the bed leg; why Takehiko avoided showing it to Conan"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Mini car collection",
+    "role": "tool",
+    "attrs": {"use": "three more toy cars placed under the other three bed legs so one person could roll the bed silently"}
+   },
+   {
+    "id": "o3",
+    "name": "Ashtray from Room 309 (murder weapon)",
+    "role": "weapon",
+    "attrs": {"blood_test": "luminol positive for Akiho's blood", "found_in": "swapped into Takehiko's room after the murder"}
+   },
+   {
+    "id": "o4",
+    "name": "Replacement ashtray from Room 306",
+    "role": "tool",
+    "attrs": {"use": "swapped into Room 309 so the missing bloody ashtray would not be noticed"}
+   },
+   {
+    "id": "o5",
+    "name": "Shaken carbonated drink cans",
+    "role": "tool",
+    "attrs": {"trick": "every non-carbonated drink removed and every soda can shaken beforehand, so opening one would spray Eri and force her to shower"}
+   },
+   {
+    "id": "o6",
+    "name": "Cigarette butts in Room 302",
+    "role": "evidence",
+    "attrs": {"detail": "no lipstick and a still-damp filter, proving a second, male occupant despite Midori's claim she was alone"}
+   },
+   {
+    "id": "o7",
+    "name": "Seiji's road bike",
+    "role": "evidence",
+    "attrs": {"theory": "suspected source of tires used to slide the bed", "outcome": "ruled out; the real tires were Takehiko's toy cars"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Takehiko called a Porsche 911 James Dean's car, but the actor's real car was the 550 Spyder -- his wife's birthday gift, and the only one with an open seat well that could brace a bed leg.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Evenly-spaced blood dots at the bed's foot match the tire trail a rolling buffet cart left in spilled ketchup -- proof something on wheels, not a dragged bed, crossed the bloodstain.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "client_of"},
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "stalks"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "opposing_party_of"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "rage at learning his wife married him only for his money and wanted him dead to inherit it"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "obsessive rejected affection (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "resentment at Akiho for deceiving her son (red herring)"},
+
+  {"type": "taunts", "from": "p1", "to": "p2", "detail": "gave Takehiko the 550 Spyder as a birthday present and told him it meant she'd married him for his money and couldn't wait to inherit after his death"},
+  {"type": "damages", "from": "p1", "to": "o2", "detail": "threw a toy car's side mirror to the floor during their argument over his hobby"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "method": "blunt force trauma to the back of the head with a glass ashtray", "circumstance_tags": ["locked_room", "staged_alibi", "cover_up"]},
+  {"type": "hides_body_of", "from": "p2", "to": "p1", "circumstance_tags": ["locked_room", "staged_alibi"]},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o1"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o2"},
+  {"type": "relocates", "from": "p2", "to": "o3", "detail": "carried the bloody ashtray back to his own room to dispose of it"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o4"},
+  {"type": "rigs", "from": "p2", "to": "o5", "detail": "shook every carbonated can in Eri's fridge to force her into the shower"},
+
+  {"type": "calls", "from": "p3", "to": "p2", "detail": "asked Takehiko to come pick up his drunk, sleeping wife around 11 PM"},
+  {"type": "calls", "from": "p4", "to": "p1", "circumstance_tags": ["red_herring"], "detail": "meant to call attorney Eri about rescheduling negotiations, but Akiho picked up instead"},
+
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p5"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+
+  {"type": "located_in", "from": "o3", "to": "l2"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "located_in", "from": "o5", "to": "l1"},
+  {"type": "located_in", "from": "o6", "to": "l3"},
+
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+
+  {"type": "owns", "from": "p5", "to": "o7"},
+
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l5"},
+  {"type": "was_at", "from": "p5", "to": "l4"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

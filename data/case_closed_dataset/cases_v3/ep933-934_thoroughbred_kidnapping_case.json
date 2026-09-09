@@ -1,0 +1,349 @@
+{
+ "case_id": "ep933-934_thoroughbred_kidnapping_case",
+ "episode_number": "933-934",
+ "title": "Thoroughbred Kidnapping Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Thoroughbred_Kidnapping_Case",
+ "subtitle_source": "subs_resolved/0933.txt, subs_resolved/0934.txt (689 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Officer Takagi, Officer Chiba) omitted by convention. No `event` node type: every action is a directly typed edge between the entities actually involved. case_type: insurance_fraud staged as a kidnapping (no human victim; the racehorse White Spirits is the ostensible target). Corrections vs. the old low-fidelity file: the old file correctly named Kozo Tokuyoshi as mastermind and kept `case_type: fraud`, but it flattened the whole plot into two generic events and treated the other four staff as undifferentiated 'suspects' equally complicit with him. The transcript actually shows the opposite power relationship: Tokuyoshi coerced trainer Hase, stable hand Nagaura and jockey Kakuta (using debts he held over them) to kill White Spirits and stage a kidnapping so he could collect the horse's life-insurance payout after his reckless foreign investments went bad; the three secretly refused to kill the horse, hid him alive at their old stable (Kitado Stables) with a look-alike brother (White Legion) substituted in his place, disguised themselves and separately hired Kogoro Mori hoping a famous detective's presence would scare Tokuyoshi into calling off the scheme, then falsely reported to Tokuyoshi that the horse was dead once he went ahead anyway. Trailer driver Shiomi was their accomplice; his claimed wife-and-child kidnapping (used to justify diverting the trailer) is explicitly cast in doubt by Kogoro's closing remarks as possibly staged, not a real hostage-taking. The old file also omitted that the '100 million yen' ransom Tokuyoshi appeared to pay was never real money -- Kogoro proves the bag was stuffed with torn magazines from Tokuyoshi's own house, i.e. Tokuyoshi self-staged the entire ransom drop as a prop for his insurance claim and 'victim' narrative. None of this nuance (decoy horse, self-staged ransom, protective rather than complicit staff, doubted secondary kidnapping claim) existed in the old file; it is added here from the full transcript.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kozo Tokuyoshi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "racehorse owner",
+    "attrs": {
+     "age": 55,
+     "financial_motive": "under financial strain from reckless foreign investments",
+     "scheme": "faked the kidnapping and killing of his own racehorse White Spirits to collect a life-insurance payout, coercing his staff via debts he held over them",
+     "self_staged_ransom": "the 100-million-yen ransom bag he appeared to pay was stuffed with torn magazines from his own living-room rack; no real money ever changed hands"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yasutaka Hase",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "horse trainer",
+    "attrs": {
+     "age": 40,
+     "true_role": "coerced by Tokuyoshi via debt; secretly protected White Spirits instead of killing him"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Saneaki Nagaura",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "stable hand",
+    "attrs": {
+     "age": 45,
+     "true_role": "coerced by Tokuyoshi via debt; secretly protected White Spirits instead of killing him"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Chizuru Kakuta",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "jockey",
+    "attrs": {
+     "age": 25,
+     "true_role": "coerced by Tokuyoshi via debt; secretly protected White Spirits instead of killing him"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Masao Shiomi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "horse trailer driver",
+    "attrs": {
+     "age": 50,
+     "cover_story": "claimed his wife and child were kidnapped and threatened to force him to divert the trailer; Kogoro's closing remarks cast doubt on whether this kidnapping was real or also staged"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Satoshi Ihara",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "trainee stable hand",
+    "attrs": {
+     "age": 25,
+     "testimony": "noticed a horse trailer missing for three days and a bloodstain at the stable, unaware of the scheme"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Tokuyoshi Stables",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Okuho Horse Track",
+    "attrs": { "role_in_case": "destination of the commemorative race the horse was being transported to" }
+   },
+   {
+    "id": "l3",
+    "name": "Side road with decoy trailer",
+    "attrs": { "detail": "fake 'Construction/Detour' signs placed here to divert the real trailer; tire-track and camera evidence staged to look like a swap happened here" }
+   },
+   {
+    "id": "l4",
+    "name": "Tsubaki Park fountain",
+    "attrs": { "role_in_case": "first ransom-instruction meeting point" }
+   },
+   {
+    "id": "l5",
+    "name": "Katsumata North Station",
+    "attrs": { "role_in_case": "second ransom-instruction relay point (decoded from 'KM North ST')" }
+   },
+   {
+    "id": "l6",
+    "name": "Onodera Overpass 3",
+    "attrs": { "role_in_case": "final ransom drop-off point (decoded from 'OND3BRG')" }
+   },
+   {
+    "id": "l7",
+    "name": "Tokuyoshi's house",
+    "attrs": {}
+   },
+   {
+    "id": "l8",
+    "name": "Kitado Stables",
+    "attrs": { "detail": "Hase, Nagaura and Kakuta's former workplace, where White Spirits and White Legion were born; used to hide the real horse" }
+   },
+   {
+    "id": "l9",
+    "name": "Residential dump site",
+    "attrs": { "detail": "where the bloody horse blanket was anonymously reported to police" }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "White Spirits",
+    "role": "contraband",
+    "attrs": { "detail": "champion racehorse; ostensible kidnapping/murder target, actually hidden alive and unharmed" }
+   },
+   {
+    "id": "o2",
+    "name": "White Legion",
+    "role": "instrument",
+    "attrs": { "detail": "White Spirits' brother, visually near-identical, disguised as him to cover the substitution" }
+   },
+   {
+    "id": "o3",
+    "name": "Bloody horse blanket",
+    "role": "evidence",
+    "attrs": { "blood_source": "White Spirits' own blood from an earlier, non-fatal splinter injury at the stable", "purpose": "planted to make the staff's false 'we killed him' report to Tokuyoshi look credible" }
+   },
+   {
+    "id": "o4",
+    "name": "Ransom demand letter",
+    "role": "evidence",
+    "attrs": { "content": "demands 100 million yen for White Spirits' return", "delivered_to": "Tokuyoshi's mailbox" }
+   },
+   {
+    "id": "o5",
+    "name": "Coded relay instruction notes",
+    "role": "evidence",
+    "attrs": { "content": "'WS -> KM North ST' and 'Head to OND3BRG'; decoded as Katsumata North Station and Onodera Overpass 3" }
+   },
+   {
+    "id": "o6",
+    "name": "Ransom bag",
+    "role": "evidence",
+    "attrs": { "actual_contents": "worthless magazines instead of 100 million yen" }
+   },
+   {
+    "id": "o7",
+    "name": "Torn magazine",
+    "role": "evidence",
+    "attrs": { "detail": "torn cover left behind on a rack in Tokuyoshi's living room matches a torn magazine stuffed inside the ransom bag" }
+   },
+   {
+    "id": "o8",
+    "name": "Horse hair samples",
+    "role": "evidence",
+    "attrs": { "detail": "one sample is White Spirits' fur, the other White Legion's, both found together at Kitado Stables from the disguise being removed" }
+   },
+   {
+    "id": "o9",
+    "name": "White Spirits' life insurance policy",
+    "role": "evidence",
+    "attrs": { "beneficiary": "Kozo Tokuyoshi", "insurer": "a major foreign insurance company" }
+   },
+   {
+    "id": "o10",
+    "name": "Convenience-store security footage",
+    "role": "evidence",
+    "attrs": { "anomaly": "timestamped three days before the transport day, proving the roadside 'swap' scene was staged in advance" }
+   },
+   {
+    "id": "o11",
+    "name": "Death threat letters against White Spirits",
+    "role": "evidence",
+    "attrs": { "detail": "received about a month before the kidnapping; used by the trio as pretext to separately hire Kogoro Mori for protection" }
+   },
+   {
+    "id": "o12",
+    "name": "Decoy horse trailer",
+    "role": "tool",
+    "attrs": { "detail": "identical to the real trailer; parked on the side road so the driver could switch trailers there" }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The insurance payout was requested one day before the bloody horse blanket was even discovered, showing Tokuyoshi knew of the horse's supposed death before it was public knowledge.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Of the two trailer tire-track sets at the side road, one was much shallower, as if nothing was inside it -- inconsistent with a real horse having been swapped there.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "The convenience-store footage showing a trailer leaving the side road is timestamped three days before the transport day, proving that scene was staged evidence, not a live swap.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "A torn magazine cover left on a rack in Tokuyoshi's living room matches a torn magazine stuffed inside the supposed 100-million-yen ransom bag.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c5",
+    "desc": "Horse hair recovered at Kitado Stables includes both White Spirits' fur and White Legion's, proving the two horses were swapped there, not during transport.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  { "type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of" },
+  { "type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "expose_employer_fraud_and_protect_horse" },
+  { "type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "expose_employer_fraud_and_protect_horse" },
+  { "type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "expose_employer_fraud_and_protect_horse" },
+
+  { "type": "owns", "from": "p1", "to": "o1" },
+  { "type": "owns", "from": "p1", "to": "o9" },
+  { "type": "owns", "from": "p1", "to": "o7" },
+  { "type": "requests_payout_of", "from": "p1", "to": "o9", "detail": "filed the claim one day before the blanket was found -- see clue c1" },
+  { "type": "implicates", "from": "o9", "to": "p1" },
+  { "type": "implicates", "from": "o7", "to": "p1" },
+
+  { "type": "orders_killing_of", "from": "p1", "to": "o1", "detail": "coerced staff via debt to kill White Spirits and stage a kidnapping for the insurance payout" },
+  { "type": "coerces", "from": "p1", "to": "p2", "detail": "used debt owed to force participation in the scheme" },
+  { "type": "coerces", "from": "p1", "to": "p3", "detail": "used debt owed to force participation in the scheme" },
+  { "type": "coerces", "from": "p1", "to": "p4", "detail": "used debt owed to force participation in the scheme" },
+
+  { "type": "hides", "from": "p2", "to": "o1", "detail": "hid White Spirits alive at Kitado Stables instead of killing him" },
+  { "type": "hides", "from": "p3", "to": "o1", "detail": "hid White Spirits alive at Kitado Stables instead of killing him" },
+  { "type": "hides", "from": "p4", "to": "o1", "detail": "hid White Spirits alive at Kitado Stables instead of killing him" },
+  { "type": "located_in", "from": "o1", "to": "l1" },
+  { "type": "located_in", "from": "o1", "to": "l8" },
+
+  { "type": "disguises", "from": "p2", "to": "o2", "detail": "dressed White Legion up to pass for White Spirits" },
+  { "type": "impersonates", "from": "o2", "to": "o1", "detail": "White Legion substituted for his brother White Spirits using their close resemblance" },
+  { "type": "located_in", "from": "o2", "to": "l1" },
+  { "type": "located_in", "from": "o2", "to": "l2" },
+
+  { "type": "leaves_evidence", "from": "p2", "to": "o8" },
+  { "type": "leaves_evidence", "from": "p3", "to": "o8" },
+  { "type": "leaves_evidence", "from": "p4", "to": "o8" },
+  { "type": "located_in", "from": "o8", "to": "l8" },
+  { "type": "implicates", "from": "o8", "to": "p2" },
+  { "type": "implicates", "from": "o8", "to": "p3" },
+  { "type": "implicates", "from": "o8", "to": "p4" },
+
+  { "type": "leaves_evidence", "from": "p2", "to": "o3" },
+  { "type": "leaves_evidence", "from": "p3", "to": "o3" },
+  { "type": "leaves_evidence", "from": "p4", "to": "o3" },
+  { "type": "located_in", "from": "o3", "to": "l9" },
+  { "type": "reports_false_kill_to", "from": "p2", "to": "p1" },
+  { "type": "reports_false_kill_to", "from": "p3", "to": "p1" },
+  { "type": "reports_false_kill_to", "from": "p4", "to": "p1" },
+
+  { "type": "leaves_evidence", "from": "p2", "to": "o10" },
+  { "type": "leaves_evidence", "from": "p3", "to": "o10" },
+  { "type": "leaves_evidence", "from": "p4", "to": "o10" },
+  { "type": "located_in", "from": "o10", "to": "l3" },
+  { "type": "located_in", "from": "o12", "to": "l3" },
+  { "type": "implicates", "from": "o10", "to": "p2" },
+  { "type": "implicates", "from": "o10", "to": "p3" },
+  { "type": "implicates", "from": "o10", "to": "p4" },
+
+  { "type": "diverts", "from": "p5", "to": "o12", "detail": "parked the decoy trailer on the side road and drove off in it after switching, citing a fake construction detour sign" },
+  { "type": "leaves_evidence", "from": "p5", "to": "o12" },
+
+  { "type": "authors", "from": "p1", "to": "o4" },
+  { "type": "authors", "from": "p1", "to": "o5" },
+  { "type": "stages_theft_of", "from": "p1", "to": "o6", "detail": "self-staged the ransom drop and disappearance of the bag; the bag never held real money" },
+  { "type": "located_in", "from": "o6", "to": "l6" },
+  { "type": "located_in", "from": "o7", "to": "l7" },
+  { "type": "implicates", "from": "o6", "to": "p1" },
+
+  { "type": "hires_for_protection", "from": "p2", "to": "o11" },
+  { "type": "hires_for_protection", "from": "p3", "to": "o11" },
+  { "type": "hires_for_protection", "from": "p4", "to": "o11" },
+
+  { "type": "regarding", "from": "c1", "to": "o9" },
+  { "type": "regarding", "from": "c1", "to": "o3" },
+  { "type": "implicates", "from": "c1", "to": "p1" },
+
+  { "type": "regarding", "from": "c2", "to": "l3" },
+  { "type": "implicates", "from": "c2", "to": "p2" },
+  { "type": "implicates", "from": "c2", "to": "p3" },
+  { "type": "implicates", "from": "c2", "to": "p4" },
+
+  { "type": "regarding", "from": "c3", "to": "o10" },
+  { "type": "regarding", "from": "c3", "to": "l3" },
+  { "type": "implicates", "from": "c3", "to": "p2" },
+  { "type": "implicates", "from": "c3", "to": "p3" },
+  { "type": "implicates", "from": "c3", "to": "p4" },
+
+  { "type": "regarding", "from": "c4", "to": "o6" },
+  { "type": "regarding", "from": "c4", "to": "o7" },
+  { "type": "implicates", "from": "c4", "to": "p1" },
+
+  { "type": "regarding", "from": "c5", "to": "o8" },
+  { "type": "regarding", "from": "c5", "to": "l8" },
+  { "type": "implicates", "from": "c5", "to": "p2" },
+  { "type": "implicates", "from": "c5", "to": "p3" },
+  { "type": "implicates", "from": "c5", "to": "p4" },
+
+  { "type": "was_at", "from": "p1", "to": "l1" },
+  { "type": "was_at", "from": "p1", "to": "l2" },
+  { "type": "was_at", "from": "p1", "to": "l7" },
+  { "type": "was_at", "from": "p1", "to": "l4" },
+  { "type": "was_at", "from": "p1", "to": "l5" },
+  { "type": "was_at", "from": "p1", "to": "l6" },
+
+  { "type": "was_at", "from": "p2", "to": "l1" },
+  { "type": "was_at", "from": "p2", "to": "l2" },
+
+  { "type": "was_at", "from": "p3", "to": "l1" },
+  { "type": "was_at", "from": "p3", "to": "l3" },
+
+  { "type": "was_at", "from": "p4", "to": "l1" },
+  { "type": "was_at", "from": "p4", "to": "l3" },
+
+  { "type": "was_at", "from": "p5", "to": "l1" },
+  { "type": "was_at", "from": "p5", "to": "l3" },
+  { "type": "was_at", "from": "p5", "to": "l2" },
+
+  { "type": "was_at", "from": "p6", "to": "l1" }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

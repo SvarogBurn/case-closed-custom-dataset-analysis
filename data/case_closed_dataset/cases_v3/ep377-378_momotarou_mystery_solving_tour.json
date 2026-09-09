@@ -1,0 +1,211 @@
+{
+ "case_id": "ep377-378_momotarou_mystery_solving_tour",
+ "episode_number": "377-378",
+ "title": "Momotarou Mystery Solving Tour",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Momotarou_Mystery_Solving_Tour",
+ "subtitle_source": [
+  "subs_resolved/0377.txt",
+  "subs_resolved/0378.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast nodes (Conan, Ayumi, Mitsuhiko, Genta, Professor Agasa) omitted by convention; they solve the codes but are not suspects/victims/witnesses to the crime itself. case_type: murder. DISCREPANCY vs old cases/ file: the old file's e1 event ('Momoi is involved in a road accident death he never tells anyone about, confessing it only in a sealed time capsule memo') conflates two separate people/facts. The transcript is clear these are distinct: (1) Shunya, a sixth classmate/play-director, died in a real car accident 15 years ago -- unrelated to Momoi causing anyone's death, and its 'ordinariness' is only vaguely doubted by Momoi in a closing monologue, never investigated on-screen or resolved as a second crime; (2) Momoi's own sealed time-capsule confession was about being bullied into committing a robbery/theft as a child (a crime against property, not a death), which Shunya witnessed and tried to shield him from. Momoi's real motive for killing Inui Seiko was fear that unburying the capsules for her 'research' would expose that old confession and derail his election candidacy and engagement -- not fear of a death being exposed. This file corrects that. Also corrected: the old file lists only 4 suspects and omits Shunya (backstory figure central to motive and to the closing scene) and Kijima Yayoi (present throughout, functions as Momoi's alibi witness, not merely a suspect). The old file's single clue (mirror dying-message reading) is kept but paired with a second real comparative clue the old file missed entirely: the half-a-ticket-stamp match between the museum pamphlet left with the victim's body and the banknote found in Momoi's wallet, which is what actually pins the theft-from-the-corpse (frame-up attempt against Onitsura) on him.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Naoto Momoi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "local election candidate",
+    "attrs": {
+     "childhood_secret": "as a bullied child, forced by other kids into committing a robbery; never told anyone, confessed only in a note sealed in his own time capsule 15 years ago",
+     "engaged_to": "Yayoi Kijima"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yayoi Kijima",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": null,
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Kengo Saruwatari",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "beauty salon owner",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Seiko Inui",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "freelance journalist",
+    "attrs": {
+     "handedness": "left-handed",
+     "died_of": "killed in the backyard of Kurashiki Ivy Square, left a dying message written backward with her left hand"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Mamoru Onitsura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "moneylender",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Shunya",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "classmate, directed their childhood Momotaro play",
+    "attrs": {
+     "died_of": "car accident, 15 years ago",
+     "note": "shielded young Momoi from bullies who forced him into a robbery; Momoi later doubts the accident was ordinary, but this is never confirmed or investigated on screen",
+     "final_message": "left an anagram-coded note asking a friend to place it in the time capsules as a favor before he died"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Chibori Park, Kurashiki", "attrs": {}},
+   {"id": "l2", "name": "Kurashiki Bikan District", "attrs": {}},
+   {"id": "l3", "name": "Fire lookout tower", "attrs": {}},
+   {"id": "l4", "name": "Oohashi house", "attrs": {}},
+   {"id": "l5", "name": "Kurashiki Ivy Square", "attrs": {"note": "backyard is both a 15-years-ago burial site and the murder scene"}},
+   {"id": "l6", "name": "Koumorizuka burial mound", "attrs": {"note": "dead-end dummy clue location"}},
+   {"id": "l7", "name": "Kibitsu Temple", "attrs": {}},
+   {"id": "l8", "name": "Oohara Art Museum", "attrs": {}},
+   {"id": "l9", "name": "Peach Tree Adventure Club riverside spot", "attrs": {}},
+   {"id": "l10", "name": "Their old elementary school", "attrs": {"note": "vandalized the night before the murder"}},
+   {"id": "l11", "name": "Hotel lobby near Chibori Park", "attrs": {"note": "Onitsura's claimed but unverifiable alibi location"}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Seiko's time capsule", "role": "evidence", "attrs": {"buried_at": "Fire lookout tower", "buried_by": "Momoi", "contents": "toy with no battery, note reading '6 fun years (if you don't count that)'"}},
+   {"id": "o2", "name": "Onitsura's time capsule", "role": "evidence", "attrs": {"buried_at": "Oohashi house", "buried_by": "Seiko", "contents": "old manga, old stationery, note mentioning 'that thing'"}},
+   {"id": "o3", "name": "Saruwatari's time capsule", "role": "evidence", "attrs": {"buried_at": "Kurashiki Ivy Square", "buried_by": "Onitsura", "contents": "junk items, note again mentioning 'that thing'"}},
+   {"id": "o4", "name": "Yayoi's time capsule", "role": "evidence", "attrs": {"buried_at": "Kibitsu Temple", "buried_by": "Saruwatari", "dummy_clue_pointed_to": "Koumorizuka mound", "contents": "items and a note, 'Shunya-kun, rest in peace'"}},
+   {"id": "o5", "name": "Momoi's time capsule", "role": "evidence", "attrs": {"buried_at": "Oohara Art Museum", "buried_by": "Yayoi", "anomaly": "the only capsule with no note inside -- Momoi dug it up early and destroyed his own confession note before the Detective Boys found it"}},
+   {"id": "o6", "name": "Museum pamphlet (victim's)", "role": "evidence", "attrs": {"found_with": "victim's belongings", "anomaly": "carries half of a ticket stamp on its back"}},
+   {"id": "o7", "name": "Stamped banknote in Momoi's wallet", "role": "evidence", "attrs": {"anomaly": "carries the matching other half of the same ticket stamp as the museum pamphlet -- proves it was taken from the victim's wallet"}},
+   {"id": "o8", "name": "Shunya's anagram note", "role": "evidence", "attrs": {"decoded_message": "Momo no ki bouken dan (Peach Tree Adventure Club) -- their childhood group's name, leading to the riverside meeting spot", "content": "Shunya's account of shielding Momoi from bullies and vowing to keep it secret"}}
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Dying message read left-to-right spells ONI (demon), but the victim was left-handed and her finger position shows she wrote right-to-left, backward -- the true message is MOMO, naming Momoi, not Onitsura or Saruwatari.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "A half ticket-stamp on the back of the victim's museum pamphlet matches the other half on a banknote found in Momoi's wallet -- the two were stamped together while overlapping, proving the bill came from the victim's wallet.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "ex_partner_of"},
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "protector_of"},
+
+  {"type": "protects", "from": "p6", "to": "p1", "detail": "jumped in to stop bullies from forcing Momoi into a robbery, then kept it secret"},
+
+  {"type": "buries", "from": "p1", "to": "o1"},
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "owns", "from": "p4", "to": "o1"},
+
+  {"type": "buries", "from": "p4", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "l4"},
+  {"type": "owns", "from": "p5", "to": "o2"},
+
+  {"type": "buries", "from": "p5", "to": "o3"},
+  {"type": "located_in", "from": "o3", "to": "l5"},
+  {"type": "owns", "from": "p3", "to": "o3"},
+
+  {"type": "buries", "from": "p3", "to": "o4"},
+  {"type": "located_in", "from": "o4", "to": "l7"},
+  {"type": "regarding", "from": "o4", "to": "l6", "detail": "decoy code buried inside points to Koumorizuka mound as a dead-end before the real capsule's location (Kibitsu Temple) is found"},
+  {"type": "owns", "from": "p2", "to": "o4"},
+
+  {"type": "buries", "from": "p2", "to": "o5"},
+  {"type": "located_in", "from": "o5", "to": "l8"},
+  {"type": "owns", "from": "p1", "to": "o5"},
+
+  {"type": "vandalizes", "from": "p1", "to": "l10", "detail": "broke into their old elementary school the night before to recover the burial-location codes"},
+  {"type": "was_at", "from": "p1", "to": "l10"},
+
+  {"type": "excavates", "from": "p1", "to": "o1", "circumstance_tags": ["ahead_of_detective_boys"]},
+  {"type": "excavates", "from": "p1", "to": "o2", "circumstance_tags": ["ahead_of_detective_boys"]},
+  {"type": "excavates", "from": "p1", "to": "o3", "circumstance_tags": ["ahead_of_detective_boys"]},
+  {"type": "excavates", "from": "p1", "to": "o4", "circumstance_tags": ["ahead_of_detective_boys"]},
+  {"type": "excavates", "from": "p1", "to": "o5", "circumstance_tags": ["ahead_of_detective_boys"]},
+  {"type": "destroys_evidence_in", "from": "p1", "to": "o5", "detail": "removed and destroyed his own childhood confession note before it could be found"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+
+  {"type": "assaults", "from": "p4", "to": "p3", "circumstance_tags": ["verbal", "argument"], "detail": "argued in Chibori Park over a beauty-salon publicity article and money Saruwatari felt he'd lost"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p4", "motive_type": "financial_dispute_over_publicity_article (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p4", "motive_type": "avoid_exposure_of_underhanded_moneylending (red herring)"},
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "concealment_of_childhood_confession"},
+
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l11"},
+
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+
+  {"type": "kills", "from": "p1", "to": "p4", "circumstance_tags": ["cover_up", "staged_alibi"], "method": "unspecified, killed in the backyard of Kurashiki Ivy Square after luring her there"},
+
+  {"type": "steals", "from": "p1", "to": "o7", "detail": "emptied the victim's wallet to make the murder look like the vandal/thief (Onitsura) struck again"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o6", "detail": "left the pamphlet behind at the crime scene, not realizing it was stamp-matched to a bill he kept"},
+
+  {"type": "regarding", "from": "c2", "to": "o6"},
+  {"type": "regarding", "from": "c2", "to": "o7"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "implicates", "from": "o6", "to": "p1"},
+  {"type": "implicates", "from": "o7", "to": "p1"},
+
+  {"type": "regarding", "from": "c1", "to": "p4"},
+  {"type": "implicates", "from": "c1", "to": "p5", "circumstance_tags": ["red_herring"]},
+  {"type": "implicates", "from": "c1", "to": "p3", "circumstance_tags": ["red_herring"]},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+
+  {"type": "regarding", "from": "o8", "to": "p6"},
+  {"type": "regarding", "from": "o8", "to": "p1"},
+  {"type": "located_in", "from": "o8", "to": "l9"},
+
+  {"type": "was_at", "from": "p1", "to": "l9"},
+  {"type": "was_at", "from": "p2", "to": "l9"},
+  {"type": "was_at", "from": "p3", "to": "l9"},
+  {"type": "was_at", "from": "p5", "to": "l9"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

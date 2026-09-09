@@ -1,0 +1,488 @@
+{
+ "case_id": "ep381-382_which_ones_deduction_show",
+ "episode_number": "381-382",
+ "title": "Which One's Deduction Show",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Which_One%27s_Deduction_Show",
+ "subtitle_source": [
+  "subs_resolved/0381.txt",
+  "subs_resolved/0382.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast nodes (Heiji Hattori, Kazuha Toyama, Ran Mouri, Kogoro Mouri, Conan Edogawa, Inspector Megure, Takagi, Chiba) omitted by convention -- they drive the frame story (a Koushien-vs-Takarazuka bet) but are not case entities. case_type: murder. Discrepancies vs. the old cases/ file: (1) the victim's given name is spelled 'Kenji Tsujiya' in the old file, but the audio/subtitles clearly render it 'Tsujiya Kenshi' (Japanese name order) -- used 'Kenshi Tsujiya' here as the transcript-supported form. (2) The old file's culprit (s2, Hasami) is CORRECT -- matches the transcript. (3) The old file collapsed the entire dying-message mechanism into two flat clue/event stubs and, notably, mislabels object o2 as 'Borrowed shoes belonging to another suspect, used to frame him via video footage' while o3's clue text says the torn calendar 'ties directly back to him' (the culprit) without explaining why -- the actual mechanism is considerably more layered: the culprit (Hasami) blocked the tied-up victim's line of sight to the killer's face with the desk and a hidden video camera, then wore vice-president Iwatomi's stolen white golf shoes so the victim could only identify the killer by footwear; the culprit also deliberately (not accidentally) spilled ink near the victim -- proven because a genuine desk struggle would have also toppled the pen stand, and it didn't -- specifically so the victim could physically reach the scattered toy blocks and leave a dying message. The victim, honestly believing the shoes meant Iwatomi, stained blocks whose ink-marked faces spell nonsense ('o-mo-chi-ya') but whose fixed opposite faces (each block is a cube following the gojuon vowel-order, one block being the special ya-yu-yo-wa-wo-n line) decode to 'I-MI-TO-WA', an anagram of 'IWATOMI' -- a real, correctly-decoded dying message that nonetheless names the WRONG man, since Iwatomi has a solid TV-broadcast alibi (caught on camera at the golf tournament he claimed to attend). The real proof against Hasami is physical: blood wiped from his coat's left shoulder to a high wall calendar reachable only by someone of his height, plus his scent left inside the stolen shoes (confirmable by police dog). Motive was moral, not just the surface fear-of-being-fired story: Hasami opposed the president's and Iwatomi's cost-cutting decision to skip smoothing sharp corners on toys sold to children, and wanted Iwatomi specifically blamed and pushed out of toy production.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kenshi Tsujiya",
+    "aliases": [
+     "Kenji Tsujiya"
+    ],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "president, Tsujiya Toy Manufacturing",
+    "attrs": {
+     "age": 53,
+     "collects": "idol merchandise (photos, pen stands)",
+     "habit": "kept every past month's page torn from his desk calendar instead of discarding them",
+     "died_of": "beaten with a golf club after being tied up",
+     "time_of_death": "approx. 5 PM, Sunday June 29th",
+     "found": "Monday June 30th, around 10 AM, by four employees"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Nao Aikou",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "chief accountant, Tsujiya Toy Manufacturing",
+    "attrs": {
+     "collects": "gloves (over 50 pairs)",
+     "claimed_alibi": "went fishing alone",
+     "alibi_verified": false
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Atsushi Hasami",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "chief salesman, Tsujiya Toy Manufacturing",
+    "attrs": {
+     "collects": "sunglasses (over 30 pairs)",
+     "claimed_alibi": "home alone watching rented videos",
+     "alibi_verified": false,
+     "height": "tallest of the four suspects"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Isao Nakagami",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "chief designer, Tsujiya Toy Manufacturing",
+    "attrs": {
+     "collects": "hats (40, picks a 'lucky' one per horse race)",
+     "claimed_alibi": "at the horse racing track",
+     "alibi_verified": false
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hajime Iwatomi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "vice president, Tsujiya Toy Manufacturing",
+    "attrs": {
+     "collects": "white name-brand golf shoes (30 pairs, polished weekly)",
+     "claimed_alibi": "watching the final round of a golf tournament",
+     "alibi_verified": true,
+     "alibi_proof": "caught clearly on the tournament's TV broadcast at the time of the murder"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Tsujiya Toy Manufacturing",
+    "attrs": {
+     "note": "doubles as the president's home and the toy factory/office; crime scene"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Iwatomi's house",
+    "attrs": {
+     "note": "the four employees frequently gathered here to drink and complain about the president; three spent the night here on June 29th"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Golf club",
+    "role": "weapon",
+    "attrs": {
+     "owner": "victim's own club",
+     "wound_pattern": "several 10 cm narrow strike marks around the head"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Victim's leather coat",
+    "role": "evidence",
+    "attrs": {
+     "owner": "victim's own coat, worn by the culprit during the murder",
+     "blood_location": "left shoulder, lighter/rubbed-off stain",
+     "explanation": "culprit leaned against the wall in relief after the killing, transferring blood from the shoulder onto the calendar"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Four toy building blocks",
+    "role": "evidence",
+    "attrs": {
+     "ink_stained_faces": "o, mo, chi, ya -- read together as nonsense ('o-mo-chi-ya')",
+     "opposite_faces_decoded": "i, mi, to, wa -- an anagram of IWATOMI",
+     "cipher_basis": "each block is a cube; characters are arranged in fixed opposite-face pairs following gojuon vowel order; the fourth block is the special ya-yu-yo-wa-wo-n line",
+     "how_stained": "victim, hands tied behind his back, located blocks in a pile by touch and rubbed the chosen face in spilled ink"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Hidden video camera",
+    "role": "instrument",
+    "attrs": {
+     "setup": "wired to a TV monitor in another room; positioned behind desk items so the tied-up victim could not see it or the culprit's face",
+     "purpose": "let the culprit watch the victim compose the dying message without being seen"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Wall calendar",
+    "role": "evidence",
+    "attrs": {
+     "detail": "June page was torn off, exposing July; a faint wiped blood smear remains where June's page was",
+     "torn_by": "the culprit, the next day, after first noticing the blood on it",
+     "note": "June 30th's page still had the president's own handwritten golf-outing schedule on it"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Iwatomi's white golf shoes",
+    "role": "evidence",
+    "attrs": {
+     "owner": "Hajime Iwatomi",
+     "taken_by": "culprit, during one of the group's frequent gatherings at Iwatomi's house",
+     "purpose": "worn by the culprit so the victim -- unable to see the killer's face -- would identify him only by footwear",
+     "scent_evidence": "worn long enough by the culprit to leave a scent traceable by police dogs"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "A genuine desk struggle would also have knocked over the idol-photo pen stand, but it's still upright -- proves the ink spill near the victim was deliberate, not a struggle accident.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The ink-stained block faces spell nonsense ('o-mo-chi-ya'), but each block's fixed opposite face decodes to 'I-MI-TO-WA' -- an anagram of IWATOMI.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Lined up at the wall calendar, only Hasami is tall enough for a shoulder-height blood smear to land where it did.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "ex_spouse"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "coworker"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "unresolved alimony/consolation-money dispute after their affair-triggered divorce"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "publicly-stated fear of being fired over declining profits"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "true motive: moral opposition to the president's cost-cutting decision to leave sharp, unsmoothed corners on toys sold to children"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p5",
+   "motive_type": "wanted Iwatomi blamed for the murder so he'd be forced out of toy production"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "feared being fired over profits; also had a heated dispute with the president over a new toy's design"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "stood to inherit the company (red herring -- no personal dispute stated)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "ties_up",
+   "from": "p3",
+   "to": "p1",
+   "detail": "binds the victim's hands behind his back after extracting the safe combination"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "method": "beaten with a golf club after being tied up and left to compose a dying message",
+   "circumstance_tags": [
+    "frame_up",
+    "staged_evidence"
+   ]
+  },
+  {
+   "type": "frames",
+   "from": "p3",
+   "to": "p5",
+   "circumstance_tags": [
+    "red_herring",
+    "frame_up"
+   ],
+   "detail": "wore Iwatomi's stolen white shoes and blocked the tied victim's line of sight to his own face, so the victim's honest dying message would misidentify Iwatomi as the killer"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o6"
+  },
+  {
+   "type": "uses",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "wears",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "steals",
+   "from": "p3",
+   "to": "o6",
+   "detail": "taken during one of the group's frequent drinking gatherings at Iwatomi's house"
+  },
+  {
+   "type": "wears",
+   "from": "p3",
+   "to": "o6"
+  },
+  {
+   "type": "conceals",
+   "from": "p3",
+   "to": "o4",
+   "detail": "positions the camera, wired to a TV in another room, where the tied-up victim can't see it"
+  },
+  {
+   "type": "wipes_blood_on",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "tears",
+   "from": "p3",
+   "to": "o5",
+   "detail": "tears off the June page the next day, after noticing the blood on it, to hide the stain"
+  },
+  {
+   "type": "stains",
+   "from": "p1",
+   "to": "o3",
+   "detail": "victim, hands tied, locates and ink-stains blocks by touch to spell out what he believes is the killer's identity"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p5",
+   "circumstance_tags": [
+    "red_herring",
+    "frame_up"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p5",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

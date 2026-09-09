@@ -1,0 +1,246 @@
+{
+ "case_id": "ep971-974_the_target_is_the_metropolitan_police_traffic_department",
+ "episode_number": "971-974",
+ "title": "The Target is the Metropolitan Police Traffic Department",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Target_is_the_Metropolitan_Police_Traffic_Department",
+ "subtitle_source": "subs_resolved/0971.txt (362 lines) + subs_resolved/0974.txt (328 lines), 690 lines total, both read in full. subs_resolved/0972.txt and 0973.txt do not exist in this dataset -- the middle two episodes (Yagi's murder scene itself, and the step-by-step narrowing from three traffic-violator suspects down to Aono) are only known via the recap dialogue and final confession in episode 974, not from a direct transcript.",
+ "schema_version": "v3",
+ "notes": "case_type: murder (x2) + kidnapping + attempted murder (same culprit, one continuous revenge spree). The old cases/ file's culprit call (Aono, s1) holds up -- episode 974's confession confirms him directly, no red-herring reversal needed there. Correction vs. the old file: the old file asserted a taser was used on both officers and that Yagi was 'thrown off a balcony'; neither detail appears anywhere in the two transcripts actually available (971, 974), and since 972-973 are missing from this dataset, that weapon/method claim could not be verified and has been dropped rather than carried forward unverified -- Yagi's death is recorded here with method left unspecified. The old file also missed that the culprit went on to kidnap patrolwoman Naeko Miike (to lure her superior Yumi Kitami, whom he'd also decided to kill after overhearing her name) and stabbed/impaled Sergeant Chiba on a booby trap while Chiba rescued her; both are modeled here as direct crime edges (kidnaps/assaults) rather than left as a notes-only aside, since they are the culprit's own continuing actions, not incidental cast business. Recurring detective-cast members who only investigate (Conan, Sato, Takagi, Kogoro, Megure, Haibara) are omitted by convention; Miike and Chiba are the exception because they are themselves directly targeted/injured by the culprit within this arc. Objects/clues describing the two dying-message decodings (no-parking-sign pun, phone-number legal-code reference) are drawn directly from Conan's on-screen deduction in ep974.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Aono Kengo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "remodeling contractor",
+    "attrs": {
+     "trigger_event": "his girlfriend Midorikawa Aiko committed suicide by jumping from her office building; he was stopped by Sgt. Momosaki and Lt. Yagi for driving without a license and using his phone while rushing to her",
+     "confession_detail": "did not realize Aiko had called and left him a voicemail a minute after her goodbye text; refused to believe it until Chiba played the message for him"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Momosaki Toko",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "MPD Transportation Department, Sergeant",
+    "attrs": {
+     "died_of": "bludgeoned to death",
+     "dying_message": "kicked-into-position hand pointing at a park swing set, with a bloody fingerprint left deliberately so the culprit couldn't disturb the gesture without leaving a mark",
+     "felt_followed": "mentioned to Yagi and Miike the night before, at karaoke, that she'd felt followed for about a week"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yagi Shiori",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "MPD Transportation Department, Lieutenant",
+    "attrs": {
+     "died_of": "unspecified in the available transcript (killed in episode 972 or 973, which are not present in this dataset)",
+     "dying_message": "typed the digits 7155 into a phone that connects to no one, referencing Road Traffic Law Article 71 Section 5-5 (no handling/viewing a phone while driving)"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Midorikawa Aiko",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "office worker",
+    "attrs": {
+     "died_of": "suicide, jumped from the roof of her office building on Second Street, Haido City",
+     "reason": "workplace power harassment from her bosses",
+     "last_contact": "texted Aono 'Goodbye', then called him a minute later and left a voicemail he never listened to"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Akamine Manji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unspecified",
+    "attrs": {
+     "cited_for": "riding a motorcycle against traffic without a helmet"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Shiroyama Yuzo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unspecified",
+    "attrs": {
+     "cited_for": "expired vehicle inspection and no seatbelt"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Naeko Miike",
+    "aliases": [],
+    "roles": ["victim", "witness"],
+    "occupation": "MPD mini-patrol officer",
+    "attrs": {
+     "kidnapped_because": "the culprit overheard officers refer to her superior as 'Yumi' and, wanting to reach Yumi, took Miike instead/as bait",
+     "communicated_via": "tapped a code on the floor with her nails while gagged -- four sets of seven taps matching the syllables of 'Twinkle Twinkle Little Star'"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Chiba Kyogo",
+    "aliases": [],
+    "roles": ["victim", "witness"],
+    "occupation": "MPD detective sergeant",
+    "attrs": {
+     "injury": "impaled/skewered by a booby trap set at the culprit's hideout while rescuing Miike",
+     "outcome": "carried himself to Beika University Hospital after handing off the arrest"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Yumi Kitami",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "MPD mini-patrol officer",
+    "attrs": {
+     "intended_target": true,
+     "reason": "mutual karaoke friend of Momosaki and Yagi, both of whom called her 'Yumi' on a phone call the culprit overheard while being questioned"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Higashi Park",
+    "attrs": {"role": "Momosaki's murder scene"}
+   },
+   {
+    "id": "l2",
+    "name": "Karaoke Beika",
+    "attrs": {"role": "where Momosaki, Yagi, and Miike spent the evening before Momosaki's murder"}
+   },
+   {
+    "id": "l3",
+    "name": "Aiko's office building, Second Street, Haido City",
+    "attrs": {"role": "site of Aiko's suicide"}
+   },
+   {
+    "id": "l4",
+    "name": "Planetarium under renovation",
+    "attrs": {"role": "culprit's hideout; where Miike was held and Chiba was injured; site of arrest"}
+   },
+   {
+    "id": "l5",
+    "name": "Beika University Hospital",
+    "attrs": {"role": "where Chiba was taken after his injury"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Bent 100 yen coin",
+    "role": "evidence",
+    "attrs": {
+     "found": "next to Momosaki's body",
+     "significance": "investigators concluded it was placed deliberately by the culprit rather than dropped by chance, but its exact meaning is not resolved in the available transcript (likely explained in the missing episodes 972-973)"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "No-parking road sign",
+    "role": "evidence",
+    "attrs": {
+     "decoding": "the prohibition-circle-with-diagonal-line shape is a stylized 'N' and 'O' (meaning 'no' in English); layered on the sign's blue background ('ao' in Japanese) it reads ao + no = Aono",
+     "chosen_because": "an officer of the Transportation Department, unlike most people, would know the history behind road-sign design"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Park swing set",
+    "role": "evidence",
+    "attrs": {
+     "note": "Momosaki's kicked-into-place, bloody-fingerprinted hand pointed toward this swing set; it stands near the no-parking sign her gesture was ultimately understood to indicate"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Phone number 7155 (Yagi's dying message)",
+    "role": "evidence",
+    "attrs": {
+     "decoding": "reads as Road Traffic Law Article 71, Section 5-5, prohibiting holding or looking at a phone while driving -- the exact violation Aono was cited for"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Aono's phone (with Aiko's last voicemail)",
+    "role": "evidence",
+    "attrs": {
+     "detail": "carries a missed-call/voice-message notification from Aiko that Aono never opened after her death; the message proves she was already trying to stop her own suicide (\"Someone fell! Call an ambulance!\") when she called, meaning Aono's arrest did not cause her death"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Momosaki's swing-set/no-parking-sign gesture and Yagi's '7155' phone-number message are two independently left dying clues that both resolve to the same name, Aono, by two different routes (a sign pun vs. an exact legal-code citation).",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Of the three traffic offenders detained the same day, only Aono had a personal, emotionally charged history with Momosaki and Yagi -- they stopped him mid-emergency, on his way to a suicidal girlfriend -- while Akamine and Shiroyama had no comparable connection to the victims.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "The four sets of seven finger-taps Chiba overheard on the phone match the syllable pattern of 'Twinkle Twinkle Little Star'; cross-referenced with Aono's remodeling job among several renovation sites nearby, this pinpoints the planetarium under renovation as Miike's hostage location.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "romantic_partner"},
+  {"type": "relationship", "from": "p7", "to": "p9", "relation_type": "subordinate_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "knows"},
+  {"type": "relationship", "from": "p6", "to": "p2", "relation_type": "knows"},
+  {"type": "detains", "from": "p2", "to": "p1"},
+  {"type": "detains", "from": "p3", "to": "p1"},
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "revenge (blames her for stopping him while he was rushing to his suicidal girlfriend)"},
+  {"type": "has_motive_against", "from": "p1", "to": "p3", "motive_type": "revenge (blames her for stopping him while he was rushing to his suicidal girlfriend)"},
+  {"type": "has_motive_against", "from": "p1", "to": "p9", "motive_type": "misplaced revenge (overheard Momosaki and Yagi mention a friend named 'Yumi' during his detention and decided to kill her too)"},
+  {"type": "kills", "from": "p1", "to": "p2", "method": "bludgeoning"},
+  {"type": "kills", "from": "p1", "to": "p3", "method": "unspecified in available transcript (episodes 972-973 missing)"},
+  {"type": "kidnaps", "from": "p1", "to": "p7"},
+  {"type": "assaults", "from": "p1", "to": "p7", "detail": "gagged her and threatened to kill her to lure Yumi Kitami"},
+  {"type": "assaults", "from": "p1", "to": "p8", "detail": "impaled/skewered him on a booby trap set at the hideout"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o1"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o3"},
+  {"type": "leaves_evidence", "from": "p3", "to": "o6"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "regarding", "from": "o4", "to": "p4"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o3", "to": "l1"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "o6"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p7"},
+  {"type": "regarding", "from": "c3", "to": "l4"},
+  {"type": "implicates", "from": "c3", "to": "p1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p9", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p8", "to": "l4"},
+  {"type": "was_at", "from": "p8", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l3"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

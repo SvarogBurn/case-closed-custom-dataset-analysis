@@ -1,0 +1,266 @@
+{
+ "case_id": "ep600-601_the_dream_the_kappa_saw",
+ "episode_number": "600-601",
+ "title": "The Dream the Kappa Saw",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Dream_the_Kappa_Saw",
+ "subtitle_source": ["subs_resolved/0600.txt", "subs_resolved/0601.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro, Conan, Ran) and the local Gunma police (Inspector Yamamura) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: murder. Discrepancies found vs. the old lower-fidelity cases/ep600-601 file: (1) the old file's `has_motive_against` motive_type was 'unspecified' -- the transcript gives an explicit motive: Tokubi believed Banzo forced his son Tatsuhiko to disguise as a kappa to attract inn customers and thereby caused his drowning ('the same as if that man had killed him with his own hands'), and this belief is what Tokubi is corrected on at the end -- Araiwa's testimony reveals Tatsuhiko decided to dress as the kappa himself, without his father's order, which the old file omits entirely. (2) Tatsuhiko's death 11 years ago is explicitly ruled an accidental drowning, not a murder -- the old file's event node mislabeled it 'murder case' without distinguishing it from the present-day killing. (3) The old file's two objects ('water and paint bottles', 'basin') collapse several distinct physical props that matter individually as evidence: the colored-ink dropper bottles, the separate squirt/water bottle, the tampered paint set, Tatsuhiko's two shoes (recovered from two different places), Banzo's binoculars, the anagram letter, the riverside memorial, and the painting Tokubi made to fake his innocence -- all now separate object nodes. (4) Names are given family-name-first per the transcript's character cards (Tokubi Rokuro, Araiwa Kazuki, Nohira Bousuke, Numayama Banzo/Tatsuhiko), differing from the old file's given-name-first ordering.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tokubi Rokuro",
+    "aliases": ["Tatezato Mika"],
+    "roles": ["suspect"],
+    "occupation": "painter, former elementary school teacher",
+    "attrs": {
+     "used_fake_name": "wrote to Kogoro under the anagram alias 'Tatezato Mika', which rearranges to 'kappa'",
+     "cover_story": "claimed to be visiting Tatsuhiko's grave to burn incense, as he does every year on the anniversary"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Araiwa Kazuki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "student",
+    "attrs": {
+     "kept_secret": "kept Tatsuhiko's kappa disguise hidden for 11 years at Banzo's request"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Nohira Bousuke",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "reportage writer, former cameraman",
+    "attrs": {
+     "disguise": "mistaken for the 'kappa' -- was crouched in leaf camouflage with film canisters under his coat, taking night photos of the river",
+     "alibi": "on the phone with his editor for over an hour spanning the time of the murder"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Numayama Banzo",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "owner of Koura Inn",
+    "attrs": {
+     "died_of": "drowned in reservoir water inside a basin in his own attic",
+     "daily_ritual": "watched the river every morning through binoculars from the attic since his son's death"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Numayama Tatsuhiko",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "elementary school student",
+    "attrs": {
+     "died_of": "accidental drowning, ruled not a murder -- foot caught between riverbed rocks during a flood",
+     "disguise": "painted his whole body green and loitered by the river as a 'kappa' to attract guests to his father's inn, on his own initiative"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Koura Inn attic",
+    "attrs": {
+     "feature": "window gives an extensive view of the river; where Banzo kept watch and where his body was found"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Riverside grave site",
+    "attrs": {
+     "feature": "where Tatsuhiko drowned 11 years ago and where his classmates later built a memorial"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Hell Swamp reservoir",
+    "attrs": {
+     "location_detail": "polluted, illegal trash-dumping reservoir 10 km downstream where Tatsuhiko's body was found"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Koura Inn guest rooms",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Tokubi's ink bottles",
+    "role": "tool",
+    "attrs": {
+     "count": "9 bottles of 60ml + 16 bottles of 15ml colored ink, about 880ml total",
+     "trick": "stock ink was sucked into the dropper lids and sealed with tape; bottles refilled with reservoir water for transport, then diluted with tap water after the murder to look like ink again"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Squirt water bottle",
+    "role": "tool",
+    "attrs": {
+     "capacity": "100ml",
+     "found": "left empty, rolling on the ground after the crime"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Tatsuhiko's left shoe",
+    "role": "evidence",
+    "attrs": {
+     "found_with": "clutched to Banzo's chest at the murder scene",
+     "stain": "green paint stains on the inside, matching the paint Tatsuhiko was disguised with"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Tatsuhiko's right shoe",
+    "role": "evidence",
+    "attrs": {
+     "found": "caught between riverbed rocks the day he drowned",
+     "location": "buried in the riverside memorial by his classmates"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Tampered paint set",
+    "role": "evidence",
+    "attrs": {
+     "history": "gift from Tokubi to Tatsuhiko years before his death; returned to Tokubi by Banzo afterward",
+     "tampering": "the green paint had been quietly swapped for a different brand -- the detail that tipped off Tokubi"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Attic basin",
+    "role": "weapon",
+    "attrs": {
+     "use": "filled with reservoir water to drown Banzo by submerging his face"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Banzo's binoculars",
+    "role": "instrument",
+    "attrs": {
+     "use": "used every morning to watch the river from the attic"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "'Tatezato Mika' letter",
+    "role": "evidence",
+    "attrs": {
+     "content": "claims an 11-year-old murder was pinned on the sender and asks Kogoro to clear their name",
+     "decoded": "the sender name is an anagram of 'kappa'"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Riverside memorial",
+    "role": "evidence",
+    "attrs": {
+     "built_by": "Tatsuhiko's classmates, in place of his remains",
+     "history": "repeatedly kicked over by Banzo to scare people away from the river, then secretly rebuilt by him at night"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Tokubi's kappa painting",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "painted from the ink bottles, in front of witnesses, to prove the bottles held ordinary colored ink",
+     "staging_flaw": "the squirt/water bottle was never used to dilute the paint, yet the colors came out already thinned -- the dilution had happened earlier, with reservoir water"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Green paint in Tatsuhiko's returned paint set was swapped to a different brand years later, matching fresh green stains inside his exhumed shoe -- proof Banzo altered the evidence after his son's death.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Tokubi's ink and squirt bottles were never used to dilute paint before the picture was drawn, yet the colors came out properly thinned -- the dilution already happened, with reservoir water, before the crime.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "The buried right shoe was caught in rocks the day Tatsuhiko drowned, but the left shoe recovered from Banzo's own hands smelled of the Hell Swamp reservoir 10km downstream -- tying the murder water directly to the site of Tatsuhiko's death.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "teacher_of"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "teacher_of"},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "child_of"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "revenge_for_sons_death (believed Banzo forced Tatsuhiko into the fatal kappa disguise)"},
+
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "uses", "from": "p5", "to": "o5"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "recovers_body_of", "from": "p4", "to": "p5"},
+  {"type": "conceals", "from": "p4", "to": "o3", "circumstance_tags": ["cover_up"]},
+  {"type": "tampers_with", "from": "p4", "to": "o5", "circumstance_tags": ["cover_up"]},
+  {"type": "owns", "from": "p1", "to": "o5"},
+  {"type": "located_in", "from": "o4", "to": "o9"},
+  {"type": "vandalizes", "from": "p4", "to": "o9", "circumstance_tags": ["cover_up", "recurring"]},
+  {"type": "repairs", "from": "p4", "to": "o9"},
+  {"type": "owns", "from": "p4", "to": "o7"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+
+  {"type": "written_by", "from": "o8", "to": "p1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "drags_into_river", "from": "p1", "to": "p2", "circumstance_tags": ["staged_alibi", "diversion"]},
+  {"type": "was_at", "from": "p3", "to": "l2", "circumstance_tags": ["red_herring"]},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+
+  {"type": "hides_contraband_in", "from": "p1", "to": "o1", "circumstance_tags": ["staged_alibi"]},
+  {"type": "hides_contraband_in", "from": "p1", "to": "o2", "circumstance_tags": ["staged_alibi"]},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "drowns", "from": "p1", "to": "p4", "circumstance_tags": ["staged_supernatural", "premeditated"], "method": "submerged Banzo's face in a basin filled with reservoir water carried in disguised ink/paint containers"},
+  {"type": "uses", "from": "p1", "to": "o6"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o1"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o10"},
+
+  {"type": "implicates", "from": "o10", "to": "p1"},
+  {"type": "implicates", "from": "o1", "to": "p1"},
+  {"type": "implicates", "from": "o2", "to": "p1"},
+  {"type": "implicates", "from": "o3", "to": "p4"},
+  {"type": "implicates", "from": "o5", "to": "p4"},
+
+  {"type": "regarding", "from": "cA", "to": "o5"},
+  {"type": "regarding", "from": "cA", "to": "o3"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+
+  {"type": "regarding", "from": "cB", "to": "o1"},
+  {"type": "regarding", "from": "cB", "to": "o2"},
+  {"type": "regarding", "from": "cB", "to": "o10"},
+  {"type": "implicates", "from": "cB", "to": "p1"},
+
+  {"type": "regarding", "from": "cC", "to": "o3"},
+  {"type": "regarding", "from": "cC", "to": "o4"},
+  {"type": "regarding", "from": "cC", "to": "l3"},
+  {"type": "implicates", "from": "cC", "to": "p4"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

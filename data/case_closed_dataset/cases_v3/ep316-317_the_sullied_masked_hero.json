@@ -1,0 +1,436 @@
+{
+ "case_id": "ep316-317_the_sullied_masked_hero",
+ "episode_number": "316-317",
+ "title": "The Sullied Masked Hero",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Sullied_Masked_Hero",
+ "subtitle_source": [
+  "subs_resolved/0316.txt",
+  "subs_resolved/0317.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro, Ran, Megure, Takagi, the Detective Boys) omitted by convention. No `event` node type: every action is a directly typed edge between the entities actually involved. case_type: murder. The old cases/ file had the correct culprit (Ushigome) and a roughly correct one-line motive, so no culprit correction was needed, but it was thin: it collapsed all suspect ties to generic 'knows' edges, had only 1 object node (missing the knife, gloves/jersey, spare jersey, hidden camera, and videotape entirely), had only 2 clue nodes where the transcript actually supports 5 distinct comparative clues (mask design mismatch red herring, doubled mask-strings, hair-vs-fingernail forensic contradiction, behavioral gait/glancing tell, and the inner mask's blood-splotch match), and omitted three named characters who matter to the plot: Kiba-san (the star whose match all four suspects claim to have been watching, giving the alibi structure its shape), Kayama (a minor bystander wrestler whose bloodied, bandaged appearance from an earlier bout is why nobody blinked at Ushigome's own blood-soaked jersey backstage), and Rossi's backstory as Ogami's former opponent (Mascara contra mascara) recruited by Kiba to re-debut as Nega Wolf. Also missing was Ushigome's second motive: he confesses he intended to pin the murder on Ogami specifically (using an old mask already carrying Ogami's hair) to get Ogami discredited/fired and seize the Wolf-Face identity for himself, on top of the revenge motive against Nagase's planned mid-match unmasking and defection to the rival Worldwide Pro Wrestlers promotion.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Hyota Nagase",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "pro wrestler, junior heavyweight title challenger",
+    "attrs": {
+     "died_of": "stab wounds (lungs, chest, abdomen; chest wound struck last and was fatal)",
+     "planned_defection_to": "Worldwide Pro Wrestlers (rival promotion)"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Iwao Ushigome",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "pro wrestler",
+    "attrs": {
+     "career_note": "long-serving but never became a top star",
+     "confessed": true
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Takaharu Ogami",
+    "aliases": ["Wolf-Face"],
+    "roles": ["suspect"],
+    "occupation": "pro wrestler, junior heavyweight champion",
+    "attrs": {
+     "disguise": "secretly Wolf-Face; publicly poses as an ordinary young wrestler and lets fans believe Wolf-Face is Mexican and needs an interpreter",
+     "identity_secret_from": "parents and girlfriend, kept only among Teito Pro Wrestlers staff"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hiroyuki Sakuma",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "pro wrestler",
+    "attrs": {
+     "role_in_scheme": "poses for publicity photos as Wolf-Face to mislead reporters staking out Ogami's identity"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Leonardo Rossi",
+    "aliases": ["Nega Wolf"],
+    "roles": ["suspect"],
+    "occupation": "pro wrestler, next junior heavyweight challenger",
+    "attrs": {
+     "backstory": "lost an unmasking match (Mascara contra mascara) to Ogami and had planned to retire; talked out of it by Kiba and re-debuted in Japan as Nega Wolf"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Kiba",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "pro wrestler, Teito Pro Wrestlers' top star",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Kayama",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "pro wrestler",
+    "attrs": {
+     "condition": "bandaged after a bloody opening bout, mistaken in passing for the bloodied culprit"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Waiting room",
+    "attrs": {
+     "note": "Nagase's private pre-match warm-up room; crime scene; hidden camera secretly installed here by Nichiuri TV"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Staff-only restroom",
+    "attrs": {
+     "access": "authorized personnel only; used to stash the spare Wolf-Face masks"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Foreign wrestlers' locker room",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Stadium arena/stands",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Backstage hallway",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Outer Wolf-Face mask worn by culprit",
+    "role": "evidence",
+    "attrs": {
+     "original_owner": "Ogami",
+     "condition": "an older/debut-era mask from the storage bag, lacking the rear fur tufts of Ogami's current mask",
+     "torn_location": "about ten centimeters below the right eye",
+     "strings_visible_on_video": 4,
+     "hair_inside_matches": "Ogami's scalp and eyebrow hair"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Mealtime mask worn underneath",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "thin under-mask that kept the wearer's own hair/scalp off the inside of the outer mask",
+     "found": "fell from Ushigome's pocket when he stumbled",
+     "blood_location": "red splotches near the right eye, matching the outer mask's tear"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Knife",
+    "role": "weapon",
+    "attrs": {
+     "found_in": "staff-only restroom (l2)"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Bloodstained gloves and jersey",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "staff-only restroom (l2)"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Spare clean jersey",
+    "role": "tool",
+    "attrs": {
+     "purpose": "changed into after the stabbing to walk out unnoticed"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Hidden camera in equipment bag",
+    "role": "instrument",
+    "attrs": {
+     "installed_by": "Nichiuri TV",
+     "purpose": "secretly film Nagase's pre-match expression"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Videotape of the crime",
+    "role": "evidence",
+    "attrs": {
+     "shows": "the stabbing; the masked figure glancing around and stumbling; four mask strings visible on the back"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Video mask lacks the rear fur tufts present on Ogami's current mask -- a mismatch that turns out to be irrelevant, since it's just an older mask from the same storage bag.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The mask on the video shows four strings tied at the back instead of the normal two, revealing a second mask worn stacked underneath.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Hair inside the torn outer mask matches only Ogami, yet the victim's fingernails -- which tore that mask -- show no trace of the wearer's skin.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "The culprit repeatedly glances around and stumbles on the tape, unlike the practiced, unhesitating movement of mask-wearers Ogami, Rossi, and Sakuma.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c5",
+    "desc": "Blood on the inner mealtime mask sits exactly where the outer mask was torn, tying the hidden inner mask to the stabbing.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "body_double_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "resents"
+  },
+  {
+   "type": "plans_to_unmask",
+   "from": "p1",
+   "to": "p3",
+   "attack_plan": "target Ogami's not-fully-healed left knee, or tear his mask off if losing",
+   "intended_outcome": "expose Wolf-Face's identity, get fired, then defect to Worldwide Pro Wrestlers"
+  },
+  {
+   "type": "loses_unmasking_match_to",
+   "from": "p5",
+   "to": "p3",
+   "match_name": "Mascara contra mascara"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p1",
+   "detail": "berates Nagase before the match for disrespecting his seniors and overreaching for the main event"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "sabotage_of_planned_defection_to_rival_promotion"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p3",
+   "motive_type": "frame_up_to_seize_wolf_face_identity"
+  },
+  {
+   "type": "stabs",
+   "from": "p2",
+   "to": "p1",
+   "method": "knife; three wounds to lungs, chest, and abdomen, chest wound struck last and fatal",
+   "circumstance_tags": ["staged_alibi", "frame_up", "caught_on_hidden_camera"]
+  },
+  {
+   "type": "wears",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "wears",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "o7",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "circumstance_tags": ["false_alibi"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l5"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "c5",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c5",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c5",
+   "to": "o2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

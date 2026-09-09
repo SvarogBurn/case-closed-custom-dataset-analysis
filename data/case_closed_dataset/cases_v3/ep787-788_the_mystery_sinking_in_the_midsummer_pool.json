@@ -1,0 +1,234 @@
+{
+ "case_id": "ep787-788_the_mystery_sinking_in_the_midsummer_pool",
+ "episode_number": "787-788",
+ "title": "The Mystery Sinking in the Midsummer Pool",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mystery_Sinking_in_the_Midsummer_Pool",
+ "subtitle_source": ["subs_resolved/0787.txt", "subs_resolved/0788.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Masumi Sera, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: murder. Discrepancies vs. the old cases/ file: (1) the old file's clue c2 and event e1 state the victim Nagami 'herself caused' the hit-and-run that killed the culprit's family -- the transcript instead has Nagami as a passenger in a friend's car ('the friend's car that she was riding on got into a traffic accident'); her culpable act was calling Toyoshima to demand he give her a false alibi placing her in the hotel the whole time, which is what actually revealed her connection to the crash to him. (2) the old file only lists Nagami as a victim node; the transcript makes clear three more people died in that backstory accident -- Toyoshima's younger sister, her husband, and their son who was about to turn three -- none of whom appeared in the old file despite being central to the motive. (3) the old file omits Samaki, Hamaka's rumored-affair red-herring motive and the family relationships (fiance/half-sister/employer) entirely. The culprit identification itself (Ensaku Toyoshima, hotel manager) matches the transcript and is correct."
+ ,
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Nagami Oiso",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "hotel owner's daughter, Oiso Finance heiress",
+    "attrs": {"age": "31"}
+   },
+   {
+    "id": "p2",
+    "name": "Raito Samaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "secretary to President Oiso",
+    "attrs": {"age": "30", "engaged_to": "Nagami Oiso"}
+   },
+   {
+    "id": "p3",
+    "name": "Hamaka Oiso",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "lives at the Oiso residence",
+    "attrs": {"age": "28", "parentage": "daughter of the president's late mistress"}
+   },
+   {
+    "id": "p4",
+    "name": "Ensaku Toyoshima",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "hired hotel manager",
+    "attrs": {"age": "56"}
+   },
+   {
+    "id": "p5",
+    "name": "Toyoshima's younger sister",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {"named_in_transcript": false, "died_of": "car accident while relocating hotels"}
+   },
+   {
+    "id": "p6",
+    "name": "Sister's husband",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {"named_in_transcript": false, "died_of": "car accident while relocating hotels"}
+   },
+   {
+    "id": "p7",
+    "name": "Sister's young son",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {"named_in_transcript": false, "age": "about to turn 3", "died_of": "car accident while relocating hotels"}
+   },
+   {
+    "id": "p8",
+    "name": "President Oiso",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "president of Oiso Finance, hotel owner",
+    "attrs": {"present_on_screen": false}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Hotel pool",
+    "attrs": {"note": "recently renovated"}
+   },
+   {
+    "id": "l2",
+    "name": "Hotel suite room",
+    "attrs": {"feature": "veranda view of fireworks display", "note": "Nagami's favorite room"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Nagami's diamond necklace",
+    "role": "evidence",
+    "attrs": {"function": "her search for it after losing it created the murder opportunity"}
+   },
+   {
+    "id": "o2",
+    "name": "Oxygen tank",
+    "role": "weapon",
+    "attrs": {"owner": "Nagami", "tamper": "mouthpiece torn off to drown her"}
+   },
+   {
+    "id": "o3",
+    "name": "Hip weights",
+    "role": "tool",
+    "attrs": {"owner": "Nagami", "function": "kept her from floating up once submerged"}
+   },
+   {
+    "id": "o4",
+    "name": "Rigged aquarium",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "total internal reflection at the water/air boundary hides an air-filled glass box (and anything inside it) placed underwater",
+     "fate": "dragged with a foot to the pool corner and smashed after the body was revealed, to destroy its identity"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Fishing line (~50m)",
+    "role": "tool",
+    "attrs": {"use": "threaded through drain-grate holes on both sides of the pool to anchor, then free, the submerged aquarium"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The pool bottom held no glass ten minutes before the body surfaced, yet shattered pieces that reassemble into an aquarium shape were found there right after -- proves an object was deliberately introduced and destroyed between those two checks.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The one person whose foot was cut by the shattered aquarium glass is also the one with a reason to want that same glass unidentifiable -- nobody suspects the person the evidence itself injured.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "half_sister_of"},
+  {"type": "relationship", "from": "p1", "to": "p8", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p8", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p2", "to": "p8", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p8", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p6", "to": "p5", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p7", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p7", "to": "p6", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "rumored_affair_with"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p4", "to": "o4"},
+  {"type": "owns", "from": "p4", "to": "o5"},
+
+  {
+   "type": "evicts_from",
+   "from": "p1",
+   "to": "p5",
+   "detail": "kicked Toyoshima's sister's family out of their reserved suite so she could use it herself that night"
+  },
+  {"type": "was_at", "from": "p1", "to": "l2", "temporal_frame": "backstory"},
+
+  {
+   "type": "requests_false_alibi_from",
+   "from": "p1",
+   "to": "p4",
+   "temporal_frame": "backstory",
+   "detail": "called Toyoshima asking him to say she'd been in her hotel room from noon on, unintentionally revealing to him she'd actually been in the friend's car that caused the fatal crash"
+  },
+
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_family_deaths_in_accident_and_alibi_coverup"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "rumored_affair_inheritance_dispute (red herring, resolved as a surprise-birthday-party misunderstanding)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "rumored_affair_inheritance_dispute (red herring, resolved as a surprise-birthday-party misunderstanding)"
+  },
+
+  {
+   "type": "drowns",
+   "from": "p4",
+   "to": "p1",
+   "method": "grabbed her from behind, tore off her oxygen mouthpiece, and held her under",
+   "circumstance_tags": ["locked_room", "staged_disappearance"]
+  },
+  {
+   "type": "disables",
+   "from": "p4",
+   "to": "o2",
+   "detail": "tore off the mouthpiece to drown her"
+  },
+  {
+   "type": "conceals_body_using",
+   "from": "p4",
+   "to": "o4",
+   "circumstance_tags": ["locked_room"]
+  },
+  {
+   "type": "destroys_evidence",
+   "from": "p4",
+   "to": "o4",
+   "circumstance_tags": ["cover_up"]
+  },
+  {"type": "leaves_evidence", "from": "p4", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p4"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+
+  {"type": "regarding", "from": "cA", "to": "o4"},
+  {"type": "regarding", "from": "cA", "to": "l1"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+  {"type": "regarding", "from": "cB", "to": "o4"},
+  {"type": "implicates", "from": "cB", "to": "p4"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

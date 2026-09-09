@@ -1,0 +1,510 @@
+{
+ "case_id": "ep661-662_kogoro-san_is_a_good_man",
+ "episode_number": "661-662",
+ "title": "Kogoro-san is a Good Man",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Kogoro-san_is_a_Good_Man",
+ "subtitle_source": [
+  "subs_resolved/0661.txt",
+  "subs_resolved/0662.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, the real Kogoro Mouri, Ran, and the police officers who appear only in procedural capacity) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file had the culprit right (Junji Hyodo) but left the motive as 'unspecified (not stated in the available source excerpt)' -- the full transcript states it plainly: Denkawa found Hyodo's drug-courier stash and blackmailed him for half his earnings, which is why Hyodo killed him. The old file also collapsed the alibi mechanism into two generic objects and one event; the actual trick uses two electric fans, a rigged original remote, a spare universal remote, a newspaper flyer, an alarm clock, and Hyodo's own hair tie, each doing distinct mechanical work (first fan+remote fakes zapping by pointing at the TV; second fan's timer blows away the flyer blocking the remote's infrared beam, which is what makes the TV appear to switch off in response to the neighbors' complaint). The 'Kogoro-san is a good man' A-plot (Ryohei Onda impersonating Kogoro Mouri for his old teacher Takae Kiritani, mistakenly believing/claiming her granddaughter was his girlfriend) is included with its own person nodes since it is the episode's title plot and is what puts a non-detective civilian in the role of solving the case on Conan's fed answers -- it does not intersect the murder mechanism itself. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Gensuke Denkawa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "construction worker",
+    "attrs": {
+     "residency": "lived in the apartment building over 10 years",
+     "died_of": "throat slit with a kitchen knife",
+     "reputation": "quarrelsome neighbor, prior conflicts with other tenants"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Junji Hyodo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "apartment resident; secret drug courier",
+    "attrs": {
+     "age": 28,
+     "secret_job": "courier for a drug smuggling syndicate"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kumi Ban'nai",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "apartment resident",
+    "attrs": {
+     "age": 22,
+     "handedness": "right-handed"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Ken Ishigame",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "apartment resident",
+    "attrs": {
+     "age": 64,
+     "harassment_history": "Denkawa broke down his door twice, taped it shut from outside, and broke his window in retaliation for a baseball thrown by Kiritani's grandson"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Takae Kiritani",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "apartment landlady; former primary school teacher",
+    "attrs": {
+     "age": 70,
+     "husband_died": "last year",
+     "became_landlady": "took over officially 10 years ago, after helping her husband run it",
+     "habit": "speaks loudly, a carryover from her teaching days"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Ryohei Onda",
+    "aliases": [],
+    "roles": ["bystander", "backstory_figure"],
+    "occupation": "university student",
+    "attrs": {
+     "age": 21,
+     "impersonates": "the real Kogoro Mouri (recurring-cast node, omitted), to visit Kiritani",
+     "real_relation": "was one of Kiritani's primary school students",
+     "started_impersonating": "3 months ago, after hearing about her troubles at a high school reunion",
+     "false_cover_story": "claimed to be the boyfriend of Kiritani's granddaughter"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kiritani's husband",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "former apartment landlord",
+    "attrs": {
+     "status": "deceased, died last year"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Kiritani's granddaughter",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "status": "married with a child; not a university student -- contradicts Onda's cover story"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Kiritani's grandson",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "incident": "broke Denkawa's window with a baseball on an earlier visit, starting the feud with Ishigame's household"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Denkawa's apartment room",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Kiritani's apartment",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Hot spring inn, Izu",
+    "attrs": {
+     "role": "alibi location for Ban'nai, Ishigame, and Hyodo the night of the murder"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Kitchen knife",
+    "role": "weapon",
+    "attrs": {
+     "found": "in the victim's hand, staged to suggest suicide"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Room key",
+    "role": "evidence",
+    "attrs": {
+     "found_position": "on top of already-dried blood near the body",
+     "anomaly": "the key was still warm to the touch, meaning it had recently been held in someone's palm, not lying there since the death",
+     "purpose": "thrown next to the body to fake a sealed/locked room"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Electric fan (rigged, first)",
+    "role": "tool",
+    "attrs": {
+     "trick": "carried the rigged remote and rotated to point it at the TV, faking channel zapping",
+     "side_effect": "kept rotating after the TV trick ended and pointed toward Kiritani's apartment"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Electric fan (timer, second)",
+    "role": "tool",
+    "attrs": {
+     "trick": "set on a delayed timer to blow away the newspaper flyer blocking the remote's infrared beam, causing the TV to appear to switch off"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Denkawa's original TV remote",
+    "role": "instrument",
+    "attrs": {
+     "rigging": "power/channel button held down with a clothes peg, taped/plastered onto fan o3, aimed at the TV",
+     "bloodstain": "blood found on it, spread/smeared -- from being handled near the throat-slitting"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Newspaper flyer",
+    "role": "tool",
+    "attrs": {
+     "trick": "placed in front of the rigged remote to block its infrared signal until blown away by fan o4",
+     "found": "ended up on the futon/bed after being blown away"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Spare universal TV remote",
+    "role": "object",
+    "attrs": {
+     "backstory": "Denkawa bought this after losing his original remote, then later found the original again",
+     "found": "buried under a pile of books on his desk",
+     "role_in_case": "the extra remote is what first tipped Conan off that something was staged"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Alarm clock",
+    "role": "tool",
+    "attrs": {
+     "trick": "set to ring loudly at the exact time the three neighbors would return from the hot spring, prompting them to break down the door and 'discover' the body"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Hyodo's hair tie",
+    "role": "evidence",
+    "attrs": {
+     "use": "used to help secure part of the rigged mechanism while setting the trick, then immediately re-tied into his hair to hide it",
+     "bloodstain": "carries blood spatter matching the throat-slitting, proving it was on his hand/wrist during the killing"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Case of drugs",
+    "role": "contraband",
+    "attrs": {
+     "owner": "Hyodo's smuggling stash",
+     "discovery": "found by Denkawa after Denkawa broke into Hyodo's room over a noise complaint"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Blood spatter pattern on the rigged remote matches the spatter on Hyodo's hair tie, proving both were on his hand during the killing, not just near the fan afterward.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p7",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p5",
+   "relation_type": "grandchild_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p9",
+   "to": "p5",
+   "relation_type": "grandchild_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p5",
+   "relation_type": "former_student_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p8",
+   "relation_type": "falsely_claimed_boyfriend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "feuds_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "neighbor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "neighbor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "neighbor_of"
+  },
+  {
+   "type": "damages_property_of",
+   "from": "p9",
+   "to": "p1",
+   "detail": "broke Denkawa's window with a baseball"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "discovers",
+   "from": "p1",
+   "to": "o10",
+   "detail": "found Hyodo's drug case after breaking into his room over a noise complaint"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o10"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p2",
+   "detail": "demanded half of Hyodo's drug-courier earnings in exchange for not going to the police"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "silencing_blackmailer"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "housing_dispute (red herring, wanted him out of the building)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "housing_dispute (red herring, years of harassment and property damage)"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o7"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o9"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "got him drunk, then slit his throat with a kitchen knife about an hour before leaving for the hot spring",
+   "circumstance_tags": ["locked_room", "staged_suicide", "staged_alibi", "timed_mechanism"]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": ["staged_suicide"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o6"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o8"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o2",
+   "circumstance_tags": ["locked_room"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o9"
+  },
+  {
+   "type": "interferes_with",
+   "from": "o5",
+   "to": "l2",
+   "detail": "same brand of remote as Kiritani's TV; the still-rotating fan pointed it at her building next door, making her TV appear to zap on its own"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o9",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o9"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

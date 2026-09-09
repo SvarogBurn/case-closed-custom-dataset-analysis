@@ -1,0 +1,343 @@
+{
+ "case_id": "ep328_the_birthday_wine_mystery",
+ "episode_number": "328",
+ "title": "The Birthday Wine Mystery",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Birthday_Wine_Mystery",
+ "subtitle_source": ["subs_resolved/0328.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Officer Takagi, forensic tech) omitted by convention -- only the 4 civilian college-friend circle are plot-relevant persons. case_type: attempted_murder (Keiko collapses and is taken away by ambulance; the transcript never confirms a death, so `kills` was not used for the poisoning edge -- `poisons` was used instead). The old lower-fidelity case file (cases/ep328_the_birthday_wine_mystery.json) had the culprit right (Togashi, s2/here p2) but described the density trick as 'gum syrup' -- the transcript actually names it a 'sweetener' packet (like sweetener sinking in iced coffee), so that detail was corrected. The old file also collapsed the glass hand-off into a flat 'was_at' snapshot; the transcript actually specifies an exact chain (Togashi's glass -> Kojima -> Nonaka -> Keiko), which is now direct typed edges. No `event` nodes: every action is a directly typed edge between the entities involved.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yuki Kojima",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "college student, Ran's senpai",
+    "attrs": {
+     "role_in_party": "hosts the birthday party for Keiko at her own home"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Junji Togashi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "college student",
+    "attrs": {
+     "backstory": "dated Keiko for two years and went into debt buying her expensive gifts before she left him for Nonaka",
+     "trick": "seeded his own wine glass with a dissolved sweetener layer, poured poison on top so it stayed unmixed at the bottom, sipped safely from the top, then staged a spill to swap glasses with Keiko"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kasuki Nonaka",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "college student",
+    "attrs": {
+     "role_in_party": "Keiko's current boyfriend, gave her the birthday wine bottle",
+     "framed": "poison bottle secretly planted in his bag to redirect suspicion onto him"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Keiko Sawaguchi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "student, about to study abroad in America",
+    "attrs": {
+     "occasion": "turning 20; party held the night before she leaves for the US",
+     "outcome": "collapses after drinking poisoned wine; ambulance called"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kojima household",
+    "attrs": {
+     "detail": "site of the birthday dinner party"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "German wine bottle",
+    "role": "instrument",
+    "attrs": {
+     "origin": "bought by Nonaka in Germany as Keiko's birthday present, cost split with Togashi",
+     "tested_clean": "no poison found in the bottle or in the other three glasses"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Togashi's wine glass",
+    "role": "weapon",
+    "attrs": {
+     "trick": "sweetener layered at the bottom before pouring; poison mixed into the sweetener layer so it stays separated from the wine on top",
+     "hand_off_chain": "Togashi sipped safely from the top, then staged a wine spill and swapped glasses so Keiko received this glass"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Poison bottle",
+    "role": "contraband",
+    "attrs": {
+     "found_in": "planted inside Nonaka's bag",
+     "fingerprints": "none on the sides (wiped); Conan's own prints found on the bottom from having handled it earlier",
+     "chemical_match": "same poison compound as the residue in Keiko's glass"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Empty sweetener packet",
+    "role": "tool",
+    "attrs": {
+     "found_by": "Conan, in a basket in the kitchen"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Broken kitchen chair",
+    "role": "tool",
+    "attrs": {
+     "detail": "Togashi deliberately sat in the pre-broken chair so its wobble would look like an accident when he staged the wine spill"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Four fingerprint sets on Keiko's glass (Togashi, Kojima, Nonaka, none matching Keiko) trace the hand-off order and prove the glass was originally Togashi's, not freshly hers.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Chemical analysis: the poison residue in Keiko's glass and the substance in the bottle planted on Nonaka give the exact same reaction -- same poison batch.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Behavioral contrast: everyone who saw Keiko collapse got shaken, but Togashi -- who drank from the same glass moments earlier -- calmly said 'I feel fine,' an oddly confident reaction if he genuinely believed he might be poisoned too.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "The planted bottle has no fingerprints on its sides (deliberately wiped) but does have Conan's prints on the bottom from when he'd earlier tucked it back into Togashi's own bag -- proving the bottle started in Togashi's bag and was moved into Nonaka's, not the reverse.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "ex_partner_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "dating"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "gives",
+   "from": "p3",
+   "to": "p4",
+   "regarding_object": "o1"
+  },
+  {
+   "type": "poisons",
+   "from": "p2",
+   "to": "p4",
+   "circumstance_tags": ["staged_accident", "misdirection"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5",
+   "circumstance_tags": ["staged_accident"]
+  },
+  {
+   "type": "passes_glass_to",
+   "from": "p2",
+   "to": "p1"
+  },
+  {
+   "type": "passes_glass_to",
+   "from": "p1",
+   "to": "p3"
+  },
+  {
+   "type": "passes_glass_to",
+   "from": "p3",
+   "to": "p4"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "plants_evidence_on",
+   "from": "p2",
+   "to": "p3",
+   "circumstance_tags": ["cover_up", "framed"]
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p4",
+   "motive_type": "jilted_ex_revenge (forced into gift debt, then left for Nonaka)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

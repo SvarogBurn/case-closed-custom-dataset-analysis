@@ -1,0 +1,222 @@
+{
+ "case_id": "ep226-227_the_battle_game_trap",
+ "episode_number": "226-227",
+ "title": "The Battle Game Trap",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Battle_Game_Trap",
+ "subtitle_source": ["subs_resolved/0226.txt", "subs_resolved/0227.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Kogoro Mouri (absent this episode), Inspector Megure, Officer Takagi) omitted by convention -- Sonoko and Conan perform the deduction/reenactment on-screen but are structural cast, not case-specific figures. Jodie Saintemillion is kept as a full person node because she is a named suspect central to this case's opportunity/alibi puzzle (and the episode's coda hints at her undercover identity), unlike the omitted recurring quartet. The old wiki-derived case file (cases/ep226-227_the_battle_game_trap.json) got the culprit (Shimizu Takayasu) and rough motive direction right, but its motive_type ('financially burdened the culprit's sister who worked to pay it off') undersells the actual transcript stakes -- the sister was going blind from vitamin-A-deficiency malnutrition after starving herself for a month to pay Bito's gambling debts, and Shimizu's crime followed directly from losing a wagered 'final game' in which Bito promised to leave her alone if beaten fairly. The old file also collapsed everything into generic 'knows' edges and a single vague murder event, omitted Jodie, Dejima, and Emori's individual backstories/motives entirely, and did not capture the character-swap/forced-draw mechanic, the coin-count evidence, or the ash-tray-sourced weapon materials that explain why the culprit's own signature gum brand didn't match the weapon. No discrepancy in murderer identity was found -- Shimizu Takayasu is confirmed as the culprit by the transcript as well. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kengo Bito",
+    "aliases": ["Bitou Kengo"],
+    "roles": ["victim"],
+    "occupation": "unemployed",
+    "attrs": {
+     "age": 21,
+     "reputation": "well known at the arcade for bad behavior and taunting weaker players",
+     "gang_affiliation": "recently joined a gang",
+     "gambling": "habitual gambler, deep in debt",
+     "arcade_persona": "local fighting-game champion, plays as Haido Lucas or is challenged as Beika Caesar's rival",
+     "ultimatum_to_shimizu": "promised he would leave Shimizu's sister alone if Shimizu beat him in one final match"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Jodie Saintemillion",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Teitan High School English teacher",
+    "attrs": {
+     "age": 28,
+     "nationality": "American",
+     "secret": "secretly an avid arcade gamer; hides this from the school for fear of losing her job",
+     "alibi": "was playing a racing game at a console positioned such that she could not physically reach Bito's machine; confirmed still absorbed in the race (and setting a new high score) at the exact moment everyone rushed to the body",
+     "note": "coda scene implies she is investigating a target under the codename exchange 'Rotten Apple', hinting at a hidden agent identity beyond her cover as a teacher"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hitoshi Dejima",
+    "aliases": ["Hotoshi Dejima"],
+    "roles": ["suspect", "bystander"],
+    "occupation": "arcade store employee",
+    "attrs": {
+     "age": 22,
+     "backstory": "was known six months ago as the best gamer in Beika until he lost a major match to Bito, then disappeared, changed his hairstyle, and quietly started working at the arcade",
+     "opportunity": "collected coins from Bito's machine just before the match began",
+     "unwitting_role": "the murder weapon became stuck to the sole of his shoe after he stepped on it, and he carried it around the arcade for the rest of the investigation without knowing"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Toshitsugu Emori",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "taxi driver",
+    "attrs": {
+     "age": 41,
+     "backstory": "recently joined a gang and developed a more aggressive attitude",
+     "grievance": "Bito publicly mocked his driving in front of other arcade patrons, telling them 'if you wanna live, stay out of this guy's taxi'",
+     "cleared_by": "stood on Bito's left side during the match, but the poison entered Bito's right arm"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Takayasu Shimizu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "game journalist / writer",
+    "attrs": {
+     "age": 30,
+     "arcade_persona": "Bito's regular rival, always plays as Haido Lucas against Bito's Beika Caesar",
+     "signature_habit": "chews a specific lucky gum before matches, well known enough to have been featured in a gaming magazine",
+     "confession": "regretted killing Bito, realizing that with Beika Caesar (Bito) gone he will never get to beat him in a fair match"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Shimizu's sister",
+    "aliases": ["Imoto-san (subtitle mistranslation of \\\"imouto\\\", i.e. 'younger sister', treated as a name)"],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "condition": "losing her eyesight due to vitamin A deficiency from malnutrition",
+     "cause": "worked an entire month with almost no food to pay off Bito's gambling debts",
+     "relationship_to_victim": "girlfriend, living together with Bito",
+     "loyalty": "did not leave Bito even after he joined a gang"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Arcade Center (game center)",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Arcade Center restroom",
+    "attrs": {
+     "inferred_use": "where Shimizu is deduced to have assembled the poisoned needle into the cigarette/gum/wrapper package before the match"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned needle hidden inside a cigarette, packaged with chewing gum and a gum wrapper",
+    "role": "weapon",
+    "attrs": {
+     "poison": "tetrodotoxin (TTX)",
+     "lethality": "as little as 0.5-1 mg can be fatal; if ingested it works slowly through the bloodstream, but direct injection causes near-instant paralysis and death",
+     "injection_site": "right upper arm",
+     "construction": "a needle hidden inside a cigarette, held together with chewing gum, the whole assembly stuck to a gum wrapper so it could be dropped, stepped on, and picked back up without leaving the discarder's own fingerprints",
+     "disposal_method": "planted on the arcade floor near Bito's seat under cover of retrieving a dropped lighter; later stuck to the sole of Dejima's shoe when he stepped on it, producing a faint metal-scratching sound as he walked afterward",
+     "materials_origin": "cigarette, gum, and wrapper scavenged from a public ashtray rather than being Shimizu's own brand, so nothing could be brand- or fingerprint-matched back to him directly"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Third 100-yen coin found in Bito's arcade machine coin box",
+    "role": "evidence",
+    "attrs": {
+     "expected_count": "two coins (Bito's own insertion, plus one from the police's later reenactment)",
+     "found_count": "three coins",
+     "significance": "the extra coin proves someone besides Bito inserted a coin into his machine to restart/continue play as his character during the murder",
+     "fingerprint_match": "Shimizu Takayasu -- he had no chance to wipe or glove it since he did not know the coins would later be collected and counted"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "\"Great Fighter Spirit\" virtual-reality fighting game console (Beika Caesar side, Bito's machine)",
+    "role": "instrument",
+    "attrs": {
+     "mechanism": "players wear headgear and are strapped in with a chest guard; force-feedback makes the player's own body flinch and move when their character is hit, simulating real combat",
+     "flaw_exploited": "the game displays no on-screen hit-point gauge, so spectators can only judge who's winning by watching the players' bodies -- making it possible to disguise which physical person is really controlling which character",
+     "match_result": "ended in a Draw rather than a clean win for Beika Caesar"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Shimizu's own signature lucky chewing gum",
+    "role": "evidence",
+    "attrs": {
+     "reputation": "Shimizu's well-known pre-match good-luck habit, prominent enough to have been featured in a gaming magazine",
+     "role_in_crime": "used as a decoy -- by visibly chewing his own signature gum in front of the police right after the murder, his habitual gum-chewing looked unrelated to the different-brand gum used to disguise the murder weapon"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The match ended in a Draw instead of a clean win for Beika Caesar (Bito's character), even though Haido Lucas (Shimizu's character) was on the verge of being knocked out and time was nearly up -- a real winning blow would have triggered a 'You Lose' screen on Bito's own console, exposing that he wasn't the one actually playing. The culprit deliberately withheld the finishing hit to avoid that reveal.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cB",
+    "desc": "Bito's arcade machine's coin box held one 100-yen coin more than the number of legitimate insertions (Bito's own coin, plus the one used in the police's later reenactment) -- proving a third, uncounted-for person inserted a coin into that specific machine during the murder window, and that coin carries Shimizu's fingerprints.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "The cigarette and gum used to wrap the murder weapon were a different brand from Shimizu's own well-known signature lucky gum -- not proof of innocence, but evidence he deliberately used items scavenged from a public ashtray so the weapon couldn't be brand- or fingerprint-matched to him, while continuing to chew his own real gum in front of the police to make his habit look unrelated to the crime.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "romantic_partner_of"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "revenge_to_protect_sister"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "humiliation_over_past_defeat (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "public_insult_to_his_driving (red herring)"},
+
+  {"type": "challenges", "from": "p5", "to": "p1", "order": 0, "temporal_frame": "backstory", "detail": "wager: if Shimizu beats Bito fairly in one final match, Bito will leave Shimizu's sister alone"},
+  {"type": "insults", "from": "p1", "to": "p4", "order": 0, "temporal_frame": "backstory", "circumstance_tags": ["red_herring"], "detail": "publicly mocked Emori's taxi driving in front of other patrons"},
+  {"type": "loses_match_to", "from": "p3", "to": "p1", "order": 0, "temporal_frame": "backstory", "detail": "Dejima, formerly the best gamer in Beika, lost a major match to Bito roughly six months earlier and disappeared/changed his look afterward"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 1, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p5", "to": "l2", "order": 2, "temporal_frame": "present", "circumstance_tags": ["inferred_by_deduction"], "detail": "inferred to have assembled the poison-cigarette weapon here before the match"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 3, "temporal_frame": "present", "detail": "takes his seat in the Beika Caesar game chair"},
+  {"type": "collects_coins_from", "from": "p3", "to": "o3", "order": 4, "temporal_frame": "present", "circumstance_tags": ["red_herring"], "detail": "routine coin collection from Bito's machine, gives him a plausible-looking opportunity in the eyes of police"},
+
+  {"type": "poisons", "from": "p5", "to": "p1", "order": 5, "temporal_frame": "present", "method": "pricked Bito under the right arm with the tetrodotoxin-laced needle while pretending to discuss battle strategy", "circumstance_tags": ["locked_room", "staged_alibi", "hidden_weapon"]},
+  {"type": "kills", "from": "p5", "to": "p1", "order": 5, "temporal_frame": "present", "method": "tetrodotoxin poisoning causing near-instant paralysis and death", "circumstance_tags": ["locked_room", "staged_alibi"]},
+  {"type": "disposes_of", "from": "p5", "to": "o1", "order": 5, "temporal_frame": "present", "detail": "dropped/planted the needle-in-cigarette-in-gum-wrapper package on the floor near Bito's seat, disguised as retrieving a dropped lighter, handling it only by the wrapper so as to leave no fingerprints"},
+
+  {"type": "unknowingly_carries", "from": "p3", "to": "o1", "order": 6, "temporal_frame": "present", "circumstance_tags": ["red_herring", "unwitting"], "detail": "the planted weapon stuck to the sole of his shoe when he stepped on it, producing the faint metal-scratching sound Conan later traces"},
+
+  {"type": "plays_as_avatar_of", "from": "p5", "to": "p1", "order": 7, "temporal_frame": "present", "circumstance_tags": ["locked_room", "staged_alibi", "character_swap"], "detail": "ran to Bito's own console, inserted an extra coin, and selected Bito's usual character Beika Caesar so the match could proceed with Bito's paralyzed body strapped into the chair (chest guard holding him upright, force-feedback twitching his limbs when 'hit') while Shimizu covertly controlled both fighters from his own seat as Haido Lucas"},
+  {"type": "inserts_coin_into", "from": "p5", "to": "o3", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 7, "temporal_frame": "present", "detail": "positioned on Bito's left side during the match"},
+
+  {"type": "forces_draw", "from": "p5", "to": "o3", "order": 8, "temporal_frame": "present", "circumstance_tags": ["staged_alibi", "avoids_detection"], "detail": "deliberately withheld the finishing blow because a clean win would trigger a 'You Lose' screen on Bito's console, exposing the character swap; let the match clock run out for a Draw instead"},
+
+  {"type": "regarding", "from": "cA", "to": "o3"},
+  {"type": "regarding", "from": "cA", "to": "p5"},
+  {"type": "implicates", "from": "cA", "to": "p5"},
+
+  {"type": "regarding", "from": "cB", "to": "o2"},
+  {"type": "implicates", "from": "cB", "to": "p5"},
+
+  {"type": "regarding", "from": "cC", "to": "o1"},
+  {"type": "regarding", "from": "cC", "to": "o4"},
+  {"type": "implicates", "from": "cC", "to": "p5"},
+
+  {"type": "owns", "from": "p5", "to": "o4"},
+  {"type": "implicates", "from": "o1", "to": "p5"},
+  {"type": "implicates", "from": "o2", "to": "p5"}
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

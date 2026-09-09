@@ -1,0 +1,202 @@
+{
+ "case_id": "ep789_the_queens_weather_forecast",
+ "episode_number": "789",
+ "title": "The Queen's Weather Forecast",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Queen%27s_Weather_Forecast",
+ "subtitle_source": ["subs_resolved/0789.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Kogoro Mouri, Ran, Conan, Officer Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Discrepancy vs. old cases/ep789 file: the old file names Hiroko Shinohara (s3) as murderer_id. The transcript does not support this -- Shinohara only rigged a harmless tinsel-and-balloon scare trap near a rose-thorn prop, and Kogoro explicitly rules out that this could have caused a fatal fall on its own. The actual killer is producer Yukio Kodama, who was being blackmailed by Yasumi over embezzled production funds: he secretly told Yasumi about Shinohara's prank in advance (so she would walk toward it unafraid and stand near the railing 'for safety'), then remotely fired a carbon-dioxide fog machine at her from close range, blinding her so she staggered backward through a railing he had pre-loosened. He is unmasked via (1) brown shoe-polish cream, still wet from the day's drizzle, transferred onto the fog machine when he repositioned its nozzle afterward, (2) the wireless remote for the machine found on his person, and (3) Yasumi's own dying message -- a weather symbol for snow scratched in blood, pointing at the 'yuki' (snow) in Yukio's name. case_type: murder (charged as accidental death until Kogoro's deduction).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yasumi Sekine",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "TV weather forecaster",
+    "attrs": {
+     "age": 27,
+     "nickname": "weather forecast queen",
+     "died_of": "fall from the studio set railing to the floor below"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yukio Kodama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "TV program producer",
+    "attrs": {
+     "age": 49,
+     "secret": "embezzled money from the program's production budget"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Takuya Yamaguchi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Yasumi's manager",
+    "attrs": {
+     "age": 35,
+     "alibi": "claims he dozed off overnight while guarding the set"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hiroko Shinohara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "assistant director",
+    "attrs": {
+     "age": 28,
+     "confessed_to": "rigging a scare-only tinsel-and-balloon trap out of spite",
+     "cleared_of": "murder -- her trap alone could not have caused the fatal fall"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Nichiuri TV Station studio set",
+    "attrs": {
+     "features": "outdoor-look stage with railing, rose-thorn prop, fog machine",
+     "building_note": "scheduled for demolition next year due to age"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Company kitchenette",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Tinsel-and-balloon scare trap",
+    "role": "tool",
+    "attrs": {
+     "intent": "startle Yasumi only, not injure her",
+     "positioned_near": "rose-thorn prop"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Masking tape on the tinsel",
+    "role": "evidence",
+    "attrs": {
+     "match": "matches a roll of tape Shinohara owns"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Carbon-dioxide fog machine",
+    "role": "weapon",
+    "attrs": {
+     "output": "set to maximum",
+     "control": "wireless remote",
+     "note": "nozzle repositioned toward the railing, then turned back after the crime"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Loosened stage railing",
+    "role": "weapon",
+    "attrs": {
+     "rigged": true,
+     "cover_story": "blamed on age-related deterioration of the building"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Fog machine's wireless remote",
+    "role": "tool",
+    "attrs": {
+     "found_on": "Kodama, hidden on his person"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Yasumi's hairpin decoration",
+    "role": "evidence",
+    "attrs": {
+     "found": "blown across the room to the far wall",
+     "indicates": "direction of the gas blast, from her left"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Blood-scratched snow symbol",
+    "role": "evidence",
+    "attrs": {
+     "written_in": "Yasumi's own blood",
+     "meaning": "the standard weather-chart symbol for snow"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Brown shoe-polish cream, still wet from that day's drizzle and humidity, found on the fog machine's nozzle matches the cream on Kodama's freshly polished brown shoes -- proof he touched the machine after the crime.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Only the left side of Yasumi's hair was disheveled and her hairpin flew all the way to the far wall -- both point to a gas blast from her left side, toward where the loosened railing was.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Yasumi told Kogoro she would not check the stage before her break, yet she went and checked it anyway and set off the trap -- meaning someone had told her about the trap beforehand.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "The dying message is the weather symbol for snow ('yuki'); of the three suspects, only Yukio Kodama has 'yuki' (snow) in his name.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "manager_of"},
+  {"type": "blackmails", "from": "p1", "to": "p2", "detail": "threatened to expose his embezzlement unless given new programs and production money"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "silence_a_blackmailer"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "resentment_at_being_belittled (red herring)"},
+  {"type": "owns", "from": "p4", "to": "o1"},
+  {"type": "owns", "from": "p4", "to": "o2"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "implicates", "from": "o2", "to": "p4"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "manipulates", "from": "p2", "to": "p1", "detail": "secretly warned her about Shinohara's balloon trap and told her standing near the railing would keep her safe", "circumstance_tags": ["manipulation", "staged_accident"]},
+  {"type": "rigs", "from": "p2", "to": "o4", "circumstance_tags": ["staged_accident", "cover_up"]},
+  {"type": "owns", "from": "p2", "to": "o5"},
+  {"type": "operates_remotely", "from": "p2", "to": "o3", "detail": "fired maximum-output CO2 fog at Yasumi using the wireless remote"},
+  {"type": "located_in", "from": "o3", "to": "l1"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "gasses", "from": "p2", "to": "p1", "detail": "blasted her with carbon-dioxide fog from close range on her left side, blinding her"},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "blinded her with the fog machine so she staggered backward through the pre-loosened railing and fell", "circumstance_tags": ["staged_accident", "cover_up", "red_herring_exploited"]},
+  {"type": "leaves_evidence", "from": "p1", "to": "o7"},
+  {"type": "written_by", "from": "o7", "to": "p1"},
+  {"type": "implicates", "from": "o7", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o6"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "p1"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+  {"type": "regarding", "from": "c4", "to": "o7"},
+  {"type": "implicates", "from": "c4", "to": "p2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

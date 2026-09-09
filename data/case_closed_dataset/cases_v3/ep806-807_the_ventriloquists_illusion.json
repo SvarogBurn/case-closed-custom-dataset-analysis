@@ -1,0 +1,303 @@
+{
+ "case_id": "ep806-807_the_ventriloquists_illusion",
+ "episode_number": "806-807",
+ "title": "The Ventriloquist's Illusion",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Ventriloquist%27s_Illusion",
+ "subtitle_source": ["subs_resolved/0806.txt", "subs_resolved/0807.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro, Ran, Conan, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file correctly identified Riichi Tengan as the murderer and Kazuko/Togawa as victim/framed suspect -- confirmed against the full transcript. Two corrections made to the old file's object modeling: (1) the old file's 'stolen speakers and recorder' and 'bloodstained glasses' were described as merely 'planted,' but the transcript shows Tengan actively stole both from Togawa about a week beforehand specifically to engineer the frame -- modeled here with explicit `steals` edges. (2) The old file's o4 ('bloodstained gloves, hidden inside his ventriloquist doll') is not quite what the transcript shows: Tengan destroyed the real gloves after his acquittal, and the gloves Officer Takagi produces during the final confrontation are explicitly called fake by Kogoro (a bluff to provoke a reaction) -- the real physical evidence that breaks the case is faint trace fiber/blood/sweat-DNA left inside the doll itself, which the old file's clue descriptions (c1, c2) actually already captured correctly even though its object list did not. Modeled here as a single `doll` object carrying that trace evidence, rather than a separate 'gloves' object. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Riichi Tengan",
+    "aliases": ["Partner (doll voice)"],
+    "roles": ["suspect"],
+    "occupation": "ventriloquist",
+    "attrs": {
+     "age": 40,
+     "title": "recent winner of a long-sought international ventriloquism tournament",
+     "feigned_disorder": "faked dissociative identity disorder, using his own doll voice, to build an insanity defense before the murder"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kazuko Tengan",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": null,
+    "attrs": {
+     "age": 35,
+     "relation_to_p1": "wife"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Haruomi Togawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Tengan's apprentice and manager",
+    "attrs": {
+     "age": 28,
+     "found_body": true,
+     "arrest_warrant_requested": true
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Theater dressing room",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Tengan's condo living room",
+    "attrs": {"role": "murder scene"}
+   },
+   {
+    "id": "l3",
+    "name": "Police interrogation room",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Bar, final confrontation",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "International trophy",
+    "role": "weapon",
+    "attrs": {
+     "normal_position": "back of the sideboard",
+     "staged_position": "moved to the front before the murder",
+     "significance": "Tengan's prize from his long-sought international tournament win; only his fingerprints found on it",
+     "staging_flaw": "dust outline on the sideboard didn't match its new position"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Stolen recorder & speakers",
+    "role": "evidence",
+    "attrs": {
+     "trick": "wireless speakers hidden in the condo, recorder set on a timer to auto-play 'partner' voice lines and simulate possession",
+     "stolen_from": "Togawa, about a week before the murder",
+     "found_at": "set up inside Tengan's own condo living room"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Togawa's glasses",
+    "role": "evidence",
+    "attrs": {
+     "condition": "splattered with the victim's blood, hidden under the lining of Togawa's bag",
+     "trace": "a thread fiber caught on the hinge between the temple and the frame, later matched to a glove"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Ventriloquist doll \"Partner\"",
+    "role": "instrument",
+    "attrs": {
+     "trace_evidence": "faint fiber matching the glasses' thread, the victim's blood, and sweat DNA (not Togawa's) all found inside",
+     "significance": "Tengan's decades-long stage partner, present since his international tournament win; the one thing he never thought to destroy"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Dust outline on the sideboard doesn't match the trophy's actual position in crime-scene photos -- it was moved there deliberately before the murder, proving premeditation rather than a spontaneous grab of whatever weapon was nearby.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The glove-thread fiber snagged on Togawa's glasses matches a fiber found inside Tengan's doll, and the sweat DNA on that fiber isn't Togawa's -- proving Tengan, not Togawa, wore the gloves that planted the glasses.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "apprentice_and_manager_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "affair_with"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "wounded pride over his wife's affair with his own apprentice"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p2",
+   "motive_type": "red herring: police theorized he wanted to silence his lover to protect his career"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p2",
+   "method": "bludgeoned with the trophy while she sat with her back turned",
+   "circumstance_tags": ["frame_up", "staged_confession", "premeditated"]
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2",
+   "circumstance_tags": ["frame_up"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3",
+   "circumstance_tags": ["frame_up"]
+  },
+  {
+   "type": "frames",
+   "from": "p1",
+   "to": "p3",
+   "circumstance_tags": ["frame_up"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

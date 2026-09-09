@@ -1,0 +1,189 @@
+{
+ "case_id": "ep406-408_conan_and_heijis_deduction_magic",
+ "episode_number": "406-408",
+ "title": "Conan and Heiji's Deduction Magic",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Conan_and_Heiji%27s_Deduction_Magic",
+ "subtitle_source": ["subs_resolved/0406.txt", "subs_resolved/0408.txt"],
+ "schema_version": "v3",
+ "notes": "Case spans episodes 406-408 but only subtitle transcripts for 406 and 408 were available locally (407 is missing); both available transcripts were read in full. The gap in 407 is not narratively costly here -- 406 is entirely setup (magic show, meeting the three disciples, arrival at Masakage's house, the blackout that ends the episode) and 408 opens with a narration recap covering the discovery of Tenko's body, which was presumably shown in full in 407, so no plot beats appear to be missing from the reconstructable graph. Recurring detective-cast nodes (Conan, Heiji Hattori, Ran, Kazuha, Inspector Megure, Takagi, Chiba) omitted by convention. The old cases/ file's culprit (Dogo Hoshikawa) is confirmed correct by the transcript, and its basic motive sketch (recognizing his mentor's stolen, unperformed trick) holds up -- but it omitted the actual mechanism of the case entirely: the murder was solvable only via a twin-room mirror-door illusion Masakage built into the house, which Hoshikawa exploited to fake an outside intruder, and Mari Masakage's fabricated-visitor story (modeled on Handa's real appearance/habits) that was covering for Hoshikawa rather than accusing anyone real. Those details, the murder weapon (a vase), and the staged-intruder evidence are added here from the transcript. Kazumi Sanada and other magicians mentioned only in passing dialogue (unrelated to this case's crime, referencing other episodes/cases) are omitted as not case-relevant. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Dogo Hoshikawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "magician",
+    "attrs": {"age": 27}
+   },
+   {
+    "id": "p2",
+    "name": "Riki Handa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "magician",
+    "attrs": {"age": 41}
+   },
+   {
+    "id": "p3",
+    "name": "Mari Masakage",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "housewife",
+    "attrs": {
+     "fabricated_testimony": "invented a fictitious visitor from five years ago, modeled on Handa's appearance/habits, to protect Hoshikawa once she guessed his guilt"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Tenko Himemiya",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "magician",
+    "attrs": {"age": 32, "died_of": "blunt-force trauma (bludgeoned with a vase)"}
+   },
+   {
+    "id": "p5",
+    "name": "Mr. Masakage",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "magician (teacher)",
+    "attrs": {
+     "status": "missing for 10 years",
+     "disappearance_reason": "went out searching for his stolen trick notebook and never returned",
+     "unperformed_trick": "resurrection of the wizard -- designed but deemed too dangerous to ever perform",
+     "house_design": "personally designed the house, including the twin-room mirror-door illusion"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Magic show theater", "attrs": {}},
+   {"id": "l2", "name": "Hoshikawa's dressing room", "attrs": {}},
+   {"id": "l3", "name": "Masakage house (ground floor)", "attrs": {}},
+   {"id": "l4", "name": "Second-floor hallway", "attrs": {"note": "illusion hallway; site of body's staged discovery"}},
+   {"id": "l5", "name": "Masakage's room (library)", "attrs": {"note": "true murder scene, disguised by the mirror-door trick"}},
+   {"id": "l6", "name": "Downstairs disciples' room", "attrs": {"note": "Handa/Mari's alibi location during the blackout"}},
+   {"id": "l7", "name": "Bushes below Masakage's window", "attrs": {"note": "staged escape route"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Masakage's trick notebook",
+    "role": "evidence",
+    "attrs": {"contains": "the resurrection of the wizard trick design", "normally_carried_on_person": true}
+   },
+   {
+    "id": "o2",
+    "name": "Second vase (weapon)",
+    "role": "weapon",
+    "attrs": {"staging_flaw": "blood residue visible on the base"}
+   },
+   {
+    "id": "o3",
+    "name": "Trick mirror door",
+    "role": "instrument",
+    "attrs": {"mechanism": "a sliding mirror aligns with a real doorknob so two doors fuse into one, reflecting the library to mimic the far end of the hallway"}
+   },
+   {
+    "id": "o4",
+    "name": "Hallway light switch",
+    "role": "tool",
+    "attrs": {"tampered": "rigged to trigger a blackout on cue"}
+   },
+   {
+    "id": "o5",
+    "name": "Staged branches and footprints",
+    "role": "evidence",
+    "attrs": {"location": "bushes below Masakage's room window", "purpose": "fake an intruder's escape route"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The vase's shadow fell away from the moonlight on the first hallway visit but sideways to it after the blackout -- two different vases in two different rooms, exposing the mirror-door illusion.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Tenko's proposed 'resurrection of the witch' trick is identical in idea and staging to Masakage's secret, unperformed 'resurrection of the wizard' -- proof she'd seen the stolen notebook.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "The fictitious visitor Mari described pushed up his sunglasses with his left pinky, a habit an old photo shows is actually Handa's -- proof Mari invented the visitor.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "student_of"},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "student_of"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "student_of"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "fellow_disciple"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "fellow_disciple"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "fellow_disciple"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3", "temporal_frame_note": "backstory residence"},
+  {"type": "was_at", "from": "p5", "to": "l5", "temporal_frame_note": "backstory residence"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l6"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "was_at", "from": "p1", "to": "l7"},
+
+  {"type": "owns", "from": "p5", "to": "o1"},
+  {"type": "steals", "from": "p4", "to": "o1"},
+
+  {"type": "confronts", "from": "p1", "to": "p4"},
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p4",
+   "method": "bludgeoned with a vase during a sudden confrontation over the stolen trick",
+   "circumstance_tags": ["staged_scene", "cover_up"]
+  },
+  {"type": "leaves_evidence", "from": "p1", "to": "o2"},
+  {
+   "type": "drags_body_of",
+   "from": "p1",
+   "to": "p4",
+   "circumstance_tags": ["staged_scene"]
+  },
+  {"type": "exploits_illusion_of", "from": "p1", "to": "o3"},
+  {"type": "tampers_with", "from": "p1", "to": "o4"},
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o5",
+   "circumstance_tags": ["staged_intruder", "red_herring"]
+  },
+
+  {"type": "shields", "from": "p3", "to": "p1", "circumstance_tags": ["cover_up"]},
+
+  {"type": "implicates", "from": "o2", "to": "p1"},
+  {"type": "implicates", "from": "o5", "to": "p1", "note": "staging discovered to be fake, pointing back at an insider"},
+
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "l4"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c3", "to": "p2"},
+  {"type": "implicates", "from": "c3", "to": "p3"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "rage_at_theft_of_mentors_secret_trick"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

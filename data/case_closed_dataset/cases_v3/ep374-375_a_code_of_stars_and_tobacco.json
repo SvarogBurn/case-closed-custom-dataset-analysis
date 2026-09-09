@@ -1,0 +1,479 @@
+{
+ "case_id": "ep374-375_a_code_of_stars_and_tobacco",
+ "episode_number": "374-375",
+ "title": "A Code of Stars and Tobacco",
+ "source_url": "https://www.detectiveconanworld.com/wiki/A_Code_of_Stars_and_Tobacco",
+ "subtitle_source": [
+  "subs_resolved/0374.txt",
+  "subs_resolved/0375.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Agasa, Conan, Ai Haibara, and the other Detective Boys) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's murderer_id (Heihachi Mikami) is confirmed correct by the transcript -- he killed both Asao Kono (a year earlier, over sole credit for a comet discovery) and Hajime Futagawa (present-day, silencing a blackmail attempt). However the old file was thin and, read narrowly, could be misread as Mikami having only killed Futagawa: it left Kono's killer's motive as 'unspecified' and gave no edges at all to Ryoji Amatsuchi, who is actually a major structural figure -- he found Kono's remains, sent the fake invitations under Kono's name that summoned the other three back to the hostel, and sabotaged the phone/cars to trap everyone overnight, but is NOT a murderer (a red herring the transcript briefly leans into before Conan clears him). The old file also collapsed both dying messages into one generic clue node; the transcript actually supports two distinct comparative clues (cigarette-count vs. guestbook kana stroke-count; six-cigarette message vs. seven-cigarette message) which are now separate clue nodes. case_type: murder (two victims, one culprit).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Asao Kono",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "amateur astronomer",
+    "attrs": {
+     "died_of": "pushed off a cliff, then quicklime applied to speed decomposition of remains",
+     "engaged_to": "Etsuko Nonomiya",
+     "dying_message": "hid a carton of 6 cigarettes (4 long, 2 short) under a rock near his own remains, plus his ring"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Etsuko Nonomiya",
+    "aliases": [],
+    "roles": [
+     "witness",
+     "suspect"
+    ],
+    "occupation": null,
+    "attrs": {
+     "relation_to_case": "Kono's fiancee, briefly suspected of killing Futagawa in revenge"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Ryoji Amatsuchi",
+    "aliases": [],
+    "roles": [
+     "witness",
+     "suspect"
+    ],
+    "occupation": "hostel owner",
+    "attrs": {
+     "true_role": "found Kono's bones, engineered the reunion and lockdown to smoke out the killer -- not the murderer"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Heihachi Mikami",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "editor-in-chief, Space Sunday magazine",
+    "attrs": {
+     "motive_summary": "killed Kono over sole naming credit for a comet; killed Futagawa to silence blackmail over the first killing"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hajime Futagawa",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "suspect"
+    ],
+    "occupation": "assistant editor-in-chief, Space Sunday magazine",
+    "attrs": {
+     "died_of": "struck with a steel pipe, then pushed off the cliff and staged as suicide",
+     "dying_message": "added a 7th cigarette (his own, bloodstained) to Kono's carton before dying",
+     "posthumously_framed_for": "Kono's murder, via a fake confession Mikami typed on Futagawa's stolen phone"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Amatsuchi Pension",
+    "attrs": {
+     "location": "mountains of Gunma"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Cliff behind the pension",
+    "attrs": {
+     "used_for": "stargazing spot; site of both killings"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Woods below the cliff",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Steel pipe",
+    "role": "weapon",
+    "attrs": {
+     "used_on": "Hajime Futagawa",
+     "hidden_in": "the telescope's lens barrel, with the counterweight removed to disguise the added weight"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Telescope",
+    "role": "tool",
+    "attrs": {
+     "owner": "Space Sunday editorial office",
+     "brought_by": "Heihachi Mikami"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Engagement ring",
+    "role": "evidence",
+    "attrs": {
+     "inscription": "Etsuko to Asao",
+     "found": "under a rock near Kono's remains"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Kono's cigarette message",
+    "role": "evidence",
+    "attrs": {
+     "count": "6 (4 long, 2 short, broken halves discarded on purpose)",
+     "false_reading": "initials 'FH' -- misread as pointing to Futagawa Hajime",
+     "true_reading": "stroke count of the kana Kono used for Mikami's name in the guestbook"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Futagawa's cigarette message",
+    "role": "evidence",
+    "attrs": {
+     "count": "7, one bloodstained, same brand as Kono's carton",
+     "meaning": "completes Kono's 6-cigarette count to fully spell Heihachi Mikami"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Quicklime",
+    "role": "tool",
+    "attrs": {
+     "purpose": "sprinkled on Kono's body to speed decomposition and obscure cause/time of death"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Futagawa's cell phone",
+    "role": "evidence",
+    "attrs": {
+     "fake_message": "a typed 'last words' confession naming Futagawa as Kono's killer, left on the cliff"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Guestbook",
+    "role": "evidence",
+    "attrs": {
+     "entry": "Kono wrote Mikami's name phonetically, since he had only heard it, not seen it written"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Guestbook kana Kono used for 'mi' takes 6 strokes -- matches the 6 cigarettes in his dying message exactly.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Futagawa's 7-cigarette message (same brand) adds exactly one to Kono's 6 -- both spell Heihachi Mikami, not Futagawa's own initials.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p4",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "senpai_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "senpai_of"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p4",
+   "detail": "argued atop the cliff over sole naming credit for Kono's newly found comet"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "method": "pushed off the cliff during the argument",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "hides_evidence_using",
+   "from": "p4",
+   "to": "o6",
+   "detail": "returned the next day and sprinkled quicklime on the body"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "written_by",
+   "from": "o8",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o8"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "discovers_remains_of",
+   "from": "p3",
+   "to": "p1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "sends_fake_invitation_to",
+   "from": "p3",
+   "to": "p2",
+   "detail": "invitation signed with Kono's name to lure guests back a year after his disappearance"
+  },
+  {
+   "type": "sends_fake_invitation_to",
+   "from": "p3",
+   "to": "p4"
+  },
+  {
+   "type": "sends_fake_invitation_to",
+   "from": "p3",
+   "to": "p5"
+  },
+  {
+   "type": "sabotages",
+   "from": "p3",
+   "to": "l1",
+   "detail": "hid the phone cable and let the air out of every guest's tires to trap everyone overnight",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p5",
+   "motive_type": "briefly suspected -- his cigarette-count initials 'AR' also fit 7 (red herring, accusation Conan retracts)"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p5",
+   "motive_type": "revenge_for_fiance (red herring: her initials 'NE' also fit the 7-cigarette count; ruled out because three witnesses met her walking the other direction in the woods)"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "wanted sole naming credit for the comet Kono discovered"
+  },
+  {
+   "type": "blackmails",
+   "from": "p5",
+   "to": "p4",
+   "detail": "Futagawa realized Mikami killed Kono and demanded 50 million yen"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p5",
+   "motive_type": "silencing blackmail over the Kono killing"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p5",
+   "method": "struck with a steel pipe, then pushed off the cliff",
+   "circumstance_tags": [
+    "staged_suicide",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p4",
+   "to": "p5",
+   "circumstance_tags": [
+    "staged_suicide"
+   ]
+  },
+  {
+   "type": "steals",
+   "from": "p4",
+   "to": "o7"
+  },
+  {
+   "type": "frames",
+   "from": "p4",
+   "to": "p5",
+   "detail": "typed a fake posthumous confession on Futagawa's phone claiming Futagawa killed Kono a year earlier"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o7"
+  },
+  {
+   "type": "hides_weapon_in",
+   "from": "p4",
+   "to": "o2"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o1"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p5",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

@@ -1,0 +1,324 @@
+{
+ "case_id": "ep210-211_the_water_palace_of_five_colors_legend",
+ "episode_number": "210-211",
+ "title": "The Water Palace of Five Colors Legend",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Water_Palace_of_Five_Colors_Legend",
+ "subtitle_source": ["subs_resolved/0210.txt", "subs_resolved/0211.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Yokomizo -- the regional police inspector who recurs across the Suzuki/Nagano arcs the way Megure recurs in Tokyo -- ) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object). The old wiki-summary case file (cases/ep210-211_...json) had the correct culprit (Yakura) and victim (the headmaster) identity, so label.murderer_id is unchanged, but it collapsed the whole crime into three generic events and one clue, missed the headmaster's backstory (his late wife, the succession plan he was about to announce, the burned fishing rods), missed both red-herring suspects' actual motives and cleared alibis (Mimura's rival-teacup errand, Ryoichi's resentment over the succession/fishing rods, Hanasaki accused by Mimura), and understated the mechanism: the murder was a stabbing on the veranda followed by strangulation with a rope tied in a fisherman's Cleat Hitch knot, staged as a failed suicide attempt then a hanging, with the body dragged onto the beam and the door self-locked by a timer-driven waterwheel mechanism combined with a thumbtack/rubber-band door-spring trick -- not simply 'a knot and a waterwheel'. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryozo Aonogi",
+    "aliases": ["Ryouzou Aono"],
+    "roles": ["victim"],
+    "occupation": "tea ceremony headmaster (iemoto)",
+    "attrs": {
+     "age": 65,
+     "died_of": "stabbed on the tea room veranda, then strangled with a rope tied in a fisherman's Cleat Hitch knot; staged to look like a failed wrist-cutting suicide followed by hanging",
+     "false_public_narrative": "household initially believes he was killed by, or driven to suicide by, the demon of the pond legend",
+     "planned_successor_announcement": "that night's 'last tea ceremony' was meant to officially name his son Ryoichi as the next headmaster",
+     "recent_change_of_heart": "after his wife's death he came to believe the pond legend was connected to it, grew fearful and reclusive, and decided to retire and hand over the headmaster title",
+     "received_gift": "an antique teacup from an owner of a Kyushu ceramics factory, intended for use at the retirement ceremony"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Morio Yakura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "antique dealer, tea ceremony pupil",
+    "attrs": {
+     "age": 42,
+     "swam_under_the_bridge_to_reach_the_tea_room": true,
+     "took_a_bath_after_the_murder": "to hide wet hair and clothes from swimming through the pond",
+     "false_alibi_claimed": "says he was in the bath for the entire thirty-minute window when the murder occurred",
+     "evidence_against": "moss handprints left on the underside of the bridge matched his fingerprints"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yukari Mimura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "company president, tea ceremony pupil",
+    "attrs": {
+     "age": 33,
+     "real_reason_for_leaving": "rushed out to buy an expensive teacup to outshine Yakura's donated one before the retirement announcement",
+     "company_financial_state": "investing heavily in hopes of becoming the next headmaster, to the point of nearly bankrupting her own company",
+     "cleared_by": "the house security sensor and Hanasaki's account of escorting her upstairs prove she never had time to approach the tea room"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yoshiko Hanasaki",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "housekeeper",
+    "attrs": {
+     "age": 40,
+     "accused_by_mimura_of": "leading the headmaster to suicide by scaring him with the demon legend, out of resentment for how he treated his late wife",
+     "devoted_to": "the late mistress of the house and to Ryoichi"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Ryoichi Aonogi",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "headmaster's son",
+    "attrs": {
+     "age": 28,
+     "refused_to_become_next_headmaster": true,
+     "fishing_rods_burned_by_father_as_punishment": true,
+     "hobby": "fishing",
+     "close_to_late_mother": true,
+     "accounting_arrangement": "years earlier struck a deal with his father to handle the household's accounting instead of succeeding him as headmaster",
+     "briefly_suspected_because": "the murder weapon used a fisherman's Cleat Hitch knot and he is the household's fisherman; cleared because the true culprit had to have been soaking wet from swimming under the bridge, and he was not"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Ryoichi Aonogi's mother (Ryozo's wife)",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died": "roughly a year ago, shortly after the tea room was completed",
+     "opposed_construction_of_the_tea_room": true,
+     "believed_in_the_pond_legend": true,
+     "cause_of_death_reported": "heart attack",
+     "remembered_fondly_by": "Ryoichi and Hanasaki, who keep many photographs of her"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Pond of the Water Palace of Five Colors",
+    "attrs": {
+     "legend": "an Edo-era legend holds that a merchant broke a promise to a flute-playing pond spirit, built a bedroom on the pond, and murdered his wife there; the spirit-turned-demon killed him in revenge, and the pond has supposedly changed color with the demon's flute ever since",
+     "phenomenon": "the water visibly shifts color (yellow, green, red) through the day depending on the angle of sunlight"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Tea room (island building in the pond)",
+    "attrs": {
+     "access": "reachable only by the bridge from the main house, or a separate locked water-room door on the east side",
+     "warded_with": "talismans against the pond's demon",
+     "found": "entrance door and water-room door both locked from the inside -- a locked room"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Bridge over the pond",
+    "attrs": {
+     "note": "the only visible route to the tea room; guests believed anyone crossing it would be seen from the guest room veranda",
+     "underside": "concealed by shrubs and pond moss on the underside, allowing someone to swim beneath it unseen"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Main house (guest room / kitchen)",
+    "attrs": {
+     "note": "where the tea ceremony guests and household gathered; has a veranda with a direct sightline across the pond to the tea room"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Bathroom, Aonogi household",
+    "attrs": {}
+   },
+   {
+    "id": "l6",
+    "name": "Antique/ceramics shop (off-site)",
+    "attrs": {
+     "note": "where Mimura went to buy a rival teacup; unnamed, off-screen location"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Knife",
+    "role": "weapon",
+    "attrs": {
+     "used_on": "the headmaster, on the tea room veranda",
+     "recovered": true
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Rope (rigged to the waterwheel)",
+    "role": "weapon",
+    "attrs": {
+     "knot_type": "Cleat Hitch (a fisherman's mooring knot)",
+     "mechanism": "tied around the headmaster's neck, run through the tea room window and knotted to a second rope pre-attached underwater to the waterwheel; the wheel's timer wound it at 4:00 PM, dragging the body inside and hoisting it onto the ceiling beam",
+     "cut_detail": "pre-scored partway with a blade so that once the mechanism finished winding, it tore the rest of the way and detached the outside rigging automatically -- explaining the strange half-cut, half-torn rope end"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Waterwheel",
+    "role": "instrument",
+    "attrs": {
+     "power": "electric, timer-controlled",
+     "normal_function": "feeds water to the river; formerly the tea room's water source",
+     "repurposed_function": "secretly rigged to wind the rope and hoist the victim's body onto the tea room's ceiling beam exactly at 4:00 PM, while the diffused red sunlight made the taut rope hard to see"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Door spring-trap",
+    "role": "tool",
+    "attrs": {
+     "materials": "thumbtacks and a rubber band, plus a hook",
+     "mechanism": "held the hanging scroll up as a hidden prop against the entrance door; when the body was dragged in and struck the scroll, the scroll fell, letting the door swing shut and a wooden panel catch in a post-hole -- locking the room from the inside with no one present",
+     "staging_flaw": "left a pinhole on the inner face of the entrance door where the thumbtack spring was anchored"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Hanging scroll",
+    "role": "tool",
+    "attrs": {
+     "found": "fallen near the door, calligraphy left unfinished",
+     "role_in_trick": "propped against the door as the spring-trap's hidden prop; knocked loose when the dragged-in body struck it, letting the door lock shut"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Antique teacup (Kyushu gift)",
+    "role": "evidence",
+    "attrs": {
+     "gift_from": "an owner of a Kyushu ceramics factory",
+     "intended_for": "the retirement tea ceremony that night",
+     "context": "Yakura and the headmaster had secretly manufactured and sold counterfeit versions of such heirloom ceramics together for over ten years"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Rival teacup (Mimura's purchase)",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "bought in a rush to outshine Yakura's donated teacup before the retirement ceremony",
+     "found": "cracked, prompting Hanasaki's embarrassed apology"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Moss handprints under the bridge",
+    "role": "evidence",
+    "attrs": {
+     "location_found": "underside of the bridge, pressed into the pond moss",
+     "significance": "proved someone had physically climbed/forced their way under the bridge",
+     "fingerprint_match": "matched Morio Yakura's fingerprints"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Ryoichi's fishing rods",
+    "role": "evidence",
+    "attrs": {
+     "burned_by": "the headmaster, after Ryoichi refused to accept the succession"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Location/lock contradiction: a blood trail runs from the veranda into the tea room, consistent with a failed wrist-cutting suicide attempt outside before hanging inside -- but both the entrance door and the water-room door were found locked from the inside. A wounded man stumbling in after failing to kill himself outside could not have secured the door behind him, revealing the 'suicide' as staged.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Beam-mark comparison: the ceiling beam shows a fresh, sharp rope groove that is invisible from a distance in the tea room's dim light but visible close-up, alongside wood splinters freshly scattered on the tatami -- proving the beam had been used to hoist a weight only minutes before discovery, not hours earlier as the staged suicide-by-hanging timeline required.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  { "type": "relationship", "from": "p2", "to": "p1", "relation_type": "secret_business_partner", "symmetric": true },
+  { "type": "relationship", "from": "p2", "to": "p1", "relation_type": "student_of" },
+  { "type": "relationship", "from": "p3", "to": "p1", "relation_type": "student_of" },
+  { "type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p5", "to": "p1", "relation_type": "child_of" },
+  { "type": "relationship", "from": "p5", "to": "p6", "relation_type": "child_of" },
+  { "type": "relationship", "from": "p1", "to": "p6", "relation_type": "spouse_of" },
+  { "type": "relationship", "from": "p3", "to": "p2", "relation_type": "rivalry_for_succession" },
+
+  { "type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "wanted to stop the headmaster from officially announcing Ryoichi as successor before Yakura could position himself, and to protect their decade-long counterfeit-ceramics scheme from a suspicious successor's scrutiny" },
+  { "type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "inheritance_and_succession_rivalry (red herring, raised during interrogation)" },
+  { "type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "resentment_over_burned_fishing_rods_and_forced_succession (red herring, raised during interrogation)" },
+  { "type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "resentment_over_mistreatment_of_late_wife (red herring, accused by Mimura)" },
+
+  { "type": "owns", "from": "p2", "to": "o1" },
+  { "type": "owns", "from": "p2", "to": "o2" },
+  { "type": "owns", "from": "p2", "to": "o4" },
+  { "type": "owns", "from": "p1", "to": "o6" },
+  { "type": "owns", "from": "p3", "to": "o7" },
+  { "type": "owns", "from": "p5", "to": "o9" },
+
+  { "type": "located_in", "from": "o3", "to": "l2" },
+  { "type": "located_in", "from": "o5", "to": "l2" },
+
+  { "type": "sells_counterfeit_ceramics_with", "from": "p2", "to": "p1", "order": 0, "temporal_frame": "backstory", "years_before_present": 10 },
+
+  { "type": "was_at", "from": "p1", "to": "l1", "order": 2, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p2", "to": "l1", "order": 2, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p3", "to": "l1", "order": 2, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p4", "to": "l1", "order": 2, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p5", "to": "l1", "order": 2, "temporal_frame": "present" },
+
+  { "type": "burns", "from": "p1", "to": "o9", "order": 3, "temporal_frame": "present", "circumstance_tags": ["punishment"] },
+
+  { "type": "was_at", "from": "p2", "to": "l3", "order": 4, "temporal_frame": "present", "detail": "secretly swims beneath the bridge to reach the tea room veranda, hidden from the group's view of the pond" },
+  { "type": "was_at", "from": "p2", "to": "l5", "order": 4, "temporal_frame": "present", "circumstance_tags": ["false_alibi"], "detail": "claims to have been bathing for the entire thirty-minute window" },
+  { "type": "was_at", "from": "p3", "to": "l6", "order": 4, "temporal_frame": "present", "circumstance_tags": ["red_herring", "true_alibi"], "detail": "actually out buying a rival teacup" },
+  { "type": "was_at", "from": "p4", "to": "l4", "order": 4, "temporal_frame": "present", "detail": "in the kitchen preparing for the ceremony" },
+  { "type": "was_at", "from": "p5", "to": "l4", "order": 4, "temporal_frame": "present", "detail": "in and out of the guest room" },
+
+  { "type": "was_at", "from": "p1", "to": "l2", "order": 5, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p2", "to": "l2", "order": 5, "temporal_frame": "present" },
+  { "type": "stabs", "from": "p2", "to": "p1", "order": 5, "temporal_frame": "present", "method": "knife, on the tea room veranda", "circumstance_tags": ["staged_suicide"] },
+
+  { "type": "strangles", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "method": "rope tied in a Cleat Hitch fisherman's mooring knot", "circumstance_tags": ["staged_suicide", "locked_room"] },
+  { "type": "kills", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "method": "stabbed then strangled; staged to resemble a failed suicide attempt followed by hanging", "circumstance_tags": ["locked_room", "staged_suicide"] },
+  { "type": "stages_suicide_of", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "circumstance_tags": ["staged_suicide", "locked_room"] },
+  { "type": "stages_alibi_using", "from": "p2", "to": "o2", "order": 6, "temporal_frame": "present" },
+  { "type": "stages_alibi_using", "from": "p2", "to": "o3", "order": 6, "temporal_frame": "present" },
+  { "type": "stages_alibi_using", "from": "p2", "to": "o4", "order": 6, "temporal_frame": "present" },
+  { "type": "leaves_evidence", "from": "p2", "to": "o8", "order": 6, "temporal_frame": "present" },
+
+  { "type": "drags_body_of", "from": "p2", "to": "p1", "order": 9, "temporal_frame": "present", "circumstance_tags": ["locked_room", "time_delay_trick"], "detail": "the timer-driven waterwheel winds the pre-rigged rope, dragging the body into the tea room and hoisting it onto the ceiling beam while the group is distracted watching the pond turn red at 4:00 PM" },
+  { "type": "was_at", "from": "p1", "to": "l2", "order": 9, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p2", "to": "l4", "order": 9, "temporal_frame": "present", "detail": "rejoins the group to watch the pond turn red, establishing his alibi" },
+  { "type": "was_at", "from": "p3", "to": "l4", "order": 9, "temporal_frame": "present", "detail": "returns from her errand, kimono disheveled and sweating" },
+  { "type": "was_at", "from": "p4", "to": "l4", "order": 9, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p5", "to": "l4", "order": 9, "temporal_frame": "present", "detail": "checks his watch, confirms it is exactly 4:00 PM" },
+
+  { "type": "was_at", "from": "p2", "to": "l2", "order": 10, "temporal_frame": "present", "detail": "breaks in with the others to find the body" },
+  { "type": "was_at", "from": "p3", "to": "l2", "order": 10, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p4", "to": "l2", "order": 10, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p5", "to": "l2", "order": 10, "temporal_frame": "present" },
+  { "type": "stages_alibi_using", "from": "p2", "to": "o4", "order": 10, "temporal_frame": "present", "detail": "quietly strips away the thumbtack-and-rubber-band spring rig while pretending to help force the door open" },
+
+  { "type": "confronts", "from": "p3", "to": "p2", "order": 13, "temporal_frame": "present", "detail": "accuses Yakura of trying to buy the headmaster's favor with expensive gifts while bankrupting himself" },
+  { "type": "confronts", "from": "p2", "to": "p3", "order": 13, "temporal_frame": "present", "detail": "counter-accuses Mimura of doing the same with her own hastily bought teacup" },
+  { "type": "confronts", "from": "p3", "to": "p4", "order": 13, "temporal_frame": "present", "circumstance_tags": ["red_herring"], "detail": "accuses Hanasaki of having driven the headmaster to suicide by frightening him with the demon legend" },
+
+  { "type": "implicates", "from": "o8", "to": "p2" },
+  { "type": "implicates", "from": "o2", "to": "p2" },
+  { "type": "implicates", "from": "c1", "to": "p2" },
+  { "type": "implicates", "from": "c2", "to": "p2" },
+  { "type": "regarding", "from": "c1", "to": "l2" },
+  { "type": "regarding", "from": "c1", "to": "p1" },
+  { "type": "regarding", "from": "c2", "to": "l2" },
+  { "type": "regarding", "from": "c2", "to": "o2" }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

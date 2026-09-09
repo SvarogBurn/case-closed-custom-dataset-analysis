@@ -1,0 +1,257 @@
+{
+ "case_id": "ep102-103_the_historical_actor_murder_case",
+ "episode_number": "102-103",
+ "title": "The Historical Actor Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Historical_Actor_Murder_Case",
+ "subtitle_source": ["subs_resolved/0102.txt", "subs_resolved/0103.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Officer Takagi) omitted by convention -- their actions surface indirectly through object/location edges (e.g. the model gun's fingerprint evidence, the elevator inspection) rather than as person nodes. No `event` node type: every action is a directly typed, attributed edge between the entities involved, sharing an `order` integer so edges belonging to the same real-world occurrence can be grouped. No (Flashback)-tagged lines occur anywhere in either transcript -- the whole case (including the bankruptcy/affair backstory) is delivered as present-tense dialogue/confession, so every edge is temporal_frame: present except the standing structural facts (relationship, has_motive_against, owns, implicates) which carry no order/temporal_frame at all, per schema. Small named cast (only 3 named non-recurring characters appear across both episodes) -- this is a two-person-apartment locked-scene mystery, not a large-ensemble case, so the node count is genuinely smaller than ep011's. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kozaburo Hijikata",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "historical drama (jidaigeki) actor, typecast as heroic samurai/warriors; career on the decline",
+    "attrs": {
+     "financial_state": "facing bankruptcy; wants money to rebuild a film studio he lost",
+     "owns_property": "all rental units on the apartment building's 6th floor (former offices, now empty except one apartment secretly furnished as an identical duplicate of his real 5th-floor home)",
+     "confession": "admitted to killing Isami to collect her life-insurance payout and to punish her for the affair with Okita; also framed the whole scheme as a personal bet that he could fool detective Kogoro Mouri and thereby land a modern detective drama role"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Isami Nagakura",
+    "aliases": ["Isami Hijikata"],
+    "roles": ["victim"],
+    "occupation": "former actress",
+    "attrs": {
+     "current_family_name": "Hijikata",
+     "age": 38,
+     "public_rumor": "tabloids were reporting a divorce/affair scandal about her and Kozaburo Hijikata",
+     "died_of": "strangulation (wire/cord), in Hijikata's real 5th-floor apartment"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hajime Okita",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "actor, age 29, typecast as villains (thieves, spies, love rivals)",
+    "attrs": {
+     "alibi": "claims he was home the entire time listening to music; initially uncorroborated, later confirmed once Hijikata's trick was exposed",
+     "relationship_note": "next-door neighbor to Hijikata's real apartment on the 5th floor; rumored to be having an affair with Isami and had arranged to discuss it with both Hijikatas that evening",
+     "outcome": "wrongly held as a material witness / prime suspect until Hijikata confessed"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Apartment building back entrance and hallway",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Apartment building elevator",
+    "attrs": {
+     "trick": "floor-number display tampered to misread 6th floor as 5th; on the return trip Hijikata held the elevator between floors to buy time while lowering the body"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Hijikata's real 5th-floor apartment",
+    "attrs": {
+     "furnishing": "TV, sofa, curtains, table -- identically laid out to the 6th-floor decoy"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Hijikata's decoy 6th-floor apartment",
+    "attrs": {
+     "disguised_as": "presented to the Mouri party as if it were Hijikata's real 5th-floor apartment",
+     "position": "directly above Hajime Okita's apartment, one floor below",
+     "furnishing": "identical to the real 5th-floor apartment down to furniture position, except the table was bare instead of holding four used teacups"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Empty adjacent apartment unit on the 6th floor",
+    "attrs": {
+     "purpose": "another vacant unit Hijikata owns; used as the fake 'Okita's door' he pounded on and shouted at with no answer, staging urgency"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Hajime Okita's real apartment and balcony (5th floor)",
+    "attrs": {
+     "note": "Isami's body ultimately landed here, lowered from the decoy balcony directly above"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Elevator floor-number display",
+    "role": "tool",
+    "attrs": {
+     "trick": "black marker used to black out the lower-left vertical stroke of the '6', making it read as '5'",
+     "staging_flaw": "residual marker ink was still visible on close inspection after the fact"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hijikata's business card (handed out inside the elevator)",
+    "role": "tool",
+    "attrs": {
+     "trick": "handing over cards while his back covered the floor buttons and display, directing the Mouri party's eyes away from both"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Fishing-line suspension rig",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "held Isami's body up over the decoy balcony's rail with fishing line rigged to break/release at a precisely timed moment",
+     "found_at": "a length of the line was later found on the floor of Okita's apartment, where it had fallen along with the body",
+     "misread_as": "police initially treated the fishing line as the actual murder weapon and grounds to arrest Okita -- a red herring"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Decoy cell phone",
+    "role": "instrument",
+    "attrs": {
+     "trick": "a second phone rigged to sound like Okita's ringtone; Hijikata triggered it via his own phone's speed-dial at the crucial moment to draw the group's eyes toward the balcony",
+     "flaw": "Okita had bought a new phone the day before with a different ringtone, so the sound heard on the balcony didn't match the sound of Okita's real phone -- the detail that finally tipped Conan off"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Rope",
+    "role": "tool",
+    "attrs": {
+     "trick": "wrapped under Isami's arms to lower her body from the decoy 6th-floor balcony down to Okita's balcony directly below, then swung onto the balcony and pulled free",
+     "physical_trace": "left a scrape mark near her underarm consistent with rope, not with a fall"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Model gun",
+    "role": "evidence",
+    "attrs": {
+     "origin": "a prop Hijikata bought to show Kogoro Mouri how a TV detective might handle a gun",
+     "incident": "Kogoro accidentally broke its trigger while waiting in the decoy 6th-floor living room and hid it under a sofa cushion out of embarrassment",
+     "fingerprint_evidence": "Kogoro's fingerprints on the gun could only be there if he had genuinely been inside the 6th-floor room, proving the floor-swap deception"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Wire/cord",
+    "role": "weapon",
+    "attrs": {
+     "use": "used to strangle Isami to death in Hijikata's real 5th-floor apartment"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The living rooms on the 5th and 6th floors are furnished and arranged identically -- same TV, sofa, curtains, and table position -- with the only difference being four used teacups on the 5th-floor table versus a bare 6th-floor table. Comparing the two rooms is what proves the 6th floor was a deliberate duplicate built to disguise which floor the Mouri party had actually been on.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The phone sound heard on the balcony when Isami's body fell does not match the ringtone of the phone Officer Takagi calls at the end (Kogoro's own phone, coincidentally the same model Hijikata tried to mimic) -- comparing the two rings exposes that the balcony sound came from Hijikata's decoy phone, not Okita's genuine one, since Okita had switched phones the day before.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "When the group first saw Isami collapse, only her upper body was visible outside the window with her legs still in the room; by the time the door was forced open, her whole body was out on the balcony. Comparing these two observed body positions initially reads as proof someone (presumably Okita) dragged the body in a panic -- but is later re-explained by the delayed, timed release of the fishing-line rig completing her fall on its own.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "affair_with"},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "neighbor_of"},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "professional_rival"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "financial (needed her life-insurance payout to cover his bankruptcy and rebuild his film studio) and jealousy over her affair with Okita"},
+  {"type": "has_motive_against", "from": "p3", "to": "p2", "motive_type": "alleged affair-related jealousy (red herring; accusation invented by Hijikata himself to frame Okita for the murder)"},
+
+  {"type": "owns", "from": "p1", "to": "l4"},
+  {"type": "owns", "from": "p1", "to": "l5"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "owns", "from": "p1", "to": "o5"},
+  {"type": "owns", "from": "p1", "to": "o6"},
+  {"type": "owns", "from": "p1", "to": "o7"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 1, "temporal_frame": "present"},
+  {"type": "arranges_meeting_with", "from": "p3", "to": "p1", "order": 1, "temporal_frame": "present", "detail": "Okita reminds Hijikata they'd agreed to talk that evening about the affair rumor"},
+  {"type": "was_at", "from": "p3", "to": "l6", "order": 2, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 2, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o1", "order": 2, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o2", "order": 2, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 3, "temporal_frame": "present"},
+
+  {"type": "confronts", "from": "p1", "to": "p2", "order": 4, "temporal_frame": "present", "detail": "argues with Isami about the affair and the divorce/compensation money"},
+
+  {"type": "was_at", "from": "p2", "to": "l3", "order": 5, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l3", "order": 6, "temporal_frame": "present"},
+  {"type": "kills", "from": "p1", "to": "p2", "order": 6, "temporal_frame": "present", "method": "strangled with wire/cord", "circumstance_tags": ["premeditated", "staged_scene"]},
+
+  {"type": "drags_body_of", "from": "p1", "to": "p2", "order": 7, "temporal_frame": "present", "circumstance_tags": ["staged_alibi"]},
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 7, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o3", "order": 7, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 9, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o4", "order": 9, "temporal_frame": "present"},
+  {"type": "fakes_crime_scene_of", "from": "p1", "to": "p2", "order": 9, "temporal_frame": "present", "detail": "released the rigged body from the decoy 6th-floor balcony, timed with a phone ring, so witnesses believed they saw her collapse from Okita's own apartment one floor below them", "circumstance_tags": ["staged", "deception", "locked_room"]},
+  {"type": "was_at", "from": "p2", "to": "l6", "order": 9, "temporal_frame": "present"},
+
+  {"type": "stages_alibi_using", "from": "p1", "to": "l5", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l5", "order": 10, "temporal_frame": "present"},
+
+  {"type": "lowers_body_of", "from": "p1", "to": "p2", "order": 11, "temporal_frame": "present", "circumstance_tags": ["locked_room", "staged_alibi"]},
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 11, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o5", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l6", "order": 11, "temporal_frame": "present"},
+
+  {"type": "stages_alibi_using", "from": "p1", "to": "l2", "order": 12, "temporal_frame": "present", "detail": "held the elevator between floors to buy time while lowering the body and tidying the decoy room"},
+  {"type": "was_at", "from": "p1", "to": "l6", "order": 12, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p3", "to": "l6", "order": 13, "temporal_frame": "present"},
+
+  {"type": "implicates", "from": "o1", "to": "p1", "basis": "tampered digit shows the elevator was rigged to mislead about which floor was visited"},
+  {"type": "implicates", "from": "o3", "to": "p3", "basis": "red herring; the fishing-line rig remnant found on Okita's apartment floor was mistaken by police for the actual murder weapon since Isami's body had landed there"},
+  {"type": "implicates", "from": "o3", "to": "p1", "basis": "correctly traced to Hijikata once the rig's true purpose -- suspending the body over the decoy balcony -- was understood"},
+  {"type": "implicates", "from": "o5", "to": "p1", "basis": "the scrape mark on the body's underarm matches a rope lowering, not an accidental fall"},
+  {"type": "implicates", "from": "o6", "to": "p1", "basis": "Kogoro's fingerprints on the broken model gun could only be there if he had truly been inside the disguised 6th-floor room, proving the floor-swap trick"},
+  {"type": "implicates", "from": "o7", "to": "p1", "basis": "the actual strangulation weapon, tied to the real 5th-floor apartment where the murder occurred"},
+
+  {"type": "regarding", "from": "cA", "to": "l3"},
+  {"type": "regarding", "from": "cA", "to": "l4"},
+  {"type": "implicates", "from": "cA", "to": "p1"},
+
+  {"type": "regarding", "from": "cB", "to": "o4"},
+  {"type": "implicates", "from": "cB", "to": "p1"},
+
+  {"type": "regarding", "from": "cC", "to": "p2"},
+  {"type": "regarding", "from": "cC", "to": "l6"},
+  {"type": "implicates", "from": "cC", "to": "p1"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

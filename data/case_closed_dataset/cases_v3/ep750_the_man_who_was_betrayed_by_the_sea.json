@@ -1,0 +1,188 @@
+{
+ "case_id": "ep750_the_man_who_was_betrayed_by_the_sea",
+ "episode_number": "750",
+ "title": "The Man Who Was Betrayed by the Sea",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Man_Who_Was_Betrayed_by_the_Sea",
+ "subtitle_source": ["subs_resolved/0750.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Conan, Haibara, Ayumi, Genta, Mitsuhiko -- the 'Detective Boys') omitted by convention, matching the old cases/ file's note. No `event` node type: the murder is decomposed into direct verb edges (deceives, drowns) plus provenance edges for the density-tampering method. The old lower-fidelity case file was broadly correct on the culprit (Nao Takiguchi) and mechanism (raised pool-water density via bath salt then water-soluble polymer to fake a swimming ability), but it collapsed the two real locations (the residence pool where the fraud was staged, and the open sea where the drowning actually happened) into one 'Ocean / yacht pool' node, omitted Ryouichi Katagiri and Detective Nagai as nodes entirely despite both driving the on-screen investigation, omitted the necklace-buoyancy clue (the actual clinching piece of evidence Conan uses -- the collar-rust detail alone was never confirmed on screen as evidence found by police, it's what tips off Conan's reasoning, not what he presents), and omitted Katagiri's on-screen suggestion that Nao married for money, which functions as an in-story (unconfirmed) alternate motive theory. Per the broadened was_at rule, every named person shown present in a scene (Nao, Kotaro, Katagiri, Nagai) gets was_at edges. Temporal/order fields intentionally omitted per current build rules. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Nao Takiguchi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "company president's wife",
+    "attrs": {
+     "age": 34,
+     "marriage_duration": "married about 6 months, both first marriages",
+     "stated_motive": "revenge for her husband's cruelty and lack of decency; wanted him to suffer as he made others suffer"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kotaro Takiguchi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "company president",
+    "attrs": {
+     "age": 55,
+     "childhood_fear": "nearly drowned in a river as a child, remained afraid of water and unable to swim",
+     "reputation": "used underhanded business methods, caused suffering to many people",
+     "died_of": "drowning in the open sea"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Ryoichi Katagiri",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Kotaro's head secretary",
+    "attrs": {
+     "age": 48,
+     "claim": "says Kotaro told him people were after the family fortune even before the marriage -- an unconfirmed suspicion of a financial motive against Nao"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Detective Nagai",
+    "aliases": [],
+    "roles": ["investigator"],
+    "occupation": "police detective",
+    "attrs": {
+     "age": 38,
+     "initial_theory": "suspected Kotaro could have been pushed overboard, before the swimming-fraud method was uncovered"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Marina dock",
+    "attrs": {"detail": "where Takiguchis' cruiser was docked and lunch was served"}
+   },
+   {
+    "id": "l2",
+    "name": "Open sea",
+    "attrs": {"detail": "where the cruiser sailed out to and Kotaro drowned"}
+   },
+   {
+    "id": "l3",
+    "name": "Takiguchi residence pool",
+    "attrs": {"detail": "newly built home pool where Kotaro practiced swimming and where Nao secretly raised the water density"}
+   },
+   {
+    "id": "l4",
+    "name": "Emergency Medical Center",
+    "attrs": {"detail": "where Kotaro was taken and pronounced dead, and where the case was solved"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Bath salt",
+    "role": "tool",
+    "attrs": {"purpose": "first substance Nao added to the pool to raise water density"}
+   },
+   {
+    "id": "o2",
+    "name": "Water-soluble polymer",
+    "role": "tool",
+    "attrs": {"purpose": "non-toxic polymer Nao switched to after Kotaro noticed the bath salt residue; pushed pool specific gravity above 1.3, comparable to the Dead Sea"}
+   },
+   {
+    "id": "o3",
+    "name": "Nao's acrylic necklace",
+    "role": "evidence",
+    "attrs": {"specific_gravity": "about 1.17-1.2", "significance": "submerged in early practice footage, floating in last week's footage, proving the water's density had risen above the necklace's own"}
+   },
+   {
+    "id": "o4",
+    "name": "Home video camera footage",
+    "role": "evidence",
+    "attrs": {"content": "recordings of Kotaro's swim practice in the residence pool, partly filmed by the family maid and partly by Nao", "irony": "Nao kept the footage meaning to use it as proof for police, but it became the evidence that convicted her"}
+   },
+   {
+    "id": "o5",
+    "name": "Coro's collar",
+    "role": "evidence",
+    "attrs": {"anomaly": "buckle unusually rusty despite the dog being only one year old", "false_explanation": "attributed by Nao to walking the dog in the rain"}
+   },
+   {
+    "id": "o6",
+    "name": "Takiguchi's cruiser",
+    "role": "tool",
+    "attrs": {"detail": "the yacht Nao and Kotaro sailed out to open sea alone on"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Necklace submerged in early swim footage but floating in last week's footage",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Coro's collar buckle already rusty though the dog is only one year old",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Nao delayed rescuing Kotaro and never used the cruiser's life preserver",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "spouse"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "employee_of"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "revenge (unhappy marriage to a cruel, underhanded man; wanted him to suffer as he made others suffer)"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o6"},
+  {"type": "owns", "from": "p1", "to": "o6"},
+
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "located_in", "from": "o2", "to": "l3"},
+
+  {"type": "hides_contraband_in", "from": "p1", "to": "l3", "circumstance_tags": ["staged_ability", "premeditated"]},
+
+  {"type": "deceives", "from": "p1", "to": "p2", "circumstance_tags": ["staged_ability", "premeditated"]},
+
+  {"type": "drowns", "from": "p1", "to": "p2", "circumstance_tags": ["staged_accident", "delayed_rescue", "premeditated"]},
+
+  {"type": "confronts", "from": "p4", "to": "p1"},
+  {"type": "confronts", "from": "p3", "to": "p1"},
+
+  {"type": "regarding", "from": "o4", "to": "p2"},
+  {"type": "regarding", "from": "o4", "to": "o3"},
+
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "o4"},
+
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o5"},
+
+  {"type": "implicates", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p2"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l4"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

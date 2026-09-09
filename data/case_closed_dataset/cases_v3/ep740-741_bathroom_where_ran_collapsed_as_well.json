@@ -1,0 +1,193 @@
+{
+ "case_id": "ep740-741_bathroom_where_ran_collapsed_as_well",
+ "episode_number": "740-741",
+ "title": "Bathroom Where Ran Collapsed As Well",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Bathroom_Where_Ran_Collapsed_As_Well",
+ "subtitle_source": ["subs_resolved/0740.txt", "subs_resolved/0741.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan/Shinichi Kudo, Kogoro Mouri, Inspector) omitted by convention, but Ran Mouri and Masumi Sera are included as full person nodes because this episode makes them structurally load-bearing: Ran is a secondary victim of the chloroform trap (she collapses in the bathroom exactly as Rumi was meant to), and Sera delivers the case's central red herring (a wrong, fully-argued deduction that Rumi Kitao staged Waka's corpse and killed her), which Shinichi then dismantles point-by-point over the phone. The old lower-fidelity case file's stated culprit (Kenya Settsu, s2) and its core clues (planted fingerprints, poor eyesight, missing contact lens) all check out against the transcript -- no culprit-swap needed here, unlike some other rebuilds. What the old file missed/flattened: (1) Sera's full false-accusation-of-Rumi arc, a major red-herring set piece, was omitted entirely; (2) the real motive was specific -- Waka was blackmailing Kenya, threatening to expose his past mistreatment of other girls to the chairman's daughter he was courting for social advancement, not generic 'jealousy amid an adultery investigation' (that jealousy angle was Rumi's, and it was the false theory's motive, not Kenya's real one); (3) the coin-handoff behavioral test and the old photo showing all four friends in glasses (now all wearing contacts) were both omitted, though they are the clues that actually let Conan pin the crime on Kenya specifically over Kaga; (4) several present-but-unlisted named people (Ran, Sera, Keiko Kitao, the unnamed chairman's daughter) are added here. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ran Mouri",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "high school student",
+    "attrs": {
+     "collapsed_in_bathroom": "inhaled residual chloroform gas while searching for Waka and passed out beside the staged corpse, mirroring the trap meant for Rumi"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masumi Sera",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "private detective",
+    "attrs": {
+     "hired_by": "Rumi Kitao, to investigate Kenya Settsu's fidelity",
+     "false_deduction": "argued at length that Rumi staged herself as the corpse and killed Waka; refuted by Shinichi via phone"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Rumi Kitao",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "university student",
+    "attrs": {
+     "age_in_source": "given as 21 in part 1's character card and 20 in part 2's -- inconsistency in the source subtitles",
+     "falsely_accused": "Sera's deduction named her as the killer before Shinichi corrected it",
+     "fingerprints_planted": "her prints ended up on the chloroform bottle because Kenya had her handle it earlier, unknowingly, while they were dating"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kenya Settsu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "university student",
+    "attrs": {
+     "vision_impairment": "poor depth perception -- repeatedly failed to place objects directly into people's outstretched hands (coins, the spare key)",
+     "prior_relationship": "dated Waka until about six months before dating Rumi, but kept a spare key to Waka's flat",
+     "ambition": "had an informal job offer at the chairman's business group and was pursuing the chairman's daughter to marry up"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Mitsuaki Kaga",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "university student",
+    "attrs": {
+     "drank_with_victim": "was drinking with Waka at her flat until 5 AM the morning of the murder"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Waka Hashitani",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "university student",
+    "attrs": {
+     "family": "father is a managing director; family belongs to the chairman's business group",
+     "dying_act": "hid Kenya's dropped contact lens inside her own eye as she lost consciousness"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Keiko Kitao",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "high school student, Ran's former classmate",
+    "attrs": {
+     "role_in_plot": "Rumi's younger sister; Sera's cover story for the fidelity investigation was framed as being 'for Keiko's sake'"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Chairman's daughter",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "first-year member of the same university circle",
+    "attrs": {
+     "identity": "unnamed in the transcript; daughter of the chairman of the business group Waka's family also belongs to",
+     "relevance": "Kenya's intended marriage target for social advancement -- the reason he needed Waka silenced"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Apartment block lobby", "attrs": {}},
+   {"id": "l2", "name": "Waka's living room", "attrs": {"note": "connected to the balcony where Waka was known to fall asleep drunk"}},
+   {"id": "l3", "name": "Waka's bedroom", "attrs": {}},
+   {"id": "l4", "name": "Waka's bathroom", "attrs": {"note": "shower left running; safety-locked front door delayed Sera and Kaga's entry"}},
+   {"id": "l5", "name": "Waka's kitchen", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Chloroform bottle", "role": "weapon", "attrs": {"found_in": "kitchen sink", "planted_fingerprints": "Rumi's, placed there by Kenya beforehand"}},
+   {"id": "o2", "name": "Syringe", "role": "tool", "attrs": {"found_in": "kitchen sink alongside the chloroform bottle", "use": "used to draw and later release vaporized chloroform"}},
+   {"id": "o3", "name": "Golf club", "role": "weapon", "attrs": {"found_in": "living room", "staging_flaw": "blood traces on it, used to bludgeon Waka after she was drugged unconscious"}},
+   {"id": "o4", "name": "Red paint", "role": "tool", "attrs": {"found_in": "bathroom drain", "use": "poured down the drain to fake a bloodstain for the staged corpse discovery"}},
+   {"id": "o5", "name": "Towel and face-pack kit", "role": "tool", "attrs": {"use": "dressed the corpse in a towel with a facial pack and a head towel to obscure identity"}},
+   {"id": "o6", "name": "Old photo of the four", "role": "evidence", "attrs": {"content": "shows Rumi, Kenya, Kaga, and Waka all wearing glasses roughly two years earlier", "found_in": "living room"}},
+   {"id": "o7", "name": "Missing contact lens", "role": "evidence", "attrs": {"owner": "Kenya", "fell_out": "during Waka's struggle while being drugged", "found": "hidden inside Waka's own eye"}},
+   {"id": "o8", "name": "Spare key (Kenya's)", "role": "tool", "attrs": {"origin": "kept from when Kenya dated Waka", "handed_to": "Rumi, ostensibly to return it, in fact to get her into the flat"}}
+  ],
+  "clues": [
+   {"id": "c1", "clue_type": "forensic", "desc": "The corpse's lipstick was removed but mascara still trickled from the eye -- a culprit who thought to remove lipstick for the face pack but missed mascara is almost certainly male, contradicting the theory that a woman staged the scene."},
+   {"id": "c2", "clue_type": "behavioral", "desc": "When Conan held out his hand for dropped coins, Kaga placed them directly into his palm, but Kenya put them into his own palm and held it out instead -- the same fumble he made handing Rumi the spare key, revealing poor depth perception unique to Kenya among the suspects."},
+   {"id": "c3", "clue_type": "physical", "desc": "An old photo shows all four friends wearing glasses about two years ago, but none of them wear glasses now -- establishing they all switched to contacts, which is what makes a missing/found contact lens meaningful evidence."},
+   {"id": "c4", "clue_type": "forensic", "desc": "Kenya is missing one contact lens; a matching lens, with his fingerprints, is found hidden inside Waka's eye, where she concealed it as she lost consciousness -- placing him at the moment of the attack."}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p7", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p7", "to": "p3", "relation_type": "younger_sister_of"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "dating"},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "ex_partner_of"},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "close_friend_of"},
+  {"type": "relationship", "from": "p4", "to": "p8", "relation_type": "romantic_pursuit_of"},
+
+  {"type": "hires", "from": "p3", "to": "p2", "detail": "hired to investigate whether Kenya had cut ties with his ex-girlfriend Waka"},
+  {"type": "accuses", "from": "p2", "to": "p3", "circumstance_tags": ["red_herring", "incorrect_deduction"], "detail": "argued Rumi staged herself as the corpse and killed Waka to frame the discovery on the two men"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l4"},
+  {"type": "was_at", "from": "p6", "to": "l4"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p6", "motive_type": "blackmail cover-up: Waka threatened to expose Kenya's mistreatment of past girlfriends to the chairman's daughter he was courting for social advancement"},
+  {"type": "has_motive_against", "from": "p3", "to": "p6", "motive_type": "red herring: theorized jealousy over Kenya's ex-girlfriend (Sera's incorrect deduction, not a real motive)", "circumstance_tags": ["red_herring"]},
+
+  {"type": "kills", "from": "p4", "to": "p6", "method": "drugged unconscious with vaporized chloroform, then bludgeoned with a golf club", "circumstance_tags": ["staged_alibi", "frame_up", "cover_up"]},
+  {"type": "disguises_body_of", "from": "p4", "to": "p6", "circumstance_tags": ["staged_scene", "frame_up"], "detail": "dressed the body in a towel with a facial pack and head towel, and poured red paint down the bathroom drain, to suggest an impersonator staged the scene"},
+  {"type": "frames", "from": "p4", "to": "p3", "circumstance_tags": ["frame_up"], "detail": "planted Rumi's fingerprints on the chloroform bottle in advance, and lured her into the flat's living room during the murder window"},
+  {"type": "assaults", "from": "p4", "to": "p1", "circumstance_tags": ["unintended", "collateral"], "detail": "the chloroform gas Kenya filled the bathroom with knocked out Ran when she searched it, not Rumi as planned"},
+
+  {"type": "uses", "from": "p4", "to": "o1"},
+  {"type": "uses", "from": "p4", "to": "o2"},
+  {"type": "uses", "from": "p4", "to": "o3"},
+  {"type": "uses", "from": "p4", "to": "o4"},
+  {"type": "uses", "from": "p4", "to": "o5"},
+  {"type": "owns", "from": "p4", "to": "o8"},
+  {"type": "uses", "from": "p3", "to": "o8"},
+  {"type": "loses", "from": "p4", "to": "o7"},
+  {"type": "hides", "from": "p6", "to": "o7", "circumstance_tags": ["dying_act"]},
+
+  {"type": "located_in", "from": "o1", "to": "l5"},
+  {"type": "located_in", "from": "o2", "to": "l5"},
+  {"type": "located_in", "from": "o3", "to": "l2"},
+  {"type": "located_in", "from": "o4", "to": "l4"},
+  {"type": "located_in", "from": "o5", "to": "l4"},
+  {"type": "located_in", "from": "o6", "to": "l2"},
+
+  {"type": "discovers", "from": "p2", "to": "o6"},
+
+  {"type": "implicates", "from": "o1", "to": "p3", "circumstance_tags": ["red_herring", "frame_up"]},
+  {"type": "implicates", "from": "o7", "to": "p4"},
+
+  {"type": "regarding", "from": "c1", "to": "p6"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c3", "to": "o6"},
+  {"type": "regarding", "from": "c3", "to": "o7"},
+  {"type": "regarding", "from": "c4", "to": "o7"},
+  {"type": "regarding", "from": "c4", "to": "p6"},
+  {"type": "implicates", "from": "c4", "to": "p4"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

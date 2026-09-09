@@ -1,0 +1,565 @@
+{
+ "case_id": "ep162_the_locked_room_in_the_sky_shinichi_kudos_first_case",
+ "episode_number": "162",
+ "title": "The Locked Room in the Sky: Shinichi Kudo's First Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Locked_Room_in_the_Sky:_Shinichi_Kudo%27s_First_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0162.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Shinichi Kudo/Conan, Kogoro, Ran, Inspector Megure, Officer Takagi) omitted by convention, consistent with the ep11 prototype -- this holds even though the episode is framed as a flashback narrating Shinichi's literal first case. No `event` node type: actions are direct typed edges. This case contains a genuine evidence-based red herring distinct from a motive red herring: Edward Crowe is caught searching the already-dead victim's pockets for negatives and briefly looks like the killer (his cologne explains the victim's oddly wet trouser pocket), but is cleared once the blood-spatter/body-position evidence shows the body was moved after death by someone who hadn't seen how it was originally positioned -- kept as a circumstantial/opportunity red herring rather than a motive one, since the transcript gives him a business motive to buy the negatives but never a motive to kill. Two visually near-identical photo-negative objects appear and are kept as separate nodes per the schema's 'one node per physical instance' rule: the scandal negatives of Senator Dickson that drive the surface plot, and the separate incriminating arson photos that are the real motive evidence. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tsuneo Ukai",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "company executive",
+    "attrs": {
+     "note": "complained about the victim smoking in a non-smoking section; testified (accurately) that Saginuma's seat looked empty at the key moment, which turned out to be because the culprit was there in disguise"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tsugumi Amano",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "photographer",
+    "attrs": {
+     "tell": "hesitated and switched from her right arm to her left when reaching for a luggage-rack bag, because the sharpened wire hidden in her bra had pricked her right side -- the small physical tic that first tipped off the detective"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Chizuru Tachikawa",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "photographer",
+    "attrs": {
+     "note": "fell asleep and was woken by a deliberate loud cough, then unknowingly gave truthful but misleading testimony that the victim's seat was empty and that someone 'knocked back' from inside the restroom -- both facts true, but not about who she assumed"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Noboru Saginuma",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "photographer",
+    "attrs": {
+     "note": "drugged with sleeping pills disguised as airsickness medicine and dressed in the victim's knit hat and eye mask without his knowledge, unknowingly providing the culprit's false alibi"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Edward Crowe",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "freelance journalist, acting on behalf of a US senator",
+    "attrs": {
+     "true_purpose": "was sent to buy the victim's scandal negatives of Senator Dickson before they reached an American newspaper, using a National Bank checkbook found in his briefcase",
+     "note": "entered the restroom looking for the negatives and found Otaka already dead; searched his pockets, got his own cologne on the trousers, and wiped it off with a wet handkerchief -- explaining the victim's oddly wet, dry-handed pocket without making him the killer"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Kazuhiro Otaka",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "photographer",
+    "attrs": {
+     "died_of": "knocked unconscious with a chloroform-soaked handkerchief, then stabbed in the cervical cord with a sharpened wire, approx. 5-6 cm deep",
+     "past_deed": "deliberately started the apartment fire he later 'heroically' photographed, winning the Nichiuri Shimbun Photo Award three years earlier; boasted about it when confronted with his own pre-fire photographs"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Tsugumi Amano's brother",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "unspecified in available transcript excerpt",
+    "attrs": {
+     "died_of": "died in an apartment fire that Otaka deliberately started"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Luna Airliners restroom",
+    "attrs": {
+     "significance": "true crime scene; blood on the wall but none on the body proved the body had been moved/repositioned after death"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Passenger cabin seating (victim's row)",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Apartment building (backstory fire scene, Tokyo)",
+    "attrs": {
+     "significance": "site of the arson that killed Amano's brother, three years before the present case"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Sharpened bra underwire",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "one end sharpened; concealed in the wire channel of her bra, undetectable by two full body checks and metal detectors alike; capable of penetrating the cervical cord at 5-6 cm with a full-power stab",
+     "staging_flaw": "never discarded, because dropping it at the scene would immediately point to whichever woman was missing a wire from her bra"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Chloroform-soaked handkerchief in a small bottle",
+    "role": "weapon",
+    "attrs": {
+     "found_at": "left behind in the restroom"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Knit hat and eye mask",
+    "role": "tool",
+    "attrs": {
+     "note": "matched Otaka's own habit of sleeping in an eye mask; used to disguise the drugged, unconscious Saginuma as the still-alive Otaka"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Otaka's negatives of Senator Dickson (scandal photos)",
+    "role": "evidence",
+    "attrs": {
+     "significance": "the negatives Edward Crowe was sent to buy; cut into pieces with sewing scissors and flushed by the culprit to stage a robbery motive and misdirect the investigation onto anyone who knew about the deal"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Otaka's arson photographs",
+    "role": "evidence",
+    "attrs": {
+     "content": "dozens of photos including panoramic shots taken before the fire even started, proving Otaka deliberately set the blaze he later 'heroically' documented",
+     "discovered_by": "Tsugumi Amano, found in Otaka's room; the confrontation over these photos is what triggered the murder"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Sewing kit scissors and needle",
+    "role": "tool",
+    "attrs": {
+     "note": "the only edged items found in Amano's luggage during the body search; dismissed at first as too small to be the murder weapon, and used instead to cut up the Dickson negatives"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Fragment of a film negative",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "stuck to the seat beside Saginuma's -- the seat the culprit secretly occupied while impersonating the sleeping Otaka"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Wound-pattern clue: a peculiar scratch mark beside the fatal neck wound is consistent with the far (unsharpened) end of a thin wire scraping the skin during the stab -- a weapon shape not found on anyone in two full body/luggage searches except concealed in a bra underwire.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Testimony-consistency clue: cross-checking all four toilet-trip witnesses against each other, every account holds together except Amano's claim to have stayed asleep in her seat the whole time -- contradicted by Ukai's account of seeing her wandering the cabin.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cC",
+    "desc": "Negative-fragment clue: a torn piece of film negative was found stuck to the seat beside Saginuma's, the seat with no assigned occupant on the manifest -- physical proof someone sat there who was carrying negative fragments, tying the disguise scheme directly to whoever was cutting up film that day.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cD",
+    "desc": "Blood-position clue: blood was found on the restroom wall where the body was found leaning, but none on the body itself -- proving the body had been moved and repositioned after death by someone who found it, searched it (explaining the wet-yet-dry-handed pocket), and left without reporting it.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cE",
+    "desc": "Arm-hesitation clue: reaching for luggage overhead, Amano's right arm stopped mid-motion and she switched to her left -- a tiny, otherwise meaningless tell consistent with a sharp object concealed against her right side pricking her.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "dating"
+  },
+  {
+   "type": "kills",
+   "from": "p6",
+   "to": "p7",
+   "order": -2,
+   "temporal_frame": "backstory",
+   "years_before_present": 3,
+   "method": "started an apartment fire to stage a heroic-rescue photo opportunity; Amano's brother died in the blaze",
+   "circumstance_tags": [
+    "premeditated",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3",
+   "order": -2,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l3",
+   "order": -2,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "owns",
+   "from": "p6",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p6"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p6",
+   "order": -1,
+   "temporal_frame": "backstory",
+   "detail": "found dozens of incriminating pre-fire photographs in his room and confronted him; he boasted about deliberately starting the fire",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "displays",
+   "from": "p6",
+   "to": "o4",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "showed off the Dickson negatives to the group, boasting he'd sell them for a fortune"
+  },
+  {
+   "type": "arranges_meeting_with",
+   "from": "p2",
+   "to": "p6",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "waited until Tachikawa fell asleep, then told Otaka she wanted to talk privately and had him wait in the restroom",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "drugs",
+   "from": "p2",
+   "to": "p4",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "gave Saginuma sleeping pills disguised as airsickness medicine so he would not wake",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p6",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "pressed a chloroform-soaked handkerchief to knock him out, then stabbed the cervical cord with a sharpened bra underwire",
+   "circumstance_tags": [
+    "premeditated",
+    "locked_room"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "uses",
+   "from": "p2",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "uses",
+   "from": "p2",
+   "to": "o1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "destroys_evidence",
+   "from": "p2",
+   "to": "o4",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "cut the Dickson negatives to pieces with sewing scissors and flushed them, to stage a robbery motive and misdirect suspicion",
+   "circumstance_tags": [
+    "cover_up",
+    "red_herring"
+   ]
+  },
+  {
+   "type": "uses",
+   "from": "p2",
+   "to": "o6",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "impersonates",
+   "from": "p2",
+   "to": "p6",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "put Otaka's knit hat and eye mask on the drugged, disguised Saginuma and sat beside him, prompting the stewardess to bring medicine so it would look like Otaka was still alive at that time",
+   "circumstance_tags": [
+    "cover_up",
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "uses",
+   "from": "p2",
+   "to": "o3",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o7",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "manipulates",
+   "from": "p2",
+   "to": "p3",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "woke Tachikawa with a loud, deliberate cough so she would notice Otaka's seat was empty and assume he had simply gone to the restroom",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "went to check on Otaka, knocked on the restroom door and heard a knock back"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "entered the restroom looking for the negatives, found Otaka already dead, knocked back when Tachikawa knocked to avoid being discovered"
+  },
+  {
+   "type": "searches",
+   "from": "p5",
+   "to": "p6",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "searched the already-dead Otaka's pockets for the negatives; his own cologne transferred onto the trousers, so he washed his hands and wiped the pocket with a wet handkerchief",
+   "circumstance_tags": [
+    "cover_up",
+    "red_herring"
+   ]
+  },
+  {
+   "type": "locks_door_of",
+   "from": "p2",
+   "to": "l1",
+   "order": 8,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o7"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "p6"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cE",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "cE",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p6",
+   "motive_type": "revenge_for_brothers_death_in_arson (discovered Otaka had deliberately started the fire that killed her brother, the same fire whose staged 'heroic rescue' photo had first drawn her to him)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,589 @@
+{
+ "case_id": "ep291-293_solitary_island_of_the_princess_and_the_dragon_kings_palace",
+ "episode_number": "291-293",
+ "title": "Solitary Island of the Princess and the Dragon King's Palace",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Solitary_Island_of_the_Princess_and_the_Dragon_King%27s_Palace",
+ "subtitle_source": ["subs_resolved/0291.txt", "subs_resolved/0293.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Heiji Hattori, Kazuha Toyama, Ran, Kogoro Mouri) omitted by convention, even though Heiji drives the decoy trick that exposes the culprit -- that trick is represented via Daito's attempted attack on the intended real target (Kume) rather than on Heiji. Episode 0292 subtitles are not available locally, so the middle stretch (captain Shimoji's murder itself, most suspect interrogations) is reconstructed only from what 0291 and 0293 state or reference about it; Shimoji's cause of death ('bludgeoned near a crashed boat') is carried over from the old case file and flagged uncertain since it could not be independently verified against a transcript. Corrections vs. the old lower-fidelity case file: (1) the old file's culprit call (Mikihiko Daito) IS correct here, unlike some other rebuilds; (2) the old file's clue c1 conflates two separate messages into one -- the permanent pillar carving inside the cottage (left a year earlier by a stranded, now-dead gang member, and never tide-exposed at all) versus the temporary message Daito wrote in the sand next to Taira's body, whose false urgency came from the tour cruiser's wake soaking the sand past the true high-water line, not from the tide itself -- these are now two distinct object nodes; (3) the old file's has_motive_against edge mischaracterizes Daito's motive as 'financial', when the transcript makes clear it is revenge -- Daito is the mayor's former butler whose fiancee, housekeeper Yoshiko Matsumoto, was killed by the gang during the original robbery, and the 'financial' angle (the stolen 200-million-yen folding screen, code-named 'the princess') is the gang's motive from four years earlier, not Daito's; (4) the old file omits the entire backstory network needed to make sense of the case -- Matsumoto, mayor Kaneshiro, the stranded dead gang member, and the reveal that victim Yoshie Taira was secretly Kaneshiro's estranged stepdaughter Miyako who staged her own kidnapping five years earlier and was herself a gang member. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Mikihiko Daito",
+    "aliases": ["Dojo-san"],
+    "roles": ["suspect"],
+    "occupation": "TV crew (posing as local fisherman)",
+    "attrs": {
+     "true_identity": "mayor Kaneshiro's former butler",
+     "disguise": "changed his appearance and posed as a gruff island crew member to infiltrate the TV shoot",
+     "motive_origin": "his fiancee, housekeeper Yoshiko Matsumoto, was killed during the gang's robbery four years earlier",
+     "took_leave": "asked Kaneshiro for a leave of absence to hunt down the gang himself"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yoshitsugu Kume",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "TV crew",
+    "attrs": {
+     "gang_role": "member of the gang that robbed Kaneshiro and killed Matsumoto four years earlier",
+     "tell": "visibly panicked when he saw a portrait/likeness tied to Taira, exposing his gang tie"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Noburo Ikema",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "TV crew",
+    "attrs": {
+     "note": "no evidence tied him to the gang or the murders; cleared by elimination"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yoshie Taira",
+    "aliases": ["Miyako Kaneshiro"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "TV crew",
+    "attrs": {
+     "true_identity": "Kaneshiro's stepdaughter Miyako, using an assumed name",
+     "staged_own_kidnapping": "orchestrated a sham kidnapping of herself five years earlier to test/punish her stepfather after learning he was not her biological father",
+     "gang_role": "member of the gang that stole the folding screen and killed Matsumoto",
+     "died_of": "strangulation"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Takashi Shimoji",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "boat captain",
+    "attrs": {
+     "gang_role": "member of the gang that robbed Kaneshiro and killed Matsumoto",
+     "died_of": "bludgeoning (per old case summary; underlying detail in episode 0292 not independently verified here)"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Hyogo Kaneshiro",
+    "aliases": [],
+    "roles": ["backstory_figure", "witness"],
+    "occupation": "mayor",
+    "attrs": {
+     "relation_to_taira": "stepfather (Taira/Miyako is his wife's daughter from a prior marriage)",
+     "suspected_daughter": "privately suspected his stepdaughter was involved in the earlier kidnapping/robbery, per what he told Daito"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Yoshiko Matsumoto",
+    "aliases": ["Kaa-chan"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "housekeeper",
+    "attrs": {
+     "died": "killed by the gang during the robbery four years before the present investigation",
+     "engaged_to": "Daito"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Stranded gang member",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "starvation and dehydration after a second typhoon swept away the boat he'd arrived on",
+     "circumstance": "returned to the island a year before the present to check on the sunken screen, got stranded, and carved a coded message about it before dying"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Masao Taketomi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "TV director",
+    "attrs": {
+     "briefly_suspected": "accused in passing of staging the whole scenario for TV drama together with the missing captain -- a red herring with no supporting evidence"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Funaura Island",
+    "attrs": {
+     "nickname": "Onigame (Demon Turtle) Island, for its turtle-shaped headland"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Cruiser boat",
+    "attrs": {
+     "note": "the TV crew's tour boat; its wake soaked the beach sand past the true high-water line"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Mayor's island cottage",
+    "attrs": {
+     "note": "rebuilt vacation house on the island; the group sheltered here overnight"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Cottage kitchen",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Island woods",
+    "attrs": {
+     "note": "where Taira was actually strangled before her body was dragged to the beach"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Kaneshiro residence",
+    "attrs": {
+     "note": "site of the robbery and Matsumoto's killing four years earlier"
+    }
+   },
+   {
+    "id": "l7",
+    "name": "Seafloor near island",
+    "attrs": {
+     "note": "where the gang sank the folding screen, chained to an anchor"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Golden folding screen",
+    "role": "contraband",
+    "attrs": {
+     "value": "national treasure, worth 200 million yen",
+     "depicts": "a white heron",
+     "gang_codename": "the princess",
+     "stolen_from": "Kaneshiro residence, four years before the present",
+     "hidden": "sealed inside a box chained to an anchor on the seafloor"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Anchor",
+    "role": "tool",
+    "attrs": {
+     "used_to": "keep the sunken screen's box in place on the seafloor"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Pillar carving",
+    "role": "evidence",
+    "attrs": {
+     "text": "The princess sleeps in the ko and not in the otsu",
+     "decoded_message": "the screen is on the island itself, not under the sea",
+     "decoding_method": "castle/folklore code -- ko = turtle's shell, otsu = Oto-hime, the Dragon King's princess",
+     "location_found": "on a pillar inside the cottage, never reached by the tide"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Sand message",
+    "role": "evidence",
+    "attrs": {
+     "text": "I am the Emissary of Guso",
+     "purpose": "faked a supernatural killer and disguised the true time of the murder",
+     "staging_flaw": "written just above the real high-water mark; the extra wetness around it came from the cruiser's wake, not the tide, making it look freshly written at low tide when it wasn't"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Thin rope",
+    "role": "weapon",
+    "attrs": {
+     "match": "matches the strangulation marks on Taira's body"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Kitchen stool",
+    "role": "evidence",
+    "attrs": {
+     "inscriptions": "Kaa-chan / Brother Chiyo, written over a faded, hard-to-read Dojo-san",
+     "decoded_message": "childhood nicknames based on famous castles, identifying Matsumoto ('Crow Castle') and Daito ('Edo Castle' cut down to Dojo-san)",
+     "carved_by": "Taira/Miyako as a child"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Ashtray teacup",
+    "role": "evidence",
+    "attrs": {
+     "contents": "several different cigarette brands, still doused in unevaporated water",
+     "purpose": "planted by Daito to make it look like more than one 'Emissary of Guso' had been there",
+     "flaw": "Daito already knew the cottage had no real ashtrays"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Wet sand around the sand message looked exactly like a high-tide line, but it actually came from the cruiser's wake, not the tide -- once that's separated out, the message could only have been written at high tide, not the low tide everyone assumed, which reopens who had opportunity.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Daito attacked a decoy dressed and positioned as Kume, believing it was really Kume he was killing -- proving he already knew where and who his next target was, something only the real killer could know.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "Daito casually remarked 'I feel like Urashima Taro' near the spot where the screen had been sunk -- a reference only someone who knew the screen ('the princess') had been sunk there would make.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p7",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p6",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p6",
+   "relation_type": "stepdaughter_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l6"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l6"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l3"
+  },
+  {
+   "type": "strangles",
+   "from": "p1",
+   "to": "p4",
+   "method": "thin rope",
+   "circumstance_tags": ["staged_scene", "cover_up"]
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p1",
+   "to": "p4",
+   "circumstance_tags": ["staged_scene"]
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p5",
+   "method": "bludgeoning (per old case file; unverified against transcript, episode 0292 missing)",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p1",
+   "to": "p2",
+   "circumstance_tags": ["decoy_trick", "failed", "red_herring"]
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p7",
+   "circumstance_tags": ["backstory", "cover_up"]
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p7",
+   "circumstance_tags": ["backstory", "cover_up"]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p7",
+   "circumstance_tags": ["backstory", "cover_up"]
+  },
+  {
+   "type": "kills",
+   "from": "p8",
+   "to": "p7",
+   "circumstance_tags": ["backstory", "cover_up"]
+  },
+  {
+   "type": "steals",
+   "from": "p4",
+   "to": "o1",
+   "circumstance_tags": ["backstory"]
+  },
+  {
+   "type": "steals",
+   "from": "p5",
+   "to": "o1",
+   "circumstance_tags": ["backstory"]
+  },
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "o1",
+   "circumstance_tags": ["backstory"]
+  },
+  {
+   "type": "steals",
+   "from": "p8",
+   "to": "o1",
+   "circumstance_tags": ["backstory"]
+  },
+  {
+   "type": "owns",
+   "from": "p6",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l7"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l7"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l4"
+  },
+  {
+   "type": "written_by",
+   "from": "o3",
+   "to": "p8"
+  },
+  {
+   "type": "regarding",
+   "from": "o3",
+   "to": "o1"
+  },
+  {
+   "type": "written_by",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p1"
+  },
+  {
+   "type": "written_by",
+   "from": "o6",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p4"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o7",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p4",
+   "motive_type": "revenge_for_fiancees_murder"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p5",
+   "motive_type": "revenge_for_fiancees_murder"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "revenge_for_fiancees_murder"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p6",
+   "motive_type": "resentment_over_paternity_and_refused_ransom"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

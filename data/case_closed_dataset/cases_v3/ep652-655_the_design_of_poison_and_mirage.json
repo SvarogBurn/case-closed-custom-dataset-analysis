@@ -1,0 +1,214 @@
+{
+ "case_id": "ep652-655_the_design_of_poison_and_mirage",
+ "episode_number": "652-655",
+ "title": "The Design of Poison and Mirage",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Design_of_Poison_and_Mirage",
+ "subtitle_source": ["subs_resolved/0652.txt", "subs_resolved/0655.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Hattori Heiji, Kazuha, Conan, Ran, Kogoro, and recurring police officer Takagi) omitted by convention. Case spans episodes 652-655; only subs_resolved/0652.txt and subs_resolved/0655.txt are available locally (653 and 654 are missing), so the middle of the investigation is not directly attested -- this file is built only from what 652 and 655 state or recap, nothing invented to fill the gap. Known specific gap: the exact mechanism by which Serika concealed the original bloody dying-message tiles at the Karuizawa villa (a tile-swap like the Osaka decoy, or something else) is never spelled out on-screen in the surviving episodes, only that she 'hid the evidence' -- clue o1/edges around it are marked accordingly. The old lower-fidelity case file (cases/ep652-655_the_design_of_poison_and_mirage.json) correctly names Satake Yoshimi as the poisoner of both Ikuro and Serika, but it omits the actual engine of her motive: the transcript reveals that Ikuro Wakamatsu himself stabbed his father Kohei to death at the Karuizawa villa a month before episode 652, and that Serika (Kohei's wife) covered it up by hiding the bloody dying-message evidence -- neither fact appears in the old file, which treats Kohei's death only as an inert unsolved backstory event with no named killer. Satake is revealed to be Kohei's secret biological daughter from his first marriage, avenging both her father's murder and its cover-up. No event nodes: every action is a direct typed edge between the people/locations/objects involved. case_type: murder (triple).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kohei Wakamatsu",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "design company president",
+    "attrs": {
+     "died_of": "stabbing",
+     "died_at": "his villa bathroom in Karuizawa, a month before the present-day case",
+     "public_narrative": "police assumed a burglar he startled while re-tiling the bathroom himself",
+     "secret": "had a daughter, Satake Yoshimi, from his first marriage, and had planned to publicly acknowledge her"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ikurou Wakamatsu",
+    "aliases": [],
+    "roles": ["suspect", "victim"],
+    "occupation": "employee, heir apparent",
+    "attrs": {
+     "relation_to_p1": "son, not blood-related to Serika",
+     "died_of": "cyanide poisoning",
+     "eating_habit": "eats baumkuchen and shortcake by hand, no fork; known to grab the piece that looks bigger when starving"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Serika Wakamatsu",
+    "aliases": [],
+    "roles": ["suspect", "victim"],
+    "occupation": "vice president, acting president",
+    "attrs": {
+     "died_of": "cyanide poisoning",
+     "died_at": "study, staged to look like suicide",
+     "habit": "licks her thumb before turning a page"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shiina Masashige",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "senior managing director, age 56",
+    "attrs": {
+     "company_gift": "bronze fountain pen, given for 30 years of service"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Fujinami Sumio",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "chief designer, age 30",
+    "attrs": {
+     "company_gift": "bronze wristwatch",
+     "drove": "Shiina's car to the Wakamatsu Tokyo home"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Satake Yoshimi",
+    "aliases": ["the ghost", "Wakamatsu Kohei's daughter"],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": "secretary, age 32",
+    "attrs": {
+     "secret_identity": "Kohei Wakamatsu's biological daughter from his first marriage; joined the company under her mother's surname instead of exposing him",
+     "company_gift": "bronze wristwatch, given by her father",
+     "motive_summary": "avenges her father's murder by Ikurou and its cover-up by Serika"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Yonehara Sakurako",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "housekeeper, age 23",
+    "attrs": {
+     "found_body_of": "Kohei Wakamatsu",
+     "saw_dying_message": "a single letter 'S', rest of the word blocked by the dying Kohei's hand, before it vanished by the time police arrived"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Karuizawa villa bathroom", "attrs": {"note": "re-tiled by Kohei himself shortly before his death"}},
+   {"id": "l2", "name": "Osaka family home bathroom", "attrs": {"note": "empty house Kohei kept for visits; staged 'ghost' encounter site"}},
+   {"id": "l3", "name": "Tokyo home living room", "attrs": {}},
+   {"id": "l4", "name": "Tokyo home study", "attrs": {"note": "where Serika signed contracts and font designs were reviewed"}},
+   {"id": "l5", "name": "Tokyo home restroom", "attrs": {}},
+   {"id": "l6", "name": "Ikurou's room, Tokyo home", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Villa bathroom tiles (dying message)", "role": "evidence", "attrs": {"message_seen": "single letter 'S', rest blocked", "fate": "vanished before police arrived", "mechanism": "not stated in surviving episodes"}},
+   {"id": "o2", "name": "Osaka bathroom tiles carved 'EYE'", "role": "evidence", "attrs": {"decoded_message": "EYE", "trick": "swapped for unmarked tiles during a brief staged blackout, color-graded top-to-bottom so a swap would normally be obvious"}},
+   {"id": "o3", "name": "Letter to Hattori Heiji", "role": "evidence", "attrs": {"content": "confession offer, invites Heiji to the Osaka house on the next full moon, describes the sender as a 'distorted existence... thoughtlessly conjured up by humans'", "enclosed": "key to the Osaka house", "true_meaning": "the cryptic phrasing describes an optical illusion, not a ghost"}},
+   {"id": "o4", "name": "Baumkuchen cake", "role": "weapon", "attrs": {"cut_into": "8 equal pieces", "trick": "Jastrow illusion -- two identically-sized fan-shaped pieces placed so the farther one looks larger, so a starving person reliably grabs it"}},
+   {"id": "o5", "name": "Poison capsule dropped in Serika's tea", "role": "evidence", "attrs": {"purpose": "fake lead -- makes it look like the poison came from the tea, clearing whoever was near the baumkuchen"}},
+   {"id": "o6", "name": "Poisoned doorknob, Ikurou's room", "role": "evidence", "attrs": {"purpose": "fake lead pointing at Serika; disproved once it's shown Ikurou washed his hands after leaving his room, before eating"}},
+   {"id": "o7", "name": "Poisoned slippers", "role": "evidence", "attrs": {"purpose": "swapped for Serika's own restroom slippers to frame her for handling poison"}},
+   {"id": "o8", "name": "Poisoned Japanese dictionary", "role": "weapon", "attrs": {"poison_location": "'Wa' index tab", "trick": "Gestaltzerfall -- repeated staring at the phrase 'Alcohol for the Young' tires Serika's kanji-recognition, so she can't recall how to write 'Waka' and reaches for the dictionary, then licks her poisoned thumb turning the page"}},
+   {"id": "o9", "name": "Contract Serika was signing", "role": "evidence", "attrs": {}},
+   {"id": "o10", "name": "Satake's bronze wristwatch", "role": "evidence", "attrs": {"tell": "cyanide residue from the dictionary powder reacted with the bronze in wash water, leaving a visible shine that wasn't there before"}},
+   {"id": "o11", "name": "Shiina's bronze fountain pen", "role": "instrument", "attrs": {"note": "lent to Serika to sign the contract; same bronze-anniversary-gift material as the watches, a red herring parallel"}},
+   {"id": "o12", "name": "Font design images on-screen", "role": "tool", "attrs": {"phrase_shown_repeatedly": "'Alcohol for the Young' (wakoudo no sake)", "count": "about fifty patterns"}},
+   {"id": "o13", "name": "Soy sauce bottle", "role": "tool", "attrs": {"purpose": "emptied in advance to delay dinner prep and guarantee Ikurou would be hungry when the baumkuchen arrived"}}
+  ],
+  "clues": [
+   {"id": "c1", "desc": "Fujinami switched the plastic bottle to his off hand for a plain reason (checking his watch); Satake never once used her left hand at all, and her bronze watch -- clean before -- now shows fresh shine where cyanide from the dictionary reacted with the metal in wash water.", "clue_type": "forensic"},
+   {"id": "c2", "desc": "The vanished dying message read only 'S' before Kohei's hand blocked the rest; Shiina, Sumio (Fujinami), Satake, Serika and Sakurako (Yonehara) all have an 'S' initial, so the letter alone accuses everyone and no one.", "clue_type": "testimonial"}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "stepmother_of"},
+  {"type": "relationship", "from": "p4", "to": "p3", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p3", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p7", "to": "p3", "relation_type": "employee_of"},
+
+  {"type": "has_motive_against", "from": "p6", "to": "p2", "motive_type": "revenge_for_fathers_murder"},
+  {"type": "has_motive_against", "from": "p6", "to": "p3", "motive_type": "revenge_for_covering_up_fathers_murder"},
+  {"type": "has_motive_against", "from": "p4", "to": "p2", "motive_type": "company_succession_rivalry (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p2", "motive_type": "resented_serving_under_him (red herring)"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "method": "stabbing", "circumstance_tags": ["staged_robbery", "cover_up"]},
+  {"type": "covers_up_for", "from": "p3", "to": "p2", "circumstance_tags": ["cover_up"]},
+  {"type": "tampers_with", "from": "p3", "to": "o1", "circumstance_tags": ["cover_up"]},
+
+  {"type": "kills", "from": "p6", "to": "p2", "method": "cyanide sprinkled on a baumkuchen slice positioned via the Jastrow illusion", "circumstance_tags": ["staged_alibi", "optical_illusion"]},
+  {"type": "kills", "from": "p6", "to": "p3", "method": "cyanide on a dictionary index tab, reached for after a Gestaltzerfall-induced kanji lapse", "circumstance_tags": ["staged_suicide", "frame_up"]},
+  {"type": "frames", "from": "p6", "to": "p3", "circumstance_tags": ["red_herring", "staged"]},
+
+  {"type": "buys", "from": "p4", "to": "o4"},
+  {"type": "stages_illusion_with", "from": "p6", "to": "o4"},
+  {"type": "poisons", "from": "p6", "to": "o4"},
+  {"type": "poisons", "from": "p6", "to": "o6"},
+  {"type": "poisons", "from": "p6", "to": "o7"},
+  {"type": "poisons", "from": "p6", "to": "o8"},
+  {"type": "switches", "from": "p6", "to": "o7", "attrs": {"swapped_with": "Serika's own restroom slippers"}},
+  {"type": "drops", "from": "p6", "to": "o5", "circumstance_tags": ["red_herring", "staged"]},
+  {"type": "empties", "from": "p6", "to": "o13"},
+  {"type": "uses", "from": "p6", "to": "o12"},
+  {"type": "written_by", "from": "o3", "to": "p6"},
+  {"type": "regarding", "from": "o3", "to": "l2"},
+  {"type": "regarding", "from": "o3", "to": "p1"},
+  {"type": "stages_illusion_at", "from": "p6", "to": "l2"},
+  {"type": "swaps", "from": "p6", "to": "o2", "attrs": {"method": "tile swap during a staged blackout"}},
+
+  {"type": "owns", "from": "p4", "to": "o11"},
+  {"type": "owns", "from": "p6", "to": "o10"},
+
+  {"type": "implicates", "from": "o10", "to": "p6"},
+  {"type": "implicates", "from": "c1", "to": "p6"},
+  {"type": "regarding", "from": "c1", "to": "o10"},
+  {"type": "regarding", "from": "c1", "to": "p5"},
+  {"type": "implicates", "from": "o6", "to": "p3", "circumstance_tags": ["red_herring"]},
+  {"type": "implicates", "from": "o7", "to": "p3", "circumstance_tags": ["red_herring"]},
+  {"type": "implicates", "from": "o1", "to": "p3", "circumstance_tags": ["cover_up"]},
+  {"type": "implicates", "from": "o2", "to": "p6"},
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "p6"},
+  {"type": "regarding", "from": "c2", "to": "p7"},
+
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+  {"type": "located_in", "from": "o6", "to": "l6"},
+  {"type": "located_in", "from": "o7", "to": "l5"},
+  {"type": "located_in", "from": "o8", "to": "l4"},
+  {"type": "located_in", "from": "o9", "to": "l4"},
+  {"type": "located_in", "from": "o4", "to": "l3"},
+  {"type": "located_in", "from": "o5", "to": "l3"},
+  {"type": "located_in", "from": "o12", "to": "l4"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+
+  {"type": "was_at", "from": "p6", "to": "l2"},
+
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+  {"type": "was_at", "from": "p7", "to": "l3"},
+
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+  {"type": "was_at", "from": "p5", "to": "l4"},
+  {"type": "was_at", "from": "p6", "to": "l4"},
+
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p6", "to": "l5"},
+
+  {"type": "was_at", "from": "p2", "to": "l6"},
+  {"type": "was_at", "from": "p6", "to": "l6"}
+ ],
+ "label": {
+  "murderer_id": "p6"
+ }
+}

@@ -1,0 +1,218 @@
+{
+ "case_id": "ep885-886_solving_mysteries_at_the_poirot_cafe",
+ "episode_number": "885-886",
+ "title": "Solving Mysteries at the Poirot Café",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Solving_Mysteries_at_the_Poirot_Caf%C3%A9",
+ "subtitle_source": "subs_resolved/0885.txt, subs_resolved/0886.txt (787 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Heiji, Kazuha, Ran, and Amuro under his alias 'Wada Shinichi') omitted by convention. case_type: attempted_murder. The old low-fidelity case file's culprit (Meisuke Ozumi), victim (Tengo Anzai), and core trick (peephole tape + toilet-paper-tube blood shield) all held up against the full transcript -- no correction needed there. What was added on rebuild: the accidental (non-malicious) cause of the blackout -- the victim's own laptop cord shorting out an outlet -- modeled as its own object rather than folded into prose; the drama-club rehearsal room as a second location, since Ozumi's opportunity to know the café's exact seating layout came from a stage set the club built there the previous year; Azusa, the café employee who assists the investigation, added as a witness (was_at completeness); the victim's father, an unnamed Diet member, added as a backstory figure since the false motive (Ozumi believing his girlfriend Yui and the victim were secretly a couple, when they were actually the Dietman's two secret children / half-siblings) only makes sense with him in the graph; and the seating-manipulation step (Ozumi reserving the booth seat with his bag to force Yui there and the victim into the blind-spot chair) made explicit as its own edge instead of buried in the stabbing description.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Meisuke Ozumi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Beika University student, drama club (3rd year)",
+    "attrs": {
+     "age": 21,
+     "false_belief": "believed his girlfriend Yui and the victim Anzai were secretly a romantic couple"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yui Yamashita",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Beika University student, drama club (3rd year)",
+    "attrs": {
+     "age": 21,
+     "secret": "she and Anzai are half-siblings, kept quiet to protect her father's political career"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Minoru Nagatsuka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Beika University student, drama club (3rd year)",
+    "attrs": {
+     "age": 20,
+     "role_at_scene": "filmed and arrived late with Yui's birthday video"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Tengo Anzai",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Beika University student, drama club (3rd year)",
+    "attrs": {
+     "age": 20,
+     "habit": "flirted openly with other men's girlfriends, including Yui",
+     "secret": "he and Yui are half-siblings via their father, a Diet member",
+     "outcome": "survived the stabbing, taken to hospital"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Azusa",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Poirot Café employee",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Anzai's and Yui's father",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "member of the National Diet",
+    "attrs": {
+     "scandal_risk": "public confirmation of a lovechild (Yui) from an affair would be career-ending, hence the secrecy"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Poirot Café",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Beika University drama club room",
+    "attrs": {
+     "relevance": "club built a stage set with tables/chairs measured to match Poirot Café for a play the previous year; the measurements were still kept there"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Tape from Ozumi's gift for Yui",
+    "role": "tool",
+    "attrs": {
+     "trick": "pressed onto the rough side of the bathroom peephole's frosted glass, filling the surface scratches and making it transparent enough to see who was sitting where",
+     "sourced_from": "wrapping of the necklace gift Ozumi brought for Yui",
+     "returned_to": "stuck back onto the gift before or during the blackout"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Cardboard tube (toilet-paper roll core)",
+    "role": "tool",
+    "attrs": {
+     "trick": "pressed against the victim's back around the knife blade while stabbing, and held in place while withdrawing it, to funnel the blood spray away from the attacker"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Toilet paper roll",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "the cardboard tube was forced back inside it afterward to hide it, leaving the roll's middle section unnaturally pushed out"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Long sashimi knife",
+    "role": "weapon",
+    "attrs": {
+     "detail": "a long knife was necessary so it could reach through the cardboard tube and still stab the victim"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Victim's laptop and its frayed charging cord",
+    "role": "instrument",
+    "attrs": {
+     "trick": "a thin, worn wire on the cord shorted the outlet when plugged in, accidentally causing the blackout the culprit exploited"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The toilet paper roll's middle is pushed out and displaced, unlike a normally used roll",
+    "clue_type": "physical",
+    "basis": "sign that the cardboard tube (o3) was stuffed back inside it after the stabbing"
+   },
+   {
+    "id": "c2",
+    "desc": "Blood sprayed onto Conan's and Heiji's faces/table, yet no blood was found on any of the four people who could have been the attacker",
+    "clue_type": "physical",
+    "basis": "shows the attacker used a shield (the tube) to redirect the spray away from themselves and toward the onlookers"
+   },
+   {
+    "id": "c3",
+    "desc": "Tape can make frosted glass locally transparent by filling in its surface scratches",
+    "clue_type": "physical",
+    "basis": "explains how someone shut in the bathroom, behind a frosted-glass peephole, could still learn the seating layout"
+   },
+   {
+    "id": "c4",
+    "desc": "The drama club built a stage set with table/chair measurements identical to Poirot Café for a play the previous year",
+    "clue_type": "behavioral",
+    "basis": "gave Ozumi a way to rehearse the exact blind stab at home beforehand"
+   },
+   {
+    "id": "c5",
+    "desc": "Yui calls the victim by his given name 'Tengo' but calls her own boyfriend by his surname, 'Ozumi-kun'",
+    "clue_type": "testimonial",
+    "basis": "an asymmetry in familiarity that first raised suspicion Yui and Anzai were closer than 'childhood friends'"
+   },
+   {
+    "id": "c6",
+    "desc": "Anzai's pre-recorded birthday video message for Yui announces on camera that the two of them are secretly half-siblings",
+    "clue_type": "testimonial",
+    "basis": "reveals Ozumi's jealous motive was based on a false belief"
+   }
+  ]
+ },
+ "edges": [
+  { "type": "relationship", "from": "p1", "to": "p3", "relation_type": "classmate", "symmetric": true },
+  { "type": "relationship", "from": "p1", "to": "p2", "relation_type": "dating" },
+  { "type": "relationship", "from": "p4", "to": "p2", "relation_type": "half_sibling" },
+  { "type": "relationship", "from": "p2", "to": "p6", "relation_type": "child_of" },
+  { "type": "relationship", "from": "p4", "to": "p6", "relation_type": "child_of" },
+  { "type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "jealousy (mistaken belief that girlfriend Yui and victim Anzai were secretly a couple; they were actually secret half-siblings)" },
+  { "type": "was_at", "from": "p1", "to": "l1" },
+  { "type": "was_at", "from": "p2", "to": "l1" },
+  { "type": "was_at", "from": "p3", "to": "l1" },
+  { "type": "was_at", "from": "p4", "to": "l1" },
+  { "type": "was_at", "from": "p5", "to": "l1" },
+  { "type": "rehearses_at", "from": "p1", "to": "l2", "detail": "used the club's identically-measured old stage set to practice stabbing someone seated in the dark" },
+  { "type": "owns", "from": "p1", "to": "o1" },
+  { "type": "spies_via", "from": "p1", "to": "o1", "detail": "taped the bathroom peephole to see through the frosted glass and learn where everyone was seated" },
+  { "type": "implicates", "from": "o1", "to": "p1" },
+  { "type": "stages_seating_of", "from": "p1", "to": "p2", "detail": "left his bag in the booth seat on arrival so Yui would sit there, forcing the victim into the blind-spot chair opposite" },
+  { "type": "wields", "from": "p1", "to": "o5" },
+  { "type": "located_in", "from": "o5", "to": "l1" },
+  { "type": "owns", "from": "p4", "to": "o6" },
+  { "type": "located_in", "from": "o6", "to": "l1" },
+  { "type": "stabs", "from": "p1", "to": "p4", "circumstance_tags": ["darkness_exploited"], "detail": "stabbed the victim from his blind side during the blackout, using the cardboard tube (o3) around the knife to shield himself from the blood" },
+  { "type": "wields", "from": "p1", "to": "o3" },
+  { "type": "leaves_evidence", "from": "p1", "to": "o4" },
+  { "type": "implicates", "from": "o4", "to": "p1" },
+  { "type": "implicates", "from": "o3", "to": "p1" },
+  { "type": "regarding", "from": "c1", "to": "o4" },
+  { "type": "implicates", "from": "c1", "to": "p1" },
+  { "type": "regarding", "from": "c2", "to": "o3" },
+  { "type": "regarding", "from": "c2", "to": "o5" },
+  { "type": "implicates", "from": "c2", "to": "p1" },
+  { "type": "regarding", "from": "c3", "to": "o1" },
+  { "type": "regarding", "from": "c3", "to": "l1" },
+  { "type": "implicates", "from": "c3", "to": "p1" },
+  { "type": "regarding", "from": "c4", "to": "l2" },
+  { "type": "implicates", "from": "c4", "to": "p1" },
+  { "type": "regarding", "from": "c5", "to": "p2" },
+  { "type": "regarding", "from": "c5", "to": "p4" },
+  { "type": "regarding", "from": "c6", "to": "p2" },
+  { "type": "regarding", "from": "c6", "to": "p4" },
+  { "type": "regarding", "from": "c6", "to": "p6" }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

@@ -1,0 +1,521 @@
+{
+ "case_id": "ep443-444_clam_digging_with_a_sigh",
+ "episode_number": "443-444",
+ "title": "Clam Digging With a Sigh",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Clam_Digging_With_a_Sigh",
+ "subtitle_source": [
+  "subs_resolved/0443.txt",
+  "subs_resolved/0444.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Haibara, Agasa, Detective Boys) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's culprit (s2 = Shoko Hisazu) and mechanism (poisoned cap swap, staged suicide via a planted jar) both check out against the full transcript -- no correction needed there. What the old file missed entirely: the unnamed hit-and-run victim from the backstory car accident (the actual root of the motive), Inspector Yokomizo's younger brother (the on-scene investigating officer who nearly closes the case as suicide and performs the luminol test), the original blood-stained cap as a separate physical object from the swapped poisoned cap, and the specific comparative clues (blood amount mismatch, missing sixth cap, Hisazu's premature knowledge of the blood) that actually prove the swap -- the old file's single clue node collapsed all of this into one generic line. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tsuguo Ushigome",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "college student",
+    "attrs": {
+     "died_of": "cyanide-derivative poisoning",
+     "personality_note": "grew increasingly guilt-ridden after the hit-and-run and intended to turn himself in, which is why he kept sighing all day",
+     "habit": "always drove the group's rental car and always carried both clam buckets back to the car alone"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Shoko Hisazu",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "college student",
+    "attrs": {
+     "club": "Clam Clan"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Mitsue Yashima",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "college student",
+    "attrs": {
+     "club": "Clam Clan"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Takashi Mitsuse",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "college student",
+    "attrs": {
+     "club": "Clam Clan"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yokomizo's younger brother",
+    "aliases": [],
+    "roles": [
+     "investigator"
+    ],
+    "occupation": "police detective",
+    "attrs": {
+     "relation_note": "younger brother of Inspector Kansuke Yokomizo; resembles him in face and voice but has an opposite temperament",
+     "initial_theory": "ruled the death a suicide before Conan's deduction"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Hit-and-run victim",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "circumstance": "a drunk pedestrian struck by the group's rental car on the road the prior week; found unresponsive and not breathing in a roadside patch of grass",
+     "note": "never named in the transcript; his death and the group's cover-up is the motive root for Ushigome's murder"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Clam-digging beach",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Parking lot / rental car",
+    "attrs": {
+     "note": "Ushigome's body was found here, seated in the rental car he always drove"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Convenience store",
+    "attrs": {
+     "note": "where Yashima, Hisazu, and Mitsuse bought the green tea, rice balls, and chips"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Roadside grass (hit-and-run)",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned cap (swap)",
+    "role": "weapon",
+    "attrs": {
+     "prepared_in_advance": true,
+     "mechanism": "cyanide-derivative poison smeared on the inner spiral threads; only reaches the drink once the bottle is agitated sideways",
+     "activation": "mixed into the tea as Ushigome walked back to the car carrying it sideways in his hoodie's kangaroo pocket, hands full with both clam buckets",
+     "trace_found": "minute amount of Ushigome's blood, deposited when he re-screwed it with his healing-but-not-fully-closed finger cut"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Original cap (blood)",
+    "role": "evidence",
+    "attrs": {
+     "blood_source": "Ushigome's cut index finger, fresh when he first opened the bottle at the beach",
+     "fate": "pocketed by Hisazu during the swap instead of being thrown in the sorted trash bags; later found separately in the beach sand",
+     "significance": "one cap too many -- six bottles were recovered from the group's trash but only five caps, proving a cap had been swapped and discarded elsewhere"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Chip bag (cover)",
+    "role": "tool",
+    "attrs": {
+     "purpose": "opened and set down directly next to Ushigome by Hisazu, blocking the others' view while she swapped the caps"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Supplement jar (staged)",
+    "role": "contraband",
+    "attrs": {
+     "original_owner": "Ushigome (used it to hold his supplement pills)",
+     "tampering": "pills replaced with cyanide-derivative powder and left rolling near the body",
+     "purpose": "planted to make the death look like a self-administered suicide"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Green tea bottle",
+    "role": "instrument",
+    "attrs": {
+     "contents": "lethal concentration of cyanide derivatives found in the remaining tea",
+     "purchase": "bought at the convenience store by Yashima, Hisazu, and Mitsuse; handed to Ushigome by Yashima"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Bloody clam rake",
+    "role": "tool",
+    "attrs": {
+     "owner": "Ushigome",
+     "blood_source": "his freshly cut index finger",
+     "note": "forgotten on the beach; returning it is how the kids re-encountered the group right as the body was found"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Heavy blood on the bottle's mouth vs. only a trace on the recovered cap -- inconsistent for one and the same original cap, implying a swap.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Six plastic bottles recovered from the group's trash but only five caps -- the missing sixth cap is the discarded original.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Hisazu named Ushigome's finger injury the instant blood on the bottle mouth was mentioned, before anyone had disclosed why -- she'd seen the bloodied original cap firsthand while swapping it.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p6",
+   "method": "struck by the group's rental car (hit-and-run)",
+   "circumstance_tags": [
+    "accidental",
+    "backstory",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "conceals_death_of",
+   "from": "p1",
+   "to": "p6",
+   "circumstance_tags": [
+    "backstory",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "conceals_death_of",
+   "from": "p2",
+   "to": "p6",
+   "circumstance_tags": [
+    "backstory",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "conceals_death_of",
+   "from": "p3",
+   "to": "p6",
+   "circumstance_tags": [
+    "backstory",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "conceals_death_of",
+   "from": "p4",
+   "to": "p6",
+   "circumstance_tags": [
+    "backstory",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "concealment (feared Ushigome's planned confession would expose the hit-and-run and cost them their new jobs)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "concealment (red herring -- shared the same fear of exposure, but no opportunity to swap the cap)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "concealment (red herring -- shared the same fear of exposure, but no opportunity to swap the cap)"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "swaps_cap_of",
+   "from": "p2",
+   "to": "o5",
+   "circumstance_tags": [
+    "staged_suicide",
+    "premeditated"
+   ],
+   "detail": "swapped the pre-poisoned cap in for the original while setting down the opened chip bag as visual cover"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "o4",
+   "detail": "took Ushigome's own supplement jar to use as a staged-suicide prop"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o4",
+   "circumstance_tags": [
+    "staged_suicide"
+   ]
+  },
+  {
+   "type": "poisons",
+   "from": "p2",
+   "to": "p1",
+   "method": "cyanide derivative smeared inside a swapped bottle cap, mixed into the tea as he carried it sideways in his hoodie pocket",
+   "circumstance_tags": [
+    "staged_suicide",
+    "premeditated",
+    "delayed_action"
+   ]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_suicide"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

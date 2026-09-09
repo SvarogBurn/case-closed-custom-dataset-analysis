@@ -1,0 +1,368 @@
+{
+ "case_id": "ep644-645_ramen_so_good_its_to_die_for",
+ "episode_number": "644-645",
+ "title": "Ramen So Good, It's to Die For",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Ramen_So_Good,_It%27s_to_Die_For",
+ "subtitle_source": [
+  "subs_resolved/0644.txt",
+  "subs_resolved/0645.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved (person/location/object). Old low-fidelity case file (cases/ep644-645_ramen_so_good_its_to_die_for.json) already had the correct culprit (Taninaka) and the broad shape of the poisoning trick, so no culprit-identity correction was needed here -- but two details were refined against the full transcript: (1) the old file's clue c2 said the victim's own glasses were 'missing/swapped', which is imprecise -- the victim's actual glasses were recovered and tested clean; what was hidden was that Taninaka had swapped his own identical, seldom-worn reading glasses onto the victim's body after the collapse, retrieving the poisoned original pair for himself, so the trick is a two-pair swap rather than a disappearance. (2) The old file omitted the backstory victim (Sayo's father, a deceased attorney) entirely, along with Taninaka's real dual motive (retaliation for Saizu's extortion racket against his barbershop, plus a long-simmering wish to force Ramen Ogura to remodel or close as part of the shopping street's 20-year redevelopment pact) and Sayo's independent revenge motive -- both now represented as separate `has_motive_against` edges per the red-herring rule. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Saizu Tokumori",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "real estate company president",
+    "attrs": {
+     "died_of": "hydrocyanic (cyanide) poisoning",
+     "public_reputation": "land shark plotting to buy up and raze Haido Shopping Street for a mall",
+     "harassment_tactic": "sent employees to pick fights and stage injuries in neighboring shops to extort compensation and drive them out",
+     "left_handed": true,
+     "handedness_note": "corrected to ambidextrous as a child by his parents; still eats with his left hand out of habit but uses his right hand for other tasks"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Katsumasa Ogura",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Ramen Ogura owner",
+    "attrs": {
+     "signature_dish": "Death Lord Ramen, topped high with menma (bamboo shoots)",
+     "keeps_reserved_seat_for": "the late regular customer (Sayo's father), out of respect during the 49-day mourning period"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Sayo Ohashi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "part-time worker at Ramen Ogura",
+    "attrs": {
+     "duty": "garnishing bowls and refilling chopstick stands",
+     "backstory": "started working at the shop after her father, a regular customer, died there of a stress-triggered cerebral hemorrhage"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Atsushi Taninaka",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "barbershop owner (Cut House Taninaka)",
+    "attrs": {
+     "shop_history": "opened on the shopping street the same year as Ramen Ogura, 20 years ago; remodeled three times since",
+     "confession": "wanted to kill Saizu and, by making Ramen Ogura the site of a poisoning death, force it to close or remodel"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Sayo Ohashi's father",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "attorney",
+    "attrs": {
+     "died_of": "cerebral hemorrhage, triggered by hypertension and the stress of being dragged into a fight",
+     "circumstance": "collapsed at Ramen Ogura while trying to stop one of Saizu's men from starting trouble; died at the hospital",
+     "legal_role": "was preparing a shopping-street lawsuit against Saizu's harassment before he died; the suit was dropped after his death",
+     "regular_seat": "kept reserved at Ramen Ogura in his memory"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Ramen Ogura",
+    "attrs": {
+     "location": "Haido Shopping Street",
+     "reputation": "shabby-looking but beloved for its unique ramen"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Cut House Taninaka",
+    "attrs": {
+     "location": "Haido Shopping Street, next door to Ramen Ogura"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Haido Shopping Street",
+    "attrs": {
+     "context": "shop owners pooled money for 20 years toward a joint redevelopment/remodeling pact; Saizu wanted to raze it for a mall"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned glasses (Taninaka's)",
+    "role": "weapon",
+    "attrs": {
+     "poison": "hydrocyanic (cyanide) powder",
+     "applied_at": "the temple/frame connective joint",
+     "disguise": "identical to a spare pair of Taninaka's own seldom-worn reading glasses",
+     "final_location": "swapped back onto Taninaka's own person during Saizu's collapse; tested positive when forced into a left-handed reenactment"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Clean swap glasses",
+    "role": "tool",
+    "attrs": {
+     "purpose": "identical clean pair Taninaka swapped onto Saizu's body in place of the poisoned originals",
+     "test_result": "negative for poison when recovered from the ground near the body"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Fake poison packet (planted)",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "inside the victim's jacket's inside pocket",
+     "purpose": "planted by Taninaka to make it look like Saizu poisoned himself, whether by suicide or a botched sabotage attempt on the ramen"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Poison was concentrated on the victim's left thumb and index finger, with only dilute trace amounts on the chopsticks and table and none at all in the ramen, water, or flowers -- the distribution fits hand-to-mouth transfer, not food contamination.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Forced to put on his glasses left-handed like Saizu did, Taninaka avoided gripping the temple/frame joint; those same glasses then tested positive for poison, while the pair recovered from the victim's body had already tested clean.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "longtime_neighbor"
+  },
+  {
+   "type": "cuts_hair_of",
+   "from": "p4",
+   "to": "p1"
+  },
+  {
+   "type": "applies_poison_to",
+   "from": "p4",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o2"
+  },
+  {
+   "type": "plants_evidence",
+   "from": "p4",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_suicide",
+    "red_herring"
+   ]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o2",
+   "circumstance_tags": [
+    "staged_alibi",
+    "evidence_swap"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "method": "cyanide-laced glasses frame; poison transferred to fingers when the victim removed his fogged glasses, then to chopsticks and lips, then ingested while eating ramen",
+   "circumstance_tags": [
+    "staged_suicide",
+    "evidence_swap",
+    "framed"
+   ]
+  },
+  {
+   "type": "sabotages_business_of",
+   "from": "p4",
+   "to": "p2",
+   "detail": "intended the poisoning to happen inside Ramen Ogura so no customer would return, forcing it to remodel or close"
+  },
+  {
+   "type": "harasses",
+   "from": "p1",
+   "to": "p2",
+   "circumstance_tags": [
+    "extortion",
+    "ongoing"
+   ],
+   "detail": "sent employees to pick fights and break tableware, then demanded compensation"
+  },
+  {
+   "type": "harasses",
+   "from": "p1",
+   "to": "p4",
+   "circumstance_tags": [
+    "extortion",
+    "ongoing"
+   ],
+   "detail": "sent employees to get shaved and deliberately flinch so their cheeks got cut, then demanded medical bills"
+  },
+  {
+   "type": "indirectly_causes_death_of",
+   "from": "p1",
+   "to": "p5",
+   "circumstance_tags": [
+    "backstory",
+    "collateral"
+   ],
+   "detail": "one of Saizu's men started a fight in Ramen Ogura; the attorney was dragged in trying to stop it and suffered a fatal cerebral hemorrhage"
+  },
+  {
+   "type": "represents_legal_case_against",
+   "from": "p5",
+   "to": "p1",
+   "circumstance_tags": [
+    "backstory"
+   ],
+   "detail": "was preparing the shopping street's lawsuit over Saizu's harassment when he died; the suit was dropped"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "l1",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "l2",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "retaliation_for_business_extortion"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "retaliation_for_business_extortion (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge_for_fathers_death (red herring)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

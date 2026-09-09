@@ -1,0 +1,382 @@
+{
+ "case_id": "ep097_the_farewell_wine_murder_case",
+ "episode_number": "97",
+ "title": "The Farewell Wine Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Farewell_Wine_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0097.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro Mouri, Conan) omitted by convention; Ran is kept only implicitly via the video-tape mechanic and otherwise not separately tracked. This case has a genuine, strongly-modeled red herring: Kazue really did inject a vintage wine bottle with a muscle relaxant intending to kill her father, and is caught doing so on-screen -- but Ichikawa secretly never drank it (he poured it into a flowerpot to test his daughters), so her attempt, while real, is not what killed him. The actual cause of death is Dr. Okano's openly-administered 'heart stimulant' injection, which was really the poison, exploiting Ichikawa's own faked-collapse test and his position as trusted physician. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Hitoshi Okano",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Kotaro Ichikawa's personal physician",
+    "attrs": {
+     "note": "Ichikawa never realized who Okano really was -- the son of the business partner he ruined 30 years earlier"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kotaro Ichikawa",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "president of Ichikawa Industries",
+    "attrs": {
+     "condition": "weak heart",
+     "plan": "announced he would sell the company and leave his daughters nothing, then secretly planned to fake a heart-attack collapse (with Dr. Okano's help) and review hidden camera footage afterward to test how his daughters and staff really reacted"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kazue Ichikawa",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "art gallery manager (eldest daughter)",
+    "attrs": {
+     "financial_trouble": "her gallery is deeply in debt and being sued over allegedly selling forgeries"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mizue Ichikawa",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "second daughter",
+    "attrs": {
+     "note": "left home after an argument with her father and married soon after; later found to have disposed of her father's stock certificates on her own and is charged with embezzlement -- unrelated to the murder itself"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Toshiaki Imamura",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Ichikawa family butler",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Hitoshi Okano's father",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "co-founder of what became Ichikawa Industries",
+    "attrs": {
+     "note": "not named in the available transcript",
+     "died_of": "hastened his own death out of despair after being ruined; his wife (Okano's mother) died shortly before, while Okano was still a child"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Ichikawa household",
+    "attrs": {
+     "note": "site of the president's annual family birthday meeting"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Wine storeroom (\"the Cave\")",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Basement",
+    "attrs": {
+     "note": "normally unused; its key wasn't on Ichikawa's usual keychain, a detail that helps establish he set up the hidden-camera scheme himself"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "1957 vintage wine bottle",
+    "role": "evidence",
+    "attrs": {
+     "note": "brought out by Kazue to 'celebrate' her father's announced retirement; secretly injected with a muscle relaxant beforehand",
+     "outcome": "Ichikawa never drank it -- he poured it into a flowerpot instead"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Syringe and vial of muscle relaxant (Kazue's)",
+    "role": "weapon",
+    "attrs": {
+     "note": "found among Kazue's belongings; identified by Dr. Okano as a muscle relaxant, dangerous even to healthy people and especially to a man with a serious heart condition"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Flowerpot by the window",
+    "role": "evidence",
+    "attrs": {
+     "forensic_trace": "smells of wine; proves Ichikawa secretly discarded the poisoned wine instead of drinking it"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Hidden video camera and tape",
+    "role": "instrument",
+    "attrs": {
+     "trick": "installed by Ichikawa himself, cord running into the ceiling, to secretly record his daughters' and staff's reactions to his retirement announcement and staged collapse",
+     "note": "the recovered tape is what lets Kogoro reconstruct exactly how Dr. Okano administered the fatal injection in full view of everyone"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Fatal injection (disguised as a heart stimulant)",
+    "role": "weapon",
+    "attrs": {
+     "trick": "administered openly by Dr. Okano while everyone watched, believing it was a heart stimulant meant to help Ichikawa 'recover' from his staged collapse; no one questioned the trusted personal physician's actions"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The wine glass shows no sign Ichikawa actually drank from it, and a nearby flowerpot smells of wine -- proving he secretly discarded the poisoned wine Kazue prepared for him instead of drinking it, which means something other than the wine must have actually killed him.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "The hidden camera Ichikawa installed to test his daughters instead recorded his own death: Dr. Okano openly giving him an injection everyone assumed was a heart stimulant, at the exact moment his staged collapse was meant to happen.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "physician_of"
+  },
+  {
+   "type": "betrays",
+   "from": "p2",
+   "to": "p6",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 30,
+   "detail": "the two started a venture business together as partners; Ichikawa backstabbed him and forced him out penniless once it succeeded",
+   "circumstance_tags": [
+    "betrayal"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "secretly sets up the hidden video camera and recorder before the party using a basement key not on his usual keychain"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "catches Conan investigating the basement recording equipment shortly before administering the fatal injection"
+  },
+  {
+   "type": "confides_in",
+   "from": "p2",
+   "to": "p1",
+   "order": 10,
+   "temporal_frame": "present",
+   "detail": "tells only his physician about his plan to fake a collapse and test his daughters' reactions"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p3",
+   "to": "p2",
+   "order": 11,
+   "temporal_frame": "present",
+   "method": "injected a muscle relaxant into a vintage wine bottle intended for her father, dangerous given his weak heart",
+   "circumstance_tags": [
+    "premeditated",
+    "attempted_murder",
+    "thwarted",
+    "red_herring"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "discards_into",
+   "from": "p2",
+   "to": "o3",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "secretly pours the poisoned wine into the flowerpot instead of drinking it, then fakes drinking it and collapsing"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p2",
+   "order": 13,
+   "temporal_frame": "present",
+   "method": "lethal injection administered openly, disguised as a heart stimulant shot, exploiting Ichikawa's own faked-collapse plan and his position as trusted physician",
+   "circumstance_tags": [
+    "premeditated",
+    "revenge",
+    "hidden_in_plain_sight"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o5",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "revenge_for_fathers_ruin"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p2",
+   "motive_type": "financial_desperation (red herring; she truly attempted to poison the wine, but it was never drunk)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

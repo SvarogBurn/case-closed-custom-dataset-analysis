@@ -1,0 +1,400 @@
+{
+ "case_id": "ep120_a_honey_cocktail_murder_case",
+ "episode_number": "120",
+ "title": "A Honey Cocktail Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/A_Honey_Cocktail_Murder_Case",
+ "subtitle_source": "/home/reo/Faks/GNN/case_closed/case_closed_dataset/subs_resolved/0120.txt (full episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Kogoro Mouri) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved. case_type: murder. Transcript gives no established motive for the mayor or the secretary -- v1 marked the culprit's own motive 'unspecified' but the full transcript actually reveals it clearly (resentment + a broken promise); the other two suspects genuinely have none stated, so has_motive_against stays only on the true culprit here.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Hiromi Yamazaki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "President of Yamazaki Development",
+    "attrs": {
+     "age": 50,
+     "died_of": "head injury from a fall off the balcony railing, after fleeing a staged wasp attack",
+     "wasp_phobia": "traumatic fear of wasps since being nearly killed by a swarm in sixth grade",
+     "broken_promise": "had promised to make Aihara manager of the new spa resort, then reneged"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Shingo Aihara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "caretaker of the Yamazaki mansion",
+    "attrs": {
+     "age": 53,
+     "motive_summary": "resented being treated as a servant despite once saving Yamazaki's life, after she reneged on her promise to make him manager of the new spa resort; wanted to ruin the next day's ground-breaking ceremony",
+     "method_summary": "rigged a balloon-and-bag apparatus with ether-stunned wasps inside the office chimney, smeared honey on the inside doorknob to direct her toward the window instead of the door, pre-corroded the balcony railing with sulfuric acid, then phoned her up to the room and released the wasps by pulling a fishing line from the kitchen while everyone else was downstairs"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hachibee Hachimaki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Mayor of Iwami City",
+    "attrs": {
+     "note": "no motive against Yamazaki is established in the available transcript"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Eri Nakamura",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "President Yamazaki's secretary",
+    "attrs": {
+     "age": 32,
+     "note": "no motive against Yamazaki is established in the available transcript"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Yamazaki mansion upstairs office (locked room with balcony)",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Yamazaki mansion downstairs kitchen",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Shed",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Yamazaki mansion living room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Honey smeared on the inside doorknob",
+    "role": "tool",
+    "attrs": {
+     "purpose": "drew the panicked wasps toward the door and away from the window, so President Yamazaki fled toward the window instead"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Balloon-and-bag wasp release rig hidden in the chimney",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "a bag of ether-stunned wasps taped shut and attached to a balloon, wedged in the chimney (with the chimney's rain cap removed); fishing line ran from the balloon and from a piece of tape covering a pre-made rip in the bag, both fed through a small hole in the office floor down to the kitchen",
+     "trigger": "pulling the line from the kitchen tore the tape off the rip, releasing the wasps into the room; the balloon blocked the chimney top so they flew inward instead of escaping",
+     "disposal": "after the murder, Aihara released the balloon out of the chimney by pulling the second thread; it was meant to fly off but got stuck in a tree downstream due to rain and wind, where Conan and Ran happened to spot it"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Sulfuric-acid-corroded balcony railing",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "pre-weakened in advance so it would give way when Yamazaki leaned on it while fending off the wasps"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Beekeeper outfit smelling of ether",
+    "role": "evidence",
+    "attrs": {
+     "found_location": "the shed",
+     "purpose": "worn to safely gather and ether-stun the wasps used in the rig",
+     "note": "weak evidence on its own since most households in the area own one"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Helium tanks (three) in the shed",
+    "role": "evidence",
+    "attrs": {
+     "claimed_use": "Aihara claimed they were leftovers from making balloons for kids at a summer festival",
+     "anomaly": "three tanks is more than that explanation accounts for, consistent instead with repeated balloon test flights for the chimney rig"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Fishing line/thread found in Aihara's pocket",
+    "role": "evidence",
+    "attrs": {
+     "match": "matches the thread used to pull the tape off the wasp bag",
+     "circumstance": "Aihara hadn't yet disposed of it when the mayor and Conan interrupted him, or had let his guard down once the death was ruled an accident"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Insecticide spray (kept in the office)",
+    "role": "evidence",
+    "attrs": {
+     "note": "Yamazaki always kept it on hand against wasps; she was spraying it as she fled toward the balcony"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Aihara's towel",
+    "role": "evidence",
+    "attrs": {
+     "found_residue": "traces of honey, from wiping his hands after smearing the doorknob"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The honey was smeared specifically on the inside doorknob, not anywhere else in the room. Since a wasp swarm inside a room would normally send someone fleeing straight for the door, the honey-drawn wasps blocked that route instead, explaining why Yamazaki fled the opposite way, through the window, to a balcony with a pre-weakened railing.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Three helium tanks were found in the shed, more than Aihara's claimed explanation (leftover balloons for a summer festival) accounts for -- consistent instead with repeated test flights needed to get a bag-carrying balloon to travel and clear the chimney reliably.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "business_partner_of",
+   "detail": "partnered to build the Iwami Spa Resort together, groundbreaking ceremony scheduled the next day"
+  },
+  {
+   "type": "saves",
+   "from": "p2",
+   "to": "p1",
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "saves young Hiromi from a near-fatal swarm of wasps when she was in sixth grade; she hired him as caretaker afterward out of gratitude"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "used the shed to don the ether-smelling beekeeper outfit and stage the helium tanks used for test flights while preparing the balloon-and-bag wasp rig"
+  },
+  {
+   "type": "installs",
+   "from": "p2",
+   "to": "o2",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "builds the balloon-and-bag wasp rig and hides it in the office chimney, threading fishing line down through a hole in the floor to the kitchen"
+  },
+  {
+   "type": "corrodes",
+   "from": "p2",
+   "to": "o3",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "pre-corrodes the balcony railing with sulfuric acid"
+  },
+  {
+   "type": "smears",
+   "from": "p2",
+   "to": "o1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "smears honey on the underside of the inside doorknob"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "calls",
+   "from": "p2",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "phones the upstairs office to lure President Yamazaki up there alone"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "triggers",
+   "from": "p2",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "after confirming she picked up the phone, pulls the fishing line from the kitchen, releasing the wasps into the locked office"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "released a bag of wasps into her locked office via a balloon rig hidden in the chimney; the honey-baited doorknob blocked her escape through the door and drove her toward the window and balcony instead, where she fell to her death off a railing pre-corroded with sulfuric acid",
+   "circumstance_tags": ["locked_room", "staged_accident"]
+  },
+  {
+   "type": "disposes_of",
+   "from": "p2",
+   "to": "o2",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "returns to the kitchen and releases the second thread, sending the balloon out of the chimney; it was meant to fly off but got caught in a tree downstream"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o7"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "resentment over servitude and a broken promise of promotion (true motive)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

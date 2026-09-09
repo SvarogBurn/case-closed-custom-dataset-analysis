@@ -1,0 +1,419 @@
+{
+ "case_id": "ep279-280_hooligans_labyrinth",
+ "episode_number": "279-280",
+ "title": "Hooligan's Labyrinth",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Hooligan%27s_Labyrinth",
+ "subtitle_source": ["subs_resolved/0279.txt", "subs_resolved/0280.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Detective Boys, Agasa, Haibara) omitted by convention; the Haibara/mystery-man subplot on the platform at the end of ep280 is an unrelated running franchise thread, not connected to this murder, and is omitted for the same reason. Old cases/ep279-280_hooligans_labyrinth.json correctly identified Etsutoshi Oba as the culprit, but its backstory event (e1: 'Akano pushes Oba's twin brother down stadium stairs during a game') is imprecise: per the transcript, Akano beat the brother and threw him down the stairs *after* a match, in retaliation for a comment criticizing Akano's 'Tokyo Hooligan' blog -- not an in-game incident -- and the brother died 3 days later of a brain hemorrhage, having first lied to Oba that he'd simply fallen. The old file also omitted the actual central deduction (the seating/goal-direction contradiction in Oba's account of the match, o2's jersey provenance, and the ticket-timestamp filter that narrowed ~50 departing supporters down to 3 suspects), instead jumping straight to the physical-mark clues. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kadotake Akano",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "notorious Noir Tokyo hooligan supporter",
+    "attrs": {
+     "age": 48,
+     "blacklisted_from_stadiums": true,
+     "homepage": "runs the 'Tokyo Hooligan' blog, boasting about attacks on rival supporters",
+     "died_of": "single stab wound to the stomach"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Etsutoshi Oba",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Noir Tokyo supporter (assumed for the plan)",
+    "attrs": {
+     "age": 29,
+     "real_motive": "avenging his twin brother's death"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hasue Kira",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Noir Tokyo supporter",
+    "attrs": {
+     "age": 24,
+     "note": "argued with a Spirits supporter after the match, delaying him to the station"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mitsuaki Funato",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "office worker, Tokyo Spirits supporter",
+    "attrs": {
+     "age": 33,
+     "note": "initially eyed after misnaming Hide/Naoki as 'wingers'; cleared, since it was an honest soccer-terminology slip, not a lie"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Oba's twin brother",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "brain hemorrhage from a cracked skull, 3 days after the assault",
+     "cover_story": "told Oba he'd merely fallen down the stadium stairs"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Ryusuke Higo",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "forward, Big Osaka FC (formerly Noir Tokyo)",
+    "attrs": {
+     "public_perception": "branded a traitor by Noir Tokyo fans for leaving the club"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Rikuo Endo",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "retired defender, now Big Osaka coach",
+    "attrs": {
+     "relation_note": "Higo's older half-brother; signed by Noir Tokyo as bait to lure Higo, then benched, prompting both to leave for Big Osaka"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Train car (Haido line)",
+    "attrs": {
+     "crowd": "packed with Tokyo Spirits and Noir Tokyo supporters heading home from the derby"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Tokyo Spirits Stadium",
+    "attrs": {
+     "event": "Tokyo Derby: Tokyo Spirits vs Noir Tokyo",
+     "seating": "from the front stand, home (Spirits) supporters sit behind the left goal, away (Noir) supporters behind the right goal"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Stadium toilet",
+    "attrs": {
+     "note": "outside the main stands; where Oba actually waited instead of watching the match"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Haido Station platform",
+    "attrs": {
+     "note": "transfer station where the body was found and tickets/passengers were checked"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Knife (rare foreign design)",
+    "role": "weapon",
+    "attrs": {
+     "blade_length_cm": 15,
+     "description": "ornately patterned handle and scabbard; not sold in Japan, hard to trace",
+     "found_at": "the train car, left at the scene"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Higo's old Noir Tokyo jersey",
+    "role": "evidence",
+    "attrs": {
+     "original_owner": "Ryusuke Higo, from his time as a Noir Tokyo player",
+     "inherited_by": "Oba's twin brother, who wore it to Noir games",
+     "worn_during_crime_by": "Etsutoshi Oba, as a tribute to his brother"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Of roughly 50 departing supporters dressed alike, only 3 held return tickets time-stamped before the match's 5 PM end -- the only way to have followed Akano onto the train without losing him -- narrowing the suspect pool to Kira, Funato, and Oba.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Oba described Hide dribbling 'right to left' and 'approaching' the goal as Naoki scored -- the view from the Spirits' side (left goal) -- yet claimed to have watched from Noir's seats on the right; the two accounts contradict.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "A skin impression matching the knife's uniquely patterned scabbard was found on Oba's left forearm, opposite the watch-mark on his right arm from holding it crossed -- proof he held the concealed weapon there for a long time.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "All three suspects showed posture marks consistent with standing in an overcrowded car (Kira's elbow bag-strap indent, Oba's right-arm watch mark, Funato's palm bag-grip marks), confirming presence but not distinguishing among them.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "twin_sibling"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p7",
+   "relation_type": "half_sibling"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p5",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 1,
+   "method": "beaten and thrown down the stadium stairs after a match, in retaliation for a comment criticizing Akano's blog; died 3 days later of a brain hemorrhage from a cracked skull",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "detail": "Oba reads Akano's boastful blog post, realizes it describes his brother's death, and confronts him in person; Akano smirks 'So you're still alive?', confirming he was the killer"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge_for_twin_brothers_death"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "stabbed once in the stomach with a 15cm-blade knife amid the crowd, just before the train reached the station",
+   "circumstance_tags": ["premeditated", "crowd_cover"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "the train pulled into Haido Station and Akano collapsed on the platform as passengers rushed out, revealing the stabbing"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "among the ~50 supporters who tried to leave the station; held by police as one of the 3 with a pre-5PM-stamped return ticket"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "among the ~50 supporters who tried to leave the station; held by police as one of the 3 with a pre-5PM-stamped return ticket"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "among the ~50 supporters who tried to leave the station; held by police as one of the 3 with a pre-5PM-stamped return ticket"
+  },
+  {
+   "type": "wears",
+   "from": "p2",
+   "to": "o2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "l1"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,275 @@
+{
+ "case_id": "ep843-844_the_detective_boys_in_a_grove",
+ "episode_number": "843-844",
+ "title": "The Detective Boys in a Grove",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Detective_Boys_in_a_Grove",
+ "subtitle_source": ["subs_resolved/0843.txt", "subs_resolved/0844.txt"],
+ "schema_version": "v3",
+ "notes": "case_type: attempted_murder (Hosogoe survives and wakes up in hospital by the episode's end, and asks police to withhold the culprit's name). Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Detective Chiba) omitted by convention; Agasa and the Detective Boys (Genta, Mitsuhiko, Ayumi, Haibara) are kept as witness nodes here because their four independent, apparently-contradictory eyewitness accounts (given from four different floors) ARE the case's central mechanism -- Conan's solution is entirely a reconciliation of their testimony via optical-contrast reasoning, not physical forensics. Old low-fidelity case file correctly identified Kamaya as the culprit and case_type, but flattened all three suspects into one generic 'Department Store restaurant' was_at location -- the transcript shows only Kamaya and Miyadai were actually in the 10th-floor restaurant area (Kamaya on a date, Miyadai tasting a rival Thai soup); Mitsuko was on other floors looking for her wallet and was stopped at the department store exit, not the restaurant, so her was_at edge is corrected here. The old file's single clue ('documented personal history with the restaurant') also collapses three genuinely distinct clues used on-screen: an optical size/value-contrast illusion across the three witness sightings, the backpack strap covering half of the kanji on Kamaya's jacket to look like the numeral '2', and a behavioral tell (using his left hand instead of the male-typical right hand to clean gum off his shoe, because his right hand was sprained) that made Ayumi mistake him for a woman.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ujiyasu Hosogoe",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "head chef, department store restaurant",
+    "attrs": {
+     "age": 47,
+     "outcome": "survived surgery, regains consciousness by episode end",
+     "asked_police": "to withhold the culprit's name until he turns himself in"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Takashi Kamaya",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "part-time worker; former restaurant staff",
+    "attrs": {
+     "age": 26,
+     "fired_by_hosogoe": "2 years ago, for bad attitude at work",
+     "sprained_finger": "right hand, concealed as a bathroom-door accident"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Mitsuko Shikama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "housewife",
+    "attrs": {
+     "age": 38,
+     "identifying_mark": "brooch resembling the number 6",
+     "clothing_color": "light gray"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Masaru Miyadai",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "chef",
+    "attrs": {
+     "age": 52,
+     "identifying_mark": "'Tokyo Spirits' logo printed on jacket back",
+     "clothing_color": "dark gray"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Genta Kojima",
+    "aliases": ["Genta"],
+    "roles": ["witness"],
+    "occupation": "student",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Mitsuhiko Tsuburaya",
+    "aliases": ["Mitsuhiko"],
+    "roles": ["witness"],
+    "occupation": "student",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Ayumi Yoshida",
+    "aliases": ["Ayumi"],
+    "roles": ["witness"],
+    "occupation": "student",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Ai Haibara",
+    "aliases": ["Haibara"],
+    "roles": ["witness"],
+    "occupation": "student",
+    "attrs": {
+     "clothing_color": "gray, used as the color reference for the culprit's clothes"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Hiroshi Agasa",
+    "aliases": ["Professor Agasa"],
+    "roles": ["witness", "bystander"],
+    "occupation": "inventor",
+    "attrs": {
+     "note": "his height is repeatedly used by witnesses as a reference point for the culprit's height"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "10th floor restaurant area",
+    "attrs": {"detail": "houses Hosogoe's restaurant and a separate Thai restaurant Miyadai visited"}
+   },
+   {
+    "id": "l2",
+    "name": "Stairway beside 10F restaurant",
+    "attrs": {"detail": "stabbing scene, arranged as the meeting place for the disguised caller"}
+   },
+   {
+    "id": "l3",
+    "name": "7F sporting goods stairs",
+    "attrs": {"detail": "Genta's sighting location; basketball team collecting new uniforms nearby"}
+   },
+   {
+    "id": "l4",
+    "name": "5F stairs by camera store",
+    "attrs": {"detail": "Mitsuhiko's sighting location; mannequins and signs stored nearby"}
+   },
+   {
+    "id": "l5",
+    "name": "4F stairs by toy store",
+    "attrs": {"detail": "Ayumi's sighting location; backlit by a window"}
+   },
+   {
+    "id": "l6",
+    "name": "1F bags and brand-goods floor",
+    "attrs": {}
+   },
+   {
+    "id": "l7",
+    "name": "Phone booth shrubbery near the store",
+    "attrs": {"detail": "where the disguised call to the restaurant was placed"}
+   },
+   {
+    "id": "l8",
+    "name": "Department store exit",
+    "attrs": {"detail": "where the three suspects were stopped while hurrying to leave"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Knife (murder weapon)",
+    "role": "weapon",
+    "attrs": {"fingerprints": "none -- culprit wore gloves"}
+   },
+   {
+    "id": "o2",
+    "name": "Helium gas can",
+    "role": "tool",
+    "attrs": {
+     "used_for": "disguising the caller's voice on the payphone",
+     "found_at": "shrubbery beside the phone booth",
+     "forensic_lead": "saliva on the intake nozzle, usable for DNA comparison"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Kamaya's backpack",
+    "role": "evidence",
+    "attrs": {"effect": "strap covers half of the kanji on his jacket back when worn"}
+   },
+   {
+    "id": "o4",
+    "name": "Kamaya's jacket",
+    "role": "evidence",
+    "attrs": {
+     "text": "two kanji characters reading 'Beika' printed on the back",
+     "color": "neither light nor dark gray -- a medium gray"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Genta, Mitsuhiko, and Ayumi each described a differently sized, differently colored culprit from three separate floors, but reenacting each sighting shows a person looks larger among short mannequins/signs, smaller among tall basketball players, and lighter or darker depending on the whiteness of nearby mannequins -- all three descriptions match one person once the contrast effects are subtracted",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "Genta saw a '2' on the culprit's clothes, but Kamaya's jacket actually reads 'Beika' in kanji -- worn with the backpack strap covering half of the first character, the remaining half looks exactly like a '2'",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Ayumi's silhouette read as a woman because the culprit reached back with their left hand to pull gum off their left shoe instead of the male-typical motion of stepping the foot forward and using the right hand -- Kamaya's right hand was sprained, forcing the atypical left-handed reach",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "None of the three suspects' gloves showed blood, but the coroner found Hosogoe bled from pulling the knife out himself, not from the stab -- so a clean glove does not clear anyone, unlike the size/color/handedness clues above",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "former_employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "neighbor_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "professional_rival"},
+
+  {"type": "calls", "from": "p2", "to": "p1", "detail": "phones the restaurant using a helium-disguised voice, demanding to speak in person about a complaint", "circumstance_tags": ["voice_disguised"]},
+  {"type": "was_at", "from": "p2", "to": "l7"},
+  {"type": "uses", "from": "p2", "to": "o2"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+
+  {"type": "stabs", "from": "p2", "to": "p1", "circumstance_tags": ["voice_disguised", "gloves_used", "public_place", "survived_attack"]},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "uses", "from": "p2", "to": "o1"},
+  {"type": "implicates", "from": "o1", "to": "p2"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1", "detail": "on a date with his girlfriend, who is not named on-screen"},
+  {"type": "was_at", "from": "p4", "to": "l1", "detail": "tasting the rival Thai restaurant's soup"},
+  {"type": "was_at", "from": "p9", "to": "l1"},
+
+  {"type": "was_at", "from": "p2", "to": "l8"},
+  {"type": "was_at", "from": "p3", "to": "l8"},
+  {"type": "was_at", "from": "p4", "to": "l8"},
+
+  {"type": "was_at", "from": "p9", "to": "l2", "detail": "arrives with the kids after hearing the scream; calls the ambulance and police"},
+
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p9", "to": "l3", "detail": "present during Conan's reenactment"},
+  {"type": "was_at", "from": "p8", "to": "l3", "detail": "used as the color/height reference during the reenactment"},
+
+  {"type": "was_at", "from": "p6", "to": "l4"},
+  {"type": "was_at", "from": "p9", "to": "l4", "detail": "present during Conan's reenactment"},
+  {"type": "was_at", "from": "p8", "to": "l4", "detail": "used as the color/height reference during the reenactment"},
+
+  {"type": "was_at", "from": "p7", "to": "l5"},
+  {"type": "was_at", "from": "p9", "to": "l5", "detail": "present during Conan's reenactment"},
+  {"type": "was_at", "from": "p8", "to": "l5", "detail": "used as the color/height reference during the reenactment"},
+
+  {"type": "was_at", "from": "p8", "to": "l6"},
+
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o4"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+
+  {"type": "regarding", "from": "c1", "to": "p5"},
+  {"type": "regarding", "from": "c1", "to": "p6"},
+  {"type": "regarding", "from": "c1", "to": "p7"},
+  {"type": "regarding", "from": "c1", "to": "l3"},
+  {"type": "regarding", "from": "c1", "to": "l4"},
+  {"type": "regarding", "from": "c1", "to": "l5"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "regarding", "from": "c2", "to": "o4"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+
+  {"type": "regarding", "from": "c3", "to": "p7"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+
+  {"type": "regarding", "from": "c4", "to": "p2"},
+  {"type": "regarding", "from": "c4", "to": "p3"},
+  {"type": "regarding", "from": "c4", "to": "p4"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge (blamed Hosogoe for embarrassing him in front of his girlfriend and causing their breakup; also resented being fired 2 years earlier)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "neighbor grudge (red herring, recurring arguments over her dog's barking)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "professional grudge (red herring, accused Hosogoe 3 years ago of ripping off his recipe, causing a police-attended commotion)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

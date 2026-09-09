@@ -1,0 +1,165 @@
+{
+ "case_id": "ep908_friendship_washed_away_in_the_riverbed",
+ "episode_number": "908",
+ "title": "Friendship Washed Away in the Riverbed",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Friendship_Washed_Away_in_the_Riverbed",
+ "subtitle_source": "subs_resolved/0908.txt (376 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Detective Takagi) omitted by convention. case_type: murder. The old low-fidelity case file (cases/ep908_...json) already had the correct culprit (Maria Suzumoto) as murderer_id, so no culprit correction was needed -- but it was thin: it omitted the true motive (Yuko was secretly posting anonymous insulting comments on her photography-club friends' contest submissions to eliminate her competition; Maria discovered this and retaliated), omitted Juri Matsui's red-herring motive (a fight with Yuko over the club's sudden disbandment) and her verified alibi (convenience store receipt/clerk plus running into the restaurant's chef), collapsed the watermill/riverbank/pool geography into a single generic 'Tokyo Park' location, and was missing the physical objects and comparative clues that actually carry the deduction (selfie stick vs. phone mismatch, swept sawdust, and the band-aids Maria wasn't wearing on arrival but was wearing after returning from the crime scene, covering thorn scratches from the wild roses near the dump pool). Those are all added here. The delayed-discovery trick (opening an unused sluice so Azolla-japonica-reddened water would carry the body out to the main river on a timer) is modeled as its own edge/object since it is what gave Maria a same-time alibi while everyone watched the body float past.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yuko Akiba",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Teito University student (Education), photography-club member and blogger",
+    "attrs": {
+     "age": 21,
+     "died_of": "cerebral contusion from a blow to the back of the head",
+     "secret_behavior": "was anonymously posting insulting comments on her photography-club friends' contest-entry photos to undermine their submissions and win a publishing contest herself"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Maria Suzumoto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Teito University student (English), photography-club member",
+    "attrs": {
+     "age": 21,
+     "trigger": "discovered Yuko was the anonymous commenter insulting her and the other club members' photos",
+     "gave_own_excuse_to_follow_victim": "used the same 'battery/storage full, I'll be back' excuse Yuko used, to slip away and follow her"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Juri Matsui",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Teito University student (Philosophy), photography-club member",
+    "attrs": {
+     "age": 21,
+     "alibi": "convenience store receipt and clerk confirm she was buying phone storage; also ran into the restaurant's chef while retrieving a charger she'd forgotten",
+     "stated_conflict": "got into a fight with Yuko over the club's sudden disbandment, which is why the three came here to make up"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Riverside restaurant",
+    "attrs": {"detail": "open-air eatery by the river/wasabi farms serving natural shaved ice; where the three friends and the Mori party ate"}
+   },
+   {
+    "id": "l2",
+    "name": "Watermill icehouse",
+    "attrs": {"detail": "disused watermill converted into a natural-ice storage icehouse; the actual murder scene; lock had been broken beforehand"}
+   },
+   {
+    "id": "l3",
+    "name": "River pool (bend)",
+    "attrs": {"detail": "a pool formed where the river curves and separates from the main channel; body was left here to be swept into the main river on a delay"}
+   },
+   {
+    "id": "l4",
+    "name": "Convenience store",
+    "attrs": {"detail": "where Juri bought extra phone storage during the murder window"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Block of natural ice",
+    "role": "weapon",
+    "attrs": {"forensic_finding": "victim's blood found on this block by forensics", "detail": "stored in the watermill icehouse, packed in sawdust to slow melting"}
+   },
+   {
+    "id": "o2",
+    "name": "Cart",
+    "role": "tool",
+    "attrs": {"detail": "used to transport the victim's body from the watermill icehouse to the river pool"}
+   },
+   {
+    "id": "o3",
+    "name": "Yuko's selfie stick",
+    "role": "evidence",
+    "attrs": {"detail": "planted on the riverbank by the killer to suggest Yuko slipped while taking a selfie"}
+   },
+   {
+    "id": "o4",
+    "name": "Maria's gloves",
+    "role": "evidence",
+    "attrs": {"forensic_finding": "never recovered until searched for; found to carry the victim's blood and icehouse sawdust", "detail": "worn to handle the ice block without leaving prints"}
+   },
+   {
+    "id": "o5",
+    "name": "Unused sluice gate",
+    "role": "tool",
+    "attrs": {"mechanism": "opened deliberately to divert river water, carrying red Azolla japonica fern into the pool and slowly raising its water level until the body drifted out into the main river, on a timed delay the killer had rehearsed"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Sawdust in the icehouse was swept in a pattern inconsistent with normal ice storage, as if erasing footprints.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The selfie stick was found on the riverbank, but if Yuko had actually slipped while using it, she and her phone should have fallen into the river together with it.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Maria wasn't wearing band-aids when the group first arrived, but was wearing them after returning from the riverbed -- covering thorn scratches from the wild roses that line the path to the dump pool, the same kind of scratch found on the victim's body.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "classmate", "symmetric": true},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge_for_anonymous_online_insults_undermining_photo_contest_chances"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "club_disbandment_dispute (red herring, no supporting evidence found)"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "method": "struck with a block of natural ice to the back of the head, inside the watermill icehouse", "circumstance_tags": ["premeditated", "staged_accident"]},
+  {"type": "stages_accident_of", "from": "p2", "to": "p1", "circumstance_tags": ["staged_accident"]},
+  {"type": "drags_body_of", "from": "p2", "to": "p1"},
+
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o4"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "located_in", "from": "o5", "to": "l2"},
+
+  {"type": "leaves_evidence", "from": "p2", "to": "o3"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o1"},
+
+  {"type": "implicates", "from": "o1", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+
+  {"type": "regarding", "from": "c1", "to": "l2"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p2"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l4"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

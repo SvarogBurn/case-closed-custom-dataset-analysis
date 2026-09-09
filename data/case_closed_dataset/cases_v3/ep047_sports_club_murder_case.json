@@ -1,0 +1,437 @@
+{
+ "case_id": "ep047_sports_club_murder_case",
+ "episode_number": "47",
+ "title": "Sports Club Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Sports_Club_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0047.txt (345 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. The victim was secretly blackmailing all three suspects over different secrets, so two red-herring has_motive_against edges (Saeki over tax evasion, Naruse over an affair) sit alongside the true culprit's motive -- a direct fix of v1's near-total label leak, since v1 only recorded a vague, unconnected motive for the culprit and none for the others. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Naoya Saijo",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "high-dive competitor and instructor, Saeki Sports Club; team captain",
+    "attrs": {
+     "died_of": "struck with a concrete block after being subdued with a chloroform-soaked rag; staged to look like a diving-accident drowning",
+     "secret": "was blackmailing at least three club members over their personal secrets"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Reiko Saeki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "owner, Saeki Sports Club; former high-diver",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Hisashi Kijima",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "competitive swimmer, Saeki Sports Club; former high-diver and former team captain",
+    "attrs": {
+     "identifying_feature": "wears an earring, unlike Saijo",
+     "insight_used": "his own background as a competitive swimmer -- who always wear caps -- gave him the idea to plant a cap on the victim to hide the poolside origin of the head wound"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Keiichi Naruse",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "high-dive competitor, Saeki Sports Club; candidate for team captain",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Kijima's girlfriend",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "note": "severely injured, riding behind Kijima, in a motorcycle accident he caused about six months before the murder"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Elderly apartment resident (painter, witness)",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "amateur painter",
+    "attrs": {
+     "habit": "paints the view of the pool from his balcony at the same set time every night, unknowingly capturing the killer's staged silhouette"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Saeki Sports Club (pool and diving tower)",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Apartment balcony overlooking the club",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Concrete block",
+    "role": "weapon",
+    "attrs": {
+     "found_in": "office trash can",
+     "forensics": "matched to Saijo's forehead injury; Kijima's fingerprints found on it"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Swimming cap",
+    "role": "tool",
+    "attrs": {
+     "staging_flaw": "planted on the body to disguise the fact there was no blood or hair on the diving platform, since the real killing happened poolside; only a competitive swimmer (who always dives capped) would think to use one this way"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Mismatched earplugs",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "don't match the earplugs Saijo was seen wearing that afternoon -- the killer's oversight when re-plugging his ears after knocking him out"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Chloroform-soaked rag",
+    "role": "weapon",
+    "attrs": {}
+   },
+   {
+    "id": "o5",
+    "name": "Painting, \"Diving Against the Moonlight\"",
+    "role": "evidence",
+    "attrs": {
+     "painted": "the same night as the murder, from the witness's balcony at his usual set time",
+     "reveals": "an earring glinting on the diver's silhouette -- Saijo did not wear one, but Kijima does"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Hidden-camera photograph of Naruse",
+    "role": "evidence",
+    "attrs": {
+     "shows": "Naruse in an affair",
+     "significance": "Saijo's blackmail material against Naruse"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Saijo's locker",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "the killer's removed street clothes were thrown inside and the locker was left unlocked, unlike Saijo's normal habit"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "There was no blood, hair, or sign of a strike anywhere on the diving platform, even though the death was staged to look like a diving accident where the victim hit his head -- proving the fatal injury actually happened poolside and the cap was used to disguise that.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The earplugs found on the victim's body don't match the ones he was seen wearing during afternoon practice -- the killer re-plugged his ears with the wrong pair after knocking him out with chloroform.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "The elderly witness's painting, made faithfully from what he saw that night, shows an earring glinting on the silhouetted diver's ear -- Saijo never wore one, but Kijima does, proving the person on the platform impersonating Saijo that night was actually Kijima.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "team_rival",
+   "attrs": {"note": "lost the team captain role to Saijo"}
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "teammate"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "teammate"
+  },
+  {
+   "type": "injures",
+   "from": "p3",
+   "to": "p5",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "causes a motorcycle accident about six months before the murder, severely injuring his girlfriend who was riding behind him"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p3",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "learns of the accident and threatens to tell the club owner and tournament committee unless Kijima cites health reasons and cedes the team captain role to him"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p2",
+   "temporal_frame": "backstory",
+   "detail": "threatens to expose Saeki's tax evasion to the media or tax office"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p4",
+   "temporal_frame": "backstory",
+   "detail": "secretly photographs Naruse in an affair and threatens to expose it"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "job-well-done party in the office, 8:00pm onward, while Saijo practices alone at the pool"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "at the party, but slips away unnoticed during the lively gathering"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "knocks_out",
+   "from": "p3",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated"],
+   "detail": "subdues Saijo poolside with a chloroform-soaked rag"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o4",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "brings the chloroform-soaked rag to subdue Saijo poolside before killing him"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "struck with a concrete block poolside after being knocked out with chloroform",
+   "circumstance_tags": ["premeditated", "staged_accident"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o3",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "re-plugs the victim's ears with the wrong pair of earplugs"
+  },
+  {
+   "type": "stages_accident_of",
+   "from": "p3",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_accident"],
+   "detail": "dresses the body in swim gear and moves/arranges it in the pool to look like a drowning after a diving mishap"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "places the swimming cap on the body to explain away the head wound as a platform collision"
+  },
+  {
+   "type": "impersonates",
+   "from": "p3",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_witness", "red_herring"],
+   "detail": "puts on the cap and mimics Saijo's diving form on the platform with the lights off, letting the elderly witness across the way see a silhouette he believes is Saijo, to fix a false, later time and manner of death"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "conceals_evidence_using",
+   "from": "p3",
+   "to": "o1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "throws the concrete block into an office trash can"
+  },
+  {
+   "type": "conceals_evidence_using",
+   "from": "p3",
+   "to": "o7",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "throws his own removed street clothes into Saijo's locker and leaves without locking it"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "o5",
+   "to": "p3"
+  },
+  {
+   "type": "painted_by",
+   "from": "o5",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge for blackmailing him over a motorcycle accident that injured his girlfriend, forcing him to give up his team captain role"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "being blackmailed over tax evasion",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "being blackmailed with photographs of an affair",
+   "circumstance_tags": ["red_herring"]
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

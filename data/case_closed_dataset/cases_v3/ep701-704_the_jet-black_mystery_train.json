@@ -1,0 +1,314 @@
+{
+ "case_id": "ep701-704_the_jet-black_mystery_train",
+ "episode_number": "701-704",
+ "title": "The Jet-Black Mystery Train",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Jet-Black_Mystery_Train",
+ "subtitle_source": ["subs_resolved/0701.txt", "subs_resolved/0704.txt"],
+ "schema_version": "v3",
+ "notes": "GAP: this case spans episodes 701-704 but only subtitle transcripts for 701 and 704 exist locally (702 and 703 are missing). 701 covers the setup (boarding the Bell-Tree Express, the deduction-quiz prank-card confusion over 'Carriage 7 disappearing', and the discovery of Murobashi's body in a chain-locked room) and 704 opens mid-reveal with Kogoro/Conan walking through the full trick, so the mechanics of the murder (stolen uniform, sabotaged bulb, planted watch, mirrored connecting door, chain-lock tampering) are reconstructed from that reveal dialogue rather than being independently observed step by step across the missing middle episodes -- flagged as a fidelity gap, not fabrication. The origin of the prank 'accomplice' cards that caused the Detective Boys' room-swap confusion in 701 is never clarified in the surviving text and is left unencoded (no node/edge asserts who sent them). Detective-cast regulars (Conan, Kogoro Mouri, Ran, Sonoko, Ai/Haibara as a witness-only presence, Heiji) and the parallel Black Organization/Vermouth-Bourbon-Sherry subplot that runs through 704 are omitted as unrelated to this train murder's suspect pool, matching the convention already used in the old case file and in ep011. Exception: the two passengers registered as 'Natsue Komino' and 'Hiruka Sumitomo' are kept as persons in their own right (not folded into the omitted detective-cast) because the reveal identifies them as Kaitou Kid and an accomplice in disguise, made them part of the on-train suspect pool investigated for the locked-room mystery, and ties directly into a comparative clue (the pyrophobia inconsistency) used in the deduction. CORRECTIONS vs. old cases/ep701-704 file: the old file was structurally thin (single 'events' nodes, a single generic 'knows' edge to the victim for every suspect, motive marked 'unspecified', and objects that stated the killer's identity almost tautologically via 'implicates' with no supporting mechanism). It correctly identified Andō (s1) as the culprit and the correct 5-person suspect pool, but the actual motive (revenge for Andō's wife's death in a fire Murobashi set 5 years ago to cover up an art theft, confirmed on-screen when Andō recognizes a 'destroyed' painting resurfacing at auction two years later) was entirely missing from the old file and is now recovered from the transcript. The old file's claim that the murder weapon was a 'silenced handgun, staged to look like a suicide weapon' is NOT confirmed anywhere in the surviving 701/704 text (only a gunshot smell and a locked room are shown/discussed) -- kept out of the weapon's attrs rather than asserted as fact, likely because that specific detail lived in the missing 702-703 episodes. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Satoru Andō",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "escorts valuables for a client (art handler)",
+    "attrs": {
+     "age": 41,
+     "room": "Carriage 8, Room C",
+     "fire_survivor": true,
+     "wife_died_in_fire_5_years_ago": true
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Etsuto Murobashi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": null,
+    "attrs": {
+     "age": 39,
+     "room_original": "Carriage 8 (moved out due to a double-booking)",
+     "room_actual": "Carriage 7, Room C",
+     "caused_mansion_fire_5_years_ago": true,
+     "motive_for_fire": "stole paintings from the mansion and burned it down to hide the theft"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Andō's wife",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "suffocated in the mansion fire 5 years ago",
+     "name_not_given_in_transcript": true
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Taisaku Noto",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": null,
+    "attrs": {
+     "age": 52,
+     "room": "Carriage 8, Room A",
+     "self_described": "mystery connoisseur",
+     "fire_survivor": true
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Mari Idenami",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": null,
+    "attrs": {
+     "age": 33,
+     "room": "Carriage 8, Room E",
+     "fire_survivor": true
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Natsue Komino",
+    "aliases": ["accomplice of Kaitou Kid, name/identity unknown"],
+    "roles": ["suspect", "witness"],
+    "occupation": null,
+    "attrs": {
+     "credited_age": 75,
+     "room": "Carriage 8, Room D",
+     "true_identity": "not the real Natsue Komino -- an unnamed accomplice of Kaitou Kid impersonating her, revealed by lighting a pipe despite the whole carriage being fire-survivors who are pyrophobic"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Hiruka Sumitomo",
+    "aliases": ["Kaitou Kid"],
+    "roles": ["suspect", "witness"],
+    "occupation": "maid to Natsue Komino (cover identity)",
+    "attrs": {
+     "credited_age": 37,
+     "room": "Carriage 8, Room D",
+     "true_identity": "Kaitō Kid in disguise, using ventriloquism to voice p6's lines"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Jirōkichi Suzuki",
+    "aliases": ["Uncle Jirokichi"],
+    "roles": ["backstory_figure"],
+    "occupation": "head of the Suzuki Financial Group",
+    "attrs": {
+     "role_in_case": "owns the Bell-Tree Express; arranged an unscheduled extra run to exhibit a jewel in the first-class car, expecting to draw out Kaitō Kid"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Bell-Tree Express",
+    "attrs": {
+     "detail": "SL-fronted mystery train owned by the Suzuki Financial Group; runs a scripted deduction-quiz game for passengers each trip"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Carriage 8, Room A",
+    "attrs": { "occupant": "Taisaku Noto" }
+   },
+   {
+    "id": "l3",
+    "name": "Carriage 8, Room C",
+    "attrs": {
+     "occupant": "Satoru Andō",
+     "detail": "shares a mirrored connecting panel with Carriage 7, Room B"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Carriage 8, Room D",
+    "attrs": { "occupants": "Natsue Komino / Hiruka Sumitomo (fake)" }
+   },
+   {
+    "id": "l5",
+    "name": "Carriage 8, Room E",
+    "attrs": { "occupant": "Mari Idenami" }
+   },
+   {
+    "id": "l6",
+    "name": "Carriage 7, Room B",
+    "attrs": {
+     "occupant": "Etsuto Murobashi",
+     "detail": "crime scene; found chain-locked from inside"
+    }
+   },
+   {
+    "id": "l7",
+    "name": "Carriage 8 corridor",
+    "attrs": {}
+   },
+   {
+    "id": "l8",
+    "name": "Mansion (burned 5 years ago)",
+    "attrs": {
+     "fate": "burned down by Murobashi to cover up an art theft",
+     "deaths": "Andō's wife and others died in the blaze"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Suitcase with gold frame",
+    "role": "evidence",
+    "attrs": {
+     "detail": "heavy suitcase Andō was seen carrying; contains a solid-gold picture frame around a counterfeit painting he is escorting to a client -- a false lead, not connected to the murder"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Stolen conductor uniform",
+    "role": "tool",
+    "attrs": { "used_for": "sneaking aboard unnoticed during pre-boarding checks to pre-rig the crime scene" }
+   },
+   {
+    "id": "o3",
+    "name": "Sabotaged call-light bulb",
+    "role": "tool",
+    "attrs": { "effect": "Noto's room call-light stopped working, so the conductor never got proper notice from that room" }
+   },
+   {
+    "id": "o4",
+    "name": "Remote-alarm watch",
+    "role": "tool",
+    "attrs": { "effect": "hidden in Idenami's room, triggered remotely to alarm and draw the conductor into an argument with her" }
+   },
+   {
+    "id": "o5",
+    "name": "Fishing line",
+    "role": "tool",
+    "attrs": { "used_for": "opening the mirrored connecting door from a distance without being seen touching it" }
+   },
+   {
+    "id": "o6",
+    "name": "Mirrored connecting door",
+    "role": "instrument",
+    "attrs": {
+     "mechanism": "a panel between Room C and Room B that reads as a solid mirrored wall from the corridor; lets someone pass between the two rooms without ever being seen entering or leaving either door"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Chain lock (tampered)",
+    "role": "tool",
+    "attrs": { "tamper": "an extra link added in advance so the lock could be secured from outside the room after the killer left" }
+   },
+   {
+    "id": "o8",
+    "name": "Handgun",
+    "role": "weapon",
+    "attrs": { "detail": "murder weapon; gunpowder smell noted at the scene" }
+   },
+   {
+    "id": "o9",
+    "name": "Painting (thought destroyed)",
+    "role": "evidence",
+    "attrs": { "detail": "believed lost in the mansion fire; surfaced at an auction 2 years ago" }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Every Carriage 8 passenger is a fire survivor and visibly pyrophobic during the evacuation panic, except 'Komino', who calmly lights her pipe -- the one person unafraid of fire is the one person not really a fire survivor.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "A painting everyone assumed burned with the mansion 5 years ago turned up for sale at auction 2 years ago; tracing its ownership led straight back to Murobashi, proving he looted the house before torching it.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Komino and her maid stepped into the corridor at the exact moment the fishing line was rigged to the mirrored door, but the train was passing through a tunnel right then, so the wire went unnoticed in the dark.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  { "type": "relationship", "from": "p1", "to": "p2", "relation_type": "former_friend" },
+  { "type": "relationship", "from": "p1", "to": "p3", "relation_type": "spouse_of" },
+  { "type": "relationship", "from": "p7", "to": "p6", "relation_type": "accomplice_of" },
+  { "type": "owns", "from": "p8", "to": "l1" },
+
+  { "type": "burns", "from": "p2", "to": "l8", "circumstance_tags": ["cover_up"] },
+  { "type": "steals", "from": "p2", "to": "o9" },
+  { "type": "kills", "from": "p2", "to": "p3", "method": "arson", "circumstance_tags": ["cover_up"] },
+  { "type": "was_at", "from": "p2", "to": "l8" },
+  { "type": "was_at", "from": "p3", "to": "l8" },
+  { "type": "was_at", "from": "p1", "to": "l8" },
+  { "type": "was_at", "from": "p4", "to": "l8" },
+  { "type": "was_at", "from": "p5", "to": "l8" },
+
+  { "type": "discovers", "from": "p1", "to": "o9", "detail": "recognized the painting at auction 2 years ago and traced its ownership back to Murobashi" },
+  { "type": "implicates", "from": "o9", "to": "p2" },
+  { "type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "revenge_for_wifes_death_in_arson_coverup" },
+  { "type": "gloats_to", "from": "p2", "to": "p1", "detail": "spoke joyfully to Andō about the fire that killed Andō's wife, moments before Andō killed him" },
+
+  { "type": "steals", "from": "p1", "to": "o2" },
+  { "type": "was_at", "from": "p1", "to": "l1" },
+  { "type": "tampers_with", "from": "p1", "to": "o3" },
+  { "type": "located_in", "from": "o3", "to": "l2" },
+  { "type": "hides", "from": "p1", "to": "o4" },
+  { "type": "located_in", "from": "o4", "to": "l5" },
+  { "type": "sabotages", "from": "p1", "to": "o7" },
+  { "type": "located_in", "from": "o7", "to": "l6" },
+  { "type": "uses", "from": "p1", "to": "o6", "circumstance_tags": ["staged_alibi"] },
+  { "type": "located_in", "from": "o6", "to": "l6" },
+  { "type": "uses", "from": "p1", "to": "o5" },
+  { "type": "owns", "from": "p1", "to": "o8" },
+  { "type": "located_in", "from": "o8", "to": "l6" },
+  { "type": "kills", "from": "p1", "to": "p2", "method": "gunshot", "circumstance_tags": ["locked_room", "staged_alibi"] },
+  { "type": "stages_alibi_using", "from": "p1", "to": "o6", "circumstance_tags": ["staged_alibi"] },
+
+  { "type": "owns", "from": "p1", "to": "o1" },
+
+  { "type": "was_at", "from": "p1", "to": "l3" },
+  { "type": "was_at", "from": "p1", "to": "l6" },
+  { "type": "was_at", "from": "p1", "to": "l7" },
+  { "type": "was_at", "from": "p2", "to": "l6" },
+  { "type": "was_at", "from": "p4", "to": "l2" },
+  { "type": "was_at", "from": "p4", "to": "l7" },
+  { "type": "was_at", "from": "p5", "to": "l5" },
+  { "type": "was_at", "from": "p5", "to": "l7" },
+  { "type": "was_at", "from": "p6", "to": "l4" },
+  { "type": "was_at", "from": "p7", "to": "l4" },
+  { "type": "was_at", "from": "p6", "to": "l7" },
+  { "type": "was_at", "from": "p7", "to": "l7" },
+
+  { "type": "implicates", "from": "o2", "to": "p1" },
+  { "type": "implicates", "from": "o3", "to": "p1" },
+  { "type": "implicates", "from": "o4", "to": "p1" },
+  { "type": "implicates", "from": "o5", "to": "p1" },
+  { "type": "implicates", "from": "o6", "to": "p1" },
+  { "type": "implicates", "from": "o7", "to": "p1" },
+
+  { "type": "regarding", "from": "c1", "to": "p6" },
+  { "type": "regarding", "from": "c1", "to": "l8" },
+  { "type": "implicates", "from": "c1", "to": "p6" },
+  { "type": "implicates", "from": "c1", "to": "p7" },
+
+  { "type": "regarding", "from": "c2", "to": "o9" },
+  { "type": "regarding", "from": "c2", "to": "l8" },
+  { "type": "implicates", "from": "c2", "to": "p2" },
+
+  { "type": "regarding", "from": "c3", "to": "o5" },
+  { "type": "regarding", "from": "c3", "to": "l7" },
+  { "type": "implicates", "from": "c3", "to": "p1" }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

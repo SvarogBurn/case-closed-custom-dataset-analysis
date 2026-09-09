@@ -1,0 +1,498 @@
+{
+ "case_id": "ep490_heiji_hattori_vs_shinichi_kudo_deduction_battle_on_the_ski_slope",
+ "episode_number": "490",
+ "title": "Heiji Hattori vs. Shinichi Kudo: Deduction Battle on the Ski Slope",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Heiji_Hattori_vs._Shinichi_Kudo:_Deduction_Battle_on_the_Ski_Slope",
+ "subtitle_source": ["subs_resolved/0490.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Heiji, Kazuha, Shinichi/Conan, Ran, Yukiko and Yusaku Kudo) omitted by convention, as with ep011 -- they observe/hint but have no motive/relationship/evidence ties inside the case itself. No `event` node type: every action is a directly typed edge between the entities involved. Corrections vs. the old cases/ file: (1) the old file's suspect list had only 3 names (Oyama, Mimata, Tateishi) and dropped the fourth person the police actually questioned, Katashina Rikuto, the ex-police-turned-private-detective riding the lift directly behind the victim -- added here as p4. (2) the old file's has_motive_against edge had motive_type 'unspecified'; the transcript makes the motive explicit: Mimata is avenging Mizugami, the stuntman/mentor Minowa murdered four years earlier on the same lift using the same trick, after Mizugami threatened to expose him and quit to become an actor. (3) the old file's clue c2 ('found still wearing the victim's clothes underneath his own jacket') is accurate and is kept here as c4. (4) old culprit id (Mimata) confirmed correct against the transcript. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Minowa Shohei",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "actor",
+    "attrs": {
+     "died_of": "gunshot to the head, staged as suicide on the ski lift",
+     "secret": "could not really ski at professional level; used stunt doubles across two films and hid in a bag during public appearances to keep up the illusion",
+     "backstory_act": "shot the stuntman Mizugami on the same lift four years earlier using the identical staged-suicide trick"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Mimata Kosuke",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "stuntman",
+    "attrs": {
+     "role_in_films": "secretly Minowa's ski double in both Yuki-onna movies",
+     "learned_trick_from": "Mizugami, before Mizugami's death"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Ooyama Morizo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "movie director",
+    "attrs": {
+     "suspected_minowa_of_mizugamis_murder": true,
+     "made_movie_to": "provoke a confession from Minowa by mirroring the real incident in the film's plot"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Katashina Rikuto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "private detective, former police detective",
+    "attrs": {
+     "fired_from_police": "for spending too much time on the Mizugami case, which was outside his jurisdiction",
+     "still_investigating": "the four-year-old case independently"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Tateishi Shizuku",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "make-up specialist",
+    "attrs": {
+     "asked_to_join_film": "to learn the truth about her fiance Mizugami's death"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Mizugami Jiro",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "stuntman",
+    "attrs": {
+     "died_of": "gunshot to the head, staged as suicide on the ski lift, four years before the present case",
+     "was_about_to": "quit stunt work to become an actor, and threatened to expose Minowa's fake skiing if crossed"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Ski lift",
+    "attrs": {
+     "type": "single-rider chairlift",
+     "feature": "two points along the run where the seat passes about three meters above the ground"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Ski slope base",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Hotel souvenir shop",
+    "attrs": {
+     "sells": "the same cloth bag design in a larger size"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Ski lodge",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Gun (used on Mizugami)",
+    "role": "weapon",
+    "attrs": {
+     "staged": "placed in Mizugami's hand to fake suicide, four years before the present case"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Gun (used on Minowa)",
+    "role": "weapon",
+    "attrs": {
+     "staged": "placed in Minowa's hand after the shooting to fake suicide"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Large snow-filled bag",
+    "role": "evidence",
+    "attrs": {
+     "true_use": "real Minowa hid inside it to be carried onto the lift undetected; later restuffed with snow and left beside the body",
+     "strap_trick": "belt lengthened, wetted, and frozen solid to give a ski pole enough reach to hook it from the seat",
+     "purchase_note": "same design sold in a larger size at the resort's souvenir shop"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Ski poles",
+    "role": "tool",
+    "attrs": {
+     "anomaly": "the circular ring fittings on both pole tips are inverted -- proof they were used as hooks, not for skiing",
+     "used_for": "hooking and pulling the pre-placed snow bag into the moving lift seat"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Bottle rocket",
+    "role": "tool",
+    "attrs": {
+     "trick": "lit with a cigarette and timed with a delayed fuse in a plastic bottle to fake a second gunshot for an alibi witness"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Movie ski-scene footage",
+    "role": "evidence",
+    "attrs": {
+     "films": "Yuki-onna's Love and Yuki-onna's Mystery",
+     "anomaly": "Minowa's cap strap is fastened while skiing away from camera and unfastened in the close-up moments later, within the same cut"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Minowa's ski-wear disguise",
+    "role": "tool",
+    "attrs": {
+     "components": "wig, knit hat, sunglasses, and Minowa's own ski-wear",
+     "used_to": "impersonate Minowa while skiing for fans and boarding the lift with the bag",
+     "found": "still worn underneath Mimata's own jacket hours after the murder"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Minowa's cap strap is attached skiing away from camera, unattached in the close-up of the same cut",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Minowa boarded the lift seated on the left; his body was found seated on the right",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Mizugami's death four years ago and Minowa's death now match exactly: lone rider, gun in hand, snow-filled bag alongside",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "Mimata is found still wearing Minowa's ski-wear underneath his own jacket, hours after the murder",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p6",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "mentored_by"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "stunt_double_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p3",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge_for_mizugamis_murder"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p6",
+   "motive_type": "fear_of_exposure_career_rivalry"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "suspected_fiances_killer (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "suspected_friends_killer_sought_confession (red herring)"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p6",
+   "method": "shot in the head on the ski lift, four years before the present case",
+   "circumstance_tags": ["staged_suicide", "cover_up"]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p1",
+   "to": "p6",
+   "circumstance_tags": ["staged_suicide"]
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p1",
+   "detail": "forced a confession at gunpoint about killing Mizugami before shooting him"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "shot in the head while pulled from the bag he was hiding in, on the ski lift",
+   "circumstance_tags": ["impossible_crime", "staged_suicide", "locked_room"]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": ["staged_suicide"]
+  },
+  {
+   "type": "hides_in",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "disguises_as",
+   "from": "p2",
+   "to": "p1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "repositions_body_of",
+   "from": "p2",
+   "to": "p1",
+   "detail": "moved the body from the left side of the seat to the right after the murder"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "recovers",
+   "from": "p2",
+   "to": "o3",
+   "detail": "hooked the pre-placed snow bag from the low point of the lift using a lengthened ski pole"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l3",
+   "detail": "same cloth-bag design sold in a larger size at the hotel souvenir shop, confirming how the belt could be lengthened for the ski-pole hook trick"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p6"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o7"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p2"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

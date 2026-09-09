@@ -1,0 +1,361 @@
+{
+ "case_id": "ep090_the_flower_scent_murder_case",
+ "episode_number": "90",
+ "title": "The Flower Scent Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Flower_Scent_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0090.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro Mouri, Ran, Conan, Inspector Megure) omitted by convention. IMPORTANT CORRECTION vs. the v1 scaffold: v1 listed Rika Okano as the murderer and described Midori Ozaki's attack on Rika as a separate, unmodeled attempted murder-suicide. The full transcript is unambiguous that these are the same single case: Rika's manager Midori Ozaki murders hotel owner Daisuke Shiraki AND attempts to murder Rika Okano herself in the same act, both in revenge for her sister Haruka (the true originator of the flower-opening avant-garde technique Rika stole credit for, who was driven to suicide after Rika used Shiraki's financial backing to push her out of the art world). Midori explicitly confesses to targeting both ('I had to make Shiraki and Rika pay'), and Kogoro explicitly names her as the killer of Shiraki and identifies Rika as the second, intended victim. This file follows the transcript rather than the v1 label. case_type: murder (Shiraki) + attempted_murder (Rika Okano).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Midori Ozaki",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Rika Okano's manager/assistant",
+    "attrs": {
+     "note": "changed her name after her sister Haruka's suicide in order to get close to Rika as her manager"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Daisuke Shiraki",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "owner of Bay Front Hotel; head of the Shiraki Group, which financially backs Rika Okano's art career",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Rika Okano",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "witness"
+    ],
+    "occupation": "avant-garde flower-arranging artist, recent World Art Award winner",
+    "attrs": {
+     "fallout": "her plagiarism of Haruka's flower-opening technique is made public through the investigation, ending her career on center stage"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Haruka",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "avant-garde flower arranger; originator of the closed-to-open flower technique",
+    "attrs": {
+     "died_of": "suicide",
+     "cause": "despair after Rika Okano, her student, took credit for her flower-opening technique and used Shiraki's financial backing to pressure her out of the art world"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Anaconda Katagiri",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "pro wrestler",
+    "attrs": {
+     "alibi": "vouched for by several friends as being with them the whole time; cleared"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Bay Front Hotel",
+    "attrs": {
+     "note": "site of Rika Okano's World Art Award congratulatory party; includes the owner's office/dressing room and the stage"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Necktie (Shiraki's own)",
+    "role": "weapon",
+    "attrs": {
+     "anomaly": "found knotted at the front of the neck, unusual for a genuine struggle, and there are no scratch marks under the victim's nails -- both point to the victim already being unconscious when strangled"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Frozen chloroform bud (worn on Shiraki's chest)",
+    "role": "weapon",
+    "attrs": {
+     "trick": "chloroform frozen inside a flower bud so it stays sealed shut; as it warms to room temperature it reopens and vaporizes the chloroform, which the wearer inhales unnoticed since every party guest wears a flower",
+     "observed_state_change": "closed in the dressing room, found open at the time of death"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Frozen cyanide-laced flowers (rigged into the stage arrangement)",
+    "role": "weapon",
+    "attrs": {
+     "trick": "same freeze-and-thaw mechanism as the chloroform bud, but loaded with a potassium cyanide compound and planted among the flowers arranged for Rika Okano's on-stage show, timed to open and release the poison as she performed",
+     "outcome": "discovered and sealed before it opened; Conan disrupts the show to buy time"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Liquid nitrogen",
+    "role": "tool",
+    "attrs": {
+     "note": "the legitimate freezing agent behind Rika Okano's signature 'flowers that open like magic' technique; Midori uses the same publicly-known method to rig both trick flowers, hiding it in plain sight"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The flower pinned to Shiraki's chest was closed when Conan saw him in the dressing room shortly before the murder, but was found open on the body -- the only way a flower re-opens is the freeze/thaw mechanism used in Rika Okano's own signature technique, meaning the killer deliberately imitated it to hide a dose of chloroform inside.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "The necktie's knot sits at the front of the victim's neck and there are no scratch marks under his fingernails -- inconsistent with him fighting off a strangler, and consistent instead with him already being unconscious (chloroformed) before being strangled, which undercuts the initial theory that the killer had to be an unusually strong man.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "sponsors"
+  },
+  {
+   "type": "plagiarizes",
+   "from": "p3",
+   "to": "p4",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "takes credit for Haruka's flower-opening technique and, backed by Shiraki's financial support, pressures her out of the art world so she can't reclaim it",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "confronts",
+   "from": "p5",
+   "to": "p2",
+   "temporal_frame": "backstory",
+   "detail": "got into a public fight with Shiraki over royalties at a dinner show",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "uses",
+   "from": "p1",
+   "to": "o4",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "uses liquid nitrogen from Rika's own act to freeze the rigged flowers"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p2",
+   "order": 11,
+   "temporal_frame": "present",
+   "method": "chloroformed via a frozen chloroform bud hidden in his boutonniere flower, then strangled with his own necktie once unconscious",
+   "circumstance_tags": [
+    "premeditated",
+    "staged_confusion"
+   ]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o1",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "uses the victim's own necktie so the weapon can't be traced to her"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o2",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p1",
+   "to": "p3",
+   "order": 12,
+   "temporal_frame": "present",
+   "method": "frozen potassium-cyanide-laced flowers rigged into the on-stage arrangement, timed to open and release the poison during her show",
+   "circumstance_tags": [
+    "premeditated",
+    "attempted_murder",
+    "thwarted"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "revenge_for_sisters_suicide"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p3",
+   "motive_type": "revenge_for_sisters_suicide"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p2",
+   "motive_type": "royalty_dispute (red herring; strongest early suspect due to build and a prior public fight with Shiraki, but has an alibi)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

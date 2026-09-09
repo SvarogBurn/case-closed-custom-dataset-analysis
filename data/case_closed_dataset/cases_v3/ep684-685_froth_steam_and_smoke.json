@@ -1,0 +1,268 @@
+{
+ "case_id": "ep684-685_froth_steam_and_smoke",
+ "episode_number": "684-685",
+ "title": "Froth, Steam, and Smoke",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Froth,_Steam,_and_Smoke",
+ "subtitle_source": ["subs_resolved/0684.txt", "subs_resolved/0685.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective/main-cast nodes (Conan, Takagi, Megure, Ran, Kogoro, Haibara, Subaru/Amuro, Chiba, Agasa, Detective Boys) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file's culprit (Ogino) and core salt/froth trick are confirmed correct against the transcript -- no reversal needed here, unlike some other rebuilds -- but it was thin: it omitted the actress's half-brother subplot, the canceled engagement, the ex-assistant who stole the memory card and tipped off Katsumoto, and two of the three deductive clues (the missing camera, the unattended alarm clock) that actually break the alibi alongside the froth timing. It also mislabeled Ogino's occupation as 'Cameraman' throughout when the transcript's second character card corrects it to 'Photographer'. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Daisaku Katsumoto",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "publishing company president / editor-in-chief",
+    "attrs": {
+     "age": 58,
+     "magazine": "Weekly Great",
+     "death": "pushed from his 26th-floor balcony"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Keisuke Ogino",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "photographer",
+    "attrs": {
+     "age": 34,
+     "flat_floor": 3,
+     "tell": "arrived at the scene without his camera, only his phone"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kaori Tsukihara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "magazine editor",
+    "attrs": {
+     "age": 28,
+     "flat_floor": 3
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kazutomo Sodesaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "writer, freelance",
+    "attrs": {
+     "age": 31,
+     "flat_floor": 3,
+     "note": "not a Katsumoto Publishing employee, unlike the other two"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "The actress",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "actress",
+    "attrs": {
+     "died_of": "suicide",
+     "cause": "fabricated tabloid affair story ruined her wedding"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Actress's half-brother",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "stuntman",
+    "attrs": {
+     "status": "hospitalized, unconscious after being attacked by a fan",
+     "true_context": "photographed hugging his half-sister after she told him of her engagement, misreported as an affair"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Ogino's ex-assistant",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "former assistant to Ogino",
+    "attrs": {
+     "note": "quit recently; reportedly abroad after coming into money"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Actress's fiance",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "actor",
+    "attrs": {
+     "note": "wedding press conference was days away; engagement canceled after the scandal"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Apartment building", "attrs": {}},
+   {"id": "l2", "name": "Katsumoto's flat (26F)", "attrs": {}},
+   {"id": "l3", "name": "Ogino's flat (3F)", "attrs": {}},
+   {"id": "l4", "name": "Tsukihara's flat (3F)", "attrs": {}},
+   {"id": "l5", "name": "Sodesaki's flat (3F)", "attrs": {}},
+   {"id": "l6", "name": "Pavement outside the building", "attrs": {}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Purification salt",
+    "role": "tool",
+    "attrs": {"source": "funeral attendance gift bag by his entrance", "used_for": "faking beer froth"}
+   },
+   {
+    "id": "o2",
+    "name": "Ogino's beer glass",
+    "role": "evidence",
+    "attrs": {"trick": "salt sprinkled in to regenerate froth after it had already vanished"}
+   },
+   {
+    "id": "o3",
+    "name": "Tsukihara's coffee cup",
+    "role": "evidence",
+    "attrs": {"steam_window": "~8 minutes, genuine, untampered"}
+   },
+   {
+    "id": "o4",
+    "name": "Sodesaki's cigarette",
+    "role": "evidence",
+    "attrs": {"burn_window": "just under ~9 minutes, genuine, untampered"}
+   },
+   {
+    "id": "o5",
+    "name": "Memory card (photo sequence)",
+    "role": "evidence",
+    "attrs": {
+     "content": "consensual photos of the actress hugging her half-brother, not a secret affair",
+     "significance": "Katsumoto's own fingerprints on it prove he deliberately chose to misreport it"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Katsumoto's mass e-mail",
+    "role": "evidence",
+    "attrs": {"sent_at": "7:25 AM, moments before he was pushed", "tone": "inflammatory reply to the lawsuit threat"}
+   },
+   {
+    "id": "o7",
+    "name": "Ogino's alarm clock",
+    "role": "evidence",
+    "attrs": {"set_for": "7:30 AM daily", "auto_stops_after": "several minutes if unattended"}
+   },
+   {
+    "id": "o8",
+    "name": "New carpet in Katsumoto's flat",
+    "role": "evidence",
+    "attrs": {
+     "installed": "the night before the murder",
+     "flaw": "wrong pile length; he was on the phone complaining about it when the doorbell (the killer) interrupted him",
+     "confirmation_status": "predicted by Conan as likely to hold trace evidence, not shown confirmed on screen"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Ogino's camera",
+    "role": "instrument",
+    "attrs": {"note": "conspicuously absent from the scene, unlike a photographer's usual habit"}
+   },
+   {
+    "id": "o10",
+    "name": "Suspects' lawsuit e-mail",
+    "role": "evidence",
+    "attrs": {"sent": "the night before the murder", "content": "joint threat to sue Katsumoto over the fabricated article"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Beer froth was still present well past the ~6-minute limit timed by the froth/steam/smoke experiment, unlike the coffee steam and cigarette smoke which matched their own timed windows exactly.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "A working photographer rushed to a newsworthy scene carrying only his phone, never his camera -- the one tool of the trade he'd never normally forget.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "Tsukihara heard Ogino's alarm still ringing unattended as she left her own flat, though he claimed to have been home watching football the whole time -- nobody stopped it.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "half_sibling_of"},
+  {"type": "relationship", "from": "p5", "to": "p8", "relation_type": "engaged_to", "symmetric": true, "status": "canceled after the scandal broke"},
+  {"type": "relationship", "from": "p7", "to": "p2", "relation_type": "employee_of", "note": "quit shortly before the murder"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge_for_actress_suicide_and_brothers_assault"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "planned_lawsuit (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "planned_lawsuit (red herring)"},
+
+  {"type": "photographs", "from": "p2", "to": "p5"},
+  {"type": "photographs", "from": "p2", "to": "p6"},
+  {"type": "delivers", "from": "p7", "to": "p1", "detail": "misunderstood and delivered Ogino's private photos of the actress and her brother to Katsumoto", "circumstance_tags": ["misunderstanding"]},
+  {"type": "publishes_false_article_about", "from": "p1", "to": "p5", "headline": "Popular actress caught in a late-night dangerous affair before her wedding"},
+  {"type": "drives_to_suicide", "from": "p1", "to": "p5"},
+  {"type": "bribes", "from": "p1", "to": "p7", "detail": "paid for the lawsuit tip-off and the stolen memory card"},
+  {"type": "owns", "from": "p2", "to": "o5"},
+  {"type": "steals", "from": "p7", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p1"},
+
+  {"type": "sends", "from": "p1", "to": "o6"},
+  {"type": "sent_to", "from": "o6", "to": "p2"},
+  {"type": "sent_to", "from": "o6", "to": "p3"},
+  {"type": "sent_to", "from": "o6", "to": "p4"},
+  {"type": "sends", "from": "p2", "to": "o10"},
+  {"type": "sends", "from": "p3", "to": "o10"},
+  {"type": "sends", "from": "p4", "to": "o10"},
+  {"type": "sent_to", "from": "o10", "to": "p1"},
+
+  {"type": "confronts", "from": "p2", "to": "p1", "detail": "questions him over the stolen memory card and the threat to run a new exclusive naming him", "circumstance_tags": ["led_to_killing"]},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "pushed from the 26th-floor balcony during a struggle", "circumstance_tags": ["staged_alibi", "unplanned"]},
+
+  {"type": "uses", "from": "p2", "to": "o1", "detail": "sprinkled salt into his beer to regenerate froth"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o1", "detail": "salt grains left in his jacket pocket"},
+  {"type": "implicates", "from": "o1", "to": "p2"},
+
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o7"},
+  {"type": "owns", "from": "p2", "to": "o9"},
+  {"type": "owns", "from": "p3", "to": "o3"},
+  {"type": "owns", "from": "p4", "to": "o4"},
+  {"type": "located_in", "from": "o8", "to": "l2"},
+  {"type": "implicates", "from": "o8", "to": "p2"},
+
+  {"type": "located_in", "from": "l2", "to": "l1"},
+  {"type": "located_in", "from": "l3", "to": "l1"},
+  {"type": "located_in", "from": "l4", "to": "l1"},
+  {"type": "located_in", "from": "l5", "to": "l1"},
+  {"type": "located_in", "from": "l6", "to": "l1"},
+
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o9"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "o7"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l6"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l6"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

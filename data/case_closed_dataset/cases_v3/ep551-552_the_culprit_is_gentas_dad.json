@@ -1,0 +1,225 @@
+{
+ "case_id": "ep551-552_the_culprit_is_gentas_dad",
+ "episode_number": "551-552",
+ "title": "The Culprit is Genta's Dad",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Culprit_is_Genta%27s_Dad",
+ "subtitle_source": ["subs_resolved/0551.txt", "subs_resolved/0552.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Genta, Ayumi, Mitsuhiko, Takagi, Megure, Chiba) omitted by convention -- recurring series regulars, not case-specific to this episode's crime. No `event` node type: actions are direct typed edges. The old lower-fidelity `cases/` file had the culprit right (Gankichi Kojima, s3) but everything else was thin: generic `knows`/`was_at` edges, an `events` array, and a single vague clue ('obscure calligraphy style'). The transcript makes the real mechanism much more specific: Gonsaku secretly ran the whole 'Kojima-san Competition' as a manhunt for the man who beheaded his dog Gonta during a burglary six months earlier (Hyakki Yakou gang) -- push-ups measured shoe size against the burglar's yard footprint, the singing test matched voice against words the gang leader was overheard muttering, and the kanji test's video secretly recorded handedness. All three finalists passed those screens (same distant surname spelling, same shoe size, same left-handedness, similar voice), so Gonsaku set one final trap: a torn washi paper copied from the gang's ransom note, written in a distinctive circular-stroke kanji style. Bunta and Genji both misread it as plain numbers (801 / 108, the latter reported as 'shakuhachi'); only Gankichi read it correctly as kanji ('ippin'), exposing him. The episode's title is itself the misdirection the case is built on: Genta's actual father is Genji (identified only via a Tokyo-dialect hi->shi pronunciation quirk, e.g. 'shakuhachi' for 108 and singing 'Shi no moto' for 'Hi no moto' in Kuroda Bushi), who is innocent -- the real culprit, Gankichi, has no relation to Genta at all. The old file's `has_motive_against` was 'unspecified'; the transcript supplies a clear one (self-preservation/evidence destruction on Gankichi's side, vigilante revenge for the dog on Gonsaku's side). Minor transcript inconsistency: Genji's contestant number is read as 84 in part 1 and 81 in part 2 -- both are given verbatim in the relevant node's attrs. case_type: murder (manslaughter during a struggle, per Gankichi's own confession).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kojima Gonsaku",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Kojima Group president",
+    "attrs": {
+     "age": 71,
+     "died_of": "fall down a staircase during a struggle",
+     "secret_scheme": "ran the Kojima-san Competition as a covert manhunt for his dog's killer, screening 200 same-spelling Kojima applicants down to 3 finalists by shoe size, voice, and handedness",
+     "final_trap": "showed the 3 finalists a torn washi paper copied from the gang's ransom note; only the real gang leader would read its circular-stroke kanji correctly instead of as digits",
+     "pets_death_motive": "avenged his dog Gonta's death without informing police, per his own order to his secretary"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kojima Bunta",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "contestant, age 33",
+    "attrs": {
+     "contestant_number": 35,
+     "push_ups": "about 100 in 3 minutes",
+     "paper_reading": "read the test paper as '801' (happyakuichi)",
+     "cleared_because": "read the message as a plain number, not the gang's kanji"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kojima Genji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "contestant, age 32",
+    "attrs": {
+     "contestant_number": "84 (stated as 81 in part 2)",
+     "is_gentas_father": true,
+     "paper_reading": "read the test paper as '108', pronounced 'shakuhachi' (heard as 1'8\" / bamboo flute)",
+     "dialect_tell": "Tokyo-native hi/hya -> shi/sha pronunciation shift, also heard when he sang 'Shi no moto' for 'Hi no moto' in Kuroda Bushi",
+     "cleared_because": "misread the paper as a number and his dialect tic doesn't match the gang leader's speech"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kojima Gankichi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "bar owner, age 34",
+    "attrs": {
+     "contestant_number": 147,
+     "paper_reading": "correctly read the circular-stroke kanji as 'ippin' (first-class item)",
+     "confession": "admitted to being the Hyakki Yakou gang leader who beheaded Gonta during the burglary and to fatally shoving Gonsaku during a struggle over the evidence paper, then fleeing and swallowing the paper"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kojima Gonsaku's secretary",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "president's secretary",
+    "attrs": {
+     "task": "delivered the washi test paper to the 3 finalists and reported their readings back to Gonsaku",
+     "withheld_info": "knew about the burglary and Gonta's killing 6 months earlier but was ordered by Gonsaku to keep silent"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Nichiuri TV studio floor", "attrs": {}},
+   {"id": "l2", "name": "Finalists' floor stairwell", "attrs": {"note": "only access to the finalist floor besides a broken elevator; where Gonsaku was found dying"}},
+   {"id": "l3", "name": "Waiting Room A", "attrs": {"occupant": "Bunta"}},
+   {"id": "l4", "name": "Waiting Room B", "attrs": {"occupant": "Genji"}},
+   {"id": "l5", "name": "Waiting Room C", "attrs": {"occupant": "Gankichi"}},
+   {"id": "l6", "name": "Evaluation room", "attrs": {"note": "Gonsaku's private judging room; gun and ransom note found in his bag here"}},
+   {"id": "l7", "name": "Kojima estate front yard", "attrs": {"note": "backstory scene, burglary 6 months earlier; dog Gonta killed here"}},
+   {"id": "l8", "name": "Staff room", "attrs": {}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Washi test paper",
+    "role": "evidence",
+    "attrs": {
+     "material": "specially made mulberry-bark washi, not actually toxic despite Conan's bluff",
+     "content": "circular-stroke kanji 品 copied from the ransom note by Detective Chiba",
+     "trick": "designed so only someone used to the gang's distinctive circular kanji style would read it correctly instead of as digits",
+     "fate": "swallowed by Gankichi at the scene to destroy the evidence, recovered via his confession"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hyakki Yakou ransom note",
+    "role": "evidence",
+    "attrs": {
+     "content": "Regarding the scrolls - the first-class items of the world - we have indeed obtained them. With respect - Hyakki Yakou.",
+     "found_at": "inside Gonsaku's bag in the evaluation room, alongside a gun",
+     "writing_style": "kanji 品 written with circular strokes instead of proper tetragons"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Boar scroll (bush-clover-boar)",
+    "role": "contraband",
+    "attrs": {
+     "painter": "Sankyuu Shounin",
+     "value": "roughly 50 million yen",
+     "status": "survived the burglary because it was out for repair; used as the competition's bonus prize"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Deer scroll",
+    "role": "contraband",
+    "attrs": {"painter": "Sankyuu Shounin", "status": "stolen by Hyakki Yakou during the burglary 6 months earlier"}
+   },
+   {
+    "id": "o5",
+    "name": "Butterfly scroll",
+    "role": "contraband",
+    "attrs": {"painter": "Sankyuu Shounin", "status": "stolen by Hyakki Yakou during the burglary 6 months earlier"}
+   },
+   {
+    "id": "o6",
+    "name": "Gun in Gonsaku's bag",
+    "role": "weapon",
+    "attrs": {"purpose": "Gonsaku intended to use it on his dog's killer once identified", "found_at": "evaluation room"}
+   },
+   {
+    "id": "o7",
+    "name": "Gonta (Gonsaku's dog)",
+    "role": "evidence",
+    "attrs": {"species": "dog", "died": "beheaded with a knife in the Kojima estate front yard during the burglary", "triggered": "prompted Gonsaku's secret manhunt via the competition"}
+   },
+   {
+    "id": "o8",
+    "name": "Secret screening protocol",
+    "role": "tool",
+    "attrs": {
+     "shoe_test": "push-up test shoes secretly recorded shoe size, matched against the burglar's yard footprint",
+     "voice_test": "singing test matched voices against words Gonsaku overheard the gang leader mutter",
+     "handedness_test": "kanji test video secretly recorded which hand each contestant favored, matched to the knife wound on Gonta"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Only Gankichi read the circular-stroke 品 as kanji ('ippin'); Bunta and Genji both misread the same paper as plain digits (801 / 108) instead.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cB",
+    "desc": "Genji pronounced 108 as 'shakuhachi' and sang 'Shi no moto' for 'Hi no moto' in Kuroda Bushi -- same hi->shi Tokyo dialect shift both times.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "distant_relative"},
+
+  {"type": "was_at", "from": "p1", "to": "l6"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l7"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l7"},
+  {"type": "was_at", "from": "p5", "to": "l6"},
+  {"type": "was_at", "from": "p5", "to": "l8"},
+
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "owns", "from": "p1", "to": "o5"},
+  {"type": "owns", "from": "p1", "to": "o6"},
+  {"type": "owns", "from": "p1", "to": "o7"},
+  {"type": "located_in", "from": "o6", "to": "l6"},
+  {"type": "located_in", "from": "o2", "to": "l6"},
+
+  {"type": "prepares", "from": "p1", "to": "o1", "detail": "Gonsaku had the ransom note's text copied onto washi paper as a final identity trap"},
+  {"type": "administers", "from": "p1", "to": "o8"},
+  {"type": "implicates", "from": "o8", "to": "p2"},
+  {"type": "implicates", "from": "o8", "to": "p3"},
+  {"type": "implicates", "from": "o8", "to": "p4"},
+
+  {"type": "shows", "from": "p5", "to": "p2", "detail": "delivered o1; Bunta answered '801'"},
+  {"type": "shows", "from": "p5", "to": "p3", "detail": "delivered o1; Genji answered '108' as 'shakuhachi'"},
+  {"type": "shows", "from": "p5", "to": "p4", "detail": "delivered o1; Gankichi answered 'ippin', correctly reading the kanji"},
+  {"type": "implicates", "from": "o1", "to": "p4"},
+
+  {"type": "regarding", "from": "cA", "to": "o1"},
+  {"type": "regarding", "from": "cA", "to": "o2"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+  {"type": "regarding", "from": "cB", "to": "p3"},
+  {"type": "identifies", "from": "cB", "to": "p3", "detail": "confirms Genji as Genta's father via his dialect, not as the gang leader"},
+
+  {"type": "steals", "from": "p4", "to": "o4", "circumstance_tags": ["cover_up"]},
+  {"type": "steals", "from": "p4", "to": "o5", "circumstance_tags": ["cover_up"]},
+  {"type": "kills", "from": "p4", "to": "o7", "method": "beheaded with a knife in the front yard"},
+  {"type": "drugs", "from": "p4", "to": "p1", "detail": "Gonsaku, his wife, and servants were drugged and knocked out during the burglary"},
+
+  {"type": "confronts", "from": "p1", "to": "p4", "detail": "Gonsaku entered Gankichi's waiting room and revealed he'd identified him as the dog's killer, holding the ransom paper as evidence"},
+  {"type": "kills", "from": "p4", "to": "p1", "method": "shoved/struggled over the evidence paper, causing a fatal fall down the stairwell", "circumstance_tags": ["staged_accident", "closed_circle"]},
+  {"type": "destroys_evidence", "from": "p4", "to": "o1", "detail": "fled the scene and swallowed the torn washi paper to destroy the evidence"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "self_preservation_evidence_destruction"},
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "vigilante_revenge_for_pets_death"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

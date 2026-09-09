@@ -1,0 +1,499 @@
+{
+ "case_id": "ep132-134_magic_lovers_murder_case",
+ "episode_number": "132-134",
+ "title": "Magic Lover's Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Magic_Lover%27s_Murder_Case",
+ "subtitle_source": "/home/reo/Faks/GNN/case_closed/case_closed_dataset/subs_resolved/0132.txt, /home/reo/Faks/GNN/case_closed/case_closed_dataset/subs_resolved/0134.txt (0133 not read; two of the three episode transcripts read in full)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Kogoro Mouri, Sonoko, Inspector Megure) omitted by convention. Katsuki Doito is kept as a node despite being a recurring franchise character (Kaito Kid in disguise) because he is central to this specific case's plot and reveal, not a background detective-cast regular. No `event` node type: every action is a directly typed, attributed edge between the entities involved. case_type: murder. Online usernames are preserved as person attrs since the source explicitly plays on them (one is literally 'Red Herring'). 'Shadow Priest' was never a separate missing club member -- it was a second sockpuppet identity run by the culprit herself to fabricate a phantom suspect; this is captured as a clue plus an attr, not as its own person node, to avoid inventing a person the transcript explicitly says doesn't exist.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tsutomu Nishiyama",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "magic club board leader",
+    "attrs": {
+     "online_alias": "Escape King",
+     "died_of": "unspecified in available transcript excerpt (found dead in his Haido District apartment before the events at the lodge)",
+     "mocking_comment": "\"Ehh, he's probably happy he died on-stage! lol\" -- posted on the club forum after Huden Harui's death"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Toshiya Hamano",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": null,
+    "attrs": {
+     "age": 27,
+     "online_alias": "Disappearing Bunny",
+     "died_of": "strangled",
+     "mocking_comment": "\"This is what they call 'an old man's indiscretion,' eh? (^^;)\" -- posted on the club forum after Huden Harui's death",
+     "body_disposal": "moved via a rigged bow-gun-and-string zipline onto the snowfield behind the lodge, to fake a footprint-less 'impossible crime'"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kikue Tanaka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 28,
+     "online_alias": "The Fake Child (inherited from her late grandfather Huden Harui) plus a second sockpuppet identity, Shadow Priest, invented to fabricate a phantom suspect",
+     "motive_summary": "avenging her grandfather Huden Harui, a magician who died attempting an escape trick after being talked into it despite his frailty; she later found his chat logs and discovered he'd planned to reveal his true identity after succeeding, and that two club members mocked his death shortly afterward",
+     "method_summary": "killed Nishiyama at his apartment and left a taunting message signed with her fake 'Shadow Priest' persona; burned the only bridge to the lodge to trap everyone; rigged the club's 'random' leader-selection magic trick with a dry pen and pre-marked papers to ensure she'd be assigned to heat the bath, giving herself an unwitnessed window; strangled Hamano in that window and used a bow-gun-and-string rig to move his body onto the snowfield without leaving footprints; staged two fake attacks on herself with the same bow-gun to remove herself from suspicion"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Naoko Kuroda",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": null,
+    "attrs": {
+     "age": 25,
+     "online_alias": "Illusion",
+     "note": "posted a sympathetic comment about Huden Harui's death, not a mocking one"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yoshinori Ara",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "lodge owner",
+    "attrs": {
+     "age": 46,
+     "online_alias": "Silent Ventriloquist",
+     "note": "posted a sympathetic comment about Huden Harui's death, not a mocking one"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Katsuki Doito",
+    "aliases": ["Kaito Kid"],
+    "roles": ["suspect", "witness"],
+    "occupation": "medical student (cover identity)",
+    "attrs": {
+     "age": 21,
+     "online_alias": "Red Herring",
+     "true_identity": "revealed to be the phantom thief Kaito Kid in disguise",
+     "note": "had sent Huden Harui an encouraging email the day before his fatal escape attempt, which is how he recognized the connection between Tanaka and the grandfather's death; nudged Conan toward the solution but arrived at the truth too late to prevent the second murder"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kiyohiro Sugama",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "part-time worker at the lodge",
+    "attrs": {
+     "age": 23
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Huden Harui",
+    "aliases": ["The Fake Child (debut-era stage name)"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "magician",
+    "attrs": {
+     "died_of": "died attempting an escape-magic trick despite being physically frail",
+     "intent": "planned to reveal his true identity to the online club once he succeeded at the trick; left an unsent farewell message found later by Tanaka in his chat logs"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Nishiyama's apartment, Haido District",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Mountain lodge (main building, including Tanaka's room, Hamano's room, bathroom, and veranda)",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Snowfield/backyard behind the lodge",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Bridge (the only link between the lodge and the outside world)",
+    "attrs": {
+     "fate": "burned down by the culprit to trap everyone at the lodge"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Bow-gun (crossbow) kept at the lodge",
+    "role": "weapon",
+    "attrs": {
+     "normal_use": "target-shooting game equipment for club guests",
+     "repurposed_as": "the tool used to fire the string-rigged arrows for both the body-transport trick and Tanaka's two staged self-attacks"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Rigged string-and-arrow zipline apparatus",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "two arrows fired into trees on either side of the veranda, each trailing a looped string; a long string threaded through both loops formed a two-point 'sail' support, with a futon slung beneath it via a belt loop to carry the body across open air onto the snowfield without touching the snow",
+     "cleanup": "a final arrow, fired to release and retrieve the support strings without leaving tracks near the body"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Rigged leader-selection game props (dry pen and pre-marked papers)",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "papers marking 'temporary leader / ceremony master / bath duty' were pre-marked by Tanaka and swapped into the blindfolded 'guess the name' magic trick along with a pen with no ink, so the 'random' assignment secretly guaranteed she'd be chosen for bath duty -- her murder alibi window"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "\"Shadow Priest\" computer message at Nishiyama's apartment",
+    "role": "evidence",
+    "attrs": {
+     "content": "\"He is but the first one...\" -- signed The Shadow Priest",
+     "purpose": "left by Tanaka to misdirect investigators toward a fictitious 'missing club member' suspect who never physically existed"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Staged glass-break rig, Tanaka's own room (staple, string, weight)",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "a string stapled above the window, weighted and routed through the floor above and under the window into her room, tied to her bed; cutting the string while pretending to pick up clothes broke the glass on cue, letting her fire the bow-gun over her own shoulder and claim she'd been attacked from outside"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Staged glass-break rig, the bathroom (staple, string, weight)",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "an identical staple-string-weight rig above the bathroom window, released simply by opening the window, breaking the glass below; Tanaka had already fired an arrow into the bathroom mirror beforehand and used the ensuing commotion to dispose of her tools",
+     "matching_evidence": "a staple and its matching hole were later found outside the bathroom window"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Arrow hidden in Tanaka's boot",
+    "role": "evidence",
+    "attrs": {
+     "origin": "the arrow used to pull Hamano's body along the zipline rig, recovered by Tanaka from the tree and hidden in her boot when she had no other chance to dispose of it"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Hamano's body was found more than 10 meters from the lodge in undisturbed snow, with no footprints leading to or from it except those of the person who ran to check on him -- an apparently footprint-less, 'impossible' method of getting a body there.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The 'Shadow Priest' persona kept posting in the club's chat at the same time as 'The Fake Child' (Tanaka's handle) -- only possible if the same person ran both identities from separate phone lines, modems, and computers, meaning 'Shadow Priest' was never a separate, missing club member at all.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cC",
+    "desc": "The club's 'random' leader-selection trick was performed with a blindfolded magician reading from papers marked in advance -- whoever prepared those papers and the ink-less pen controlled the outcome. The person 'randomly' assigned to heat the bath, gaining an unwitnessed roughly eight-minute window right before Hamano was killed, was also the one who had proposed the game and supplied its props.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p8",
+   "relation_type": "grandchild_of"
+  },
+  {
+   "type": "mocks",
+   "from": "p1",
+   "to": "p8",
+   "temporal_frame": "backstory",
+   "detail": "posts a mocking comment about Huden Harui's death on the club forum"
+  },
+  {
+   "type": "mocks",
+   "from": "p2",
+   "to": "p8",
+   "temporal_frame": "backstory",
+   "detail": "posts a mocking comment about Huden Harui's death on the club forum"
+  },
+  {
+   "type": "encourages",
+   "from": "p6",
+   "to": "p8",
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "sends an encouraging email the day before Harui's fatal escape attempt"
+  },
+  {
+   "type": "discovers",
+   "from": "p3",
+   "to": "p8",
+   "temporal_frame": "backstory",
+   "detail": "finds her late grandfather's chat logs and his unsent farewell message revealing his plan to unmask himself after the trick"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "method": "unspecified in available transcript excerpt",
+   "circumstance_tags": ["framing"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o4",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "leaves a taunting computer message signed 'Shadow Priest' to misdirect investigators toward a fictitious suspect"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l1"
+  },
+  {
+   "type": "burns",
+   "from": "p3",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "sets fire to the only bridge to the lodge, trapping everyone inside and buying time"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o1"
+  },
+  {
+   "type": "rigs",
+   "from": "p3",
+   "to": "o3",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "secretly pre-marks the selection papers and swaps in a dry pen for the blindfolded 'random' leader-selection game she suggests, ensuring she is chosen to heat the bath"
+  },
+  {
+   "type": "uses",
+   "from": "p2",
+   "to": "o3",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "performs the rigged selection trick as the blindfolded magician, unaware Tanaka pre-marked the papers"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "heats the bath, then climbs from its roof to reach the second floor unseen, securing an unwitnessed window of about eight minutes"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p2",
+   "order": 6,
+   "temporal_frame": "present",
+   "method": "strangled in his room during the roughly eight-minute window she secured by rigging the bath-heating assignment",
+   "circumstance_tags": ["locked_room", "staged_evidence"]
+  },
+  {
+   "type": "installs",
+   "from": "p3",
+   "to": "o2",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "rigs a bow-gun-fired double-string 'sail' support system between the veranda railing and two trees to form a temporary zipline"
+  },
+  {
+   "type": "uses",
+   "from": "p3",
+   "to": "o1",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p3",
+   "to": "p2",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "lowers Hamano's body along the rigged strings onto the snowfield using a futon as a sling, leaving no footprints",
+   "circumstance_tags": ["locked_room", "impossible_crime"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "retrieves",
+   "from": "p3",
+   "to": "o2",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "fires a final arrow to release and retrieve the support strings without leaving tracks near the body"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o5",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "rigs a staple-string-weight mechanism in her own room to break her window and fire an arrow over her own shoulder, faking an attack on herself in front of Ran to get removed from suspicion"
+  },
+  {
+   "type": "uses",
+   "from": "p3",
+   "to": "o1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o6",
+   "order": 10,
+   "temporal_frame": "present",
+   "detail": "rigs an identical staple-string-weight mechanism in the bathroom, having pre-fired an arrow into the mirror, to fake a second attack and dispose of her tools amid the commotion"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "chases into the woods to recover and hide the last remaining arrow"
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p3",
+   "to": "o7",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge for mocking her grandfather Huden Harui after his death (true motive)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p2",
+   "motive_type": "revenge for mocking her grandfather Huden Harui after his death (true motive)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

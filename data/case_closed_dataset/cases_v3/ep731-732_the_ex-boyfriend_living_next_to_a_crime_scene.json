@@ -1,0 +1,251 @@
+{
+ "case_id": "ep731-732_the_ex-boyfriend_living_next_to_a_crime_scene",
+ "episode_number": "731-732",
+ "title": "The Ex-Boyfriend Living Next to a Crime Scene",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Ex-Boyfriend_Living_Next_to_a_Crime_Scene",
+ "subtitle_source": ["subs_resolved/0731.txt", "subs_resolved/0732.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring generic detective-cast (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. Yumi Miyamoto, Naeko Mi'ike, and Chiba are kept as full person nodes despite also being recurring supporting characters, because they are load-bearing to this specific plot (Yumi's relationship with the red-herring suspect Haneda is the episode's premise; Naeko/Chiba/Sakurako's testimony and actions materially drive the deduction) rather than generic detective-story furniture. The old lower-fidelity case file correctly identified Naganobu Itami (s1) as the murderer and the broad strokes (repurposed old farewell note, stock-trading debt motive, phone-cover trick) -- no culprit or major-clue reversal found here, unlike some other rebuilds. It did miss substantial transcript detail: the spiral-notebook hole/signature mismatch clue, the supermarket security-camera alibi contradiction, the peephole/hairstyle clue that clinches it, the chain-lock/warm-air/door-hinge mechanics of the staged 'suicide', Haneda's secret identity as reigning shogi meijin 'Taikou' (explaining both his withheld alibi and the 'collecting all seven [titles]' hint from part 1), and gave was_at edges to only 3 of the 8 named people actually placed at a scene. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Naganobu Itami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "injury": "bruise from wife's thrown ashtray",
+     "motive_trigger": "wife secretly took a loan against their flat to cover stock-trading debt"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Chiyoko Itami",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "strangled, then hung from the bedroom chandelier",
+     "recent_injury": "broken wrist",
+     "backstory": "survived a plane that nearly crashed, 4 years ago"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yasuie Itami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "university student, job-hunting",
+    "attrs": {
+     "habit": "peeks through peepholes for fun",
+     "hairstyle": "dyed cream-caramel"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shukichi Haneda",
+    "aliases": ["Shukissy", "Taikou"],
+    "roles": ["suspect"],
+    "occupation": "professional shogi player (kept secret)",
+    "attrs": {
+     "public_persona": "scruffy, jobless-looking neighbor",
+     "title": "reigning meijin, one of shogi's seven titles",
+     "true_alibi": "Shogi Association preliminary match"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Sakurako Yonehara",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "commuting housemaid",
+    "attrs": {
+     "hired": "started last week, after Chiyoko broke her wrist"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yumi Miyamoto",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "traffic police officer",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Naeko Mi'ike",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police officer",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Chiba",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police officer",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Itami flat, Chateau Beika 1802",
+    "attrs": {"door_lock": "chain-locked from inside after killer's disguised return"}
+   },
+   {
+    "id": "l2",
+    "name": "Haneda's flat (next door)",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Supermarket near Chateau Beika",
+    "attrs": {"toilet": "used by Naganobu to change out of his disguise"}
+   },
+   {
+    "id": "l4",
+    "name": "Public payphone booth",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Shogi Association hall",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Farewell note (repurposed)",
+    "role": "evidence",
+    "attrs": {
+     "written": "4 years ago, aboard a plane Chiyoko believed was about to crash",
+     "reused_as": "fake suicide note",
+     "stale_details": "niece's age, son's exam, kimono age all 4 years out of date"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Chiyoko's spiral notebook",
+    "role": "evidence",
+    "attrs": {
+     "discrepancy": "2 leftover punch-holes on the stub vs 3 on the note",
+     "her_usual_signature": "given name only, never full name"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Mobile phone with swapped cover",
+    "role": "tool",
+    "attrs": {
+     "true_owner": "Naganobu",
+     "trick": "propped in bedroom-door hinge, vibrated loose when called remotely",
+     "cover_disguise": "swapped onto Chiyoko's cover, then swapped back before handover"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Public payphone handset",
+    "role": "evidence",
+    "attrs": {
+     "used_for": "remote call to vibrate o3 off the door hinge",
+     "identified_by": "corner-shop cashier, plus fingerprints"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Suicide note details (niece's age for Shichi-go-san, son's exam, a 40-year-old kimono) are all internally consistent with facts from 4 years ago, not today -- proves the note predates the death.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "The notebook's torn-page stub has 2 remaining spiral holes but the 'suicide note' has 3 punch holes, and Chiyoko always signed her notebook pages with just her given name, never her full name -- the note was never actually torn from this notebook.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Supermarket security footage shows housemaid Sakurako repeatedly during the shopping trip, but never shows Naganobu, who claimed to have been shopping with her the whole time.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "The phone found propping the bedroom door had no call record for that day despite being used to fake a vibrating fall -- because it wasn't Chiyoko's phone at all, just Naganobu's phone wearing her cover, swapped back before he handed it to police.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c5",
+    "desc": "Naganobu described his son's current cream-caramel hairstyle despite not having seen him in over a year and the son wearing a brimmed hat all day -- he could only know that from seeing his son's bare head through the peephole while hanging his wife.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p4", "relation_type": "ex_dating"},
+  {"type": "relationship", "from": "p5", "to": "p7", "relation_type": "childhood_friend_of"},
+  {"type": "relationship", "from": "p8", "to": "p5", "relation_type": "schoolmate_of"},
+  {"type": "relationship", "from": "p6", "to": "p7", "relation_type": "patrol_partner_of"},
+
+  {"type": "conceals_identity_from", "from": "p4", "to": "p6", "detail": "hid that he's a professional shogi player and where he really was that day"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "financial_desperation_over_secret_loan_and_stock_debt"},
+
+  {"type": "kills", "from": "p1", "to": "p2", "method": "strangled", "circumstance_tags": ["staged_suicide", "premeditated"]},
+  {"type": "stages_suicide_of", "from": "p1", "to": "p2", "circumstance_tags": ["staged_suicide", "locked_room", "cover_up"]},
+  {"type": "observes", "from": "p1", "to": "p3", "detail": "saw son's bare-headed hairstyle through the peephole mid-murder", "circumstance_tags": ["red_herring_resolution"]},
+  {"type": "leaves_evidence", "from": "p1", "to": "o1"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "o3", "circumstance_tags": ["staged_alibi"]},
+  {"type": "calls_from", "from": "p1", "to": "o4", "detail": "called o3 remotely to make it vibrate off the door hinge"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+
+  {"type": "written_by", "from": "o1", "to": "p2"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "implicates", "from": "o1", "to": "p1"},
+  {"type": "implicates", "from": "o3", "to": "p1"},
+  {"type": "implicates", "from": "o4", "to": "p1"},
+  {"type": "located_in", "from": "o4", "to": "l4"},
+  {"type": "apprehends", "from": "p8", "to": "p3", "circumstance_tags": ["red_herring"]},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p5"},
+  {"type": "regarding", "from": "c3", "to": "l3"},
+  {"type": "implicates", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c4", "to": "o3"},
+  {"type": "regarding", "from": "c4", "to": "o4"},
+  {"type": "implicates", "from": "c4", "to": "p1"},
+  {"type": "regarding", "from": "c5", "to": "p1"},
+  {"type": "regarding", "from": "c5", "to": "p3"},
+  {"type": "implicates", "from": "c5", "to": "p1"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

@@ -1,0 +1,252 @@
+{
+ "case_id": "ep366-367_the_tragedy_of_the_pier_in_plain_sight",
+ "episode_number": "366-367",
+ "title": "The Tragedy of the Pier in Plain Sight",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Tragedy_of_the_Pier_in_Plain_Sight",
+ "subtitle_source": ["subs_resolved/0366.txt", "subs_resolved/0367.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro/Detective Boys equivalent here: Ayumi, Genta, Mitsuhiko, Haibara, Professor Agasa) omitted by convention -- none of them are suspects and their presence adds no structural signal. case_type: attempted murder (Ejiri survives, so no death; 'victim' role still applies since he was the target). The old lower-fidelity case file (cases/ep366-367_the_tragedy_of_the_pier_in_plain_sight.json) had the correct culprit (Kanetani/'s2') and correct core motive (mistaken belief Ejiri cheated on Kiriko, when he actually divorced her to shield her from his business debt), so no culprit-identity correction was needed here. However it was drastically under-specified versus the transcript: it collapsed the entire mechanism into one generic event node and one clue, missing (1) the actual attack method -- a fishhook coated in dissolving plastic glue mixed with nerve toxin, deliberately tangled into Ejiri's line (fishing term 'omatsuri') so the glue finished dissolving right as the lines met, timed to the noise of the pickup boat's engine to mask Ejiri's reaction; (2) the two genuinely comparative clues that solve it -- the current-direction deduction from where Ayumi's marker was lost vs. where Shirane recovered it (narrows the culprit to whoever fished upstream/left of Ejiri, i.e. Kanetani), and the identical-lunch-box comparison that exonerates Shirane as a suspect; (3) Ida as a real, transcript-supported red-herring suspect (childhood arranged fiance of Shirane, later cleared once he's shown safely delivering Ejiri to the ambulance). Those are all built out here as direct typed edges/clue nodes rather than left inside one prose event.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Futoshi Ejiri",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "small business owner",
+    "attrs": {
+     "outcome": "survives the poisoning",
+     "relationship_to_kiriko": "ex-husband, divorced 3 years prior",
+     "divorce_reason_real": "hid a looming business-debt crisis and asked for divorce to protect Kiriko from creditors",
+     "divorce_reason_claimed": "told Kanetani a fabricated story about an affair, to save face",
+     "poisoned_on": "his and Kiriko's wedding anniversary"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kiriko Shirane",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "cook, aspiring cookbook writer",
+    "attrs": {
+     "fisherman's daughter": true,
+     "nicknamed": "Madonna of the college fishing club"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Mineto Kanetani",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "false_belief": "thought Ejiri had cheated on Kiriko, based on a lie Ejiri told to save face",
+     "true_feelings": "unrequited love for Kiriko"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Iwao Ida",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "fisherman, boat captain",
+    "attrs": {
+     "childhood_arrangement": "parents chose him as Kiriko's fiance when they were young; never fulfilled",
+     "cleared_because": "safely delivered Ejiri to the ambulance and returned by boat with the professor watching him"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "The pier fishing spot",
+    "attrs": {
+     "found_by": "Ida, a secluded shallow spot boats rarely reach",
+     "current_direction": "flows left to right"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Ida's fishing boat",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Kanetani's poisoned fishhook",
+    "role": "weapon",
+    "attrs": {
+     "poison_delivery": "hook coated in dissolving plastic glue mixed with a nerve toxin, timed so the glue finished dissolving right as the line reached Ejiri's",
+     "attack_mechanism": "line deliberately tangled with Ejiri's ('omatsuri'); when Ejiri tried to free it the hook scratched his wrist",
+     "misdirection": "boat engine noise at pickup time covered Ejiri's reaction; hook type used for small-fish schools so extra hooks on the line raised no suspicion",
+     "evidence_found": "Ejiri's blood on the hook, plus a scratch mark and glue residue on his sleeve/wrist",
+     "side_effect": "the yank on the tangled lines also pulled Ejiri's fishing-rod tripod into the sea, an early anomaly Conan noticed"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Identical lunch boxes",
+    "role": "evidence",
+    "attrs": {
+     "made_by": "Kiriko, one each for Kanetani and Ejiri",
+     "detail": "same size and wrapping cloth; Kiriko couldn't tell which box would end up with which man, ruling her out as having targeted Ejiri specifically"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Ayumi's fishing marker",
+    "role": "evidence",
+    "attrs": {
+     "lost": "washed away by the current while fishing",
+     "recovered_by": "Kiriko, netted it from further downstream"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Ayumi's marker was lost near the kids' spot and recovered by Shirane further right -- proves the current runs left to right, so only whoever fished upstream/left of Ejiri could tangle a poisoned line into his; that position was Kanetani's.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Kanetani's and Ejiri's lunch boxes were identical in size and wrapping cloth, and Kiriko never knew which box would go to which man -- she could not have targeted Ejiri's specifically, clearing her of the poisoned-lunch theory.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "ex_spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "childhood_friend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "arranged_fiance_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "romantic_jealousy (mistaken belief Ejiri cheated on Kiriko)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "romantic_jealousy (red herring; childhood arranged engagement to Kiriko never fulfilled)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "poisons",
+   "from": "p3",
+   "to": "p1",
+   "method": "poisoned fishhook delivered via deliberately tangled fishing line ('omatsuri')",
+   "circumstance_tags": ["staged_indirect_attack", "timed_with_boat_noise", "red_herring_setup"]
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

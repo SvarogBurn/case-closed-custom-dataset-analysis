@@ -1,0 +1,493 @@
+{
+ "case_id": "ep066_night_road_murder_case",
+ "episode_number": "66",
+ "title": "Night Road Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Night_Road_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0066.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Detective Takagi) omitted by convention. No event nodes: every action is a directly typed edge between the entities involved, sharing an order integer. The strongest red herring is Masami Kusaka, who is actively framed by the culprit with a forged locker note and a faked recorded phone call, and is accused on-screen of the murder before the trajectory trick is uncovered; Nakamura is a secondary red herring via an alleged debt and an unaccounted-for absence. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yoshiro Ikuta",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "2nd-year student, Beika University; mountain climbing club member",
+    "attrs": {
+     "died_of": "blunt trauma to the head",
+     "smoking_habit": "heavy smoker; left many cigarette butts at the scene, which the culprit used to aim in the dark",
+     "revealed_confession": "bragged in a pub that he had deliberately left Keiko Togawa to die on the mountain after she rejected him in favor of Takeno; Kusaka laughed along, and Takeno later learned of this secondhand"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masami Kusaka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "2nd-year student, Beika University; college friend of Ikuta",
+    "attrs": {
+     "framed": "a forged note in his locker and a faked recorded phone call impersonating him were both planted by Takeno to make him look like he'd lured Ikuta outside",
+     "alleged_debt": "accused by Nakamura of owing Ikuta a large sum in stolen/unpaid tuition money, which the investigators initially treat as his motive"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yoichi Shimizu",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "2nd-year student, Beika University; mountain climbing club member",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Koji Takeno",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "2nd-year student, Beika University; mountain climbing club member; owner of the apartment where the group was drinking",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Hidenori Nakamura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "3rd-year student, Beika University; mountain climbing club member",
+    "attrs": {
+     "cleared_by": "his unaccounted-for absence ('stepping out for fresh air' around the time of the murder) is only a few minutes and never substantiated as opportunity"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Jun Omura",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "model shop owner; Kogoro Mouri's college friend",
+    "attrs": {
+     "complaint": "reported a nightly thumping sound outside his apartment for a week -- Takeno practicing the throw-and-retrieve trick on the wall below his own window"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Keiko Togawa",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "hypothermia, after being left behind injured on a mountain climbing trip roughly six months before the murder"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Street below Takeno's apartment building",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Koji Takeno's apartment (5th floor)",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Jun Omura's apartment (directly below Takeno's)",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Roof of the abandoned building across the street",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Snow mountain (site of Keiko's death, six months before)",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Mountaineering socks packed with rocks, used as an improvised bludgeon",
+    "role": "weapon",
+    "attrs": {
+     "trick": "turned inside-out, filled with rocks, tied off, thrown from Takeno's window on a fishing line, then reeled back in so no weapon was left at the scene",
+     "cleanup": "rocks dumped back into Takeno's fish tank and the socks put back in his drawer afterward",
+     "forensic_flaw": "sturdy enough to hold packed rocks without ripping, tying the method to specialized mountaineering gear, and stained with the victim's blood on the inside"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Fishing line",
+    "role": "tool",
+    "attrs": {
+     "use": "used to lower the weapon precisely and, afterward, to pull a length of rope back up so the weapon could be retrieved"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Rope",
+    "role": "tool",
+    "attrs": {
+     "use": "attached to the fishing line to haul the weapon-filled bag back up into Takeno's apartment after the throw"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Slingshot",
+    "role": "tool",
+    "attrs": {
+     "use": "used to launch the rock-and-line rig from Takeno's window across roughly a dozen meters to the abandoned building's roof, setting up the drop trajectory"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Recorded phone call on a timer",
+    "role": "tool",
+    "attrs": {
+     "trick": "a recording of a fake call, set to play on a timer so it appeared Kusaka had phoned; Takeno then pretended to answer and relay a meeting request to Ikuta"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Forged note planted in Kusaka's locker",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "fabricated by Takeno to help frame Kusaka as the one who'd summoned Ikuta outside"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Street lamp near the building",
+    "role": "tool",
+    "attrs": {
+     "trick": "broken by Takeno in advance so the street below would be pitch dark, hiding both his aim and the weapon's flight"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Ikuta's cigarette butts",
+    "role": "evidence",
+    "attrs": {
+     "significance": "revealed Ikuta was a heavy smoker who stood smoking under the broken streetlight; Takeno used the glow of his cigarette to aim the weapon in the dark"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Blood is found at three aligned points -- a stain on the abandoned building's wall, blood on its roof railing directly above that stain, and blood on glass shards from Omura's shattered window one floor below Takeno's apartment -- tracing a single trajectory that only makes sense if a weapon was thrown from Takeno's window, bounced off the railing, and grazed Omura's window on a later practice throw.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "The socks in Takeno's room are unusually thick mountaineering-grade socks, strong enough to hold packed rocks without tearing, and a thread of the same color is caught in his fish tank's water plant -- ties the improvised weapon directly back to him.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "With the street lamp broken, the only visible marker in the dark was the glow of Ikuta's cigarette; Takeno had the lights off in his own room at exactly the same time, letting him track that glow through his window to aim the drop.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p7",
+   "relation_type": "dating"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p7",
+   "relation_type": "rejected_suitor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "college_friend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p7",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p7",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p7",
+   "relation_type": "clubmate"
+  },
+  {
+   "type": "causes_death_of",
+   "from": "p1",
+   "to": "p7",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "method": "left her behind, injured, on the mountain to seek help alone; she froze to death before anyone returned",
+   "circumstance_tags": ["negligence"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l5",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "sabotages",
+   "from": "p4",
+   "to": "o7",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "breaks the street lamp near his building in advance so the street below will be pitch dark"
+  },
+  {
+   "type": "written_by",
+   "from": "o6",
+   "to": "p4"
+  },
+  {
+   "type": "inscribed_to",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o6",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o5",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "plays a pre-recorded fake call impersonating Kusaka on a timer, then pretends to answer it and relay a meeting request to Ikuta"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "launched a rock-filled mountaineering sock at him from his fifth-floor window using a slingshot, aiming at the glow of his cigarette in the dark, then reeled the weapon back in on a fishing line so nothing was left at the scene",
+   "circumstance_tags": ["locked_room", "long_distance_attack", "staged_scene"]
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p6",
+   "to": "o2",
+   "detail": "Omura confirms he has fishing line, which he uses to hang up plastic models, and hands it over during the reconstruction"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "Omura was in his own apartment when the murder weapon's stray practice throws struck his window, later revealed to be Takeno's rehearsals"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l2",
+   "detail": "the rope used to haul the weapon back up was found on a shelf in Takeno's apartment"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o8"
+  },
+  {
+   "type": "located_in",
+   "from": "o8",
+   "to": "l1",
+   "detail": "cigarette butts Ikuta dropped while smoking under the broken streetlight on the street below Takeno's building"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "o1",
+   "to": "l4"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "o1",
+   "to": "l3"
+  },
+  {
+   "type": "frames",
+   "from": "p4",
+   "to": "p2",
+   "order": 4,
+   "temporal_frame": "present",
+   "circumstance_tags": ["red_herring", "frame_up"],
+   "detail": "the faked phone call and planted note make Kusaka look like the one who angrily lured Ikuta outside over unpaid tuition money"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l4"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o7"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p2",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_causing_girlfriends_death_--_ikuta_admitted_he_deliberately_abandoned_keiko_after_she_rejected_him_for_takeno"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p2",
+   "motive_type": "resentment_for_laughing_along_when_ikuta_bragged_about_leaving_keiko_to_die (also used as the frame target)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "unspecified (red herring: accused by Kusaka of owing Ikuta a large debt; also briefly unaccounted for around the time of the murder, never substantiated)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

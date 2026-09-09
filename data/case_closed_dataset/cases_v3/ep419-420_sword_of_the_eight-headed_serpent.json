@@ -1,0 +1,224 @@
+{
+ "case_id": "ep419-420_sword_of_the_eight-headed_serpent",
+ "episode_number": "419-420",
+ "title": "Sword of the Eight-Headed Serpent",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Sword_of_the_Eight-Headed_Serpent",
+ "subtitle_source": ["subs_resolved/0419.txt", "subs_resolved/0420.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: murder. The old lower-fidelity case file (cases/ep419-420_...) got the culprit right (Fujie), but several details were wrong or garbled against the transcript, corrected here: (1) its event e1 conflated two separate deceptions into one -- the pendant (o2) was planted beside the body to frame Eiko, which is unrelated to the phone-call trick that staggered Eiko's and Wanibuchi's meeting times/locations so she wouldn't witness the murder; these are modeled as separate edges (`frames`, `impersonates`/`deceives`). (2) its clue c1 has the causal logic backwards: it frames the fake registry address as something 'only someone with recent, specific local knowledge would fake,' but the transcript's actual reveal is the opposite -- Narisei City lost its name in a merger the previous year, so the address is *outdated* knowledge, something only someone who lived there years earlier (Fujie, as a Tokyo university student decades ago) would still use, unaware it no longer existed. (3) the old file gave zero resolution for the Fukuma/Eiko subplot (their mutual misunderstanding and cover-up-for-love arc, which drives most of part 2) and the Ishitobi red herring (his fear was concealing an unrelated DUI hit-and-run, not the murder) -- both are fully modeled here. (4) old file had only 1 location and 2 objects; transcript supports many more concrete scenes/props.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Koji Wanibuchi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "founder and president of Wanibuchi Enterprises",
+    "attrs": {
+     "age": "35",
+     "reputation": "powerful, aggressive businessman who used debt and leverage to force deals",
+     "died_of": "stabbed from behind with a knife at Inome Cave",
+     "time_of_death_established_by": "his own watch, broken in the fall, stopped at 1:05 PM"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Eiko Ezumi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "eldest daughter of the Sunrise Shop, family runs Hinode Inn",
+    "attrs": {
+     "forced_into": "engagement to Wanibuchi, used as leverage over her family's inn debt",
+     "true_feelings": "in love with her childhood friend Fukuma Ryosuke"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Ryosuke Fukuma",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "museum curator",
+    "attrs": {
+     "age": "25",
+     "relationship_to_eiko": "childhood friend, secretly in love with her",
+     "obstruction": "hid the murder weapon-adjacent katana and lied about his alibi, believing Eiko was the killer"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Takehiko Fujie",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "manager of Ryouunkaku Marriage Ceremony Hall",
+    "attrs": {
+     "age": "40",
+     "connection_to_victim": "college senpai of Wanibuchi at Teito University of Business in Tokyo",
+     "disguise": "faked a cold to disguise his voice while impersonating Wanibuchi on the phone",
+     "past_residence": "lived in a dormitory in Narisei City, Tokyo during his university years, decades before it merged into Haido City and lost its name"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kazuya Ishitobi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "manager of the Izumo Soba Restaurant",
+    "attrs": {
+     "age": "35",
+     "real_secret": "was driving under the influence and caused a hit-and-run near Izumo at the time of the murder, unrelated to Wanibuchi's death",
+     "false_alibi": "claimed to have been alone at the Izumo Traditional Cultural Museum"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Inome Cave", "attrs": {"role": "murder scene"}},
+   {"id": "l2", "name": "Inasa Beach", "attrs": {"role": "where Fukuma buried the katana"}},
+   {"id": "l3", "name": "Matsue Castle", "attrs": {"role": "Fujie's staged alibi location, visited twice"}},
+   {"id": "l4", "name": "Former Grand Shrine Station", "attrs": {"role": "Eiko's real alibi location, family significance"}},
+   {"id": "l5", "name": "Hinomisaki", "attrs": {"role": "Eiko's false alibi claim; also the final confrontation scene"}},
+   {"id": "l6", "name": "Izumo Traditional Cultural Museum", "attrs": {"role": "Ishitobi's false alibi claim"}},
+   {"id": "l7", "name": "Hit-and-run site near Izumo", "attrs": {"role": "Ishitobi's real location, DUI crash at ~1:00 PM"}},
+   {"id": "l8", "name": "Antique shop (Izumo)", "attrs": {"role": "where Wanibuchi received the katana as debt repayment"}},
+   {"id": "l9", "name": "Izumo Grand Shrine", "attrs": {"role": "introductory scene where Eiko and Fukuma are first met"}},
+   {"id": "l10", "name": "Ryouunkaku Marriage Ceremony Hall", "attrs": {"role": "Fujie's business, threatened by Wanibuchi's competing venture"}},
+   {"id": "l11", "name": "Izumo Soba Restaurant", "attrs": {"role": "Ishitobi's family business, threatened by Wanibuchi"}},
+   {"id": "l12", "name": "Hinode Inn", "attrs": {"role": "Eiko's family inn, leveraged by Wanibuchi to force the engagement"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Katana (10 million yen)",
+    "role": "evidence",
+    "attrs": {
+     "acquired_by_victim": "received as debt repayment from the antique shop just before the murder",
+     "used_as": "decoy stolen from the scene to stage the murder as a robbery",
+     "final_location": "buried at Inasa Beach by Fukuma"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Eiko's pendant",
+    "role": "evidence",
+    "attrs": {
+     "owner": "Eiko Ezumi",
+     "lost": "several days before the murder",
+     "found_and_used_by": "Fujie, who recognized it and planted it to frame Eiko",
+     "staging_flaw": "found placed neatly beside the body rather than fallen during a struggle -- proves deliberate placement, not an accidental drop"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Wanibuchi's watch",
+    "role": "evidence",
+    "attrs": {
+     "stopped_at": "1:05 PM when the victim fell",
+     "exploited_by_culprit": "checked at the scene to fix the exact time the fabricated alibi needed to match"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Matsue Castle registry",
+    "role": "evidence",
+    "attrs": {
+     "forged_entry": "an extra row for Fujie's name and a time of 1:05 PM, inserted after the fact",
+     "method": "a real visitor's name at 1:05 PM was erased and Fujie's written in its place"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Erasable ballpoint pen",
+    "role": "tool",
+    "attrs": {
+     "swapped_in_by": "Fujie, during his first visit to Matsue Castle that morning",
+     "effect": "let him erase and rewrite a registry entry without the substitution being visible to the eye"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Forged registry entry lists the address 'Narisei City, Tokyo' -- a name that disappeared in a merger with Haido City the previous year; only someone who lived there years earlier, unaware it was now outdated, would still use it (Fujie lived in a Narisei City dorm as a university student decades ago).",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "The murder-day page of the Matsue Castle registry has an extra time column filled in for every visitor; no earlier day's page has a time column at all -- someone added that field the very morning of the murder to set up the alibi.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Every name on the murder-day registry page, not only Fujie's, is written in erasable ballpoint ink, unlike the ink used on every other day's page -- proving the whole day's page had been swapped to, not just one forged line added.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "college_senpai_of"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "romantic_interest_in"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "romantic_interest_in"},
+  {"type": "owns", "from": "p2", "to": "l12"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "manages", "from": "p4", "to": "l10"},
+  {"type": "manages", "from": "p5", "to": "l11"},
+
+  {"type": "coerces", "from": "p1", "to": "p2", "detail": "threatened to call in the inn's renovation debt unless Eiko married him"},
+  {"type": "threatens", "from": "p1", "to": "p4", "detail": "planned a competing marriage ceremony hall, offered a forced takeover partnership"},
+  {"type": "threatens", "from": "p1", "to": "p5", "detail": "offered a coercive joint-management deal threatening his family's 200-year-old restaurant"},
+  {"type": "pressures", "from": "p4", "to": "p2", "detail": "begged Eiko to marry Wanibuchi and talk him out of taking his business", "circumstance_tags": ["backstory"]},
+  {"type": "pleads_with", "from": "p3", "to": "p1", "detail": "asked Wanibuchi dozens of times to withdraw the marriage deal"},
+
+  {"type": "was_at", "from": "p2", "to": "l9"},
+  {"type": "was_at", "from": "p3", "to": "l9"},
+  {"type": "was_at", "from": "p1", "to": "l8"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l7"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l5"},
+
+  {"type": "lures", "from": "p4", "to": "p1", "detail": "called Wanibuchi under the pretext of advising him on winning Eiko over, suggesting Inome Cave at 1 PM"},
+  {"type": "impersonates", "from": "p4", "to": "p1", "detail": "called Eiko while imitating Wanibuchi's voice (excused by a fake cold)"},
+  {"type": "deceives", "from": "p4", "to": "p2", "detail": "redirected Eiko to Hinomisaki at 1:30 PM so she would not be near the real murder"},
+  {"type": "kills", "from": "p4", "to": "p1", "method": "stabbed from behind with a knife at Inome Cave", "circumstance_tags": ["staged_robbery", "framed_third_party", "false_alibi"]},
+  {"type": "frames", "from": "p4", "to": "p2", "detail": "planted Eiko's lost pendant beside the body to implicate her", "circumstance_tags": ["frame_job", "red_herring"]},
+  {"type": "leaves_evidence", "from": "p4", "to": "o2"},
+  {"type": "forges", "from": "p4", "to": "o4"},
+  {"type": "uses", "from": "p4", "to": "o5", "detail": "swapped in an identical erasable pen to falsify the registry undetected"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o4"},
+
+  {"type": "discovers_body_of", "from": "p3", "to": "p1"},
+  {"type": "conceals", "from": "p3", "to": "o1", "detail": "took the katana from the scene and buried it to disguise the murder as a robbery, believing Eiko was the killer"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "makes_false_statement_about", "from": "p3", "to": "l4", "detail": "falsely claimed to police he was at the former Grand Shrine station"},
+  {"type": "makes_false_statement_about", "from": "p2", "to": "l5", "detail": "falsely claimed to police she went to Hinomisaki, to avoid contradicting Fukuma's lie"},
+  {"type": "makes_false_statement_about", "from": "p5", "to": "l6", "detail": "falsely claimed to have been at the Izumo Traditional Cultural Museum"},
+  {"type": "causes_accident_at", "from": "p5", "to": "l7", "detail": "DUI hit-and-run, concealed out of fear rather than guilt over the murder"},
+
+  {"type": "implicates", "from": "o1", "to": "p3"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p4"},
+
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "o4"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "implicates", "from": "c3", "to": "p4"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "business_rivalry_threat"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "business_coercion_threat (red herring)"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "forced_marriage (red herring, no action taken)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "protect_loved_one (red herring, obstructed instead of killing)"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

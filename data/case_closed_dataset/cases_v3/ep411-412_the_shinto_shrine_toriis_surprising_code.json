@@ -1,0 +1,485 @@
+{
+  "case_id": "ep411-412_the_shinto_shrine_toriis_surprising_code",
+  "episode_number": "411-412",
+  "title": "The Shinto Shrine Torii's Surprising Code",
+  "source_url": "https://www.detectiveconanworld.com/wiki/The_Shinto_Shrine_Torii%27s_Surprising_Code",
+  "subtitle_source": [
+    "subs_resolved/0411.txt",
+    "subs_resolved/0412.txt"
+  ],
+  "schema_version": "v3",
+  "notes": "Detective-cast subplot (Conan/Shin'ichi, Ai Haibara, Agasa, and the Detective Boys Ayumi/Mitsuhiko/Genta) omitted by convention -- their beetle-hunting/secret-code game runs in parallel and shares a thematic trick (mirror/backward reading) with the real dying message, but never intersects the murder's evidence graph. Ran Mouri and Sonoko Suzuki are kept as full person nodes despite being series regulars because they are directly targeted: Sonoko's bag/phone is stolen to suppress photographic evidence, and both are driven off-route and menaced by the culprit in his car. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file (cases/ep411-412...) lists an 'attempted attack with a knife' in the forest -- the transcript shows no knife; the actual attempted attack is Kano driving Ran and Sonoko off-route in his car to interrogate them about Shin'ichi's whereabouts, ended when Ran kicks him and the car crashes into a tree. The old file also omits Bito and Yanuma's names/roles and the blackmail motive entirely, and mislabels the dying message's true content (it renders as the culprit's own name, 'Kano', when the sideways scrawl is flipped/mirrored -- the same backward-reading trick that solves the Detective Boys' separate 'marumushi ni tento' -> 'muramatsuri no torii' puzzle). case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Miyama",
+        "aliases": [],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "university student",
+        "attrs": {
+          "died_of": "blunt force head trauma",
+          "dying_message": "scrawled the culprit's name on the window in his own blood as he collapsed, sideways and mirror-reversed"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Kano",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "Miyama's college classmate",
+        "attrs": {
+          "secret": "cheated his way into college; Miyama was blackmailing him over it",
+          "caught_by": "his stolen phone rang from his own pocket when Conan called it back"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Yanuma",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "unspecified",
+        "attrs": {
+          "relation_to_victim": "Miyama's girlfriend",
+          "note": "one of the three friends who discovered the body; questioned at length by police, no explicit motive stated in transcript"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Bito",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "unspecified",
+        "attrs": {
+          "relation_to_victim": "Miyama's coworker from a part-time job",
+          "note": "one of the three friends who discovered the body; walked back to the hotel alone afterward, no explicit motive stated in transcript"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Ran Mouri",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "student",
+        "attrs": {
+          "endangered": "driven off-route by Kano in his car and menaced before kicking him, causing the crash that ended the attempt"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Sonoko Suzuki",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "student",
+        "attrs": {
+          "endangered": "her bag/phone was stolen to suppress the photo evidence she unknowingly captured",
+          "photo_taken": "snapped a phone photo of Ran that accidentally captured the bloody window writing in the background"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Miyama's hotel room",
+        "attrs": {
+          "detail": "window broken from outside to remove the fragment bearing the message"
+        }
+      },
+      {
+        "id": "l2",
+        "name": "Beach hotel",
+        "attrs": {}
+      },
+      {
+        "id": "l3",
+        "name": "Police station",
+        "attrs": {}
+      },
+      {
+        "id": "l4",
+        "name": "Alley near police station",
+        "attrs": {}
+      },
+      {
+        "id": "l5",
+        "name": "Forest road (crash site)",
+        "attrs": {}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Hotel room window (blood message)",
+        "role": "evidence",
+        "attrs": {
+          "written_in": "victim's own blood",
+          "apparent_reading": "'teiu', later reinterpreted as 'TEL shite' (please call)",
+          "decoded_message": "reads 'Kano' (かのう) once turned sideways and mirror-flipped",
+          "staging_flaw": "culprit smashed the window afterward to try to destroy the fragment carrying the writing, but it had already been photographed"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Sonoko's phone photo of Ran",
+        "role": "evidence",
+        "attrs": {
+          "detail": "candid photo taken at the hotel that accidentally captured the window's red writing in the background"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Sonoko's stolen phone",
+        "role": "evidence",
+        "attrs": {
+          "stolen_by": "Kano, posing as a stranger who 'found' the bag to fish for the photo and for Shin'ichi's identity",
+          "giveaway": "rang with Sonoko's ringtone from inside Kano's own pocket"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Murder weapon (blunt object)",
+        "role": "weapon",
+        "attrs": {
+          "detail": "unspecified hard object; not named in available transcript"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Kano's car",
+        "role": "tool",
+        "attrs": {
+          "outcome": "crashed into a tree after Ran kicked Kano while he drove them off-route"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "c1",
+        "desc": "Window scrawl read normally looks like 'teiu'/'TEL shite'; turned sideways and mirror-flipped -- the same trick that turns the kids' 'marumushi ni tento' into 'muramatsuri no torii' -- it spells 'Kano'.",
+        "clue_type": "physical"
+      },
+      {
+        "id": "c2",
+        "desc": "Calling back the number that texted about the 'found' bag makes a phone ring inside Kano's own pocket, proving he is holding Sonoko's stolen phone.",
+        "clue_type": "behavioral"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p2",
+      "relation_type": "classmate",
+      "symmetric": true
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p1",
+      "relation_type": "dating"
+    },
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p1",
+      "relation_type": "coworker"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p3",
+      "relation_type": "friend_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p4",
+      "relation_type": "friend_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p4",
+      "relation_type": "friend_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p5",
+      "to": "p6",
+      "relation_type": "classmate",
+      "symmetric": true
+    },
+    {
+      "type": "blackmails",
+      "from": "p1",
+      "to": "p2",
+      "detail": "threatened to expose that Kano cheated his way into college"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "silencing_blackmail_over_college_cheating_scandal"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p1",
+      "method": "bludgeoned with a hard object",
+      "circumstance_tags": [
+        "cover_up",
+        "staged_alibi"
+      ]
+    },
+    {
+      "type": "writes",
+      "from": "p1",
+      "to": "o1",
+      "detail": "dying message scrawled in his own blood as he collapsed"
+    },
+    {
+      "type": "smashes",
+      "from": "p2",
+      "to": "o1",
+      "detail": "broke the window from outside to try to remove the fragment bearing the message"
+    },
+    {
+      "type": "implicates",
+      "from": "o1",
+      "to": "p2"
+    },
+    {
+      "type": "photographs",
+      "from": "p6",
+      "to": "o1",
+      "detail": "photo of Ran accidentally captured the window writing behind her"
+    },
+    {
+      "type": "regarding",
+      "from": "o2",
+      "to": "o1"
+    },
+    {
+      "type": "implicates",
+      "from": "o2",
+      "to": "p2"
+    },
+    {
+      "type": "robs",
+      "from": "p2",
+      "to": "p6",
+      "detail": "posed as a purse snatcher to grab Sonoko's bag/phone",
+      "circumstance_tags": [
+        "cover_up"
+      ]
+    },
+    {
+      "type": "steals",
+      "from": "p2",
+      "to": "o3",
+      "circumstance_tags": [
+        "cover_up"
+      ]
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p2"
+    },
+    {
+      "type": "attempts_to_abduct",
+      "from": "p2",
+      "to": "p5",
+      "detail": "drove off the route to the hotel, planning to interrogate her about Shin'ichi's whereabouts",
+      "circumstance_tags": [
+        "cover_up"
+      ]
+    },
+    {
+      "type": "attempts_to_abduct",
+      "from": "p2",
+      "to": "p6",
+      "detail": "drove off the route to the hotel, planning to interrogate her about Shin'ichi's whereabouts",
+      "circumstance_tags": [
+        "cover_up"
+      ]
+    },
+    {
+      "type": "assaults",
+      "from": "p5",
+      "to": "p2",
+      "detail": "kicked the driver's face, causing the car to crash into a tree"
+    },
+    {
+      "type": "crashes",
+      "from": "p2",
+      "to": "o5",
+      "detail": "car crashed into a tree in the forest after being kicked by Ran"
+    },
+    {
+      "type": "located_in",
+      "from": "o5",
+      "to": "l5"
+    },
+    {
+      "type": "owns",
+      "from": "p2",
+      "to": "o5"
+    },
+    {
+      "type": "regarding",
+      "from": "c1",
+      "to": "o1"
+    },
+    {
+      "type": "implicates",
+      "from": "c1",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "c2",
+      "to": "o3"
+    },
+    {
+      "type": "implicates",
+      "from": "c2",
+      "to": "p2"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l5"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l5"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l5"
+    },
+    {
+      "type": "wields",
+      "from": "p2",
+      "to": "o4",
+      "detail": "Kano bludgeoned Miyama with an unspecified hard object, per the police account of head trauma from a blunt strike",
+      "circumstance_tags": [
+        "cover_up"
+      ]
+    },
+    {
+      "type": "implicates",
+      "from": "o4",
+      "to": "p2"
+    }
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

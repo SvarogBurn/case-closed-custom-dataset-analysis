@@ -1,0 +1,607 @@
+{
+ "case_id": "ep636-637_the_most_useful_school_in_the_world_case",
+ "episode_number": "636-637",
+ "title": "The Most Useful School in the World Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Most_Useful_School_in_the_World_Case",
+ "subtitle_source": [
+  "subs_resolved/0636.txt",
+  "subs_resolved/0637.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. No murder occurs -- the 'crime' is Oki Shinobu staging a fake theft (smashing the vase herself and hiding the shards) to halt a live TV appraisal that would have publicly exposed her master Kimijima's prized vase as a counterfeit; `label.murderer_id` is kept as the schema field name but points to the staged-theft culprit. The old lower-fidelity case file (cases/ep636-637...) already had the correct culprit (Oki Shinobu, s8) and correctly captured the deathbed-promise motive in its e1/e2 events, so no reversal was needed there -- but it was drastically underpopulated: it had zero relationship edges, one flat object node, no was_at coverage for most of the 11 suspects, and omitted several named characters who matter to the plot (Okino Yoko, whose hammer strike unwittingly masked the sound of the smash; Kimijima's late wife, who is the actual source of the secrecy motive; Takikawa the college professor, who supplies the red-herring 'disappearing object' theory that gets explicitly ruled out on-screen; and Yamazaki's unrelated handkerchief/photo subplot with Yoko, which is the episode's genuine red herring). case_type: staged_theft/concealment (no homicide).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kimijima Noburou",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "enka singer",
+    "attrs": {
+     "age": 67,
+     "reputation": "top of the enka charts, famously strict and self-disciplined",
+     "prized_possession": "believed his Qianlong-era vase to be a genuine 100-160 million yen antique"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kamisuwa Mikihiko",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "Nichiuri TV producer",
+    "attrs": {
+     "age": 52
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Okino Yoko",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "idol, guest panelist",
+    "attrs": {
+     "unwitting_role": "struck the puffed rice maker with a hammer on script, the loud bang Shinobu used to mask the vase shattering"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hashimoto Yoshinari",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "assistant director",
+    "attrs": {
+     "age": 22,
+     "cleared_by": "let Kogoro search his waist bag, found empty of the vase"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yamazaki Tetsushi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "puffed rice maker company president",
+    "attrs": {
+     "age": 32,
+     "red_herring_reason": "had a grudge after Kimijima smashed his phone, and was alone/unwatched during the puffed rice maker demo",
+     "actual_scheme": "planned to auction Yoko's dropped handkerchief with a secret photo of her, unrelated to the vase"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Honma Kentarou",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "antique appraiser",
+    "attrs": {
+     "age": 70,
+     "red_herring_reason": "carried large baggage and tried to leave early, searched and found empty",
+     "true_reason_for_leaving": "had already privately recognized the vase as a counterfeit and wanted to avoid revealing it on-air"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Sakai Masaaki",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "TV lecturer billed as 'Principal'",
+    "attrs": {
+     "red_herring_reason": "Kimijima briefly accused him for showing keen interest in the vase when first shown it"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Oki Shinobu",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Kimijima's enka disciple",
+    "attrs": {
+     "age": 25,
+     "outcome": "confesses, tearfully offers to quit; Kimijima instead announces her singing debut has been approved"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Ueda Shinya",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "TV lecturer billed as 'Vice Principal'",
+    "attrs": {}
+   },
+   {
+    "id": "p10",
+    "name": "Arita Teppei",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "TV lecturer billed as 'Class President'",
+    "attrs": {
+     "detail": "had touched/handled the vase before rehearsal, which is why he could confirm it was present after first period"
+    }
+   },
+   {
+    "id": "p11",
+    "name": "Tsuchiya Daisuke",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "director",
+    "attrs": {
+     "age": 45
+    }
+   },
+   {
+    "id": "p12",
+    "name": "Kimijima's late wife",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "died": "roughly a year before the case, at his side she called Shinobu to her bedside",
+     "deathbed_request": "made Shinobu promise to keep the vase's counterfeit status secret from Kimijima at all costs"
+    }
+   },
+   {
+    "id": "p13",
+    "name": "Takikawa Youji",
+    "aliases": [],
+    "roles": [
+     "bystander"
+    ],
+    "occupation": "college professor",
+    "attrs": {
+     "connection": "friend of Professor Agasa",
+     "contribution": "his flower-pot-in-rice disappearing-object experiment is raised as a possible trick, then explicitly ruled out as inapplicable"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "TV studio (filming set)",
+    "attrs": {
+     "note": "where the vase disappeared during second-period rehearsal and where it was later found shattered"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Production meeting room",
+    "attrs": {
+     "note": "where Kimijima first showed the vase to Sakai before filming"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "TV station hallway",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Instructors' green room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Qianlong-era vase (counterfeit)",
+    "role": "evidence",
+    "attrs": {
+     "claimed_origin": "Qing Dynasty, Emperor Qianlong's reign",
+     "claimed_value": "100-160 million yen",
+     "true_status": "counterfeit, per Honma's appraisal",
+     "fate": "smashed and smuggled out as shards in Shinobu's waist pouch"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Yamazaki's cell phone",
+    "role": "evidence",
+    "attrs": {
+     "fate": "snapped in half by Kimijima after catching Yamazaki secretly photographing Yoko"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "MicroSD card with secret photo",
+    "role": "evidence",
+    "attrs": {
+     "content": "secret photo of Yoko, meant to be auctioned with her handkerchief",
+     "note": "survived the phone's destruction since it was stored separately"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Yoko's dropped handkerchief",
+    "role": "evidence",
+    "attrs": {
+     "note": "taken by Yamazaki intending to sell as a set with the secret photo"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Puffed rice maker (grain expander)",
+    "role": "instrument",
+    "attrs": {
+     "function": "produces a loud bang when struck; Shinobu used the noise to mask the vase shattering"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Hammer",
+    "role": "tool",
+    "attrs": {
+     "used_by": "Yoko, per script, to strike the puffed rice maker"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Shard-catching bag",
+    "role": "tool",
+    "attrs": {
+     "purpose": "prepared beforehand by Shinobu to contain the vase's fragments so they would not scatter or make noise when smashed"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Shinobu's waist pouch",
+    "role": "contraband",
+    "attrs": {
+     "purpose": "used to carry the bagged vase shards out of sight after smashing it"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Honma's three teaching counterfeits",
+    "role": "instrument",
+    "attrs": {
+     "purpose": "prepared by Honma as real-vs-fake comparison examples for the third-period lecture"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "No container leaving the studio was ever big enough to hold the vase whole, yet a whole vase went missing -- meaning it left in shard-sized pieces inside a small waist pouch, not carried out intact.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Honma called the vase 'Remarkable' both times he examined it -- first read as awe at a masterpiece, actually recognition of a masterful counterfeit.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p1",
+   "relation_type": "disciple_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p12",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p8",
+   "relation_type": "friend_of",
+   "detail": "close bond due to similar-sounding names ('Okino'/'Oki'), talk to each other on set"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p11",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p9",
+   "to": "p7",
+   "relation_type": "co_panelist"
+  },
+  {
+   "type": "relationship",
+   "from": "p10",
+   "to": "p7",
+   "relation_type": "co_panelist"
+  },
+  {
+   "type": "confides_in",
+   "from": "p12",
+   "to": "p8",
+   "detail": "from her deathbed, made Shinobu promise to keep the vase's fake status secret from Kimijima forever"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p6",
+   "to": "o9"
+  },
+  {
+   "type": "owns",
+   "from": "p8",
+   "to": "o7"
+  },
+  {
+   "type": "owns",
+   "from": "p8",
+   "to": "o8"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p13",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p10",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p11",
+   "to": "l1"
+  },
+  {
+   "type": "destroys",
+   "from": "p1",
+   "to": "o2",
+   "detail": "snaps Yamazaki's cell phone in half after catching him secretly photographing Yoko",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "steals",
+   "from": "p5",
+   "to": "o4",
+   "detail": "pockets Yoko's dropped handkerchief, intending to auction it with the secret photo",
+   "circumstance_tags": [
+    "red_herring",
+    "unrelated_subplot"
+   ]
+  },
+  {
+   "type": "photographs",
+   "from": "p5",
+   "to": "p3",
+   "detail": "takes secret photos of Yoko without permission during first-period rehearsal",
+   "circumstance_tags": [
+    "red_herring",
+    "unauthorized"
+   ]
+  },
+  {
+   "type": "uses",
+   "from": "p8",
+   "to": "o5",
+   "detail": "times the vase smash to coincide with the puffed rice maker's loud bang to mask the sound",
+   "circumstance_tags": [
+    "staged_theft",
+    "sound_masking"
+   ]
+  },
+  {
+   "type": "uses",
+   "from": "p3",
+   "to": "o6",
+   "detail": "strikes the puffed rice maker with the hammer on script, per Shinobu's request",
+   "circumstance_tags": [
+    "sound_masking"
+   ]
+  },
+  {
+   "type": "strikes",
+   "from": "o6",
+   "to": "o5",
+   "detail": "hammer blow produces the loud bang that masks the vase shattering",
+   "circumstance_tags": [
+    "sound_masking"
+   ]
+  },
+  {
+   "type": "shatters",
+   "from": "p8",
+   "to": "o1",
+   "detail": "strikes the bagged vase from outside during Yoko's hammer strike so nobody hears it break",
+   "circumstance_tags": [
+    "staged_theft",
+    "cover_up",
+    "sound_masking"
+   ]
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p8",
+   "to": "o8",
+   "detail": "stuffs the bagged vase shards into her waist pouch",
+   "circumstance_tags": [
+    "staged_theft",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "stages_theft_of",
+   "from": "p8",
+   "to": "o1",
+   "detail": "makes the vase's disappearance look like a theft to halt filming before Honma's on-air appraisal could expose it as fake",
+   "circumstance_tags": [
+    "staged_theft",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p8"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p8"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o8"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p8"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p6"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p8",
+   "detail": "confirming the vase is fake establishes why Shinobu had a motive to stage its disappearance"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "revenge_for_broken_cell_phone (red herring, accused by Kogoro)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p8",
+   "to": "p1",
+   "motive_type": "protect_master_from_public_humiliation (protective, not adversarial -- the real reason behind the staged theft)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p8"
+ }
+}

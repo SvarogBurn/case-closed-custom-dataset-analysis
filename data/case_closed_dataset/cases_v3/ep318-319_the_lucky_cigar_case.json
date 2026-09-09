@@ -1,0 +1,504 @@
+{
+ "case_id": "ep318-319_the_lucky_cigar_case",
+ "episode_number": "318-319",
+ "title": "The Lucky Cigar Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Lucky_Cigar_Case",
+ "subtitle_source": [
+  "subs_resolved/0318.txt",
+  "subs_resolved/0319.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Kogoro, Ran, Conan, Inspector Yokomizo) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file (s1=Umetani as murderer_id) got the culprit right, but several other details wrong or missing against the full transcript: (1) the stated motive 'victim blackmailed him over a stolen chair design, threatening exposure' is not in the transcript at all -- Hiramatsu's real leverage was the self-destructing Aimuzu chair he'd programmed (o4), used to force Umetani to release him from his employment contract, not any theft/exposure threat; (2) the old file's event order has Umetani's car sabotage happening before the stabbing 'e3', but the sabotage (brake line + mirror + tire puncturing) was set up earlier that day, independent of and prior to the staged private stabbing, which Umetani provoked using a hidden cigar case (o7) worn over the Kuron logo's 'O' as concealed armor; the old file also says Hiramatsu stabbed Umetani 'twice', but the transcript shows a single stab; (3) the old file omits entirely Hiramatsu's own backstory counter-plot -- police found a rope, stun gun, and a forged will in Umetani's name (o5, o6) hidden in Hiramatsu's room, meaning Hiramatsu had prepared a backup plan to kill Umetani and stage it as Umetani's own suicide if the blackmail failed; Umetani discovered this kit that morning and used the knowledge to turn the plot around on Hiramatsu instead; (4) the old file's clues (c1/c2 in the old file, covering tire punctures/delayed event and the mirror) are kept here as c3/c4, but the two clues that actually break Umetani's alibi in the transcript -- the cigar case's cigar capacity contradicting his stated 40-cigars-a-day habit (c1), and Hiramatsu's incongruous smile on the security video despite Umetani's claimed refusal (c2) -- are missing from the old file entirely. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shiro Umetani",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "president, Kuron Health Appliances Company",
+    "attrs": {
+     "smokes": "about 40 cigars a day",
+     "skill": "black belt in karate",
+     "stabbed_but_survived": "took a real but non-fatal knife wound to the chest during the staged confrontation, protected by a concealed cigar case"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masaki Hiramatsu",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "designer, Development Department 3",
+    "attrs": {
+     "died_of": "car crash off a cliff on the company's private mountain road, fleeing after believing he had killed Umetani",
+     "personality": "secretive; locked his workroom, kept his car parked out of sight, described by coworkers as impatient and prone to sudden outbursts",
+     "achievement": "designed the Aimuzu chair, the winning entry in the internal design competition"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Haruo Nakano",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "head, Development Department 1",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Eigo Kasahara",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "head, Development Department 2",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kuron training facility",
+    "attrs": {
+     "note": "isolated company training facility/dormitory; also functions as head office and R&D site"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Facility private mountain road",
+    "attrs": {
+     "note": "company-owned private road with a sharp curve near a corner mirror and cliff drop; connects to the public mountain road"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Hiramatsu's car (brakes cut)",
+    "role": "evidence",
+    "attrs": {
+     "sabotage": "brake fluid line completely removed",
+     "found": "fluid traces at his own parking spot; tube deliberately removed, not accidentally dislodged"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Repositioned corner mirror",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "angled to reflect the driver's own headlights back at him at the sharp curve",
+     "verified_correct": "confirmed properly angled that afternoon by the local road-maintenance officer"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Punctured tires of other cars",
+    "role": "tool",
+    "attrs": {
+     "purpose": "prevent anyone from pursuing Hiramatsu after the staged stabbing",
+     "note": "every car except Hiramatsu's was disabled"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Self-destructing Aimuzu chair",
+    "role": "instrument",
+    "attrs": {
+     "trick": "programmed to broadcast a farewell recording and self-destruct at midnight unless the password is entered",
+     "leverage": "Hiramatsu's blackmail tool, held to force Umetani to release him from his contract"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Forged will naming Umetani",
+    "role": "evidence",
+    "attrs": {
+     "content": "fake suicide note in Umetani's name, apologizing for losing confidence and quitting the company",
+     "found_in": "hidden in the futons in Hiramatsu's room, alongside o6"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Rope and stun gun",
+    "role": "tool",
+    "attrs": {
+     "purpose": "Hiramatsu's prepared method for subduing and killing Umetani, to be staged as Umetani's own suicide using o5",
+     "found_in": "hidden in the futons in Hiramatsu's room"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "New cheap cigar case",
+    "role": "tool",
+    "attrs": {
+     "capacity": "holds only four or five cigars",
+     "inconsistency": "far too small for someone who smokes about 40 cigars a day",
+     "purpose": "worn concealed over the 'O' in the Kuron logo on his chest as armor",
+     "bought": "that afternoon, while the others were out to eat"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Umetani's heirloom cigar case",
+    "role": "evidence",
+    "attrs": {
+     "origin": "souvenir from his parents, one of a kind",
+     "note": "his usual case; not the one that actually stopped the knife"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Office security camera video",
+    "role": "evidence",
+    "attrs": {
+     "installed_for": "preventing product design theft",
+     "captures": "the private meeting where Hiramatsu stabs Umetani, including Hiramatsu's incongruous smile and Umetani's provoking words"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Knife from Umetani's collection",
+    "role": "weapon",
+    "attrs": {
+     "origin": "one of Umetani's displayed knife collection, kept in his office"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Umetani smokes ~40 cigars a day, but the cigar case that stopped the knife holds only 4-5 cigars -- proves it wasn't his usual case and was deliberately planted as armor.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Security video shows Hiramatsu smiling right after Umetani claims he refused Hiramatsu's request -- contradicts Umetani's account of the meeting.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "The corner mirror was confirmed properly angled that afternoon, but found repositioned that night -- narrows the window to whoever was alone at the facility in between.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c4",
+    "desc": "Only Hiramatsu's car had its brakes cut; every other car had its tires punctured instead -- shows the same person selectively sabotaged the whole fleet to guarantee Hiramatsu specifically would crash and couldn't be followed.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "rigs",
+   "from": "p2",
+   "to": "o4",
+   "detail": "programs the winning Aimuzu chair to self-destruct at midnight unless he personally enters the password"
+  },
+  {
+   "type": "blackmails",
+   "from": "p2",
+   "to": "p1",
+   "detail": "threatens to let the Aimuzu self-destruct, forfeiting Umetani's profits, unless released from his employment contract"
+  },
+  {
+   "type": "forges",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o6"
+  },
+  {
+   "type": "plans_to_kill",
+   "from": "p2",
+   "to": "p1",
+   "detail": "prepared a rope, a stun gun, and a forged suicide note in Umetani's name as a backup plan if the blackmail failed",
+   "circumstance_tags": [
+    "staged_suicide",
+    "backstory_plot"
+   ]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "coerced_employment (wants to be released from a long-term contract Umetani strong-armed him into)"
+  },
+  {
+   "type": "confronts",
+   "from": "p1",
+   "to": "p2",
+   "detail": "scolds Hiramatsu that morning for arriving late to the competition; Hiramatsu storms out"
+  },
+  {
+   "type": "discovers",
+   "from": "p1",
+   "to": "o5",
+   "detail": "finds the hidden attache case while Hiramatsu is out of the room after the argument"
+  },
+  {
+   "type": "discovers",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "buys",
+   "from": "p1",
+   "to": "o7",
+   "detail": "purchased alone, while the others were out to eat, on the same afternoon"
+  },
+  {
+   "type": "positions",
+   "from": "p1",
+   "to": "o7",
+   "detail": "worn hidden over the 'O' in the Kuron logo on his chest, directly over where a stab there would land"
+  },
+  {
+   "type": "sabotages",
+   "from": "p1",
+   "to": "o1",
+   "detail": "drains and removes the brake fluid line from Hiramatsu's car"
+  },
+  {
+   "type": "repositions",
+   "from": "p1",
+   "to": "o2",
+   "detail": "angles the corner mirror to blind Hiramatsu with his own headlights at the sharp curve"
+  },
+  {
+   "type": "punctures",
+   "from": "p1",
+   "to": "o3",
+   "detail": "disables every other car so no one can pursue Hiramatsu"
+  },
+  {
+   "type": "delays",
+   "from": "p1",
+   "to": "l1",
+   "detail": "invents a reason to push the competition announcement to after dark, ensuring the fog needed to hide the mirror tampering"
+  },
+  {
+   "type": "provokes",
+   "from": "p1",
+   "to": "p2",
+   "detail": "pretends to accept Hiramatsu's terms and learn the password, then goads him into stabbing the 'O' on his chest, claiming a strike there is what will guarantee success",
+   "circumstance_tags": [
+    "staged_provocation"
+   ]
+  },
+  {
+   "type": "stabs",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_provocation",
+    "red_herring"
+   ]
+  },
+  {
+   "type": "uses",
+   "from": "p2",
+   "to": "o10"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p2",
+   "method": "rigged car crash: cut brake line, repositioned corner mirror to blind him with his own headlights, punctured every other car's tires to prevent pursuit, and deliberately delayed the event until nightfall for fog cover",
+   "circumstance_tags": [
+    "staged_accident",
+    "frame",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "crashes_at",
+   "from": "p2",
+   "to": "l2",
+   "detail": "flees in his sabotaged car believing he has killed Umetani, blinded by his own headlights in the repositioned mirror, and goes off the cliff at the sharp curve"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o9",
+   "detail": "installed the security camera himself, originally to guard against design theft"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o10"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o8"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o10",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o9",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o7"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o8"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o9"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "protect_company_control (feared Hiramatsu would take the superior Aimuzu design to a rival if released, and had just discovered Hiramatsu's own plan to kill him)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "detail": "hosts the chair competition and the private meeting with Hiramatsu"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "detail": "alone on the private road both to sabotage and, afterward, to investigate the crash"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "detail": "present for the competition and the private meeting with Umetani"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "detail": "drives away from the facility and crashes here"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "detail": "present for the competition and questioned there afterward"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "detail": "present for the competition and questioned there afterward"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

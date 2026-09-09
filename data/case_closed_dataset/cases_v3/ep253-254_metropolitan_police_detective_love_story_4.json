@@ -1,0 +1,402 @@
+{
+ "case_id": "ep253-254_metropolitan_police_detective_love_story_4",
+ "episode_number": "253-254",
+ "title": "Metropolitan Police Detective Love Story 4",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Metropolitan_Police_Detective_Love_Story_4",
+ "subtitle_source": ["subs_resolved/0253.txt", "subs_resolved/0254.txt"],
+ "schema_version": "v3",
+ "notes": "case_type: robbery (no homicide victim); `label.murderer_id` is used per this dataset's generic convention to hold the culprit id (the robber), not a literal murderer. The old wiki-summary file (cases/ep253-254_metropolitan_police_detective_love_story_4.json) omitted the detective-cast romance A-plot entirely (Takagi/Sato/Shiratori arranged-marriage subplot that structures the whole episode's stakes and timeline) and modeled only the robbery puzzle with three bare suspect nodes and no locations besides the store. Its culprit identification (Yasuo Kamieda / Kamieda Yasuo, the school coach) is CONFIRMED correct against the full two-part transcript, so `label.murderer_id` is unchanged in substance. This rebuild adds: the full detective-cast relationship network (Takagi-Sato mutual romantic interest, Sato-Shiratori arranged-marriage candidacy, employer/butler/family ties), the sunset-deadline ultimatum that drives the episode, six distinct locations instead of one, concrete objects (the discarded disguise, the knife, Mamehara's photochromic glasses, Kamieda's wristwatch, Koshimizu's two wristwatches) instead of a single vague object description, and `was_at` opportunity edges for every one of the three suspects (not just the culprit) plus the three witnesses, grounded directly in the transcript's restroom-detention and witness-relocation scenes. No interpersonal motive network applies (impersonal robbery, not a targeted crime), so no `has_motive_against` edges are generated, consistent with the old file's own note on this point; Kamieda's financial motive (divorce settlement money) is instead recorded in his `attrs`.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kamieda Yasuo",
+    "aliases": ["Yasuo Kamieda", "Kamieda Yusuo"],
+    "roles": ["suspect"],
+    "occupation": "school coach / teacher",
+    "attrs": {
+     "age": 32,
+     "true_height_cm": 170,
+     "true_shirt_color": "green",
+     "watch_habit": "wears his wristwatch on the inside of his wrist so students in class can't check the time -- a habit the elderly witness misread as feminine",
+     "cover_story": "claimed he stopped at the restroom on his way to a bookstore",
+     "motive": "needed cash to pay for his divorce",
+     "confession": "admitted he robbed the store for money to cover his divorce settlement"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Zama Hiroshi",
+    "aliases": ["Hiroshi Zama"],
+    "roles": ["suspect"],
+    "occupation": "freelancer (drag-band musician since high school)",
+    "attrs": {
+     "age": 21,
+     "height_cm": "~180, tallest of the three",
+     "shirt_color": "blue",
+     "has_piercing": true,
+     "alibi": "was heading home from band practice and stopped at the restroom"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Koshimizu Eiko",
+    "aliases": ["Eiko Koshimizu"],
+    "roles": ["suspect"],
+    "occupation": "office lady",
+    "attrs": {
+     "age": 28,
+     "shirt_color": "black with a purple top",
+     "alibi": "felt sick while walking and stopped at the restroom",
+     "quirk": "wears two wristwatches to track her overseas boyfriend's time zone -- an unrelated detail raised alongside Kamieda's watch but never evidentiary against her"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Elderly bystander (unnamed)",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "knocked_down_by_robber": true,
+     "glasses_fell_off": "limited his view of the robber",
+     "initial_testimony": "robber was a taller woman wearing a blue shirt",
+     "generational_color_naming": "his generation calls green, aqua and indigo all 'blue', explaining the shirt-color mistake",
+     "gender_misread_cause": "saw the robber's watch worn face-inward toward the wrist and read that as feminine"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Clothing store witness (unnamed)",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "shop clerk",
+    "attrs": {
+     "initial_testimony": "robber was male, about 180cm tall, green shirt under the coat",
+     "vantage_point": "saw the robber's head sticking out above the crowd from the clothing store window",
+     "height_distortion_cause": "the robber was running along the raised curb of the sidewalk to avoid the crowd, making him look taller than his true 170cm"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Mamehara",
+    "aliases": ["restaurant master Mamehara-san"],
+    "roles": ["witness"],
+    "occupation": "restaurant master/owner",
+    "attrs": {
+     "initial_testimony": "robber wore a black shirt; about 170cm tall",
+     "self_description": "claimed to have gotten a good look at the robber while handing out menus at lunchtime",
+     "height_estimate_accuracy": "his 170cm estimate was correct"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Convenience store clerk (unnamed)",
+    "aliases": [],
+    "roles": ["victim", "witness"],
+    "occupation": "convenience store clerk",
+    "attrs": {
+     "too_frightened_to_describe_robber_beyond": "helmet and coat, having been threatened with a knife"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Wataru Takagi",
+    "aliases": ["Takagi-kun", "Officer Takagi", "Sergeant Takagi"],
+    "roles": ["bystander"],
+    "occupation": "Metropolitan Police detective",
+    "attrs": {
+     "prior_disciplinary_record": "already received one pay-cut disciplinary action"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Miwako Sato",
+    "aliases": ["Sato-san", "Officer Sato", "Secondary Inspector Sato Miwako"],
+    "roles": ["bystander"],
+    "occupation": "Metropolitan Police inspector",
+    "attrs": {
+     "father_status": "died while on duty as a police officer",
+     "condition_for_the_omiai": "agreed to the arranged marriage only on condition that if Takagi solved his case and reached her before sunset, she would refuse the proposal"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Ninzaburo Shiratori",
+    "aliases": ["Shiratori-kun", "Inspector Shiratori"],
+    "roles": ["bystander"],
+    "occupation": "Metropolitan Police inspector, from a wealthy family",
+    "attrs": {
+     "parents_status": "overseas at the time of the meeting",
+     "ultimatum": "if Takagi did not arrive by sunset, demanded a 'confirming kiss' sealing the engagement"
+    }
+   },
+   {
+    "id": "p11",
+    "name": "Yumi Miyamoto",
+    "aliases": ["Yumi-san", "Officer Yumi"],
+    "roles": ["bystander"],
+    "occupation": "Metropolitan Police officer",
+    "attrs": {
+     "role_in_plan": "helped engineer the plan to have Takagi rescue Sato from the meeting"
+    }
+   },
+   {
+    "id": "p12",
+    "name": "Chiba",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "Metropolitan Police officer",
+    "attrs": {}
+   },
+   {
+    "id": "p13",
+    "name": "Juzo Megure",
+    "aliases": ["Inspector Megure"],
+    "roles": ["bystander"],
+    "occupation": "Metropolitan Police inspector",
+    "attrs": {}
+   },
+   {
+    "id": "p14",
+    "name": "Sato's mother (unnamed)",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": null,
+    "attrs": {
+     "arranged_the_omiai": "set up the blind arranged marriage meeting for her daughter"
+    }
+   },
+   {
+    "id": "p15",
+    "name": "Kamishi Akira",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "butler to the Shiratori family",
+    "attrs": {
+     "initial_role": "arrived first to represent the 'young master' since his parents were overseas"
+    }
+   },
+   {
+    "id": "p16",
+    "name": "Conan Edogawa",
+    "aliases": ["Kudo Shin'ichi", "Kudo-kun"],
+    "roles": ["bystander"],
+    "occupation": "elementary student (secretly teenage detective Shin'ichi Kudo)",
+    "attrs": {
+     "assistance": "walked Takagi through the phone, reconciling the three conflicting witness testimonies"
+    }
+   },
+   {
+    "id": "p17",
+    "name": "Ran Mouri",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": null,
+    "attrs": {
+     "role": "briefly interrupts Conan's phone call with Takagi"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Convenience store",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Public restroom",
+    "attrs": {
+     "significance": "where the robber discarded his disguise and where all three suspects were found together"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Minatorou (Japanese restaurant)",
+    "attrs": {
+     "significance": "site of Sato's arranged marriage meeting with Shiratori"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Clothing store (~100m from the restroom)",
+    "attrs": {
+     "significance": "the shop-window vantage point from which the robber was seen running along the sidewalk curb"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Sidewalk between the subway exit and the bus stop",
+    "attrs": {
+     "significance": "the crowded sidewalk where the robber ran along the raised curb, later the site of his attempted escape and recapture"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Mamehara's restaurant",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Robber's discarded disguise (helmet, coat, bag, gloves)",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "the public restroom",
+     "left_by": "the robber, stripped off while changing back into his own clothes"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Knife used to threaten the store clerk",
+    "role": "weapon",
+    "attrs": {}
+   },
+   {
+    "id": "o3",
+    "name": "Mamehara's photochromic glasses",
+    "role": "evidence",
+    "attrs": {
+     "mechanism": "lenses tint dark roughly 15 seconds after UV exposure",
+     "effect": "made the robber's true green shirt appear black in Mamehara's memory",
+     "note": "Mamehara had only started wearing them for fashion and forgot about the effect"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Kamieda's wristwatch",
+    "role": "evidence",
+    "attrs": {
+     "worn": "on the inside of the wrist",
+     "reason": "a habit from teaching, so students in class can't check the time",
+     "effect": "misread by the elderly witness as a feminine style, contributing to the mistaken 'woman' testimony"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Koshimizu's two wristwatches",
+    "role": "evidence",
+    "attrs": {
+     "reason": "tracks her overseas boyfriend's time zone",
+     "note": "an unrelated quirk raised in questioning, never evidentiary against her"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The elderly witness's testimony (a taller woman in blue) reconciles once you factor in his generation's habit of calling green 'blue' (explaining the color) and his misreading of a wristwatch worn face-inward toward the wrist as a feminine style (explaining the perceived gender) -- both point to Kamieda, not a woman.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Mamehara's testimony (black shirt, ~170cm) reconciles once you factor in his not-yet-adjusted photochromic glasses, which tinted the robber's true green shirt black in his memory, while his height estimate of 170cm was accurate all along.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "The clothing-store witness's testimony (male, ~180cm, green shirt) reconciles once you factor in the robber running along the raised sidewalk curb to avoid the crowd, which exaggerated his apparent height from a true 170cm, while her color report (green) and gender read were accurate.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  { "type": "relationship", "from": "p9", "to": "p14", "relation_type": "child_of" },
+  { "type": "relationship", "from": "p15", "to": "p10", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p8", "to": "p13", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p9", "to": "p13", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p10", "to": "p13", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p11", "to": "p13", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p12", "to": "p13", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p8", "to": "p9", "relation_type": "romantic_interest" },
+  { "type": "relationship", "from": "p9", "to": "p8", "relation_type": "romantic_interest" },
+  { "type": "relationship", "from": "p9", "to": "p10", "relation_type": "arranged_marriage_candidate" },
+  { "type": "relationship", "from": "p10", "to": "p9", "relation_type": "arranged_marriage_candidate" },
+
+  { "type": "arranges_marriage_of", "from": "p14", "to": "p9", "order": 1, "temporal_frame": "present", "detail": "sets up a blind arranged marriage meeting (omiai) for Sato, picked from a stack of photos without looking" },
+  { "type": "alerts", "from": "p11", "to": "p8", "order": 1, "temporal_frame": "present", "detail": "texts Takagi about Sato's arranged meeting, hoping he'll rush to save her before the deal is sealed" },
+
+  { "type": "represents", "from": "p15", "to": "p9", "order": 2, "temporal_frame": "present", "detail": "greets Sato as a stand-in butler for the 'young master' since Shiratori's parents are overseas" },
+  { "type": "meets_for_arranged_marriage", "from": "p10", "to": "p9", "order": 2, "temporal_frame": "present", "circumstance_tags": ["omiai"] },
+  { "type": "was_at", "from": "p9", "to": "l3", "order": 2, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p10", "to": "l3", "order": 2, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p14", "to": "l3", "order": 2, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p15", "to": "l3", "order": 2, "temporal_frame": "present" },
+
+  { "type": "threatens", "from": "p1", "to": "p7", "order": 3, "temporal_frame": "present", "circumstance_tags": ["armed_robbery"], "detail": "threatens the store clerk with a knife and demands money" },
+  { "type": "robs", "from": "p1", "to": "l1", "order": 3, "temporal_frame": "present", "circumstance_tags": ["armed_robbery"] },
+  { "type": "wields", "from": "p1", "to": "o2", "order": 3, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p1", "to": "l1", "order": 3, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p7", "to": "l1", "order": 3, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p6", "to": "l6", "order": 3, "temporal_frame": "present" },
+
+  { "type": "knocks_down", "from": "p1", "to": "p4", "order": 4, "temporal_frame": "present", "detail": "knocks the elderly man to the ground while fleeing into the restroom, causing his glasses to fall off" },
+  { "type": "was_at", "from": "p1", "to": "l2", "order": 4, "temporal_frame": "present" },
+  { "type": "leaves_evidence", "from": "p1", "to": "o1", "order": 4, "temporal_frame": "present", "detail": "strips off the helmet, coat, bag and gloves inside the restroom" },
+  { "type": "was_at", "from": "p8", "to": "l2", "order": 4, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p12", "to": "l2", "order": 4, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p4", "to": "l2", "order": 4, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p5", "to": "l4", "order": 4, "temporal_frame": "present" },
+
+  { "type": "was_at", "from": "p1", "to": "l2", "order": 5, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p2", "to": "l2", "order": 5, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p3", "to": "l2", "order": 5, "temporal_frame": "present" },
+  { "type": "questions", "from": "p8", "to": "p1", "order": 5, "temporal_frame": "present" },
+  { "type": "questions", "from": "p8", "to": "p2", "order": 5, "temporal_frame": "present" },
+  { "type": "questions", "from": "p8", "to": "p3", "order": 5, "temporal_frame": "present" },
+
+  { "type": "testifies_to", "from": "p4", "to": "p8", "order": 6, "temporal_frame": "present", "detail": "describes robber as a taller woman wearing a blue shirt" },
+  { "type": "testifies_to", "from": "p5", "to": "p8", "order": 6, "temporal_frame": "present", "detail": "describes robber as ~180cm, male, green shirt" },
+  { "type": "testifies_to", "from": "p6", "to": "p8", "order": 6, "temporal_frame": "present", "detail": "describes robber as ~170cm, black shirt, gender uncertain" },
+
+  { "type": "advises", "from": "p16", "to": "p8", "order": 7, "temporal_frame": "present", "detail": "Kudo Shin'ichi, on the phone, walks Takagi through reconciling the three conflicting testimonies" },
+  { "type": "interrupts_call_of", "from": "p17", "to": "p16", "order": 7, "temporal_frame": "present", "circumstance_tags": ["comic_relief"] },
+  { "type": "proposes_condition_to", "from": "p10", "to": "p9", "order": 7, "temporal_frame": "present", "circumstance_tags": ["ultimatum"], "detail": "if Takagi hasn't arrived to claim her by sunset, demands a 'confirming kiss' sealing the engagement" },
+  { "type": "was_at", "from": "p9", "to": "l3", "order": 7, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p10", "to": "l3", "order": 7, "temporal_frame": "present" },
+
+  { "type": "questions", "from": "p8", "to": "p6", "order": 8, "temporal_frame": "present", "detail": "realizes Mamehara's photochromic glasses had tinted dark, turning the shirt's true color black in his memory" },
+  { "type": "was_at", "from": "p8", "to": "l6", "order": 8, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p6", "to": "l6", "order": 8, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p8", "to": "l4", "order": 8, "temporal_frame": "present" },
+
+  { "type": "questions", "from": "p8", "to": "p4", "order": 9, "temporal_frame": "present", "detail": "realizes the elderly witness's generation calls green 'blue', and that the watch worn face-inward misled him about gender" },
+
+  { "type": "accuses", "from": "p8", "to": "p1", "order": 10, "temporal_frame": "present", "detail": "So Kamieda-san, it's you." },
+  { "type": "flees_from", "from": "p1", "to": "p8", "order": 10, "temporal_frame": "present", "circumstance_tags": ["attempted_escape"] },
+  { "type": "was_at", "from": "p1", "to": "l5", "order": 10, "temporal_frame": "present" },
+
+  { "type": "arrests", "from": "p8", "to": "p1", "order": 11, "temporal_frame": "present" },
+  { "type": "confesses_to", "from": "p1", "to": "p8", "order": 11, "temporal_frame": "present", "detail": "admits he robbed the store for money to cover his divorce settlement" },
+  { "type": "was_at", "from": "p1", "to": "l5", "order": 11, "temporal_frame": "present" },
+  { "type": "was_at", "from": "p8", "to": "l5", "order": 11, "temporal_frame": "present" },
+
+  { "type": "declines_proposal_of", "from": "p9", "to": "p10", "order": 12, "temporal_frame": "present", "circumstance_tags": ["marriage_declined"] },
+  { "type": "chooses", "from": "p9", "to": "p8", "order": 12, "temporal_frame": "present", "detail": "drives up to Takagi using the same 'there's a case' pretext, leaving Shiratori and the omiai behind" },
+  { "type": "was_at", "from": "p9", "to": "l3", "order": 12, "temporal_frame": "present" },
+
+  { "type": "owns", "from": "p6", "to": "o3" },
+  { "type": "owns", "from": "p1", "to": "o4" },
+  { "type": "owns", "from": "p3", "to": "o5" },
+  { "type": "located_in", "from": "o1", "to": "l2" },
+
+  { "type": "implicates", "from": "o1", "to": "p1" },
+  { "type": "implicates", "from": "o2", "to": "p1" },
+  { "type": "implicates", "from": "o4", "to": "p1" },
+  { "type": "implicates", "from": "c1", "to": "p1" },
+  { "type": "implicates", "from": "c2", "to": "p1" },
+  { "type": "implicates", "from": "c3", "to": "p1" },
+
+  { "type": "regarding", "from": "c1", "to": "p4" },
+  { "type": "regarding", "from": "c1", "to": "o4" },
+  { "type": "regarding", "from": "c2", "to": "p6" },
+  { "type": "regarding", "from": "c2", "to": "o3" },
+  { "type": "regarding", "from": "c3", "to": "p5" },
+  { "type": "regarding", "from": "c3", "to": "l4" }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

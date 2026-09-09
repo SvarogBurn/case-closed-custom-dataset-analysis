@@ -1,0 +1,409 @@
+{
+  "case_id": "ep423_the_detective_boys_and_the_four_caterpillar_brothers",
+  "episode_number": "423",
+  "title": "The Detective Boys and the Four Caterpillar Brothers",
+  "source_url": "https://www.detectiveconanworld.com/wiki/The_Detective_Boys_and_the_Four_Caterpillar_Brothers",
+  "subtitle_source": [
+    "subs_resolved/0423.txt"
+  ],
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan/Edogawa, Ayumi, Detective Boys, Detective Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's suspect/victim names (Matsuura, Yoshikawa, Shimura) and objects (knife, protective cap) match the transcript, but its clue node c1 ('surviving child witness saw the attacker's face directly') and event e2 location ('Aoyama Cemetery') do not match: the transcript never places the second attack at a cemetery -- it happens in the front yard of Keiichi's own house, among his mother's rose bushes, and Keiichi never actually names or reports the attacker's face to police on-screen (he silently recognizes him and is then ambushed before he can tell anyone). Also, the old file omits the entire cabbage-worm/olive-tree B-plot that supplies the episode's real detective work: Keiichi was secretly relocating caterpillars from his late mother's olive tree to a bigger one at Matsuura Heights each night at 10 PM, which is why he was near the crime scene and why he lied to police about going outside -- not guilt over the murder. The old file also omits Matsuura himself as anything but a suspect name; the transcript uses his claimed chronic 'stiff shoulder' left-arm-clutching as the red herring that superficially matches the taxi driver's description of the culprit, a description that actually fits Yoshikawa bracing stolen cash hidden in his sleeve. case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Shimura",
+        "aliases": [],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "retired, lived alone",
+        "attrs": {
+          "died_of": "stabbing",
+          "time_of_death": "approx. 10:00 PM",
+          "robbed_of": "millions of yen saved in a bureau/chest of drawers, found empty"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Senkichi Matsuura",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "manager, Matsuura Heights apartments",
+        "attrs": {
+          "age": 52,
+          "claimed_injury": "chronic stiff left shoulder, unrelated to the case",
+          "tends": "olive tree at Matsuura Heights, home to the cabbage worms"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Minoru Yoshikawa",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "convenience store clerk; part-time, works a second job afternoons",
+        "attrs": {
+          "age": 23,
+          "residence": "Matsuura Heights",
+          "clocked_out": "shortly before noon on the day he ambushes Keiichi"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Keiichi Mitsui",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "first-grade student",
+        "attrs": {
+          "denied_to_police": "going outside the night of the murder, or the two nights before",
+          "real_reason_out_at_night": "secretly relocating cabbage worms from his own olive tree to a bigger one at Matsuura Heights, one per night at 10 PM",
+          "collided_with_culprit": "while leaving his house at 10 PM the night of the murder, in view of a passing taxi"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Keiichi's mother",
+        "aliases": [],
+        "roles": [
+          "backstory_figure"
+        ],
+        "occupation": null,
+        "attrs": {
+          "died_of": "illness, that past summer",
+          "gave_keiichi": "the white baseball cap he always wears",
+          "planted": "the roses and small olive tree in the front yard"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Keiichi's father",
+        "aliases": [],
+        "roles": [
+          "backstory_figure"
+        ],
+        "occupation": "unspecified, works late",
+        "attrs": {
+          "returns_home": "around 11:00 PM",
+          "leaves_dinner_prepared": "in the morning for Keiichi to heat up alone"
+        }
+      },
+      {
+        "id": "p7",
+        "name": "Shouginakawa",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "Shimura's neighbor",
+        "attrs": {
+          "role_in_case": "discovered Shimura's body"
+        }
+      },
+      {
+        "id": "p8",
+        "name": "Taxi driver",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "taxi driver",
+        "attrs": {
+          "drove_past_scene": "around 10:00 PM",
+          "reported": "a boy in pajamas and a white baseball cap colliding with a man clutching his left arm with his right hand"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Shimura's house",
+        "attrs": {
+          "role": "murder scene"
+        }
+      },
+      {
+        "id": "l2",
+        "name": "Matsuura Heights",
+        "attrs": {
+          "detail": "apartment complex with the large olive tree the caterpillars are moved to; Yoshikawa's residence"
+        }
+      },
+      {
+        "id": "l3",
+        "name": "Convenience store near school",
+        "attrs": {
+          "detail": "Yoshikawa's workplace, on Keiichi's route home"
+        }
+      },
+      {
+        "id": "l4",
+        "name": "Keiichi's house yard",
+        "attrs": {
+          "detail": "roses and small olive tree planted by his late mother; site of the ambush on Keiichi"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "White baseball cap",
+        "role": "instrument",
+        "attrs": {
+          "gift_from": "Keiichi's late mother",
+          "worn": "always, per Keiichi",
+          "saved_his_life": "deflected Yoshikawa's blade during the ambush"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Blade used to attack Keiichi",
+        "role": "weapon",
+        "attrs": {
+          "outcome": "pierced only the cap, Keiichi unharmed"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Stolen cash from Shimura's bureau",
+        "role": "contraband",
+        "attrs": {
+          "hidden_in": "Yoshikawa's left sleeve pocket",
+          "significance": "explains why the culprit clutched his left arm after colliding with Keiichi -- bracing the cash, not an old injury"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Scissor-cut branches, Keiichi's olive tree",
+        "role": "evidence",
+        "attrs": {
+          "location": "l4"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Scissor-cut branches, Matsuura Heights olive tree",
+        "role": "evidence",
+        "attrs": {
+          "location": "l2"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "Both Matsuura and the culprit described by the taxi driver clutch their left arm with their right hand -- but Matsuura's is a pre-existing chronic stiff shoulder, while the culprit's only makes sense as someone bracing something hidden in his sleeve after a sudden collision, clearing Matsuura and pointing to Yoshikawa.",
+        "clue_type": "testimonial"
+      },
+      {
+        "id": "cB",
+        "desc": "Matching scissor-cut branches found on both Keiichi's home olive tree and the Matsuura Heights olive tree reveal Keiichi had been transplanting one cabbage worm per night, explaining his repeated late-night trips without implicating him in the murder.",
+        "clue_type": "physical"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p5",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p6",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p2",
+      "relation_type": "tenant_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p7",
+      "relation_type": "neighbor_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p1",
+      "relation_type": "neighbor_of"
+    },
+    {
+      "type": "kills",
+      "from": "p3",
+      "to": "p1",
+      "method": "stabbing",
+      "circumstance_tags": [
+        "robbery"
+      ]
+    },
+    {
+      "type": "assaults",
+      "from": "p3",
+      "to": "p4",
+      "circumstance_tags": [
+        "silencing_a_witness"
+      ]
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p7",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l4"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l2"
+    },
+    {
+      "type": "owns",
+      "from": "p4",
+      "to": "o1"
+    },
+    {
+      "type": "owns",
+      "from": "p3",
+      "to": "o2"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o3"
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p3",
+      "to": "o3"
+    },
+    {
+      "type": "located_in",
+      "from": "o3",
+      "to": "l1"
+    },
+    {
+      "type": "located_in",
+      "from": "o4",
+      "to": "l4"
+    },
+    {
+      "type": "located_in",
+      "from": "o5",
+      "to": "l2"
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p4",
+      "to": "o4"
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p4",
+      "to": "o5"
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p3"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "p3"
+    },
+    {
+      "type": "implicates",
+      "from": "cA",
+      "to": "p3"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o4"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o5"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "p4"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p3",
+      "to": "p1",
+      "motive_type": "robbery"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p3",
+      "to": "p4",
+      "motive_type": "silencing_a_witness_who_recognized_him"
+    },
+    {
+      "type": "was_at",
+      "from": "p8",
+      "to": "l1"
+    }
+  ],
+  "label": {
+    "murderer_id": "p3"
+  }
+}

@@ -1,0 +1,618 @@
+{
+ "case_id": "ep144-145_the_north_star_no3_express_leaving_ueno",
+ "episode_number": "144-145",
+ "title": "The North Star No.3 Express Leaving Ueno",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_North_Star_No.3_Express_Leaving_Ueno",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0144.txt, case_closed_dataset/subs_resolved/0145.txt (full two-part transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Yukiko Kudo, Yusaku Kudo, Inspector Nishimura) omitted by convention, consistent with the ep11 prototype's omission of Conan/Kogoro/Ran/Megure. This means one on-screen scene is NOT graphed as an edge: Kaetsu's attempted platform assault on Yukiko at Sapporo Station (she deliberately baited him to force a confession) has no valid non-omitted target node, so it is only referenced in Kaetsu's attrs rather than as a violent_action edge. No `event` node type: every action is a directly typed, attributed edge between the entities involved, sharing an `order` integer for edges belonging to the same occurrence. The central mechanism (a body rigged with fishing line and released through a broken train window to fake a fleeing culprit's escape) mirrors a stolen, unfinished detective-novel manuscript (o9) that the culprit apparently read; the transcript never states outright whether Kaetsu was the unidentified third member of the original robbery trio that stole that manuscript, so that link is left as an open note rather than asserted as fact. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Toshinori Kaetsu",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "jewelry store manager",
+    "attrs": {
+     "disguise": "impersonated the fleeing gunman (made witnesses believe they saw Asama Yasuji escaping) using spare clothes, sunglasses and a hat matching Asama's, found later in his own luggage",
+     "unresolved_note": "transcript never confirms whether Kaetsu was the unidentified third member of the original three-person robbery gang; his intimate knowledge of Yusaku Kudo's unpublished manuscript plot strongly implies it but this is not stated outright",
+     "later_incident": "after being exposed, made a physical move toward a female passenger on the Sapporo Station platform who had been baiting him to confirm his guilt; not graphed as an edge because the target is an omitted recurring detective-cast character (Yukiko Kudo)"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Akishige Ishizuchi",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "Furuito City mayor, mayoral candidate",
+    "attrs": {
+     "public_feud": "publicly accused Izumo of staging his own store's robbery as an election publicity stunt and of being an undisclosed drug dealer"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Toru Aoba",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "passenger",
+    "attrs": {
+     "note": "self-professed fan of detective Kogoro Mouri; carried kendo/bamboo-sword equipment for a Sapporo competition"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Azusa Izumo",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "housewife",
+    "attrs": {
+     "relation_to_victim": "wife of victim Keitaro Izumo",
+     "note": "carried a practice/hobby shooting gun for a planned Hokkaido shooting trip"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yasuji Asama",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "leader of a three-person robbery gang",
+    "attrs": {
+     "died_of": "unspecified in available transcript excerpt (killed by Kaetsu before his body was rigged to fall from the train; the on-screen false theory of him fatally hitting his head while escaping was disproven)",
+     "false_public_narrative": "believed by police to be the fleeing gunman who shot Izumo and jumped from the train, based on Kaetsu's staged disguise",
+     "recent_crime": "robbed Izumo's Tokyo jewelry store days before the case, in a collusive insurance-fraud scheme with Izumo that Izumo betrayed"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Keitaro Izumo",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "jewelry store owner",
+    "attrs": {
+     "died_of": "gunshot from behind, fired by Kaetsu in the train's lobby car",
+     "alleged_drug_dealing": "rumored in the press to deal drugs in the black market; not proven true, but conceded by the story's detective to not have been strictly legal trading either",
+     "insurance_fraud_scheme": "arranged for Asama to fake-rob his own store to collect insurance money and split it with him, then pressed the alarm early to force Asama to flee empty-handed and boost his own public image ahead of a mayoral run"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Akechi Fumiyo",
+    "aliases": [],
+    "roles": [
+     "bystander"
+    ],
+    "occupation": "passenger",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Unnamed woman, third-known member of Asama's robbery gang",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "unspecified in available transcript excerpt",
+    "attrs": {
+     "died_of": "drug overdose",
+     "circumstance": "her death, allegedly enabled by Izumo's drug dealing, is stated by Yusaku Kudo to be Kaetsu's true motive for both killings"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "North Star No.3 Express -- lobby/dining car",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "North Star No.3 Express -- Kaetsu's compartment / the room used for the body-drop trick",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Seikan Tunnel",
+    "attrs": {
+     "significance": "Asama's body was found here after falling from the train; the tunnel's total darkness is what let Kaetsu's disguised run go unquestioned by witnesses"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Sapporo Station, platform",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Izumo's jewelry store, Tokyo",
+    "attrs": {}
+   },
+   {
+    "id": "l6",
+    "name": "Bank where the publishing-firm courier was robbed",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Silenced gun (Kaetsu's)",
+    "role": "weapon",
+    "attrs": {
+     "used_on": "fired to kill Izumo, then fired again at the broken window and toward Kogoro Mouri's group to sell the illusion of a fleeing gunman",
+     "left_behind": "deliberately left in Asama's room with unfired rounds remaining, since a genuinely fleeing criminal would not normally abandon a loaded weapon -- one of the details that first made the vanishing-culprit story suspicious"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Fishing line and pulley rig",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "fishing line hooked to the back of Asama's trousers, run out through the broken window and anchored outside; a second line taped to the door hook held the door shut until the moment the main line was cut, releasing the body into the tunnel at the same instant Kaetsu appeared to 'flee' the room",
+     "requires": "specialized angling equipment and skill, which Kaetsu (an angler) had brought aboard as ordinary fishing gear"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Plastic tape fragment stuck to Asama's trousers",
+    "role": "evidence",
+    "attrs": {
+     "significance": "physical residue from the secondary line taped to the door hook; recovered from the body in the tunnel and matched to the rig mechanism"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Fake mustache found on Asama's body",
+    "role": "evidence",
+    "attrs": {
+     "significance": "part of Asama's own disguise kit as a career robber; confirmed the body's identity but was not itself part of Kaetsu's frame-up"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Spare clothes, sunglasses and hat in Kaetsu's luggage",
+    "role": "evidence",
+    "attrs": {
+     "significance": "matched the disguise witnesses attributed to the fleeing 'Asama'; possession of a duplicate outfit is what proved Kaetsu, not Asama, was the figure seen running and jumping from the window",
+     "discovered_via": "Yukiko Kudo staged a distraction (posing as a suspicious woman under surveillance) to get Kaetsu's room searched without raising his guard"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Azusa Izumo's practice/hobby gun",
+    "role": "tool",
+    "attrs": {
+     "note": "one of four pieces of sporting/hobby equipment aboard the train that Conan initially flagged as a possible tool for the vanishing-culprit trick; ultimately unrelated to the murder"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Toru Aoba's bamboo sword and kendo gear",
+    "role": "tool",
+    "attrs": {
+     "note": "one of four pieces of hobby equipment flagged as a possible trick tool; ultimately unrelated to the murder"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Akishige Ishizuchi's golf clubs",
+    "role": "tool",
+    "attrs": {
+     "note": "one of four pieces of hobby equipment flagged as a possible trick tool; ultimately unrelated to the murder"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Yusaku Kudo's unpublished novel manuscript (stolen draft)",
+    "role": "evidence",
+    "attrs": {
+     "content": "unfinished detective story in which an antique-store owner is murdered in a train tunnel using a body-drop trick to fake the culprit's escape",
+     "stolen": "stolen roughly ten years earlier when a publishing-firm courier carrying the draft was robbed at a bank by Asama's gang",
+     "flaw_exploited": "only the first half of the story was ever written; Kaetsu appears to have believed it was the complete, 'perfect' method and executed it without realizing the real plan had practical gaps (leftover luggage, tape residue) that gave him away"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Timing contradiction: forensic reconstruction placed Asama's body falling from the train at ~4:10 AM, exactly matching witnesses' account of when the fleeing 'criminal' entered and left the room -- impossible for one person to simultaneously be a body already falling from the train and a figure fleeing on foot, which is what first proved the escape was mechanically staged rather than performed by a living person.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Comparative equipment clue: four different passengers each independently carried sporting/hobby gear (fishing tackle, a practice gun, kendo equipment, golf clubs) that could plausibly have supplied the tool for the vanishing-culprit trick -- only the fishing gear's owner actually matches the mechanism recovered from the body, narrowing four equally 'equipped' suspects down to one.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p6",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p6",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p5",
+   "relation_type": "secret_business_partner",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "electoral_rival",
+   "symmetric": true
+  },
+  {
+   "type": "robs",
+   "from": "p5",
+   "to": "l5",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "circumstance_tags": [
+    "insurance_fraud",
+    "staged"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l5",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l5",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "betrays",
+   "from": "p6",
+   "to": "p5",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "detail": "pressed the store alarm early to force Asama to flee without the jewelry, denying him his share of the planned insurance payout",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "steals",
+   "from": "p5",
+   "to": "o9",
+   "order": -1,
+   "temporal_frame": "backstory",
+   "years_before_present": 10,
+   "circumstance_tags": [
+    "heist"
+   ]
+  },
+  {
+   "type": "steals",
+   "from": "p8",
+   "to": "o9",
+   "order": -1,
+   "temporal_frame": "backstory",
+   "years_before_present": 10,
+   "circumstance_tags": [
+    "heist"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l6",
+   "order": -1,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l6",
+   "order": -1,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "arranges_meeting_with",
+   "from": "p6",
+   "to": "p5",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "Izumo, worried after the botched robbery, called Asama and arranged to settle the payout aboard the Northern Star train, away from the police"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p5",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "unspecified in available transcript excerpt",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p6",
+   "order": 5,
+   "temporal_frame": "present",
+   "method": "shot from behind with a silenced gun in the lobby car"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o1",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "drops_body_of",
+   "from": "p1",
+   "to": "p5",
+   "order": 7,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "locked_room",
+    "staged_death",
+    "framed"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o7"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o8"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o7"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o8"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p6",
+   "motive_type": "revenge_for_associates_drug_death (Izumo allegedly dealt the drugs that killed the unnamed gang member)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p5",
+   "motive_type": "revenge_gang_leader_responsibility (Asama led the gang the deceased woman belonged to)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p6",
+   "motive_type": "electoral_rivalry (red herring; public feud accusing Izumo of a staged robbery publicity stunt and undisclosed drug dealing)"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 8,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "exposed"
+   ]
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

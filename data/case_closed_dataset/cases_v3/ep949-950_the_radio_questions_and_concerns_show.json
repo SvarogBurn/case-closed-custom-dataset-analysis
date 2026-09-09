@@ -1,0 +1,261 @@
+{
+ "case_id": "ep949-950_the_radio_questions_and_concerns_show",
+ "episode_number": "949-950",
+ "title": "The Radio Questions and Concerns Show",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Radio_Questions_and_Concerns_Show",
+ "subtitle_source": "subs_resolved/0949.txt, subs_resolved/0950.txt (729 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Takagi) omitted by convention. case_type: murder. The old low-fidelity case file had the correct culprit (Yashiro Kaede) but was drastically under-built: it reduced a multi-layer frame-up conspiracy to two flat 'events' and a single clue. Corrections made against the transcript: (1) the killing did not happen after 'calling the victim outside' -- Yashiro went to Towako's apartment late at night and Towako answered her own door ('What do you want? It's the middle of the night.'); (2) the old file omitted the entire mechanism of the frame-up: Yashiro forged a fake listener letter (fronted by her friend Morikawa Tsugumi under the initials 'TM', matching victim Manda Towako's initials) to bait upstairs neighbor Kijima Kumi into a public radio-show grudge and a real-life confrontation with Towako, then separately husband Teruomi Manda (unaware of the murder plan) copied the broadcast onto a CD and planted it in Kijima's mailbox hoping to provoke Kijima into harming his wife so he could be rid of her without dirtying his own hands; (3) old file omitted that Yashiro sedated Manda at a staff drinking party specifically to destroy his alibi and shift suspicion onto him once Kijima's bar alibi checked out; (4) old file omitted the two red-herring suspects (presenter Inuyama Ninosuke, director Kujirai Mamoru) who are shown to despise Manda but are cleared of a plausible motive to kill his wife; (5) old file's single clue (script mirrors Yashiro's own history) is kept but sharpened and supplemented with the two clues that actually break the case in the transcript: a cast-credit / maiden-name match proving Towako was the miscast lead actress in Yashiro's ruined debut drama seven years ago, and Yashiro's unconscious habit of touching a band-aid on the back of her neck (concealing a scratch wound, later DNA-matched to skin found under the victim's fingernails) every time a step of her frame-up succeeded.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Towako Manda",
+    "aliases": ["Adachi Towako", "Isaka Kiko"],
+    "roles": ["victim"],
+    "occupation": "housewife",
+    "attrs": {
+     "maiden_name": "Adachi Towako",
+     "former_stage_name": "Isaka Kiko",
+     "marital_status": "separated from producer Teruomi Manda; refused to agree to divorce",
+     "backstory": "seven years ago, under the stage name Isaka Kiko, played the miscast lead role in Yashiro Kaede's debut radio drama"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Teruomi Manda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Nichiuri TV & Radio production unit producer",
+    "attrs": {
+     "motive": "wanted a divorce Towako refused to grant",
+     "scheme": "secretly copied the aired broadcast onto a CD and planted it in Kijima Kumi's mailbox to provoke her into confronting/harming his wife, so he would not have to act himself",
+     "alibi_status": "claimed to have gone home to sleep alone; unknowingly sedated by Yashiro so he would leave the staff drinking party early, destroying his alibi",
+     "outcome": "did not kill Towako himself but is culpable for inciting the confrontation that made him the frame-up's intended scapegoat"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kumi Kijima",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "housewife",
+    "attrs": {
+     "situation": "Towako's upstairs neighbor; tricked by a forged radio-show letter into believing Towako had publicly complained about her, and confronted/argued with her",
+     "alibi": "verified: was barhopping at a bar from around 11 PM until past midnight on the night of the murder"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Ninosuke Inuyama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Nichiuri TV presenter",
+    "attrs": {
+     "note": "red herring; resents Manda for scheming to block him from going independent, but cleared of a credible motive to kill Manda's wife"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Mamoru Kujirai",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Nichiuri TV & Radio production unit director",
+    "attrs": {
+     "note": "red herring; considers Manda incompetent and disgraceful to radio because of his misappropriation of programs, but cleared of a credible motive to kill Manda's wife"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Kaede Yashiro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "broadcast writer",
+    "attrs": {
+     "true_motive": "seven-year grudge against Manda and Towako for ruining her masterpiece debut drama -- Manda cast his then-girlfriend Towako in the lead against advice, and Towako's performance ruined the script that depicted Yashiro's own personal loss; the grudge reignited when Manda was reassigned as the show's producer one month ago",
+     "concealed_injury": "scratch wound on the back of her neck, covered with a band-aid, inflicted by the victim during the struggle"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Rie Abe",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Nichiuri TV & Radio production unit assistant director",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Morikawa Tsugumi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "housewife",
+    "attrs": {
+     "role_in_case": "friend of Yashiro; agreed, unaware of the murder plan, to be credited as 'TM-san', the fictitious author of Yashiro's forged listener letter"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Kamio Yoshitaka",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "radio producer (seven years prior)",
+    "attrs": {
+     "role_in_case": "producer of Yashiro's debut drama seven years ago; confirms Manda ignored the crew's opposition and cast his girlfriend Towako in the lead role"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Towako's apartment building",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Nichiuri TV & Radio Station",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Bar (Kijima's Friday hangout)",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Metal pipe (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "no_fingerprints": true,
+     "no_blood_at_scene": true
+    }
+   },
+   {
+    "id": "o2",
+    "name": "CD copy of the radio broadcast",
+    "role": "evidence",
+    "attrs": {
+     "trick": "copied directly from the studio source, not recorded off the air -- proves it was made by station staff, not a listener",
+     "used_by": "Teruomi Manda, planted in Kijima Kumi's mailbox"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Forged listener letter (signed 'TM-san')",
+    "role": "evidence",
+    "attrs": {
+     "content": "fabricated complaint about a noisy, obnoxious upstairs neighbor",
+     "true_author": "Kaede Yashiro",
+     "fronted_by": "Morikawa Tsugumi",
+     "purpose": "engineered so Kijima Kumi would believe Towako had complained about her on air"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Radio drama script \"He Disappeared Without Saying Goodbye\"",
+    "role": "evidence",
+    "attrs": {
+     "written_by": "Kaede Yashiro, her debut work",
+     "content": "a masterful depiction of losing a loved one, drawn from Yashiro's own experience",
+     "casting_dispute": "Manda, then director and dating Towako, cast her in the lead against the crew's advice; her poor performance ruined the drama for Yashiro"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Band-aid on the back of Yashiro's neck",
+    "role": "evidence",
+    "attrs": {
+     "conceals": "a scratch wound from the victim's struggle"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Skin/blood traces under Towako's fingernails",
+    "role": "evidence",
+    "attrs": {
+     "forensic_result": "DNA matches the wound concealed under Yashiro's band-aid"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Sedative",
+    "role": "tool",
+    "attrs": {
+     "used_on": "Teruomi Manda, slipped to him at the staff drinking party to send him home early and destroy his alibi"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Cast credit lists actress 'Isaka Kiko' playing 'Adachi Towako' in Yashiro's old drama; the victim's own maiden name is Adachi Towako -- reveals she was the miscast actress under a stage name.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Yashiro unconsciously touches the band-aid on her neck every time a step of the frame-up succeeds (Kijima implicated, then Manda arrested).",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "kills", "from": "p6", "to": "p1", "method": "blunt-force trauma from a metal pipe", "circumstance_tags": ["premeditated", "cover_up", "framed_third_party"]},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "leaves_evidence", "from": "p6", "to": "o1"},
+  {"type": "sedates", "from": "p6", "to": "p2"},
+  {"type": "uses", "from": "p6", "to": "o7"},
+  {"type": "was_at", "from": "p2", "to": "l2", "circumstance_tags": ["staff_drinking_party"]},
+  {"type": "was_at", "from": "p6", "to": "l2", "circumstance_tags": ["staff_drinking_party"]},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+  {"type": "writes", "from": "p6", "to": "o3"},
+  {"type": "written_by", "from": "o3", "to": "p6"},
+  {"type": "recruits", "from": "p6", "to": "p8"},
+  {"type": "regarding", "from": "o3", "to": "p3"},
+  {"type": "selects", "from": "p6", "to": "o3"},
+  {"type": "implicates", "from": "o3", "to": "p6"},
+  {"type": "creates", "from": "p2", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "frames", "from": "p2", "to": "p3"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "assaults", "from": "p3", "to": "p1", "circumstance_tags": ["incited", "non-lethal"]},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "written_by", "from": "o4", "to": "p6"},
+  {"type": "regarding", "from": "o4", "to": "p1"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p6"},
+  {"type": "owns", "from": "p6", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p6"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o6"},
+  {"type": "regarding", "from": "o6", "to": "p1"},
+  {"type": "implicates", "from": "o6", "to": "p6"},
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "implicates", "from": "c1", "to": "p6"},
+  {"type": "regarding", "from": "c2", "to": "o5"},
+  {"type": "implicates", "from": "c2", "to": "p6"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "neighbor"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p7", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p2", "relation_type": "owes_career_debt"},
+  {"type": "relationship", "from": "p9", "to": "p6", "relation_type": "former_colleague"},
+  {"type": "relationship", "from": "p9", "to": "p2", "relation_type": "former_colleague"},
+  {"type": "relationship", "from": "p6", "to": "p8", "relation_type": "friend"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "wanted a divorce she refused to grant"},
+  {"type": "has_motive_against", "from": "p6", "to": "p1", "motive_type": "resentment (ruined her masterpiece debut drama with a miscast, poor performance)"},
+  {"type": "has_motive_against", "from": "p6", "to": "p2", "motive_type": "resentment (nepotistic casting of his girlfriend, ongoing misappropriation of programs)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p2", "motive_type": "resents Manda blocking his independence (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p2", "motive_type": "professional contempt, considers Manda incompetent (red herring)"}
+ ],
+ "label": {
+  "murderer_id": "p6"
+ }
+}

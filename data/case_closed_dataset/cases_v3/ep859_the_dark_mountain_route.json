@@ -1,0 +1,224 @@
+{
+ "case_id": "ep859_the_dark_mountain_route",
+ "episode_number": "859",
+ "title": "The Dark Mountain Route",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Dark_Mountain_Route",
+ "subtitle_source": ["subs_resolved/0859.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan/Edogawa, Ayumi Yoshida, Genta, Mitsuhiko, Haibara, Professor Agasa, Detective Takagi, Inspector) omitted by convention -- their in-story function (the horse-thistle-transfer clue picked up on Ayumi Yoshida's pants while Eiko slept beside her, and Agasa's kerosene-smell deduction) is preserved as clue content rather than as person nodes. The old case file's stated culprit (Eiko Ikeguchi, s1) is CONFIRMED correct against the transcript -- unlike some other rebuilds, this one holds up. Corrections made against the old file: (1) the old file gave Eiko ownership of the weather balloon; the transcript makes clear the balloons belonged to Hayashida (a weather-station employee doing legitimate survey work) and Eiko secretly took six of them without permission -- ownership/theft direction was backwards. (2) the old file used a single generic 'weather balloon' object and a single 'Mountain' location; the transcript supports six balloons used together (five released to drift north to a lake, one kept, deflated and cut), and at least six functionally distinct locations (cottage, cliff base/crime scene, cliff top/launch point, forest 3km away, the lake, and Hayashida's claimed survey site on a neighboring mountain). (3) the old file omitted Motoki entirely as a node even though he is the entire motive engine of the case (Eiko's secretly-dating boyfriend, dead 3 years prior after Hayashida withheld a safety warning out of jealousy) -- added as a backstory_figure. (4) added Ashizuka's on-screen accusatory motive against Takemi ('That's why Motoki-san is dead, too') as a red-herring has_motive_against edge, which the old file's flat suspect list did not capture. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Eiko Ikeguchi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "mountain climber",
+    "attrs": {
+     "age": 23,
+     "build": "notably light/slight -- key to the six-balloon descent trick"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Takemi Yamakura",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "mountain climber",
+    "attrs": {
+     "age": 26,
+     "died_of": "stabbing, at the base of the cliff overnight"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Taro Hayashida",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "weather station employee, mountain climber",
+    "attrs": {
+     "age": 28,
+     "framed_for": "murder, via planted blood-stained surveying gear and a stolen balloon supply",
+     "suppressed_fact": "recognized Motoki's compass at the crime scene but stayed silent, fearing suspicion"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Tokunori Ashizuka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "mountain climber",
+    "attrs": {
+     "age": 33,
+     "kayak_theory": "police considered he could have kayaked to the crime scene; ruled out, no way to return upriver in time"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Motoki",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "fell from the cliff top chasing after Takemi, 3 years before present",
+     "relationship_note": "Eiko's secret boyfriend and Hayashida's childhood friend"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Cottage at mountain entrance",
+    "attrs": {"use": "shared sleeping quarters for the climbing group"}
+   },
+   {
+    "id": "l2",
+    "name": "Cliff base",
+    "attrs": {"note": "where Takemi slept alone overnight and was found dead"}
+   },
+   {
+    "id": "l3",
+    "name": "Cliff top",
+    "attrs": {"note": "50m tall; jump-off point for the balloon-slowed descent; also where Motoki fell 3 years earlier"}
+   },
+   {
+    "id": "l4",
+    "name": "Forest, 3km from crime scene",
+    "attrs": {"note": "where the killer dumped Takemi's backpack and a torn balloon"}
+   },
+   {
+    "id": "l5",
+    "name": "Lake north of the cliff",
+    "attrs": {"note": "where five released balloons drifted, out of sight, on the wind"}
+   },
+   {
+    "id": "l6",
+    "name": "Neighboring mountain (survey site)",
+    "attrs": {"note": "Hayashida's claimed location during the murder window"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Weather balloons (six)",
+    "role": "tool",
+    "attrs": {
+     "coating": "kerosene, to strengthen the rubber -- leaves a lasting smell on anyone who handles them",
+     "trick": "not enough lift to fly, but enough to slow a fall like a parachute; landed on mid-cliff rocks before jumping the rest of the way",
+     "disposal": "five released to drift north to the lake; one deflated, cut, and kept"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Knife (murder weapon)",
+    "role": "weapon",
+    "attrs": {"found_in": "Takemi's backpack, in the forest"}
+   },
+   {
+    "id": "o3",
+    "name": "Takemi's backpack",
+    "role": "evidence",
+    "attrs": {
+     "contents": "the knife and an emptied wallet",
+     "purpose": "staged 3km from the scene to suggest an outside killer had fled down the mountain"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Motoki's compass",
+    "role": "evidence",
+    "attrs": {"note": "a memento given to Hayashida; planted at the crime scene"}
+   },
+   {
+    "id": "o5",
+    "name": "Hayashida's surveying gear",
+    "role": "evidence",
+    "attrs": {"note": "balloon-mounting equipment he normally keeps on him; returned to his bag with the victim's blood on it"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "A horse thistle that only grows in the forest 3km away turned up on a companion's pants, transferred from Eiko while they slept side by side -- proof Eiko had been in the forest despite her alibi.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Strange footprints on the mid-cliff rocks point toward the edge, and a rope-mark/blood scrape sits at the cliff top -- consistent only with someone light enough to descend balloon-slowed and climb back up in a hurry.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Kerosene from the balloon coating clings to anyone who handles them: Hayashida, who says he did the surveying, has no trace of it; Eiko reeks of it.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "secretly_dating"},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "childhood_friend_of"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "fellow_club_member"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "fellow_club_member"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "revenge_for_motokis_death"},
+  {"type": "has_motive_against", "from": "p4", "to": "p2", "motive_type": "blames_victim_for_motokis_death (red herring)"},
+
+  {"type": "falls_from", "from": "p5", "to": "l3", "circumstance_tags": ["backstory"]},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "withholds_warning_from", "from": "p3", "to": "p5", "detail": "knew Motoki was heading toward the dangerous cliff top but said nothing, out of jealousy over Eiko and Motoki's relationship"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l6", "circumstance_tags": ["disputed_alibi"]},
+
+  {"type": "kills", "from": "p1", "to": "p2", "method": "stabbing", "circumstance_tags": ["staged_alibi", "frame_up", "impossible_timing"]},
+  {"type": "steals", "from": "p1", "to": "o1"},
+  {"type": "uses", "from": "p1", "to": "o1", "circumstance_tags": ["staged_alibi"]},
+  {"type": "implicates", "from": "o1", "to": "p1"},
+  {"type": "owns", "from": "p3", "to": "o1"},
+
+  {"type": "leaves_evidence", "from": "p1", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "o3"},
+
+  {"type": "stages_alibi_using", "from": "p1", "to": "o3", "circumstance_tags": ["frame_up"]},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "located_in", "from": "o3", "to": "l4"},
+
+  {"type": "leaves_evidence", "from": "p1", "to": "o4", "circumstance_tags": ["frame_up"]},
+  {"type": "owns", "from": "p3", "to": "o4"},
+  {"type": "located_in", "from": "o4", "to": "l2"},
+
+  {"type": "leaves_evidence", "from": "p1", "to": "o5", "circumstance_tags": ["frame_up"]},
+  {"type": "owns", "from": "p3", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p3"},
+
+  {"type": "disposes_evidence_at", "from": "p1", "to": "l5"},
+
+  {"type": "regarding", "from": "c1", "to": "l4"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "l3"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p3"},
+  {"type": "implicates", "from": "c3", "to": "p1"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

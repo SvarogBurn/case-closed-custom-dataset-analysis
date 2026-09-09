@@ -1,0 +1,408 @@
+{
+ "case_id": "ep360_a_mysterious_spring_beetle",
+ "episode_number": "360",
+ "title": "A Mysterious Spring Beetle",
+ "source_url": "https://www.detectiveconanworld.com/wiki/A_Mysterious_Spring_Beetle",
+ "subtitle_source": ["subs_resolved/0360.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Takagi, Sato, Detective Boys) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's culprit (s3 = Takashi Ishida) matches the transcript -- no reversal here -- but the old file was thin: it had no Ninomiya node (the alibi witness Shirai manipulated), no red-herring beat (Conan first floats Haruna as the murderer to test the Detective Boys, then retracts it), generic 'knows' edges instead of the real mechanism, and missed the two core forensic tricks (Shirai's frog-in-a-bottle phone alibi, and Ishida's use of the truck's climate control to fake a colder/earlier time of death). Those are reconstructed here from the transcript. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Minoru Shirai",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "pet shop manager",
+    "attrs": {
+     "age": 41,
+     "died_of": "strangulation with a cellphone strap"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Toshiya Ninomiya",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "delivery contact, family-restaurant worker",
+    "attrs": {
+     "age": 23,
+     "manipulated_alibi": "told to call the shop at 6PM to check on a delivery; Shirai forwarded the call to his own cellphone and played a recorded frog croak so Ninomiya believed he was in the shop"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yutaka Araki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "insect museum staff",
+    "attrs": {
+     "age": 32,
+     "alibi": "reported the truck theft to police immediately; officers arrived right away"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Saburo Haruna",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "rhinoceros beetle researcher",
+    "attrs": {
+     "alibi": "drove around all night searching for the stolen truck, alone",
+     "accused_then_cleared": "Conan first names him as the murderer to test the Detective Boys, then retracts it and names Ishida"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Takashi Ishida",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "insect magazine editor",
+    "attrs": {
+     "alibi": "claimed to be at the museum covering an event until 6PM, then returned to Tokyo",
+     "neck_marks": "strap marks found on the back of his own neck matching the murder weapon"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Shirai's pet shop, Tokyo",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Gunma Insect Museum",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Beetle delivery truck",
+    "attrs": {
+     "feature": "cargo racks with regulated temperature, normally kept at 28C for live beetles"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Hills near Gunma",
+    "attrs": {
+     "note": "where Ishida abandoned the truck after returning it near the museum"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Museum cellphone strap",
+    "role": "weapon",
+    "attrs": {
+     "owner": "Ishida",
+     "broke_during": "a quarrel with Shirai over the resale money split",
+     "used_to": "strangle Shirai"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Bottle with a live frog",
+    "role": "tool",
+    "attrs": {
+     "trick": "Shirai played its croaking over a forwarded phone call so Ninomiya believed he was in the shop"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Bottle lid found in the truck",
+    "role": "evidence",
+    "attrs": {}
+   },
+   {
+    "id": "o4",
+    "name": "Humus soil found in the truck",
+    "role": "evidence",
+    "attrs": {
+     "normal_use": "cultivating rhinoceros beetle larvae"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Ishida's email, \"sold out\"",
+    "role": "evidence",
+    "attrs": {
+     "content": "a client message confirming all the male beetles were already sold",
+     "read_by": "Conan, over Ishida's shoulder"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Stolen rhinoceros beetle shipment",
+    "role": "contraband",
+    "attrs": {
+     "intended_for": "a museum giveaway event for children",
+     "actual_use": "resold by Shirai and Ishida to collectors"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Truck's climate-control unit",
+    "role": "tool",
+    "attrs": {
+     "trick": "set to winter temperature after the beetles were unloaded, to cool the corpse faster and mimic an earlier time of death"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Strap marks on Shirai's neck match the marks left on the back of Ishida's own neck -- the same strap injured both men during the struggle.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Body temperature had dropped far faster than the normal ~1C/hour rate for the stated 9-10PM time of death, revealing the corpse had been kept somewhere colder before being moved.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "The lidless bottle found in Shirai's pocket is missing its lid; a matching lid turned up in the delivery truck, tying the truck to the body.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cD",
+    "desc": "Humus found in the truck matches soil used for cultivating beetle larvae, and the same humus was stuck in Shirai's hair -- placing his body inside the truck.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "secret_business_partner",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "delivery_contact"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "customer_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "steals",
+   "from": "p5",
+   "to": "o6"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p1",
+   "method": "strangled with a broken cellphone strap during a quarrel over the resale money",
+   "circumstance_tags": ["staged_alibi", "cover_up"]
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o1"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p5",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p5"
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p5",
+   "to": "p1",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "fakes_time_of_death_of",
+   "from": "p5",
+   "to": "p1",
+   "method": "used the truck's climate-control unit to chill the corpse faster than normal, faking an earlier time of death"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p5",
+   "to": "o7"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p5",
+   "to": "o3"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p5",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p5"
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p5",
+   "to": "p1",
+   "circumstance_tags": ["staged_break-in", "cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p5"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "financial_dispute_over_beetle_resale_profits"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_beetle_theft (red herring, floated by Conan then retracted)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

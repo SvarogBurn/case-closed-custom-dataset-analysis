@@ -1,0 +1,192 @@
+{
+ "case_id": "ep307-308_on_the_trail_of_a_silent_witness",
+ "episode_number": "307-308",
+ "title": "On the Trail of a Silent Witness",
+ "source_url": "https://www.detectiveconanworld.com/wiki/On_the_Trail_of_a_Silent_Witness",
+ "subtitle_source": ["subs_resolved/0307.txt", "subs_resolved/0308.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file (cases/ep307-308_on_the_trail_of_a_silent_witness.json) got the culprit right (Soma) and the two core clues right (unfamiliar-game dying message; victim's fingerprints on the culprit's watch), unlike some other rebuilt episodes -- no culprit correction needed here. Corrections made against the transcript: the hotel is 'Hotel New Beika' (a pun on the show's Beika City setting), not 'Hotel New Baker' as the old file had it. The old file also collapsed everything into generic 'knows' edges and an event chain with no motive detail; this rebuild adds the actual motive (Soma funded Itakura's Shogi program unpaid for 20 years while Itakura secretly double-booked two rival companies), the full staging mechanism (drugged wine, then bound to the chair with a blanket and duct tape so the fatal heart attack looked natural), the sock-asymmetry clue that reveals the dying message exists at all, and the Tequila/Black Organization subplot (Itakura had prior contact with an Organization member, which is why Conan pushed so hard to find him) as backstory context, kept separate from the murder-motive edges since it is unconnected to Soma's crime. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Suguru Itakura",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "video game programmer / CGI designer",
+    "attrs": {
+     "died_of": "heart attack, unable to reach medication while restrained",
+     "eyesight": "poor eyesight, was learning Braille",
+     "double_booked": "secretly took game-development jobs from three rival companies at once, hiding it from all of them"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Katsumichi Sugai",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Go game company executive",
+    "attrs": {"age": 39}
+   },
+   {
+    "id": "p3",
+    "name": "Johei Naito",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "chess game company executive",
+    "attrs": {"age": 47, "eyesight": "poor eyesight, reads Braille (elevator buttons)"}
+   },
+   {
+    "id": "p4",
+    "name": "Ryusuke Soma",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Shogi game company executive",
+    "attrs": {
+     "age": 44,
+     "backstory": "Shogi training-academy partner of Itakura 20 years ago; funded Itakura's Shogi program unpaid for 20 years without results"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Tequila",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "affiliation": "Black Organization",
+     "description": "big man, mustache, Kansai accent",
+     "note": "unrelated to Itakura's murder; his visit to Itakura is why Conan pursued this case so hard"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Hotel New Beika, Room 2004", "attrs": {}},
+   {"id": "l2", "name": "Itakura's office", "attrs": {}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Go board (dying message)",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "Killer is Soma. Proof is the watch.",
+     "decoding_method": "skip the white stones; remaining black-stone pattern spells Japanese Braille",
+     "anomaly": "a stone sits in an enclosed/surrounded area, taboo in real Go -- tips off that it's a code, not a real game"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Floppy disk diary",
+    "role": "evidence",
+    "attrs": {
+     "format": "floppy disk, five years of daily entries",
+     "recent_entry": "three days before death, notes hotel staff hinted one of the three men had found his room; planned to switch hotels"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Soma's watch",
+    "role": "evidence",
+    "attrs": {
+     "purchased": "5 days before Itakura's body was found",
+     "fingerprint_contradiction": "Itakura's fingerprints on it are impossible if Soma's claim of only visiting after death were true"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Blanket",
+    "role": "tool",
+    "attrs": {
+     "used_for": "wrapped around Itakura's restrained body to disguise it as a natural slumped-over position",
+     "found_with": "sticky drool residue"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Duct tape",
+    "role": "tool",
+    "attrs": {
+     "used_for": "bound Itakura's restrained body to the desk chair",
+     "found_with": "adhesive residue wiped but still detectable on the desk"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Drugged wine",
+    "role": "tool",
+    "attrs": {
+     "contains": "crushed sleeping pills",
+     "given_as": "a celebratory bottle of wine"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Itakura's face was covered in drool but the desk beneath it was found wiped completely dry -- a genuine heart-attack collapse would have left drool on both, so someone cleaned the desk after death.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Rigor mortis locked Itakura's hands against his chest, but his hands show no pressure marks from the desk -- his body was posed against the desk only after rigor mortis had already set, not while he was actually resting there.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "A blood-stasis sock mark shows on Itakura's left ankle but is missing from his right, which instead has scratch marks from his own toenail -- he pulled off his own right sock to arrange the dying message with his bare foot.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "former_shogi_training_partner"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "client_of"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "client_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "client_of"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "twenty_years_of_unfunded_investment_and_broken_promise"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "anger_at_being_secretly_deceived_about_exclusivity (red herring)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "anger_at_being_secretly_deceived_about_exclusivity (red herring)"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+
+  {"type": "confronts", "from": "p5", "to": "p1", "detail": "Tequila visits Itakura's office and tells him 'I've got no use for you anymore'; unrelated to the murder"},
+  {"type": "confronts", "from": "p4", "to": "p1", "detail": "Soma tracks Itakura to the hotel; Itakura flippantly asks how many 'take-back moves' a player should get, enraging Soma"},
+  {"type": "drugs", "from": "p4", "to": "p1", "detail": "sedates Itakura with crushed sleeping pills in a celebratory bottle of wine"},
+  {"type": "restrains", "from": "p4", "to": "p1", "detail": "binds Itakura, hands to chest, into the desk chair using a blanket and duct tape"},
+  {"type": "kills", "from": "p4", "to": "p1", "method": "left restrained until a fatal heart attack hit and he could not reach his medication", "circumstance_tags": ["staged_natural_cause", "cover_up"]},
+  {"type": "stages_natural_death_of", "from": "p4", "to": "p1", "detail": "returns after rigor mortis sets in, removes the tape and blanket, and poses the body face-down at the desk", "circumstance_tags": ["cover_up", "staged_alibi"]},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o4"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o5"},
+
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p4", "to": "o3"},
+  {"type": "owns", "from": "p4", "to": "o6"},
+  {"type": "located_in", "from": "o6", "to": "l1"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o3"},
+  {"type": "encodes_message_in", "from": "p1", "to": "o1"},
+
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "implicates", "from": "o3", "to": "p4"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+  {"type": "implicates", "from": "cB", "to": "p4"},
+  {"type": "implicates", "from": "cC", "to": "p4"},
+
+  {"type": "regarding", "from": "cA", "to": "p1"},
+  {"type": "regarding", "from": "cA", "to": "l1"},
+  {"type": "regarding", "from": "cB", "to": "p1"},
+  {"type": "regarding", "from": "cB", "to": "l1"},
+  {"type": "regarding", "from": "cC", "to": "p1"},
+  {"type": "regarding", "from": "cC", "to": "o1"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

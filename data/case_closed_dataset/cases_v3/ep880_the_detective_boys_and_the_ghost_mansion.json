@@ -1,0 +1,376 @@
+{
+ "case_id": "ep880_the_detective_boys_and_the_ghost_mansion",
+ "episode_number": "880",
+ "title": "The Detective Boys and the Ghost Mansion",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Detective_Boys_and_the_Ghost_Mansion",
+ "subtitle_source": ["subs_resolved/0880.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Detective Boys) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: attempted_murder (present-day target survives because Conan secretly swapped the poison for salt before it reached the tea) plus a backstory manslaughter (Chieko's fatal wheelchair fall two months prior, caused by Hana). The old lower-fidelity `cases/ep880...json` file got the culprit right (Hideto Amemiya, confirmed by his own admission at the end and matching the transcript's motive reveal: mounting debt and desire to inherit Nobuteru's wealth), but it omitted Chieko Otaguro entirely even though her death is the seed event of the whole plot, mischaracterized Saburo Yoshimoto as an undifferentiated 'suspect' with a generic `knows` edge despite no involvement in either death, and dropped the jewelry-theft backstory that gives Hana her own motive against Chieko (Chieko had caught Hana stealing necklaces/brooches and warned her not to take more) as well as the mechanics of Hideto's manipulation (faked ghost voice via a hidden speaker/mic behind the bookcase, exploiting a coincidental lighthouse-reflection-off-a-neighboring-greenhouse illusion, plus a deliberately unlocked poison cabinet and a staged excuse to send Hana near it) that turned Hana into an unwitting weapon against Nobuteru.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Nobuteru Otaguro",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "retired, master of the house",
+    "attrs": {
+     "age": 78,
+     "belief": "convinced his dead wife's ghost visits him nightly, speaks to him, and leaves after 10pm",
+     "outcome": "collapses after drinking the tea but is unharmed since Conan had swapped the poison for salt"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Chieko Otaguro",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "age": 72,
+     "relation": "Nobuteru's wife",
+     "mobility": "used a wheelchair due to weak legs",
+     "died_of": "fatal fall two months before present, caused by tampered wheelchair brakes",
+     "hobby": "painting, was going out to sketch for a fall exhibition the day she died"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hideto Amemiya",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "college researcher, uses a yard annex as a lab",
+    "attrs": {
+     "age": 27,
+     "relation": "Nobuteru's nephew, lives at the mansion as a freeloader",
+     "motive_evidence": "collection letters from multiple lenders found in his room's trash can",
+     "scheme": "faked his aunt's ghost voice through a hidden speaker to pressure Hana, then left the poison cabinet unlocked and staged a pretext to send her near it"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hana Yoshimoto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "servant",
+    "attrs": {
+     "age": 42,
+     "confession": "loosened Chieko's wheelchair brakes out of spite after being confronted over stolen jewelry, did not intend to kill her",
+     "manipulated_into": "believing the ghost would expose her role in Chieko's death, so she stole poison intending to kill Nobuteru first"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Saburo Yoshimoto",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "servant",
+    "attrs": {
+     "age": 45
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Otaguro mansion",
+    "attrs": {
+     "age": "built fifty years ago, bought by Nobuteru five years ago",
+     "features": "includes kitchen, dining room, Nobuteru's bedroom with a bookcase, and a lab annex used by Hideto"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Neighboring greenhouse",
+    "attrs": {
+     "built": "constructed two weeks before present",
+     "schedule": "owner closes its windows nightly at 10pm, but leaves them open in the rain",
+     "effect": "coincidentally reflects distant lighthouse light onto the mansion's walls, creating the 'ghost' glow"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poison bottle",
+    "role": "weapon",
+    "attrs": {
+     "kept_in": "Hideto's unlocked poison cabinet",
+     "swap": "secretly swapped for salt before Hana used it; the real poison was later returned to the cabinet in a different bottle"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Poison cabinet",
+    "role": "evidence",
+    "attrs": {
+     "locked": false,
+     "staging_flaw": "an expert lab researcher like Hideto leaving poison storage unlocked is itself suspicious; if Hana had unlocked it herself she would have relocked it to avoid discovery",
+     "pretext": "Hideto asked Hana to clean up a beaker he broke on purpose right next to it"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Hidden voice device",
+    "role": "instrument",
+    "attrs": {
+     "components": "speaker, microphone, and wireless unit",
+     "found_behind": "the bookcase in Nobuteru's room",
+     "used_for": "playing Hideto's own voice, modulated to sound like Chieko's"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Collection letters",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "trash can in Hideto's room",
+     "reveals": "debts borrowed from multiple lenders"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Chieko's wheelchair",
+    "role": "weapon",
+    "attrs": {
+     "tampering": "brakes loosened by Hana",
+     "result": "caused Chieko's fatal fall"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Stolen jewelry",
+    "role": "contraband",
+    "attrs": {
+     "items": "necklaces and brooches",
+     "stolen_from": "Chieko"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Ghost timing exactly matches the greenhouse: sightings began the same two weeks the greenhouse was built, and the glow vanishes at 10pm, the exact time its windows close nightly -- proves the 'ghost' is reflected lighthouse light, not supernatural.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The poison cabinet was found unlocked, but a lab expert like Hideto would normally secure it, and Hana -- if she had unlocked it herself -- would have relocked it afterward to avoid discovery; the mismatch shows someone else deliberately left it open as a trap.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "nephew_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "steals",
+   "from": "p4",
+   "to": "o6",
+   "circumstance_tags": ["red_herring", "subplot"]
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p4",
+   "detail": "caught Hana stealing jewelry and warned her not to take any more"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p2",
+   "motive_type": "spite (retaliation for being confronted over jewelry theft)"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p4",
+   "to": "o5"
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p2",
+   "method": "loosened wheelchair brakes, causing a fatal fall",
+   "circumstance_tags": ["accidental", "manslaughter", "cover_up"]
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p4"
+  },
+  {
+   "type": "learns_of",
+   "from": "p3",
+   "to": "p4",
+   "detail": "noticed the loosened brakes at the scene and Hana's changed behavior once the 'ghost' began appearing, deduced her role in Chieko's death"
+  },
+  {
+   "type": "installs",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "impersonates",
+   "from": "p3",
+   "to": "p2",
+   "detail": "plays his own voice, modulated feminine, through the hidden device so Nobuteru mistakes it for Chieko",
+   "circumstance_tags": ["staged_haunting"]
+  },
+  {
+   "type": "deceives",
+   "from": "p3",
+   "to": "p1",
+   "detail": "lets Nobuteru believe his dead wife's ghost visits him nightly"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "illuminates",
+   "from": "l2",
+   "to": "l1",
+   "detail": "lighthouse light reflects off the greenhouse glass onto the mansion walls, coincidentally resembling a glowing figure"
+  },
+  {
+   "type": "manipulates",
+   "from": "p3",
+   "to": "p4",
+   "detail": "uses the faked ghost voice to make Hana believe the truth about Chieko's death is about to be exposed, pushing her toward killing Nobuteru first",
+   "circumstance_tags": ["manipulation"]
+  },
+  {
+   "type": "leaves_unlocked",
+   "from": "p3",
+   "to": "o2",
+   "detail": "deliberately leaves the poison cabinet unlocked and breaks a beaker nearby as a pretext to send Hana to clean up next to it"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "financial (debt from multiple lenders, wanted to inherit Nobuteru's wealth)"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3"
+  },
+  {
+   "type": "steals",
+   "from": "p4",
+   "to": "o1",
+   "detail": "takes the poison bottle from the unlocked cabinet and hides it in the kitchen"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "self-preservation (feared the ghost would expose her role in Chieko's death)"
+  },
+  {
+   "type": "uses",
+   "from": "p4",
+   "to": "o1",
+   "detail": "pours the bottle's contents, believed to be poison, into Nobuteru's tea"
+  },
+  {
+   "type": "attempts_murder_of",
+   "from": "p4",
+   "to": "p1",
+   "method": "poisoned tea, unknowingly using salt after Conan's swap",
+   "circumstance_tags": ["attempted_murder", "manipulated", "locked_room"]
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

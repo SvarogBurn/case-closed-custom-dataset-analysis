@@ -1,0 +1,483 @@
+{
+ "case_id": "ep827-828_ramen_so_good_its_to_die_for_2",
+ "episode_number": "827-828",
+ "title": "Ramen So Good, It's to Die For 2",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Ramen_So_Good,_It%27s_to_Die_For_2",
+ "subtitle_source": ["subs_resolved/0827.txt", "subs_resolved/0828.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Masumi Sera, Kogoro Mouri, Sato Miwako, Takagi Wataru) omitted by convention, even though Sato and Takagi go undercover as regular customers ('Satoko'/'Taka-o-kun') to make the arrest -- that's standard procedural action for that recurring pair, consistent with how they're handled in other v3 files. Patrol officers Miyamoto Yumi and Miike Naeko are KEPT as person nodes (not omitted) because their testimony -- tripping over the culprit's thrown hose, the packing tape he also threw away, and Yumi's ex-boyfriend Chukichi's account of a 'click...click' footstep sound -- is itself load-bearing evidence, not incidental background. No `event` node type: every action is a directly typed edge between the entities involved (person/location/object). case_type: murder (unintentional per the culprit's own account, but committed during a robbery, which is the legally operative fact). The old lower-fidelity file (cases/ep827-828...) named the correct culprit (Mizushina) but got the killing method wrong: it says he 'bludgeons Tonda during a struggle,' implying a weapon blow, when the transcript is explicit that she was pushed during the scuffle and died from hitting her head on the edge of the stairs by the entryway -- the rubber garden hose he was seen swinging was never the weapon (no blood was ever found on it) and was actually an improvised vacuum (hose + his own face mask taped over one end, spun overhead for centrifugal suction) used afterward to retrieve the shattered lenses of his own glasses, which broke underfoot during the struggle and which he could not risk leaving at the scene. The old file also omitted Chukichi, Yumi, and Naeko entirely, collapsed the case into 3 events/2 clues, and left out the staged-safe-scratching detail (Mizushina damaged Tonda's safe himself to make the theft look like a random burglary rather than something he only knew to target because he overheard her bragging about the earrings at the ramen shop).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Atsuko Tonda",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "hostess",
+    "attrs": {
+     "prized_possession": "a pair of earrings worth about one million yen, a gift from a regular customer",
+     "bragged_at_ramen_shop": "showed off the earrings drunkenly at Ramen Ogura, insulting the other regulars in front of them",
+     "died_of": "head injury from hitting the edge of the entryway stairs"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yuna Shono",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "hostess",
+    "attrs": {
+     "age": 34,
+     "connection_to_victim": "former coworker of Tonda, lost contact after changing shops last year",
+     "noticed_habit": "started using a lot more vinegar on her ramen, for a stated cosmetic reason"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Sosuke Mizushina",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "part-time worker",
+    "attrs": {
+     "age": 29,
+     "former_workplace": "convenience store directly across from Tonda's house, which shut down days before the murder",
+     "noticed_habit": "started ordering dumplings every visit and using large amounts of soy sauce, switching containers when one ran low",
+     "false_claim": "said he was wearing a mask that day because he had a cold"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Osamu Nakanishi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 48,
+     "connection_to_victim": "a regular customer at Tonda's hostess bar who often requested her specifically",
+     "noticed_habit": "started ordering two bowls of ramen instead of one, using a lot of pepper"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Miyamoto Yumi",
+    "aliases": ["Yumi-san"],
+    "roles": ["witness"],
+    "occupation": "patrol officer",
+    "attrs": {
+     "role_in_case": "tripped over the hose the fleeing culprit threw at her while giving chase, letting him escape"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Miike Naeko",
+    "aliases": ["Naeko-san"],
+    "roles": ["witness"],
+    "occupation": "patrol officer",
+    "attrs": {
+     "role_in_case": "circled by car to flank the culprit but arrived too late, after he had already escaped into the ramen shop crowd"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Chukichi",
+    "aliases": ["Haneda-meijin"],
+    "roles": ["witness"],
+    "occupation": "unspecified (nicknamed a 'Seven-Crowned King', implying celebrity status)",
+    "attrs": {
+     "connection": "Miyamoto Yumi's ex-boyfriend",
+     "testimony": "passed the fleeing culprit in the dark, heard only footsteps and a 'click...click' sound with every step, and saw him discard a piece of packing tape"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Atsuko Tonda's house",
+    "attrs": {
+     "scene_details": "entryway where Tonda died, stairs with the fatal edge, safe and jewelry dresser both rifled through, windows broken to fake a break-in",
+     "yard": "garden hose and its faucet, from which the hose used in the escape was taken"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Ramen Ogura shop",
+    "attrs": {
+     "regulars": "Shono, Mizushina, and Nakanishi all coincidentally ate here around the time of the murder",
+     "bathroom": "toilet water tank where Mizushina hid the broken lens shards and glasses parts"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Convenience store (Mizushina's former job)",
+    "attrs": {
+     "location": "directly across the street from Tonda's house",
+     "closed": "shut down a few days before the murder"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Tonda's hostess bar",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Garden hose (Tonda's)",
+    "role": "tool",
+    "attrs": {
+     "length": "about two meters",
+     "diameter": "three centimeters",
+     "origin": "taken from the faucet in Tonda's own yard",
+     "staging_flaw": "no blood was ever found on it despite police initially suspecting it was the murder weapon",
+     "mechanism": "swung overhead with a mask taped over one end, using centrifugal force as an improvised vacuum to suck up debris",
+     "tape_residue": "signs of packing tape stuck to one end"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Mizushina's face mask",
+    "role": "tool",
+    "attrs": {
+     "cover_story": "claimed he wore it that day because of a cold",
+     "true_use": "taped over one end of the hose as a breathable filter for the improvised vacuum"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Mizushina's broken glasses",
+    "role": "evidence",
+    "attrs": {
+     "purchased": "about a month before the murder, from an optician",
+     "frame_type": "frameless",
+     "broken_when": "stepped on and shattered underfoot during the struggle with Tonda",
+     "hidden_at": "bottom of the ramen shop's toilet water tank",
+     "partial_retrieval": "arms and bridge quietly retrieved the day after the murder; the lens shards were left behind and found first by Conan and Sera"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Tonda's stolen earrings",
+    "role": "evidence",
+    "attrs": {
+     "value": "about one million yen",
+     "stolen_from": "Tonda's dresser drawer at her house",
+     "fingerprint_match": "Mizushina's fingerprints found on them"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Soy sauce container (Ramen Ogura)",
+    "role": "evidence",
+    "attrs": {
+     "used_as": "hiding place for the stolen earrings, chosen before Yumi and Naeko arrived at the shop"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Tonda's safe",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "scratched up to look like a failed break-in; the cash inside was left untouched",
+     "purpose": "to disguise the fact the thief specifically wanted the earrings, which he only knew about from Tonda's bragging at the ramen shop"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Mizushina used far more soy sauce than his order justified across repeated visits and switched to a different container mid-meal once one ran low -- behavior consistent with searching multiple containers for something hidden inside one of them, not with seasoning food.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "The hose had packing-tape residue at one end and no blood despite being suspected as the murder weapon; a breathable mask taped to a hose and swung overhead generates centrifugal suction, explaining how glass shards could be vacuumed off the ground at the scene without a trace.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Frameless lens shards recovered from the ramen shop's water tank matched a pair of glasses purchased about a month before the murder -- tying the shards, and the missing arms and bridge quietly retrieved the next day, to the buyer.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "Chukichi described the fleeing figure's footsteps as an uneven 'click...click' rather than a normal double click -- consistent with someone limping while carrying loose debris underfoot, the detail that pointed toward broken glass being collected rather than dropped.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "former_coworker_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "regular_customer_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p7",
+   "relation_type": "ex_partner_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p5",
+   "relation_type": "patrol_partner_of"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "method": "pushed her during a struggle after she surprised him mid-robbery in the entryway; she fell and hit her head on the edge of the stairs",
+   "circumstance_tags": ["staged_robbery", "cover_up"]
+  },
+  {
+   "type": "steals",
+   "from": "p3",
+   "to": "o4"
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "o5"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l1"
+  },
+  {
+   "type": "stages_robbery_using",
+   "from": "p3",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "breaks",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "destroys_evidence_using",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "attaches_to",
+   "from": "o2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "conceals_evidence_in",
+   "from": "p3",
+   "to": "l2",
+   "detail": "hid the lens shards and other glasses parts at the bottom of the shop's toilet water tank"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "worked_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "works_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "worked_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "frequents",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "detail": "patrolling the street outside the house when the culprit was first spotted"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "detail": "chased the culprit into the shop, arrived shortly after him"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "detail": "on patrol with Yumi when the culprit was first spotted"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2",
+   "detail": "finished his ramen and left about a minute before the three regulars arrived"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "robbery (overheard her bragging about her earrings' value at the ramen shop)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "robbery (red herring -- former coworker who would have known Tonda's work schedule)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "robbery (red herring -- regular customer who had learned a lot about her as a client)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

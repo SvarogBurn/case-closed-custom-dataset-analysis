@@ -1,0 +1,214 @@
+{
+ "case_id": "ep836-837_the_unfriendly_girls_band",
+ "episode_number": "836-837",
+ "title": "The Unfriendly Girls Band",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Unfriendly_Girls_Band",
+ "subtitle_source": ["subs_resolved/0836.txt", "subs_resolved/0837.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Sonoko, Ran, Masumi Sera, Rei Furuya/Amuro) omitted by convention. The episode also carries a large Black Organization side-thread (Sera recognizing a stranger who taught her bass as 'Scotch', speculation he was Rei Furuya) that never intersects the murder investigation itself, so it is left out of this case graph. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file (cases/ep836-837_the_unfriendly_girls_band.json) had the correct culprit (Kogure Rumi, its s3) but its motive text was truncated mid-sentence ('the victim had been telling Akane t...'). Full transcript reconstruction: Yamaji Hagie, drunk, once told bandmate Shuto Akane she wished Akane's voice were deeper; Akane took it seriously, gargled liquor and screamed into a cushion until her voice was permanently roughened, and Hagie later publicly criticized the ruined voice and announced Tadako would sing lead instead. Days later Akane died pushing a boy out of the path of a car (witnesses confirm she was saving him, not suicidal, though the band believed it was suicide from despair). Rumi, Akane's closest friend in the band and the one who had taught her to knit, blamed Hagie for the death and strangled her with yarn unraveled from the very knit hat Akane had made her, re-knitting the yarn back into the hat using the victim's own drumsticks as needles to hide the weapon in plain sight. The old file also lacked Shuto Akane entirely, used only generic 'knows' edges, and had no circumstance_tags or was_at completeness for the non-culprit suspects; all fixed here. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yamaji Hagie",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "drummer, band leader",
+    "attrs": {
+     "died_of": "strangulation (Yoshikawa lines on neck, indicating struggle)",
+     "habit": "always napped face-down on the high tom-tom, arm over her face"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kibune Someka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "guitarist, age 25",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Fuekawa Tadako",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "bassist / backup vocals, age 24",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Kogure Rumi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "keyboardist, age 24",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Shuto Akane",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "former band vocalist",
+    "attrs": {
+     "voice_damage": "deliberately roughened her voice by gargling liquor and screaming into a cushion, after Hagie drunkenly said she wished it were deeper",
+     "died_of": "hit by a car while pushing a boy out of its path; band wrongly believed it was suicide"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Rental studio practice room",
+    "attrs": {
+     "camera_note": "ceiling security camera half-blocked by a phone on a selfie stick; mirror wall curtained off at the victim's request"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Basement break room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Hagie's knit hat",
+    "role": "weapon",
+    "attrs": {
+     "trick": "yarn unraveled from the hat was used as a garrote, then re-knitted back into the hat afterward to hide it",
+     "evaded_luminol": true
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hagie's drumsticks",
+    "role": "tool",
+    "attrs": {
+     "used_as": "knitting needles",
+     "location": "on the snare drum beside the victim"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Hagie's water bottle",
+    "role": "tool",
+    "attrs": {
+     "contents": "crushed sleeping pills",
+     "purpose": "guarantee Hagie would nap alone on the drums as she always did"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Studio rental guitar's broken string",
+    "role": "evidence",
+    "attrs": {
+     "examined": "no luminol reaction",
+     "note": "broke naturally on a guitar rented that day, not Someka's own"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Tadako's sewing kit",
+    "role": "tool",
+    "attrs": {
+     "examined": "no luminol reaction"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Tadako's nail clippers",
+    "role": "evidence",
+    "attrs": {
+     "detail": "borrowed by Rumi under the pretext of trimming her nails, but never actually used to trim them"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Band's sheet music",
+    "role": "evidence",
+    "attrs": {
+     "cover_story": "Rumi claimed to be reworking an uptempo section while actually re-knitting the garrote into the hat"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Phone on a selfie stick",
+    "role": "tool",
+    "attrs": {
+     "mounted_on": "mic stand",
+     "detail": "position tied to the keyboardist's spot, letting Rumi control which half of the security camera got blocked"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "In the practice video, the drums stay fixed and the guitarist/bassist stay in frame regardless of movement, but the obstructing phone's position tracks only the keyboardist's -- proving only the keyboard player could steer it over the camera.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Rumi borrowed Tadako's nail clippers claiming she needed to trim her nails, but never actually cut them -- meaning she already knew she would not be playing again that day.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "close_friend_of"},
+  {"type": "teaches", "from": "p5", "to": "p2", "detail": "guitar"},
+  {"type": "teaches", "from": "p5", "to": "p3", "detail": "bass"},
+  {"type": "teaches", "from": "p5", "to": "p4", "detail": "keyboard"},
+  {"type": "teaches", "from": "p1", "to": "p5", "detail": "cooking"},
+  {"type": "teaches", "from": "p2", "to": "p5", "detail": "makeup and fashion"},
+  {"type": "teaches", "from": "p3", "to": "p5", "detail": "sewing and embroidery (never stuck with it)"},
+  {"type": "teaches", "from": "p4", "to": "p5", "detail": "knitting -- the only skill Akane kept practicing"},
+  {"type": "pressures", "from": "p1", "to": "p5", "detail": "drunkenly said she wished Akane's voice were deeper"},
+  {"type": "humiliates", "from": "p1", "to": "p5", "circumstance_tags": ["public_humiliation"], "detail": "criticized Akane's now-ruined voice in front of the band and announced Tadako would sing lead instead"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "revenge_for_Akane's_death (Rumi wrongly blamed Hagie for it)"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "tampers_with", "from": "p4", "to": "o3", "circumstance_tags": ["premeditated"]},
+  {"type": "drugs", "from": "p4", "to": "p1", "method": "sleeping pills mixed into her water bottle", "circumstance_tags": ["premeditated"]},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "sews_button_for", "from": "p3", "to": "p2", "detail": "also mended Someka's frayed sleeve"},
+  {"type": "owns", "from": "p3", "to": "o5"},
+  {"type": "located_in", "from": "o5", "to": "l1"},
+  {"type": "attempts_to_wake", "from": "p3", "to": "p1"},
+  {"type": "replaces", "from": "p2", "to": "o4", "detail": "tuned it herself, deliberately making noise to try to wake Hagie"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "attempts_to_wake", "from": "p2", "to": "p1"},
+  {"type": "owns", "from": "p3", "to": "o6"},
+  {"type": "borrows", "from": "p4", "to": "o6"},
+  {"type": "rewrites", "from": "p4", "to": "o7"},
+  {"type": "located_in", "from": "o7", "to": "l1"},
+  {"type": "strangles", "from": "p4", "to": "p1", "method": "yarn from her own hat used as a garrote", "circumstance_tags": ["locked_room", "staged_alibi", "premeditated"]},
+  {"type": "knitted_by", "from": "o1", "to": "p5"},
+  {"type": "worn_by", "from": "o1", "to": "p1"},
+  {"type": "hides_murder_weapon_in", "from": "p4", "to": "o1", "circumstance_tags": ["cover_up"]},
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "uses", "from": "p4", "to": "o2", "detail": "used as knitting needles"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "obstructs_camera_using", "from": "p4", "to": "o8", "circumstance_tags": ["locked_room"]},
+  {"type": "located_in", "from": "o8", "to": "l1"},
+  {"type": "implicates", "from": "o6", "to": "p4"},
+  {"type": "regarding", "from": "cA", "to": "o8"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+  {"type": "regarding", "from": "cB", "to": "o6"},
+  {"type": "implicates", "from": "cB", "to": "p4"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

@@ -1,0 +1,433 @@
+{
+ "case_id": "ep159-160_the_legend_of_the_mysterious_five_storied_pagoda",
+ "episode_number": "159-160",
+ "title": "The Legend of the Mysterious Five Storied Pagoda",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Legend_of_the_Mysterious_Five_Storied_Pagoda",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0159.txt, case_closed_dataset/subs_resolved/0160.txt (full two-part transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Conan, Kogoro, Ran) and the one-off local investigator (Detective Yokomizo, Shizuoka Prefectural Police) omitted by convention, matching how other episodes in this batch omit non-recurring local police who function like Inspector Megure. No `event` node type: actions are direct typed edges. The transcript explicitly hands over three distinct, named red-herring motives against the victim (the head priest Tankai, his son Shunkai, and the temple employee Okabe all resented Oda for deceiving them over the temple's deed/development plans -- the story even states outright 'three people hated Oda-san'), fixing v1's 'motive not stated' gap. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Jukichi Okabe",
+    "aliases": [
+     "Shigekichi Okabe"
+    ],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "Genkai Temple employee",
+    "attrs": {
+     "note": "originally introduced Oda to the temple, believing the tourism development would genuinely help it; felt personally deceived once Oda's true intentions became clear"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tankai",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "Genkai Temple head priest",
+    "attrs": {
+     "note": "was talked into signing the temple's deed over to Oda Tours under the pretext of raising preservation funds; was preparing to sue Oda over it",
+     "alibi": "claims to have been chanting alone in the main hall between 3 and 4 AM"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yosuke Kajimura",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "director of Oda Tours; general manager of Hotel Oda",
+    "attrs": {
+     "false_alibi": "claimed to have been away in Tokyo on a business trip that night, but demonstrated knowledge of a confrontation between Oda and Shunkai that happened on the temple grounds after he supposedly left",
+     "confession_motive": "tax evasion -- Oda had him file fraudulent financial reports for the company and let him personally profit from the scheme, but Kajimura came to believe Oda intended to make him the sole scapegoat once it was exposed"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shunkai",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "Tankai's son, temple heir-in-training",
+    "attrs": {
+     "note": "returned to the temple specifically to confront Oda over the deed and threatened to take him to court, the night before the murder",
+     "alibi": "claims to have been asleep until 5 AM"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hideaki Oda",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "president of Oda Tours",
+    "attrs": {
+     "died_of": "strangulation/suffocation by rope, staged to look like a suicide by hanging from the pagoda's fifth-tier roof",
+     "financial_stake": "had committed roughly 8 billion yen to a theme-park development on the temple's land, expecting over 10 billion yen in annual returns once finished",
+     "died_where": "actually killed near the dried-up well beside the pagoda, not on the pagoda itself"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Five-story pagoda, Genkai Temple",
+    "attrs": {
+     "significance": "staged scene: the body was found hanging from the fifth-tier roof, made to resemble the temple's old hanging-curse legend"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Dried-up well beside the pagoda",
+    "attrs": {
+     "significance": "the real scene of the killing; held the counterweight rig used to hoist the body up to the pagoda roof"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Hotel Oda dining room",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Genkai Temple grounds (outside the dining hall)",
+    "attrs": {
+     "significance": "where Shunkai confronted Oda after dinner; Kajimura's knowledge of this exchange, despite his claimed absence, was the first crack in his alibi"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rope used in the hanging",
+    "role": "weapon",
+    "attrs": {
+     "staging_flaw": "though brand new, it showed char and fray marks from repeatedly rubbing against the pagoda roof's edge as it was hauled up and down",
+     "mechanism": "tied off to the railing alone via an 'artillery loop' -- a slip-loop pulled tight around a temporary stick stopper, then cut and tied off, letting one person anchor a taut rope to a railing without ever needing to hold its full tension by hand",
+     "length_flaw": "was roughly 50 cm too short for the victim's feet to reach the railing, which first tipped off that a standing self-hanging was physically impossible"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Victim's five-carat diamond tie pin",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "in the grass near the dried-up well, ~10 meters from the pagoda -- proving the real struggle happened there, not at the pagoda itself"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Victim's wallet",
+    "role": "evidence",
+    "attrs": {
+     "note": "went missing from the body; the culprit pocketed its cash opportunistically after the killing, not realizing a receipt was tucked among the bills"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Hotel Oda cigar receipt, dated the night of the murder, 7:40 PM",
+    "role": "evidence",
+    "attrs": {
+     "significance": "bears Oda's fingerprints; found stuck between bills in Kajimura's own wallet, proving Kajimura had contact with Oda's stolen wallet cash despite claiming he never saw Oda again after dinner that night"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Counterweight rig (scrap metal on a steel rod, at the well)",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "the rope ran from the noose, over the pagoda's fifth-tier roof edge, down through the railing, to a length of scrap metal balanced on a steel rod at the well; releasing the rod dropped the counterweight into the well, hoisting the body up to the roof",
+     "provenance": "construction scrap left near the well on Kajimura's own instructions, ostensibly for the theme-park build"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Distance-impossibility clue: the victim's feet hung roughly 50 cm short of the railing he supposedly jumped from, and if he had stood on the railing his neck would not have reached the rope either -- the gap is inconsistent from both directions, ruling out a standing self-hanging.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Rope-wear clue: the brand-new rope showed charring and fraying consistent with repeated friction against the roof edge as a counterweight hauled it up and down, and it was anchored to the railing with a solo-rigger's 'artillery loop' knot -- neither mark is consistent with a simple length of rope tied once for a suicide.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Trace-location clue: a grass stain on the victim's elbow, dirt on his heels (consistent with being tripped rather than climbing), and his tie pin recovered in the grass near the well together relocate the real struggle to the well, ~10 meters from the pagoda where the body was later found.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cD",
+    "desc": "Receipt clue: a Hotel Oda cigar receipt from the night of the murder, bearing Oda's fingerprints, was found stuck between bills in Kajimura's own wallet -- directly contradicting his claim that he was away on business and never saw Oda again after dinner.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "secret_business_partner",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p4",
+   "to": "p5",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "accused Oda of deceiving his father into signing over the temple's deed and threatened to take him to court",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "secretly present on the temple grounds and overheard the Shunkai/Oda confrontation, despite his claimed business trip to Tokyo",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "arranges_meeting_with",
+   "from": "p3",
+   "to": "p5",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "called Oda to meet him alone on the temple grounds late that night",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p5",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "looped a rope around Oda's neck near the dried-up well, released a scrap-metal counterweight into the well to start hoisting him, tripped him as he tried to shake off the noose, then let the counterweight haul the body up to hang from the pagoda's fifth-tier roof",
+   "circumstance_tags": [
+    "staged_suicide",
+    "premeditated",
+    "locked_room"
+   ]
+  },
+  {
+   "type": "uses",
+   "from": "p3",
+   "to": "o5",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "used a solo-rigger's artillery-loop knot to anchor the rope to the railing without help, then discarded the released rope-and-counterweight end into the well"
+  },
+  {
+   "type": "steals",
+   "from": "p3",
+   "to": "o3",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "took cash from the victim's wallet opportunistically, not noticing a receipt mixed in with the stolen bills",
+   "circumstance_tags": [
+    "opportunistic"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p5",
+   "motive_type": "self_preservation_after_complicity (Oda had him file fraudulent financial reports and let him profit from it, but Kajimura came to believe Oda meant to make him the sole scapegoat once the scheme was exposed)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p5",
+   "motive_type": "betrayal_over_temple_deed (red herring; deceived into signing the temple's deed over to Oda Tours, was preparing to sue)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p5",
+   "motive_type": "protective_anger_over_temple_deed (red herring; confronted Oda the night before over deceiving his father, threatened him with a lawsuit)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p5",
+   "motive_type": "betrayal_by_associate (red herring; had personally introduced Oda to the temple and felt deceived once Oda's true intentions became clear)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

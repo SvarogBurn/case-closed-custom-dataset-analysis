@@ -1,0 +1,498 @@
+{
+ "case_id": "ep138-139_the_final_screening_murder_case",
+ "episode_number": "138-139",
+ "title": "The Final Screening Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Final_Screening_Murder_Case",
+ "subtitle_source": ["subs_resolved/0138.txt", "subs_resolved/0139.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Dr. Agasa, Inspector Megure, Chiba, and the Detective Boys Ayumi/Genta/Mitsuhiko/Haibara) omitted by convention, even though Agasa and the kids act out a physical re-enactment of the trick and Mitsuhiko is the one who witnesses Tomosato's restroom detour -- those actions are folded into the relevant edges' attrs instead of given person nodes. No `event` node type: every action is a directly typed, attributed edge between the entities involved. The old wiki-derived case file (cases/ep138-139...) got the theatre's name right and the broad who/what right, but flattened the mechanism into one generic 'mirrors rigged in projection room' object/clue pair, omitted the air-conditioning half of the trick entirely, omitted Furuhashi's premeditated errand-sending of Tomosato, omitted the victim's gambling-debt/bankruptcy suicide red herring, and listed only a vague 'unspecified' motive for the culprit instead of the stated revenge-for-ruining-the-theatre motive. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Seiji Haruta",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "real estate agent",
+    "attrs": {
+     "age_discrepancy": "on-screen character card at first appearance states age 42; Inspector Megure's on-scene report later states age 43",
+     "financial_situation": "huge gambling debts; his real estate company was on the verge of bankruptcy; even the profit from reselling the theatre would not have covered his debts",
+     "bank_dispute": "had a fight with his bank the morning of the murder because it refused to lend him the roughly one million yen he was still short to buy the theatre; the sale contract and payment were to be finalized the next day",
+     "harassment_campaign": "came to the theatre almost every day, not to watch films but to check on the impending demolition; smoked in the theatre despite repeated warnings, heckled the audience, and was suspected (by Ide) of paying thugs to start fights during screenings to drive away the theatre's remaining audience",
+     "habitual_seat": "always sat in the very back row, directly in front of whichever window the film was being projected through, so his cigarette smoke would annoy the projectionist",
+     "died_of": "strangled with a rope, then hung in front of the theatre's true projection window to simulate a hanging suicide",
+     "false_public_narrative": "initially believed to be a suicide, explained by his crushing gambling debts and looming bankruptcy"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Toshiyuki Ide",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "university student",
+    "attrs": {
+     "fan_history": "a huge fan of monster movies who has been coming to this theatre since he was a little boy; the owner says he's 'almost like a son' to him",
+     "activity_that_day": "asked permission to take photographs around the theatre on its last day; used a digital camera to snap continuous photos throughout the screening",
+     "role_in_case": "his digital camera's photo timeline becomes the key piece of evidence disproving both the pure-suicide theory and his own suspected involvement"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuriko Tomosato",
+    "aliases": ["Yuri-chan"],
+    "roles": ["suspect", "witness"],
+    "occupation": "concession stand manager",
+    "attrs": {
+     "age": 23,
+     "sent_on_errand": "sent out by Furuhashi to buy staff lunch (which he had 'forgotten') and tea leaves, emptying the concession stand and the theatre lobby",
+     "restroom_detour": "briefly left the projection room to fix a fallen contact lens in the restroom shortly before the shadow appeared on screen; did not disclose this at first, which made her look suspicious until she explained it"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Akio Muramatsu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "movie theatre owner",
+    "attrs": {
+     "age": 62,
+     "theatre_history": "has run the Kineka 7 theatre for 30 years; agreed to sell it to Haruta but begged him to wait until the 30th-anniversary screening before demolition",
+     "cooling_system_detour": "left his seat mid-film to go check the cooling system controls because he thought the air conditioning felt too strong; this innocent detour drew suspicion from Inspector Megure but inadvertently corroborated Furuhashi's air-conditioning trick",
+     "resolution": "after the case is solved, decides not to sell or demolish the theatre after all and reopens it for the Detective Boys"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Minoru Furuhashi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "projectionist",
+    "attrs": {
+     "age": 39,
+     "motive_detail": "secretly resented Haruta for hiring thugs to disrupt screenings and drive away the theatre's audience, hastening the closure of the theatre Furuhashi loved",
+     "premeditation": "planned to have Tomosato out of the building running an errand (tea leaves) even before she happened to forget the staff lunch, and encouraged Muramatsu to watch the film that day so there would be a witness present when the shadow appeared",
+     "method_choice": "deliberately chose a method (strangling and hanging a grown man) that only someone of his size and strength could physically carry out, so that Muramatsu and the others would not be suspected",
+     "confession": "confessed after being confronted with the out-of-focus photo and the cigarette-butt evidence; arrested"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kineka 7 movie theatre (screening room)",
+    "attrs": {
+     "status": "a 30-year-old second-run theatre that had been scheduled to close and be demolished the day after this screening",
+     "resolution": "kept open by Muramatsu after the case is solved"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Projection room",
+    "attrs": {
+     "layout": "contains two film projectors (one to screen the film, one to rewind the previous reel), an observation window used to check the projected image, and the true, sealed (non-opening) projection window through which the film is actually shown",
+     "condition": "cluttered, dusty, full of cigarette butts; a mirror in the room was broken, with a chip missing"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Theatre lobby / concession stand",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Theatre restroom (girls' room)",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Cooling system control corridor",
+    "attrs": {
+     "location": "through the door to the right of the screen, at the end of a corridor"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rope",
+    "role": "weapon",
+    "attrs": {
+     "used_for": "strangling Haruta, then hanging the body in front of the true projection window to simulate a suicide",
+     "context": "stepladders, ropes and wires were seen scattered around the theatre beforehand, mistaken by the Detective Boys for renovation equipment"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Mirror chip from the broken projection-room mirror",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "wedged onto the tip of the idle rewind projector and angled to redirect the projected film image from the true, sealed projection window out through the adjacent observation window instead, so the film kept screening normally while the body hung unseen in front of the true window",
+     "concealment": "the projector itself blocks the mirror rig from the sightline of anyone entering through the door",
+     "staging_flaw": "removing the mirror mid-screening abruptly changes the projector-to-screen focal distance, throwing the image briefly out of focus"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Theatre cooling system / thermostat",
+    "role": "instrument",
+    "attrs": {
+     "trick": "turned up higher than normal right as the film started so a strong, directed draft could sway the hanging body side-to-side on cue, matching witness reports of a swaying shadow"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Ide's digital camera photos",
+    "role": "evidence",
+    "attrs": {
+     "content": "a continuous timeline of photos taken throughout the screening, including one taken five shots after Mitsuhiko is seen returning from the bathroom, proving the photos were taken live and not staged or doctored in advance",
+     "anomaly": "the photo capturing the shadow's appearance is out of focus -- both the projected film frame and its image are blurred while the rest of the theatre in the same shot is crisp -- proving the projector's focal distance changed at that exact moment, i.e. that a mirror had just been removed from the lens rather than the camera being merely bumped"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Cigarette butts and a footprint near Haruta's usual seat",
+    "role": "evidence",
+    "attrs": {
+     "location_found": "in front of the observation window, not the true (sealed) projection window where the body was later found hanging",
+     "significance": "Haruta always sat directly in front of whichever window the film was actually being projected through; their presence in front of the observation window proves the film was being projected out of the observation window (via the mirror trick) while he sat there, before the murder"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Film reel",
+    "role": "evidence",
+    "attrs": {
+     "checked_for": "a splice mark from physically cutting the reel to run it on two projectors (Conan's initial guess at the mechanism)",
+     "result": "no splice found around the relevant scene, ruling out the cut-reel theory and pointing toward the mirror trick instead"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Book used to block the observation window",
+    "role": "tool",
+    "attrs": {
+     "use": "propped against the observation window to block the light/sightline so no one glancing in from the corridor would notice the body or the mirror rig before the trick was in place"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Haruta habitually sat directly in front of whichever window the film was actually being projected through, but his cigarette butts and footprint were found in front of the observation window rather than the true, sealed projection window where his body was later found hanging -- proving the film was actually being projected out of the observation window via a mirror trick during part of the screening.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "In Ide's photo of the shadow's appearance, the projected film frame and its image are blurred out of focus while the rest of the theatre in the same photo is crisp -- proving the projector's focal distance changed at that exact instant, consistent with a mirror being removed from the lens rather than an accidental camera bump.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p4",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "quasi_child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "prospective_seller_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "disapproves_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "disapproves_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "disapproves_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "disapproves_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "revenge_for_orchestrating_harassment_that_was_killing_the_theatre_he_loved"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "business_sabotage_retaliation (red herring -- Haruta suspected of hiring thugs to disrupt screenings and force the sale/demolition)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "resentment_of_harasser (red herring, weak -- voiced strong dislike of Haruta but too slight to be a plausible physical suspect)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "business_grievance (red herring -- Haruta's hired thugs disrupted concession business)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "sends_away",
+   "from": "p5",
+   "to": "p3",
+   "order": 0,
+   "temporal_frame": "present",
+   "detail": "sends Tomosato to buy staff lunch and tea leaves, using the 'forgotten' lunch as a pretext to empty the concession stand and lobby",
+   "circumstance_tags": ["premeditated", "staged_alibi"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p5",
+   "to": "o3",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "turns the thermostat up as the film starts, to make the body sway convincingly later"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p5",
+   "to": "o2",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "rigs the mirror chip on the idle projector to redirect the film's projection to the observation window"
+  },
+  {
+   "type": "blocks_view_using",
+   "from": "p5",
+   "to": "o7",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p1",
+   "order": 2,
+   "temporal_frame": "present",
+   "method": "strangled with a rope in the darkened theatre during the screening",
+   "circumstance_tags": ["staged_suicide", "premeditated"]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p5",
+   "to": "p1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "hangs the body in front of the true, sealed projection window",
+   "circumstance_tags": ["staged_suicide", "locked_room"]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "leaves his seat mid-film to check why the AC felt too strong; scrutinized by Megure as suspicious, but proved innocent and inadvertently corroborated Furuhashi's trick",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "leaves the projection room for under a minute to fix a fallen contact lens in the restroom, undisclosed at first, seen by a bystander",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "returns to the projection room with Furuhashi's lunch and tea, around 12:40"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p5",
+   "to": "o2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "removes the mirror now that Tomosato is present as a witness, unblocking the true projection window so the hanging body's shadow suddenly appears on screen (around 12:44)",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "captures",
+   "from": "p2",
+   "to": "o4",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "unwittingly photographs the shadow's appearance on screen, along with a continuous timeline of surrounding shots"
+  },
+  {
+   "type": "discovers",
+   "from": "p3",
+   "to": "p1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "sent downstairs to check on the shadow, finds Haruta's hanging body"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l5"
+  },
+  {
+   "type": "located_in",
+   "from": "o7",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p5"
+  }
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

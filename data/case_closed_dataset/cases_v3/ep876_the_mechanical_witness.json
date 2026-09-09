@@ -1,0 +1,201 @@
+{
+ "case_id": "ep876_the_mechanical_witness",
+ "episode_number": "876",
+ "title": "The Mechanical Witness",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mechanical_Witness",
+ "subtitle_source": "subs_resolved/0876.txt (342 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Kogoro Mouri) omitted by convention. case_type: murder (functionally manslaughter -- the culprit caused the victim's death while fleeing after being caught mid-theft, not via a deliberate strangling). Corrections vs. the old low-fidelity case file: (1) the old file's object 'Rope, worn from repeated use on a gas pipe' reversed the physical clue -- the transcript is explicit that the GAS PIPE (the rope's interior anchor point) was worn from repeated use and broke under strain during the struggle, nearly dropping Isshiki; the rope itself stayed intact and only became lethal when Tanizaki grabbed it to try to save Isshiki and it tangled around his own neck. (2) the old file's has_motive_against edge pointed Isshiki's financial motive at the victim Tanizaki personally; the transcript shows Isshiki's theft-for-profit motive was against the company/president (Kusumi), and Tanizaki's death was incidental to intercepting the theft, not the target of any grudge. (3) added fidelity the old file omitted entirely: the climax's two on-screen red-herring accusations (against Horiuchi for personal dislike, against Kusumi for believing Tanizaki was the leak), plus the parallel red-herring pair of wrongly-suspected outsider Makita (Myojo Technics, general affairs, alibied) vs. the actual recipient of the stolen tech, Hiraguchi (Myojo Technics R&D). The old file's stated culprit (Isshiki Kazuomi) is otherwise confirmed correct by the transcript.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kyoichi Kusumi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "President, Kusumi Machinery",
+    "attrs": {
+     "age": 50,
+     "accusation": "briefly accused at the climax of killing Tanizaki out of a sense of betrayal, believing him to be the information leak (red herring)"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Takeshi Tanizaki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "engineer, Kusumi Machinery",
+    "attrs": {
+     "age": 45,
+     "secret_role": "secretly built the mouse-shaped robot as a security device with a special-ink sensor to catch an internal information leak, letting colleagues believe it was just a tasteless self-defense gadget",
+     "died_of": "strangulation by rope, hoisted off the floor while grabbing it to try to save Isshiki"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Fumika Horiuchi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "employee, Kusumi Machinery",
+    "attrs": {
+     "age": 32,
+     "accusation": "briefly accused at the climax on the basis that she disliked Tanizaki (red herring)"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kazuomi Isshiki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "employee, Kusumi Machinery",
+    "attrs": {
+     "age": 25,
+     "confession": "admits to repeatedly stealing prototype components/information and selling them to a rival company for money; denies intent to kill, claiming he only struck Tanizaki during their struggle"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Makita",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "general affairs department, Myojo Technics",
+    "attrs": {
+     "cleared_via": "alibi, plus his department has nothing to do with technology development -- confirmed by Takagi's report",
+     "red_herring": "initially assumed to be the insider's outside contact"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Hiraguchi",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "R&D department, Myojo Technics",
+    "attrs": {
+     "role": "actual recipient of Isshiki's stolen prototype components/information",
+     "motive": "career advancement"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "President's Office (crime scene)",
+    "attrs": {
+     "note": "a formal office not normally used day-to-day, which is why Isshiki chose it to stash stolen components; locks from the inside; contains a gas pipe, a ventilation fan, and a water heater near the window"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Lab, Kusumi Machinery",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Myojo Technics",
+    "attrs": {
+     "note": "rival company; destination of the leaked prototype technology"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Security mouse robot",
+    "role": "instrument",
+    "attrs": {
+     "designed_by": "Takeshi Tanizaki",
+     "cover_story": "publicly dismissed by colleagues as a tasteless self-defense robot for women",
+     "true_purpose": "its sensors detect a rare trap ink secretly applied near the hidden stolen components, identifying whoever steps in it"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "30-meter rope",
+    "role": "weapon",
+    "attrs": {
+     "purpose": "threaded through the gas-pipe anchor and a gap above the ventilation fan so Isshiki could lower himself in and reel himself back out without leaving evidence",
+     "cause_of_death": "tangled around Tanizaki's neck and hoisted him off the floor when he grabbed it to save Isshiki right after the gas-pipe anchor broke",
+     "found_at": "shrubbery beneath the window, reeled in and hidden there by Isshiki afterward"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Gas pipe (rope anchor)",
+    "role": "tool",
+    "attrs": {
+     "weakened_by": "repeated use as the rope's interior anchor point across Isshiki's past thefts",
+     "broke_during": "the struggle between Isshiki and Tanizaki, triggering the gas leak and nearly dropping Isshiki from the window"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Stolen prototype components",
+    "role": "contraband",
+    "attrs": {
+     "hidden_by": "Isshiki, inside the President's Office ahead of the theft",
+     "found_on": "Tanizaki's body, after he intercepted them to set his trap"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The robot's sensor flags the same rare trap ink on Isshiki's shoe/toe that it was built to detect on the thief -- ink Isshiki claims he merely 'has at home,' but which is exclusive to Tanizaki's trap.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Footprints on the office floor, rust marks matching both the water heater and Tanizaki's back, and blood on the ventilation fan together prove Tanizaki was hoisted by the rope at the broken gas-pipe/fan gap rather than simply overcome by gas.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Makita (Myojo Technics general affairs, alibied) was first suspected as Tanizaki's outside contact, but the real recipient of the leaked technology was Hiraguchi of Myojo's R&D department.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "employer_of"},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "employer_of"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "employer_of"},
+
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+
+  {"type": "owns", "from": "p4", "to": "o2"},
+  {"type": "hides_contraband_in", "from": "p4", "to": "l1"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o4"},
+
+  {"type": "meets_with", "from": "p2", "to": "p5", "detail": "asked Makita about the date of Myojo Technics' next presentation, to time his trap for the thief's next attempt"},
+  {"type": "sells_stolen_tech_to", "from": "p4", "to": "p6", "detail": "sold stolen prototype components/information for money; Hiraguchi's motive was career advancement"},
+
+  {"type": "assaults", "from": "p4", "to": "p2", "detail": "physical struggle after Tanizaki, hiding in the room, caught Isshiki mid-theft; Tanizaki was struck and began bleeding from the head"},
+  {"type": "kills", "from": "p4", "to": "p2", "circumstance_tags": ["accidental_cause", "locked_room"], "detail": "not a deliberate strangling -- Tanizaki died grabbing the rope to save Isshiki after the gas-pipe anchor broke during their struggle"},
+
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "regarding", "from": "c2", "to": "l1"},
+  {"type": "regarding", "from": "c3", "to": "p5"},
+  {"type": "regarding", "from": "c3", "to": "p6"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "financial (selling stolen prototype components/information to a rival company for profit)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p2", "motive_type": "avoiding exposure as the thief after being caught mid-theft"},
+  {"type": "has_motive_against", "from": "p3", "to": "p2", "motive_type": "personal dislike (red herring)", "circumstance_tags": ["red_herring"]},
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "believed Tanizaki was the information leak and felt betrayed (red herring, accusation raised and refuted)", "circumstance_tags": ["red_herring"]}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

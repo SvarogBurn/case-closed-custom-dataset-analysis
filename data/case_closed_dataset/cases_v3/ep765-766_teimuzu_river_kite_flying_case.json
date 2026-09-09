@@ -1,0 +1,330 @@
+{
+ "case_id": "ep765-766_teimuzu_river_kite_flying_case",
+ "episode_number": "765-766",
+ "title": "Teimuzu River Kite Flying Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Teimuzu_River_Kite_Flying_Case",
+ "subtitle_source": [
+  "subs_resolved/0765.txt",
+  "subs_resolved/0766.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ai Haibara, Ayumi, Genta, Mitsuhiko, Agasa, Officer Takagi) omitted by convention, as are pure comic-relief B-plot figures unrelated to the crime (the 'what song is Haibara humming' subplot: Higo, Sanada, Yoko Okino). No `event` node type: every action is a directly typed edge between the entities involved. case_type: attempted_murder (the victim survives and regains consciousness). Old lower-fidelity file (cases/ep765-766...) named the correct culprit (Takeshi Yatsukoshi) and correct object (string telephone), so no culprit correction was needed here -- but it collapsed the case into 2 events/1 clue and was missing two plot-relevant people entirely: Takami Renno (the victim's wife, a formally-accused red herring with a solid phone alibi) and Yuitoshi Kakura's unnamed younger sister (the backstory figure whose affair with the victim and resulting suicide attempt is the motive source for BOTH red herring and true culprit). The old file's motive edge was 'unspecified (not stated in the available source excerpt)' -- the transcript actually states it plainly: Yatsukoshi had been in love with Kakura's sister since high school and resented Renno for the affair that drove her to attempt suicide. Mechanism: Yatsukoshi rigged the safety rope between two riverside kite-flying posts to leave an unmarked gap, then used a bottle-and-string telephone (disguised as him idly drinking a beverage) to feed Renno directions ('a little more to the left,' 'farther back') while both men appeared to just be flying kites; Renno, mid-phone-call with his wife and unaware he was also on the string line, backed into the gap and fell into the river. The decisive evidence was accidental: Ayumi dropped Conan's cell phone (recording app left running for an unrelated prank) near the event restroom; Yatsukoshi picked it up by mistake (same model/color as his own) and pocketed it, so it recorded his own voice -- 'Go to hell' -- as he spoke into the string phone at the moment Renno fell.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryota Renno",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "cafe owner",
+    "attrs": {
+     "age": 39,
+     "outcome": "fell into the river, near-drowned, survived and regained consciousness"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Takami Renno",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": null,
+    "attrs": {
+     "age": 35,
+     "relation_to_victim": "wife",
+     "cleared": true,
+     "clearance_reason": "was on a cordless landline call from home the entire time, not present at the river"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuitoshi Kakura",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "alumnus, senior of the high school baseball club",
+    "attrs": {
+     "age": 41,
+     "cleared": true,
+     "clearance_reason": "too far from Renno when he fell, made no gestures on the anti-cheating event video, had no phone link to him"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Takeshi Yatsukoshi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "employee at Renno's cafe",
+    "attrs": {
+     "age": 34,
+     "cover_story": "claimed to be too far away to have directed Renno, and that Renno had only walked to the river to dispose of a PET bottle"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kakura's younger sister",
+    "aliases": [],
+    "roles": [
+     "backstory_figure",
+     "victim"
+    ],
+    "occupation": null,
+    "attrs": {
+     "circumstance": "had an affair with the married Ryota Renno, who promised to leave his wife for her",
+     "outcome": "cut her wrist in the bathtub the night before the kite event; unconscious in serious condition in hospital"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Teimuzu River kite-flying grounds",
+    "attrs": {
+     "detail": "posts along a riverside fence normally connected by a safety rope"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Takami Renno's house",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Hospital",
+    "attrs": {
+     "detail": "where Kakura's sister lay unconscious"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Bottle-and-string telephone",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "two PET bottles joined by a long taut string; Yatsukoshi spoke into his end disguised as sipping a drink, Renno unknowingly held the receiving end",
+     "signal": "two tugs on the kite string prearranged as the cue to start using it"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Conan's cell phone",
+    "role": "evidence",
+    "attrs": {
+     "original_purpose": "recording app left running to catch Ai Haibara humming",
+     "how_recovered": "dropped by Ayumi near the restroom, mistakenly pocketed by Yatsukoshi (same model/color as his own)",
+     "recorded_audio": "Yatsukoshi's own voice saying \"Go to hell\" into the string phone at the moment Renno fell"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Rigged rope at the fence posts",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "rope from the farthest post was untied, length-matched, and retied one post over to fake an old accidental break; underside color didn't match a genuinely weathered rope, and the leftover rope segment was too long to have been the original"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Rope-matching contradiction: reconnecting the frayed ends leaves a gap too large to bridge, one side's discoloration doesn't match sun/rain wear on the underside, and the farthest post has no rope at all -- proves the rope was deliberately moved and retied to fake a spot where a person could be led through, not an old accidental snap.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Recording comparison: the voice pattern of \"Go to hell\" captured on the recovered phone at the moment of the fall matches Yatsukoshi's voice, not the trash-disposal story he gave -- proving he was speaking into the string phone at that exact instant.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "affair_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "in_love_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "baseball_club_senior_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "baseball_club_senior_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge_for_sisters_suicide_attempt (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "anger_over_husbands_affair (red herring, formally accused)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "jealousy_over_the_woman_he_loved_and_revenge_for_her_suicide_attempt"
+  },
+  {
+   "type": "confronts",
+   "from": "p3",
+   "to": "p1",
+   "detail": "confronted Renno in person about the affair, told him to come talk after the event",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "rigs",
+   "from": "p4",
+   "to": "o3",
+   "circumstance_tags": [
+    "staged_accident"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o1"
+  },
+  {
+   "type": "causes_fall_of",
+   "from": "p4",
+   "to": "p1",
+   "method": "directed Renno via hidden string telephone to walk backward through the gap left by the rigged rope",
+   "circumstance_tags": [
+    "staged_accident",
+    "rigged_scene"
+   ]
+  },
+  {
+   "type": "picks_up",
+   "from": "p4",
+   "to": "o2",
+   "attrs": {
+    "mistaken_for_own": true
+   }
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

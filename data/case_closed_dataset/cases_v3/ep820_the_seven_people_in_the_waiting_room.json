@@ -1,0 +1,266 @@
+{
+ "case_id": "ep820_the_seven_people_in_the_waiting_room",
+ "episode_number": "820",
+ "title": "The Seven People in the Waiting Room",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Seven_People_in_the_Waiting_Room",
+ "subtitle_source": ["subs_resolved/0820.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast nodes (Conan, Kogoro, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file got the culprit right (stationmaster 'Kikuo Inagaki' = s2 = murderer) but modeled everything as generic 'knows' edges plus three reified event nodes, and missed most of the cast that matters: it never named the assemblyman Yuhara Shonosuke or Yamazaki Kozo's son (the actual motive source -- Kozo is the impersonating 'stationmaster,' his real name is Yamazaki Kozo, a construction worker avenging his son's frame-up and suicide, which the old file's flat victim/suspect list doesn't capture at all), never modeled the real bound stationmaster he impersonated, and collapsed the note-writing subplot (Masako Ueno secretly wrote and tore the warning note from the station's welcome sign, which is why she was later attacked in the blackout) into a single vague clue about 'the impersonator's identity.' The old file also lumped all alibi locations into one 'Ofumoto Station' node; the transcript actually distinguishes waiting room / hot spring bath / back of station / platform / souvenir shop / outside-in-the-storm, which this rebuild restores since it's exactly the substrate needed for `was_at` alibi-checking. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kikuo Inagaki",
+    "aliases": ["Yamazaki Kozo"],
+    "roles": ["suspect"],
+    "occupation": "impersonated Ofumoto Station stationmaster; really a construction worker",
+    "attrs": {
+     "true_identity": "Yamazaki Kozo (60), construction worker",
+     "impersonation": "tied up the real stationmaster and posed as him to get close to the assemblyman's party"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masako Ueno",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Ofumoto Station employee",
+    "attrs": {
+     "wrote_warning_note": true,
+     "attacked_during": "blackout, after she realized the stationmaster's true identity",
+     "survived": true
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hokari Yuichi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "posed as a salesman",
+    "attrs": {
+     "true_identity": "wanted con artist and pickpocket",
+     "evidence_against": "carries pamphlets for many companies; uses a dropped-item trick to approach marks"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hitoshi Takegami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "factory manager",
+    "attrs": {
+     "factory": "shut down by the bank",
+     "coerced_by": "loan sharks",
+     "illegal_activity": "manufactured an altered firearm under threat, tested it in the mountains"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Carl Morris",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "posed as a backpacker",
+    "attrs": {
+     "true_identity": "wanted thief"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Fune Shimao",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "local resident",
+    "attrs": {
+     "behavior": "acts confused/senile, repeatedly asks for food, mistakes other guests' identities",
+     "outcome": "briefly went missing and was suspected, but was not the killer"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Noriko Kurusu",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "assemblyman Yuhara's secretary",
+    "attrs": {
+     "left_waiting_room_alone": true,
+     "reason": "trying to reach her boss at the next station despite the storm"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Shonosuke Yuhara",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "assemblyman",
+    "attrs": {
+     "implicated_in": "corruption cover-up that pinned the blame on Yamazaki Kozo's son"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Yamazaki Kozo's son",
+    "aliases": [],
+    "roles": ["backstory_figure", "victim"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "suicide",
+     "cause": "forced by Yuhara to take the blame for his corruption"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "The real stationmaster",
+    "aliases": [],
+    "roles": ["bystander", "backstory_figure"],
+    "occupation": "actual Ofumoto Station stationmaster",
+    "attrs": {
+     "found": "tied up; discovered unharmed the next morning"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Ofumoto Station waiting room",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Station hot spring bath",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Outside near the station",
+    "attrs": {
+     "conditions": "typhoon storm at night"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Souvenir corner / shop",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Back of the station",
+    "attrs": {}
+   },
+   {
+    "id": "l6",
+    "name": "Station platform",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Takegami's altered gun",
+    "role": "contraband",
+    "attrs": {
+     "smells_of": "gunpowder from mountain test-firing",
+     "note": "an illegally modified firearm, not the murder weapon; bullets never compared on screen"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Kozo's gun (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "used_on": "Noriko Kurusu, shot outside the station"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Warning note (torn)",
+    "role": "evidence",
+    "attrs": {
+     "content": "Mori-sensei, someone will be killed here tonight. The culprit is—",
+     "found_in": "Kogoro's jacket pocket",
+     "note": "sentence cut off before the culprit's name"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Torn welcome sign",
+    "role": "evidence",
+    "attrs": {
+     "content": "assemblyman Yuhara's welcome sign, bearing the same warning text at the bottom",
+     "torn_edge": "matches the note; the portion naming the culprit is missing"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Hokari's pamphlets",
+    "role": "evidence",
+    "attrs": {
+     "content": "a heap of pamphlets for different loan companies, a con artist's tools of the trade"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Wanted poster",
+    "role": "evidence",
+    "attrs": {
+     "content": "identifies Hokari Yuichi as a con artist and Carl Morris as a thief, each impersonating their cover story"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The note's torn edge and handwriting match the welcome sign's torn edge -- proving Masako wrote and tore off the warning, and someone tore off the remaining piece naming the culprit to hide their own identity.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p9", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p7", "to": "p8", "relation_type": "employee_of"},
+
+  {"type": "ties_up", "from": "p1", "to": "p10", "circumstance_tags": ["impersonation_setup"]},
+  {"type": "impersonates", "from": "p1", "to": "p10"},
+  {"type": "frames", "from": "p8", "to": "p9", "detail": "forced him to take the blame for his corruption, driving him to suicide"},
+  {"type": "kills", "from": "p1", "to": "p7", "method": "shot", "circumstance_tags": ["storm", "outdoors"]},
+  {"type": "assaults", "from": "p1", "to": "p2", "method": "bludgeoned in the dark", "circumstance_tags": ["blackout"]},
+  {"type": "tears", "from": "p1", "to": "o4", "detail": "tore off the portion of the sign naming him before it could be read"},
+  {"type": "confronts", "from": "p1", "to": "p8", "circumstance_tags": ["thwarted"]},
+
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l4"},
+  {"type": "was_at", "from": "p6", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l6"},
+  {"type": "was_at", "from": "p7", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+
+  {"type": "owns", "from": "p4", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "written_by", "from": "o3", "to": "p2"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "owns", "from": "p3", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p3"},
+  {"type": "implicates", "from": "o6", "to": "p3"},
+  {"type": "implicates", "from": "o6", "to": "p5"},
+
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p7", "motive_type": "revenge_complicity (she knew his son was innocent but stayed silent to advance her career)"},
+  {"type": "has_motive_against", "from": "p1", "to": "p8", "motive_type": "revenge_for_sons_death"},
+  {"type": "has_motive_against", "from": "p3", "to": "p7", "motive_type": "silencing_witness (red herring, she recognized him as a con artist)", "circumstance_tags": ["red_herring"]}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

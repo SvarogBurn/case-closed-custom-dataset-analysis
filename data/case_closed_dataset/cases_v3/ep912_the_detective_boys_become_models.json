@@ -1,0 +1,179 @@
+{
+ "case_id": "ep912_the_detective_boys_become_models",
+ "episode_number": "912",
+ "title": "The Detective Boys Become Models",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Detective_Boys_Become_Models",
+ "subtitle_source": "subs_resolved/0912.txt (389 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Detective Takagi, Detective Sato, Inspector Megure, and the rest of the Detective Boys) omitted by convention -- they function only as the alibi-verification mechanism (modeling for Nishiyama's painting, then investigating), not as suspects/victims/motive-holders in the underlying crime. The old low-fidelity cases/ file's culprit (Daiki Nishiyama, here p5) is CONFIRMED CORRECT by the transcript -- he confesses outright at the end -- so no culprit reversal was needed here, unlike several other rebuilds. What the old file got wrong/thin: (1) its has_motive_against edge for the culprit was 'unspecified (not stated in the available source excerpt)', but the transcript states the motive directly and early, via Kinuko's accusation later confirmed true in Nishiyama's own confession -- Seiho extorted money from artists in exchange for selecting their pieces as exhibition winners, and Nishiyama couldn't afford to pay, so his work kept losing; (2) it collapsed all alibi-checking into one generic 'was_at' edge per suspect at a single studio location, when the transcript actually tracks four distinct, individually-checked alibi claims (Higashio: home all day, actually with a married woman; Kinuko: department-store shopping, actually at a host club; Shizu: supermarket run, confirmed; Nishiyama: painting at Lake Okuho + a real train-departure-sign photo) across five named locations; (3) it never modeled the actual train-schedule/departure-sign timing trick that breaks Nishiyama's alibi (the departure sign advances on a fixed schedule rather than on the train's real departure, discovered by revisiting Aohata Station, which is what lets the vandalized crossing-gate delay put Nishiyama on an earlier train than his photo implies); (4) the accusatory red herrings against Higashio and Kinuko are added here as has_motive_against edges tagged red_herring, matching the ep011 pattern, since the old file had no motive edges for them at all. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Seiho Kitasono",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "painter, judging-committee chairperson for painting exhibitions",
+    "attrs": {
+     "age": 72,
+     "died_of": "blunt force trauma to the back of the head",
+     "estimated_time_of_death": "3:10-3:40 PM (around 3:30 PM)",
+     "corruption": "secretly demanded payment from entrants in exchange for selecting their pieces as exhibition winners"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kengo Higashio",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "Seiho's apprentice painter",
+    "attrs": {
+     "age": 33,
+     "found_body_at": "3:50 PM, entered the studio and found Seiho on the ground bleeding from the head",
+     "claimed_alibi": "was home all day",
+     "alibi_problem": "a deliveryman got no answer at his door around 1 PM",
+     "true_alibi": "was secretly with a married woman (confirmed by police)"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kinuko Kitasono",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Seiho's wife",
+    "attrs": {
+     "age": 60,
+     "claimed_alibi": "shopping at Beika-area department stores",
+     "alibi_problem": "no witnesses or security footage found her at the claimed stores",
+     "true_alibi": "was visiting a male host at a host club (confirmed by police)",
+     "returned_home": "around 3:58 PM, close to when the body was discovered"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shizu Minamida",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "housekeeper",
+    "attrs": {
+     "age": 55,
+     "claimed_alibi": "left before 3 PM for the nearby supermarket, returned about five minutes before Higashio arrived",
+     "alibi_confirmed": true,
+     "called_police_at": "3:58 PM"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Daiki Nishiyama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Seiho's apprentice painter",
+    "attrs": {
+     "age": 26,
+     "claimed_alibi": "spent the day painting Conan and the Detective Boys as live models at Lake Okuho, then took the 2:02 PM train back to Beika",
+     "real_actions": "painted the base landscape about a week earlier, added the child models on top of it the day before the murder, vandalized a train crossing gate to delay a train and exploit the station departure sign's timing, actually boarded an earlier train than his alibi photo implied, murdered Seiho at the studio during the resulting window, and staged an official arrival around 5 PM",
+     "confessed": true
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Seiho's art studio", "attrs": {"detail": "separate building from the main house; murder scene"}},
+   {"id": "l2", "name": "Kitasono household", "attrs": {}},
+   {"id": "l3", "name": "Lake Okuho painting spot", "attrs": {"detail": "near a tree that town hall cut down the week before"}},
+   {"id": "l4", "name": "Lake Okuho Station", "attrs": {}},
+   {"id": "l5", "name": "Aohata Station", "attrs": {"detail": "transfer station; crossing gate vandalized just outside it"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Plaster bust",
+    "role": "weapon",
+    "attrs": {"found_at": "Seiho's art studio", "used_as_weapon": true}
+   },
+   {
+    "id": "o2",
+    "name": "Alibi landscape painting",
+    "role": "evidence",
+    "attrs": {
+     "base_layer_painted": "about a week before the murder",
+     "added_layer": "Conan and the Detective Boys painted on top of it the day before the murder, presented as live models painted that same day",
+     "anomaly": "depicts a felled tree still lying under barricade tape from a town-hall removal job finished the week before -- details that would already be cleared away by the murder day"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Vandalized train crossing gate",
+    "role": "instrument",
+    "attrs": {
+     "location": "crossing just outside a station on the Lake Okuho line",
+     "effect": "gate failed to descend, delaying the scheduled 1:17 PM train to Aohata by about 5 minutes",
+     "purpose": "let Nishiyama secretly board an earlier train than his alibi photo implied"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Photo of Lake Okuho Station departure sign",
+    "role": "evidence",
+    "attrs": {
+     "shows": "sign reading 'Previous 14:02 / Next 14:37'",
+     "claimed_to_prove": "that Nishiyama only boarded the 2:02 PM train, too late to reach the studio before the murder",
+     "debunked_by": "the departure sign advances on a fixed schedule timer rather than on the train's actual departure, so the photo does not prove which physical train he boarded"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The alibi painting's background shows the felled tree still under barricade tape from a job finished the week before, but that tape/tree were long gone by the murder day -- proving the landscape layer was painted earlier than claimed.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Revisiting Aohata Station shows its departure sign switching to the next train before the delayed train had actually left, proving the sign timing (as seen in Nishiyama's alibi photo) does not verify which physical train he boarded -- tying the vandalized crossing-gate delay directly to his opportunity window.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "student_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "student_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of"},
+  {"type": "kills", "from": "p5", "to": "p1", "method": "struck with a plaster bust"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o1"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l4"},
+  {"type": "was_at", "from": "p5", "to": "l5"},
+  {"type": "owns", "from": "p5", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "l3"},
+  {"type": "implicates", "from": "o2", "to": "p5"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o3"},
+  {"type": "located_in", "from": "o3", "to": "l5"},
+  {"type": "implicates", "from": "o3", "to": "p5"},
+  {"type": "stages_alibi_using", "from": "p5", "to": "o4"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o4"},
+  {"type": "located_in", "from": "o4", "to": "l4"},
+  {"type": "implicates", "from": "o4", "to": "p5"},
+  {"type": "regarding", "from": "cA", "to": "o2"},
+  {"type": "regarding", "from": "cA", "to": "l3"},
+  {"type": "implicates", "from": "cA", "to": "p5"},
+  {"type": "regarding", "from": "cB", "to": "o3"},
+  {"type": "regarding", "from": "cB", "to": "o4"},
+  {"type": "implicates", "from": "cB", "to": "p5"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "financial_extortion -- could not afford to pay Seiho to select his exhibition pieces as winners, so his work kept losing"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "professional_resentment (red_herring, accused by Kinuko) -- Seiho refused to recommend him for a teaching post at Beika Art School"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "marital_conflict (red_herring, accused by Higashio) -- fighting over money she spent on a host"}
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

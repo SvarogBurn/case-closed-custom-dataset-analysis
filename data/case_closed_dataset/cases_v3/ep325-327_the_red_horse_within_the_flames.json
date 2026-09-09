@@ -1,0 +1,202 @@
+{
+ "case_id": "ep325-327_the_red_horse_within_the_flames",
+ "episode_number": "325-327",
+ "title": "The Red Horse within the Flames",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Red_Horse_within_the_Flames",
+ "subtitle_source": ["subs_resolved/0325.txt", "subs_resolved/0327.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Heiji, Kazuha, Kogoro Mouri, Ran) omitted by convention, as is Inspector Yuminaga (arson-squad inspector who plays the same case-local investigating-officer role as Inspector Megure elsewhere, and whose questions are answered by the omitted detective cast). Episode 326 has no subtitle file locally (only 0325.txt and 0327.txt exist in subs_resolved/) -- this rebuild is based on those two episodes only; whatever aired in 326 (likely more of the household-visitor investigation) is not reflected here. The old cases/ file's culprit call (Akira Morozumi) is CORRECT and matches the transcript -- no discrepancy there -- but it modeled the case as 4 generic suspects all `knows` a single victim with an `unspecified` motive and one clue; this rebuild adds the real mechanism: the four red horse figurines are four separate physical props (three planted by Akira to build a fake serial-arsonist pattern, one an unrelated accidental survivor from fire #1 that coincidentally kicked off the media legend and led Genda to suspect his own sleepwalking), a delayed-ignition light-bulb/tissue/match rig giving Akira a drinking alibi, two red-herring peddler subplots (Soga's bugged vase, Keiko's bugged crystal ball, sold to Genda at inflated prices -- unrelated to the murder but explaining the listening-device red herring), and the base-plate/figurine-leg forensic match plus the bug-elimination logic that actually identifies Akira. Genda's own backstory (his father died years earlier in an unrelated fire caused by a dropped cigarette, which is why he was seen searching a park bench and why Mouri trusted his innocence) involves only omitted detective-cast characters as the other party, so it is kept as an attribute on Genda's node rather than a separate person/edge. Per the 2026-08 batch-8+ convention, order/temporal_frame/years_before_present are omitted from edges. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryoko Morozumi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "housewife",
+    "attrs": {
+     "cause_of_death": "died in the 4th (final) arson fire, unable to escape",
+     "held_evidence": "key-holder base plate found in her hand"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Akira Morozumi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "psychiatrist; owns the house",
+    "attrs": {
+     "motive_detail": "wife Ryoko planned to divorce and evict him; he wanted the house for his own clinic",
+     "alibi": "claimed to be out drinking with Soga when the fire ignited, via a delay device"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Genda Takanori",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "door-to-door salesman (lucky-charm key holders, antiques)",
+    "attrs": {
+     "framed_for": "the whole arson series",
+     "childhood_history": "sleepwalked as a child; Akira, his psychiatrist, exploited this to convince him he was sleepwalking and setting fires",
+     "confession": "admitted crafting the red horse key holders, denied setting any fires",
+     "backstory": "his father died years earlier in an unrelated fire caused by a stranger's dropped cigarette, which is why he trusted no one would suspect him of arson"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Soga Misao",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Akira's college friend; peddles Feng Shui goods",
+    "attrs": {
+     "cover_identity": "poses as a Feng Shui teacher and visits the Morozumi house on a paid consulting basis",
+     "affair": "was having an affair with Ryoko and was searching the house for a videotape she recorded of them",
+     "scam": "sells Feng Shui items rigged with hidden listening devices at inflated prices",
+     "alibi": "went drinking with Akira from around 7:20 PM"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Gondo Keiko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "fortune-teller",
+    "attrs": {
+     "family": "Ryoko's elder sister",
+     "money_trouble": "frequently visited the Morozumi house to borrow money from Ryoko",
+     "scam": "sells crystal balls rigged with hidden listening devices at inflated prices",
+     "alibi": "started her shift at a fortune-telling convention at 7:30 PM, confirmed by a co-worker"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Morozumi's neighbor boy",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "testimony": "saw a horse-shaped shadow on his curtain at 7:30 PM, timed exactly to the Kamen Yaiba TV opening"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Morozumi household", "attrs": {"block": "4th block, Haido City", "fate": "partially burned; site of Ryoko's murder"}},
+   {"id": "l2", "name": "Genda Takanori's house", "attrs": {}},
+   {"id": "l3", "name": "Rizen-chou fire site", "attrs": {"block": "1st block", "note": "the accidental first fire, unrelated to Akira"}},
+   {"id": "l4", "name": "Toriya-chou fire site", "attrs": {"block": "2nd block"}},
+   {"id": "l5", "name": "Okuho-chou fire site", "attrs": {"block": "3rd block"}},
+   {"id": "l6", "name": "Fortune-teller convention", "attrs": {"location": "near Haido Station"}},
+   {"id": "l7", "name": "Neighbor boy's house", "attrs": {"note": "next door to the Morozumi household"}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Red horse figurine (Rizen)", "role": "evidence", "attrs": {"origin": "survived when the Guan Yu figure and its gift box burned in the accidental fire", "note": "sparked the media 'Red Horse arsonist' legend by coincidence"}},
+   {"id": "o2", "name": "Red horse figurine (Toriya)", "role": "evidence", "attrs": {"planted_to": "build the fake serial-arsonist pattern"}},
+   {"id": "o3", "name": "Red horse figurine (Okuho)", "role": "evidence", "attrs": {"planted_to": "build the fake serial-arsonist pattern", "matches": "leg shape of the base plate found in Ryoko's hand"}},
+   {"id": "o4", "name": "Red horse figurine (storage room)", "role": "evidence", "attrs": {"planted_to": "make the murder fire look like the same serial arsonist", "cast_shadow": "seen by the neighbor boy at 7:30 PM"}},
+   {"id": "o5", "name": "Key-holder base plate", "role": "evidence", "attrs": {"found": "in Ryoko's hand when she died", "matches": "the legs of the Okuho-chou figurine (o3)"}},
+   {"id": "o6", "name": "Bugged vase", "role": "contraband", "attrs": {"sold_by_detail": "Feng Shui item sold to Genda at inflated price", "found_at": "Genda's house entryway"}},
+   {"id": "o7", "name": "Bugged crystal-ball cushion", "role": "contraband", "attrs": {"sold_by_detail": "fortune-telling item sold to Genda at inflated price", "found_at": "Genda's house"}},
+   {"id": "o8", "name": "Delayed-ignition rig", "role": "instrument", "attrs": {"mechanism": "tissue and a match taped to a 100-watt bulb; the bulb's heat ignites the match roughly 10 minutes later", "purpose": "let Akira be off-site with a drinking alibi when each fire actually started"}},
+   {"id": "o9", "name": "Genda's phone bill", "role": "evidence", "attrs": {"amount_yen": 30000, "anomaly": "far higher than normal for a single man, consistent with a line kept open by an active wiretap"}},
+   {"id": "o10", "name": "Staged socks & shirt", "role": "evidence", "attrs": {"found_in": "Genda's trash can", "note": "muddy socks and a partially burnt shirt planted to make Genda believe he'd been sleepwalking and setting fires"}},
+   {"id": "o11", "name": "Staged shoe prints", "role": "evidence", "attrs": {"found_in": "ash on Genda's guest-room floor", "note": "match Genda's own shoes; made by Akira wearing them during a break-in"}},
+   {"id": "o12", "name": "Phone-line listening device", "role": "contraband", "attrs": {"discovered_via": "the abnormally high phone bill (o9)", "purpose": "let Akira eavesdrop on Genda and Soga's calls to plan the frame-up"}}
+  ],
+  "clues": [
+   {"id": "c1", "desc": "Base plate in Ryoko's hand matches the leg shape of the Okuho-chou horse figurine, tying the murder scene directly to the planted third fire.", "clue_type": "forensic"},
+   {"id": "c2", "desc": "Fires 2-4 share an identical MO (oil through a window plus a red horse figurine); fire 1's cause and figurine origin don't match that pattern at all -- it was a coincidental survivor, not part of a real series.", "clue_type": "behavioral"},
+   {"id": "c3", "desc": "Soga's vase-bug and Keiko's crystal-ball-bug were left untouched (their sellers would have reclaimed their own devices before suspicion could fall on them), but a third bug was hidden in Genda's phone line -- proving a separate eavesdropper who needed to monitor Genda and Soga, not sell to Genda.", "clue_type": "testimonial"}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "elder_sister_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "affair_with"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "treats"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l6"},
+  {"type": "was_at", "from": "p6", "to": "l7"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "method": "arson", "circumstance_tags": ["staged_alibi", "framed_third_party"]},
+  {"type": "burns", "from": "p2", "to": "l1", "circumstance_tags": ["staged_alibi"]},
+  {"type": "burns", "from": "p2", "to": "l4"},
+  {"type": "burns", "from": "p2", "to": "l5"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o8"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o3"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o4"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o10"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o11"},
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "located_in", "from": "o2", "to": "l4"},
+  {"type": "located_in", "from": "o3", "to": "l5"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "located_in", "from": "o8", "to": "l1"},
+  {"type": "located_in", "from": "o6", "to": "l2"},
+  {"type": "located_in", "from": "o7", "to": "l2"},
+  {"type": "located_in", "from": "o10", "to": "l2"},
+  {"type": "located_in", "from": "o11", "to": "l2"},
+  {"type": "located_in", "from": "o12", "to": "l2"},
+
+  {"type": "crafted_by", "from": "o1", "to": "p3"},
+  {"type": "crafted_by", "from": "o2", "to": "p3"},
+  {"type": "crafted_by", "from": "o3", "to": "p3"},
+  {"type": "crafted_by", "from": "o4", "to": "p3"},
+  {"type": "crafted_by", "from": "o5", "to": "p3"},
+
+  {"type": "holds", "from": "p1", "to": "o5"},
+
+  {"type": "manipulates", "from": "p2", "to": "p3", "circumstance_tags": ["cover_up", "gaslighting", "framed_third_party"]},
+  {"type": "sneaks_into", "from": "p2", "to": "l2", "circumstance_tags": ["break_in", "cover_up"]},
+  {"type": "plants", "from": "p2", "to": "o12"},
+
+  {"type": "sold_by", "from": "o6", "to": "p4"},
+  {"type": "sold_by", "from": "o7", "to": "p5"},
+  {"type": "owns", "from": "p3", "to": "o6"},
+  {"type": "owns", "from": "p3", "to": "o7"},
+
+  {"type": "implicates", "from": "o2", "to": "p3"},
+  {"type": "implicates", "from": "o3", "to": "p3"},
+  {"type": "implicates", "from": "o4", "to": "p3"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p4"},
+  {"type": "implicates", "from": "o7", "to": "p5"},
+  {"type": "implicates", "from": "o10", "to": "p3"},
+  {"type": "implicates", "from": "o11", "to": "p3"},
+  {"type": "implicates", "from": "o12", "to": "p2"},
+
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "regarding", "from": "c2", "to": "o4"},
+
+  {"type": "regarding", "from": "c3", "to": "o6"},
+  {"type": "regarding", "from": "c3", "to": "o7"},
+  {"type": "regarding", "from": "c3", "to": "o9"},
+  {"type": "regarding", "from": "c3", "to": "o12"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "wanted_wife_gone_for_divorce_and_own_clinic"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "affair_exposure_risk (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "financial_desperation (red herring)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

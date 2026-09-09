@@ -1,0 +1,204 @@
+{
+ "case_id": "ep804-805_conan_and_ebizos_kabuki_juhachiban_mystery",
+ "episode_number": "804-805",
+ "title": "Conan and Ebizo's Kabuki Juhachiban Mystery",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Conan_and_Ebizo%27s_Kabuki_J%C5%ABhachiban_Mystery",
+ "subtitle_source": ["subs_resolved/0804.txt", "subs_resolved/0805.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Ai Haibara, Inspector Megure, the Detective Boys) omitted by convention, per ep011. IMPORTANT fidelity note: both subtitle files were read in full, but subs_resolved/0805.txt cuts off mid Part 2 right after Conan is pulled out of the collapsing demolition building -- it never reaches the on-stage 'Sleeping Kogoro' reveal scene. Facts needed to close the case that are NOT present in the available transcript (Shioji secretly replacing the real mask with a fake on Hosoo's behalf, Kaneko blackmailing both Iwami and Hosoo with museum photographs, Hosoo's arranged sale of the mask to his client Richard, the exact mechanism of Kaneko's death, and Shioji's final confession to police) were sourced from the episode's wiki page at source_url and are flagged in the relevant node/edge attrs. Everything else (the staged brake sabotage, the mask unveiling, Takahashi's death made to look like a car-interior wipe-down/suicide, Iwami's collapse and hospitalization, Kogoro's on-the-record 'pattern 1/2/3' deduction and his direct accusation of Hosoo, Conan's last outgoing call being to Kaneko, the Ginza alley abduction, the demolition-building rescue) is drawn directly from dialogue. Old cases/ep804-805 file is corrected/expanded on several fronts: it kept event nodes (dropped here, schema v3 uses direct typed edges only); it listed only one crime victim (Hitoshi Takahashi) and omitted that Hosoo also murders Eiji Kaneko to silence him; it used only generic 'knows' edges for every suspect->victim link (replaced here with real typed relationship/employment/blackmail edges); and its single clue (a sleeve button in the engine) is kept but supplemented with two transcript-grounded comparative clues (the wiped-prints inconsistency Kogoro raises on-screen, and his own-logic contact-inconsistency that leads him to directly accuse Hosoo). The old file's murderer_id (Hosoo) is confirmed correct despite the episode's own suspect-list narration naming only Iwami, Kaneko, Yabusaki and Shioji as suspects and never listing Hosoo -- he is framed throughout Part 1 as the apparent target of an attempted murder (the rigged brakes), which is itself his own staged alibi. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ebizo Ichikawa",
+    "aliases": ["Ebizo Ichikawa XI"],
+    "roles": ["witness"],
+    "occupation": "Kabuki actor",
+    "attrs": {"detail": "hosts the production the mask was loaned to; rescues Conan from the collapsing demolition building"}
+   },
+   {
+    "id": "p2",
+    "name": "Takuya Hosoo",
+    "aliases": [],
+    "roles": ["victim", "suspect"],
+    "occupation": "HO Trading company president",
+    "attrs": {
+     "financial_trouble": "his trading company was failing",
+     "staged_as": "apparent target of an attempted murder via rigged brakes, which he in fact rigged himself",
+     "insurance_beneficiary_of": "a life insurance policy he secretly took out on his own secretary, Takahashi"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hitoshi Takahashi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Hosoo's secretary",
+    "attrs": {"routine": "cleaned Hosoo's car interior every night before leaving"}
+   },
+   {
+    "id": "p4",
+    "name": "Yoshiyuki Yabusaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kabuki troupe president/manager",
+    "attrs": {"detail": "the two-faced mask was entrusted to him before it was stolen"}
+   },
+   {
+    "id": "p5",
+    "name": "Shinnosuke Iwami",
+    "aliases": [],
+    "roles": ["suspect", "victim"],
+    "occupation": "playwright",
+    "attrs": {
+     "collapsed": "suddenly taken ill during rehearsal, hospitalized",
+     "suicide_attempt": "nearly jumped at the hospital, stopped by Ebizo; source: wiki (not in available transcript)",
+     "blackmail_leverage_wiki_sourced": "Kaneko had photographed him at a Kabuki museum and blackmailed him with it, though Kaneko knew he hadn't stolen the mask"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Eiji Kaneko",
+    "aliases": [],
+    "roles": ["suspect", "victim"],
+    "occupation": "cameraman",
+    "attrs": {
+     "missing_from_staff_meeting": "absent when Ebizo gathered the staff, right after Conan's last call went to him",
+     "wiki_sourced": "blackmailed Hosoo after learning of the mask theft and Takahashi's murder, kept backup copies for continued extortion, and abducted the young detective investigating the case; killed by Hosoo in the demolition building"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Yukari Shioji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "accounting secretary",
+    "attrs": {"wiki_sourced": "secretly replaced the genuine mask with a fake for Hosoo, then later reported him to Inspector Megure after learning he had murdered Takahashi"}
+   },
+   {
+    "id": "p8",
+    "name": "Takuzo Minowa",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "security guard",
+    "attrs": {"denied_theft_accusation": "questioned directly by Kogoro about the mask theft, denied any involvement"}
+   },
+   {
+    "id": "p9",
+    "name": "Sonoko Suzuki",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "socialite",
+    "attrs": {"detail": "witnessed the rigged car crash and called Kogoro Mouri in"}
+   },
+   {
+    "id": "p10",
+    "name": "Richard",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "American art buyer",
+    "attrs": {"wiki_sourced": "Hosoo's client, arranged to buy the genuine mask for one million yen via Haneda Airport; not shown on screen in the available transcript"}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Toto Paper Recycling Plant", "attrs": {"detail": "Hosoo's rigged-brake car crashed here into stacked boxes"}},
+   {"id": "l2", "name": "Kabukiza Theatre", "attrs": {"detail": "mask unveiling, rehearsals, and where Takahashi's body was found nearby"}},
+   {"id": "l3", "name": "Hosoo's residence garage", "attrs": {"detail": "Takahashi's nightly car-cleaning routine; 10 security cameras with 72-hour retention"}},
+   {"id": "l4", "name": "Ginza alley (3-chome)", "attrs": {"detail": "where the young detective investigating the case was abducted"}},
+   {"id": "l5", "name": "Demolition building basement", "attrs": {"detail": "Kaneko killed and buried in the collapse here; the genuine mask later recovered nearby"}},
+   {"id": "l6", "name": "Hospital treating Iwami", "attrs": {"wiki_sourced": "site of Iwami's near-suicide attempt, stopped by Ebizo"}},
+   {"id": "l7", "name": "Kabuki museum", "attrs": {"wiki_sourced": "where Kaneko photographed Iwami, later used as blackmail material"}},
+   {"id": "l8", "name": "HO Trading office", "attrs": {"detail": "Hosoo's stated alibi location the night before the rigged-brake incident"}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Two-faced mask (genuine)", "role": "evidence", "attrs": {"origin": "Kamakura-era, carved from leftover wood from Todaiji Temple's Great Buddhist Hall reconstruction", "value": "billions of yen", "purpose": "loaned by Hosoo to Ebizo for the February performance"}},
+   {"id": "o2", "name": "Fake replica mask", "role": "contraband", "attrs": {"wiki_sourced": "swapped in by Shioji to conceal the theft of the genuine mask"}},
+   {"id": "o3", "name": "Torn button", "role": "evidence", "attrs": {"wiki_sourced": "torn from Hosoo's shirt during the struggle with Takahashi, later found lodged in the van's engine"}},
+   {"id": "o4", "name": "Kaneko's blackmail photos", "role": "evidence", "attrs": {"wiki_sourced": "photos of Iwami taken at the Kabuki museum, plus backup copies Kaneko kept on his computer for continued extortion"}},
+   {"id": "o5", "name": "Life insurance policy", "role": "evidence", "attrs": {"detail": "secretly taken out by Hosoo on Takahashi's life"}},
+   {"id": "o6", "name": "Hosoo's sedan (rigged brakes)", "role": "tool", "attrs": {"detail": "brakes deliberately tampered with, per forensics; crashed at the recycling plant"}},
+   {"id": "o7", "name": "Residence security cameras", "role": "evidence", "attrs": {"count": 10, "retention": "72 hours on hard disk"}},
+   {"id": "o8", "name": "Van (Takahashi found dead in)", "role": "evidence", "attrs": {"detail": "interior and engine wiped clean of fingerprints; the mask's carrying case found empty beside the body"}}
+  ],
+  "clues": [
+   {"id": "c1", "desc": "Kogoro reasons a legitimate buyback offer for the stolen mask should have gone to Hosoo (its owner), not to Takahashi (the secretary) -- yet Hosoo denies anyone contacted him about it, which is what leads Kogoro to accuse Hosoo directly on the spot.", "clue_type": "behavioral"},
+   {"id": "c2", "desc": "The van's interior and engine had been wiped completely clean of fingerprints, but someone genuinely committing suicide would have no reason to erase their own prints first -- proves Takahashi's death was staged, not suicide.", "clue_type": "forensic"}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p7", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p7", "to": "p2", "relation_type": "romantically_involved_with"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "friend_of"},
+  {"type": "relationship", "from": "p9", "to": "p1", "relation_type": "acquainted_with"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "manages"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p4", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p8", "to": "p4", "relation_type": "employee_of"},
+
+  {"type": "sabotages", "from": "p2", "to": "o6", "circumstance_tags": ["staged_alibi", "red_herring"]},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p9", "to": "l1"},
+  {"type": "located_in", "from": "o6", "to": "l1"},
+
+  {"type": "was_at", "from": "p2", "to": "l8"},
+  {"type": "was_at", "from": "p7", "to": "l8"},
+
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "located_in", "from": "o7", "to": "l3"},
+  {"type": "regarding", "from": "o7", "to": "p3"},
+
+  {"type": "kills", "from": "p2", "to": "p3", "method": "strangulation", "circumstance_tags": ["staged_suicide", "cover_up"]},
+  {"type": "stages_suicide_of", "from": "p2", "to": "p3", "circumstance_tags": ["staged_suicide"]},
+  {"type": "leaves_evidence", "from": "p2", "to": "o3"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "owns", "from": "p2", "to": "o8"},
+  {"type": "located_in", "from": "o8", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p8", "to": "l2"},
+  {"type": "was_at", "from": "p9", "to": "l2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p3", "motive_type": "financial_insurance_fraud"},
+  {"type": "owns", "from": "p2", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+
+  {"type": "steals", "from": "p2", "to": "o1", "circumstance_tags": ["cover_up"]},
+  {"type": "swaps", "from": "p7", "to": "o1"},
+  {"type": "plants", "from": "p7", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+  {"type": "sells_to", "from": "p2", "to": "p10", "attrs_detail": "arranged sale of the genuine mask for one million yen via Haneda Airport; wiki-sourced, disrupted since the mask instead surfaces near Kaneko's body"},
+  {"type": "located_in", "from": "o1", "to": "l5"},
+
+  {"type": "was_at", "from": "p5", "to": "l7"},
+  {"type": "was_at", "from": "p6", "to": "l7"},
+  {"type": "owns", "from": "p6", "to": "o4"},
+  {"type": "regarding", "from": "o4", "to": "p5"},
+  {"type": "blackmails", "from": "p6", "to": "p5", "detail": "extorted Iwami using the museum photos despite knowing he hadn't stolen the mask", "circumstance_tags": ["unrelated_subplot"]},
+  {"type": "was_at", "from": "p5", "to": "l6"},
+  {"type": "was_at", "from": "p1", "to": "l6"},
+  {"type": "prevents_suicide_of", "from": "p1", "to": "p5"},
+
+  {"type": "blackmails", "from": "p6", "to": "p2", "detail": "extorted payment from Hosoo after learning of the mask theft and Takahashi's murder, kept backup copies for continued leverage", "circumstance_tags": ["cover_up"]},
+  {"type": "has_motive_against", "from": "p2", "to": "p6", "motive_type": "silence_blackmailer"},
+  {"type": "was_at", "from": "p6", "to": "l4"},
+  {"type": "kills", "from": "p2", "to": "p6", "method": "blunt force trauma", "circumstance_tags": ["cover_up"]},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p6", "to": "l5"},
+
+  {"type": "has_motive_against", "from": "p7", "to": "p2", "motive_type": "betrayal_after_learning_of_murder"},
+
+  {"type": "regarding", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o8"},
+  {"type": "implicates", "from": "c2", "to": "p2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

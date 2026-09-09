@@ -1,0 +1,730 @@
+{
+ "case_id": "ep716-717_dancing_demon_at_the_noh_mask_mansion",
+ "episode_number": "716-717",
+ "title": "Dancing Demon at the Noh Mask Mansion",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Dancing_Demon_at_the_Noh_Mask_Mansion",
+ "subtitle_source": [
+  "subs_resolved/0716.txt",
+  "subs_resolved/0717.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Kogoro, Ran, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file badly undercounted the case: it listed only one victim (Akaza) and treated the museum executive/manager/receptionist purely as background 'suspects' with generic `knows` edges, when the transcript shows all three (Mibu, Nagata, Seikanji) are a secret inheritance-murder conspiracy against curator Izumi, and the true culprit Hatsuho Toba (Izumi's nurse, and Mibu's estranged half-sister) murders all three of them plus Akaza, tries to murder Izumi himself (he survives -- the old file omits this entirely, never listing Izumi as a victim/target), and frames the dead Mibu for the attack on Izumi to fabricate a self-defense story, using a fake phone call and a demon mask sighted through a window as staged evidence. The old file's `s4`->`v1` murderer/victim pair is directionally correct (Toba did kill Akaza) but the case is really 4 murders + 1 attempted murder, not 1. Old file also collapsed the killing of Seikanji and Nagata into a single vague 'stabs the other two conspirators' event without naming a mechanism; transcript instead shows Toba improvising two different fake-weapon tricks (poisoned spoon underside; two skewers clamped with carved wood chips to fake a chisel wound) that are the actual solvable clues. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Jisaburo Izumi",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "Noh Mask Museum owner/curator",
+    "attrs": {
+     "outcome": "stabbed and pushed into a pond in his wheelchair, survives",
+     "saved_by": "plaited armor cord (odoshi) worn on the boy's suggestion blunted the stab"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Hatsuho Toba",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Izumi's live-in nurse",
+    "attrs": {
+     "true_role": "sole culprit; sent the warning letter herself to secure Mouri as an alibi witness",
+     "family": "Kodo Matsumoto's younger daughter, Moyono Mibu's half-sister"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Moyono Mibu",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "museum accountant/receptionist",
+    "attrs": {
+     "conspiracy_share": "inherits from Izumi, splits half with the other two conspirators",
+     "family": "Kodo Matsumoto's elder daughter, Hatsuho Toba's half-sister",
+     "died_of": "stabbed with a single iron skewer, framed to look like self-defense by Toba"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Seinosuke Nagata",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "museum manager",
+    "attrs": {
+     "financial_pressure": "embezzlement about to be discovered, facing dismissal",
+     "died_of": "killed by Toba during the fire"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Tatsuro Seikanji",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "museum executive",
+    "attrs": {
+     "financial_pressure": "heavy losses from worthless share investments, loan repayment due",
+     "died_of": "found dead near the kitchen, killed by Toba"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Naruya Akaza",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "promoter, acquaintance of Izumi's",
+    "attrs": {
+     "died_of": "poison, ate cheese from the contaminated portion of the shared plate"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kodo Matsumoto",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "Noh mask artist",
+    "attrs": {
+     "status": "deceased before the story begins; carved the museum's mask collection",
+     "family": "father of Mibu and Toba by different mothers"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Museum entrance/grounds",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Mansion god shrine",
+    "attrs": {
+     "detail": "ancestral shrine northwest of the grounds; site of the falling-lumber trap"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Exhibition gallery",
+    "attrs": {
+     "detail": "armor/odoshi and mask displays; site of the released hornets"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Fireplace dining room",
+    "attrs": {
+     "detail": "yokoza hearth room; storytelling scene and the poisoned lunch"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Office",
+    "attrs": {
+     "detail": "has the internal phone line; Ran and Conan hide here to call police"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Noh theater annex",
+    "attrs": {
+     "detail": "ladder-bridge fire escape; demon mask glimpsed through its window"
+    }
+   },
+   {
+    "id": "l7",
+    "name": "Kitchen",
+    "attrs": {
+     "detail": "Toba brings Izumi here during the fire; Seikanji and Mibu die here"
+    }
+   },
+   {
+    "id": "l8",
+    "name": "Pond",
+    "attrs": {
+     "detail": "outside near the kitchen; Izumi's wheelchair is knocked in during the stabbing"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned cheese spoon",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "poison applied only to the spoon's underside; the first scoop (Toba's taste) is clean, the remaining cheese scooped afterward is contaminated",
+     "cover_up": "the fallen spoon was swapped for a clean one while no one was looking, right after Akaza collapsed"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Iron skewers",
+    "role": "weapon",
+    "attrs": {
+     "use": "two skewers clamped together to fake a chisel-shaped wound on Izumi; a single skewer used to kill Mibu"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Carved wood chips",
+    "role": "tool",
+    "attrs": {
+     "detail": "V-notched chips Toba made herself to clamp the two skewers into a chisel-shaped cross-section",
+     "found": "left-behind evidence Toba didn't have time to dispose of"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Rigged falling lumber",
+    "role": "weapon",
+    "attrs": {
+     "detail": "staged accident near the shrine, meant to crush Izumi; the boy pulled him clear"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Released hornets",
+    "role": "weapon",
+    "attrs": {
+     "detail": "second staged accident in the exhibition gallery; Izumi is stung once"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Butter knife",
+    "role": "evidence",
+    "attrs": {
+     "cleared": "identical knife placed at every seat before guests chose seats freely, so it could not have targeted Akaza specifically"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Warning letter",
+    "role": "evidence",
+    "attrs": {
+     "content": "unsigned letter to the Mouri Detective Agency warning Izumi's life is in danger",
+     "true_purpose": "written by Toba to lure a witness who'd later vouch for her self-defense story"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Internal telephone",
+    "role": "tool",
+    "attrs": {
+     "trick": "an internal-only extension, not an outside line; used twice to fake calls -- once by Mibu pretending to call police, once by Toba staging the 'Stop it, Sis!' call after Mibu was already dead"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Odoshi armor cord",
+    "role": "tool",
+    "attrs": {
+     "detail": "sturdy plaited armor cord Izumi wraps around himself on the boy's suggestion; blunts the later stab"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Demoness Noh mask",
+    "role": "tool",
+    "attrs": {
+     "detail": "worn by Toba, glimpsed through a window during the fire so witnesses would think she was in danger elsewhere, not mid-killing-spree"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The 'call to police' and the later 'Stop it, Sis!' call both went out on the same internal-only extension -- the first faked by Mibu to stall, the second faked by Toba (after Mibu was already dead) to fabricate a timeline where Mibu was still alive attacking Izumi.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Izumi's wound looks chisel-shaped, but no chisel is missing -- only Toba's paired skewers, clamped into a V by her hand-carved wood chips, reproduce that exact cross-section, proving the 'chisel attack' pinned on Mibu was staged.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "half_sister_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p7",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p7",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p7",
+   "relation_type": "friend_of",
+   "detail": "cared for Kodo Matsumoto until his death; posthumously exhibited his masks"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "business_associate_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "co_conspirator_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "co_conspirator_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "co_conspirator_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "inheritance_conspiracy (would inherit and split proceeds with the other two)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "inheritance_conspiracy (embezzlement about to be exposed, needs the payout)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "inheritance_conspiracy (bad investments, debt repayment due)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p6",
+   "motive_type": "revenge (sold her late father's masks off cheaply overseas on Izumi's orders; made unwanted advances on her)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge (ordered the cut-rate sale of her father's masks; contempt for the museum itself)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p3",
+   "motive_type": "resentment (Mibu lived comfortably as Izumi's lover while Toba and her mother lived in poverty) plus eliminating a co-conspirator"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p4",
+   "motive_type": "eliminating a co-conspirator to keep the whole inheritance and cover the crime"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p5",
+   "motive_type": "eliminating a co-conspirator to keep the whole inheritance and cover the crime"
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p3",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_accident"
+   ],
+   "detail": "part of the trio's staged 'accidents': rigged falling lumber, released hornets, a failed roasting-chestnut prank"
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p4",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_accident"
+   ]
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p5",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_accident"
+   ]
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o9",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l4"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o10"
+  },
+  {
+   "type": "written_by",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "poisons",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p6",
+   "method": "poisoned cheese, ate the contaminated portion of the shared plate",
+   "circumstance_tags": [
+    "poisoning"
+   ]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o1",
+   "circumstance_tags": [
+    "evidence_tampering"
+   ],
+   "detail": "swapped the fallen spoon for a clean one before it could be examined"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o8",
+   "circumstance_tags": [
+    "stalling_tactic"
+   ],
+   "detail": "fake call to 'police' on the internal line to buy the conspiracy time"
+  },
+  {
+   "type": "burns",
+   "from": "p2",
+   "to": "l1",
+   "circumstance_tags": [
+    "arson",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p4",
+   "method": "killed during the fire she set",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p5",
+   "method": "found dead near the kitchen",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "assaults",
+   "from": "p2",
+   "to": "p1",
+   "method": "stabbed with two skewers clamped by carved wood chips to fake a chisel wound",
+   "outcome": "survives; wheelchair knocked into the pond before Toba could finish him off",
+   "circumstance_tags": [
+    "staged_evidence",
+    "attempted_murder"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p3",
+   "method": "stabbed from the front with a single skewer once Mibu's guard was down",
+   "circumstance_tags": [
+    "frame_job",
+    "staged_self_defense"
+   ]
+  },
+  {
+   "type": "frames",
+   "from": "p2",
+   "to": "p3",
+   "detail": "staged Mibu's body and the fake chisel wound on Izumi to make it look like Mibu attacked him and Toba killed her in legitimate self-defense"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o8",
+   "circumstance_tags": [
+    "staged_alibi"
+   ],
+   "detail": "faked the 'Stop it, Sis!' call after Mibu was already dead, to fabricate a timeline"
+  },
+  {
+   "type": "wears",
+   "from": "p2",
+   "to": "o10",
+   "detail": "let herself be glimpsed through a window mid-fire so witnesses would think she was in danger elsewhere"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o8"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l6"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l8"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l8"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

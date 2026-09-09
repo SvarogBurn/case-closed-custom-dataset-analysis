@@ -1,0 +1,457 @@
+{
+  "case_id": "ep651_conan_vs_heiji_deduction_battle",
+  "episode_number": "651",
+  "title": "Conan vs. Heiji, Deduction Battle Between the Detectives of the East and West",
+  "source_url": "https://www.detectiveconanworld.com/wiki/Conan_vs._Heiji,_Deduction_Battle_Between_the_Detectives_of_the_East_and_West",
+  "subtitle_source": [
+    "subs_resolved/0651.txt"
+  ],
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan/Shinichi, Heiji, Kazuha, Kogoro, Ran, Megure, and newly-introduced recurring character Sera Masumi) omitted by convention -- they are present across the corpus and contribute the investigative legwork/deduction but are not case-specific entities. FBI Agent Camel is kept as a person node (role: witness) since his on-scene testimony is the load-bearing evidence chain for this case, unlike the omitted core cast. Discrepancies vs. the old lower-fidelity file (cases/ep651...): (1) old file's e1 says Amakasu poisoned the company president 'years earlier' -- the transcript states it happened 'last week', a backstory murder in the immediate past, not a years-old cold case. (2) old file's e2 says a manager 'blackmails' Amakasu -- the transcript does not support blackmail; Shibamiya (the primary discoverer of the president's body, and Amakasu's childhood friend who had recommended him for the job) instead phones Amakasu at the restaurant urging him to turn himself in, which is what Amakasu silences him to prevent. (3) old file's culprit id (s2, Amakasu Tooru) is otherwise correct -- confirmed against the transcript's own deduction chain (dialect tells + handedness tell). Final ~2 minutes of the episode (letter from Wakamatsu's killer to Hattori Heiji) is a teaser/hook for the next story arc, not part of this episode's solved case; included minimally as backstory nodes since Wakamatsu is named and the letter is plot-consequential for the franchise, but no culprit is asserted for it since the sender's identity is deliberately withheld in-episode -- inventing one would violate the no-fabrication rule. case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Kengo Shibamiya",
+        "aliases": [],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "part-time worker, Saitama construction company",
+        "attrs": {
+          "died_of": "cyanide-laced candy placed in his mouth",
+          "found_body_of": "the Saitama company president (p5)",
+          "hometown": "Osaka (Kansai), told friends he was born and raised there",
+          "relation_to_culprit": "childhood friend of Amakasu; had recommended him for the job"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Tooru Amakasu",
+        "aliases": [
+          "Ama"
+        ],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "unstated (dining alone, no visible occupation given)",
+        "attrs": {
+          "age": 36,
+          "claimed_hometown": "Tokyo",
+          "actual_hometown": "Kansai (Osaka)",
+          "true_handedness": "right-handed",
+          "disguise": "held cigarette left-handed to avoid the hand he'd touched poison with"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Rakutoshi Sugai",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "unstated",
+        "attrs": {
+          "age": 39,
+          "residence": "condo in Beika City",
+          "claimed_hometown": "Tokyo",
+          "tell_explained_innocently": "heavy sweating was from spicy curry, ordered late because he'd been detained"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Sanpei Toujou",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "unstated",
+        "attrs": {
+          "age": 45,
+          "residence": "Beika City",
+          "claimed_hometown": "Tokyo, third-generation",
+          "tell_explained_innocently": "sweating attributed to being prone to perspiration; canceled dessert out of propriety, not guilt"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Saitama company president",
+        "aliases": [],
+        "roles": [
+          "victim",
+          "backstory_figure"
+        ],
+        "occupation": "company president, Saitama",
+        "attrs": {
+          "died_of": "cyanide-laced candy",
+          "circumstance": "killed while alone counting money from the office safe during lunch, a habit only known to insiders",
+          "robbed": "money from the office safe",
+          "staged_as": "robbery gone wrong, per initial local police theory"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Agent Camel",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "FBI special agent (on vacation in Japan)",
+        "attrs": {
+          "discovered": "Shibamiya's body in the restroom",
+          "overheard": "a phone call he misheard as a Kansai-dialect suicide confession",
+          "action_taken": "sealed the restroom and kept all customers inside the restaurant"
+        }
+      },
+      {
+        "id": "p7",
+        "name": "Kouhei Wakamatsu",
+        "aliases": [],
+        "roles": [
+          "victim",
+          "backstory_figure"
+        ],
+        "occupation": "design company president, Tokyo",
+        "attrs": {
+          "died": "murdered at his villa during his wife's birthday party, one month prior",
+          "local_police_theory": "encountered a burglar looking for money",
+          "note": "unresolved teaser subplot -- an anonymous letter from his presumed killer arrives at the end of this episode, addressed to Hattori Heiji; not part of this episode's solved case"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Danny's family restaurant",
+        "attrs": {}
+      },
+      {
+        "id": "l2",
+        "name": "Restroom, Danny's",
+        "attrs": {}
+      },
+      {
+        "id": "l3",
+        "name": "Saitama construction company office",
+        "attrs": {}
+      },
+      {
+        "id": "l4",
+        "name": "Wakamatsu's villa, Karuizawa",
+        "attrs": {}
+      },
+      {
+        "id": "l5",
+        "name": "Wakamatsu family home, Osaka",
+        "attrs": {}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Poisoned candy (Saitama)",
+        "role": "weapon",
+        "attrs": {
+          "poison": "cyanide",
+          "used_on": "the Saitama company president"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Poisoned candy (restroom)",
+        "role": "weapon",
+        "attrs": {
+          "poison": "cyanide",
+          "found": "one in the victim's mouth, more in his pocket"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Shibamiya's cell phone",
+        "role": "evidence",
+        "attrs": {
+          "fate": "submerged in the toilet, data lost",
+          "would_have_shown": "the call from/to Amakasu"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Amakasu's hand towel",
+        "role": "evidence",
+        "attrs": {
+          "used_to": "wipe cyanide residue off his hand",
+          "concealed_in": "his pocket, never left on the table"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Anonymous letter to Hattori",
+        "role": "evidence",
+        "attrs": {
+          "signed_as": "Wakamatsu Kouhei (deceased)",
+          "postmark": "ten days after Wakamatsu's murder, so not from him",
+          "content": "confesses to killing Wakamatsu, invites Heiji to meet at the victim's Osaka family home on the next full moon",
+          "enclosed": "a house key (o6)"
+        }
+      },
+      {
+        "id": "o6",
+        "name": "House key enclosed in letter",
+        "role": "evidence",
+        "attrs": {
+          "opens": "Wakamatsu family home, Osaka (l5)"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "c1",
+        "desc": "Amakasu called the salty miso soup and salt ramen 'spicy', where the other two suspects (and true Tokyoites) called the same dishes 'salty' -- a Kansai word-choice tell.",
+        "clue_type": "behavioral"
+      },
+      {
+        "id": "c2",
+        "desc": "Amakasu referred to his own way of speaking as 'Tokyo dialect' -- only Kansai people label their own speech that way; a real Tokyoite wouldn't name it at all.",
+        "clue_type": "behavioral"
+      },
+      {
+        "id": "c3",
+        "desc": "Amakasu held his cigarette in his left hand despite having placed his ramen chopsticks on his right -- proves he's actually right-handed and was avoiding the hand he'd touched poison with.",
+        "clue_type": "physical"
+      },
+      {
+        "id": "c4",
+        "desc": "Camel's quoted 'confession' -- 'jibun' and 'Abe-chan' -- reread in Kansai dialect: 'jibun' means 'you' not 'me', and 'Abe-chan' was actually 'ame-chan' (candy); the line reverses from a suicide confession into Shibamiya accusing and warning Amakasu.",
+        "clue_type": "testimonial"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p2",
+      "relation_type": "childhood_friend_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p5",
+      "relation_type": "prospective_employee_of"
+    },
+    {
+      "type": "recommends",
+      "from": "p1",
+      "to": "p2",
+      "detail": "recommended Amakasu for a job at p5's company"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l3"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l3"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p5",
+      "method": "cyanide-laced candy",
+      "circumstance_tags": [
+        "cover_up",
+        "robbery"
+      ]
+    },
+    {
+      "type": "owns",
+      "from": "p2",
+      "to": "o1"
+    },
+    {
+      "type": "confronts",
+      "from": "p1",
+      "to": "p2",
+      "detail": "phone call from his restaurant table urging Amakasu to turn himself in"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p1",
+      "method": "cyanide-laced candy placed in his mouth in the restroom",
+      "circumstance_tags": [
+        "cover_up",
+        "silences_witness"
+      ]
+    },
+    {
+      "type": "owns",
+      "from": "p2",
+      "to": "o2"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l1"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l2"
+    },
+    {
+      "type": "hides_evidence_in",
+      "from": "p2",
+      "to": "o4",
+      "detail": "wiped cyanide off his hand, then concealed the towel in his pocket"
+    },
+    {
+      "type": "implicates",
+      "from": "o4",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "c1",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "c1",
+      "to": "p3"
+    },
+    {
+      "type": "regarding",
+      "from": "c1",
+      "to": "p4"
+    },
+    {
+      "type": "implicates",
+      "from": "c1",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "c2",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "c2",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "c3",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "c3",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "c4",
+      "to": "p1"
+    },
+    {
+      "type": "regarding",
+      "from": "c4",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "c4",
+      "to": "p6"
+    },
+    {
+      "type": "implicates",
+      "from": "c4",
+      "to": "p2"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p5",
+      "motive_type": "financial_robbery"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "cover_up_silence_witness"
+    },
+    {
+      "type": "was_at",
+      "from": "p7",
+      "to": "l4"
+    },
+    {
+      "type": "owns",
+      "from": "p7",
+      "to": "l5"
+    },
+    {
+      "type": "regarding",
+      "from": "o5",
+      "to": "p7"
+    },
+    {
+      "type": "unlocks",
+      "from": "o6",
+      "to": "l5"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o3"
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p2",
+      "detail": "destroyed before it could reveal the call between Shibamiya and Amakasu"
+    }
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

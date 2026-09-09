@@ -1,0 +1,603 @@
+{
+  "case_id": "ep110-111_cooking_classroom_murder_case",
+  "episode_number": "110-111",
+  "title": "Cooking Classroom Murder Case",
+  "source_url": "https://www.detectiveconanworld.com/wiki/Cooking_Classroom_Murder_Case",
+  "subtitle_source": "/home/reo/Faks/GNN/case_closed/case_closed_dataset/subs_resolved/0110.txt, /home/reo/Faks/GNN/case_closed/case_closed_dataset/subs_resolved/0111.txt (641 dialogue lines combined, full two-episode transcript read)",
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan, Ran, Kogoro Mouri, Inspector Megure, Takagi, Sonoko) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved. case_type: murder. Kogoro wrongly accuses three of the four suspects in turn (Kazue, then implicitly Yuko/Nishitani via stated motives, then Kaoru) before Conan corrects him -- captured via has_motive_against edges on all four plus red-herring evidence objects/clues that were investigated and disproven (missing skewer, Kazue's notebook/hairbrush theory, Kazue's sewing kit blood test, Kaoru's syringe-needle/eye-patch theory).",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Michi Uemori",
+        "aliases": [],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "French cooking teacher, cookbook author",
+        "attrs": {
+          "died_of": "respiratory failure from a punctured right lung, stabbed with a sewing needle",
+          "published_recipe_book": "recent bestseller French recipe book; roughly one-third of its recipes originated with her assistant Yuko Komiyama but were published solely under Michi's name",
+          "personality": "strict, harshly critical teacher to all three of her students",
+          "widowed": "husband died of illness about a year before the case"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Yuko Komiyama",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "teaching assistant to Michi",
+        "attrs": {
+          "age": 24,
+          "recipes_exploited": "developed original recipes over five years as Michi's assistant; about a third of Michi's bestselling cookbook is actually her work",
+          "vision": "limited vision, can only see clearly with her right eye"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Kazue Yashiro",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "boutique owner",
+        "attrs": {
+          "age": 52,
+          "relationship_to_michi": "Michi's high school classmate for over 30 years",
+          "wears_dark_glasses_reason": "self-described age-related light sensitivity (this explanation held up; investigated as a possible night-vision aid but not disproven as false, just insufficient to prove guilt)"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Kaoru Uemori",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "Michi's daughter-in-law; former nurse",
+        "attrs": {
+          "age": 25,
+          "domestic_abuse_victim": true,
+          "eye_patch_reason": "claimed to be for a stye, actually worn to hide a black eye/bruise from her husband Tatsuhiko"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Hiroaki Nishitani",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "French chef, instructor at Michi's classroom",
+        "attrs": {
+          "age": 29,
+          "motive_summary": "Michi was cutting off his financial support after finding a more talented chef to back, ending his dream of opening his own restaurant; also resented Michi for exploiting Yuko's recipes",
+          "method_summary": "wore custom opaque contact lenses to see during the blackout he engineered, staged a fake outside break-in, stabbed Michi with a sewing needle gripped via a ring worn as a thimble, then destroyed and hid the evidence"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Michi Uemori's husband",
+        "aliases": [],
+        "roles": [
+          "victim",
+          "backstory_figure"
+        ],
+        "occupation": null,
+        "attrs": {
+          "died_of": "illness, about a year before the case",
+          "description": "described by Michi and others as a nice, gentle man"
+        }
+      },
+      {
+        "id": "p7",
+        "name": "Tatsuhiko Uemori",
+        "aliases": [],
+        "roles": [
+          "bystander",
+          "backstory_figure"
+        ],
+        "occupation": "elite businessman",
+        "attrs": {
+          "relationship": "Michi's son, Kaoru's husband",
+          "personality": "strong mother complex, doted on by Michi",
+          "alibi": "left for a business trip to Hawaii the morning of the murder",
+          "abusive": "hit Kaoru the night before the murder after she spoke badly of Michi"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Uemori household cooking classroom",
+        "attrs": {}
+      },
+      {
+        "id": "l2",
+        "name": "Electrical/breaker room, Uemori household",
+        "attrs": {}
+      },
+      {
+        "id": "l3",
+        "name": "Bathroom/hallway, Uemori household",
+        "attrs": {}
+      },
+      {
+        "id": "l4",
+        "name": "Back door and yard, Uemori household",
+        "attrs": {
+          "note": "back door was found unlocked, the sneak-in point"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Ice-and-wire timer rigged to the breaker switch",
+        "role": "tool",
+        "attrs": {
+          "mechanism": "a ring looped around the breaker switch, tied by wire to a weight resting on a block of ice; as the ice melted the weight pulled the ring down and flipped the switch off, precisely timing the blackout"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Custom opaque contact lenses",
+        "role": "tool",
+        "attrs": {
+          "origin": "specially ordered from a manufacturer in Europe during a training trip, since Japanese-market contacts are regulated and can't legally be made this dark, and off-the-shelf ones could have been traced",
+          "function": "let Nishitani see in near-darkness while appearing just as blind as everyone else before removing them",
+          "recovered_from": [
+            "Nishitani's cooking bowl",
+            "the floor near the bathroom window"
+          ]
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Sewing needle",
+        "role": "weapon",
+        "attrs": {
+          "dimensions": "approximately 5 cm long, under 1 mm in diameter",
+          "mechanism": "threaded through the eye and gripped via a ring worn as a thimble on the right index finger, giving enough purchase to both stab and extract it cleanly",
+          "thread_disposal": "the thread was burned afterward on the kitchen stove to destroy it",
+          "hidden_in": "Nishitani's ballpoint pen"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Nishitani's ring (used as a thimble)",
+        "role": "tool",
+        "attrs": {
+          "note": "worn openly while cooking; Conan noticed early on that both Michi and Nishitani cooked with rings on, unusual for professional technique"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Contact lens case",
+        "role": "evidence",
+        "attrs": {
+          "found_location": "on the ground behind the bathroom window, thrown out after Nishitani inserted the lenses"
+        }
+      },
+      {
+        "id": "o6",
+        "name": "Kitchen iron skewer set (missing one)",
+        "role": "evidence",
+        "attrs": {
+          "expected_count": 10,
+          "found_count": 9,
+          "resolution": "the missing skewer was later found being used as an improvised splint for Michi's finger from the night before, unrelated to the murder",
+          "note": "red herring; also ruled out because it has no grip/handle and its tip doesn't match the wound size"
+        }
+      },
+      {
+        "id": "o7",
+        "name": "Kazue's notebook",
+        "role": "evidence",
+        "attrs": {
+          "theory": "Conan initially suspected the missing skewer was hidden inside it, tucked under its metal binder rings -- nothing was found there",
+          "note": "red herring"
+        }
+      },
+      {
+        "id": "o8",
+        "name": "Kazue's hairbrush",
+        "role": "evidence",
+        "attrs": {
+          "theory": "initially suspected as a makeshift handle Kazue could have attached to the skewer to grip it for stabbing -- disproven once the real skewer turned up as a splint",
+          "note": "red herring"
+        }
+      },
+      {
+        "id": "o9",
+        "name": "Kazue's sewing kit",
+        "role": "evidence",
+        "attrs": {
+          "test_result": "no blood detected on any item in the kit",
+          "note": "ruled out as the murder weapon's source; red herring"
+        }
+      },
+      {
+        "id": "o10",
+        "name": "Michi Uemori's bestseller French recipe book",
+        "role": "evidence",
+        "attrs": {
+          "content": "roughly one-third of the recipes originated with Yuko Komiyama but were published solely under Michi's name",
+          "significance": "underlies both Yuko's red-herring motive and Nishitani's stated secondary motive"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "Fingerprint asymmetry on the classroom's front sliding door: the outside handle's prints are fully intact, but the inside handle's prints are partially rubbed away -- proving the door was deliberately opened from the inside (likely using a cloth) to fake an outside intruder's entry, rather than genuinely being opened by someone entering from outside.",
+        "clue_type": "forensic"
+      },
+      {
+        "id": "cB",
+        "desc": "The stab wound was 5 cm deep and under 1 mm in diameter: too wide/handle-less to match the iron cooking skewers, and inconsistent with a syringe needle (which would have left a visible blood trail along the puncture channel given how thin it is), but matches a sewing needle exactly.",
+        "clue_type": "forensic"
+      },
+      {
+        "id": "cC",
+        "desc": "Shortly before class, in the dim hallway near the bathroom, Nishitani mistook one bystander for Yuko Komiyama despite them looking nothing alike in good light -- yet minutes later, in the brightly lit classroom, he was as precise and skilled as ever. The mismatch between his hallway confusion and classroom precision is consistent with eyes still adjusting after inserting tinted contact lenses just beforehand.",
+        "clue_type": "behavioral"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p3",
+      "relation_type": "classmate",
+      "symmetric": true
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p6",
+      "relation_type": "former_lover_of",
+      "detail": "Kazue and Michi's husband dated 27 years ago; Michi ultimately married him instead, and Kazue stayed single ever since"
+    },
+    {
+      "type": "relationship",
+      "from": "p6",
+      "to": "p1",
+      "relation_type": "spouse_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p7",
+      "to": "p1",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p7",
+      "to": "p4",
+      "relation_type": "spouse_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p1",
+      "relation_type": "daughter_in_law_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p1",
+      "relation_type": "employee_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p5",
+      "to": "p1",
+      "relation_type": "financially_supported_by"
+    },
+    {
+      "type": "relationship",
+      "from": "p5",
+      "to": "p2",
+      "relation_type": "romantic_interest_in",
+      "detail": "unspoken/one-sided feelings; Yuko says she knew but never wanted him to act on them this way"
+    },
+    {
+      "type": "assaults",
+      "from": "p7",
+      "to": "p4",
+      "temporal_frame": "backstory",
+      "years_before_present": 0,
+      "circumstance_tags": [
+        "domestic_violence"
+      ],
+      "detail": "Tatsuhiko hit Kaoru the night before the murder after she spoke badly of his mother Michi"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l4",
+      "order": 1,
+      "temporal_frame": "present",
+      "detail": "sneaks in through the unlocked back door before class begins"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l2",
+      "order": 1,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "installs",
+      "from": "p5",
+      "to": "o1",
+      "order": 1,
+      "temporal_frame": "present",
+      "detail": "builds and rigs the ice-and-wire breaker timer"
+    },
+    {
+      "type": "located_in",
+      "from": "o1",
+      "to": "l2"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l3",
+      "order": 2,
+      "temporal_frame": "present",
+      "detail": "inserts the custom opaque contact lenses about 10 minutes before class"
+    },
+    {
+      "type": "uses",
+      "from": "p5",
+      "to": "o2",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "discards",
+      "from": "p5",
+      "to": "o5",
+      "order": 2,
+      "temporal_frame": "present",
+      "detail": "throws the empty lens case out the bathroom window"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l1",
+      "order": 3,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 3,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1",
+      "order": 3,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1",
+      "order": 3,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l1",
+      "order": 3,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "disables",
+      "from": "o1",
+      "to": "l2",
+      "order": 4,
+      "temporal_frame": "present",
+      "detail": "the ice melts, the weight pulls the ring, the breaker trips off -- blackout begins"
+    },
+    {
+      "type": "removes",
+      "from": "p5",
+      "to": "o2",
+      "order": 5,
+      "temporal_frame": "present",
+      "detail": "removes the contacts the instant the blackout begins, since his eyes are already adjusted to the dark"
+    },
+    {
+      "type": "fakes_intrusion_at",
+      "from": "p5",
+      "to": "l1",
+      "order": 5,
+      "temporal_frame": "present",
+      "circumstance_tags": [
+        "red_herring",
+        "staged_evidence"
+      ],
+      "detail": "opens the front sliding door from the inside using a handkerchief, to make it look like an outside attacker just entered"
+    },
+    {
+      "type": "kills",
+      "from": "p5",
+      "to": "p1",
+      "order": 5,
+      "temporal_frame": "present",
+      "method": "stabbed in the back with a sewing needle, gripped via a ring worn as a thimble, piercing the right lung",
+      "circumstance_tags": [
+        "locked_room",
+        "staged_intrusion"
+      ]
+    },
+    {
+      "type": "uses",
+      "from": "p5",
+      "to": "o3",
+      "order": 5,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "uses",
+      "from": "p5",
+      "to": "o4",
+      "order": 5,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "hides_contraband_in",
+      "from": "p5",
+      "to": "o3",
+      "order": 6,
+      "temporal_frame": "present",
+      "detail": "hides the needle inside his ballpoint pen after the lights come back on"
+    },
+    {
+      "type": "owns",
+      "from": "p3",
+      "to": "o9"
+    },
+    {
+      "type": "owns",
+      "from": "p5",
+      "to": "o4"
+    },
+    {
+      "type": "written_by",
+      "from": "o10",
+      "to": "p1"
+    },
+    {
+      "type": "regarding",
+      "from": "o10",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o2",
+      "to": "p5"
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p5"
+    },
+    {
+      "type": "implicates",
+      "from": "o4",
+      "to": "p5"
+    },
+    {
+      "type": "implicates",
+      "from": "o5",
+      "to": "p5"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "l1"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "p2"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "p3"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "p4"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "p5"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o3"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o6"
+    },
+    {
+      "type": "implicates",
+      "from": "cB",
+      "to": "p5"
+    },
+    {
+      "type": "regarding",
+      "from": "cC",
+      "to": "l3"
+    },
+    {
+      "type": "regarding",
+      "from": "cC",
+      "to": "l1"
+    },
+    {
+      "type": "implicates",
+      "from": "cC",
+      "to": "p5"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p5",
+      "to": "p1",
+      "motive_type": "financial cutoff and resentment over Michi exploiting Yuko's recipes (true motive)"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "recipe theft resentment (red herring, motive raised by Kogoro)"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p3",
+      "to": "p1",
+      "motive_type": "decades-old resentment that Michi married the man Kazue loved (red herring, accused by Kogoro)"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p4",
+      "to": "p1",
+      "motive_type": "in-law strife as an abused daughter-in-law (red herring, accused by Kogoro)"
+    },
+    {
+      "type": "owns",
+      "from": "p3",
+      "to": "o7"
+    },
+    {
+      "type": "owns",
+      "from": "p3",
+      "to": "o8"
+    }
+  ],
+  "label": {
+    "murderer_id": "p5"
+  }
+}

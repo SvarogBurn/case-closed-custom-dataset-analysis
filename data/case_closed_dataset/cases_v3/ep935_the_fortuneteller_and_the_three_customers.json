@@ -1,0 +1,225 @@
+{
+ "case_id": "ep935_the_fortuneteller_and_the_three_customers",
+ "episode_number": "935",
+ "title": "The Fortuneteller and the Three Customers",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Fortuneteller_and_the_Three_Customers",
+ "subtitle_source": "subs_resolved/0935.txt (394 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Inspector Megure) omitted by convention, except where Kogoro's name is used as a plot device (the culprit impersonated him by phone to lure the victim), which is captured as an attribute/detail on the relevant edges rather than a node. case_type: murder (with a deliberate self-implicating frame-up of two innocent people as the culprit's defining trick). Old low-fidelity file (`cases/ep935_...json`) correctly identified Sazanami Ryoichi as the culprit and the financial motive -- no correction needed there. However it was missing substantial structure found on a full read: (1) the actual murder location (Shibahama Park) and murder weapon (rope) distinct from the body-dump site (Baba mansion); (2) the secretary Ogu Masaya who discovered the body and was cleared; (3) the frame-up mechanism itself -- Sazanami stole Kanawa's lighter and Endo's brooch and planted them at the two scenes, forged a note in the victim's name naming all three suspects, used his own (falsely reported stolen) car to move the body, and made an anonymous tip call in a disguised voice to steer police to the park -- all of which is how he was ultimately identified (timestamp mismatch on the forged note vs. time of death; forensic voice match on the tip call). It also wrongly implied via `was_at` that all three suspects were physically present at the mansion; only Sazanami ever visited either scene -- Kanawa and Endo were kept alibi-less at their own homes by deceptive phone calls and implicated only through planted stolen items, corrected here.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Baba Sadako",
+    "aliases": ["Barbara Sadako"],
+    "roles": ["victim"],
+    "occupation": "medium and fortune teller",
+    "attrs": {
+     "age": 62,
+     "died_of": "strangulation with rope",
+     "business": "runs a fortune-telling shop near Shibahama Station under the name Barbara Sadako"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ogu Masaya",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Baba Sadako's secretary",
+    "attrs": {
+     "age": 26,
+     "detail": "discovered the body at the Baba mansion; alibi checked and cleared by police"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kanawa Shinsuke",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unspecified (formerly employed by a construction company)",
+    "attrs": {
+     "age": 37,
+     "detail": "framed by the real culprit: his stolen lighter was planted at the murder scene; kept alibi-less at home by a deceptive phone call the night of the murder",
+     "grievance": "bought a house on Sadako's advised lucky direction; his company then shut down and his wife left him"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Endo Fukami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "unspecified",
+    "attrs": {
+     "age": 29,
+     "detail": "framed by the real culprit: her stolen brooch was planted beside the body at the mansion; kept alibi-less at home by a deceptive phone call the night of the murder",
+     "grievance": "married a man on Sadako's romantic fortune-telling advice, and he swindled her; admits she had lied to Sadako about the man"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Sazanami Ryoichi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "former restaurant owner",
+    "attrs": {
+     "age": 33,
+     "grievance": "quit his job and opened the restaurant \"Alien Ramen\" on Sadako's advised timing; it failed and left him in debt",
+     "character_note": "described by Conan as simultaneously weak-willed (relied on fortune-telling for major life decisions) and unusually confident, the trait that explains both the elaborate frame-up and his belief it would work"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Baba mansion (study)",
+    "attrs": {"role_in_case": "body dump site; not the actual murder scene"}
+   },
+   {
+    "id": "l2",
+    "name": "Barbara Sadako's fortune-telling shop",
+    "attrs": {"note": "near Shibahama Station"}
+   },
+   {
+    "id": "l3",
+    "name": "Shibahama Park",
+    "attrs": {"role_in_case": "actual murder scene; rope and Sadako's business card case recovered here"}
+   },
+   {
+    "id": "l4",
+    "name": "Kanawa Shinsuke's home",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Endo Fukami's home",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Rope",
+    "role": "weapon",
+    "attrs": {"used_at": "Shibahama Park"}
+   },
+   {
+    "id": "o2",
+    "name": "Sadako's business card case",
+    "role": "evidence",
+    "attrs": {"found_at": "Shibahama Park"}
+   },
+   {
+    "id": "o3",
+    "name": "Kanawa's lighter",
+    "role": "evidence",
+    "attrs": {"stolen_by": "Sazanami, likely when Kanawa went to complain to Sadako", "planted_at": "Shibahama Park (murder scene)"}
+   },
+   {
+    "id": "o4",
+    "name": "Endo's brooch",
+    "role": "evidence",
+    "attrs": {"stolen_by": "Sazanami", "planted_at": "Baba mansion, beside the body"}
+   },
+   {
+    "id": "o5",
+    "name": "Sazanami's car",
+    "role": "tool",
+    "attrs": {"staging_flaw": "reported stolen by Sazanami two days prior, then used by him to transport the body to the mansion and abandoned nearby"}
+   },
+   {
+    "id": "o6",
+    "name": "Forged note naming K, E, S",
+    "role": "evidence",
+    "attrs": {
+     "text": "\"I was nearly killed again. Which one of those three did it? Is it K? Is it E? Is it S?\"",
+     "created_after": "10PM the night of the murder",
+     "staging_flaw": "victim's confirmed time of death was 8-9PM, so she could not have written it -- proves it was planted afterward"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Anonymous tip phone recording",
+    "role": "evidence",
+    "attrs": {
+     "content": "disguised-voice call reporting a suspicious figure packing something large into a car in Shibahama Park",
+     "forensic_result": "voice-matched to Sazanami Ryoichi"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Forged note is timestamped after 10PM, but the victim died by 9PM -- she couldn't have written it, so it was planted post-mortem to implicate all three suspects at once.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "The anonymous tip call that led police to the real murder scene forensically voice-matches Sazanami, who could only know that location if he was the culprit.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Kanawa and Endo both concede their own choices contributed to their misfortune, while Sazanami alone still insists Sadako's advice is entirely to blame -- leaving him as the only one with an unresolved, self-justifying grudge.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "client_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "client_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "client_of"},
+
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3", "detail": "lured here the night of the murder"},
+  {"type": "was_at", "from": "p1", "to": "l1", "detail": "her own home; body found here after being moved"},
+  {"type": "was_at", "from": "p2", "to": "l1", "detail": "discovered the body"},
+  {"type": "was_at", "from": "p5", "to": "l3", "detail": "murdered the victim here"},
+  {"type": "was_at", "from": "p5", "to": "l1", "detail": "transported and left the body here"},
+  {"type": "was_at", "from": "p3", "to": "l4", "detail": "kept home alone, alibi-less, by a deceptive call"},
+  {"type": "was_at", "from": "p4", "to": "l5", "detail": "kept home alone, alibi-less, by a deceptive call"},
+
+  {"type": "deceives", "from": "p5", "to": "p1", "detail": "called Sadako impersonating detective Mori Kogoro to lure her to Shibahama Park"},
+  {"type": "deceives", "from": "p5", "to": "p3", "detail": "called Kanawa claiming Sadako would visit that night to apologize, ensuring he stayed home with no alibi"},
+  {"type": "deceives", "from": "p5", "to": "p4", "detail": "called Endo with the same false message, ensuring she stayed home with no alibi"},
+
+  {"type": "kills", "from": "p5", "to": "p1", "method": "strangulation with rope"},
+  {"type": "drags_body_of", "from": "p5", "to": "p1", "detail": "moved the body by car from Shibahama Park to the Baba mansion study"},
+
+  {"type": "owns", "from": "p5", "to": "o5"},
+  {"type": "owns", "from": "p3", "to": "o3"},
+  {"type": "owns", "from": "p4", "to": "o4"},
+
+  {"type": "stages_alibi_using", "from": "p5", "to": "o5", "detail": "falsely reported his own car stolen two days before the murder"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o3", "detail": "planted Kanawa's stolen lighter at the park murder scene"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o4", "detail": "planted Endo's stolen brooch beside the body at the mansion"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o6", "detail": "forged the note naming all three suspects and left it for police to find"},
+  {"type": "creates", "from": "p5", "to": "o7", "detail": "made the disguised-voice anonymous tip call directing police to Shibahama Park"},
+
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "located_in", "from": "o2", "to": "l3"},
+
+  {"type": "implicates", "from": "o3", "to": "p3"},
+  {"type": "implicates", "from": "o4", "to": "p4"},
+  {"type": "implicates", "from": "o6", "to": "p3"},
+  {"type": "implicates", "from": "o6", "to": "p4"},
+  {"type": "implicates", "from": "o6", "to": "p5"},
+  {"type": "implicates", "from": "o7", "to": "p5"},
+
+  {"type": "regarding", "from": "c1", "to": "o6"},
+  {"type": "implicates", "from": "c1", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "o7"},
+  {"type": "implicates", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c3", "to": "p3"},
+  {"type": "regarding", "from": "c3", "to": "p4"},
+  {"type": "implicates", "from": "c3", "to": "p5"},
+
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "financial (blamed Sadako's business-timing advice for the failure of his restaurant and his resulting debt)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "financial/marital (red herring: blamed Sadako's lucky-direction advice for his company's collapse and his divorce)", "circumstance_tags": ["red_herring"]},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "romantic (red herring: blamed Sadako's romantic fortune for her marrying a man who swindled her)", "circumstance_tags": ["red_herring"]}
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

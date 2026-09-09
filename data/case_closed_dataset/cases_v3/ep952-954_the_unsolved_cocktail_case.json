@@ -1,0 +1,325 @@
+{
+ "case_id": "ep952-954_the_unsolved_cocktail_case",
+ "episode_number": "952-954",
+ "title": "The Unsolved Cocktail Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Unsolved_Cocktail_Case",
+ "subtitle_source": "subs_resolved/0952.txt, subs_resolved/0954.txt (686 dialogue lines combined, full transcript read; subs_resolved/0953.txt does not exist in the archive -- this is a 3-episode arc but only parts 1 and 3 have a resolved transcript, part 2 is a gap)",
+ "schema_version": "v3",
+ "notes": "case_type: attempted_murder (poisoning). Recurring detective-cast nodes (Kogoro Mouri, Ran, Conan, Amuro/Bourbon, Takagi, Megure) omitted by convention even though several perform actions load-bearing to the mechanism (Kogoro accidentally steps on and breaks Fukamachi's glasses; Conan deduces the phone-zoom trick) -- those mechanism details are preserved as object attrs/clue text instead of via detective-cast edges. Missing part 2 (episode 953) has no transcript in subs_resolved/; nothing from it could be verified, so this file is built entirely from parts 1 and 3, which together contain the full setup, the poisoning, and the complete solution/confession, so no case-relevant gap is believed to exist. The old cases/ep952-954_... file already had the correct culprit (Fukamachi, the butler) and the correct victim (Yuri Asakura, who survives) -- no culprit/clue reversal found on this rebuild. Corrections made: (1) location name fixed from 'Black Bunny's Club' to 'Black Rabbit Restaurant' (the name used throughout the transcript); (2) old file had zero victim nodes and only 1 clue; this rebuild adds Yuri Asakura as a proper victim node (survives -- roles do not include 'deceased'), adds the reveal that Yuri is Morooka's secret daughter (the actual motive-shaping fact, absent from the old file entirely), and expands from 1 to 3 clue nodes to capture the behavioral-elimination clue, the phone-zoom/fake-nail identification clue, and the chopstick-grip parentage clue documented in the transcript. Threatening letter, phones, fake nail, and broken glasses were not represented as objects in the old file at all.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Fukamachi Atsufumi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "butler",
+    "attrs": {
+     "age": 72,
+     "employed_by": "Morooka's late wife's family, for a long time",
+     "true_motive": "devotion to his late mistress (Morooka's wife, dead under six months); wanted to stop Morooka's visible infatuation with a young club employee",
+     "outcome": "confesses on the spot after being confronted with the mechanism and the phone evidence"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Morooka Gunzo",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "wealthy businessman",
+    "attrs": {
+     "age": 50,
+     "received_threatening_letter": true,
+     "cover_story_for_visits": "repeatedly lost/gained weight and injured himself to justify frequent suit alterations at the shop next to the club, so he had an excuse to visit and see Yuri",
+     "revealed_relationship": "Yuri Asakura's biological father, from an elopement and four years living in Tottori; did not know she was employed at the club as anything other than a girl he was infatuated with until told at the end"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Asakura Yuri",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "bunny girl club employee",
+    "attrs": {
+     "age": 25,
+     "poisoned_by": "arsenic in her champagne glass",
+     "survives": true,
+     "trademark": "always wears fake nails with a lily design",
+     "revealed_parentage": "secret daughter of Morooka Gunzo"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Murakami Sana",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "bunny girl club employee",
+    "attrs": {
+     "age": 28,
+     "accused_motive_detail": "would become the club's top earner (and get a bonus) if Yuri died; also said to be struggling to pay for her father's surgery",
+     "cleared": true
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Black Rabbit Restaurant",
+    "attrs": {
+     "type": "bunny girl club styled as a restaurant",
+     "adjacent_to": "a clothing/tailor shop Morooka used as his cover for visiting"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Yuri's champagne glass",
+    "role": "weapon",
+    "attrs": {
+     "poison": "arsenic",
+     "shape": "skinny champagne glass, distinct from Morooka's standard highball glass"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Threatening letter",
+    "role": "evidence",
+    "attrs": {
+     "made_from": "clippings",
+     "content": "If you want to live, stay away from the Black Rabbit Restaurant.",
+     "purpose": "sent by Fukamachi to scare Morooka away from the club after Yuri refused a payoff"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Yuri's fake nail (lily design)",
+    "role": "evidence",
+    "attrs": {
+     "used_as": "a visual marker the culprit used to identify her glass without normal vision"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Fukamachi's alarm phone",
+    "role": "tool",
+    "attrs": {
+     "trick": "one of two phones Fukamachi carried; secretly triggered to sound a loud alarm as a diversion so Yuri would set her glass on the table to check for an earthquake"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Fukamachi's camera-zoom phone",
+    "role": "tool",
+    "attrs": {
+     "trick": "the second of Fukamachi's two phones; its camera zoom was used like a magnifying glass on Yuri's lily fake nail to identify her glass despite his glasses being broken"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Fukamachi's broken glasses",
+    "role": "tool",
+    "attrs": {
+     "staging_flaw": "Fukamachi engineered the break himself -- he placed the sauce out of Kogoro's reach and dropped his own glasses near Kogoro's feet so they'd be stepped on, giving him a pretext to send Kogoro to the car alone and distance himself from suspicion; instead it put him next to Yuri's glass at the critical moment and backfired"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Neither Morooka nor Murakami showed the anxious behavior expected of the poisoner (checking the time, glancing back at the restaurant) after leaving the table, while Fukamachi stayed seated beside Yuri's glass the entire time -- eliminates the other two and points to Fukamachi.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cB",
+    "desc": "Fukamachi's glasses were broken before Yuri set her glass down, yet he could still pick her glass out -- because he used a second phone's camera zoom as a magnifying-glass substitute, targeting her signature lily fake nail.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Yuri and Morooka both hold their pointer finger away from their chopsticks in the same unusual way -- a learned childhood habit, not coincidence, proving Yuri is Morooka's daughter.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "protective_devotion_to_deceased_mistress"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p3",
+   "motive_type": "financial_gain (accused by Fukamachi as a counter-accusation; red herring)",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "threatens",
+   "from": "p1",
+   "to": "p2"
+  },
+  {
+   "type": "written_by",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "addressed_to",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "poisons",
+   "from": "p1",
+   "to": "p3",
+   "method": "arsenic in champagne glass",
+   "circumstance_tags": [
+    "attempted_murder",
+    "mistaken_intent"
+   ]
+  },
+  {
+   "type": "poisons",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p1"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

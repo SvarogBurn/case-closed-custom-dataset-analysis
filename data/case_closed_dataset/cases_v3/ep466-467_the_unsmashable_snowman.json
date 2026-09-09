@@ -1,0 +1,501 @@
+{
+ "case_id": "ep466-467_the_unsmashable_snowman",
+ "episode_number": "466-467",
+ "title": "The Unsmashable Snowman",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Unsmashable_Snowman",
+ "subtitle_source": [
+  "subs_resolved/0466.txt",
+  "subs_resolved/0467.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Detective Boys, Conan, Haibara, Agasa, Kogoro, Ran) omitted by convention, except where their prop actions matter to the physical evidence (the kids' own snowman and detective badges are kept as object nodes since they are load-bearing clues, but the kids themselves are not modeled as person nodes). The episode opens with several minutes of unrelated serialized Black Organization subplot (Mizunashi Rena, Hondou Eisuke, Vermouth) that has no bearing on the snowman murder and is not represented here. Old cases/ file correctly identified Itabashi Kazuya as the culprit -- no culprit discrepancy. However the old file's single clue/event pair conflates two distinct physical snowmen into one: Itabashi actually used ONE salt-hardened snowman/snowball to conceal Sakuko's body and roll it into the lake (which then melted and was gone), and built a SECOND, separate decoy snowman afterward -- using stolen fruit/face parts cannibalized from the Detective Boys' own snowman -- to make it look like nothing had happened to his 'in-progress' project. The Detective Boys' own hidden badges (planted in their snowman as a prank) ended up inside this second, rebuilt snowman, which is the actual physical proof of the reuse trick, not proof of where the body was hidden. This file models both snowmen as separate object nodes. Motive: Sakuko was in love with Itabashi, who loved fellow student Onoue Asaka; out of jealousy Sakuko manipulated Asaka, an accomplished skier with no snowboarding experience, into snowboarding, causing a leg injury that (per Sakuko's own drunken confession, overheard by Kiyama and Itabashi) she had engineered on purpose. Itabashi killed Sakuko to avenge Asaka and deliberately kept Kiyama from finding out, believing Kiyama would have taken more drastic revenge himself. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kokura Sakuko",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "4th-year art college student",
+    "attrs": {
+     "age": 22,
+     "cause_of_death": "drowning"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kiyama Tanji",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "university art student",
+    "attrs": {
+     "age": 22,
+     "old_leg_injury": "unrelated pre-existing leg injury from a skiing accident the prior year, used skis (not a snowboard) at the resort",
+     "alibi": "in his own room at the lodge"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Onoue Asaka",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "university art student",
+    "attrs": {
+     "age": 22,
+     "leg_injury": "leg injured while snowboarding, a sport she was inexperienced at; per Sakuko's own drunken confession this was engineered deliberately by Sakuko",
+     "alibi": "in her own room at the lodge"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Itabashi Kazuya",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "university art student, sculptor of the group's graduation snow model",
+    "attrs": {
+     "age": 22,
+     "alibi": "making a practice snowman behind the lodge",
+     "skill": "only member skilled enough to reshape/reassemble the group's snow model from memory"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yamamura",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "local police officer",
+    "attrs": {
+     "role_in_case": "leads the on-site investigation, initially insists it was an accident"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Lake below the cliff",
+    "attrs": {
+     "note": "kept from freezing by hot-spring inflow"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Cliff clearing behind the lodge",
+    "attrs": {
+     "note": "broken fence at the cliff edge; site of both snowmen and the murder-scene reconstruction"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Ski lodge",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Itabashi's room",
+    "attrs": {
+     "note": "has the sink used to drown Sakuko"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Sakuko's rented snowboard and boots",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "put on Sakuko post-mortem to fake a snowboarding accident; she was found with no gloves, hat, or goggles"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Practice snowman (murder snowball)",
+    "role": "tool",
+    "attrs": {
+     "hardened_with": "salt -- lowers the snow's freezing point, which then re-freezes and hardens the surrounding snow",
+     "used_to": "conceal Sakuko's body and her snowboard, then rolled off the cliff into the lake",
+     "fate": "melted in the unusually warm, hot-spring-fed lake, leaving the body floating"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Detective Boys' snowman",
+    "role": "evidence",
+    "attrs": {
+     "built_at": "cliff clearing, same afternoon",
+     "hidden_contents": "the Detective Boys' own detective badges, buried in its body as a prank",
+     "note": "its head/fruit face parts were secretly stolen by Itabashi to rebuild his own snowman quickly"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Rebuilt practice snowman",
+    "role": "evidence",
+    "attrs": {
+     "assembled_from": "fruit/face parts cannibalized from the Detective Boys' snowman",
+     "hardened_with": "salt, to match the original's texture",
+     "purpose": "decoy, built quickly so no one would notice the original had been used up",
+     "giveaway": "Itabashi was not out of breath afterward, implying he reused a half-finished model rather than building one from scratch in under an hour"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Detective badges",
+    "role": "evidence",
+    "attrs": {
+     "expected_location": "inside the Detective Boys' own snowman",
+     "found_location": "inside Itabashi's rebuilt snowman instead"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Sink in Itabashi's room",
+    "role": "weapon",
+    "attrs": {
+     "used_for": "drowning Sakuko in lake water Itabashi had prepared beforehand"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Detective Boys' badges, hidden inside their own snowman as a prank, are instead heard jingling inside Itabashi's rebuilt snowman -- proves he dismantled and reused their snowman's parts.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Genta gets a nosebleed and tastes salt after falling near Itabashi's snowman spot, unlike ordinary snow elsewhere -- reveals that patch was chemically hardened with salt.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Autopsy finds lake water, not ordinary water, in Sakuko's stomach, yet no route existed for her to have drowned at the lake itself -- someone must have brought lake water into a room to drown her.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c4",
+    "desc": "Sakuko is found without gloves, hat, or goggles despite an apparent snowboarding accident -- inconsistent with someone actually dressed to snowboard, suggesting the gear was added after death.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "in_love_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "in_love_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "in_love_with"
+  },
+  {
+   "type": "confesses_to",
+   "from": "p1",
+   "to": "p2",
+   "detail": "drunken admission of having deliberately engineered Asaka's snowboarding leg injury"
+  },
+  {
+   "type": "confesses_to",
+   "from": "p1",
+   "to": "p4",
+   "detail": "drunken admission of having deliberately engineered Asaka's snowboarding leg injury"
+  },
+  {
+   "type": "injures",
+   "from": "p1",
+   "to": "p3",
+   "circumstance_tags": [
+    "backstory",
+    "manipulation"
+   ],
+   "detail": "manipulated Asaka, an experienced skier but a snowboarding novice, into snowboarding in order to eliminate her as a romantic rival for Itabashi"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_injuring_asaka"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge_for_injuring_asaka (red herring; Itabashi acted first to keep Kiyama from doing this himself)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "detail": "returned to her room before the planned 1pm lunch and never showed up"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "detail": "lured to Itabashi's room under cover of the snowstorm"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "detail": "body found floating here after the snowman was rolled off the cliff"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "detail": "alibi: in his own room at the lodge"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "detail": "present with the group building the graduation snow model earlier, and during the later investigation"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "detail": "alibi: in her own room at the lodge"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "detail": "present with the group building the graduation snow model earlier, and during the later investigation"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "detail": "alibi: making the practice snowman behind the lodge"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "detail": "lured Sakuko here and drowned her in the sink"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "detail": "oversees the body's discovery and the autopsy scheduling"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "detail": "leads the on-site reconstruction of how the body reached the lake"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3",
+   "detail": "present at the lodge, mentions being invited to dinner by the chief"
+  },
+  {
+   "type": "drowns",
+   "from": "p4",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_accident",
+    "cover_up"
+   ],
+   "method": "held her head under lake water he had pre-prepared in his room's sink"
+  },
+  {
+   "type": "hides_body_in",
+   "from": "p4",
+   "to": "o2"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o1",
+   "detail": "put Sakuko's rented boots and snowboard on/with her body to fake a snowboarding accident"
+  },
+  {
+   "type": "disposes_body_at",
+   "from": "p4",
+   "to": "l1",
+   "circumstance_tags": [
+    "staged_accident",
+    "cover_up"
+   ],
+   "detail": "rolled the salt-hardened snowball containing the body off the cliff into the lake"
+  },
+  {
+   "type": "reuses_parts_of",
+   "from": "p4",
+   "to": "o3",
+   "detail": "stole the fruit/face parts off the Detective Boys' snowman to rebuild his own"
+  },
+  {
+   "type": "assembles",
+   "from": "p4",
+   "to": "o4",
+   "detail": "quickly rebuilt a matching decoy snowman using the stolen parts"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l4"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "o4",
+   "detail": "found inside the rebuilt snowman instead of the Detective Boys' own"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "l4"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p4"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

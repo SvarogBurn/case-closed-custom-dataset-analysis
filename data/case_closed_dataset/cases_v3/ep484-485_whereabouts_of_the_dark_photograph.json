@@ -1,0 +1,525 @@
+{
+ "case_id": "ep484-485_whereabouts_of_the_dark_photograph",
+ "episode_number": "484-485",
+ "title": "Whereabouts of the Dark Photograph",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Whereabouts_of_the_Dark_Photograph",
+ "subtitle_source": [
+  "subs_resolved/0484.txt",
+  "subs_resolved/0485.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "case_type: theft (no murder). Recurring detective-cast nodes (Conan/Shin'ichi, Ai Haibara, Professor Agasa, Heiji Hattori, Ran) omitted by convention; their deductions are represented as direct edges among the actual involved parties instead. `label.murderer_id` is kept as the schema's fixed field name but here denotes the principal culprit of the theft, Tago. The old cases/ file had the culprit (Tago), core objects, and both clues essentially right -- no reversal found here, unlike some other rebuilds. Its main gap was scope: it modeled only the theft's suspect pool with generic 'knows' edges and omitted the entire A-plot this two-parter is actually built around -- the search for the identity of Hondou Eisuke's black-organization-linked father via an old photograph, which is why the theft happens at all (the photo album Tago grabbed to hide his own fraud happened to also hold the photo Conan/Heiji were chasing). That backstory arc (Hondou Eisuke, his father's aliases, Mizunashi Rena, Nishigun's late grandfather) has been added as backstory_figure nodes per the 'every named person who matters' rule. No 'order'/'temporal_frame'/'years_before_present' fields per current build guidance.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Souhei Nishigun",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "model shop manager",
+    "attrs": {
+     "grandfather_shop": "ran an okonomiyaki shop near Tsuutenkaku, now closed",
+     "theft_target": "photo album and its digital backup, taken from his apartment"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Saori",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": null,
+    "attrs": {
+     "connection": "Nishigun's ex-girlfriend, still holds a spare apartment key",
+     "alibi": "out shopping, then on a date at an Italian restaurant"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tago",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "modeler, overseas business traveler",
+    "attrs": {
+     "build": "shortest of the three key-holders",
+     "fraud": "bought a Panzer IV tank model overseas, swapped the nameplate, and passed it off as his own build"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Furushou",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": null,
+    "attrs": {
+     "build": "tall and thin, over 180cm",
+     "alibi": "home sick in bed with a cold all day"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hondou Eisuke",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "high school transfer student",
+    "attrs": {
+     "secret_activity": "quietly searching for the hospital hiding the comatose Mizunashi Rena",
+     "childhood_detail": "accidentally pressed the shutter on his father's acquaintance's camera as a boy, creating the sought-after photo"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Hondou Eisuke's father",
+    "aliases": [
+     "Hondou",
+     "Tsubouchi",
+     "Ishikawa"
+    ],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "claimed regular company employee; implied member of a secretive organization ('the Company')",
+    "attrs": {
+     "cover_habits": "used a different surname almost every visit, hated being photographed, stopped visiting the shop abruptly years ago",
+     "coworkers": "usually accompanied by rotating foreign men, all dressed in black",
+     "cryptic_remark": "overheard saying 'I'll dive in deeper' to his coworkers, framed as scuba diving talk"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Mizunashi Rena",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "announcer (on leave)",
+    "attrs": {
+     "status": "comatose, has not regained consciousness",
+     "affiliation": "described as partner of the black-clothed organization members"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Nishigun's grandfather",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": "former okonomiyaki shop manager",
+    "attrs": {
+     "status": "deceased, natural causes (cancer)",
+     "last_request": "asked Souhei to return a valuable item to a regular customer he got along well with"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Nishigun's apartment",
+    "attrs": {
+     "condition": "hot and closed up all day, no air conditioning used"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Okonomiyaki shop, Tsuutenkaku",
+    "attrs": {
+     "status": "closed since the grandfather's death"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Hospital (Rena, undisclosed)",
+    "attrs": {
+     "security": "guarded by the FBI"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Photo album",
+    "role": "evidence",
+    "attrs": {
+     "location": "kept on the top shelf of Nishigun's bookcase",
+     "contents": "includes both the photo of Hondou Eisuke's father and a photo of Tago's relabeled tank model"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Computer photo backup",
+    "role": "evidence",
+    "attrs": {
+     "note": "digital mirror of the album's photos, wiped and re-backed-up by Tago mid-theft"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Footstool chair",
+    "role": "tool",
+    "attrs": {
+     "trace": "found damp and warm, left sweaty by whoever stood on it to reach the top shelf"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Washing machine",
+    "role": "tool",
+    "attrs": {
+     "location": "on the veranda laundry area",
+     "use": "Tago's hiding spot; he needed Nishigun kept from opening the lid"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Relabeled tank model",
+    "role": "evidence",
+    "attrs": {
+     "origin": "Panzer IV Type H bought overseas as a reference pattern",
+     "fraud": "nameplate swapped to Tago's own, photographed and shared as his original build",
+     "exposure_risk": "friends had already photographed it and planned to link it on Nishigun's blog"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Wet tissues",
+    "role": "evidence",
+    "attrs": {
+     "location": "found damp in the wastebasket",
+     "trace": "used to wipe sweat, still undried"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Toilet slippers are the only ones neatly arranged while every entryway slipper sits scattered -- someone besides Nishigun used the toilet after he left for work.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Undried sweat droplets and damp tissues sit in a shut, un-cooled room, and the computer's CPU is already hot though just switched on -- together they place an intruder here under 10 minutes ago.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "No bare footprints mark the floor and the culprit's own slippers are missing, yet the slippers Nishigun is currently wearing -- not the entryway pair -- are the warm, sweat-soaked ones: the culprit is still barefoot and hiding close by right now.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c4",
+    "desc": "Of the three key-holders (Saori ~150cm and heavy, Tago shorter still, Furushou 180cm+ and thin), only someone short enough to need the chair as a footstool could also fold into the washing machine.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c5",
+    "desc": "Saori's call carried no ambient room sound and Furushou's request would have exposed a hiding spot by getting the apartment cleaned -- only Tago's requests, finish the models overnight, open the window, do the wash at dawn, fit someone trapped silently on the veranda side needing Nishigun to unknowingly set them free.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "hobby_friend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "ex_girlfriend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "hobby_friend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p8",
+   "relation_type": "grandchild_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p6",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p8",
+   "relation_type": "regular_customer_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p6",
+   "relation_type": "acquainted_with"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "cover_up_of_fraud (feared the relabeled tank model would expose him as a liar to friends and Nishigun's blog readers)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l1"
+  },
+  {
+   "type": "entrusted_to",
+   "from": "p8",
+   "to": "p1",
+   "detail": "grandfather's dying request to hand the photo/album on to the regular customer it concerns"
+  },
+  {
+   "type": "steals",
+   "from": "p3",
+   "to": "o1",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "erases",
+   "from": "p3",
+   "to": "o2",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "stands_on",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "hides_in",
+   "from": "p3",
+   "to": "o4",
+   "circumstance_tags": [
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o6"
+  },
+  {
+   "type": "photographed_by",
+   "from": "o1",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "o1",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "o1",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "o2",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "o2",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c5",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c5",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c5",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "c5",
+   "to": "p3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

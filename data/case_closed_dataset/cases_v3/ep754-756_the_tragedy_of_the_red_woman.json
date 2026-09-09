@@ -1,0 +1,264 @@
+{
+ "case_id": "ep754-756_the_tragedy_of_the_red_woman",
+ "episode_number": "754-756",
+ "title": "The Tragedy of the Red Woman",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Tragedy_of_the_Red_Woman",
+ "subtitle_source": ["subs_resolved/0754.txt", "subs_resolved/0756.txt"],
+ "schema_version": "v3",
+ "notes": "Episode 755's subtitle file is missing locally (only 0754.txt and 0756.txt were available); the murder discovery closes 0754 and 0756 opens with a recap narration plus the attack-on-Kawana aftermath already having happened offscreen between the two available files, so the exact blow-by-blow of that attack is reconstructed from 0756's dialogue/flashbacks rather than seen directly. Recurring detective-cast nodes (Conan, Ran, Sonoko, Masumi Sera) omitted by convention -- note that one key behavioral clue (Kawana handing the newly-arrived Masumi Sera the villa photos without asking which of the group she was, proving Kawana already knew/suspected Sera was the detective) is preserved in clue c5's description even though Sera herself has no node. The old lower-fidelity case file (cases/ep754-756_the_tragedy_of_the_red_woman.json) got the culprit right (Sumika Kawana) but flattened the case drastically: it omitted the entire fifteen-year-old original murder (an unnamed wife killing her unnamed husband in a jealous rage, becoming 'the Red Woman'), omitted Shinobu Kagawa (the murdered man's mistress, who has spent fifteen years hunting the Red Woman and is who actually attacked Kawana, mistaking her red-clothed disguise for the real thing), omitted the reporting-error clue chain (Inspectors Yamato and Morofushi, and retired officer Uehara) that identifies Kagawa, and mischaracterized event e1: it wasn't Hakuya arranging a prank alone -- Satoko Imoto and Hakuya jointly planned the Red-Woman prank, Imoto died fleeing in a panic after Kagawa mistook her red costume for the real Red Woman and gave chase, and Hakuya's cowardly silence about the prank for twelve years is Kawana's actual motive. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tamami Minegishi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "villa guest, high school outdoor-club alum",
+    "attrs": {
+     "alibi": "prepping dinner in the villa kitchen during the murder window",
+     "note": "childhood friend of Inspector Kansuke Yamato, which is how she knows the old case's investigative details"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Sumika Kawana",
+    "aliases": ["the Red Woman (present-day impersonator)"],
+    "roles": ["suspect"],
+    "occupation": "villa guest, high school outdoor-club alum",
+    "attrs": {
+     "trick": "faked a second-floor cleaning alibi using a fan-blown bat that knocked against a hooked pillar to mimic a running vacuum",
+     "concealment_method": "hid Hakuya's body under salted, sunk-then-floated tomatoes in the bathtub"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Masaie Hakuya",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "villa guest, high school outdoor-club alum",
+    "attrs": {
+     "died_of": "struck unconscious with a dumbbell, then drowned in the bathtub",
+     "secret": "was Satoko Imoto's secret accomplice in the original Red Woman prank twelve years ago, and stayed silent about it afterward"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Jinsuke Ninda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "villa guest, high school outdoor-club alum",
+    "attrs": {
+     "alibi": "out shopping at a store one kilometer away during the murder window"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Satoko Imoto",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "high school outdoor-club member (deceased)",
+    "attrs": {
+     "died_of": "drowned in quicksand while fleeing in a panic",
+     "backstory": "planned to dress as the Red Woman to prank the club twelve years ago; was mistaken for the real Red Woman by Shinobu Kagawa and chased"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Shinobu Kagawa",
+    "aliases": [],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": "mistress of the man murdered fifteen years ago",
+    "attrs": {
+     "motive": "witnessed her lover's murder by his wife and has spent fifteen years hunting down anyone she believes is the Red Woman",
+     "attack_method": "single clean horizontal knife cut to Kawana's back"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "The Red Woman (wife)",
+    "aliases": ["the original Red Woman"],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "identity": "unnamed in available transcript; stabbed her husband to death in a jealous rage fifteen years ago",
+     "fate": "never confirmed dead or captured; corrected police account says she threw her knife at the responding officer and fled rather than stabbing him"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Murdered office worker",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "company employee",
+    "attrs": {
+     "died_of": "stabbed repeatedly by his wife after she caught him with his mistress",
+     "identity": "unnamed in available transcript"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Insp. Kansuke Yamato",
+    "aliases": ["Kan-chan"],
+    "roles": ["witness"],
+    "occupation": "police inspector",
+    "attrs": {
+     "role_in_case": "re-investigated the fifteen-year-old Red Woman case with Inspector Morofushi ahead of a press conference"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Insp. Morofushi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police inspector",
+    "attrs": {
+     "belief": "long argued the swamp-found skeleton belonged to the Red Woman; Yamato disagreed"
+    }
+   },
+   {
+    "id": "p11",
+    "name": "Uehara",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "retired policeman, now works at a pachinko parlor",
+    "attrs": {
+     "reporting_error": "his fifteen-year-old report said the Red Woman stabbed him and escaped; he actually recalled she threw the knife at him and fled",
+     "reason_quit": "traumatized by the encounter"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Rental villa", "attrs": {"door_color": "front door painted red by the owner after a red-paint prank"}},
+   {"id": "l2", "name": "Villa bathroom", "attrs": {"note": "murder scene; body hidden under salted tomatoes in the tub"}},
+   {"id": "l3", "name": "Villa living room", "attrs": {"note": "directly below Ninda's second-floor room"}},
+   {"id": "l4", "name": "Ninda's room (2F)", "attrs": {"note": "has a wall hook Kawana used to hang the rigged bat"}},
+   {"id": "l5", "name": "Villa kitchen", "attrs": {}},
+   {"id": "l6", "name": "Forest", "attrs": {"note": "site of repeated Red Woman sightings, present and past"}},
+   {"id": "l7", "name": "Swamp (quicksand)", "attrs": {"note": "where Imoto's body and the fifteen-year-old murder knife were found"}},
+   {"id": "l8", "name": "Old rental villa (15y ago)", "attrs": {"note": "scene of the original husband/wife murder, near the current villa"}},
+   {"id": "l9", "name": "Store 1km away", "attrs": {}},
+   {"id": "l10", "name": "Pachinko parlor", "attrs": {"note": "Uehara's current workplace"}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Baseball bat", "role": "tool", "attrs": {"owner": "Jinsuke Ninda", "trick": "cardboard-wrapped, hung from a hook, blown by a fan to knock against a pillar"}},
+   {"id": "o2", "name": "Rotating fan", "role": "tool", "attrs": {"trick": "aimed at the hanging bat to produce a fake rhythmic knocking sound"}},
+   {"id": "o3", "name": "Dumbbells", "role": "weapon", "attrs": {"use": "bludgeon, then placed on the body to keep it from floating"}},
+   {"id": "o4", "name": "Bath salts", "role": "tool", "attrs": {"trick": "raised the water's salinity so high-sugar tomatoes would float on cue"}},
+   {"id": "o5", "name": "Tomatoes in bathtub", "role": "evidence", "attrs": {"trick": "sink in plain water, float once salinity exceeds their sugar-driven density"}},
+   {"id": "o6", "name": "Knife (murder weapon)", "role": "weapon", "attrs": {"material": "rust-resistant", "history": "used in the murder 15 years ago, thrown at Uehara, later found beside the swamp 12 years ago"}},
+   {"id": "o7", "name": "Red Woman costume (Kawana's)", "role": "instrument", "attrs": {"pieces": "long-haired wig, red raincoat, red boots"}},
+   {"id": "o8", "name": "Red coat (Satoko's)", "role": "evidence", "attrs": {"note": "worn during her fatal prank; contradicts the beige cardigan she wears in the old group photo"}},
+   {"id": "o9", "name": "Prank props", "role": "evidence", "attrs": {"items": "rolling apples, red rose petals stuffed in the water heater, red paint splashed on the door", "purpose": "escalating scares Kawana staged over ~2 years to provoke Hakuya into confessing"}},
+   {"id": "o10", "name": "Old group photo", "role": "evidence", "attrs": {"shows": "Satoko Imoto in a beige cardigan, taken the afternoon she went missing"}},
+   {"id": "o11", "name": "Police report (15y ago)", "role": "evidence", "attrs": {"stated_claim": "Red Woman stabbed the responding officer and escaped", "actual_account": "she threw the knife at him and fled without a struggle"}}
+  ],
+  "clues": [
+   {"id": "c1", "desc": "The tomatoes weren't missing from the tub, just sunk: plain sugar-heavy tomatoes sink, but the same tomatoes float once the water's salinity is raised with bath salts -- proving the tub was clear when checked and secretly filled afterward.", "clue_type": "physical"},
+   {"id": "c2", "desc": "Twelve-year-old photo shows Satoko Imoto in a beige cardigan, but she was found wearing a long red coat -- she had been dressed as the Red Woman herself, not attacked by one.", "clue_type": "physical"},
+   {"id": "c3", "desc": "The old police report says the Red Woman stabbed the officer and escaped, but the officer's actual memory is she threw the knife and fled -- meaning someone else must have retrieved the knife and later planted it by the swamp.", "clue_type": "testimonial"},
+   {"id": "c4", "desc": "Kawana's sleeves were down when the group first met but rolled up after the murder, and dried salt crystals cling to them from stirring bath salts into the tub.", "clue_type": "physical"},
+   {"id": "c5", "desc": "Everyone else mistook the newly arrived detective for a boy, but Kawana handed her the villa photos without asking anything -- proof she already knew, from eavesdropping earlier, that the visitor was a girl detective.", "clue_type": "behavioral"}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "prank_accomplice"},
+  {"type": "relationship", "from": "p6", "to": "p8", "relation_type": "affair_partner"},
+  {"type": "relationship", "from": "p7", "to": "p8", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p1", "to": "p9", "relation_type": "childhood_friend"},
+  {"type": "relationship", "from": "p9", "to": "p10", "relation_type": "colleague"},
+
+  {"type": "kills", "from": "p7", "to": "p8", "method": "stabbed repeatedly", "circumstance_tags": ["jealous_rage", "backstory"]},
+  {"type": "owns", "from": "p7", "to": "o6"},
+  {"type": "was_at", "from": "p7", "to": "l8"},
+  {"type": "was_at", "from": "p8", "to": "l8"},
+  {"type": "throws_knife_at", "from": "p7", "to": "p11", "circumstance_tags": ["fleeing", "reporting_error_corrected"]},
+  {"type": "was_at", "from": "p11", "to": "l8"},
+  {"type": "was_at", "from": "p7", "to": "l6"},
+
+  {"type": "chases", "from": "p6", "to": "p5", "circumstance_tags": ["mistaken_identity", "backstory"]},
+  {"type": "was_at", "from": "p6", "to": "l6"},
+  {"type": "was_at", "from": "p5", "to": "l6"},
+  {"type": "dies_in", "from": "p5", "to": "l7", "method": "drowned in quicksand while fleeing in a panic", "circumstance_tags": ["accidental"]},
+  {"type": "was_at", "from": "p5", "to": "l7"},
+  {"type": "wears", "from": "p5", "to": "o8"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "withholds_information_about", "from": "p3", "to": "p5", "circumstance_tags": ["cover_up"]},
+
+  {"type": "takes", "from": "p6", "to": "o6", "circumstance_tags": ["evidence_removal", "backstory"]},
+  {"type": "plants_evidence", "from": "p6", "to": "o6", "circumstance_tags": ["staged_evidence", "misdirection"]},
+  {"type": "was_at", "from": "p6", "to": "l7"},
+  {"type": "finds", "from": "p9", "to": "o6"},
+  {"type": "finds", "from": "p10", "to": "o6"},
+  {"type": "was_at", "from": "p9", "to": "l7"},
+  {"type": "was_at", "from": "p10", "to": "l7"},
+
+  {"type": "questions", "from": "p9", "to": "p11"},
+  {"type": "was_at", "from": "p9", "to": "l10"},
+  {"type": "was_at", "from": "p11", "to": "l10"},
+  {"type": "regarding", "from": "o11", "to": "p7"},
+
+  {"type": "assaults", "from": "p6", "to": "p2", "method": "single clean horizontal knife cut to the back", "circumstance_tags": ["mistaken_identity"]},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+
+  {"type": "assaults", "from": "p2", "to": "p3", "method": "struck unconscious from behind with a dumbbell", "circumstance_tags": ["locked_room"]},
+  {"type": "kills", "from": "p2", "to": "p3", "method": "drowned in the bathtub after being knocked unconscious", "circumstance_tags": ["staged_scene", "hidden_body"]},
+  {"type": "hides_body_of", "from": "p2", "to": "p3", "circumstance_tags": ["staged_scene"]},
+  {"type": "weighs_down_body_with", "from": "p2", "to": "o3"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o1"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o2"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o4"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o5"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o9"},
+  {"type": "located_in", "from": "o9", "to": "l1"},
+  {"type": "confronts", "from": "p2", "to": "p3", "circumstance_tags": ["disguised", "extracts_confession"]},
+  {"type": "confesses_to", "from": "p3", "to": "p2", "circumstance_tags": ["coerced_confession"]},
+  {"type": "wears", "from": "p2", "to": "o7"},
+  {"type": "owns", "from": "p4", "to": "o1"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l9"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+
+  {"type": "owns", "from": "p1", "to": "o10"},
+
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o10"},
+  {"type": "regarding", "from": "c2", "to": "o8"},
+  {"type": "regarding", "from": "c3", "to": "o11"},
+  {"type": "regarding", "from": "c3", "to": "o6"},
+  {"type": "implicates", "from": "c3", "to": "p6"},
+  {"type": "regarding", "from": "c4", "to": "o4"},
+  {"type": "implicates", "from": "c4", "to": "p2"},
+  {"type": "regarding", "from": "c5", "to": "p2"},
+  {"type": "implicates", "from": "c5", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p3", "motive_type": "revenge_for_letting_satoko_die"},
+  {"type": "has_motive_against", "from": "p6", "to": "p7", "motive_type": "revenge_for_lovers_murder"},
+  {"type": "has_motive_against", "from": "p6", "to": "p2", "motive_type": "mistaken_identity_revenge (red herring target)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

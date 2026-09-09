@@ -1,0 +1,414 @@
+{
+ "case_id": "ep248_the_alibi_of_the_soothing_forest",
+ "episode_number": "248",
+ "title": "The Alibi of the Soothing Forest",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Alibi_of_the_Soothing_Forest",
+ "subtitle_source": ["subs_resolved/0248.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro Mouri, Ran, Conan) omitted by convention. No transcript lines are tagged (Flashback) in this episode -- the confession sequence is presented as present-tense narration recapping the same day's events, so all edges use temporal_frame: present. Culprit identity (Shiro Murakami) matches the old wiki-summary case file, but the old file's mechanism was thin: it only captured the clay/rope float trick and generic 'knows' edges. The transcript reveals the actual proof the detective uses is a seal (hanko) swap -- Shiro's and Ryuzo's personal stamps got switched during the struggle over scattered desk documents, and comparing stamp impressions across Aiko's milk-payment ledger (chipped vs. clean) against a liquor delivery order signed later at the boarding house is what places Shiro at the murder scene at 4:00pm -- captured here as clue c1, which the old file omitted entirely. The old file also omitted the policeman witness (Midorikawa Youji), the specific reason Aiko was cleared (no time to change/wash off blood), and the actual trigger for the murder (father Ryuzo mocking Shiro with 'you should have left home instead of Kinji' after already refusing him a loan). case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shiro Murakami",
+    "aliases": ["Murakami Shirou"],
+    "roles": ["suspect"],
+    "occupation": "owner of the Soothing Forest Boarding House",
+    "attrs": {
+     "age": 32,
+     "family_status": "married into the Murakami family (son-in-law of village head Ryuzo)",
+     "cannot_swim": true,
+     "motive_detail": "resented being constantly compared unfavorably to his younger brother Kinji and was refused a loan/loan-guarantee by his father-in-law"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kinji Tateshiba",
+    "aliases": ["Tateshiba Kinji"],
+    "roles": ["suspect"],
+    "occupation": "helps at his older brother Shiro's boarding house during the summer",
+    "attrs": {
+     "age": 27,
+     "cleared_reason": "cannot swim was never claimed of him, but his return to the boarding house on foot along the one-way road, arriving around the same time as Aiko's 4:10pm call, is consistent with the timeline and no motive against Ryuzo is ever raised"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Ryuzo Murakami",
+    "aliases": ["Murakami Ryuuzou"],
+    "roles": ["victim"],
+    "occupation": "village head",
+    "attrs": {
+     "age": 60,
+     "lives_alone": true,
+     "hobby": "pottery, to kill the boredom of living alone",
+     "injury": "injured his hand the day before the murder and could not do pottery",
+     "favorite_object": "a paper knife engraved with his initials, R.M.",
+     "died_of": "stab wound from his own paper knife"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Aiko Misawa",
+    "aliases": ["Misawa Aiko"],
+    "roles": ["suspect", "witness"],
+    "occupation": "milk delivery woman",
+    "attrs": {
+     "age": 25,
+     "cleared_reason": "the killer would have been covered in the victim's blood; Aiko had not changed clothes and would not have had time to remove bloodstains before being seen again"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Midorikawa Youji",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "policeman",
+    "attrs": {
+     "age": 54,
+     "detail": "was on patrol near the village head's house and heard the scream at 4:00pm; arrived at the scene just after 4:05pm, slightly later than Aiko"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Soothing Forest Boarding House",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Ryuzo Murakami's house (village head's residence, study room)",
+    "attrs": {
+     "access": "all doors other than the main entrance were locked from the inside"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Tsunakawa River",
+    "attrs": {
+     "detail": "runs beside both the village head's house and the boarding house; reachable from the house in 2-3 minutes by water despite no scaffold to tie a boat to"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "One-way forest road / vegetable-gathering woods",
+    "attrs": {
+     "detail": "the only road route between the village head's house and the boarding house, an hour on foot / 5 minutes by car, surrounded by steep mountains"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Paper knife (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "inscription": "R.M.",
+     "detail": "Ryuzo's favorite paper knife, kept in his study"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Clay and rope from the boarding house entrance",
+    "role": "tool",
+    "attrs": {
+     "trick": "pants rinsed of blood, turned inside out and coated with clay, legs tied off with rope, then inflated as an improvised swimming float to travel downstream",
+     "staging_flaw": "clay was visibly diminished and rope was missing from the entrance, tipping off the trick"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Aiko's milk-payment ledger",
+    "role": "evidence",
+    "attrs": {
+     "detail": "records a monthly stamped seal from Ryuzo at each milk-payment collection"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Ryuzo's personal seal (hanko)",
+    "role": "evidence",
+    "attrs": {
+     "detail": "stamped cleanly in the ledger every prior month; this month's impression is chipped"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Shiro's personal seal (hanko)",
+    "role": "evidence",
+    "attrs": {
+     "detail": "previously had a chipped stamp border; on a liquor delivery order signed at the boarding house on the day of the murder, the impression suddenly appears clean"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Shiro's IOU / loan-guarantee document",
+    "role": "evidence",
+    "attrs": {
+     "detail": "retrieved by Shiro from Ryuzo's desk after the killing, to remove evidence of his visit and motive"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Comparing seal impressions: Ryuzo's seal (o4) is stamped cleanly in Aiko's ledger (o3) every month but appears chipped this month; conversely, Shiro's own seal (o5), previously chipped, appears cleanly stamped on a liquor delivery order signed at the boarding house that same day. The two seals were swapped during the struggle over the scattered desk documents in Ryuzo's study, proving Shiro was physically at the crime scene around the time of the murder.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "younger_brother_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "son_in_law_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "favors"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p3",
+   "motive_type": "resentment_over_fathers_favoritism_and_refused_loan"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "refuses_loan_to",
+   "from": "p3",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "refuses to loan Shiro money and throws his watermelon gift back at him in front of the boarding-house guests"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "leaves the vegetable-gathering early, remembering something he had to do; returns alone to beg his father-in-law for a loan guarantee"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "collects the milk payment around 3:55pm and gets Ryuzo's seal stamped in her ledger"
+  },
+  {
+   "type": "confronts",
+   "from": "p3",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "mocks Shiro for still lingering after being refused, telling him 'you should have left home instead of Kinji'"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p3",
+   "order": 7,
+   "temporal_frame": "present",
+   "method": "stabbed with the victim's own paper knife in a sudden fit of rage",
+   "circumstance_tags": ["staged_robbery", "cover_up"]
+  },
+  {
+   "type": "wipes_fingerprints_from",
+   "from": "p1",
+   "to": "o1",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "retrieves",
+   "from": "p1",
+   "to": "o6",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "heard a scream at 4:00pm while walking toward the boarding house, turned back"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "on patrol, also heard the scream at 4:00pm"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 10,
+   "temporal_frame": "present",
+   "detail": "returns and discovers Ryuzo's body"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "arrives at the scene just after 4:05pm"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "arrives back at the boarding house in time to answer Aiko's 4:10pm call"
+  },
+  {
+   "type": "uses",
+   "from": "p1",
+   "to": "o4",
+   "order": 12,
+   "temporal_frame": "present",
+   "detail": "unknowingly stamps a liquor delivery order with Ryuzo's swapped seal"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "returns to the boarding house on foot around the same 4:10pm call, consistent with his stated alibi"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p1"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

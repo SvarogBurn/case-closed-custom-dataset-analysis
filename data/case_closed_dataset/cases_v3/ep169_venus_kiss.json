@@ -1,0 +1,499 @@
+{
+ "case_id": "ep169_venus_kiss",
+ "episode_number": "169",
+ "title": "Venus' Kiss",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Venus%27_Kiss",
+ "subtitle_source": ["subs_resolved/0169.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Kogoro, Ran, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object). The old wiki-derived case file (cases/ep169_venus_kiss.json) named Murakawa as the culprit and this holds up against the full transcript -- no correction to label.murderer_id was needed. However the old file was much thinner: it had a single generic 'Beika Street Aquarium' location instead of the distinct control room / make-up room / backstage corridor / shell tank / locker room the plot actually depends on, no backstory persons for Murakawa's dead wife and child or for Michiko's father (the President of Oosawa Construction, whose visit to the aquarium is what let Murakawa overhear Michiko mocking him), only one generic 'knows' edge type where the transcript supports specific verbs (assaults, drags_body_of, stages_alibi_using, drowns, mocks), and it flattened three genuinely comparative pieces of evidence (the single-spot foundation smear vs. her scraped cheek, the working emergency-drain test vs. her drowning without pressing it, and the upside-down fresh lipstick mark vs. the washed-out trace on his locker-room shirt) into two generic physical clues without the comparison that makes them work as clues. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Michiko Oosawa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "aquarium show actress",
+    "attrs": {
+     "age": 25,
+     "role_detail": "star performer (\"Venus\") in the Beika City Aquarium's underwater shell show",
+     "swim_ability": "could hold her breath underwater for about 4 minutes",
+     "died_of": "drowning inside the show's giant clam shell prop; staged to look like an accident caused by a recurring leg injury",
+     "past_injury": "previously hurt her left leg badly enough that she nearly drowned because of it",
+     "true_habit_re_medicine_wrap": "always removed the medicine wrap before real performances, only wore it during practice",
+     "observed_detail": "was seen wearing high heels shortly before the show, inconsistent with the claimed leg pain",
+     "personality": "very meticulous about her appearance -- always double-checked her costume and make-up just before performing"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Masato Hayashi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "aquarium costume and performance-technology staff",
+    "attrs": {
+     "age": 40,
+     "role_detail": "in charge of the show's costumes and performance technology; gave the Mouri family a backstage tour",
+     "alibi": "in the control room operating the show for the entire performance window"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yasuyuki Murakawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "head of aquarium staff",
+    "attrs": {
+     "age": 44,
+     "role_detail": "head of the aquarium's technical staff, with over 20 years of experience",
+     "false_alibi": "claimed to have only stepped out to the restroom once during the show",
+     "motive_origin": "his wife and child were killed two years earlier in a hit-and-run driven by Michiko Oosawa, and he later overheard her mocking his loss"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yuriko Minegishi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "aquarium show performer",
+    "attrs": {
+     "age": 30,
+     "role_detail": "another lead performer (\"Venus\") in the underwater show",
+     "alibi": "was inside the shell performing the show's first slot at the time of the murder"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Michiko Oosawa's father",
+    "aliases": ["President Oosawa"],
+    "roles": ["backstory_figure"],
+    "occupation": "President of Oosawa Construction",
+    "attrs": {
+     "detail": "his company built the aquarium and he has since taken on a management role there; his visit to the aquarium is when Murakawa overheard Michiko mocking him"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yasuyuki Murakawa's wife",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "hit-and-run car accident"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Yasuyuki Murakawa's child",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "hit-and-run car accident"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika City Aquarium",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Control room",
+    "attrs": {
+     "function": "operates lighting, music, and machine controls, including the water flow into the show shell"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Make-up / changing room",
+    "attrs": {
+     "function": "where performers apply make-up and change costumes; where Oosawa was attacked"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Backstage corridor / actors' waiting room",
+    "attrs": {
+     "detail": "connects via a hatch directly into the giant clam shell prop used in the show"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Giant clam shell show tank",
+    "attrs": {
+     "mechanism": "fills with water until about 80% full, then automatically turns blue and stops; has an internal emergency drain switch (red = stop inflow, blue = drain)"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Employees' locker room",
+    "attrs": {
+     "detail": "where Murakawa's spare staff sweatshirt, with a faint washed-out lipstick trace, was found"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Medicine wrap",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "planted on Oosawa's left knee to make investigators believe her death was accidental, caused by a recurring leg injury",
+     "staging_flaw": "she never wore medicine wraps during real performances, only during practice, and was seen in high heels shortly before the show",
+     "corroborating_detail": "the wrap's packaging cover was found dropped in the corridor near the make-up room"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Emergency drainage switch (inside the shell)",
+    "role": "instrument",
+    "attrs": {
+     "mechanism": "red button stops water inflow, blue button drains the stored water so the performer can escape",
+     "test_result": "confirmed fully functional in a live test-run ordered by the investigation"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Oosawa's cosmetics, left out in the make-up room",
+    "role": "evidence",
+    "attrs": {
+     "anomaly": "left scattered and unpacked, despite Oosawa's meticulous habit of always tidying up before a performance",
+     "implies": "she was interrupted and attacked while applying her make-up"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Oosawa's lipstick",
+    "role": "evidence",
+    "attrs": {
+     "note": "source of the identifying lipstick marks found on Murakawa"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The foundation smear on the shell mechanism floor was found in exactly one spot, matching the scraped patch of foundation on Oosawa's cheek -- a natural drowning struggle would smear make-up across multiple spots, so a single spot proves her face was deliberately held down against the floor.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "A live test-run proved the shell's internal emergency drain switch works perfectly; for a professional performer who could hold her breath underwater for 4 minutes, drowning without ever pressing a working escape button is inconsistent with an accident.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "A fresh, upside-down lipstick mark matching Oosawa's lipstick was found on Murakawa's neck/upper back -- a position and orientation only explainable by having carried her unconscious body over his shoulder -- and a second, partially washed-out trace of the same mark was found on his spare sweatshirt in the locker room, showing he had tried to launder away an earlier instance of the same evidence.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p3",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p6",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p6",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p6",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "method": "hit-and-run",
+   "circumstance_tags": ["unpunished"]
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p7",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "method": "hit-and-run",
+   "circumstance_tags": ["unpunished"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "mocks",
+   "from": "p1",
+   "to": "p3",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "detail": "laughed dismissively while talking with her father, unaware Murakawa was overhearing, about not being caught for the hit-and-run",
+   "circumstance_tags": ["triggering_motive", "overheard"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "Minegishi performs the show's first slot"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "leaves the control room under the pretext of going to the restroom"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "assaults",
+   "from": "p3",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "knocks Oosawa unconscious while she is applying her make-up",
+   "circumstance_tags": ["premeditated"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o1",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "places the medicine wrap on her leg to misdirect the cause of death"
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p3",
+   "to": "p1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "carries her unconscious body over his shoulder through the corridor to the shell hatch",
+   "circumstance_tags": ["staged_accident"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "returns to the control room as if nothing happened"
+  },
+  {
+   "type": "drowns",
+   "from": "p3",
+   "to": "p1",
+   "order": 9,
+   "temporal_frame": "present",
+   "method": "sealed unconscious inside the shell prop and drowned when the tank was filled with water on schedule",
+   "circumstance_tags": ["staged_accident", "locked_room", "victim_unconscious"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o4",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "an upside-down lipstick mark from Oosawa's lipstick is left on his neck/back while carrying her"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l5"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "l6"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p3"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l5"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge_for_family_killed_in_hit_and_run"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

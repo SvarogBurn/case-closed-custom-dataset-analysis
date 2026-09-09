@@ -1,0 +1,212 @@
+{
+ "case_id": "ep730_the_figure_that_was_too_good",
+ "episode_number": "730",
+ "title": "The Figure That Was Too Good",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Figure_That_Was_Too_Good",
+ "subtitle_source": ["subs_resolved/0730.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, the Detective Boys/Ai Haibara, Dr. Agasa, Takagi, Megure) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: murder. The old lower-fidelity case file's culprit (s2, Shunichi Morishita) matches the transcript -- unlike some other rebuilt episodes, the old file's core accusation was correct. What the old file missed/simplified: (1) it collapsed the frame-up of Reika Kameyama into a single generic 'was_at' listing without capturing that Morishita deliberately planted her brooch (smeared with victim's blood) and sent a fake e-mail from the victim's phone to strip her alibi -- this is the actual mechanism the episode is built around, not a side detail; (2) it omitted the comparative forensic clue that no blood was found on Kameyama's clothes despite the brooch being soaked -- the clue that first cracks the frame-up open; (3) it omitted Kenji Hiroto (the reporter, initial red-herring suspect who fled the scene) as a person node entirely; (4) it described the murder weapon only as 'hidden in a bouquet' without capturing that it was pre-painted to blend in as foliage inside that bouquet -- the titular 'figure that was too good' twist (Morishita's paint-matching skill, used both to secretly ghost-model Kitajima's award diorama and to disguise the knife). No stated culprit discrepancy to correct here; enrichment only.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Masahiro Kitajima",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "professional modeler, representing Japan at the world championship",
+    "attrs": {
+     "public_reputation": "hailed as a genius at modeling nature dioramas",
+     "secret": "used Shunichi Morishita as an uncredited ghost modeler for his nature dioramas",
+     "died_of": "stabbed in the chest with a sharp object"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Reika Kameyama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "relationship_status": "engaged to Kitajima",
+     "framed_for": "the murder, via a planted bloodied brooch and a fake lure e-mail"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Shunichi Morishita",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "professional modeler; secretly Kitajima's uncredited ghost modeler",
+    "attrs": {
+     "motive_detail": "borrowed money from Kitajima for his sick mother; outrageous interest inflated the debt beyond repayment, and Kitajima coerced him into making Kitajima's dioramas to work it off",
+     "skill": "exceptional at natural-object color matching -- used to paint the murder weapon to look like a leaf in a bouquet"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kenji Hiroto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "reporter/editor for a plastic-modeling magazine",
+    "attrs": {
+     "suspicious_behavior": "fled the scene when police arrived",
+     "search_result": "no weapon found on him or in the waiting room",
+     "true_reason_present": "sneaked into the waiting room to verify rumors Kitajima used a ghost modeler"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Exhibit hall floor",
+    "attrs": {"detail": "Tokyo Big Sight, main floor of the figure and model festival; Kitajima's diorama and Morishita's robot booth are both here"}
+   },
+   {
+    "id": "l2",
+    "name": "Modelers' waiting room",
+    "attrs": {"detail": "backstage room where Kitajima secretly worked with Morishita, where the Kitajima-Kameyama breakup argument happened, and where Morishita claims his alibi"}
+   },
+   {
+    "id": "l3",
+    "name": "Hallway vending-machine gap",
+    "attrs": {"detail": "narrow gap between a wall and a vending machine where the bloodied brooch was hidden"}
+   },
+   {
+    "id": "l4",
+    "name": "Riverside plaza near the hall",
+    "attrs": {"detail": "where Kameyama waited after the fake e-mail lured her out, losing her alibi"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Pre-painted murder knife",
+    "role": "weapon",
+    "attrs": {"pre_painted_color": "natural light green, matched to Kitajima's diorama foliage", "concealment": "disguised as a leaf inside the flower bouquet"}
+   },
+   {
+    "id": "o2",
+    "name": "Reika's brooch",
+    "role": "evidence",
+    "attrs": {"dropped": "during the breakup argument in the waiting room", "planted_evidence": "Kitajima's blood smeared on it by Morishita to frame Kameyama"}
+   },
+   {
+    "id": "o3",
+    "name": "Morishita's paint case",
+    "role": "evidence",
+    "attrs": {"contains": "natural light green paint matching Kitajima's diorama"}
+   },
+   {
+    "id": "o4",
+    "name": "Morishita's robot figures",
+    "role": "evidence",
+    "attrs": {"colors": "brightly colored, inconsistent with the green stains on his shirt"}
+   },
+   {
+    "id": "o5",
+    "name": "Kitajima's award diorama",
+    "role": "evidence",
+    "attrs": {"credited_creator": "Masahiro Kitajima", "true_creator": "Shunichi Morishita (uncredited ghost modeler)", "accolade": "entered into the world championship"}
+   },
+   {
+    "id": "o6",
+    "name": "Bouquet from Reika",
+    "role": "tool",
+    "attrs": {"occasion": "congratulating Kitajima on his world championship entry", "used_for": "concealing the pre-painted murder knife"}
+   },
+   {
+    "id": "o7",
+    "name": "Kitajima's phone",
+    "role": "tool",
+    "attrs": {"used_for": "sending a fake e-mail to Kameyama at 11:25, luring her away and destroying her alibi"}
+   },
+   {
+    "id": "o8",
+    "name": "Morishita's stained shirt",
+    "role": "evidence",
+    "attrs": {"stain_color": "natural light green", "claimed_origin": "his own robot models (false)"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Green paint stains on Morishita's shirt don't match his own brightly colored robots, but match his paint case and Kitajima's diorama exactly.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Kitajima's blood soaked the brooch alone, yet Kameyama's clothes had no bloodstains at all -- a real stabbing splashes the wearer, not just a pinned accessory.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Kitajima had little modeling skill early on, then suddenly became a nature-modeling genius years later, and never let anyone watch him work.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "debtor_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "ghost_modeler_for"},
+
+  {"type": "coerces", "from": "p1", "to": "p3", "detail": "forces Morishita to keep making his dioramas to work off an unpayable debt"},
+  {"type": "confronts", "from": "p2", "to": "p1", "circumstance_tags": ["backstory", "red_herring"], "detail": "breakup argument the night before; Kameyama drops her brooch and storms out"},
+  {"type": "witnesses", "from": "p3", "to": "p2", "detail": "overhears the Kitajima-Kameyama breakup argument from inside the waiting room"},
+  {"type": "picks_up", "from": "p3", "to": "o2", "circumstance_tags": ["backstory"], "detail": "picks up the brooch Kameyama dropped as she stormed out"},
+  {"type": "interviews", "from": "p4", "to": "p1", "detail": "seeks an interview, disliked by Kitajima's modeler friends for handling figures without permission"},
+
+  {"type": "conceals", "from": "p3", "to": "o1", "detail": "pre-paints the knife and hides it as foliage inside the bouquet"},
+  {"type": "concealed_in", "from": "o1", "to": "o6"},
+  {"type": "kills", "from": "p3", "to": "p1", "method": "stabbed with a knife pre-painted to look like foliage and hidden in a bouquet", "circumstance_tags": ["premeditated", "staged_alibi", "frames_another_suspect"]},
+  {"type": "leaves_evidence", "from": "p3", "to": "o2"},
+  {"type": "frames", "from": "p3", "to": "p2", "detail": "smears victim's blood on Kameyama's dropped brooch and hides it in the hallway gap"},
+  {"type": "uses", "from": "p3", "to": "o7", "detail": "uses the victim's phone after the murder"},
+  {"type": "deceives", "from": "p3", "to": "p2", "detail": "sends a fake e-mail from Kitajima's phone at 11:25 to lure Kameyama outside and strip her alibi"},
+
+  {"type": "owns", "from": "p1", "to": "o5"},
+  {"type": "owns", "from": "p1", "to": "o7"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o6"},
+  {"type": "owns", "from": "p3", "to": "o1"},
+  {"type": "owns", "from": "p3", "to": "o3"},
+  {"type": "owns", "from": "p3", "to": "o4"},
+  {"type": "owns", "from": "p3", "to": "o8"},
+
+  {"type": "located_in", "from": "o6", "to": "l1"},
+  {"type": "located_in", "from": "o2", "to": "l3"},
+
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o3", "to": "p3"},
+  {"type": "implicates", "from": "o8", "to": "p3"},
+
+  {"type": "regarding", "from": "c1", "to": "o8"},
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "regarding", "from": "c2", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+
+  {"type": "regarding", "from": "c3", "to": "p1"},
+  {"type": "implicates", "from": "c3", "to": "p3"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "financial (coerced into an unpayable debt and forced to ghost-model for Kitajima's world-championship entry)"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "romantic (feared being left behind by breakup; angrily said 'I'll never forgive you, I'm gonna kill you' -- red herring)"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

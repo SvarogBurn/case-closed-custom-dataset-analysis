@@ -1,0 +1,234 @@
+{
+ "case_id": "ep487_metropolitan_police_detective_love_story_8",
+ "episode_number": "487",
+ "title": "Metropolitan Police Detective Love Story 8: The Left Hand's Ring Finger",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Metropolitan_Police_Detective_Love_Story_8:_The_Left_Hand%27s_Ring_Finger",
+ "subtitle_source": ["subs_resolved/0487.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Sato, Takagi, Inspector Megure) omitted by convention, including the Sato/Takagi ring-and-engagement B-plot that frames the episode -- it never touches the murder-case graph. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file's culprit (Dejima) and core trick (cassette tape strung through the ring/key to fake a locked-room suicide) both check out against the transcript -- no reversal here, unlike some other rebuilds. What the old file missed: Akiba's backstory role as a colleague of all three suspects (not just a private grievance of Dejima's), the two red-herring trick theories floated and disproven on-screen (Tarumi's rubber bands, Anabuki's metal tape measure), the pencil used to quietly rewind the tape, and the ambiguity in how directly Moroguchi caused Akiba's death (transcript says Moroguchi directed Akiba to test his murder tricks on his own body 'taking meticulous care not to die for real' -- the fatal test was ruled a suicide, not stated on-screen as Moroguchi personally administering it, so modeled here as `exploits` rather than `kills`). case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Moroguchi Masataka",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "mystery author",
+    "attrs": {
+     "age": 52,
+     "died_of": "cyanide poisoning in his coffee",
+     "personality": "neurotic, obsessive over minute details",
+     "ring_habit": "never removed his ring, even bathing or sleeping",
+     "quote": "said he'd 'finally started to understand the murderer's feelings' by using Akiba to test his tricks"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Dejima Kakuji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "freelance writer",
+    "attrs": {
+     "age": 34,
+     "detail": "quit the publishing company to go freelance; uses an old analog cassette recorder"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tarumi Wataru",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "cameraman",
+    "attrs": {
+     "age": 33,
+     "detail": "wears many rubber bands on his wrist for tying negatives"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Anabuki Harue",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "magazine editor",
+    "attrs": {
+     "age": 33,
+     "detail": "editor currently in charge of Moroguchi; carries a metal tape measure"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Akiba",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "former chief editor",
+    "attrs": {
+     "died_of": "ruled a suicide in a sealed room, spring of this year",
+     "circumstance": "was directed by Moroguchi to physically test his murder-trick ideas on his own body; a notebook of tricks in his desk documents the exact method that killed him",
+     "relation_to_suspects": "joined the publishing company the same year as Dejima, Tarumi, and Anabuki"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Moroguchi's bedroom (locked room)",
+    "attrs": {
+     "locks": "door and all windows locked from inside",
+     "opening": "a ventilation window only a child could fit through",
+     "prints_found": "only the victim's fingerprints on the coffee cup, saucer, coffee maker, and doorknob"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Moroguchi's villa, Okutama",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Akiba's home (locked room)",
+    "attrs": {
+     "note": "site of Akiba's death months earlier, ruled a suicide"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned coffee",
+    "role": "weapon",
+    "attrs": {
+     "poison": "cyanide",
+     "detail": "cup found lying next to the bed, not in the kitchen where it was made"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Dejima's cassette tape",
+    "role": "tool",
+    "attrs": {
+     "trick": "threaded through the key's hole and hooked on the victim's ring, then lowered through the ventilation window so gravity slid the key into the dead hand; wound back in afterward",
+     "cover_story": "Dejima claimed his tape recorder was malfunctioning, so twisted/loud-winding tape was normal for him"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Moroguchi's ring",
+    "role": "evidence",
+    "attrs": {
+     "engraving": "'100th' engraved on the reverse, commemorating his 100th work",
+     "found_state": "genuine diamonds; put back on upside down",
+     "blood_residue": "faded blood ring around the finger from a shaving cut, with one strip rubbed clean"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Bedroom key",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "victim's left hand",
+     "note": "only key to the room, no spares"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Akiba's notebook of tricks",
+    "role": "evidence",
+    "attrs": {
+     "content": "records the exact method that killed Akiba",
+     "found_by": "Dejima, while sorting Akiba's desk at the office",
+     "withheld": "Dejima never turned it over to police, believing Moroguchi would just claim Akiba acted alone"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Borrowed pencil",
+    "role": "tool",
+    "attrs": {
+     "use": "stuck into the cassette's spool hole to quietly wind the tape back by hand, avoiding the recorder's noise",
+     "lent_by": "borrowed from Moroguchi the night before"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Tarumi's rubber bands",
+    "role": "tool",
+    "attrs": {
+     "considered_trick": "sling the key on a chain of rubber bands through the window -- ruled out (knots would snag the ring, plunging the corpse's arm)"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Anabuki's tape measure",
+    "role": "tool",
+    "attrs": {
+     "considered_trick": "hook the tip on the ring and feed the key down the rigid metal tape -- ruled out (bends past one meter, too short to reach)"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Moroguchi never removed his ring and wasn't the type to misalign it, yet it was found put back on upside down -- someone else removed and replaced it after his death.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cB",
+    "desc": "The faded blood ring around the victim's finger has one strip rubbed clean, matching where a thin cord would have slid under the ring -- that residue should be findable on the cassette tape Dejima carries.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "editor_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "editor_of"},
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "professional_associate_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "professional_associate_of"},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "former_colleague_of"},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "former_colleague_of"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "former_colleague_of"},
+
+  {"type": "exploits", "from": "p1", "to": "p5", "detail": "directed Akiba to physically test his murder-trick ideas on himself; the fatal test was ruled a suicide", "circumstance_tags": ["cover_up"]},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+
+  {"type": "poisons", "from": "p2", "to": "p1", "method": "mixed cyanide into his morning coffee", "circumstance_tags": ["locked_room", "staged_suicide"]},
+  {"type": "uses", "from": "p2", "to": "o1", "detail": "mixed cyanide into the coffee before Moroguchi drank it", "circumstance_tags": ["locked_room", "staged_suicide"]},
+  {"type": "stages_suicide_of", "from": "p2", "to": "p1", "circumstance_tags": ["staged_suicide", "locked_room"]},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o2"},
+  {"type": "uses", "from": "p2", "to": "o6", "detail": "wound the cassette tape back by hand with the pencil to avoid the recorder's noise"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o3"},
+  {"type": "found", "from": "p2", "to": "o5", "detail": "found in Akiba's desk while sorting his effects"},
+
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p3", "to": "o7"},
+  {"type": "owns", "from": "p4", "to": "o8"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "located_in", "from": "o1", "to": "l1", "detail": "cup found lying next to the bed, not in the kitchen where it was made"},
+  {"type": "kills", "from": "o1", "to": "p1", "circumstance_tags": ["locked_room"]},
+  {"type": "written_by", "from": "o5", "to": "p5"},
+  {"type": "regarding", "from": "o5", "to": "p1"},
+  {"type": "implicates", "from": "o5", "to": "p1"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+
+  {"type": "regarding", "from": "cA", "to": "p1"},
+  {"type": "regarding", "from": "cA", "to": "o3"},
+  {"type": "implicates", "from": "cA", "to": "p2"},
+  {"type": "regarding", "from": "cB", "to": "o3"},
+  {"type": "regarding", "from": "cB", "to": "o2"},
+  {"type": "implicates", "from": "cB", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge_for_colleagues_death"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

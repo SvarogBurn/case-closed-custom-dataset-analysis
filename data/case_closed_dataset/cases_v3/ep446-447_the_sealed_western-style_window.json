@@ -1,0 +1,245 @@
+{
+ "case_id": "ep446-447_the_sealed_western-style_window",
+ "episode_number": "446-447",
+ "title": "The Sealed Western-Style Window",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Sealed_Western-Style_Window",
+ "subtitle_source": ["subs_resolved/0446.txt", "subs_resolved/0447.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Eisuke, Kogoro -- who solves the case remotely by phone/note and lets Officer Yamamura take public credit) omitted by convention, per the ep011 prototype. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file (cases/ep446-447...) had the correct culprit (Kuramoto), correct victim, and correct core motive/method summary, so no culprit correction was needed here -- but it was extremely thin: it omitted the villa's full backstory (the older brother built the secret passage specifically to spy on his wife's affair with his younger brother, then killed her and staged his own suicide, a case Kuramoto's crime consciously or unconsciously replicates), the actual physical clue chain (the encyclopedia volumes left out of order -- 6,3,4,1 -- when Kuramoto crept back to fix them after overhearing Conan mention the order, and the anomalous window-spacing/room-size comparison across the villa's four bedrooms that gave away the hidden passage), the discarded elastic-key-holder locked-room theory floated and dropped mid-episode, the chair-position red herring Officer Yamamura initially misread as proof of murder, and Officer Yamamura's own active role (investigating, secretly hiding in Kuramoto's room, and making the arrest). All of that is restored here. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Rinko Honami",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "songwriter/musician, band Dorcus",
+    "attrs": {
+     "age": 28,
+     "died_of": "hanged with a rope, staged to look like suicide",
+     "behavior": "had become harsh and irritable toward her bandmates in the weeks before her death, repeatedly insulting their playing and musical taste"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Jun Makino",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "musician, band Dorcus",
+    "attrs": {"age": 29}
+   },
+   {
+    "id": "p3",
+    "name": "Toru Tendo",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "musician, band Dorcus",
+    "attrs": {"age": 30}
+   },
+   {
+    "id": "p4",
+    "name": "Youji Kuramoto",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "musician, band Dorcus",
+    "attrs": {"age": 28, "confession": "hanged Rinko in anger after she repeatedly mocked his guitar playing and his favorite artists during a practice session"}
+   },
+   {
+    "id": "p5",
+    "name": "Officer Yamamura",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police officer",
+    "attrs": {"note": "publicly credited with solving the case; the real deduction was phoned in by Kogoro Mouri via Conan"}
+   },
+   {
+    "id": "p6",
+    "name": "The older brother",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "original co-owner of the villa",
+    "attrs": {
+     "died_of": "jumped from his third-floor room's window, three months after killing his wife",
+     "cover_story": "publicly claimed a demon attacked him through the window, to justify nailing it shut and building the spy passage"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "The older brother's wife",
+    "aliases": [],
+    "roles": ["backstory_figure", "victim"],
+    "occupation": null,
+    "attrs": {"died_of": "hanged herself with a rope, staged as suicide by her husband"}
+   },
+   {
+    "id": "p8",
+    "name": "The younger brother",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "original co-owner of the villa",
+    "attrs": {"note": "remained at the villa with his own wife after his brother's and sister-in-law's deaths"}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Dorcus villa",
+    "attrs": {
+     "history": "built decades ago by two brothers; scene of two hangings staged as suicide, two years apart",
+     "legend": "locals believe the villa is haunted by a demon that stares through a nailed-shut window"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Rinko's room (maid's room)",
+    "attrs": {
+     "floor": 2,
+     "feature": "contains the nailed-shut window; unusually narrow window spacing that hides the passage entrance behind the bookshelf",
+     "lock": "single electronic lock, one key, found on Rinko's key-holder"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Kuramoto's room",
+    "attrs": {"floor": 3, "history": "the older brother's former room; he jumped to his death from its window"}
+   },
+   {
+    "id": "l4",
+    "name": "Tendo's room",
+    "attrs": {"floor": 3, "position": "beside Kuramoto's room, directly above Rinko's room"}
+   },
+   {
+    "id": "l5",
+    "name": "Villa garden",
+    "attrs": {"feature": "the birdhouse is visible only from the second floor, due to tree cover"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Hidden passage behind bookshelf",
+    "role": "tool",
+    "attrs": {
+     "built_by": "the older brother, disguised as sealing a demon-haunted window",
+     "mechanism": "runs from above Kuramoto's room down to a gap beside the nailed window in Rinko's room, entered via a hinged panel behind Rinko's bookshelf",
+     "reuse": "Kuramoto used it to enter and exit Rinko's locked room unseen, both to kill her and to return that night to fix the book order"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Encyclopedia set",
+    "role": "evidence",
+    "attrs": {
+     "found_order": "6, 3, 4, 1 -- out of sequence",
+     "elsewhere": "every other set of books in the room was correctly arranged",
+     "significance": "the disturbed order gave away that the bookshelf had been moved and hastily replaced, revealing it doubled as the passage door"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Rope",
+    "role": "weapon",
+    "attrs": {
+     "used_by": "Kuramoto, found already stored inside the secret passage",
+     "possible_origin": "Kuramoto speculates it may be the same rope the older brother used on his wife two years earlier"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Chair",
+    "role": "evidence",
+    "attrs": {
+     "found_position": "upright under the rope, not kicked away",
+     "explanation": "placed there by Makino, Tendo, and Kuramoto when they broke into the room to bring Rinko's body down; initially misread by Officer Yamamura as proof she was murdered elsewhere and hung up afterward"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Birdhouse",
+    "role": "instrument",
+    "attrs": {
+     "mechanism": "a single white plate placed inside signaled the older brother's wife to leave her bedroom door unlocked that night",
+     "found_by": "spotted during the estate tour of the garden"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Room key & key-holder",
+    "role": "tool",
+    "attrs": {
+     "key_holder_property": "elastic, stretches to roughly four meters",
+     "discarded_theory": "investigators floated sliding the key under the door via the stretched key-holder to fake a locked room; ruled out once the real method (the secret passage) was found"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Unlike the villa's other three bedrooms, the maid's room alone has narrow window spacing and a window set oddly close to the wall -- the anomaly that gives away the hidden passage.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "castmate", "symmetric": true},
+
+  {"type": "relationship", "from": "p6", "to": "p8", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p6", "to": "p7", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p7", "to": "p8", "relation_type": "had_affair_with"},
+
+  {"type": "builds", "from": "p6", "to": "o1"},
+  {"type": "spies_on", "from": "p6", "to": "p7", "circumstance_tags": ["surveillance"]},
+  {"type": "signals_via", "from": "p8", "to": "o5", "circumstance_tags": ["affair"]},
+  {"type": "kills", "from": "p6", "to": "p7", "method": "hanging, staged as suicide", "circumstance_tags": ["staged_suicide", "cover_up"]},
+  {"type": "stages_suicide_of", "from": "p6", "to": "p7", "circumstance_tags": ["staged_suicide"]},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "located_in", "from": "o5", "to": "l5"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2", "detail": "claims she was in Rinko's room sorting books to sell, per the previous owner's request"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l4", "detail": "claims he went upstairs to listen to a CD"},
+  {"type": "was_at", "from": "p3", "to": "l2", "detail": "brought Rinko the CD she'd asked for and found her unresponsive"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l3", "detail": "claimed alibi: practicing guitar in his own room"},
+  {"type": "was_at", "from": "p4", "to": "l2", "circumstance_tags": ["locked_room"], "detail": "actual: entered via the secret passage to kill Rinko, and returned that night to fix the book order"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l3", "detail": "hid in Kuramoto's room, having pretended to leave the villa, to catch him returning to the bookshelf"},
+
+  {"type": "kills", "from": "p4", "to": "p1", "method": "hanged from the chandelier near the door with a rope", "circumstance_tags": ["locked_room", "staged_suicide", "cover_up"]},
+  {"type": "stages_suicide_of", "from": "p4", "to": "p1", "circumstance_tags": ["staged_suicide"]},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "personal grudge -- Rinko repeatedly mocked his guitar playing and favorite artists"},
+
+  {"type": "leaves_evidence", "from": "p4", "to": "o2"},
+  {"type": "implicates", "from": "o2", "to": "p4"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o3"},
+  {"type": "implicates", "from": "o3", "to": "p4"},
+  {"type": "uses_passage", "from": "p4", "to": "o1"},
+
+  {"type": "relocates", "from": "p2", "to": "o4", "circumstance_tags": ["misread_as_evidence"]},
+  {"type": "relocates", "from": "p3", "to": "o4", "circumstance_tags": ["misread_as_evidence"]},
+  {"type": "relocates", "from": "p4", "to": "o4", "circumstance_tags": ["misread_as_evidence"]},
+
+  {"type": "owns", "from": "p1", "to": "o6"},
+
+  {"type": "regarding", "from": "cA", "to": "l2"},
+  {"type": "regarding", "from": "cA", "to": "o1"},
+  {"type": "implicates", "from": "cA", "to": "p4"},
+
+  {"type": "confronts", "from": "p5", "to": "p4"},
+  {"type": "arrests", "from": "p5", "to": "p4"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

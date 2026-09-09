@@ -1,0 +1,464 @@
+{
+ "case_id": "ep577_the_truth_lit_up_by_the_fireflies",
+ "episode_number": "577",
+ "title": "The Truth Lit Up By the Fireflies",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Truth_Lit_Up_By_the_Fireflies",
+ "subtitle_source": ["subs_resolved/0577.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Agasa -- who voices the deduction here the way Kogoro usually does) omitted by convention; Detective Boys members Ai Haibara and Genta are kept because they are individually plot-relevant (Haibara's resemblance to Narutaki's dead granddaughter Mayu drives his backstory beat and her hostage-taking in the climax; Genta is the one who recovers the disguised voice recorder, the key physical evidence). No `event` nodes: actions are direct typed edges. The old cases/ep577 file got the culprit right (Tarumi, matching this file's label) but was very thin: it omitted Owada Michitake, Narutaki, Haibara's backstory role, Genta, and the victim's father; collapsed all interactions to generic 'knows' edges; left the motive as 'unspecified'; and used two generic event nodes instead of the actual mechanism (voice-recorder alibi trick + bottle swap using a planted firefly). No discrepancy found in the murderer identity itself. Per the 2026-08 batch-8+ process change, order/temporal_frame/years_before_present are omitted from all edges. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Owada Michitake",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "chief priest, village fundraiser",
+    "attrs": {
+     "deal": "let Nakamine court his daughter Aoi in exchange for fundraising the firefly-breeding project"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Owada Aoi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "priest's daughter",
+    "attrs": {
+     "rejected": "turned down Nakamine's marriage proposal"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Nakamine Tokurou",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "village head's son, funded the firefly project",
+    "attrs": {
+     "died_of": "cyanide poisoning",
+     "reputation": "abuses his status, accused Kashiwa of embezzling firefly funds"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kashiwa Tatsuma",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "eldest son of an old village family, youth-group member",
+    "attrs": {
+     "accused_by_victim_of": "embezzling firefly-fund donations (misunderstanding, cleared)"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Tarumi Shuuichirou",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Nakamine's friend, drove the fireflies truck",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Narutaki Souichi",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "local police detective",
+    "attrs": {
+     "backstory": "lost his granddaughter Mayu in a landslide the previous year"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Ai Haibara",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "child, Detective Boys",
+    "attrs": {
+     "resemblance": "looks like Narutaki's late granddaughter Mayu"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Genta",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "child, Detective Boys",
+    "attrs": {
+     "found": "kept the disguised voice recorder overnight, forgot to return it"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Nakamine's father",
+    "aliases": ["Village Head"],
+    "roles": ["backstory_figure"],
+    "occupation": "village head, company owner",
+    "attrs": {
+     "victim_of": "money stolen from his company by Tarumi"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Riverbank firefly site",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Eboshi Rock",
+    "attrs": {
+     "description": "rock upstream where Nakamine's car was parked and he was poisoned"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Cave shrine",
+    "attrs": {
+     "fate": "hit by a landslide during Tarumi's flight and hostage-taking"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Grocery store",
+    "attrs": {
+     "description": "roadside stop midway between the village and Eboshi Rock"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Flashlight-shaped voice recorder",
+    "role": "instrument",
+    "attrs": {
+     "trick": "dictation machine playing a loop of Nakamine's pre-recorded voice; never responds when spoken to",
+     "recovered_by": "Genta, who mistakenly kept it overnight"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Fireflies truck",
+    "role": "tool",
+    "attrs": {
+     "used_for": "transporting the fireflies to the village, and secretly driving Nakamine to Eboshi Rock"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Poisoned drink bottle",
+    "role": "weapon",
+    "attrs": {
+     "contents": "Nakamine's favorite drink, laced with cyanide",
+     "staging_flaw": "found washed completely clean, unlike what real poison residue would leave"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Nakamine's car",
+    "role": "tool",
+    "attrs": {
+     "detail": "parked at Eboshi Rock beforehand for Nakamine to wait in for Aoi"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Firefly planted in the car",
+    "role": "evidence",
+    "attrs": {
+     "trick": "released into the sealed car to explain its presence and distract from the bottle swap"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "For ~30 minutes after the firefly release, only Aoi and Tarumi were each unaccounted for by any other witness -- everyone else confirmed each other's presence.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cB",
+    "desc": "The poisoned drink bottle at the scene was scrubbed completely clean, yet a live firefly was found sealed inside the locked car -- the wash job was to hide the swap, and the firefly was planted to explain it.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p9",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "wanted_to_marry"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "childhood_friend"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "disapproves_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p3",
+   "relation_type": "friend"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p7",
+   "relation_type": "resembles_deceased_granddaughter"
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p3",
+   "method": "cyanide poisoning via drink bottle",
+   "circumstance_tags": ["staged_alibi", "faked_presence", "cover_up"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p5",
+   "to": "o1",
+   "circumstance_tags": ["faked_presence"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p5",
+   "to": "o1"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p5",
+   "to": "o3",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p5",
+   "to": "o5",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o4"
+  },
+  {
+   "type": "recovers",
+   "from": "p8",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p5"
+  },
+  {
+   "type": "assaults",
+   "from": "p5",
+   "to": "p6",
+   "circumstance_tags": ["flight_from_arrest"]
+  },
+  {
+   "type": "assaults",
+   "from": "p5",
+   "to": "p4",
+   "circumstance_tags": ["flight_from_arrest"]
+  },
+  {
+   "type": "takes_hostage",
+   "from": "p5",
+   "to": "p7",
+   "circumstance_tags": ["flight_from_arrest", "hostage_situation"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p3",
+   "motive_type": "cover_up_of_embezzlement_and_theft"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p3",
+   "motive_type": "unwanted_advances (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p3",
+   "motive_type": "embezzlement_accusation_dispute (red herring)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

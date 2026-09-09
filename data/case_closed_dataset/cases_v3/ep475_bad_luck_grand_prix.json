@@ -1,0 +1,361 @@
+{
+ "case_id": "ep475_bad_luck_grand_prix",
+ "episode_number": "475",
+ "title": "Bad Luck Grand Prix",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Bad_Luck_Grand_Prix",
+ "subtitle_source": [
+  "subs_resolved/0475.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Kogoro Mouri, Conan, Detective Takagi, Officer Okumura) omitted by convention -- background police presence only. No `event` node type: every action is a directly typed edge between the entities involved. case_type: attempted_murder (both victims survive). Discrepancy vs. old cases/ep475 file: the old file names the crime scene 'Rice Flower Park'; the transcript states 'Beika Park' explicitly (line: 'The place is Beika Park, in the back street') -- transcript wins, corrected to Beika Park here. The old file's culprit attribution (s2/Ichikura Tomomi) matches the transcript correctly, so no culprit discrepancy there. The old file collapsed the plot into three generic `event` nodes and a single `knows` edge for both suspects toward the victim; rebuilt here with specific verbs (runs_down/steals/threatens/plants/attempts_to_suffocate), the real motive chain (Ichikura wanted Okonogi's inheritance via her fiance Kazuma, used the unlucky bystander Tatematsu as cover since he was seen with Okonogi daily), and the fabricated-alibi mechanism (a self-planted fake bomb scare at Tohto Department Store, timed to look like she was in Ginza during the hit-and-run).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tatematsu Shinzaburou",
+    "aliases": [
+     "most unlucky man in Japan"
+    ],
+    "roles": [
+     "victim",
+     "witness"
+    ],
+    "occupation": "company employee",
+    "attrs": {
+     "nickname_origin": "TV segment made by his nephew about his chronic bad luck",
+     "routine": "walks home from Beika Station and exchanges greetings with Okonogi, who is out on a leisurely walk, most evenings"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kiyotaka Okonogi",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "wealthy, retired",
+    "attrs": {
+     "family": "no immediate family besides his nephew Kazuma",
+     "outcome": "survives the hit-and-run and a later hospital attack, regains consciousness"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kazuma Sakaki",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "unspecified, company employee",
+    "attrs": {
+     "alibi": "claims he went home sick at noon and slept alone; no witness",
+     "note": "red herring: sole heir and in debt to Okonogi, but had no role in the plot"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Tomomi Ichikura",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "unspecified",
+    "attrs": {
+     "stated_motive": "wanted Okonogi's inheritance money once she married Kazuma; unwilling to wait for him to die naturally"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Park",
+    "attrs": {
+     "detail": "back street where Tatematsu and Okonogi cross paths each evening"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Beika Hospital",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Tohto Department Store, Ginza",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Supermarket near Tatematsu's home",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Stolen car",
+    "role": "weapon",
+    "attrs": {
+     "status": "reported stolen, license plate seen by a witness, car itself never recovered",
+     "driver_disguise": "sunglasses and a hat"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Fake time bombs",
+    "role": "instrument",
+    "attrs": {
+     "claimed_location": "women's restroom, 5th floor",
+     "actual_location": "moved to men's restroom, 6th floor by a child who was shopping, before being found",
+     "purpose": "manufacture a public commotion at a predictable time to fake an alibi"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Tatematsu's stolen shopping bag",
+    "role": "evidence",
+    "attrs": {
+     "contents": "expensive meat and sashimi, plus items revealing his name and home address",
+     "significance": "let Ichikura learn Tatematsu's identity so she could threaten him and later use him as cover"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Wet towel",
+    "role": "weapon",
+    "attrs": {
+     "used_for": "attempted suffocation of the unconscious Okonogi in his hospital bed",
+     "found": "Ichikura tried to hide it when interrupted"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Ichikura's alibi text message",
+    "role": "evidence",
+    "attrs": {
+     "content": "message to Kazuma describing a bomb-scare commotion at the department store, claimed to be sent from the scene",
+     "sent_time": "6:40 PM, ten minutes after the reported commotion"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ichikura's alibi text says the bomb was found on the 5th floor women's restroom, but police confirm it was actually discovered on the 6th floor men's restroom -- proves she never witnessed the commotion in person and only knew about it because she planted it herself.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "nephew_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "in_debt_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "routine_acquaintance"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "circumstance_tags": [
+    "collateral_target"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "circumstance_tags": [
+    "intended_target"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "circumstance_tags": [
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "steals",
+   "from": "p4",
+   "to": "o3",
+   "circumstance_tags": [
+    "obtains_target_identity"
+   ]
+  },
+  {
+   "type": "threatens",
+   "from": "p4",
+   "to": "p1",
+   "circumstance_tags": [
+    "murder_declaration"
+   ],
+   "detail": "phone call warning she would silence him for seeing her face"
+  },
+  {
+   "type": "uses",
+   "from": "p4",
+   "to": "o1"
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p4",
+   "to": "p2",
+   "method": "hit-and-run with a stolen car",
+   "circumstance_tags": [
+    "staged_accident",
+    "attempted_murder"
+   ]
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p4",
+   "to": "p1",
+   "method": "hit-and-run with a stolen car, used as cover so the real target would look incidental",
+   "circumstance_tags": [
+    "staged_accident",
+    "collateral_damage",
+    "red_herring"
+   ]
+  },
+  {
+   "type": "plants",
+   "from": "p4",
+   "to": "o2"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l3"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o2",
+   "circumstance_tags": [
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "sent_by",
+   "from": "o5",
+   "to": "p4"
+  },
+  {
+   "type": "sent_to",
+   "from": "o5",
+   "to": "p3"
+  },
+  {
+   "type": "uses",
+   "from": "p4",
+   "to": "o4"
+  },
+  {
+   "type": "attempts_to_suffocate",
+   "from": "p4",
+   "to": "p2",
+   "method": "wet towel over the face in his hospital room",
+   "circumstance_tags": [
+    "failed_attempt",
+    "interrupted"
+   ]
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p2",
+   "motive_type": "financial (inheritance via marriage to Okonogi's nephew)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "eliminate a witness who had seen her face"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p2",
+   "motive_type": "financial (debt plus sole heir; red herring, had no actual role in the crime)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

@@ -1,0 +1,412 @@
+{
+ "case_id": "ep658_the_hot_chocolate_trap",
+ "episode_number": "658",
+ "title": "The Hot Chocolate Trap",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Hot_Chocolate_Trap",
+ "subtitle_source": ["subs_resolved/0658.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast convention: Conan Edogawa omitted (he performs the deduction, voiced through Sonoko via the usual bowtie-voice-changer device, but never a suspect). Kogoro Mouri and Inspector Megure do not appear this episode -- the investigating officer is a different, episode-local character, Inspector Yuminaga, who is included as a person node since he drives a significant chunk of on-screen investigation (initially closes the case as a static-electricity accident, then is corrected). Ran and Sonoko ARE kept per the old case file's note that this episode treats them as present, questioned participants rather than incidental cast. Discrepancy vs. the old lower-fidelity file: that file listed Ran (s2) and Sonoko (s3) with roles/edges implying they were genuine suspects (\"knows\" edges to the victim, was_at with the culprit). The transcript never develops any accusation, motive, or real suspicion against either of them -- they are present witnesses only, formally cleared by simply not being implicated by any evidence. This rebuild drops the unsupported suspect framing for them rather than inventing motive edges to match the old file. The old file also modeled the case with generic `event` nodes (e1-e3) and a single generic `knows` edge type; this rebuild replaces those with direct typed verb edges per schema v3, and reserves `clue` nodes for the three genuinely comparative facts (photo vs. physical state of the pot; Ran's corrected memory of the flame sequence; Sakura's sleeve-burn location vs. her claimed distance from the victim). Per the 2026-08 batch-8+ scoping change, temporal fields (order/temporal_frame/years_before_present) are omitted from all edges. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yukihiko Tsujimoto",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "chocolatier, world championship winner",
+    "attrs": {
+     "died_of": "burns from an ignited alcohol fire during his shop's opening ceremony",
+     "clothing": "velvet-pile cook's coat (burns easily) plus a nylon scarf -- the combination let the fire be misread as a static-electricity accident",
+     "false_public_narrative": "media and the public believed he and Sakura were a couple about to announce their wedding; he privately saw her only as a disposable business tool and planned to fire her right after the opening"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Mayuko Sakura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "chocolate shop producer / co-manager",
+    "attrs": {
+     "age": 25,
+     "true_motive": "devoted herself to Tsujimoto and helped build his success and funding, then learned he never intended to marry her and planned to fire her the day the shop opened",
+     "injury": "burned sleeve, from splashing alcohol on herself while rigging the hidden spirytus container under the tablecloth -- later misrepresented as a stray spark from the fire"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Ran Mouri",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "role_in_solution": "her corrected memory of a huge flame flaring up before the bottles fell is the clue that proves the fire had a rigged ignition point"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Sonoko Suzuki",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "family": "Suzuki Financial Group heiress; her family's backing funded the shop"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Inspector Yuminaga",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police inspector",
+    "attrs": {
+     "initial_theory": "ruled the fire an accidental static-electricity ignition from Tsujimoto's nylon scarf against his velvet coat, before being corrected"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Le trésor de fruits chocolate shop",
+    "attrs": {
+     "detail": "newly opened chocolate atelier/shop; site of the opening ceremony and the fire"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Shop kitchen",
+    "attrs": {
+     "detail": "source of the steel-wool scrubbing brush and deodorant sachets used to build the ignition device"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Ignition device (foil, steel wool, salt)",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "aluminum foil and steel wool form an electrochemical air battery when salt water is poured in; the current sets the steel wool alight",
+     "disguise": "planted inside the chocolate sculpture's bowl in place of the dry ice that was supposed to make a mist effect"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Chocolate sculpture \"de l'espace\"",
+    "role": "instrument",
+    "attrs": {
+     "detail": "first-place show sculpture; water poured into its bowl was meant to release dry-ice mist for a 'galaxy' effect"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Pistachio shells under the bottle rack",
+    "role": "tool",
+    "attrs": {
+     "purpose": "propped under the nalewka bottles so a light bump would topple them easily"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Nalewka bottle rack",
+    "role": "instrument",
+    "attrs": {
+     "content": "bottles of nalewka, fruit steeped in 96%-alcohol spirytus; fell and spread burning liquor across the floor"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Hidden spirytus container under tablecloth",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "paper container of spirytus hidden beneath the table; pulling the tablecloth up just before the show released alcohol vapor into the air, which the ignition device set off as a sudden huge flame"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Silver water pot",
+    "role": "tool",
+    "attrs": {
+     "detail": "Tsujimoto drank plain water from it before the show; salt was added afterward so pouring it on the sculpture would trigger the battery"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Non-woven fabric fragment",
+    "role": "evidence",
+    "attrs": {
+     "detail": "found near the corpse; matches deodorant-sachet packaging material, tying the device's parts to kitchen stock"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Deodorant sachets (kitchen fridge)",
+    "role": "tool",
+    "attrs": {
+     "detail": "stock in the shop kitchen's fridge; source of the non-woven fabric and materials used in staging"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Phone photo of Tsujimoto drinking",
+    "role": "evidence",
+    "attrs": {
+     "detail": "photo taken just before the show shows Tsujimoto drinking unsalted water from the pot -- proving the salt was added afterward"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Photo shows Tsujimoto drinking plain water from the pot right before the show, yet the pot held salt water during the show -- only Sakura handled it afterward, so only she could have salted it.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Ran's corrected memory: a huge flame flared up BEFORE the bottles fell, contradicting the assumed order (bottles fall, liquor catches) -- proves an ignition device fired first, not an accidental spark.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cC",
+    "desc": "Sakura claimed she was far from Tsujimoto when the fire spread, but her burned sleeve matches alcohol splashing on her while she rigged the hidden spirytus container under the table -- contradicts her claimed distance.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "romantic_partner (one-sided; he saw her only as useful, not a real partner)"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "business_partner_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "rigged electrochemical ignition device set off a fire during the chocolate show",
+   "circumstance_tags": ["staged_accident", "elaborate_trap", "false_alibi"]
+  },
+  {
+   "type": "burns",
+   "from": "p2",
+   "to": "l1",
+   "circumstance_tags": ["staged_accident"]
+  },
+  {
+   "type": "rigs",
+   "from": "p2",
+   "to": "o1",
+   "detail": "assembled the foil/steel-wool/salt device and hid it inside the sculpture's bowl in place of the dry ice"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "o2"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "places",
+   "from": "p2",
+   "to": "o3",
+   "detail": "propped pistachio shells under the nalewka bottles beforehand"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l1"
+  },
+  {
+   "type": "knocks_over",
+   "from": "p1",
+   "to": "o4",
+   "circumstance_tags": ["triggered_by_trap"]
+  },
+  {
+   "type": "hides",
+   "from": "p2",
+   "to": "o5",
+   "detail": "planted the spirytus-filled paper container beneath the tablecloth before the ceremony"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "l1"
+  },
+  {
+   "type": "salts",
+   "from": "p2",
+   "to": "o6",
+   "detail": "added salt to the water pot after Tsujimoto drank from it and before he poured it on the sculpture"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l1"
+  },
+  {
+   "type": "selects",
+   "from": "p2",
+   "to": "p1",
+   "detail": "chose the flammable velvet-pile fabric for Tsujimoto's new cook's coat"
+  },
+  {
+   "type": "sources",
+   "from": "p2",
+   "to": "o8",
+   "detail": "used kitchen deodorant sachets and scrubbing-brush steel wool as raw material for the device"
+  },
+  {
+   "type": "located_in",
+   "from": "o8",
+   "to": "l2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "located_in",
+   "from": "o7",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p2"
+  },
+  {
+   "type": "depicts",
+   "from": "o9",
+   "to": "p1",
+   "detail": "shows him drinking unsalted water from the pot shortly before the show"
+  },
+  {
+   "type": "flirts_with",
+   "from": "p1",
+   "to": "p4",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o9"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "betrayal_and_discard (built his success and funding, then learned he never intended to marry her and planned to fire her right after the opening)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

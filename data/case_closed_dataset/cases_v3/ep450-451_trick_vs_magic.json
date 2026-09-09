@@ -1,0 +1,419 @@
+{
+ "case_id": "ep450-451_trick_vs_magic",
+ "episode_number": "450-451",
+ "title": "Trick vs. Magic",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Trick_vs._Magic",
+ "subtitle_source": ["subs_resolved/0450.txt", "subs_resolved/0451.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Kogoro Mouri, Conan, Ran, Inspector Megure, Takagi, Chiba) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: murder. The old lower-fidelity cases/ep450-451_trick_vs_magic.json file had the correct culprit (Shoji, the director) and the core ring/latch mechanism, so no culprit correction was needed here -- unlike some other rebuilds. However it was missing most of the actual structure of the mystery: (1) the two deliberate false accusations Kogoro/the investigation makes before the real solution -- first that assistants Uehara and Nakagawa colluded to fake pulling the latch pins (disproven when the video shows Ishida panned the camera away for an innocent reason), then that video operator Ishida swapped Fuyuki's routine beta-blocker for a muscle relaxant (disproven by blood analysis finding no such drug) -- both of which the old file omitted entirely; (2) the fact that the murder trick was built as a second, superimposed trick layered on top of the magic act's own legitimate escape trick (rigged latch pins + hidden handle + breakaway cuffs), which is why nobody -- audience, on-stage assistants, or backstage crew -- saw anything wrong; (3) two earlier near-miss 'accidents' (falling rigging during rehearsals) mentioned as apparent prior attempts on Fuyuki's life, whose perpetrator is never identified on screen, so they are recorded only as an attribute on the victim, not attributed to any person node; (4) the individual motives of all four red-herring suspects (Uehara's broken engagement, Nakagawa's contested divorce, Hasegawa's gambling debt, Ishida's alleged resentment at never being promoted to on-stage magician) versus Shoji's real motive (he was about to be fired over creative disagreements about the show's direction). The old file's single 'trick ring' clue is kept but reframed around the actual comparative evidence that broke the case: two frames of Ishida's video showing the ring on Shoji's hand near the tank lid, then absent moments later.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Gen'yo Fuyuki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "magician",
+    "attrs": {
+     "age": 35,
+     "died_of": "drowning inside his own escape-trick water tank",
+     "emergency_signal": "private hand gesture arranged with Kogoro Mouri to call for real help during dangerous tricks, known to no one else in the group",
+     "prior_incidents": "rigging equipment fell from the ceiling during rehearsals on two separate occasions shortly before the murder, both times while he was alone; perpetrator never identified"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Misa Uehara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "stage assistant",
+    "attrs": {
+     "age": 26,
+     "backstory": "Fuyuki's ex-fiancee; he broke off the engagement unilaterally three years ago"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Chiaki Nakagawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "stage assistant",
+    "attrs": {
+     "age": 24,
+     "backstory": "Fuyuki's ex-wife; divorced last year, still resentful of his repeated infidelity"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kazuma Ishida",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "video operator",
+    "attrs": {
+     "age": 19,
+     "backstory": "Fuyuki's disciple and most trusted group member; records every show on Fuyuki's own standing orders",
+     "duty": "administered Fuyuki's routine pre-trick beta blocker 15 minutes before the water-escape act"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Shingo Shoji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "show director",
+    "attrs": {
+     "age": 37,
+     "backstory": "a former magician and Fuyuki's disciple long ago, but was never good at magic; Fuyuki hired him as director instead",
+     "skill": "retains a former magician's physical agility"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Minoru Hasegawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "crane operator",
+    "attrs": {
+     "age": 45,
+     "backstory": "owes Fuyuki a large gambling debt"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Theater stage",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Theater waiting room",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Fuyuki's dressing room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Water escape tank",
+    "role": "instrument",
+    "attrs": {
+     "trick_mechanism": "legitimate act: assistants visibly shackle and latch Fuyuki in, but secretly leave the latch pins pulled; a hidden handle under the lid lets him rise for air and climb out once curtains drop",
+     "murder_use": "Shoji resealed the latch with his ring while hidden atop the tank, defeating the pulled-pin escape and trapping Fuyuki underwater"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Tank lid latch",
+    "role": "tool",
+    "attrs": {
+     "anomaly": "central axis unusually large with an added hole not present on an ordinary latch",
+     "history": "the group's latches were recently replaced; who installed the replacements is never established in the investigation"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Shoji's double-band trick ring",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "two interlocking bands with an easy-open axis, sized to pass through the hole in the latch axis and lock it shut",
+     "worn_on": "left hand, middle finger"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Fuyuki's beta blocker",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "routine dose taken 15 minutes before the water-escape trick to slow his heart rate for the long breath-hold",
+     "forensic_result": "blood analysis found only the beta blocker, no muscle relaxant -- clears the drug-swap accusation against Ishida"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Ishida's video recording",
+    "role": "evidence",
+    "attrs": {
+     "coverage": "continuous camera coverage of the show from the audience side, later reviewed frame by frame"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Overhead crane beam and chain",
+    "role": "tool",
+    "attrs": {
+     "use": "Shoji's concealed route: he waited on the beam above the tank, hidden by stage lighting left dark at the top of the tank, then dropped to the lid via the crane's chain"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Video frame comparison: one frame of Ishida's recording shows the ring on Shoji's hand near the tank lid; a slightly later frame shows his hand empty -- proves he removed the ring he'd used to reseal the latch.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "ex_fiancee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "ex_wife_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "disciple_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "former_disciple_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "creative_conflict_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "debtor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "resentment over the unilateral breakup of their engagement (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "resentment over his repeated infidelity and their divorce (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p6",
+   "to": "p1",
+   "motive_type": "gambling debt would be erased by his death (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "alleged resentment at never being allowed on stage as a real magician, accusation made by the police and denied by Ishida (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "about to be fired over creative disagreements on the show's direction"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "administers",
+   "from": "p4",
+   "to": "p1",
+   "detail": "gave Fuyuki his routine beta blocker 15 minutes before the water-escape trick, on Fuyuki's own standing orders"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "records",
+   "from": "p4",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o5"
+  },
+  {
+   "type": "drowns",
+   "from": "p5",
+   "to": "p1",
+   "method": "hid atop the water tank in the darkened rigging, dropped to the lid via the crane chain when the curtain rose, and resealed the latch with his trick ring, defeating the trick's built-in escape so Fuyuki could not surface",
+   "circumstance_tags": ["locked_room", "staged_accident", "misdirection"]
+  },
+  {
+   "type": "traps_in",
+   "from": "p5",
+   "to": "o1",
+   "circumstance_tags": ["locked_room"]
+  },
+  {
+   "type": "uses",
+   "from": "p5",
+   "to": "o6",
+   "detail": "waited hidden on the crane beam above the tank in the darkened rigging, then dropped down to the tank lid via the crane's chain when the curtain rose",
+   "circumstance_tags": ["locked_room", "misdirection"]
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l1"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p5",
+   "to": "o3",
+   "detail": "removed the ring from the latch once the body was brought down and out of camera/audience view, making the tank's failure to reopen look like a simple trick malfunction",
+   "circumstance_tags": ["staged_accident", "cover_up"]
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o3"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p5"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p5"
+  }
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

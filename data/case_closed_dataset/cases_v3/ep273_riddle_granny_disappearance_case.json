@@ -1,0 +1,526 @@
+{
+ "case_id": "ep273_riddle_granny_disappearance_case",
+ "episode_number": "273",
+ "title": "Riddle Granny Disappearance Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Riddle_Granny_Disappearance_Case",
+ "subtitle_source": ["subs_resolved/0273.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast convention follows ep011: Conan Edogawa is omitted (his few analytical lines are not clearly speaker-attributed in this un-tagged transcript and he plays the same background-catalyst role as in other episodes). Ayumi Yoshida, Mitsuhiko Tsuburaya and Genta Kojima are NOT on that omit list and are kept as full person nodes with roles=[witness]: they are the ones entrusted with the victim's belongings, the ones who discover the bloody coded scarf, and the ones who solve the kanji cipher on-screen, so they are load-bearing to the plot the way Ran/Kogoro are not in ep011. No event nodes: actions are direct typed edges. This transcript carries no speaker-name tags (unlike some other episodes' (Character Card) markup), so a few group-scene was_at attributions (e.g. exactly who accompanied Ayumi to Ezaki's house) are inferred from narrative context rather than an explicit speaker label; this is flagged here rather than silently presented as certain. IMPORTANT DISCREPANCY vs. the old wiki-derived cases/ep273 file: that file modeled ONLY the one-month-earlier backstory murder of Ezaki (as e1) and a vague kidnapping (e2) with a single generic victim (Mr. Ezaki) and two bare-name suspects, and it never created a node for Shizuka Oomori at all -- despite her disappearance/kidnapping being the entire on-screen 'case' the episode's title refers to (the 'Granny' of 'Riddle Granny Disappearance Case'). The old file also omitted the coded-scarf kanji puzzle (the actual detective mechanism used to solve the case), the specific identification of the murder weapon (the white-eyed monkey statue out of the three-wise-monkeys ornament set), and Joji Yabuki's on-screen red-herring confrontation/clearance arc. The culprit identity (Toshio Mochizuki) matches the old file and the transcript -- label.murderer_id is unchanged -- but the surrounding graph in the old file was missing most of the actual case. case_type: murder + kidnapping/false imprisonment.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shizuka Oomori",
+    "aliases": ["Obaa-chan", "Shizuka-obaachan"],
+    "roles": ["victim", "witness"],
+    "occupation": "volunteer caretaker of stray cats",
+    "attrs": {
+     "relationship_to_ezaki": "referred to Ezaki as her husband; used to take him to the Izu hot springs",
+     "cover_story": "told the Detective Boys she was going to the Izu hot springs for her neuralgia the day before she disappeared; later shown to be a fabrication, since she never actually went",
+     "injury": "sustained a bleeding wound while confined, used to write a coded message in her own blood",
+     "self_description": "called herself 'just a cowardly person who can't protect them by myself', foreshadowing that she knew she was in danger",
+     "outcome": "rescued unharmed before the locker she was confined in could be discarded; fully recovered afterward"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ezaki",
+    "aliases": ["Ezaki-san"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "retired, lived alone, collector of ape/monkey ornaments",
+    "attrs": {
+     "died_of": "struck with one of his own monkey-ornament statues, one month before present",
+     "false_public_narrative": "ruled an accident: he was believed to have slipped in the bathtub and hit his head on the faucet",
+     "estate": "house and ape ornament collection passed to his nephew Toshio Mochizuki"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Toshio Mochizuki",
+    "aliases": ["Mochizuki-san"],
+    "roles": ["suspect"],
+    "occupation": "company president, Haido City; nephew of Ezaki, now living in Ezaki's house",
+    "attrs": {
+     "arrested_for": "murder, kidnapping, and false imprisonment"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Joji Yabuki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "car owner in the neighborhood near the park",
+    "attrs": {
+     "grievance": "the stray cat Bruce repeatedly got into his car's engine hood and urinated in it",
+     "cleared_by": "Shizuka's own testimony after her rescue confirmed Mochizuki, not Yabuki, was the culprit; epilogue shows Yabuki thanking Shizuka after Bruce inadvertently foiled an attempted theft of his car"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Ayumi Yoshida",
+    "aliases": ["Ayumi-chan"],
+    "roles": ["witness"],
+    "occupation": "elementary school student, member of the Detective Boys",
+    "attrs": {
+     "entrusted_by_shizuka": "the day before her disappearance, Shizuka asked Ayumi to look after the cats and put her 'in charge'"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Mitsuhiko Tsuburaya",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "elementary school student, member of the Detective Boys",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Genta Kojima",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "elementary school student, member of the Detective Boys",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Neighborhood park / stray-cat colony",
+    "attrs": {
+     "description": "where Shizuka fed and cared for the abandoned cats; site of Yabuki's confrontation with her and where Bruce is later found wearing the bloody coded scarf"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Shizuka Oomori's house",
+    "attrs": {
+     "clue": "the previous evening's newspaper was still uncollected, proving she never made it home the night she disappeared"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Ezaki's house (now Mochizuki's residence)",
+    "attrs": {
+     "contents": "displays Ezaki's collection of ape/monkey ornaments, including the three wise monkeys (Mizaru, Iwazaru, Kikazaru)"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Bathroom of Ezaki's house",
+    "attrs": {
+     "significance": "staged scene of Ezaki's death, made to look like an accidental fall onto the faucet"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Storage locker facility near Koshin Tower / Koshin Street shopping district",
+    "attrs": {
+     "significance": "where Shizuka was confined inside a disused locker; Mochizuki had arranged for the lockers to be 'transferred' (discarded) at 2 o'clock"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Ape ornament collection",
+    "role": "evidence",
+    "attrs": {
+     "composition": "Mizaru (see no evil), Iwazaru (speak no evil), and Kikazaru (hear no evil) -- the three wise monkeys, plus other ape figurines",
+     "provenance": "belonged to Ezaki; inherited by Mochizuki after Ezaki's death",
+     "significance": "financial motive for Ezaki's murder"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "White-eyed monkey statue (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "identifying_feature": "eyes painted white, distinguishing it from the other monkey statues -- specified in Shizuka's coded message",
+     "forensic_result": "bloodstains on it matched Ezaki, confirmed after Shizuka's rescue and testimony"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Shizuka's coded scarf",
+    "role": "evidence",
+    "attrs": {
+     "written_in": "blood",
+     "found_on": "tied around the neck of the stray cat Bruce",
+     "cipher": "eight instances of the kanji 'hi' (day, 日), each altered by one added stroke into a different character: me (eye, 目), shiro (white, 白), ta (rice field, 田), kyu (former, 旧), yoshi (reason/motive, 由), kou (甲), tan/dan (dawn -- also read as in 'danna', husband, 旦), shin (monkey, 申)",
+     "decoded_message": "Her 'former husband' (Ezaki) was murdered -- silenced (the 'ta' character read as mouth shut by an X). The motive/reason points to the Koshin (three-wise-monkeys) ornament set, and the specific weapon is the white-eyed monkey statue among them.",
+     "decoding_method": "solved collaboratively by the Detective Boys as a kanji stroke-addition puzzle, the same style of quiz Shizuka used to give Ayumi about the cats"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Disused storage locker",
+    "role": "tool",
+    "attrs": {
+     "cover_story": "Mochizuki told facility staff it held only old junk and could be thrown away",
+     "schedule": "arranged to be carried off/discarded at 2 o'clock the day Shizuka was found"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Bruce (stray cat)",
+    "role": "instrument",
+    "attrs": {
+     "significance": "carried Shizuka's bloodstained coded scarf out of captivity, alerting the Detective Boys and giving them the clue that broke the case; later, by meowing from inside a car engine, startled off a thief trying to steal Yabuki's car"
+    }
+   }
+  ],
+  "clues": []
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "de_facto_partner_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "nephew_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "grateful_to"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "method": "struck with a monkey-ornament statue, then staged as an accidental fall onto the bathtub faucet",
+   "circumstance_tags": ["staged_accident", "cover_up"]
+  },
+  {
+   "type": "stages_accident_of",
+   "from": "p3",
+   "to": "p2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "detail": "arranged Ezaki's body in the bathtub to look like he slipped and hit his head on the faucet; accepted as accidental death for a month"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "confronts",
+   "from": "p4",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "angrily threatens to 'teach her a lesson' after the stray cat Bruce got into his car's engine hood again and urinated in it",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "petty anger over a stray cat repeatedly damaging his car (red herring; suspected by Ayumi after Shizuka disappeared)"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "puts Ayumi 'in charge' of the cats and gives the false Izu hot-springs excuse the day before she disappears"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kidnaps",
+   "from": "p3",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "abducted and confined in a disused storage locker at the Koshin Tower storage facility",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "conceals_victim_in",
+   "from": "p3",
+   "to": "o4",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "planned to have the locker discarded as junk with Shizuka still inside",
+   "circumstance_tags": ["locked_room", "attempted_murder", "cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l5",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "wrote a coded message in her own blood on her scarf and tied it around Bruce's neck so he would carry it back out"
+  },
+  {
+   "type": "written_by",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "visits Ezaki's house while tracing where Shizuka and Ezaki used to go, and meets Mochizuki, who shows the ape ornament collection"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l5",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "phones the storage facility to confirm the locker 'transfer' (disposal) will proceed at 2 o'clock"
+  },
+  {
+   "type": "was_at",
+   "from": "o5",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "finds Bruce wearing Shizuka's bloodstained scarf"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1",
+   "order": 7,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "Detective Boys decode the cipher together"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1",
+   "order": 8,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "regarding",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p3"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l3"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l5"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p2",
+   "motive_type": "inheritance (ape ornament collection and estate)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "silencing a witness who had too many connections to Ezaki and could identify him / had grown suspicious his death was not an accident"
+  },
+  {
+   "type": "rescues",
+   "from": "p5",
+   "to": "p1",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "the Detective Boys' report leads police to the storage facility in time"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l5",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l5",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l5",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l5",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l5",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "arrested at the scene"
+  },
+  {
+   "type": "foils_theft_against",
+   "from": "o5",
+   "to": "p4",
+   "order": 10,
+   "temporal_frame": "present",
+   "detail": "meowing from inside the car's engine startled a would-be thief and delayed him until Yabuki returned, so the car was never stolen"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

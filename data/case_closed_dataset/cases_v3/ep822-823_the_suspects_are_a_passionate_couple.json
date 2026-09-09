@@ -1,0 +1,567 @@
+{
+ "case_id": "ep822-823_the_suspects_are_a_passionate_couple",
+ "episode_number": "822-823",
+ "title": "The Suspects Are a Passionate Couple",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Suspects_Are_a_Passionate_Couple",
+ "subtitle_source": [
+  "subs_resolved/0822.txt",
+  "subs_resolved/0823.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Haibara, Inspector Megure) omitted by convention, as are one-off unnamed figures (Yoko's manager, an unnamed retiring teacher) and characters from the next-episode preview (Amamiya Sho & Maki) who play no role in this case. The old lower-fidelity cases/ file's stated culprit (Yamada Akimichi, s1) is CONFIRMED correct against the full transcript -- this is one of the episodes where the old summary got the culprit right. What the old file missed: it collapsed the two real forensic clues (the mismatched cigarette-butt smoking styles proving a second, hidden smoker, and the corkscrew piercing all the way through a cork the restaurant doesn't even stock) into one vague testimonial clue about wine access; it omitted the staged-presence trick's full object chain (vacuum bag of the victim's own clothes, the wine-stained pierced blanket, the sommelier knife used to pierce it, the stolen phones); and it listed no relationships beyond generic 'knows' edges, missing the real romantic/ex/classmate/employment structure (Banba was dating the victim, Konoe is her ex, Higo/Yoko/the victim were all Konan High classmates) and the three red-herring motives Kogoro floats on-screen (Konoe's smoking grudge, Banba's rumored breakup, Higo's jealousy theory) before Conan/Kogoro identify Yamada as a fake sommelier. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Asuka Teiya",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "Italian restaurant owner, former J-League wing back",
+    "attrs": {
+     "died_of": "blood loss from a severed carotid artery",
+     "weapon": "box cutter",
+     "time_of_death": "between 7 and 8 PM",
+     "background": "Konan High soccer OB, once represented Japan"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yamada Akimichi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "restaurant sommelier",
+    "attrs": {
+     "age": 43,
+     "fraud": "relabeled cheap wine as expensive vintage, pocketed profits and wine-maker kickbacks",
+     "sommelier_failure": "never smelled the cork after opening a bottle, unlike a genuine sommelier would",
+     "smoking_habit": "secretly smoked in the men's bathroom, despite a real sommelier avoiding smoking to protect taste"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Banba Reiko",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "waitress",
+    "attrs": {
+     "age": 27,
+     "note": "was dating Asuka; denies any breakup was ever discussed"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Konoe Yasuto",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "waiter",
+    "attrs": {
+     "age": 28,
+     "note": "Banba's ex-boyfriend; previously scolded by Asuka for smoking indoors"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Higo Ryusuke",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "J-League soccer player",
+    "attrs": {
+     "note": "rumored, but not actually, dating Okino Yoko; came to ask Asuka for a retirement-gift message"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Okino Yoko",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "idol singer/actress",
+    "attrs": {
+     "note": "rumored, but not actually, dating Higo Ryusuke"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Restaurant dining area",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Restaurant back room",
+    "attrs": {
+     "use": "staff break room; owner's spare-clothes locker",
+     "locked": true
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Restaurant storeroom",
+    "attrs": {
+     "locked": true,
+     "spare_key_holder": "only Asuka Teiya",
+     "murder_scene": true
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Restaurant men's bathroom",
+    "attrs": {
+     "smoking_allowed": false
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Restaurant kitchen",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Box cutter",
+    "role": "weapon",
+    "attrs": {
+     "provenance": "one of the restaurant's own box cutters, missing from the back of the restaurant"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Asuka's stolen phone",
+    "role": "evidence",
+    "attrs": {
+     "trick": "stolen off the body, used to send Konoe a fake instruction impersonating Asuka",
+     "disposal": "discarded in the kitchen trash, fingerprints intact"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Vacuum-sealed clothes bag",
+    "role": "tool",
+    "attrs": {
+     "trick": "five sets of Asuka's own heavy clothes, vacuum-flattened and propped on the back-room sofa under a blanket to look like a sleeping body",
+     "disposal": "discarded in the kitchen trash, fingerprints intact"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Pierced blanket",
+    "role": "evidence",
+    "attrs": {
+     "trick": "small hole let air into the vacuum bag underneath so the shape looked like a breathing person",
+     "stain": "wine, not blood, around the hole"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Yamada's sommelier knife",
+    "role": "tool",
+    "attrs": {
+     "trick": "corkscrew tip used to pierce the blanket and the vacuum bag beneath it"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Higo's forgotten phone",
+    "role": "evidence",
+    "attrs": {
+     "note": "left in the men's bathroom; reading its e-mails is how Yamada learned Higo and Yoko were visiting that day"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Bathroom cigarette butts",
+    "role": "evidence",
+    "attrs": {
+     "note": "same brand, but two distinct smoking styles among them"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Relabeled cheap wine",
+    "role": "contraband",
+    "attrs": {
+     "scheme": "sold as expensive vintage; Asuka discovered the fraud and threatened to report it"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Bathroom cigarette butts show two smoking styles -- some long with chewed filters, others smoked to the end -- proving two different staff members smoked there, not one.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "A corkscrew never fully pierces a cheap wine's cork, but the wine-stained hole in the blanket shows Yamada's corkscrew went all the way through -- proof he isn't a real sommelier.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "The stain around the blanket's hole looks like blood at a glance but smells like wine, revealing the hole was punched to fake a sleeping body, not made by violence.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "dating"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "ex_partner_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "exposure of wine fraud -- Asuka discovered the relabeling scheme and threatened to report him"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "anger over being scolded for smoking indoors (red herring, floated by Kogoro)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "suspected messy breakup (red herring, floated by Kogoro; Banba denies it)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "protecting Yoko from Asuka's unwanted advances (red herring theory floated by Kogoro, no supporting evidence)"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "severed carotid artery with a box cutter",
+   "circumstance_tags": [
+    "locked_room",
+    "staged_alibi",
+    "premeditated"
+   ]
+  },
+  {
+   "type": "simulates_presence_of",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_alibi"
+   ],
+   "detail": "propped a vacuum-sealed bag of Asuka's own clothes under a blanket on the back-room sofa, plus his shoes, to fake him napping"
+  },
+  {
+   "type": "deceives",
+   "from": "p2",
+   "to": "p1",
+   "detail": "sent Asuka a message asking him to buy extra items, delaying his real return so staff would go looking for the staged double"
+  },
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "impersonates",
+   "from": "p2",
+   "to": "p1",
+   "detail": "used Asuka's stolen phone to send Konoe a fake instruction, posing as Asuka, to bring Higo and Yoko to the storeroom"
+  },
+  {
+   "type": "deceives",
+   "from": "p2",
+   "to": "p4",
+   "detail": "Konoe received the fake storeroom instruction believing it came from Asuka"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "reads",
+   "from": "p2",
+   "to": "o6",
+   "detail": "read Higo's forgotten phone to learn Higo and Yoko were visiting the restaurant that day"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o6"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l4"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o8"
+  },
+  {
+   "type": "located_in",
+   "from": "o8",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l5"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l5"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o7"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

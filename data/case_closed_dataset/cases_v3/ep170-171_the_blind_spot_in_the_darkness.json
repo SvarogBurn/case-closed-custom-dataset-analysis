@@ -1,0 +1,317 @@
+{
+ "case_id": "ep170-171_the_blind_spot_in_the_darkness",
+ "episode_number": "170-171",
+ "title": "The Blind Spot in the Darkness",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Blind_Spot_in_the_Darkness",
+ "subtitle_source": ["subs_resolved/0170.txt", "subs_resolved/0171.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Takagi) omitted by convention; Kogoro's staged second blackout and final confrontation are represented through the reactions/edges of the other participants (e.g. Yoko's incriminating rush toward the bathroom, her final confession attrs) rather than through a Kogoro node. No `event` node type: every action is a directly typed, attributed edge between the entities involved, sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. The old lower-fidelity case file (cases/ep170-171_the_blind_spot_in_the_darkness.json, wiki-summary-derived) correctly identified Yoko Araide as the culprit -- no discrepancy there, label.murderer_id is unchanged -- but it was otherwise thin: it omitted the entire backstory motive chain (Yoshiteru's first wife Chiaki, driven to drink by his philandering, dying in a drunk-driving accident and extracting a promise from her nursing-school classmate Yoko to protect her son Tomoaki; Yoko's later discovery of Chiaki's diary), the grandmother Mitsu's own real (if weaker) resentment-based motive against Yoshiteru over the Western bath remodel, the specific alibi mechanism (cordless handset + mobile call-waiting trick, garden route bypassing the kitchen phone), the genuinely comparative clues (body head-position vs. the 'shaving accident' story, the phone hand-switch, the chawanmushi-dish shard that innocently explains both Hikaru's and Mitsu's suspicious behavior), and the climactic staged second blackout used to trap Yoko, plus Kogoro's final off-the-record deal to spare housemaid Hikaru Yasumoto from guilt. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yoshiteru Araide",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "local practitioner (doctor), runs the Araide Clinic",
+    "attrs": {
+     "age": 51,
+     "died_of": "electrocution in his bathtub",
+     "habit": "genuinely habitual: stands to shave with an extension-cord electric razor in front of a fog-proof mirror mounted over the bathtub, cord reaching the tub's edge",
+     "reputation": "chronic philanderer; implied ongoing affair with a 'patient', Sugita-san",
+     "remodel": "replaced the family's traditional cypress bath and toilet with a Western-style tub/shower, angering his mother-in-law Mitsu"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yoko Araide",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "housewife; former nurse",
+    "attrs": {
+     "age": 46,
+     "married_to_victim_for": "2 years (his second wife)",
+     "motive": "avenging first wife Chiaki, whom Yoshiteru's philandering drove to drink and, indirectly, to her death; honoring Chiaki's dying request to protect her son Tomoaki from turning out like his father",
+     "trick": "switched to the cordless handset and used her own mobile phone's call-waiting feature to fake an unbroken phone call while she slipped out to the bathroom via the garden",
+     "final_confession_deal": "at the detective's suggestion, agrees to tell police she drugged Yoshiteru and rigged/removed a timer during the first blackout alone -- a version that keeps housemaid Hikaru from ever learning her breaker-reset delivered the fatal shock"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tomoaki Araide",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "doctor; Yoshiteru's son, helps at the clinic, moving to a hospital in Aomori next month",
+    "attrs": {
+     "age": 25,
+     "alibi": "physically held onto by Ran Mouri (who mistook him for her father in the dark) throughout the blackout -- the one solid, unbreakable alibi in the house",
+     "education": "graduated top of his class at Tohto Medical School"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hikaru Yasumoto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "live-in housemaid at the Araide house",
+    "attrs": {
+     "age": 22,
+     "backstory": "treated by Tomoaki for a near-burst appendix during his clinical training; hired as the family's maid afterward",
+     "incident": "broke a chawanmushi dish in the dark kitchen during the blackout and hid it in her room out of fear of being fired, adding roughly 30 seconds to her trip to reset the circuit breaker",
+     "injury": "burned her arm on the dish she was carrying",
+     "temperament": "previously dropped a vase and was threatened with dismissal by Yoshiteru; conditioned to hide her mistakes rather than report them"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Mitsu Araide",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "matriarch of the household",
+    "attrs": {
+     "age": 74,
+     "grievance": "resents Yoshiteru for remodeling the family's traditional cypress bath/toilet into a Western-style one, calling it a dishonor to the house",
+     "family_note": "Yoshiteru married into her family; she is Chiaki's mother and Tomoaki's only remaining blood relative living in the house",
+     "injury": "cut her foot on a shard of the broken chawanmushi dish while descending the stairs in the dark"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Chiaki Araide",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "homemaker (deceased)",
+    "attrs": {
+     "relation": "Yoshiteru's first wife, Tomoaki's mother, Mitsu's daughter",
+     "died_of": "car accident while driving drunk, 4 years before present",
+     "cause": "per her own diary, driven to drink by Yoshiteru's chronic philandering",
+     "drinking_note": "known as a light drinker who could not hold her alcohol, per Yoko"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Masae",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "unspecified; Yoko's classmate",
+    "attrs": {
+     "role_in_case": "the friend Yoko was ostensibly calling about a class reunion; her account of the call timing (blackout report to lights-back-on report, ~1 minute, with a 6-7 second call-waiting gap) corroborates and ultimately undermines Yoko's alibi"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Araide house bathroom",
+    "attrs": {
+     "features": "Western-style tub and shower installed by Yoshiteru, replacing the traditional cypress bath",
+     "significance": "site of Yoshiteru's electrocution"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Araide house kitchen",
+    "attrs": {
+     "significance": "where Yoko, Tomoaki, and Hikaru gathered before and during the blackout; contains the household's main corded phone"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Araide house garden",
+    "attrs": {
+     "significance": "alternate route between the kitchen and bathroom that bypasses the kitchen phone entirely; round trip takes only ~10 seconds"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Araide house upstairs corridor",
+    "attrs": {
+     "significance": "connects Mitsu's and Hikaru's rooms; site where a shard of the broken chawanmushi dish injured both of them"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Araide house circuit breaker",
+    "attrs": {
+     "significance": "resetting it after the staged blackout is what actually delivers the fatal shock"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Pre-set household blackout timer",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "rigged into the household breaker system in advance to cut power to the whole house at a chosen moment, creating the murder's opportunity window"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Electric shaver and extension cord",
+    "role": "weapon",
+    "attrs": {
+     "trick": "the plugged-in extension cord was dropped into the bathtub during the blackout while Yoshiteru bathed; the shaver itself was never switched on",
+     "staging_flaw": "found switched off after the death, inconsistent with the 'shocked while shaving' accident story, since a razor in use should be running",
+     "normal_habit_exploited": "Yoshiteru's genuine habit of standing to shave at the tub-side mirror gave the staged 'accident' its plausibility"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Cordless (branch) handset phone",
+    "role": "tool",
+    "attrs": {
+     "trick_use": "carried by Yoko to the bathroom so she could keep 'talking' while physically away from the kitchen phone"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Yoko's mobile phone",
+    "role": "tool",
+    "attrs": {
+     "trick_use": "used via speed dial to ring the house's landline and simulate a call-waiting interruption, covering the 6-7 second gap needed to slip away"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Chawanmushi dish (broken)",
+    "role": "evidence",
+    "attrs": {
+     "broken_by": "Hikaru Yasumoto, in the dark kitchen during the blackout",
+     "concealment": "hidden in her room out of fear of being fired, adding roughly 30 seconds to her trip to the breaker",
+     "consequence": "the delay meant Mitsu was still upstairs when the lights came back on, clearing her; a shard also burned Hikaru's arm and cut Mitsu's foot"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Vase Hikaru previously broke",
+    "role": "evidence",
+    "attrs": {
+     "backstory": "Hikaru dropped this vase on an earlier occasion and was nearly fired for it, explaining her fear-driven instinct to hide the broken dish rather than report it"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Chiaki's diary",
+    "role": "evidence",
+    "attrs": {
+     "content": "reveals Yoshiteru was a serial philanderer who drove Chiaki to drink",
+     "discovered_by": "Yoko, sometime after marrying into the family"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "If Yoshiteru had been shocked while standing to shave as the 'accident' theory required, he should have fallen with his head toward the mirror side; instead his body was slumped with his head facing the opposite way, and the razor itself was found switched off despite needing to be running for the shaving story to hold -- together these prove the death was staged, not an accident.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Yoko was holding the household phone in her left hand when Hikaru left the kitchen to reset the breaker, but was holding it in her right hand by the time the lights came back on -- only explained if she set the phone down and picked it back up while sneaking to the bathroom and back.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "A shard from the chawanmushi dish Hikaru broke and hid in her room burned her arm and later cut Mitsu's foot in the same upstairs corridor -- the single object ties together both women's otherwise-suspicious behavior (Hikaru's ~30-second detour, Mitsu still being upstairs) and clears both of the murder.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c4",
+    "desc": "A reenactment showed the breaker round trip takes only ~34 seconds once Hikaru's detour is subtracted, while the garden route between kitchen and bathroom -- which bypasses the kitchen phone entirely -- takes only ~10 seconds round trip, comfortably fitting inside the 6-7 second call-waiting gap in Yoko's 'unbroken' phone call and proving she had the opportunity despite her alibi.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p6", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p6", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "disapproves_of"},
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p7", "relation_type": "classmate", "symmetric": true},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "revenge_for_first_wifes_death (honoring Chiaki's dying request to protect Tomoaki)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "resentment_over_bath_remodel (red herring; Mitsu openly calls his death 'divine retribution')"},
+
+  {"type": "drives_to_drink", "from": "p1", "to": "p6", "order": 0, "temporal_frame": "backstory", "years_before_present": 4, "detail": "chronic philandering, per Chiaki's diary, drove her to drink"},
+  {"type": "entrusts_care_of", "from": "p6", "to": "p2", "order": 0, "temporal_frame": "backstory", "years_before_present": 4, "detail": "calls Yoko the night she dies in a drunk-driving accident, asking her to look after Tomoaki so he doesn't turn out like his father"},
+  {"type": "treats", "from": "p3", "to": "p4", "order": 0, "temporal_frame": "backstory", "years_before_present": null, "detail": "treats Hikaru for a near-burst appendix during his clinical training at Tohto Medical School, leading to her being hired as the family's maid"},
+  {"type": "written_by", "from": "o7", "to": "p6"},
+  {"type": "regarding", "from": "o7", "to": "p1"},
+  {"type": "motivates", "from": "o7", "to": "p2", "order": 0, "temporal_frame": "backstory", "years_before_present": null, "detail": "discovering the diary after marrying in confirms what Chiaki asked her to prevent"},
+
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o4"},
+  {"type": "owns", "from": "p2", "to": "o7"},
+  {"type": "located_in", "from": "o1", "to": "l5"},
+  {"type": "located_in", "from": "o5", "to": "l2"},
+  {"type": "located_in", "from": "o6", "to": "l4"},
+
+  {"type": "breaks", "from": "p4", "to": "o6", "temporal_frame": "backstory", "years_before_present": null, "detail": "Hikaru dropped and broke this vase in the upstairs corridor on an earlier occasion; Yoshiteru threatened to fire her over it"},
+
+  {"type": "rigs_blackout_using", "from": "p2", "to": "o1", "order": 1, "temporal_frame": "present", "detail": "pre-sets a household blackout timer ahead of the dinner"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l2", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l4", "order": 2, "temporal_frame": "present"},
+
+  {"type": "causes_blackout_at", "from": "o1", "to": "l2", "order": 3, "temporal_frame": "present", "circumstance_tags": ["staged_accident"]},
+  {"type": "was_at", "from": "p2", "to": "l3", "order": 3, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o3", "order": 3, "temporal_frame": "present", "detail": "switches to the cordless handset to keep 'talking' while away from the kitchen"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o4", "order": 3, "temporal_frame": "present", "detail": "rings the house line from her mobile to fake a call-waiting interruption, covering ~6-7 seconds"},
+
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "rigs_shock_trap_using", "from": "p2", "to": "o2", "order": 4, "temporal_frame": "present", "detail": "drops the pre-plugged extension cord into the bathtub while Yoshiteru bathes, telling him to grab the handrail 'to be careful'"},
+  {"type": "breaks", "from": "p4", "to": "o5", "order": 4, "temporal_frame": "present", "detail": "breaks a chawanmushi dish in the dark kitchen"},
+
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 5, "temporal_frame": "present"},
+  {"type": "conceals", "from": "p4", "to": "o5", "order": 5, "temporal_frame": "present", "detail": "hides the broken dish in her room out of fear of being fired"},
+  {"type": "was_at", "from": "p5", "to": "l4", "order": 5, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p4", "to": "l5", "order": 6, "temporal_frame": "present"},
+  {"type": "restores_power_at", "from": "p4", "to": "l5", "order": 6, "temporal_frame": "present", "detail": "resets the circuit breaker, roughly 30 seconds later than the direct route would take, flipping the wrong switch first"},
+  {"type": "kills", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "method": "extension cord in the bathtub delivers a fatal electric shock the instant power is restored", "circumstance_tags": ["staged_accident", "cover_up"]},
+  {"type": "stages_accident_of", "from": "p2", "to": "p1", "order": 6, "temporal_frame": "present", "circumstance_tags": ["staged_accident"]},
+
+  {"type": "was_at", "from": "p2", "to": "l3", "order": 7, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 7, "temporal_frame": "present", "detail": "returns via the garden and switches back to the kitchen phone"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 8, "temporal_frame": "present"},
+  {"type": "discovers_body_of", "from": "p3", "to": "p1", "order": 8, "temporal_frame": "present"},
+  {"type": "protects_from_shock", "from": "p2", "to": "p3", "order": 8, "temporal_frame": "present", "detail": "moves to stop Tomoaki from touching the electrified body/water"},
+
+  {"type": "was_at", "from": "p4", "to": "l5", "order": 10, "temporal_frame": "present", "detail": "reenacts the breaker trip; measured at 34 seconds round trip"},
+  {"type": "was_at", "from": "p2", "to": "l3", "order": 10, "temporal_frame": "present", "detail": "reenacted garden route measured at ~10 seconds round trip"},
+
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 12, "temporal_frame": "present", "detail": "panics and rushes toward the bathroom during a second, staged blackout, exposing herself", "circumstance_tags": ["trap", "red_flag"]},
+
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "p4"},
+  {"type": "regarding", "from": "c3", "to": "p5"},
+  {"type": "regarding", "from": "c3", "to": "o5"},
+  {"type": "regarding", "from": "c4", "to": "p2"},
+  {"type": "regarding", "from": "c4", "to": "l3"},
+  {"type": "regarding", "from": "c4", "to": "l5"},
+  {"type": "implicates", "from": "c4", "to": "p2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,201 @@
+{
+ "case_id": "ep924_the_sun_sets_in_tangerine_fields",
+ "episode_number": "924",
+ "title": "The Sun Sets in Tangerine Fields",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Sun_Sets_Over_Tangerine_Fields",
+ "subtitle_source": "subs_resolved/0924.txt (371 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Inspector Megure, Detective Takagi) omitted by convention; Ran and Sonoko are kept as person nodes because they are the sole on-scene witnesses to the staged fall and Sonoko physically re-enacts/discovers the hiding trick, per the established convention of keeping guest-role recurring characters when they carry real evidentiary weight (cf. ep658). case_type: murder. Correction vs. old low-fidelity case file (cases/ep924_the_sun_sets_in_tangerine_fields.json): the culprit id itself was already correct (Nobuko), but the old file's single 'rigs the trolley' event collapsed and mischaracterized the crime -- the transcript shows the actual cause of death was a premeditated hammer blow (the monorail/container trick was staged purely to fake an accidental fall afterward, not the killing method itself), Nobuko's rage was based on a misunderstanding (she wrongly believed Tetsuji was selling the farm to cover an affair debt, when she herself had originally proposed the sale), and the old file entirely omitted Naoya's false confession (he took the blame for his mother out of guilt before she cut in and confessed the truth herself) as well as the two witnesses (Ran, Sonoko) and the hammer as murder weapon.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tetsuji Terauchi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "tangerine farm manager",
+    "attrs": {
+     "age": 62,
+     "died_of": "blunt force trauma from a hammer blow, initially misattributed to hitting his head on a rock during a fall from the monorail",
+     "physical_condition": "frozen shoulder -- unable to raise his arm high overhead",
+     "secret": "arranged to sell the family farm and told Naoya not to tell Nobuko, believing she would never allow it"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Nobuko Terauchi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "age": 58,
+     "false_alibi_claim": "claimed to have been gathering dinner ingredients in the fields at the base of the mountain when she heard the girls' shouts",
+     "true_motive_basis": "mistakenly believed Tetsuji was selling the farm to repay debts from an affair with other women; in fact she herself had originally suggested selling the farm to revitalize it with new techniques"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Naoya Terauchi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "works the family tangerine farm",
+    "attrs": {
+     "age": 30,
+     "false_confession": "initially confessed to killing his father and staging the monorail accident, to shield his mother after she broke down and confessed the truth to him on the way to the shed",
+     "claimed_alibi": "doing repairs near the sprinkler control panel at the base of the mountain; turned and saw his father fall after hearing the girls' shouts"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Ran Mouri",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "role_in_solution": "her memory that Tetsuji raised his arm high to wave back, despite his known frozen shoulder, is the clue that proves someone else was moving his arm"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Sonoko Suzuki",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "role_in_solution": "physically tests the footprint stance on the monorail bed and finds the folded/merged container, confirming the hidden compartment"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Terauchi Tangerine Farm mountain slope",
+    "attrs": {
+     "detail": "orchard on the mountainside where the family picks tangerines and where the agricultural monorail runs between the peak and foot work sheds"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Work shed at the foot of the mountain",
+    "attrs": {
+     "detail": "monorail's lower terminus; contains a workbench where the murder weapon was hidden"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Sprinkler control panel area",
+    "attrs": {
+     "detail": "base of the mountain, southeast side; Naoya's claimed repair location at the time of the fall"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Terauchi family house",
+    "attrs": {
+     "detail": "dinner scene with family photos; site of the conversation where Tetsuji told Naoya about the farm sale and asked him not to tell Nobuko"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Sunset viewpoint",
+    "attrs": {
+     "detail": "spot below the mountain where Ran and Sonoko watched the sunset and witnessed Tetsuji's apparent fall from the passing monorail"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Agricultural monorail cart",
+    "role": "instrument",
+    "attrs": {
+     "mechanism": "lever-operated monorail that automatically reverses direction at the peak and foot work sheds and returns to its starting shed; can also be run manually"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hammer",
+    "role": "weapon",
+    "attrs": {
+     "hidden_at": "under the workbench in the foot-of-mountain work shed",
+     "forensic_note": "Nobuko's fingerprints found on it, per her own directions to investigators"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Folding tangerine container",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "bottoms and sides fold so three ordinary containers merge into one, creating a compartment on the monorail's cargo bed large enough to hide an adult"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Blood found inside Tetsuji's hat but none on the outside -- contradicts a fatal rock strike during the fall, since the head wound had to predate the hat coming off.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Witnesses saw Tetsuji raise his arm high overhead to wave, but he had a frozen shoulder that made raising it that high impossible -- someone else was moving his arm from a hidden position.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c3",
+    "desc": "Tetsuji's footprints on the monorail bed only fit an awkward, cramped sitting posture, and nearby containers can fold to merge three into one -- proving a person-sized hidden compartment existed on the cart.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  { "type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of" },
+  { "type": "relationship", "from": "p3", "to": "p1", "relation_type": "child_of" },
+  { "type": "relationship", "from": "p3", "to": "p2", "relation_type": "child_of" },
+  { "type": "relationship", "from": "p4", "to": "p5", "relation_type": "classmate", "symmetric": true },
+
+  { "type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "misunderstanding_believed_infidelity_debt" },
+
+  { "type": "kills", "from": "p2", "to": "p1", "method": "struck with a hammer", "circumstance_tags": ["staged_accident", "cover_up"] },
+  { "type": "stages_accident_of", "from": "p2", "to": "p1", "detail": "hid inside a merged/folded tangerine container on the monorail's cargo bed, manipulated the already-dead Tetsuji's arm to fake a wave at the witnesses below, then pushed the body off as the monorail passed" },
+  { "type": "stages_alibi_using", "from": "p2", "to": "o1", "detail": "rode the monorail's automatic return trip back to the foot shed to escape unseen after staging the fall" },
+  { "type": "hides_in", "from": "p2", "to": "o3" },
+  { "type": "confesses_to", "from": "p2", "to": "p3", "detail": "broke down and admitted the killing to Naoya on the way to the shed, after he mentioned the farm-sale plan to her" },
+  { "type": "covers_for", "from": "p3", "to": "p2", "detail": "falsely confessed to the murder and to staging the monorail accident himself, out of guilt for having told her about the sale plan" },
+
+  { "type": "owns", "from": "p2", "to": "o2" },
+  { "type": "located_in", "from": "o2", "to": "l2" },
+  { "type": "located_in", "from": "o1", "to": "l1" },
+  { "type": "located_in", "from": "o3", "to": "l1" },
+  { "type": "implicates", "from": "o2", "to": "p2" },
+  { "type": "implicates", "from": "o1", "to": "p2" },
+  { "type": "implicates", "from": "o3", "to": "p2" },
+
+  { "type": "regarding", "from": "c1", "to": "p1" },
+  { "type": "implicates", "from": "c1", "to": "p2" },
+  { "type": "regarding", "from": "c2", "to": "p1" },
+  { "type": "regarding", "from": "c2", "to": "p4" },
+  { "type": "implicates", "from": "c2", "to": "p2" },
+  { "type": "regarding", "from": "c3", "to": "o1" },
+  { "type": "regarding", "from": "c3", "to": "o3" },
+  { "type": "implicates", "from": "c3", "to": "p2" },
+
+  { "type": "was_at", "from": "p1", "to": "l1" },
+  { "type": "was_at", "from": "p2", "to": "l1" },
+  { "type": "was_at", "from": "p3", "to": "l1" },
+  { "type": "was_at", "from": "p4", "to": "l1" },
+  { "type": "was_at", "from": "p5", "to": "l1" },
+  { "type": "was_at", "from": "p1", "to": "l4" },
+  { "type": "was_at", "from": "p2", "to": "l4" },
+  { "type": "was_at", "from": "p3", "to": "l4" },
+  { "type": "was_at", "from": "p4", "to": "l4" },
+  { "type": "was_at", "from": "p5", "to": "l4" },
+  { "type": "was_at", "from": "p4", "to": "l5" },
+  { "type": "was_at", "from": "p5", "to": "l5" },
+  { "type": "was_at", "from": "p3", "to": "l3" },
+  { "type": "was_at", "from": "p2", "to": "l2" }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

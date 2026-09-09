@@ -1,0 +1,152 @@
+{
+ "case_id": "ep303_the_victim_who_came_back",
+ "episode_number": "303",
+ "title": "The Victim Who Came Back",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Victim_Who_Came_Back",
+ "subtitle_source": ["subs_resolved/0303.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, the Detective Boys Mitsuhiko/Ayumi/Genta, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: actions are direct typed edges between the people/location/object nodes actually involved. Corrections vs. the old lower-fidelity file: (1) the old file's e3 desc says Tokunaga hid the body 'fearing a local cat burglar might find it in his own room' -- this is Mitsuhiko's theory, which Conan explicitly refutes on-screen ('No. That's impossible, Mitsuhiko.'); the transcript's actual solution is that Tokunaga overheard a police patrol car's public loudspeaker warning about neighborhood burglaries and mistook the general warning for a specific threat to himself, panicking and dumping the sofa+body before his evening shift -- encoded here as the `abandons_body_at` edge's detail, not the cat-burglar theory. (2) the old file's `knows` edges (s1->v1, s2->v1) are unsupported: Hosono explicitly denies knowing the victim ('No, I did not'), and Tokunaga's tie to the victim is a debt relationship, not mere acquaintance -- dropped `knows` in favor of `relationship: debtor_of` and `has_motive_against`. (3) the old file omits Hirose, the recycle-shop worker whose account of the locked delivery truck is what re-anchors the investigation on the Akebono dump/neighborhood -- added as a named person here. (4) old file's culprit (Tokunaga) is confirmed correct by the transcript; his confession names the debt/bar-license threat as motive, added here. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kazuhiro Tokunaga",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "small bar owner",
+    "attrs": {
+     "personality": "serious, timid, rarely misses work",
+     "work_schedule": "leaves for his bar every day around 3 PM"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Sanae Hosono",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": null,
+    "attrs": {
+     "initial_reaction": "shocked and visibly scared when the body was found, not staged"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Hirose",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "recycle shop worker / driver",
+    "attrs": {
+     "initial_lie": "claimed the sofa was a customer donation before admitting he picked it up at a dump"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Unnamed moneylender",
+    "aliases": ["the old lady"],
+    "roles": ["victim"],
+    "occupation": "moneylender",
+    "attrs": {
+     "identity": "never named in the transcript",
+     "died_of": "brain injury from a blow to the back of the head",
+     "time_of_death": "approx. 2-3 PM the previous day"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Hosono's apartment",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Tokunaga's apartment",
+    "attrs": {"note": "murder scene, next door to Hosono's unit"}
+   },
+   {
+    "id": "l3",
+    "name": "Recycle shop, Beika",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Garbage dump, Akebono 3rd St.",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Movie theater",
+    "attrs": {"note": "Hosono's alibi location"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Sofa",
+    "role": "evidence",
+    "attrs": {
+     "used_for": "concealing and unintentionally transporting the body"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Recycle shop delivery truck",
+    "role": "tool",
+    "attrs": {
+     "locked_after_loading": true
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Tokunaga's claim of overhearing an argument through the wall is contradicted by a theater employee confirming Hosono's alibi during that exact window -- revealing his testimony as a deliberate lie to frame her.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Victim found without shoes despite the body surfacing at an outdoor dump/sofa -- she was killed indoors and moved, not killed where found.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "The recycle truck was locked immediately after the sofa was loaded and stayed locked until delivery, so the body was already inside before the shop's 4 PM pickup -- pushing the crime back to the dump itself.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "debtor_of"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "neighbor"},
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "financial_dispute (unpaid debt; victim threatened to revoke his bar license)"},
+  {"type": "threatens", "from": "p4", "to": "p1", "detail": "demands repayment and threatens to revoke his bar license"},
+  {"type": "kills", "from": "p1", "to": "p4", "method": "blunt force trauma to the back of the head", "circumstance_tags": ["crime_of_passion"]},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "hides_body_in", "from": "p1", "to": "o1", "detail": "temporary concealment in his own room, intending to dispose of it properly after his evening shift"},
+  {"type": "abandons_body_at", "from": "p1", "to": "l4", "detail": "panicked after mistaking a police patrol car's public loudspeaker warning about neighborhood burglaries for a personal threat, and dumped the sofa with the body inside before leaving for work", "circumstance_tags": ["panic_relocation"]},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "located_in", "from": "o1", "to": "l4"},
+  {"type": "collects", "from": "p3", "to": "o1", "detail": "picked up while driving around collecting unwanted items, believing it abandoned trash"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "uses", "from": "p3", "to": "o2", "detail": "drives the delivery truck, which was locked in the garage right after the sofa was loaded"},
+  {"type": "buys", "from": "p2", "to": "o1", "detail": "bought in a hurry the same evening, requested expedited delivery"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "located_in", "from": "o1", "to": "l1", "detail": "delivered by truck at 10 AM the next morning"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "discovers_body_of", "from": "p2", "to": "p4", "detail": "found the body while adjusting the sofa's lopsided cushions", "circumstance_tags": ["accidental_discovery"]},
+  {"type": "was_at", "from": "p2", "to": "l5", "detail": "confirmed alibi, 2-3 PM"},
+  {"type": "frames", "from": "p1", "to": "p2", "detail": "fabricates testimony about overhearing an argument through the wall, to shift police suspicion onto her", "circumstance_tags": ["red_herring", "false_testimony"]},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "l4"},
+  {"type": "regarding", "from": "c3", "to": "o1"},
+  {"type": "regarding", "from": "c3", "to": "o2"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

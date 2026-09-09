@@ -1,0 +1,498 @@
+{
+ "case_id": "ep348-349_love_ghosts_and_world_heritage",
+ "episode_number": "348-349",
+ "title": "Love, Ghosts, and World Heritage",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Love,_Ghosts,_and_World_Heritage",
+ "subtitle_source": [
+  "subs_resolved/0348.txt",
+  "subs_resolved/0349.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention; Ayumi Yoshida is kept as a person node because her own presence at the Water God shrine and her disputed sighting are load-bearing plot facts (they hand the detectives the culprit's flight direction), not generic sidekick commentary -- Genta and Mitsuhiko are omitted as pure banter/reaction characters. case_type: attempted_murder (present-day attack on Iwao Nagakura) plus a backstory murder (Nagakura Eiji, staged as suicide) committed by the same culprit. No `event` node type: every action is a directly typed edge between the entities involved. Old case file (cases/ep348-349_love_ghosts_and_world_heritage.json) agreed on the culprit (Sakaki/'s2') but was thin: it listed only one location and reduced the entire house-swap mechanism -- the actual engine of the mystery, where Sakaki breaks into the relocated Nagakura house believing it is still the vacant Otozawa house -- to unstated background. It also asserted Eiji was 'thrown off a cliff'; the dialogue-only transcript never states a method for Eiji's death beyond 'staged as suicide' with 'no other means of escape,' so that detail is kept out here as unconfirmed rather than repeated as fact. The old file's claim that the jewels were 'hidden near the village' is sharpened here to their actual hiding place, inside the physical Otozawa house structure, which is why the jewels moved along with the house when the two homes were swapped. Ghost figure Mami-chan (Eiji's childhood friend, died of illness ten years before present) is included as a backstory_figure since the whole plot turns on characters believing they saw her; the show itself leaves the sightings ambiguous (laundry, a Brocken specter), so the encounter edge is written as a plain 'encounters' rather than asserting a supernatural fact.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Iwao Nagakura",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "witness"
+    ],
+    "occupation": "minshuku master; representative of the pro-World-Heritage-registration group",
+    "attrs": {
+     "injury": "found unconscious with unexplained wounds, described by responders as neither blunt-hit nor graze marks; villagers and police refer to it as a stabbing",
+     "belief": "after recovering, credits Mami-chan's ghost with bringing the truth of his son's death to light"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kimiko Nagakura",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "minshuku innkeeper's wife",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Nagakura Eiji",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "unemployed, in debt",
+    "attrs": {
+     "died_of": "murdered by Sakaki about a month before present, staged to look like suicide",
+     "false_public_narrative": "ruled the jewel thief responsible for the Shoujin-town robbery-murder, believed to have committed suicide out of fear of being caught; police closed the case on his death",
+     "father_disowns_him": "Iwao publicly declares 'that person is no son of mine' when the thief accusation surfaces"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mami-chan",
+    "aliases": [],
+    "roles": [
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "died_of": "illness, about ten years before present, around age ten",
+     "relationship_note": "childhood friend of Eiji; her family (surname Otozawa) moved away after her death, leaving their house vacant",
+     "village_rumor": "sightings of a child's ghost matching her description are the source of the village's half-year-old ghost rumor"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Shokichi Sakaki",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "posed as an elderly tourist; actually the jewel appraiser from the Shoujin-town jewelry shop that was robbed",
+    "attrs": {
+     "true_identity": "the shop's appraiser, publicly reported taken hostage during the robbery and never found, presumed murdered -- in fact he was the mastermind and was never a hostage",
+     "tell": "indentation marks around his right eye from long-term loupe use, which is what gives away his real profession",
+     "alibi": "claimed he was asleep in his own single room the whole night, drunk on sake, with no one to confirm it"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Kensaku Kawaji",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "undercover investigator for the World Heritage registration committee",
+    "attrs": {
+     "corruption": "secretly solicited bribes from municipalities under the guise of travel-expense compensation, threatening a bad report if refused",
+     "outcome": "arrested as a person of interest in the blackmail and attempted-murder cases; cleared of attacking Nagakura, held on the blackmail charge"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kazuaki Kuwashima",
+    "aliases": [],
+    "roles": [
+     "bystander"
+    ],
+    "occupation": "tourist, travel companion of Kawaji and Sakaki",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Ayumi Yoshida",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": null,
+    "attrs": {
+     "encounter": "met a girl matching Mami-chan's description near the Water God shrine, then went missing overnight and was found asleep at the roots of the shrine's cedar tree",
+     "credibility": "insists on what she saw; the adults around her assume she is mistaken or lying"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Onizawa Village",
+    "attrs": {
+     "status": "candidate World Heritage site",
+     "local_conflict": "villagers split between a pro-registration group (led by Iwao Nagakura) and an opposition group over increased tourism"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Nagakura residence (minshuku)",
+    "attrs": {
+     "site_history": "the physical Nagakura house was relocated here about ten days before present, swapping places with the vacant Otozawa house",
+     "note": "where Sakaki breaks in searching for jewels, mistakenly believing this is still the vacant Otozawa house"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Otozawa house (vacant)",
+    "attrs": {
+     "site_history": "relocated about ten days before present to the site the Nagakura house used to occupy, swapping with it",
+     "status": "empty since Mami-chan's family moved away ten years ago",
+     "note": "the jewels stayed hidden inside this physical structure through the relocation, which is why Sakaki searched the wrong building"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Water God shrine",
+    "attrs": {
+     "feature": "large Japanese cedar tree at its base, where Ayumi was found asleep"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Shoujin-town",
+    "attrs": {
+     "event": "site of the jewelry-shop robbery-murder about six months before present, next to Onizawa"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Lacquer-tree patrol path",
+    "attrs": {
+     "feature": "the only spot in the village with a lacquer tree; contact there causes a distinctive skin rash"
+    }
+   },
+   {
+    "id": "l7",
+    "name": "Ishioka house (lodging)",
+    "attrs": {
+     "role": "guest house one door down from the Nagakura minshuku, where Kawaji, Sakaki, and Kuwashima actually lodge"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Stolen jewels",
+    "role": "contraband",
+    "attrs": {
+     "origin": "stolen in the Shoujin-town jewelry-shop robbery",
+     "hidden_by": "Sakaki, inside the walls/floor of the Otozawa house",
+     "found_by": "Conan's group, after the house swap, at the Otozawa house's new site"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Nagakura's fire-patrol log",
+    "role": "evidence",
+    "attrs": {
+     "anomaly": "hanko stamps only completed up to the 9th house on his route; the gap and stamp order show he detoured near where he was attacked"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Nagakura's hands show a lacquer-tree rash from his patrol path; Sakaki's hands show the identical rash, even though he claimed to have stayed asleep, drunk, in his own room all night and never crossed that path.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p3",
+   "relation_type": "childhood_friend_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "eliminate_witness (Nagakura caught him searching for the jewels and could identify him)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p3",
+   "motive_type": "eliminate_accomplice (Eiji, in debt and coerced into the robbery, was a loose end who could implicate Sakaki)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p6",
+   "to": "p1",
+   "motive_type": "financial_retaliation (red herring: Nagakura refused Kawaji's bribe demand)"
+  },
+  {
+   "type": "steals",
+   "from": "p5",
+   "to": "o1"
+  },
+  {
+   "type": "coerces",
+   "from": "p5",
+   "to": "p3",
+   "detail": "forced Eiji, who was in debt, to act as lookout for the robbery"
+  },
+  {
+   "type": "frames",
+   "from": "p5",
+   "to": "p3",
+   "circumstance_tags": [
+    "frames",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p5",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l3"
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p3",
+   "method": "staged to look like suicide; exact means not stated in the transcript",
+   "circumstance_tags": [
+    "staged_suicide",
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p5",
+   "to": "p3",
+   "circumstance_tags": [
+    "staged_suicide"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l5"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l2"
+  },
+  {
+   "type": "encounters",
+   "from": "p8",
+   "to": "p4",
+   "detail": "met a girl matching Mami-chan's description at the Water God shrine; later rationalized as fluttering laundry or a Brocken specter, though Ayumi maintains it was real"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l6"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l7"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l6"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l7"
+  },
+  {
+   "type": "searches",
+   "from": "p5",
+   "to": "l2",
+   "detail": "broke in at night searching for the jewels, mistaking the relocated Nagakura house for the still-vacant Otozawa house",
+   "circumstance_tags": [
+    "mistaken_house"
+   ]
+  },
+  {
+   "type": "discovers",
+   "from": "p1",
+   "to": "p5",
+   "detail": "spotted Sakaki searching the third floor during his fire-watch rounds"
+  },
+  {
+   "type": "assaults",
+   "from": "p5",
+   "to": "p1",
+   "method": "stabbing, during the struggle before Sakaki fled out the window",
+   "circumstance_tags": [
+    "attempted_murder",
+    "mistaken_house",
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "demands_bribe_from",
+   "from": "p6",
+   "to": "p1",
+   "detail": "solicited a payment framed as travel-expense compensation; Nagakura refused",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p5"
+  },
+  {
+   "type": "searches",
+   "from": "p5",
+   "to": "l3",
+   "detail": "returned to retrieve the jewels once he realized he had searched the wrong house the first time",
+   "circumstance_tags": [
+    "red_herring_resolved"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p5",
+   "detail": "caught holding the jewels in hand at the Otozawa house"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l6"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p5"
+  }
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

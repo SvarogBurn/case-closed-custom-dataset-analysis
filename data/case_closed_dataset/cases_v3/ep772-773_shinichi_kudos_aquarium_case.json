@@ -1,0 +1,455 @@
+{
+ "case_id": "ep772-773_shinichi_kudos_aquarium_case",
+ "episode_number": "772-773",
+ "title": "Shinichi Kudo's Aquarium Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Shinichi_Kudo%27s_Aquarium_Case",
+ "subtitle_source": ["subs_resolved/0772.txt", "subs_resolved/0773.txt"],
+ "schema_version": "v3",
+ "notes": "Told as a Shinichi-narrated flashback before he became Conan. Recurring-cast nodes omitted by convention (same rule as ep011): Shinichi Kudo, Ran Mouri, Kogoro Mouri, Eri Kisaki, Sonoko Suzuki, Dr. Agasa, and Inspector Megure all appear but never touch the mystery's evidence graph beyond framing the aquarium-visit subplot. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's culprit (Naho Ojiro) is confirmed correct against the transcript -- no discrepancy there -- but it collapsed the cast to a bare suspect/victim/witness list with generic `knows` edges and 3 event nodes; this rebuild adds the two named witnesses' full roles (Kanoko Nakagiri as the victim's actual date that day, Kodai Jinbe as Naho's unwitting current boyfriend whose cap hid her phone), the blackmail motive object, sub-locations (cafe, dolphin tank, underwater tunnel) instead of one generic aquarium location, and decomposes the two comparative clues plus a third (handedness contradiction) that the old file's c2 only partially captured. Transcript romanizes the victim's name 'Kunihiro Shumoto' throughout (one stray 'Kunihito' typo in the raw subtitle at 00:22:04 of part 1); kept 'Kunihiro' as canonical, matching the old file. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kunihiro Shumoto",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "part-time gas station worker, Haido-cho",
+    "attrs": {
+     "age": 26,
+     "financial_state": "deeply in debt",
+     "cause_of_death": "stabbed through the heart after being stunned unconscious"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Naho Ojiro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "customer",
+    "attrs": {
+     "age": 26,
+     "confessed": true
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kodai Jinbe",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "customer",
+    "attrs": {
+     "age": 28,
+     "injury": "neck brace from a prior injury, could not look down that day"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kanoko Nakagiri",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "customer",
+    "attrs": {
+     "age": 27,
+     "found_the_body": true
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Aquarium",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Underwater tunnel corridor",
+    "attrs": {
+     "why_chosen": "bright, fish visible in every direction, so any shot would still look normal on camera"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Aquarium cafe",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Dolphin show arena",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Convenience-store bag with hidden knife",
+    "role": "weapon",
+    "attrs": {
+     "staging_trick": "knife placed sideways inside the bag so it would pierce the heart without catching on bone, and to keep blood from splattering on the killer"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Stun gun",
+    "role": "weapon",
+    "attrs": {
+     "found_in": "inner pocket of the victim's jacket",
+     "trace": "burn mark on the back of the victim's neck"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Jinbe's white knitted cap",
+    "role": "tool",
+    "attrs": {
+     "trick": "briefly taken off Jinbe's head so Naho could bury her phone inside it, then put back on him"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Naho's phone (hidden camera)",
+    "role": "instrument",
+    "attrs": {
+     "recorded_video": "vertical framing, nobody in frame avoids the camera, one blurred moment where it was removed from the cap"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Jinbe's genuine shark video",
+    "role": "evidence",
+    "attrs": {
+     "recorded_video": "sideways framing to fit the shark's body, bystanders visibly step around the cameraman"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Kanoko's dolphin-show video",
+    "role": "evidence",
+    "attrs": {
+     "corroboration": "matches independent footage from other viewers, timestamps the show ending at 12:00 pm, before the corpse was found"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Photo of Naho and Jinbe together",
+    "role": "evidence",
+    "attrs": {
+     "detail": "taken same day, shows Naho wearing a different-colored glove than the one she had on later"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Naho's reversible knitted glove",
+    "role": "evidence",
+    "attrs": {
+     "worn_inside_out": true,
+     "found": "victim's blood on the fingertips of the true (hidden) side"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Indecent photos of Naho",
+    "role": "evidence",
+    "attrs": {
+     "obtained_by_shumoto": "read her phone while she was in the restroom at his place",
+     "used_for": "blackmail material, threatened to send to her boyfriend, workplace, and family"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Cafe receipt from victim's wallet",
+    "role": "evidence",
+    "attrs": {
+     "items": "one black tea, one coffee, one dolphin keychain",
+     "timing": "about 15 minutes before the corpse was found, 5 minutes before the dolphin show started",
+     "anomaly": "no dolphin keychain was found on the victim's body"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Naho's video is vertical and nobody in frame avoids the cameraman, unlike Jinbe's genuine sideways shark video where bystanders visibly step around him -- proves her phone was hidden, not held.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "The glove in an earlier photo of Naho with Jinbe is a different color than the one she wore later that day, and the true (hidden) side of that later glove has the victim's blood on the fingertips.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "In Jinbe's genuine video Naho works her phone left-handed while wearing knitted gloves, but she demonstrably favors her right hand elsewhere -- a smartphone needs a bare hand, so she must have swapped her right glove out to commit the murder.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "The cafe receipt lists a dolphin keychain bought alongside the drinks, but none was found on the victim -- he must have given it to his dolphin-loving date.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "ex_girlfriend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "dating"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "recently_dating"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p2",
+   "detail": "threatened to send indecent photos of her to her boyfriend, workplace, and family unless paid, citing his own debt"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "blackmail_retaliation"
+  },
+  {
+   "type": "renders_unconscious",
+   "from": "p2",
+   "to": "p1",
+   "method": "pressed stun gun to the nape of his neck while he leaned over a tank rim",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "stabbed through the heart with a knife hidden in a convenience-store bag",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "hides_camera_in",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p2",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o7"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o9"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o10"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l2"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l2"
+  },
+  {
+   "type": "regarding",
+   "from": "o9",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o7"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o8"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o10"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p4"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

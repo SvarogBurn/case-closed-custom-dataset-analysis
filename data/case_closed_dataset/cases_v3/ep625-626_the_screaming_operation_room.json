@@ -1,0 +1,453 @@
+{
+ "case_id": "ep625-626_the_screaming_operation_room",
+ "episode_number": "625-626",
+ "title": "The Screaming Operation Room",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Screaming_Operation_Room",
+ "subtitle_source": [
+  "subs_resolved/0625.txt",
+  "subs_resolved/0626.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Kogoro, Ran, Sonoko, Conan, Takagi, Inspector) omitted by convention. No `event` node type: actions are direct typed edges between the people/locations/objects involved. Old cases/ep625-626 file's culprit (Tsujiei Sonsaku) is confirmed correct by the transcript, but two of its details are wrong or garbled: (1) it says the sheet-and-feet trick was used 'under a table' -- the transcript is explicit the trick used a rigged hospital BED in the haunted house, not a table; (2) its motive text is cut off mid-sentence ('...he killed Tadami because she told Hashiguchi that if he was going to commit suicide, t...') and the real motive it was reaching for is different from what that fragment implies: Anna did not tell Hashiguchi to delay his suicide -- she asked him, before he died, to secretly video-record his own poisoning for her 'realistic death' research, then kept and repeatedly rewatched the tape instead of trying to stop him or report it. Tsujiei kills her in retaliation for that exploitation, mirroring the method (a cyanide capsule) Hashiguchi used on himself. The old file's clue text ('red-stained toenails matching blood transferred while preparing the victim's body') also collapses two separate clues into one: a square bedpost-shaped fake-blood mark hidden on Tsujiei's shoe sole, and separate toenail-shaped fake-blood lines left on the underside of the bed's top sheet. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tsujiei Sonsaku",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "4th-year film studies student, Beika University",
+    "attrs": {
+     "targeted_witness": "steered the plan so that Mouri Ran, a case-experienced witness, would be present to make the staged accident look credible",
+     "cover_story": "claimed to have gotten separated from the group and entered the operation room only after the others"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Hachiya Kiichi",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "4th-year film studies student, Beika University",
+    "attrs": {
+     "role_in_film_club": "co-runs the haunted house and horror-movie final project with Anna and Tsujiei"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Anna Tadami",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "4th-year literature/film student, Beika University",
+    "attrs": {
+     "died_of": "forced cyanide capsule poisoning",
+     "obsession": "became fixated on filming realistic 'manner of death' scenes after Hashiguchi's suicide, once swallowing sleeping pills and holding a nail in her mouth to research it"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mutsumi Suguri",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "4th-year student, does zombie make-up for the film club",
+    "attrs": {
+     "sprained_ankle": "bandaged foot, cited as why she could not have thumped the bed with her feet"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hashiguchi",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "4th-year student, Beika University",
+    "attrs": {
+     "died_of": "self-administered cyanide poisoning (suicide)",
+     "diagnosis": "told by his doctor he had an advanced malignant tumor with six months to live",
+     "planned_haunted_house_and_movie": "originated the haunted house and horror-movie final project that Anna, Tsujiei, Hachiya, and Mutsumi carried on after his death"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Haunted house operation room",
+    "attrs": {
+     "attraction_name": "\"Screaming Hospital Ward\""
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Haunted house X-ray room",
+    "attrs": {
+     "layout": "adjoins the operation room; the only route from the operation room to the exit"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Hashiguchi's apartment",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Lecture hall",
+    "attrs": {
+     "note": "all four classmates were here, in class together, at the time police say Hashiguchi actually died"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Cyanide capsule (used on Anna)",
+    "role": "weapon",
+    "attrs": {}
+   },
+   {
+    "id": "o2",
+    "name": "Rigged hospital bed",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "handmade bed with shortened upper-right/lower-left bedposts (rocks and creaks when someone inside moves) plus a hidden blood-spray switch",
+     "trick_materials": "a cardboard box, spare sheet scraps, and sticky tape stashed underneath, used to rig a gap in the sheets to fake a leg/foot"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Tsujiei's shoe",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "wedged under the bedpost to stop it wobbling while he strangled Anna's mouth/nose shut, leaving a square fake-blood mark from the bedpost; he later smeared the sole uniformly red with fake blood and blamed athlete's foot to hide the square shape"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Top sheet of the bed",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "underside near the foot end has red toenail-shaped lines, left when Tsujiei slipped his legs into the rigged gap while his fake-blood-painted toenails were still wet"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Hidden bookshelf camera",
+    "role": "tool",
+    "attrs": {
+     "purpose": "secretly set up, at Anna's request, to record Hashiguchi's suicide on video"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Videotape of Hashiguchi's death",
+    "role": "evidence",
+    "attrs": {
+     "disposition": "pocketed by Anna from the hidden camera after his body was found; she rewatched it repeatedly"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Hashiguchi's suicide note",
+    "role": "evidence",
+    "attrs": {
+     "content": "explains his terminal diagnosis and says he is leaving the film project to the others"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Fresh, bleeding scratch marks on Anna's cheek with skin and blood under her fingernails -- not make-up, and inconsistent with her supposedly having drawn her own fake blood; shows she clawed at someone's arm while her mouth/nose were being held shut, i.e. a real struggle, not a self-staged scare or suicide.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Red toenail-shaped lines on the sheet's underside match fresh fake blood found painted onto Tsujiei's toenails (not yet dry when he slid his legs into the bed) -- and rule out Mutsumi (wore sandals, no toenail marks possible) and Hachiya (bandaged foot he showed openly), leaving Tsujiei as the only person who could have left them.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "creative_rival",
+   "detail": "the two frequently clashed over how death scenes should be acted for the film club"
+  },
+  {
+   "type": "encourages_suicide_of",
+   "from": "p3",
+   "to": "p5",
+   "detail": "asked Hashiguchi, before his planned suicide, to let her secretly video-record his own poisoning for her research; did not try to stop him or report it"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4"
+  },
+  {
+   "type": "sets_up",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "o5",
+   "to": "p5"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o6"
+  },
+  {
+   "type": "written_by",
+   "from": "o7",
+   "to": "p5"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p3",
+   "motive_type": "revenge_for_exploiting_hashiguchis_suicide"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p3",
+   "method": "forced a cyanide capsule into her mouth then sealed her mouth and nose shut until she swallowed it",
+   "circumstance_tags": [
+    "staged_accident",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "fakes_time_of_death_of",
+   "from": "p1",
+   "to": "p3",
+   "detail": "hid inside the rigged bed after killing her and used the bedpost/foot-thump trick plus the blood-spray switch to make Ran's group believe she was still alive and struggling",
+   "circumstance_tags": [
+    "staged_suicide"
+   ]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

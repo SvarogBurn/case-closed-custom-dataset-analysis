@@ -1,0 +1,148 @@
+{
+ "case_id": "ep315_place_exposed_to_the_sun",
+ "episode_number": "315",
+ "title": "Place Exposed to the Sun",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Place_Exposed_to_the_Sun",
+ "subtitle_source": ["subs_resolved/0315.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, and the local precinct's role generally filled by Megure) are handled per convention except that the one-off local officer Daimatsu is kept as a minor node since he is uniquely named for this episode and has plot-relevant dialogue (receives the alibi checks and the final accusation). No `event` node type: every action is a directly typed edge between the entities involved. Per the 2026-08 batch-8 scoping change, temporal fields (order/temporal_frame/years_before_present) are omitted entirely. Old cases/ep315 file's culprit (Kuroki) and core motive (uncredited ghost-painting, denied contest entry) check out against the transcript -- no reversal here, unlike some other rebuilds. What the old file missed/flattened: it collapsed everything into 3 generic `events` and a single location; the transcript actually supports 6 distinct locations, a forged suicide note, a pre-recorded-voice alibi trick, two separate paintings (the Mt Fuji piece Kuroki secretly finished for Seizan, and the portrait of Ran Kuroki painted for the contest under his own name), and a genuinely comparative clue about the white powder on Kuroki's feet (initially explained away as his oyster-shell whitewash paint pigment, actually bamboo sawdust matching the cut stalks at the scene) plus a second comparative clue tying the bamboo-growth journal's rates to the official time-of-death window to explain how the murder was physically possible during Kuroki's fishing alibi. The old file also omitted Yamamoto Noriko's resolution: she was suspected purely on opportunity/timing (seen pale near the forest right when the nightingales' alarm cry sounded) with no motive ever stated in dialogue, and her alibi (at the hospital with her sick mother during the 11:00-13:00 TOD window) held -- no `has_motive_against` edge invented for her since none is supported by the transcript. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Hayakawa Seizan",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "renowned Japanese painter",
+    "attrs": {
+     "age": 70,
+     "health_note": "hands shook from age/stress, no longer able to draw well himself",
+     "false_public_narrative": "Kuroki told Kogoro and Ran he was suicidally depressed over his inability to draw, to set up the murder-as-suicide"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kuroki Jiro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Seizan's apprentice",
+    "attrs": {
+     "age": 28,
+     "secret": "had been secretly finishing and publishing Seizan's paintings uncredited for several years",
+     "alibi_method": "played a pre-recorded message of Seizan's voice on an answering machine during a phone check-in while fishing"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yamamoto Noriko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Hayakawa family housekeeper",
+    "attrs": {
+     "age": 35,
+     "alibi": "at the hospital with her sick mother during the 11:00-13:00 time-of-death window",
+     "suspicion_basis": "seen pale near the bamboo forest right when the nightingales' alarm cry sounded -- opportunity-based only, no motive was ever raised against her"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Keiichi",
+    "aliases": [],
+    "roles": ["bystander", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "note": "Noriko's young son; she brought him along to cover for her sick mother, and Seizan angrily sent him home"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Daimatsu",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "detective, local precinct",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Bamboo forest clearing", "attrs": {"note": "home to nightingales; site of both the initial visit and the murder"}},
+   {"id": "l2", "name": "Inn guest room", "attrs": {}},
+   {"id": "l3", "name": "Kuroki's workroom", "attrs": {}},
+   {"id": "l4", "name": "Seizan's atelier", "attrs": {}},
+   {"id": "l5", "name": "Fishing pier", "attrs": {}},
+   {"id": "l6", "name": "Hospital", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Sleeping pills", "role": "weapon", "attrs": {"used_to": "drug Seizan before carrying him to the clearing"}},
+   {"id": "o2", "name": "Rope tied to a bamboo shoot", "role": "weapon", "attrs": {"mechanism": "noosed around Seizan's neck and anchored to a young bamboo shoot chosen to grow tall in sunlight"}},
+   {"id": "o3", "name": "Forged suicide note", "role": "evidence", "attrs": {"content": "\"I can't draw anymore. I'm sorry for relying on you -- thank you.\"", "authenticity": "forged by Kuroki to mimic Seizan's despair"}},
+   {"id": "o4", "name": "Seizan's bamboo-growth journal", "role": "evidence", "attrs": {"entries": "April 10 +30cm, April 11 +60cm, April 12 +2m after rain -- documents how fast bamboo shoots grow"}},
+   {"id": "o5", "name": "Pre-recorded voice message", "role": "tool", "attrs": {"trick": "a recording of Seizan's real voice, obtained beforehand and set to play on the answering machine to fake his presence during the phone check-in"}},
+   {"id": "o6", "name": "Mt. Fuji drawing", "role": "evidence", "attrs": {"claimed_by_seizan": "said he had drawn it recently", "actual_origin": "Kuroki finished it from Seizan's rough sketch"}},
+   {"id": "o7", "name": "Portrait of Ran", "role": "evidence", "attrs": {"painted_by": "Kuroki, overnight, to submit to the art contest under his own name"}},
+   {"id": "o8", "name": "White powder on Kuroki's feet", "role": "evidence", "attrs": {"initial_claim": "oyster-shell whitewash pigment, the powder Kuroki uses for paint", "actual_identity": "bamboo sawdust"}},
+   {"id": "o9", "name": "Cut bamboo stalks at the clearing", "role": "evidence", "attrs": {"purpose": "cleared so the anchoring shoot would get full sunlight and grow faster"}}
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "White powder on Kuroki's feet: he claims it's oyster-shell whitewash paint pigment (matching the powder paints in his workroom), but it's actually bamboo sawdust matching the stalks cut down at the clearing -- proves he was at the murder scene cutting bamboo, not just mixing paint.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Seizan's own bamboo-growth journal (30cm, then 60cm, then 2m after rain) shows a shoot can grow far enough within a couple of hours to strangle someone -- explains how the murder happened inside the 11:00-13:00 estimated time of death while Kuroki was fishing with an alibi.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "apprentice_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p3", "relation_type": "child_of"},
+
+  {"type": "ghost_paints_for", "from": "p2", "to": "p1", "circumstance_tags": ["cover_up"], "detail": "secretly finished and produced Seizan's paintings for several years, uncredited"},
+  {"type": "paints", "from": "p2", "to": "o6"},
+  {"type": "falsely_attributed_to", "from": "o6", "to": "p1"},
+  {"type": "paints", "from": "p2", "to": "o7"},
+  {"type": "forbids", "from": "p1", "to": "p2", "detail": "publicly refuses to let Kuroki enter the art contest under his own name"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "denied credit for his own art and forbidden from entering the contest, after years of uncredited ghost-painting"},
+
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "drugs", "from": "p2", "to": "p1", "circumstance_tags": ["staged_suicide"], "method": "sleeping pills"},
+  {"type": "kills", "from": "p2", "to": "p1", "circumstance_tags": ["staged_suicide", "cover_up", "delayed_mechanism"], "method": "tied a drugged Seizan by the neck to a young bamboo shoot, then cleared the surrounding plants for sunlight so the shoot grew and slowly strangled him hours later while Kuroki had a fishing alibi"},
+  {"type": "stages_suicide_of", "from": "p2", "to": "p1", "circumstance_tags": ["staged_suicide"]},
+  {"type": "clears_vegetation_at", "from": "p2", "to": "l1"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o9"},
+  {"type": "forges", "from": "p2", "to": "o3"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o5", "circumstance_tags": ["staged_alibi"]},
+
+  {"type": "implicates", "from": "o8", "to": "p2"},
+  {"type": "implicates", "from": "o9", "to": "p2"},
+  {"type": "implicates", "from": "o3", "to": "p2"},
+  {"type": "implicates", "from": "o4", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "o8"},
+  {"type": "regarding", "from": "c1", "to": "o9"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o4"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l4"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

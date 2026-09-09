@@ -1,0 +1,1005 @@
+{
+ "case_id": "ep011_moonlight_sonata_murder_case",
+ "episode_number": "11",
+ "title": "Moonlight Sonata Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Moonlight_Sonata_Murder_Case",
+ "subtitle_source": "github.com/x-cord/conan subs/0001-0999/0011.ass (838 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. Multigraph: multiple parallel typed edges between the same two nodes are expected (e.g. Asai->Kawashima has both `drowns` and `has_motive_against`). Prose 'clue' text has been decomposed into node attributes (e.g. object.decoded_message) plus direct edges (e.g. object -inscribed_to-> person); only 2 genuinely relational/comparative clues remain as `clue` nodes. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Keiji Aso",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "concert pianist",
+    "attrs": {
+     "death_confirmed_by": "dental record match on remains found in the fire",
+     "false_public_narrative": "believed for 12 years to have murdered his own wife and daughter and burned down the house himself before dying at the piano"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Keiji Aso's wife",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Keiji Aso's daughter",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Hideo Kawashima",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "wealthy businessman, mayoral candidate",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Tatsuji Kuroiwa",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "town mayor, mayoral candidate",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Ken Nishimoto",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "unemployed",
+    "attrs": {}
+   },
+   {
+    "id": "p7",
+    "name": "Isamu Kameyama",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "former town mayor",
+    "attrs": {
+     "died_of": "heart attack",
+     "circumstance": "collapsed immediately after being confronted with the truth about Aso's murder; face reported as convulsive, as if he'd seen something horrifying"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Narumi Asai",
+    "aliases": [
+     "Seiji Aso"
+    ],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "doctor",
+    "attrs": {
+     "disguise": "presents as a woman; medical license does not indicate gender, and the name is not obviously male or female in pronunciation"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Kazuaki Hirata",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "secretary to the mayor",
+    "attrs": {}
+   },
+   {
+    "id": "p10",
+    "name": "Masato Shimizu",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "mayoral candidate, fishermen's representative",
+    "attrs": {}
+   },
+   {
+    "id": "p11",
+    "name": "Reiko Kuroiwa",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "mayor's daughter",
+    "attrs": {}
+   },
+   {
+    "id": "p12",
+    "name": "Shuichi Murasawa",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "amateur piano tuner",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Community center piano room, Tsukikage Island",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Community center broadcast room",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Community center storeroom",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Aso family house",
+    "attrs": {
+     "fate": "burned down"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Ocean shore near the community center",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Tape recorder",
+    "role": "instrument",
+    "attrs": {
+     "trick": "auto-reverse playback used to fake elapsed time; several minutes of blank tape before audio starts at each scene"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Coded sheet music (left at Kawashima's scene)",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "Better watch out. You're next.",
+     "decoding_method": "piano-keyboard letter cipher (notes = alphabet positions)",
+     "anomaly": "the fourth bar is musically wrong -- the detail that tips off the cipher"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Coded sheet music (left under Kuroiwa's body)",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "Extinguished is the anger of the hellfire.",
+     "written_in": "blood"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Coded sheet music (left at Nishimoto's feet)",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "Will",
+     "forged": true,
+     "staging_flaw": "no object present in the room for the victim to have stood on and kicked away -- proves the 'suicide' was staged"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Original sheet music recovered from Aso's fireproof safe",
+    "role": "evidence",
+    "attrs": {
+     "inscription": "To my son, Seiji",
+     "recovered_from": "fireproof safe inside the burned house",
+     "content": "written confession naming the four men who killed him and urging his son to live an honest life"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Tuning hammer (Murasawa's)",
+    "role": "tool",
+    "attrs": {}
+   },
+   {
+    "id": "o7",
+    "name": "Hidden panel inside the piano",
+    "role": "contraband",
+    "attrs": {
+     "mechanism": "false compartment used to stash drugs and cash"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "White powder (drugs)",
+    "role": "contraband",
+    "attrs": {
+     "evidence_location": "residue found on Hirata's sleeve"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Timing contradiction: the blood used to write the coded message under Kuroiwa's body was already dry, despite the tape evidence implying he'd been killed only minutes earlier -- reveals the tape auto-reverse trick was used to fake the time of death.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Photo comparison: a small light near Kuroiwa's neck is visibly on in the first crime-scene photo and off in a later photo taken after the body was moved -- proves someone tampered with the scene between photographs.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p7",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p7",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p7",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p7",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p9",
+   "to": "p5",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p9",
+   "to": "p4",
+   "relation_type": "secret_business_partner",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p11",
+   "to": "p5",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p11",
+   "to": "p12",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p12",
+   "relation_type": "disapproves_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p10",
+   "to": "p5",
+   "relation_type": "electoral_rival",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p10",
+   "to": "p4",
+   "relation_type": "electoral_rival",
+   "symmetric": true
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p3",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p1",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p3",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p6",
+   "to": "p1",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p6",
+   "to": "p2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p6",
+   "to": "p3",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p7",
+   "to": "p1",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p7",
+   "to": "p2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p7",
+   "to": "p3",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12,
+   "method": "arson",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "burns",
+   "from": "p4",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12
+  },
+  {
+   "type": "burns",
+   "from": "p5",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12
+  },
+  {
+   "type": "burns",
+   "from": "p6",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12
+  },
+  {
+   "type": "burns",
+   "from": "p7",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 12
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "confronts",
+   "from": "p8",
+   "to": "p7",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "detail": "reveals himself as Aso's son; Kameyama confesses the 12-year-old secret, then collapses"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p10",
+   "to": "l1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p11",
+   "to": "l1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p12",
+   "to": "l1",
+   "order": 9,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "drowns",
+   "from": "p8",
+   "to": "p4",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l5",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l5",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "drags_body_of",
+   "from": "p8",
+   "to": "p4",
+   "order": 11,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "locked_room"
+   ]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p8",
+   "to": "o1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p8",
+   "to": "o2",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p8"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p8"
+  },
+  {
+   "type": "deals_drugs_with",
+   "from": "p9",
+   "to": "p4",
+   "order": 12,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "ongoing",
+    "unrelated_subplot"
+   ],
+   "symmetric": true
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p9",
+   "to": "o7",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "assaults",
+   "from": "p9",
+   "to": "p12",
+   "order": 12,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l1",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p12",
+   "to": "l1",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p9",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p12",
+   "to": "o6"
+  },
+  {
+   "type": "located_in",
+   "from": "o7",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p9"
+  },
+  {
+   "type": "kills",
+   "from": "p8",
+   "to": "p5",
+   "order": 13,
+   "temporal_frame": "present",
+   "method": "unspecified in available transcript excerpt"
+  },
+  {
+   "type": "fakes_time_of_death_of",
+   "from": "p8",
+   "to": "p5",
+   "order": 13,
+   "temporal_frame": "present",
+   "method": "tape auto-reverse trick + a lit prop turned off after the body was found, altering the apparent time of death"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p8",
+   "to": "o1",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p8",
+   "to": "o3",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l2",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p8"
+  },
+  {
+   "type": "kills",
+   "from": "p8",
+   "to": "p6",
+   "order": 14,
+   "temporal_frame": "present",
+   "method": "staged as hanging suicide"
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p8",
+   "to": "p6",
+   "order": 14,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "staged_suicide"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p8",
+   "to": "o4",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l3",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p8"
+  },
+  {
+   "type": "written_by",
+   "from": "o5",
+   "to": "p1"
+  },
+  {
+   "type": "inscribed_to",
+   "from": "o5",
+   "to": "p8"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p8"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p8"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p8"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p8",
+   "to": "p4",
+   "motive_type": "revenge_for_fathers_murder"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p8",
+   "to": "p5",
+   "motive_type": "revenge_for_fathers_murder"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p8",
+   "to": "p6",
+   "motive_type": "revenge_for_fathers_murder"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p10",
+   "to": "p4",
+   "motive_type": "electoral_rivalry (red herring, accused by Reiko)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p10",
+   "to": "p5",
+   "motive_type": "electoral_rivalry (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p4",
+   "motive_type": "electoral_rivalry (red herring, accused by Reiko)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p8"
+ }
+}

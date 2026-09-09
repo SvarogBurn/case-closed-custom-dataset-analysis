@@ -1,0 +1,300 @@
+{
+ "case_id": "ep238-239_the_3_ks_of_osaka_case",
+ "episode_number": "238-239",
+ "title": "The 3 \"K\"s of Osaka Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_3_%22K%22s_of_Osaka_Case",
+ "subtitle_source": ["subs_resolved/0238.txt", "subs_resolved/0239.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan/Shinichi, Heiji, Kazuha, Ran, Kogoro, Inspector Ohtaki) omitted by convention, matching ep011. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. The old wiki-summary-derived case file (cases/ep238-239_the_3_ks_of_osaka_case.json) got the murderer right (Ray Curtis) but misspelled both his co-owners ('Ricardo Barreira' -> actually 'Ricardo Barega') and the victim ('Ed McCay' -> actually 'Ed McKay', per the on-screen character cards), and it dropped essentially the entire case: it had no motive at all for the culprit (in the transcript, Ed McKay's tabloid story exposing Ray's drug abuse drove Ray's wife to suicide, which is why Ray killed him), no red-herring motives for the other two co-owners (Ed had also publicly exposed Ricardo's fixed fights and falsely accused Mike of an affair), and none of the physical reasoning Conan actually uses to clear Ricardo/Mike and convict Ray (the three-second timing window versus each man's assigned floor, the deflated/re-inflated soccer ball used to trigger the mechanism, the pin and wet towel found in Ray's room, the gunpowder-residue logic pointing at his shoes, and Ed's two-part dying message -- three curled fingers plus a hand on his belt -- encoding sushi-counter slang 'bandou' for the number 8, Ray's own jersey number). The trigger was a soccer ball that was kicked, not 'thrown' as the old file's object description said. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ed McKay",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "news reporter",
+    "attrs": {
+     "age": 48,
+     "nationality": "American, from Chicago",
+     "died_of": "gunshot wound to the chest, from a Smith & Wesson revolver; death was not instant, per blood-stain evidence",
+     "reputation": "reporter specializing in exposing famous athletes' scandals -- illegal drugs, fixed games, affairs",
+     "dying_message": "left hand gripping his own belt, right hand curled with only the little and ring fingers folded in (three fingers extended)"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ricardo Barega",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "former world heavyweight boxing champion, K3 restaurant co-owner",
+    "attrs": {
+     "age": 36,
+     "signature_number": "4 (rounds it typically took him to win, written under his signature)",
+     "assigned_floor": "5th floor of the hotel, for lighting the 'K'",
+     "cleared_because": "too large and slow to have covered the distance from the 5th floor to the crime scene in the available time"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Mike Norwood",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Major League pitcher, K3 restaurant co-owner",
+    "attrs": {
+     "age": 35,
+     "wears_number": "99 (his fastball speed in mph)",
+     "assigned_floor": "3rd and 4th floors of the hotel, for lighting the 'K'",
+     "cleared_because": "had an injured arm, and was seen looking perfectly normal opening his curtains at the moment of the shot"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Ray Curtis",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "pro soccer goalkeeper, K3 restaurant co-owner",
+    "attrs": {
+     "age": 37,
+     "wears_number": "8 (as goalkeeper, unusual since #1 is typical)",
+     "playing_history": "started as a fielder, became emergency goalkeeper during the World Cup after both regular keepers were injured, kept #8 afterward including at Sevilla and in Major League Soccer",
+     "assigned_floor": "1st and 2nd floors of the hotel, for lighting the 'K' (5 rooms)",
+     "assigned_room_of_crime": "Room #2, 1st floor, far left, facing the stairs -- deliberately left dark until last",
+     "drug_use": "secretly using illegal drugs, self-medicating joint/muscle pain and grief; recurring yawning and knee pain were withdrawal/use symptoms mistaken for an old injury",
+     "confession": "admitted to using drugs and to killing Ed McKay in revenge for driving his wife to suicide"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Ray Curtis's wife",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "nationality": "Japanese",
+     "died_of": "suicide",
+     "circumstance": "left Ray after Ed McKay published 'In Pursuit of Ray's Drug Abuse: On Site in Japan', tracking Ray to her own hometown in Japan to do it; she could not bear the fallout and later took her own life"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "K3 Restaurant, Osaka",
+    "attrs": {
+     "event": "opening party for the World Restaurant 'K3', co-owned by Ricardo, Mike, and Ray",
+     "K_meaning": "K.O. (Ricardo, boxing), strKeout (Mike, baseball), and Keeper (Ray, soccer)"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Hotel above the K3 Restaurant",
+    "attrs": {
+     "layout": "5 floors; the three owners each individually turned on/off room lights in a planned sequence to form the letter 'K' visible from outside, as a surprise for the guests",
+     "floor_assignments": "Ray: 1st-2nd floor (5 rooms); Mike: 3rd-4th floor; Ricardo: 5th floor"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Room #2, 1st floor",
+    "attrs": {
+     "significance": "the room Ray rigged with the mop-and-door mechanism and deliberately left dark until last, directly facing the stairwell for a fast return trip",
+     "circumstance": "light in this room switched off/on remotely from outside the room using the rigged mechanism, giving Ray a false alibi for the moment of the murder"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Ed McKay's hotel room, 2nd floor",
+    "attrs": {
+     "significance": "crime scene; the broken glass window here was seen and heard from outside the hotel at the moment of the gunshot"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Ray Curtis's hotel room",
+    "attrs": {
+     "significance": "where Conan found the deflated soccer balls, the pin in the toilet trash can, and the still-wet towel used to wash off gunpowder residue"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Smith & Wesson revolver",
+    "role": "weapon",
+    "attrs": {
+     "used_on": "Ed McKay, shot through the chest",
+     "gunpowder_note": "revolvers emit gunpowder from the body of the gun (not just the barrel, as with semi-automatics), so residue would land on the shooter's hands and shoes"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Mop-and-door remote light-switch mechanism",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "a mop taken from the room closet is wedged between the door and the light switch just before the door's auto-lock catches, angled so the door leans onto the switch; kicking a ball down the hallway/stairs into the door knocks it against the switch, flipping the light on or off from outside the room",
+     "built_by": "Ray Curtis, practiced beforehand as a former professional free-kick specialist",
+     "purpose": "let Ray appear to be inside Room #2 the whole time while he was actually at the crime scene"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Deflated soccer balls (trick balls)",
+    "role": "tool",
+    "attrs": {
+     "count_found": 2,
+     "staging_flaw": "none of the promotional soccer balls at the party reception were deflated -- these two were separately deflated after the fact",
+     "purpose": "kicked to trigger the mop-and-door mechanism; afterward deflated with a pin and hidden under Ray's shirt so they wouldn't be found on a body-check"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Pin",
+    "role": "tool",
+    "attrs": {
+     "found_in": "trash can in the toilet of Ray's hotel room",
+     "purpose": "used to deflate the trick soccer ball for concealment"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Wet towel",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "Ray's hotel room, still wet",
+     "purpose": "water removes gunpowder residue, so Ray used it to wash his skin before the official test"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Transceiver",
+    "role": "instrument",
+    "attrs": {
+     "given_by": "the three owners, to Conan and Ran, to help check the 'K' light formation from outside",
+     "role_in_crime": "Ray stayed on the transceiver talking to Ran while running to trigger the mechanism and shoot Ed, giving the illusion he was still in his room the entire time"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "\"In Pursuit of Ray's Drug Abuse: On Site in Japan\" (newspaper article)",
+    "role": "evidence",
+    "attrs": {
+     "content": "Ed McKay's published exposé of Ray Curtis's illegal drug use in Europe, written while tracking Ray to Japan",
+     "consequence": "directly caused Ray's wife to leave him and later commit suicide"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Ray Curtis's shoes",
+    "role": "evidence",
+    "attrs": {
+     "significance": "not yet cleaned; expected to carry gunpowder residue from the revolver, since Ray had to be wearing shoes to kick the trigger ball accurately -- named by Conan as the deciding evidence"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Ray Curtis's shirt and pants worn during the murder",
+    "role": "evidence",
+    "attrs": {
+     "trick": "turned inside-out and jacket removed before the shooting to avoid visible gunpowder marks, jacket put back on before returning to the window",
+     "cover_up": "sent to the hotel laundry afterward, under the pretext of having 'sweat a lot'"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Illegal drugs (unspecified substance)",
+    "role": "contraband",
+    "attrs": {
+     "used_by": "Ray Curtis, to manage joint/muscle pain and cope after his wife's death",
+     "symptoms": "recurring yawning and joint pain, mistaken by others for an old sports injury"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ed McKay's dying message combines two separate signs on his body that only resolve to the same answer together: three fingers extended on his right hand (a sushi-counter hand signal Japanese staff use to discreetly convey a price/item number) and his left hand gripping his own belt ('bandou', old-fashioned Western/Japanese slang for a leather belt). Read together via the sushi-shop convention, both signs independently encode the number 8 -- the jersey number worn only by Ray Curtis.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Comparing the roughly three-second gap (from Ran's eyewitness timing) between Room #2's light and the gunshot against each owner's assigned floor and known physical condition: Ricardo (5th floor, too large/slow) and Mike (3rd-4th floor, injured arm, seen calmly opening curtains at the moment of the shot) could not have covered the distance to the crime scene in time, while Ray (1st-2nd floor, professional free-kick accuracy, knock-then-kick timing via the transceiver) could have -- and was the only one of the three who could.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "business_partner"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "business_partner"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "business_partner"},
+
+  {"type": "owns", "from": "p2", "to": "l1"},
+  {"type": "owns", "from": "p3", "to": "l1"},
+  {"type": "owns", "from": "p4", "to": "l1"},
+  {"type": "owns", "from": "p4", "to": "o10"},
+
+  {"type": "written_by", "from": "o7", "to": "p1", "order": 0, "temporal_frame": "backstory"},
+  {"type": "regarding", "from": "o7", "to": "p4"},
+  {"type": "drives_to_suicide", "from": "p1", "to": "p5", "order": 1, "temporal_frame": "backstory", "circumstance_tags": ["indirect"]},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 10, "temporal_frame": "present"},
+
+  {"type": "confronts", "from": "p1", "to": "p2", "order": 11, "temporal_frame": "present", "circumstance_tags": ["public_friction"]},
+  {"type": "confronts", "from": "p1", "to": "p3", "order": 11, "temporal_frame": "present", "circumstance_tags": ["public_friction"]},
+  {"type": "confronts", "from": "p1", "to": "p4", "order": 11, "temporal_frame": "present", "circumstance_tags": ["public_friction"]},
+
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 12, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 12, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l2", "order": 12, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p4", "to": "l3", "order": 13, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o2", "order": 13, "temporal_frame": "present"},
+  {"type": "located_in", "from": "o2", "to": "l3"},
+
+  {"type": "was_at", "from": "p4", "to": "l4", "order": 14, "temporal_frame": "present"},
+  {"type": "confronts", "from": "p4", "to": "p1", "order": 14, "temporal_frame": "present"},
+
+  {"type": "kills", "from": "p4", "to": "p1", "order": 15, "temporal_frame": "present", "method": "shot through the chest with a Smith & Wesson revolver", "circumstance_tags": ["staged_alibi", "locked_room", "remote_trigger"]},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o3", "order": 15, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o6", "order": 15, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o1", "order": 15, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p4", "to": "l3", "order": 16, "temporal_frame": "present"},
+  {"type": "hides_contraband_in", "from": "p4", "to": "o3", "order": 17, "temporal_frame": "present", "circumstance_tags": ["cover_up"]},
+  {"type": "leaves_evidence", "from": "p4", "to": "o4", "order": 17, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p4", "to": "o5", "order": 18, "temporal_frame": "present", "circumstance_tags": ["cover_up"]},
+  {"type": "leaves_evidence", "from": "p4", "to": "o9", "order": 19, "temporal_frame": "present", "circumstance_tags": ["cover_up"]},
+
+  {"type": "was_at", "from": "p4", "to": "l5", "order": 17, "temporal_frame": "present", "circumstance_tags": ["cover_up"]},
+  {"type": "located_in", "from": "o3", "to": "l5"},
+  {"type": "located_in", "from": "o4", "to": "l5"},
+  {"type": "located_in", "from": "o5", "to": "l5"},
+
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+
+  {"type": "regarding", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "p4"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+
+  {"type": "implicates", "from": "o3", "to": "p4"},
+  {"type": "implicates", "from": "o4", "to": "p4"},
+  {"type": "implicates", "from": "o5", "to": "p4"},
+  {"type": "implicates", "from": "o8", "to": "p4"},
+  {"type": "owns", "from": "p4", "to": "o8"},
+  {"type": "owns", "from": "p4", "to": "o9"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "revenge_for_wifes_suicide"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "career_ending_scandal_exposure (red herring; Ed exposed Ricardo for fixed matches, forcing his retirement)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "false_affair_scandal_exposure (red herring; Ed falsely accused Mike of an affair that never happened)"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

@@ -1,0 +1,185 @@
+{
+ "case_id": "ep481-482_mountain_witchs_cutlery",
+ "episode_number": "481-482",
+ "title": "Mountain Witch's Cutlery",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Mountain_Witch%27s_Cutlery",
+ "subtitle_source": ["subs_resolved/0481.txt", "subs_resolved/0482.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ayumi, Mitsuhiko, Genta, Haibara, Agasa) omitted by convention, matching the old case file's own note. The old lower-fidelity file's culprit (Raito Adachi / s2) and weapon mechanism (obsidian shard broken off with a hammer) both check out against the full transcript -- no reversal found here. The upgrade over the old file is fidelity, not correction: generic 'knows' edges replaced with real typed relationships (host_client, grandchild_of, coworker) and a `defrauds` backstory edge explaining the motive; event nodes decomposed into direct verb edges (steals, fashions_weapon_from, kills, drags_body_of, hides_weapon_in, leaves_evidence) with circumstance_tags (locked_room, staged_alibi); the second red herring (Kahara Fuuga, who is secretly the homeowner's grandson Tanaka Shouta in disguise) is fully modeled including his own backstory arc, but note he has no `has_motive_against` edge toward the victim -- the transcript never gives him one, his suspicion arises purely from concealing his identity, so none was invented; the third arc (Iwae Tanaka's hidden, sharpened red-handled cutlery for her absent grandson) is restored as its own object/clue thread even though it turns out to be unrelated to the murder weapon. Raito's real name is never disclosed in the available transcript -- he is interrupted mid-reveal -- so `Adachi Raito` (his host-club stage name) is kept as his only known name, noted in attrs. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Iwae Tanaka",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "retired, lives alone in the mountains",
+    "attrs": {
+     "age": 74,
+     "rumor": "mistaken by the children for a folkloric mountain witch",
+     "grandson_away_years": 10
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Ooba Akane",
+    "aliases": ["Milady"],
+    "roles": ["victim"],
+    "occupation": "loan company president's daughter",
+    "attrs": {
+     "age": 25,
+     "host_club_role": "VIP customer"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Adachi Raito",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "host club employee, ranked #1",
+    "attrs": {
+     "age": 29,
+     "note": "Adachi Raito is a stage name used at the club; his real name is never disclosed -- he is interrupted before he can say it"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kahara Fuuga",
+    "aliases": ["Tanaka Shouta"],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": "host club employee ranked #2; actually a chef in Tokyo",
+    "attrs": {
+     "age": 28,
+     "disguise": "underwent cosmetic surgery so his grandmother would not recognize him on a secret welfare check"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Adachi Raito's parents",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "role_in_plot": "victims of Akane's bad stock tip, which roughly tripled their debt and gave Raito his motive"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Tanaka mountain house", "attrs": {}},
+   {"id": "l2", "name": "House entrance (genkan)", "attrs": {"note": "murder scene"}},
+   {"id": "l3", "name": "House kitchen", "attrs": {}},
+   {"id": "l4", "name": "Locked garden shed", "attrs": {"contains": "grandson's old toolbox"}},
+   {"id": "l5", "name": "Forest near the house", "attrs": {"note": "where the hammer was later found"}},
+   {"id": "l6", "name": "House washroom", "attrs": {}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Camping hammer",
+    "role": "tool",
+    "attrs": {"owner": "Agasa (recurring cast, omitted)", "found_at": "recovered in the forest"}
+   },
+   {
+    "id": "o2",
+    "name": "Obsidian shard (weapon)",
+    "role": "weapon",
+    "attrs": {
+     "origin": "one of the display rocks in Kahara Fuuga's fish tank",
+     "era_reference": "obsidian was used as a blade material in the Joumon period",
+     "staging_flaw": "unrecognizable as a weapon since it was reshaped from a household decoration"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Fish tank",
+    "role": "evidence",
+    "attrs": {
+     "contents": "12 goldfish plus quartz, mica, and obsidian display rocks",
+     "tell": "water level dropped overnight far more than the goldfish could have drunk"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Red-handled kitchen knife",
+    "role": "evidence",
+    "attrs": {
+     "maker_signature": "knife maker's signature plus the engraved name \"Shouta\"",
+     "condition": "well maintained, no nicks or scratches",
+     "luminol_result": "negative -- ruled out as the murder weapon"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Raito's laced shoes",
+    "role": "evidence",
+    "attrs": {"detail": "high-top shoes, properly laced, worn while everyone else ran to the scene barefoot"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Fish-tank water level dropped overnight far beyond what 12 goldfish could drink, revealing something had been removed.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Raito wore laced high-top shoes to the scene while everyone else ran out barefoot.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "Mitsuhiko saw Iwae sharpening the red-handled knife at dawn, but luminol found no blood on it.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "grandchild_of"},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "host_client"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "host_client"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "coworker"},
+
+  {"type": "defrauds", "from": "p2", "to": "p5", "detail": "recommended a doomed stock, roughly tripling the debt owed to her father's loan company"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p2", "motive_type": "revenge_for_familys_debt_and_forced_servitude"},
+
+  {"type": "owns", "from": "p4", "to": "o3"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "inscribed_to", "from": "o4", "to": "p4"},
+  {"type": "owns", "from": "p3", "to": "o5"},
+  {"type": "located_in", "from": "o2", "to": "o3"},
+
+  {"type": "steals", "from": "p3", "to": "o1", "detail": "taken from Agasa's unattended camping-gear bag in the hallway"},
+  {"type": "fashions_weapon_from", "from": "p3", "to": "o2", "tool": "o1", "detail": "broken apart in the forest before dawn, before the rain began, to muffle the noise"},
+  {"type": "kills", "from": "p3", "to": "p2", "method": "slashed carotid artery with a bladed obsidian shard", "circumstance_tags": ["locked_room", "staged_alibi"]},
+  {"type": "drags_body_of", "from": "p3", "to": "p2", "circumstance_tags": ["staged_alibi"], "detail": "repositioned her body and swept it into his arms to feign having just rushed to her side after the scream"},
+  {"type": "hides_weapon_in", "from": "p3", "to": "o3", "detail": "returned the bloodied shard to the fish tank while pretending to wash off blood in the washroom"},
+  {"type": "leaves_evidence", "from": "p3", "to": "o2", "detail": "no time to wipe the shard clean; blood and fingerprints remained on it"},
+  {"type": "implicates", "from": "o2", "to": "p3"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l4", "detail": "cutting pickled vegetables in the shed when the guests first arrived; the locked toolbox inside was later floated as a possible weapon source but ruled out"},
+  {"type": "was_at", "from": "p1", "to": "l2", "detail": "ran out barefoot after the scream"},
+  {"type": "was_at", "from": "p1", "to": "l3", "detail": "seen sharpening the red-handled knife before dawn"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l5", "detail": "crafted the weapon here overnight"},
+  {"type": "was_at", "from": "p3", "to": "l6", "detail": "went to wash off blood, passing and touching the fish tank"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2", "detail": "ran out barefoot after the scream"},
+
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "regarding", "from": "c3", "to": "p1"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

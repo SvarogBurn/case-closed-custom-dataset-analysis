@@ -1,0 +1,214 @@
+{
+ "case_id": "ep729_the_diamond_the_painting_and_the_great_actress",
+ "episode_number": "729",
+ "title": "The Diamond, the Painting, and the Great Actress",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Diamond,_the_Painting,_and_the_Great_Actress",
+ "subtitle_source": ["subs_resolved/0729.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's culprit (Chiharu) is confirmed correct by the transcript, but two of its details do not hold up: (1) its object node 'Will, listing the intended change of heirs' invents a physical document -- the transcript only shows Misuzu's spoken intent to disinherit Chiharu in a remembered flashback line, no will is ever shown or referenced as evidence, so no will/document object is included here; (2) its single generic clue (naming-convention testimonial) is kept but expanded into three distinct clues actually used in the on-screen deduction (lily pollen on Chiharu's sleeve, the mirrors being reset after being accidentally toppled, and the naming-convention rift), since the old file omitted the physical mirror/pollen reasoning entirely. The old file also omitted three named, present characters entirely: the maid Yuka Nakanishi (whose framed car accident is a load-bearing part of the murder plan), Detective Tamagawa (first responding investigator), and Misuzu's late husband/Chiharu's biological father (backstory figure establishing the stepfamily structure). case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Misuzu Shirakawa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "retired film actress",
+    "attrs": {
+     "age": "58",
+     "died_of": "smoke inhalation from a fire set in her room during her daily 2-4pm nap",
+     "temperament": "vain and controlling; addressed her stepdaughter formally while using first names for her biological children"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kyousuke Shirakawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "none stated",
+    "attrs": {"age": "23", "note": "Misuzu's biological son"}
+   },
+   {
+    "id": "p3",
+    "name": "Chiharu Shirakawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "none stated",
+    "attrs": {"age": "22", "note": "Misuzu's stepdaughter, not related by blood"}
+   },
+   {
+    "id": "p4",
+    "name": "Saori Shirakawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "aspiring actress",
+    "attrs": {"age": "21", "note": "Misuzu's biological daughter; recently failed an audition"}
+   },
+   {
+    "id": "p5",
+    "name": "Yuka Nakanishi",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "household maid",
+    "attrs": {"age": "22"}
+   },
+   {
+    "id": "p6",
+    "name": "Detective Tamagawa",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police detective",
+    "attrs": {"age": "35", "note": "first officer to respond, initially treated the fire as accidental"}
+   },
+   {
+    "id": "p7",
+    "name": "Chiharu's late father",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "deceased",
+    "attrs": {"note": "collected the film memorabilia displayed in the house; brought Chiharu into the family by marrying Misuzu"}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Misuzu's display room",
+    "attrs": {"contents": "glass case of movie props, the portrait, and decorative mirrors"}
+   },
+   {
+    "id": "l2",
+    "name": "Terrace / dining area",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Driveway near the pond",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Portrait from \"Deer Cry Pavilion\"",
+    "role": "instrument",
+    "attrs": {"depicts": "Misuzu Shirakawa in costume", "note": "the object the focused sunlight was aimed at to start the fire"}
+   },
+   {
+    "id": "o2",
+    "name": "Diamond necklace on the portrait",
+    "role": "evidence",
+    "attrs": {"note": "genuine diamond, mounted onto the display after the portrait was finished"}
+   },
+   {
+    "id": "o3",
+    "name": "Full-length wall mirror",
+    "role": "tool",
+    "attrs": {"trick": "knocked over by a guest before noon, then secretly reset to its exact original position to keep the light-path aimed at the portrait"}
+   },
+   {
+    "id": "o4",
+    "name": "Three mirrors atop the glass case",
+    "role": "tool",
+    "attrs": {"trick": "angled to bounce the wall mirror's reflected sunlight onto one point on the portrait"}
+   },
+   {
+    "id": "o5",
+    "name": "Flammable diluent",
+    "role": "weapon",
+    "attrs": {"type": "oil-painting solvent (turpentine/petrol-type), flash point under 50°C"}
+   },
+   {
+    "id": "o6",
+    "name": "Rose jam jar",
+    "role": "tool",
+    "attrs": {"note": "hidden to force Misuzu to send Yuka out shopping, opening the diversion window"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Lily pollen found on the outside of Chiharu's right sleeve, but lilies grow only in Misuzu's room and reaching that side of the vase is explained only by grabbing the mirror kept behind it.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "A guest accidentally toppled the room's mirrors before noon, yet the fire still started exactly as planned -- meaning someone deliberately reset them afterward.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Misuzu called Kyousuke and Saori by first name alone but always addressed Chiharu formally as \"Chiharu-san,\" marking her as the perpetual outsider.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p7", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "stepdaughter_of"},
+  {"type": "relationship", "from": "p1", "to": "p7", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "step_sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "step_sibling_of"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "lifelong emotional distance from her stepmother plus impending removal from the inheritance"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "anger at her mother for sabotaging her acting audition (red herring, no plan behind it)"},
+
+  {"type": "positions", "from": "p3", "to": "o3"},
+  {"type": "positions", "from": "p3", "to": "o4"},
+  {"type": "uses", "from": "p3", "to": "o5"},
+  {"type": "douses", "from": "p3", "to": "o1", "circumstance_tags": ["premeditated"]},
+  {"type": "hides", "from": "p3", "to": "o6"},
+  {"type": "endangers", "from": "p3", "to": "p5", "detail": "staggered in front of Yuka's car to force a swerve, creating a diversion and scapegoat", "circumstance_tags": ["staged_diversion"]},
+  {"type": "kills", "from": "p3", "to": "p1", "method": "focused sunlight ignited a diluent-doused portrait, filling the room with smoke while Misuzu slept sedated", "circumstance_tags": ["arson", "premeditated", "staged_diversion", "locked_room"]},
+  {"type": "burns", "from": "p3", "to": "l1"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "owns", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "located_in", "from": "o3", "to": "l1"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+
+  {"type": "implicates", "from": "o3", "to": "p3"},
+  {"type": "implicates", "from": "o4", "to": "p3"},
+  {"type": "implicates", "from": "o6", "to": "p3"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+  {"type": "implicates", "from": "c3", "to": "p3"},
+
+  {"type": "regarding", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c1", "to": "l1"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "regarding", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "p4"},
+  {"type": "regarding", "from": "c3", "to": "p3"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

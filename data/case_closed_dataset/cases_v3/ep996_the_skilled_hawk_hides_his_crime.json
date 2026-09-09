@@ -1,0 +1,219 @@
+{
+ "case_id": "ep996_the_skilled_hawk_hides_his_crime",
+ "episode_number": "996",
+ "title": "The Skilled Hawk Hides His Crime",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Skilled_Hawk_Hides_His_Crime",
+ "subtitle_source": "subs_resolved/0996.txt (335 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Takagi) omitted by convention. case_type: murder. The old low-fidelity case file already had the correct culprit (Satoko Takehara) and the correct core clue (matching bloodstain on her neck vs. the victim's neck/jacket), so no culprit/clue reversal correction was needed here -- this rebuild's changes are additive: it separates the single vague 'rigging' object into its real distinct physical parts (shotgun, fishing line, wooden drum, hawk's lure, Genichi's hunting jacket), replaces the two generic 'event' nodes with direct typed edges (kills, drags_body_of, fakes_time_of_death_of, stages_alibi_using), adds the farmer Ishima and falconer Akashiba as fully-fledged witness/suspect persons with was_at coverage, adds the unnamed café-buyer backstory figure whose sale negotiation supplies Satoko's motive, and adds two additional relational clues (the hawk's fishing-line ankle injury; the no-echo/absence-during-puffed-rice timing contradiction) beyond the single bloodstain clue the old file recorded.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Genichi Takehara",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "café manager (Traditional-style House Café Takehara), former office worker",
+    "attrs": {
+     "died_of": "shotgun wound",
+     "revitalization_project": "runs an Okuho Mountain Village Festival (puffed rice, falconry) to revive the café and village"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Satoko Takehara",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "café co-owner, woodcarver (makes the café's animal carvings)",
+    "attrs": {
+     "disguise": "wore Genichi's hunting jacket and waved from a distance during the falconry main event to fake his continued presence"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tetsu Akashiba",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "falconer (age 28)",
+    "attrs": {
+     "hawk_breed": "Harris's hawk",
+     "guilt": "blames himself and his hawk for Genichi's apparent death by hawk-caused accident"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Masahiko Ishima",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "farmer, runs the festival's puffed-rice demonstration (age 50)",
+    "attrs": {
+     "schedule_reliability": "runs the puffed-rice demonstration exactly on the festival's fixed schedule, which the culprit used to time the murder"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Café buyer",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "unnamed prospective buyer of the café",
+    "attrs": {
+     "note": "unnamed in the transcript; meets Genichi in secret to finalize a sale agreement for the café"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Café Takehara festival grounds",
+    "attrs": {
+     "detail": "the café courtyard where tea is served and the puffed-rice demonstration is held"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Mountain thicket/clearing",
+    "attrs": {
+     "detail": "forest clearing with the hawk's lure where Genichi went boar hunting, where he was actually killed, and where his body was later staged"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Ravine below the clearing",
+    "attrs": {
+     "detail": "where the fishing line and wooden drum ended up after the rigged shotgun fired, so they would not be found at the crime scene"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Genichi's hunting shotgun",
+    "role": "weapon",
+    "attrs": {
+     "used_twice": "fired once by Satoko to actually kill Genichi during the puffed-rice noise, then rigged in the thicket to fire again later so the shell would sever the fastener holding his propped-up body",
+     "found": "left at the crime scene, dragged there by the fishing line when it was pulled into the ravine"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Fishing line",
+    "role": "tool",
+    "attrs": {
+     "rigged_between": "the shotgun's trigger and a line strung in front of the hawk's flight path to the lure",
+     "trick": "when the hawk's feet caught on the line mid-flight, it yanked the trigger, firing the shotgun a second time",
+     "disposal": "wrapped around a wooden drum and dropped into the ravine so it would not be found near the body"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Wooden drum",
+    "role": "tool",
+    "attrs": {
+     "purpose": "weight the fishing line was wound around so it would sink into the ravine after the rigged shotgun fired"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Hawk's lure",
+    "role": "tool",
+    "attrs": {
+     "composition": "rabbit fur and meat",
+     "purpose": "the target the falconer's hawk was trained to fly to; the fishing line was strung directly in its flight path"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Genichi's hunting jacket",
+    "role": "evidence",
+    "attrs": {
+     "bloodstain": "carries a bloodstain on the neck area that transferred onto Satoko when she wore it to impersonate him",
+     "used_for": "worn by Satoko to disguise herself as Genichi and wave to onlookers, faking that he was still alive"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Puffed rice machine",
+    "role": "tool",
+    "attrs": {
+     "purpose": "produces a loud bang on a fixed festival schedule; Satoko used its noise to mask the real gunshot that killed Genichi"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Akashiba's hawk",
+    "role": "instrument",
+    "attrs": {
+     "unwitting_role": "its feet caught the rigged fishing line while flying to the lure, pulling the shotgun trigger a second time",
+     "injury": "ankle injury from the fishing line, treated afterward with medicine by Akashiba"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Bloodstain comparison: the red stain on Satoko's neck matches the bloodstain in the same spot on Genichi's neck and on his hunting jacket -- proves she wore his jacket to impersonate him.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Hawk's freshly bandaged ankle injury, which Akashiba says could come from something like fishing line, tips Conan off that a fishing-line rig -- not the hawk attacking Genichi -- fired the fatal-looking shot.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "Timing contradiction: Conan's shout toward the distant figure he took for Genichi during the puffed-rice demonstration got no echoing reply, and Satoko was the one person unaccounted for at that exact moment -- proving the figure was not Genichi and that she had the opportunity to kill him then.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "employee_of"},
+  {"type": "negotiates_sale_with", "from": "p1", "to": "p5", "detail": "secretly meets the buyer at the café to sign a sale agreement for the café, planning to leave Satoko"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "resentment_over_planned_sale_and_abandonment", "detail": "Genichi told her he was selling the café they built together and leaving her, calling her and the café a burden"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p3", "to": "o7"},
+  {"type": "owns", "from": "p1", "to": "o5"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "method": "shotgun, fired during the puffed-rice demonstration to mask the sound", "circumstance_tags": ["staged_accident", "cover_up"]},
+  {"type": "drags_body_of", "from": "p2", "to": "p1", "circumstance_tags": ["cover_up"]},
+  {"type": "fakes_time_of_death_of", "from": "p2", "to": "p1", "method": "propped Genichi's body in the thicket on a fastener rigged to a second, delayed shotgun blast (triggered by the hawk hitting the fishing line), making it look like he died later during the falconry main event"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o5", "detail": "wore Genichi's jacket to impersonate him and wave to onlookers during the falconry main event"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o2"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o3"},
+
+  {"type": "leaves_evidence", "from": "p2", "to": "o1"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o2"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o3"},
+
+  {"type": "located_in", "from": "o2", "to": "l3"},
+  {"type": "located_in", "from": "o3", "to": "l3"},
+  {"type": "located_in", "from": "o1", "to": "l2"},
+  {"type": "located_in", "from": "o4", "to": "l2"},
+
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o7"},
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "regarding", "from": "c3", "to": "l1"},
+  {"type": "regarding", "from": "c3", "to": "o6"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

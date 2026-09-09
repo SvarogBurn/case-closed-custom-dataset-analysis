@@ -1,0 +1,523 @@
+{
+ "case_id": "ep558-561_the_mansion_of_death_and_the_red_wall",
+ "episode_number": "558-561",
+ "title": "The Mansion of Death and the Red Wall",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mansion_of_Death_and_the_Red_Wall",
+ "subtitle_source": ["subs_resolved/0558.txt", "subs_resolved/0561.txt"],
+ "schema_version": "v3",
+ "notes": "This is a 4-part case (episodes 558-561) but only subtitle transcripts for 558 and 561 were found locally in subs_resolved/ -- 559 and 560 are missing. Episode 561 opens with an in-show recap that covers most of the missing middle (formal alibi-check of the three surviving mansion residents, Naoki Shirou's murder, Morofushi's solo investigation, the mansion fire, his rescue by Uehara), so the surviving evidence chain is largely reconstructable, but any finer-grained interrogation dialogue from 559-560 is not represented here. Detective-cast regulars (Kogoro, Ran, Conan, Haibara, Agasa) omitted by convention; Conan's specific deductive interjections during the finale are folded into the edges/clues they produced rather than attributed to a Conan node. Discrepancies vs. the old cases/ file: (1) it renders both victim-2 and the culprit's names in reversed (given-name-first) order -- 'Shiro Naoki' should be Naoki Shirou (surname Naoki, given name Shirou) and 'Naoki Midorikawa' should be Midorikawa Naoki (surname Midorikawa, given name Naoki) -- this reversal is exactly the point of the dying-message trick (the katakana word 'Naoki' is ambiguous between Naoki Shirou's surname and Midorikawa Naoki's given name), so getting the name order right matters for the puzzle itself; (2) the old file's has_motive_against edge left the motive as 'unspecified,' but the transcript gives a clear one: Midorikawa's rage at discovering Akashi had painted over an old portrait of his late wife Aoi to reuse the canvas, compounded by seeing an unfinished new portrait of her half-burnt in the yard the day after her death. The old file's culprit identification (s1/Midorikawa) itself was correct. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Akashi Shuusaku",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "illustrator",
+    "attrs": {
+     "died_of": "starvation, locked in the mansion's storage room",
+     "backstory": "husband of Kobashi Aoi; secretly painted her a surprise portrait for her birthday and did not tell her, so he did not find her collapsed for half a day",
+     "dying_message": "painted the storage room wall red and nailed white/black chairs facing it to leave a complementary-afterimage message naming his killer"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kobashi Aoi",
+    "aliases": ["Akashi Aoi"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "novelist",
+    "attrs": {
+     "died_of": "heart attack in the mansion storage room, three years before the present case",
+     "circumstance": "was searching the storage room for an old portrait of herself when she collapsed; not found by her husband for half a day"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Midorikawa Naoki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "actor",
+    "attrs": {
+     "age": 38,
+     "former_mansion_resident": true,
+     "color_alias": "green"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yamabuki Shouji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "fashion designer",
+    "attrs": {
+     "age": 39,
+     "former_mansion_resident": true,
+     "color_alias": "golden yellow"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Momose Takuto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "CG creator",
+    "attrs": {
+     "age": 37,
+     "former_mansion_resident": true,
+     "color_alias": "pink"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Naoki Shirou",
+    "aliases": [],
+    "roles": ["victim", "bystander"],
+    "occupation": "musician",
+    "attrs": {
+     "former_mansion_resident": true,
+     "color_alias": "white",
+     "died_of": "strangulation, in his own apartment",
+     "financial_state": "needed money, planned to travel to Lecce, Italy"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Morofushi Takaaki",
+    "aliases": ["Koumei"],
+    "roles": ["witness", "victim"],
+    "occupation": "Arano Station police inspector",
+    "attrs": {
+     "age": 35,
+     "nickname_origin": "surname read in the Chinese style sounds like the tactician Zhuge Liang (Koumei)",
+     "assaulted_by_culprit": "struck unconscious while investigating the mansion alone; rescued from the resulting fire"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Yamato Kansuke",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Nagano Prefecture Police headquarters inspector",
+    "attrs": {
+     "age": 35,
+     "backstory": "elementary-school classmate and lifelong rival of Morofushi"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Uehara Yui",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Nagano Prefecture Police detective",
+    "attrs": {
+     "age": 29,
+     "rescued_morofushi_from_fire": true
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Mansion of Death",
+    "attrs": {
+     "former_name": "Mansion of Hope",
+     "history": "villa where a deceased benefactor let six talented young people live rent-free",
+     "fate": "set on fire by the culprit during Morofushi's solo investigation"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Storage room (Red Wall room)",
+    "attrs": {
+     "location_of": "inside the Mansion of Death",
+     "door_mechanism": "swings outward, blocked from outside by a book-laden cart",
+     "deaths_here": "Kobashi Aoi (heart attack, 3 years prior) and Akashi Shuusaku (starvation, present case)"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Naoki Shirou's apartment",
+    "attrs": {
+     "staged_feature": "wall painted red and chairs arranged to imitate the mansion dying message"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Red spray paint can",
+    "role": "instrument",
+    "attrs": {
+     "found": "storage room floor, nozzle color matching the wall",
+     "significance": "the only art supply Akashi kept -- everything else was thrown out the window so no one could repaint the wall a different color"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "White chair (nailed to floor)",
+    "role": "evidence",
+    "attrs": {
+     "faces": "the red wall",
+     "significance": "chess convention: white moves first -- sit here and stare at red first"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Black chair (nailed to floor)",
+    "role": "evidence",
+    "attrs": {
+     "faces": "a plain white wall",
+     "significance": "chess convention: black moves second -- sit here after, so red's complementary afterimage (green) appears"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Spray-painted wall message",
+    "role": "evidence",
+    "attrs": {
+     "decoded_message": "katakana for 'killed by Naoki'",
+     "ambiguity": "reads as either Naoki Shirou's surname or Midorikawa Naoki's given name",
+     "written_in": "red spray paint, chosen over kanji strokes to avoid blurring"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Cart of Aoi's book boxes",
+    "role": "tool",
+    "attrs": {
+     "used_to": "block the outward-swinging storage room door from outside",
+     "required_knowledge": "that the room held many books and that the door opened outward -- narrows suspects to former residents"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Old portrait of Aoi, painted over",
+    "role": "evidence",
+    "attrs": {
+     "discovered_via": "X-ray of a portrait Midorikawa had bought the previous year",
+     "revealed": "Akashi had painted over an old portrait of Aoi in white and reused the canvas, out of poverty",
+     "significance": "core of Midorikawa's motive -- he saw it as desecrating Aoi's memory"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Unfinished birthday portrait of Aoi",
+    "role": "evidence",
+    "attrs": {
+     "found": "half-burnt in the mansion yard, wet paint, the day after Aoi's death",
+     "true_context": "Akashi was secretly painting it as a birthday surprise, which is why he did not check on Aoi for half a day",
+     "misread_by_Midorikawa_as": "callous disregard for Aoi -- fueled his grudge"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Memory card in shoe heel",
+    "role": "evidence",
+    "attrs": {
+     "hidden_in": "the heel of one of Naoki Shirou's shoes, referencing 'Lecce, the heel of Italy's boot'",
+     "contains": "a photo of the partly-painted-over wall message -- Shirou's blackmail evidence"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Hidden listening device",
+    "role": "instrument",
+    "attrs": {
+     "installed_by": "the culprit, in the storage room",
+     "purpose": "remotely monitor Akashi's vitals and return once the sounds stopped",
+     "staging_flaw": "never retrieved -- the culprit never returned, proving deliberate abandonment rather than an accident"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Sit on the white chair facing the red wall, then the black chair facing the white wall (chess order): red's complementary afterimage, green, appears -- Midorikawa's color.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "The victim left the dying message at scene 1, but the same red wall appeared at scene 2 -- since the culprit wouldn't restage a message they didn't fully understand, a third party (Shirou) must have altered scene 1 first.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "Fingerprints on the storage room doorknob and spray can, assumed to be the victim's, actually matched Inspector Morofushi -- he touched them while first discovering the body, not while committing the crime.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p8",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p9",
+   "to": "p8",
+   "relation_type": "subordinate_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge_for_desecrating_late_wifes_memory"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p6",
+   "motive_type": "silencing_blackmail"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p1",
+   "method": "starvation, locked in the storage room",
+   "circumstance_tags": ["locked_room"]
+  },
+  {
+   "type": "blocks_door_with",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "installs",
+   "from": "p3",
+   "to": "o9"
+  },
+  {
+   "type": "writes_message",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "arranges",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "arranges",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "uses",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l3"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p7"
+  },
+  {
+   "type": "paints_over",
+   "from": "p6",
+   "to": "o4"
+  },
+  {
+   "type": "photographs",
+   "from": "p6",
+   "to": "o4"
+  },
+  {
+   "type": "hides_evidence_in",
+   "from": "p6",
+   "to": "o8"
+  },
+  {
+   "type": "blackmails",
+   "from": "p6",
+   "to": "p3",
+   "circumstance_tags": ["blackmail"]
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p6",
+   "method": "strangulation",
+   "circumstance_tags": ["silencing_blackmail"]
+  },
+  {
+   "type": "restages_scene_at",
+   "from": "p3",
+   "to": "l3",
+   "circumstance_tags": ["staged_scene", "red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p3"
+  },
+  {
+   "type": "assaults",
+   "from": "p3",
+   "to": "p7",
+   "circumstance_tags": ["near_miss", "cover_up"]
+  },
+  {
+   "type": "burns",
+   "from": "p3",
+   "to": "l1",
+   "circumstance_tags": ["cover_up", "attempted_murder"]
+  },
+  {
+   "type": "rescues",
+   "from": "p9",
+   "to": "p7"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "o6",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p9",
+   "to": "l1"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

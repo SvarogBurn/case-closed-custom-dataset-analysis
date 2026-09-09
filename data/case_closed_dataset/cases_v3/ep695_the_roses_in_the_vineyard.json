@@ -1,0 +1,253 @@
+{
+ "case_id": "ep695_the_roses_in_the_vineyard",
+ "episode_number": "695",
+ "title": "The Roses in the Vineyard",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Roses_in_the_Vineyard",
+ "subtitle_source": ["subs_resolved/0695.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, and local investigator Detective Momoi, who functions the same as a recurring police interrogator) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Old cases/ep695 file got the culprit right (Yurika Suwayama) but was far thinner than the transcript supports: it collapsed three physically distinct ropes (hand/feet ties, the neck-to-ankle murder rig, and the reef-knot rope used to stage the hanging) into a single object, omitted the Mizumachi red-herring arc entirely (he confined Kengo at Yurika's request but did not kill him -- Momoi initially accuses him), omitted witnesses Shuuji Takashina and Akihiro Yamaguchi, and collapsed the case's actual solving mechanism -- the contrast between the northern field's acidic pyroligneous-acid pesticide (which darkens silver and reddens the yellow roses there) and the southern field's alkaline Bordeaux mixture (which does neither) -- into one vague 'pesticide fumes' clue. That north/south chemical contrast, not just 'mud on shoes', is what actually breaks both Mizumachi's and then Yurika's alibi claims. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kengo Suwayama",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "agriculturist, winery co-manager",
+    "attrs": {
+     "personality": "scholarly, fastidious about wine quality",
+     "conflict": "opposed any contract or farming change that would dilute Suwayama Wine's quality; told Yurika he wanted a divorce over it"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yurika Suwayama",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "winery co-manager, heiress",
+    "attrs": {
+     "inherited_winery_from": "her late father",
+     "false_alibi_claim": "said she went to the southern barn at 3:30 looking for Kengo; actually returned to the northern barrel cellar"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tomoaki Mizumachi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "winery co-manager",
+    "attrs": {
+     "no_alibi_window": "worked alone in the southern barn, noon-2:30pm, unwitnessed",
+     "initially_accused_by": "Detective Momoi, for lacking an alibi and admitting he tied up Kengo"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Akihiro Yamaguchi",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "restaurant manager, Tokyo",
+    "attrs": {
+     "reason_present": "signing a supply contract for Suwayama Wine"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Shuuji Takashina",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "winery employee",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Barrel cellar, northern field",
+    "attrs": {
+     "access": "locked; only 4 keyholders (Mizumachi, Kengo, Yurika, Takashina)",
+     "crime_scene": true
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Southern barn",
+    "attrs": {
+     "note": "Mizumachi's claimed unwitnessed workspot; contract later found here on a desk"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Southern vineyard field",
+    "attrs": {
+     "soil": "red clay, muddy from morning rain",
+     "pesticide": "alkaline Bordeaux mixture",
+     "roses": "yellow; stay yellow under this alkaline spray"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Northern vineyard field",
+    "attrs": {
+     "soil": "gravelly sand",
+     "pesticide": "pyroligneous acid, sprayed daily 1-4pm",
+     "roses": "same species as south field but darken/redden under this acidic spray; also tarnishes silver and turns litmus paper pink"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Train station",
+    "attrs": {
+     "note": "Yurika's alibi location, 1:30pm, picking up Kogoro Mouri and Conan"
+    }
+   },
+   {
+    "id": "l6",
+    "name": "Winery tasting room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Ropes tying hands and feet",
+    "role": "tool",
+    "attrs": {
+     "knot_type": "two half-hitches (agricultural knot)",
+     "used_by": "Mizumachi, to confine Kengo per Yurika's request"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Neck-to-ankle rope",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "forced Kengo's body into a backward-bent (ebi-zori) position; he strangled himself gradually as he tired",
+     "removed_after_death": true,
+     "recovered": false,
+     "purpose": "let the murderer be elsewhere during the estimated time of death"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Staged hanging rope",
+    "role": "tool",
+    "attrs": {
+     "knot_type": "reef knot",
+     "purpose": "hung from the stake after death to disguise the scene as a straightforward strangulation/hanging"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Litmus test paper",
+    "role": "instrument",
+    "attrs": {
+     "reacts_to": "acid, turns pink",
+     "result_on_mizumachi": "no reaction -- his clothes were never exposed to pyroligneous acid"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Yurika's silver hairpin",
+    "role": "evidence",
+    "attrs": {
+     "shape": "rose-shaped, silver",
+     "change": "bright silver at noon, tarnished black by evening from oxidation"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Signed winery contract",
+    "role": "evidence",
+    "attrs": {
+     "found_on": "a desk in the southern barn",
+     "note": "appeared already signed by Kengo; circumstances of the signing are never resolved on-screen"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Kengo's hand/foot ropes use two half-hitches (an agricultural knot); the rope that hung him from the stake uses a plain reef knot -- two different people tied them, ruling out a single lone actor.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Litmus paper touched to Mizumachi's clothes stays blue instead of turning pink, proving he was never exposed to the pyroligneous acid sprayed 1-4pm in the north field, so he never re-entered the barrel-cellar area during the death window.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Yurika's silver hairpin oxidized black, which only the north field's acidic pyroligneous-acid spray causes; the south field's alkaline Bordeaux mixture leaves silver and the yellow roses there unchanged -- so she lied about spending that time in the south field.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c4",
+    "desc": "Straight, unresisting toe-drag marks matching Kengo's shoes show his face-down body was dragged to the wall already dead, contradicting the scene staged to look like he was hanged there alive.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "business_partner_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "business_partner_of"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "marital_conflict_over_business (Kengo planned to divorce her and opposed the quality-diluting contract she needed to sign; killing him let the Yamaguchi contract proceed unopposed)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "business_survival_pressure (red herring; wanted the contract to succeed, confined Kengo for Yurika's sake, but did not kill him -- wrongly accused for lacking an alibi)"},
+
+  {"type": "was_at", "from": "p2", "to": "l6"},
+  {"type": "was_at", "from": "p3", "to": "l6"},
+  {"type": "was_at", "from": "p4", "to": "l6"},
+  {"type": "was_at", "from": "p5", "to": "l6"},
+
+  {"type": "was_at", "from": "p5", "to": "l1", "circumstance_tags": ["witness_observation"]},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "ties_up", "from": "p3", "to": "p1", "attrs": {"instructed_by": "Yurika Suwayama", "knot_type": "two half-hitches"}},
+  {"type": "leaves_evidence", "from": "p3", "to": "o1"},
+  {"type": "implicates", "from": "o1", "to": "p3"},
+
+  {"type": "was_at", "from": "p3", "to": "l2"},
+
+  {"type": "discovers", "from": "p5", "to": "o6"},
+  {"type": "located_in", "from": "o6", "to": "l2"},
+  {"type": "written_by", "from": "o6", "to": "p1"},
+
+  {"type": "was_at", "from": "p2", "to": "l1", "attrs": {"phase": "rigs the neck-to-ankle rope trap before establishing her alibi"}},
+  {"type": "kills", "from": "p2", "to": "p1", "method": "ties his neck to his ankles, forcing a backward-bent posture; he strangles himself over time as he tires", "circumstance_tags": ["staged_alibi", "locked_room", "delayed_death"]},
+
+  {"type": "was_at", "from": "p2", "to": "l5"},
+
+  {"type": "was_at", "from": "p2", "to": "l1", "attrs": {"phase": "returns ~3:30pm claiming to be checking the southern barn; actually disposes of the murder rope and stages the hanging"}},
+  {"type": "removes_evidence", "from": "p2", "to": "o2", "attrs": {"purpose": "destroy proof of the neck-to-ankle rig"}},
+  {"type": "drags_body_of", "from": "p2", "to": "p1", "circumstance_tags": ["staged_scene"]},
+  {"type": "stages_scene_using", "from": "p2", "to": "o3", "attrs": {"detail": "hangs body from the stake using a reef knot to disguise it as a straightforward strangulation"}},
+
+  {"type": "owns", "from": "p2", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+
+  {"type": "signs_contract_with", "from": "p2", "to": "p4"},
+
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+
+  {"type": "regarding", "from": "c2", "to": "o4"},
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "l4"},
+
+  {"type": "regarding", "from": "c3", "to": "o5"},
+  {"type": "regarding", "from": "c3", "to": "l3"},
+  {"type": "regarding", "from": "c3", "to": "l4"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+
+  {"type": "regarding", "from": "c4", "to": "p1"},
+  {"type": "regarding", "from": "c4", "to": "l1"},
+  {"type": "implicates", "from": "c4", "to": "p2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,495 @@
+{
+ "case_id": "ep294-295_the_smash_of_determination_and_love",
+ "episode_number": "294-295",
+ "title": "The Smash of Determination and Love",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Smash_of_Determination_and_Love",
+ "subtitle_source": [
+  "subs_resolved/0294.txt",
+  "subs_resolved/0295.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Haibara, Genta, Mitsuhiko, Ayumi, Inspector Tamana, Sergeant Kato) omitted by convention -- none of them carry case-specific motive/relationship data beyond their usual investigative function. Ran, Sonoko and Kogoro are kept in despite being recurring-cast, because in this episode they are not narrator furniture: Ran is the actual kidnap victim, Sonoko is the manipulation target the whole plot pivots on, and Kogoro is the specific target of the (fake) ransom call. case_type: attempted_murder. The old cases/ file's culprit (s3 Tachikawa Masato) is CONFIRMED correct against the transcript -- unlike some other rebuilds, this is not a case of a wrong or backwards culprit. What the old file missed entirely: Saeki (the scapegoated secretary whose suicide is the actual motive engine), Sonoko as a load-bearing character, Kogoro's ransom subplot, the steel-factory location doing double duty as both the conspirators' old workplace and Ran's present-day prison, and the kanji-misreading clue (Hirukomachi/Yokomachi) that actually finds her. One inference flagged as uncertain: Ran says she heard 'a third man's voice' before blacking out during the abduction, in addition to the two men (Doi, Mamiya) a witness saw carrying her off; the transcript does not name this third voice directly, but since Doi and Mamiya are later found already stationed at the factory watching the tournament on TV (never leaving it) while Tachikawa is the only conspirator unaccounted for and is separately revealed as the would-be assassin, the `assaults` edge for the head-strike is attributed to Tachikawa (p3) as the most consistent reading, not a directly quoted confession.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kenzo Narimasu",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "congressman, tournament chairman",
+    "attrs": {
+     "corruption_scandal": "was implicated in a bribery scandal, later cleared publicly",
+     "scapegoated": "blamed his secretary Saeki for the scandal instead of himself",
+     "security": "employs paid bodyguards, refuses to cancel the tournament despite the death threat"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Saeki",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "Narimasu's secretary",
+    "attrs": {
+     "died_of": "suicide",
+     "cause": "scapegoated by Narimasu for his corruption scandal",
+     "commemorated_by": "Tachikawa, Doi, Mamiya and Sonoko visit her grave together every year"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Masato Tachikawa",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "professional tennis player",
+    "attrs": {
+     "former_workplace": "Narimasu's steel factory, 10 years prior",
+     "tournament_result": "wins the final against Mabuchi Kyohei"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Akira Doi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": null,
+    "attrs": {
+     "former_workplace": "Narimasu's steel factory, 10 years prior"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Hideki Mamiya",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": null,
+    "attrs": {
+     "former_workplace": "Narimasu's steel factory, 10 years prior"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Sonoko Suzuki",
+    "aliases": [],
+    "roles": [
+     "witness",
+     "bystander"
+    ],
+    "occupation": "high school student",
+    "attrs": {
+     "manipulated_via": "two text messages sent to a phone she found and kept"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Ran Mouri",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "high school student",
+    "attrs": {
+     "kidnapped_while": "using the restroom at the tennis venue"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Kogoro Mouri",
+    "aliases": [],
+    "roles": [
+     "bystander"
+    ],
+    "occupation": "private detective",
+    "attrs": {
+     "targeted_by": "fake ransom demand for his daughter's return"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kumamoto Athletic Park",
+    "attrs": {
+     "event": "Volcanic Cup charity tennis tournament, junior and open divisions"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Narimasu's steel factory",
+    "attrs": {
+     "aka": "misheard by Ran as 'Hirukomachi', actually 'Yokomachi'",
+     "features": "sunflower field and billboard outside, locker room inside",
+     "double_role": "conspirators' old workplace and Ran's present-day prison"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Saeki's grave",
+    "attrs": {
+     "visited_annually_by": "Tachikawa, Doi, Mamiya, Sonoko"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Kumamoto Prefectural Police Station",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Sonoko's cell phone",
+    "role": "evidence",
+    "attrs": {
+     "message_1": "Sonoko, really want to see you!",
+     "message_2": "If I can't make it today, burn incense at her grave -- offer sunflowers from behind the Yokomachi factory"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Knife",
+    "role": "weapon",
+    "attrs": {
+     "used_at": "trophy ceremony, held to Narimasu's throat"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Billboard Ran reads over the phone sounds like 'Hirukomachi'; Sonoko's text names the same kanji as 'Yokomachi' -- same characters, different reading, pinpoints the factory.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Narimasu's bodyguards step back only during the trophy handoff, and today is Saeki's death anniversary -- whichever finalist wins gets the one unguarded moment.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "employer_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "former_coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "former_coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p2",
+   "relation_type": "former_coworker"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p6",
+   "relation_type": "friend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p6",
+   "relation_type": "friend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p6",
+   "relation_type": "friend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p2",
+   "relation_type": "friend_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p6",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p7",
+   "relation_type": "parent_of"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "revenge_for_saeki (scapegoated and driven to suicide; group tried and failed to kill Narimasu 10 years earlier)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_saeki"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "revenge_for_saeki"
+  },
+  {
+   "type": "drives_to_suicide_of",
+   "from": "p1",
+   "to": "p2",
+   "circumstance_tags": [
+    "cover_up",
+    "framed"
+   ]
+  },
+  {
+   "type": "kidnaps",
+   "from": "p4",
+   "to": "p7",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "kidnaps",
+   "from": "p5",
+   "to": "p7",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "assaults",
+   "from": "p3",
+   "to": "p7",
+   "detail": "strikes her head during the abduction, knocking her out, before returning to compete in the tournament"
+  },
+  {
+   "type": "holds_captive",
+   "from": "p4",
+   "to": "p7"
+  },
+  {
+   "type": "holds_captive",
+   "from": "p5",
+   "to": "p7"
+  },
+  {
+   "type": "sends_message_to",
+   "from": "p4",
+   "to": "p6",
+   "detail": "sends the first, flirtatious text to lure Sonoko in"
+  },
+  {
+   "type": "sends_message_to",
+   "from": "p3",
+   "to": "p6",
+   "detail": "sends the second text about Saeki's grave, effectively inviting her to intervene"
+  },
+  {
+   "type": "regarding",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "o1",
+   "to": "l2"
+  },
+  {
+   "type": "owns",
+   "from": "p6",
+   "to": "o1"
+  },
+  {
+   "type": "demands_ransom_from",
+   "from": "p4",
+   "to": "p8",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "l1",
+   "circumstance_tags": [
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p3",
+   "to": "p1",
+   "circumstance_tags": [
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "confronts",
+   "from": "p6",
+   "to": "p3",
+   "detail": "pleads with him to stop, invoking Saeki's memory, until police arrive"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l4"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "temporal_frame": "backstory",
+   "detail": "visits Saeki's grave together with Doi, Mamiya and Sonoko every year on her death anniversary"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "temporal_frame": "backstory",
+   "detail": "visits Saeki's grave together with Tachikawa, Mamiya and Sonoko every year on her death anniversary"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3",
+   "temporal_frame": "backstory",
+   "detail": "visits Saeki's grave together with Tachikawa, Doi and Sonoko every year on her death anniversary"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3",
+   "temporal_frame": "backstory",
+   "detail": "visits Saeki's grave together with Tachikawa, Doi and Mamiya every year on her death anniversary"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p3"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

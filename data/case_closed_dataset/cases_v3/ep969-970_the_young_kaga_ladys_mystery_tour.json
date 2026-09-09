@@ -1,0 +1,310 @@
+{
+ "case_id": "ep969-970_the_young_kaga_ladys_mystery_tour",
+ "episode_number": "969-970",
+ "title": "The Young Kaga Lady's Mystery Tour",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Young_Kaga_Lady%27s_Mystery_Tour",
+ "subtitle_source": "subs_resolved/0969.txt, subs_resolved/0970.txt (701 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: actions are direct typed edges. case_type: attempted_murder (the case starts as a kidnapping-fraud/extortion but escalates to Rintaro Hagino assaulting Soichi Hayashi with a rock and then trying to kill his own accomplice Manabu Saikawa by locking him, bleeding, in a closet). Corrections vs. the old low-fidelity `cases/ep969-970_...json`: (1) the old file's culprit id (Hagino) was actually correct and is kept as `label.murderer_id` here -- no reversal needed; (2) the old file completely omitted Manabu Saikawa as a node, despite him being both the mastermind of the first staged kidnapping AND the near-victim of Hagino's attempted murder -- he is added here (person p6, roles suspect+victim); (3) the old file's single vague clue (\"only Hagino had the trust/access\") is replaced with the actual chain of physical evidence from the transcript: the photo showing Manabu's hands merely held behind his back (no rope burns) exposing his fake first kidnapping, the hikiko sawdust on the murder weapon narrowing suspects to the two printed-silk craftsmen, the three sets of footprints plus Manabu's disabled hand proving only Hagino could have swung the rock, and the smartphone-shaped bulge in Hagino's own \"hostage\" photo exposing his fake second kidnapping; (4) case_type corrected from the old file's plain \"kidnapping\" to \"attempted_murder\" since no one actually stays kidnapped by a third party -- both apparent kidnappings are frauds staged by the people later shown to be guilty, and the real crime is Hagino's assault on Soichi and attempted murder of Manabu. Takumi Kondo's storyline (accused over gold dust, confesses to an unrelated attempted theft of the ransom cash) is a genuine red herring, not padding invented for this rebuild.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Soichi Hayashi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "president of Hayashi Draper (a Kanazawa kimono/textile company)",
+    "attrs": {
+     "injury": "struck unconscious with a rock; recovers in hospital",
+     "personality": "dotes on his daughter Mari, harsh toward employees"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Mari Hayashi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Soichi Hayashi's daughter",
+    "attrs": {
+     "role_in_case": "delivered the first ransom bag per the kidnapper's phone instructions; initially withheld having seen Manabu flee the scene because she saw him as a foster-parent figure"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuko Kaede",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Hayashi Draper accountant",
+    "attrs": {
+     "role_in_case": "discovered Soichi unconscious the next morning; reveals she secretly follows Rintaro's social media, where he posted hostile messages about Manabu"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Takumi Kondo",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "apprentice gold-foil craftsman; Mari's boyfriend",
+    "attrs": {
+     "red_herring": true,
+     "confession": "snuck into Soichi's office the night of the assault to steal some of the ransom cash for himself; was caught and grabbed by the collar, which is how gold dust from his trade transferred onto Soichi",
+     "denies": "attacking Soichi"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Rintaro Hagino",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "apprentice printed-silk (Kaga-yuzen) craftsman under Manabu Saikawa",
+    "attrs": {
+     "true_scheme": "secretly helped Manabu stage the first fake kidnapping, then struck Soichi with a rock when caught, and staged a fake kidnapping of himself to extort a second ransom while leaving Manabu locked in a closet to bleed to death and be blamed as a fugitive forever",
+     "public_posts": "posted messages online such as 'go to hell' and wishing his master would die"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Manabu Saikawa",
+    "aliases": [],
+    "roles": ["suspect", "victim"],
+    "occupation": "master printed-silk (Kaga-yuzen) craftsman, forced into retirement",
+    "attrs": {
+     "injury": "lost the use of his dominant hand in a workshop accident, ending his career",
+     "scheme": "staged his own kidnapping (voice-changer call, no real restraints) to extort a 30 million yen ransom from Soichi over what he felt was an unfairly reduced retirement payout",
+     "later_victimized": "returned to the office to steal more money, was caught by Soichi, and after Rintaro struck Soichi was himself attacked and left bleeding, bound, and locked in a closet by Rintaro"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Yamanakaza parking lot",
+    "attrs": {
+     "role": "drop-off point where Mari left the first ransom bag per phone instructions"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Hayashi Draper office/lodging (Kayatamatsu hot spring)",
+    "attrs": {
+     "role": "company office with the safe; site of the group's interrogation gathering and of Rintaro's assault on Soichi"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Yamashiro Onsen Kosoyu / Hattori Shrine area",
+    "attrs": {
+     "role": "where Kogoro and Conan tracked down and exposed Manabu as the fake hostage"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Science Hills Komatsu",
+    "attrs": {
+     "role": "science museum near Komatsu Station where Conan borrowed anthocyanin solution and lost Manabu's trail; airplane noise on the ransom call pointed here (near Komatsu Airport)"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Second ransom drop-off building near Komatsu",
+    "attrs": {
+     "role": "site of the second staged kidnapping's ransom exchange; Rintaro was found here posing as a rescued hostage, and Manabu was found bleeding in a closet"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "30 million yen ransom cash",
+    "role": "evidence",
+    "attrs": {
+     "note": "unusually heavy bag first noticed by Conan; the same cash was extorted twice -- once by Manabu's fake kidnapping, then prepared again for Rintaro's fake kidnapping",
+     "outcome": "recovered both times once each hoax was exposed"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Rock (assault weapon)",
+    "role": "weapon",
+    "attrs": {
+     "detail": "too heavy to swing one-handed; found with hikiko sawdust residue on it"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Gold dust on Soichi",
+    "role": "evidence",
+    "attrs": {
+     "source": "transferred from Takumi's gold-foil craft work when Soichi grabbed his collar catching him mid-theft",
+     "significance": "red herring pointing at Takumi"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Hikiko sawdust on the weapon",
+    "role": "evidence",
+    "attrs": {
+     "detail": "a sieved sawdust used specifically by printed-silk (yuzen) makers to keep dye from bleeding, narrowing suspicion to Rintaro and Manabu"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Photo of the 'restrained' Manabu",
+    "role": "evidence",
+    "attrs": {
+     "detail": "a background reflection shows Manabu merely holding his hands behind his back, not actually tied; no rope burns either"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Photo of the 'rescued' Rintaro",
+    "role": "evidence",
+    "attrs": {
+     "detail": "shows a rectangular bulge in his pocket"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Rintaro's smartphone",
+    "role": "evidence",
+    "attrs": {
+     "detail": "kept on him the whole time he claimed to be a hostage -- a real kidnapper would confiscate a captive's phone"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Rintaro-Manabu call log",
+    "role": "evidence",
+    "attrs": {
+     "detail": "police phone records show frequent calls between Rintaro and Manabu starting the night of the assault"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Anthocyanin solution",
+    "role": "tool",
+    "attrs": {
+     "detail": "borrowed from the science museum's children's lab; changes color with pH, used to reveal footprints where Manabu had spilled acidic cola"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Bloodstained mat and closet",
+    "role": "evidence",
+    "attrs": {
+     "detail": "a bloodstain under a floor mat led the group to check the closet, where Manabu was found alive but injured"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Photo of 'restrained' Manabu shows his hands merely held behind his back in a reflection, with no rope burns -- proves he was never actually tied up.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Security footage of the disguised person who collected the first ransom bag shows their ears; ear shape is as individual as a fingerprint and can be matched to Manabu's own ears, exposing him as his own 'kidnapper'.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Photo of 'rescued' Rintaro shows a phone-shaped bulge in his pocket -- a genuine kidnapper would have confiscated a hostage's phone, so Rintaro was never really held.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cD",
+    "desc": "Three sets of footprints at the assault scene (Soichi's, Manabu's, and one unidentified) plus the fact that the rock was too heavy to swing one-handed and Manabu can only use one hand -- proves only the third, unidentified person (Rintaro) could have struck Soichi.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cE",
+    "desc": "Hikiko sawdust, used specifically by printed-silk craftsmen, found on the assault weapon -- narrows the attacker to Rintaro or Manabu, the only two yuzen craftsmen involved.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cF",
+    "desc": "Airplane noise audible in the background of the second threatening ransom call points to a location near Komatsu Airport, the only airport near Kanazawa.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "apprentice_of"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "dating"},
+
+  {"type": "has_motive_against", "from": "p6", "to": "p1", "motive_type": "resentment_over_reduced_retirement_pay"},
+  {"type": "has_motive_against", "from": "p5", "to": "p6", "motive_type": "resentment_and_greed_wanted_full_ransom"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "petty_theft", "circumstance_tags": ["red_herring"]},
+
+  {"type": "extorts", "from": "p6", "to": "p1", "method": "staged his own kidnapping using a voice-changer, with no real restraints", "circumstance_tags": ["fraud", "staged_kidnapping"]},
+  {"type": "transports", "from": "p2", "to": "o1", "detail": "delivered the ransom bag to the drop-off point per phone instructions"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "owns", "from": "p1", "to": "o1"},
+
+  {"type": "implicates", "from": "o5", "to": "p6"},
+  {"type": "regarding", "from": "cA", "to": "o5"},
+  {"type": "regarding", "from": "cA", "to": "p6"},
+  {"type": "implicates", "from": "cA", "to": "p6"},
+  {"type": "regarding", "from": "cB", "to": "p6"},
+  {"type": "implicates", "from": "cB", "to": "p6"},
+
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+
+  {"type": "attempts_theft_of", "from": "p4", "to": "o1", "detail": "snuck into the office safe intending to skim some of the ransom cash"},
+  {"type": "confronts", "from": "p1", "to": "p4", "detail": "caught him breaking into the safe and grabbed his collar, transferring gold dust onto himself"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o3"},
+  {"type": "implicates", "from": "o3", "to": "p4"},
+
+  {"type": "assaults", "from": "p5", "to": "p1", "instrument": "o2", "detail": "struck Soichi with a rock after being caught arranging the fake kidnapping with Manabu"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+
+  {"type": "regarding", "from": "cE", "to": "o2"},
+  {"type": "regarding", "from": "cE", "to": "o4"},
+  {"type": "implicates", "from": "cE", "to": "p5"},
+  {"type": "implicates", "from": "cE", "to": "p6"},
+
+  {"type": "regarding", "from": "cD", "to": "o2"},
+  {"type": "regarding", "from": "cD", "to": "p6"},
+  {"type": "implicates", "from": "cD", "to": "p5"},
+
+  {"type": "extorts", "from": "p5", "to": "p1", "method": "faked being kidnapped by Manabu via a voice-changed phone call to extract a second 30 million yen ransom", "circumstance_tags": ["fraud", "staged_kidnapping"]},
+  {"type": "owns", "from": "p5", "to": "o7"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o7"},
+  {"type": "regarding", "from": "cC", "to": "o6"},
+  {"type": "regarding", "from": "cC", "to": "o7"},
+  {"type": "implicates", "from": "cC", "to": "p5"},
+
+  {"type": "leaves_evidence", "from": "p5", "to": "o8"},
+  {"type": "implicates", "from": "o8", "to": "p5"},
+
+  {"type": "located_in", "from": "o9", "to": "l4"},
+  {"type": "regarding", "from": "cF", "to": "l4"},
+  {"type": "implicates", "from": "cF", "to": "p5"},
+
+  {"type": "attempts_murder_of", "from": "p5", "to": "p6", "method": "left him bleeding and bound, locked in a closet at the second drop-off building, intending him to die and be forever blamed as a fugitive kidnapper"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o10"},
+  {"type": "implicates", "from": "o10", "to": "p5"},
+  {"type": "located_in", "from": "o10", "to": "l5"},
+
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p5", "to": "l5"},
+  {"type": "was_at", "from": "p6", "to": "l5"}
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

@@ -1,0 +1,291 @@
+{
+ "case_id": "ep794_bodyguard_kogoro_mouri",
+ "episode_number": "794",
+ "title": "Bodyguard Kogoro Mouri",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Bodyguard_Kogoro_Mouri",
+ "subtitle_source": ["subs_resolved/0794.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. case_type: attempted_murder -- nobody actually dies in this episode; Dobashi's plan (kill Reina, kill Mouri, then stage Ryo's own death as a guilt suicide) is foiled by Kogoro before it is completed, so 'victim' roles here mark intended targets, not fatalities. Old cases/ep794 file's culprit (s6=Dobashi) matches the transcript -- no identity error -- but it was structurally thin: it used generic 'knows' edges for every suspect->victim link instead of real motives/relationships, put all six suspects 'was_at' a single 'Street' location including Dobashi (the transcript never places Dobashi at the departure street scene -- he first appears later at Auberge Muto, introduced as Kogoro's bodyguard-exam instructor), omitted Dobashi's daughter, the Muto innkeepers, and Kushizaki's visiting/rejecting-judge backstory entirely, and completely missed the episode's central twist clue: Kushizaki, not Ryo, was the actual substitute judge who rejected Dobashi's daughter at the fateful audition (Ryo was out sick that day) -- meaning Dobashi's revenge target was factually mistaken. A gunshot-like sound is heard during the island confrontation but no weapon is ever shown on screen, so no weapon object node was invented for it (kept as an edge-level note instead).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryo Haneki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "actress",
+    "attrs": {
+     "age": 40,
+     "outcome": "survived, protected by her bodyguard",
+     "hired_kogoro_because": "wanted a bodyguard who could also deduce who was trying to kill her"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Reina Sawazaki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "actress",
+    "attrs": {
+     "age": 28,
+     "allergic_to": "cats",
+     "outcome": "found unconscious after the boats scattered in fog, unharmed",
+     "briefly_suspected_of": "faking unconsciousness to attack Ryo (Ryo's own paranoid, unfounded accusation)"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kazuya Kusumoto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "TV production staff",
+    "attrs": {
+     "age": 35,
+     "confession": "broke into Ryo's room at night; admits it was the first and only time he'd done so"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hideo Isokawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "TV director",
+    "attrs": {
+     "age": 40,
+     "complaint": "resents that Ryo is paid more than her skills/time are worth amid rumors the show will be cancelled over low ratings"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kenzo Kushizaki",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "TV producer",
+    "attrs": {
+     "age": 45,
+     "twist": "was secretly the substitute judge at the audition where Dobashi's daughter was rejected -- Ryo was out sick that day and never actually judged"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Chisato Arimura",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "TV assistant director",
+    "attrs": {"age": 25}
+   },
+   {
+    "id": "p7",
+    "name": "Arimasa Dobashi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "chief, Dobashi Security Guard Agency; Kogoro's bodyguard-exam instructor",
+    "attrs": {
+     "age": 45,
+     "preparation": "studied the lake's wind and drift patterns in advance and pre-positioned a motorboat unaffected by them",
+     "fake_alibi": "had a colleague call him at a pre-set time so it would look like he was checking an unrelated investigation, regardless of what the call actually contained",
+     "mistaken_target": "believed Ryo was the judge who rejected his daughter's audition; it was actually Kushizaki filling in for her"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Dobashi's daughter",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "event": "rejected at a drama audition, attempted suicide the next day",
+     "visited_by": "Reina, roughly once every two days at the hospital",
+     "not_visited_by": "her own father, Dobashi"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Kimie Muto",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "innkeeper, Auberge Muto",
+    "attrs": {"age": 30}
+   },
+   {
+    "id": "p10",
+    "name": "Shohei Muto",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "innkeeper, Auberge Muto",
+    "attrs": {"age": 33}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Street", "attrs": {"detail": "Tokyo departure point before the trip"}},
+   {"id": "l2", "name": "Auberge Muto", "attrs": {"detail": "lakeside inn where the cast and crew stay"}},
+   {"id": "l3", "name": "Lake Nakajima", "attrs": {"detail": "location of the boat shoot; fog rolled in and scattered the boats"}},
+   {"id": "l4", "name": "Island on Lake Nakajima", "attrs": {"detail": "ambush site where Dobashi confronted Ryo"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Dobashi's motorboat",
+    "role": "tool",
+    "attrs": {"trick": "pre-positioned near the island; unaffected by the wind/current that swept the film crew's rowboats off course, letting Dobashi arrive first"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Every rowboat was swept off-course by the fog-driven wind and waves, but Dobashi's motorboat reached the island first, unaffected -- matches only someone who had studied the lake's drift patterns in advance.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "Kushizaki, not Ryo, was secretly the substitute judge who rejected Dobashi's daughter's audition -- Dobashi's revenge target was factually mistaken.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+  {"type": "was_at", "from": "p9", "to": "l2"},
+  {"type": "was_at", "from": "p10", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+  {"type": "was_at", "from": "p7", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p7", "to": "l4"},
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "same_talent_agency_rival"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p8",
+   "relation_type": "parent_of"
+  },
+  {
+   "type": "breaks_into",
+   "from": "p3",
+   "to": "l2",
+   "circumstance_tags": ["red_herring"],
+   "detail": "broke into Ryo's room at night, caught fleeing"
+  },
+  {
+   "type": "stalks",
+   "from": "p3",
+   "to": "p1",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "resentment_over_desk_job_transfer_blamed_on_victim (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "resentment_over_pay_and_cancellation_rumors (red herring)"
+  },
+  {
+   "type": "accuses",
+   "from": "p1",
+   "to": "p2",
+   "circumstance_tags": ["red_herring", "false_accusation"],
+   "detail": "Ryo wrongly suspects Reina of faking unconsciousness to have attacked her"
+  },
+  {
+   "type": "rejects",
+   "from": "p5",
+   "to": "p8",
+   "circumstance_tags": ["backstory"],
+   "detail": "filled in as substitute audition judge for an ill Ryo and rejected Dobashi's daughter"
+  },
+  {
+   "type": "visits",
+   "from": "p2",
+   "to": "p8",
+   "detail": "visits her at the hospital roughly once every two days"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p7",
+   "to": "p1",
+   "motive_type": "revenge_for_daughters_suicide_attempt (based on the mistaken belief Ryo was the rejecting judge)"
+  },
+  {
+   "type": "attacks",
+   "from": "p7",
+   "to": "p1",
+   "method": "confronted her alone on the island after separating her boat from the group in the fog; a gunshot-like sound was heard during the struggle before Kogoro subdued him",
+   "circumstance_tags": ["attempted_murder", "staged_suicide_planned", "foiled"]
+  },
+  {
+   "type": "plans_to_kill",
+   "from": "p7",
+   "to": "p2",
+   "circumstance_tags": ["staged_frame", "unexecuted", "foiled"],
+   "detail": "intended to kill Reina and frame Ryo for it, as the first step of the staged murder-suicide"
+  },
+  {
+   "type": "owns",
+   "from": "p7",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "l3"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p7"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p8"
+  }
+ ],
+ "label": {
+  "murderer_id": "p7"
+ }
+}

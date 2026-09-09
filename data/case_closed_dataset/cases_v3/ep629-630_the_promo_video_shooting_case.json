@@ -1,0 +1,543 @@
+{
+ "case_id": "ep629-630_the_promo_video_shooting_case",
+ "episode_number": "629-630",
+ "title": "The Promo Video Shooting Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Promo_Video_Shooting_Case",
+ "subtitle_source": [
+  "subs_resolved/0629.txt",
+  "subs_resolved/0630.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Kogoro, the Detective Boys) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. Two linked killings, one culprit: Kitagawa Miki first pitches a fake-murder prank video to Miyasaka and Takayama (Takayama as the in-on-it 'body confirmer'), then secretly returns to Miyasaka's auto-locking room and stabs him for real with a swapped knife once he lets her in expecting the reveal, repositioning the body so the room reads as untouched since the 'staging'. When Takayama grows visibly anxious that Miyasaka never resurfaced to reveal the prank, she lures him to the cliff and pushes him off, then fabricates having seen him flee past a lobby window -- a lie exposed because a lit room's windows only reflect its own interior after dark, not the outside. Discrepancy vs. the old lower-fidelity case file: its clue c1 described the tell as 'blood stains on the swapped knife' -- the transcript's actual forensic tell is the opposite and more specific: a cola stain visible on the knife's handle in Okita's video footage is *absent* from the knife at the body on second inspection, proving two different knives were used (the culprit ID itself, s2/Miki, was correct in the old file). The old file also entirely omitted the accomplice mechanic (Takayama's role and death), the dying-message wordplay on the liquid foundation bottle ('ekitai' reversed reads 'dokkiri', i.e. prank), and the window-reflection clue that catches Miki's false testimony. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yuuya Miyasaka",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "actor",
+    "attrs": {
+     "past_incident": "drunken assault last year injured a bystander, tanked his career",
+     "died_of": "stabbed twice -- first faked with a trick knife, then for real"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Miki Kitagawa",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "makeup artist",
+    "attrs": {
+     "motive_backstory": "her one big acting break was cut when Miyasaka/Takayama's drunken incident got the drama canceled; her grandmother died before the episode aired"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Saeko Akimoto",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "actress",
+    "attrs": {
+     "history": "Miyasaka's former co-star and love interest"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Eiji Yamamoto",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "assistant director",
+    "attrs": {
+     "grievance": "repeatedly beaten by Miyasaka"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Mitsuo Okita",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "camera assistant",
+    "attrs": {
+     "grievance": "forced by Miyasaka into a dangerous cliff stunt",
+     "role_in_discovery": "primary discoverer of the staged body, filmed it continuously"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Shingo Takayama",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "victim"
+    ],
+    "occupation": "cameraman",
+    "attrs": {
+     "debt": "owed Miyasaka a large gambling debt from mahjong",
+     "role_in_prank": "recruited by Miki as the accomplice who 'confirmed' Miyasaka's staged death"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Osamu Kurahashi",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "pension owner",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Keiko Kurahashi",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "pension owner's wife",
+    "attrs": {
+     "cleared_because": "no prior contact with or motive against Miyasaka; spent the window preparing meals"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kurahashi Pension lobby",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Miyasaka's guest room",
+    "attrs": {
+     "lock_type": "auto-locking door"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Cliff",
+    "attrs": {
+     "used_for": "stunt filming location, later the site of Takayama's death"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Trick knife (fake blade)",
+    "role": "tool",
+    "attrs": {
+     "trick": "retractable/halved blade used for the staged prank stabbing",
+     "staging_flaw": "handle carries a cola stain from an earlier on-set spill, visible in Okita's video",
+     "recovered_from": "hidden by Miki in her own room after the real murder"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Real knife (murder weapon)",
+    "role": "weapon",
+    "attrs": {
+     "staging_flaw": "handle has no cola stain -- proof it's a second, different knife from the one on video"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Liquid foundation bottle",
+    "role": "evidence",
+    "attrs": {
+     "owner": "Saeko Akimoto",
+     "position": "found wedged upside-down in the door, an unnatural detail",
+     "decoded_message": "the word for 'liquid' (ekitai) read reversed becomes 'dokkiri' (prank) -- Miyasaka's own hint that the death was staged, unwittingly left as a dying message"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Okita's video footage",
+    "role": "evidence",
+    "attrs": {
+     "content": "continuous recording from entering Miyasaka's room through the discovery of the body",
+     "reveal": "rewatching it exposes the cola stain missing from the knife at the body"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "A cola stain is visible on the knife's handle in Okita's video footage but absent from the knife at the body on a later look -- proves two different knives were used.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Miki claims she saw Takayama running past the lobby window at night, but a lit room's windows only reflect the interior after dark -- her testimony is physically impossible.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "secret_romantic_relationship"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "former_romantic_partner"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "romantic_rival_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "gambling_debtor_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "film_crew_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "film_crew_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "film_crew_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "film_crew_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p8",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p7",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "coerces",
+   "from": "p1",
+   "to": "p5",
+   "detail": "forces Okita into a dangerous cliff stunt against his will",
+   "circumstance_tags": [
+    "dangerous_stunt"
+   ]
+  },
+  {
+   "type": "assaults",
+   "from": "p1",
+   "to": "p4",
+   "detail": "repeatedly hits Yamamoto after a prop dispute"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2"
+  },
+  {
+   "type": "confronts",
+   "from": "p3",
+   "to": "p1",
+   "detail": "questions him about his relationship with Miki",
+   "circumstance_tags": [
+    "red_herring"
+   ]
+  },
+  {
+   "type": "proposes_prank_to",
+   "from": "p2",
+   "to": "p1",
+   "detail": "pitches the fake-murder promo stunt"
+  },
+  {
+   "type": "recruits_accomplice",
+   "from": "p2",
+   "to": "p6",
+   "detail": "brings Takayama in as the 'body confirmer'"
+  },
+  {
+   "type": "stages_fake_death_using",
+   "from": "p1",
+   "to": "o1",
+   "circumstance_tags": [
+    "staged",
+    "prank"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3",
+   "detail": "wedges the foundation bottle upside-down as a playful prank hint, unaware it becomes a dying message"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o3"
+  },
+  {
+   "type": "discovers",
+   "from": "p5",
+   "to": "p1",
+   "detail": "finds Miyasaka's staged body while filming behind-the-scenes",
+   "circumstance_tags": [
+    "staged",
+    "prank_gone_wrong"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o4"
+  },
+  {
+   "type": "falsely_confirms_death_of",
+   "from": "p6",
+   "to": "p1",
+   "detail": "checks pulse and declares him dead, as scripted for the prank",
+   "circumstance_tags": [
+    "staged",
+    "prank_gone_wrong"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "stabs him for real with a swapped knife once he lets her back into the sealed room",
+   "circumstance_tags": [
+    "locked_room",
+    "staged_alibi",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "repositions_body_of",
+   "from": "p2",
+   "to": "p1",
+   "circumstance_tags": [
+    "cover_up",
+    "staged_alibi"
+   ]
+  },
+  {
+   "type": "hides_evidence",
+   "from": "p2",
+   "to": "o1",
+   "detail": "hides the fake knife in her own room after the real killing",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p6",
+   "method": "pushes him off the cliff",
+   "circumstance_tags": [
+    "cover_up",
+    "staged_accident"
+   ]
+  },
+  {
+   "type": "falsely_accuses",
+   "from": "p2",
+   "to": "p6",
+   "detail": "claims to have seen him fleeing past the lobby window",
+   "circumstance_tags": [
+    "frame_up",
+    "red_herring"
+   ]
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "revenge_for_grandmothers_death_after_career_ruined"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p6",
+   "motive_type": "eliminate_accomplice_to_protect_alibi"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "jealousy_and_resentment (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_physical_abuse (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "resentment_over_forced_dangerous_stunt (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p6",
+   "to": "p1",
+   "motive_type": "gambling_debt_dispute (red herring, accused by Saeko)"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

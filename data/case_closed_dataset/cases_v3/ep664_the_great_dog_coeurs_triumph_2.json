@@ -1,0 +1,181 @@
+{
+ "case_id": "ep664_the_great_dog_coeurs_triumph_2",
+ "episode_number": "664",
+ "title": "The Great Dog Coeur's Triumph 2",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Great_Dog_Coeur%27s_Triumph_2",
+ "subtitle_source": ["subs_resolved/0664.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Genta, Mitsuhiko, Ayumi, Haibara) omitted by convention. case_type: murder (fatal fall caused during a confrontation, then concealed). The old cases/ file correctly named Fujiki as the culprit and the fall-down-the-stairs mechanism, but was otherwise very sparse: it had only one suspect-role node each for Ohga/Eguchi/Fujiki with no other named cast, a single generic 'Underground passageway' location, and 'knows' edges standing in for real relationships. This rebuild adds the full named cast present in the transcript (Yagisawa who drew the dog-walking map; victim's daughter Sawako; Ohga's wife Misako and son Tomoya; Fujiki's mother Shizuko), the real six scene locations, the Ohga-Eguchi secret affair that explains Ohga's red-herring nervous reaction to the map, the map-theft clue that first points Conan at all three households, and the two-cigarette-butt mix-up (real butt with the victim's blood vs. Eguchi's discarded butt with lipstick mistaken for blood) as the forensic clue that isolates Fujiki. No discrepancy found in the old file's culprit identification itself.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Eitaro Kozuki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "head injury from a fall down underground-crossing stairs",
+     "habit": "swept cigarette litter from outside his house, chased urinating dogs off with a broom"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Sawako Kozuki",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {"relation": "victim's only daughter", "statement": "confirmed her father did not smoke"}
+   },
+   {
+    "id": "p3",
+    "name": "Hiroshi Yagisawa",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "dog owner, family friend of Conan's group",
+    "attrs": {"detail": "walks his dog Coeur; drew the four-house map his wife uses to avoid problem houses"}
+   },
+   {
+    "id": "p4",
+    "name": "Norifumi Oga",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "architect",
+    "attrs": {"commute": "walks to Beika Station daily, smokes 'Blue Line' cigarettes"}
+   },
+   {
+    "id": "p5",
+    "name": "Misako Oga",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": null,
+    "attrs": {"temperament": "hot-tempered, protective of the lawn"}
+   },
+   {
+    "id": "p6",
+    "name": "Tomoya Oga",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": null,
+    "attrs": {"age": 6}
+   },
+   {
+    "id": "p7",
+    "name": "Tamae Eguchi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "illustrator",
+    "attrs": {"commute": "works evenings at a club near Beika Station, smokes 'Blue Line' cigarettes"}
+   },
+   {
+    "id": "p8",
+    "name": "Koichi Fujiki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "salaryman",
+    "attrs": {"commute": "walks to Beika Station daily, smokes 'Blue Line' cigarettes"}
+   },
+   {
+    "id": "p9",
+    "name": "Shizuko Fujiki",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {"temperament": "extreme neat-freak, dislikes dogs and cigarette smoke"}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Underground crossing", "attrs": {"detail": "beneath Beika Highway; murder site"}},
+   {"id": "l2", "name": "Kozuki's house", "attrs": {}},
+   {"id": "l3", "name": "Oga's house", "attrs": {"detail": "recycling crate left uncollected out front"}},
+   {"id": "l4", "name": "Eguchi's house", "attrs": {}},
+   {"id": "l5", "name": "Fujiki's house", "attrs": {}},
+   {"id": "l6", "name": "Matsumi Bridge", "attrs": {"detail": "over the river"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Dog-walking map",
+    "role": "evidence",
+    "attrs": {
+     "marks": "Oga, Eguchi, Fujiki and Kozuki houses",
+     "purpose": "drawn by Yagisawa to warn his wife which houses to avoid while walking Coeur",
+     "significance": "its disappearance is what first ties the murderer to the three households"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Real cigarette butt",
+    "role": "evidence",
+    "attrs": {"brand": "Blue Line", "mark": "red mark on filter", "stain": "victim's blood"}
+   },
+   {
+    "id": "o3",
+    "name": "Decoy cigarette butt",
+    "role": "evidence",
+    "attrs": {"brand": "Blue Line", "stain": "lipstick, mistaken for blood in the dark"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Butt binned in the river bore lipstick not blood; the one still in Oga's crate bore the victim's blood -- proving Fujiki grabbed the wrong butt while fleeing.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "The pointless dog-walking map vanished only after being shown to the three houses tied to Kozuki -- its thief feared exposure, not dogs.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p6", "to": "p4", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p6", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p8", "to": "p9", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p7", "relation_type": "affair_with"},
+
+  {"type": "confronts", "from": "p8", "to": "p1", "detail": "Kozuki caught him habitually littering cigarette butts outside his house and confronted him at the underground crossing"},
+  {"type": "kills", "from": "p8", "to": "p1", "method": "shoved/collided during the dispute; Kozuki fell down the underground-crossing stairs and fatally struck his head", "circumstance_tags": ["cover_up"]},
+  {"type": "owns", "from": "p8", "to": "o2"},
+  {"type": "retrieves", "from": "p8", "to": "o2", "detail": "took the cigarette butt back from Kozuki's hand to erase evidence linking him to the scene"},
+  {"type": "discards", "from": "p8", "to": "o2", "detail": "dropped it into Oga's recycling crate after being startled by a barking dog while fleeing in the dark"},
+  {"type": "located_in", "from": "o2", "to": "l3"},
+  {"type": "owns", "from": "p7", "to": "o3"},
+  {"type": "picks_up", "from": "p8", "to": "o3", "detail": "mistook it in the dark for his own dropped butt"},
+  {"type": "discards", "from": "p8", "to": "o3", "detail": "threw it off Matsumi Bridge into the river"},
+  {"type": "located_in", "from": "o3", "to": "l6"},
+
+  {"type": "written_by", "from": "o1", "to": "p3"},
+  {"type": "steals", "from": "p8", "to": "o1", "detail": "took the map after it was shown to his household, fearing it would connect him to Kozuki's case"},
+
+  {"type": "implicates", "from": "o2", "to": "p8"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "implicates", "from": "c1", "to": "p8"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "implicates", "from": "c2", "to": "p8"},
+
+  {"type": "has_motive_against", "from": "p8", "to": "p1", "motive_type": "confronted_over_habitual_cigarette_littering"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+  {"type": "was_at", "from": "p7", "to": "l4"},
+  {"type": "was_at", "from": "p7", "to": "l6"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l5"},
+  {"type": "was_at", "from": "p8", "to": "l3"},
+  {"type": "was_at", "from": "p8", "to": "l6"},
+  {"type": "was_at", "from": "p9", "to": "l5"}
+ ],
+ "label": {
+  "murderer_id": "p8"
+ }
+}

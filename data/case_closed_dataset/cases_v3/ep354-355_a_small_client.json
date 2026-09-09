@@ -1,0 +1,263 @@
+{
+ "case_id": "ep354-355_a_small_client",
+ "episode_number": "354-355",
+ "title": "A Small Client",
+ "source_url": "https://www.detectiveconanworld.com/wiki/A_Small_Client",
+ "subtitle_source": ["subs_resolved/0354.txt", "subs_resolved/0355.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Yokomizo) omitted by convention, same as ep011. No `event` node type: actions are direct typed edges between the entities involved. The old cases/ep354-355_a_small_client.json file had the correct culprit (Bessho Toshiko / old id s2) and its two clues were both directionally correct (mole-location mismatch, video started early) -- no reversed clue found here, unlike some other rebuilds. What it missed: (1) the entire client subplot -- Kinukawa Kazuki, the 6-year-old actor who hired the agency, was omitted as a node entirely even though he drives part one and the case's emotional resolution; (2) the B-plot twist that Saegusa Tomoko (old file's s3, listed only as a bare suspect) is actually Kazuki's real biological mother, who wrote him the genuine 'Atsuko'-signed postcards and deliberately acted cold so he wouldn't recognize her -- this is a distinct, deliberate reveal in the finale, not just unresolved suspicion; (3) Izumiya, the tabloid chief editor Kamoshita phoned ~10 minutes before the murder, whose testimony supplies the timeline and the blackmail context; (4) the second weapon -- Kamoshita was struck unconscious with a shower nozzle (luminol-positive) before being strangled with videotape stretched into a cord, not strangled outright; (5) that Bessho's extortion of Kazuki's production company (20 million yen, posing as his mother 'Atsuko') was itself a con -- she isn't his mother and admits the murderer's father story was a lie too, which is the actual motive engine (Kamoshita threatened to blackmail her for life over the hoax). Person name spelling follows the on-screen character cards (Saegusa Tomoko, Bessho Toshiko, Kusano Mitsu) rather than the old file's 'Tomoka Saegusa' ordering. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kinukawa Kazuki",
+    "aliases": [],
+    "roles": ["client", "bystander"],
+    "occupation": "child actor",
+    "attrs": {
+     "age": 6,
+     "abandoned_at": "a church, at age 1, by a woman who left a note signed 'Atsuko'",
+     "hired_agency_to": "find the woman who sent him monthly postcards signed Atsuko"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kamoshita Yasuhiro",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "freelance tabloid writer",
+    "attrs": {
+     "outlet": "Weekly Hot magazine",
+     "died_of": "strangled with a length of stretched videotape, after being struck unconscious",
+     "was_pursuing": "a scoop on the woman blackmailing Kazuki's production company"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kusano Mitsu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "inn employee",
+    "attrs": {
+     "mole_location": "right side of chest",
+     "cleared_by": "mole doesn't match the left-side mark in the crime-scene photo"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Bessho Toshiko",
+    "aliases": ["Atsuko (impersonated)"],
+    "roles": ["suspect"],
+    "occupation": "inn employee",
+    "attrs": {
+     "age": 29,
+     "true_mole_status": "no real mole; the mark photographed was Kamoshita's blood on her collarbone, hidden by her hand during inspection",
+     "extortion_amount": "20,000,000 yen from Kazuki's production company",
+     "extortion_basis": "falsely claimed to be Kazuki's mother and that his father was a wanted murderer",
+     "confession": "not his mother; did it out of jealousy, wanting a child of her own"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Saegusa Tomoko",
+    "aliases": ["Atsuko"],
+    "roles": ["suspect", "witness", "backstory_figure"],
+    "occupation": "inn employee",
+    "attrs": {
+     "age": 28,
+     "secret": "Kazuki's real biological mother",
+     "mole_location": "back of the neck",
+     "behavior": "acted deliberately cold and aloof toward Kazuki so he would not recognize her"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Izumiya",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "chief editor, Weekly Hot magazine",
+    "attrs": {
+     "testimony": "Kamoshita called ~10 minutes before the photo was taken, said a woman with a big scoop was showering in his room and that he'd photograph her"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Japanese-style inn, Atami",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Room 205 (Kamoshita's room)",
+    "attrs": {
+     "detail": "murder scene; body found in the bathtub"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Outdoor mixed bath",
+    "attrs": {
+     "detail": "where suspects washed off blood/tape residue; no individual alibi coverage there"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Church",
+    "attrs": {
+     "detail": "where infant Kazuki was abandoned 5 years earlier"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Postcards signed Atsuko",
+    "role": "evidence",
+    "attrs": {
+     "count": "one per month, spring two years ago to winter last year",
+     "condition": "worn and stained from repeated reading",
+     "picture": "always the top-left quarter of a 4-part Kanichi & O-Miya statue postcard set, to hide the inn's location",
+     "postmarks": "span Hokkaido to Okinawa"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Abandonment memo",
+    "role": "evidence",
+    "attrs": {
+     "text": "Please take care of Kazuki -Atsuko",
+     "handwriting_matches": "the postcards"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Rented video cassette",
+    "role": "weapon",
+    "attrs": {
+     "box_length": "94 minutes",
+     "actual_length": "93 minutes (1hr33m on the counter)",
+     "missing": "~1 minute of distributor logos and movie prologue",
+     "trick": "tape cut out, stretched into a cord, cassette reattached with cellophane tape so it plays normally from the opening title"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Shower nozzle",
+    "role": "weapon",
+    "attrs": {
+     "luminol_reaction": "positive",
+     "use": "used to strike Kamoshita unconscious before strangulation"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Kamoshita's cellphone",
+    "role": "evidence",
+    "attrs": {
+     "photo_timestamp": "11:48 PM",
+     "photo_content": "blurry shot of a nude woman strangling him from behind, face out of frame, red mark on left chest",
+     "call_log": "call to Izumiya roughly 10 minutes before the photo"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Camera lens cap",
+    "role": "evidence",
+    "attrs": {
+     "detail": "dropped by Kamoshita in the corridor; Ran returning it led to the body's discovery"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The crime-scene photo shows a red mark on the culprit's left chest, but Kusano's real mole is on her right chest, Bessho's is on her cheek, and Saegusa's is on the back of her neck -- none match, so the mark can't be an actual mole.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Kamoshita's rented cassette runs only 93 minutes against its 94-minute box label and starts straight at the opening title, missing the logos and prologue a fresh store copy of the same film has -- the missing minute of tape became the murder weapon.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Every postcard uses only the top-left quarter of the same four-part scenic postcard set sold at this inn, never the other three sections or any other sight -- deliberate concealment of the sender's workplace, pointing to an inn insider.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "Kazuki recalls hearing a knife chopping rhythmically while gazing at his mother's mole -- if she'd been holding him face-to-face her hands couldn't have been cooking, so he must have been carried on her back and glimpsed the mole on her neck, not her chest.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "freelances_for"},
+  {"type": "employed_at", "from": "p3", "to": "l1"},
+  {"type": "employed_at", "from": "p4", "to": "l1"},
+  {"type": "employed_at", "from": "p5", "to": "l1"},
+
+  {"type": "impersonates", "from": "p4", "to": "p5", "detail": "posed as Kazuki's mother 'Atsuko' to extort his production company, using private details Saegusa had confided about the abandonment"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4", "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l4", "temporal_frame": "backstory"},
+
+  {"type": "calls", "from": "p2", "to": "p6", "detail": "reported a woman with a big scoop was showering in his room, planned to photograph her"},
+  {"type": "blackmails", "from": "p2", "to": "p4", "detail": "after she admitted the mother/extortion story was a hoax, threatened to expose and blackmail her for life"},
+
+  {"type": "assaults", "from": "p4", "to": "p2", "detail": "lured him into the bathroom and struck him unconscious with the shower nozzle", "circumstance_tags": ["blunt_force"]},
+  {"type": "kills", "from": "p4", "to": "p2", "method": "strangled with a cord cut and stretched from a videotape cassette", "circumstance_tags": ["concealed_weapon", "photographed_accidentally"]},
+  {"type": "moves_body_of", "from": "p4", "to": "p2", "detail": "placed body in the bathtub and ran water to wash off blood and magnetic tape residue, not to fake time of death", "circumstance_tags": ["evidence_concealment"]},
+
+  {"type": "leaves_evidence", "from": "p4", "to": "o3"},
+  {"type": "leaves_evidence", "from": "p4", "to": "o4"},
+  {"type": "implicates", "from": "o3", "to": "p4"},
+  {"type": "implicates", "from": "o4", "to": "p4"},
+  {"type": "implicates", "from": "o5", "to": "p4"},
+
+  {"type": "owns", "from": "p2", "to": "o5"},
+  {"type": "owns", "from": "p2", "to": "o6"},
+  {"type": "located_in", "from": "o6", "to": "l1"},
+  {"type": "located_in", "from": "o4", "to": "l2"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "written_by", "from": "o1", "to": "p5"},
+  {"type": "written_by", "from": "o2", "to": "p5"},
+  {"type": "inscribed_to", "from": "o1", "to": "p1"},
+  {"type": "inscribed_to", "from": "o2", "to": "p1"},
+
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "regarding", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c1", "to": "p4"},
+  {"type": "regarding", "from": "c1", "to": "p5"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+
+  {"type": "regarding", "from": "c3", "to": "o1"},
+  {"type": "regarding", "from": "c3", "to": "l1"},
+
+  {"type": "regarding", "from": "c4", "to": "p1"},
+  {"type": "implicates", "from": "c4", "to": "p5"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p2", "motive_type": "silencing_a_blackmailer (Kamoshita threatened to expose her fraud and extort her for life)"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

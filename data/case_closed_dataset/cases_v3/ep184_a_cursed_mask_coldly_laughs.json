@@ -1,0 +1,712 @@
+{
+  "case_id": "ep184_a_cursed_mask_coldly_laughs",
+  "episode_number": "184",
+  "title": "A Cursed Mask Coldly Laughs",
+  "source_url": "https://www.detectiveconanworld.com/wiki/A_Cursed_Mask_Coldly_Laughs",
+  "subtitle_source": [
+    "subs_resolved/0184.txt"
+  ],
+  "schema_version": "v3",
+  "notes": "Detective-cast nodes (Conan, Kogoro Mouri, Ran, plus minor recurring police Inspector, Officer Kobayashi, Detective Takagi) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved. case_type: murder. The old wiki-summary case file (cases/ep184_...json) correctly identified the culprit (Toya Aikawa) and the broad backstory (Beniko caused the hit-and-run that killed Katagiri's wife, then murdered Toya's mother and staged it as suicide to cover it up), so `label.murderer_id` is unchanged from the old file. However the old file mislocated the murder itself 'in the mask room' -- the transcript is explicit that the mask room (l1) is only where the 200 Jofre masks and knife were normally displayed and stolen from; the actual stabbing happened through a barred transom into Beniko's separate third-floor bedroom (l2), fired remotely from the sealed, vacant adjoining bedroom (l3) via a private east-wing-only staircase (l4) -- that geography IS the locked-room trick and was entirely missing from the old file. The old file also omitted: the extension-phone taunting call Aikawa used to build a false alibi, Kogoro's red-herring accusation of secretary Kazuyo Inaba (no motive ever established for her), the twin maids and baseball-player/tarot-reader suspects, Beniko's alleged charity-fund embezzlement (an unverified accusation made only by the culprit during his confession, not confirmed independently), and the precise physical/testimonial clues (bloodied knife handle, mask blood-distribution pattern, Aikawa's slip about Ran/Conan's movements, the no-footprints-in-snow deduction).",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Beniko Suou",
+        "aliases": [
+          "Canary of the Orient"
+        ],
+        "roles": [
+          "victim",
+          "backstory_figure"
+        ],
+        "occupation": "singer; president of Kurenai Promotion talent agency",
+        "attrs": {
+          "age": 63,
+          "died_of": "throat slashed with one stroke, in her locked, third-floor bedroom",
+          "public_narrative": "claimed to have started a charity for children of traffic-accident victims 15 years ago after her manager caused a hit-and-run and later committed suicide out of guilt",
+          "true_history": "Beniko herself was the driver in the hit-and-run 20 years ago; she blamed it on her manager (Toya Aikawa's mother) and murdered her, staging it as suicide, then built her public charity persona on the cover story",
+          "unverified_accusation": "Toya Aikawa accuses her, during his confession, of embezzling charity funds for herself; this is disputed on-screen by maid Honami and not independently confirmed in the transcript",
+          "collects": "the 200 masks of Jofre, called the 'cursed masks'"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Masanori Katagiri",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "backstory_figure"
+        ],
+        "occupation": "photographer",
+        "attrs": {
+          "age": 45,
+          "backstory": "his wife was killed 20 years ago in the hit-and-run actually caused by Beniko Suou; he did not learn this until Aikawa's confession",
+          "invited_by_beniko_to": "investigate his late wife's accident, at Beniko's private request, without being told why"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Mamoru Matsudaira",
+        "aliases": [
+          "King of Home Runs"
+        ],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "professional baseball player",
+        "attrs": {
+          "age": 24,
+          "habit": "follows tarot reader Haruka Nagara's daily lucky-color predictions before games"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Haruka Nagara",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "tarot card reader",
+        "attrs": {
+          "age": 25,
+          "note": "briefly and wrongly accused of the murder by Kogoro Mouri on the theory that she alone had time to wash blood from her hair and body before the body was found; no motive was ever established for her"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Toya Aikawa",
+        "aliases": [
+          "Messenger of the Cursed Masks"
+        ],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "rock singer",
+        "attrs": {
+          "age": 26,
+          "confession": "discovered, cleaning his late mother's belongings two months earlier, a letter hidden behind her diary cover proving she was with him all day on his 6th birthday (October 31) -- the night of the accident Beniko blamed her for",
+          "stated_motive": "revenge for Beniko framing and murdering his mother, and for covering up that Beniko was the real hit-and-run driver who killed Katagiri's wife"
+        }
+      },
+      {
+        "id": "p6",
+        "name": "Kazuyo Inaba",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "Beniko Suou's secretary",
+        "attrs": {
+          "age": 40,
+          "alibi": "claims to have drunk too much wine and passed out; the only guest not present when the body was found",
+          "note": "red herring: accused directly by Kogoro Mouri of the murder purely on opportunity grounds, with no motive ever offered"
+        }
+      },
+      {
+        "id": "p7",
+        "name": "Honami Shimogasa",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "Suou house maid",
+        "attrs": {
+          "age": 21,
+          "note": "twin sister of Minaho; keeps the mask-room key on a hook in the kitchen"
+        }
+      },
+      {
+        "id": "p8",
+        "name": "Minaho Shimogasa",
+        "aliases": [],
+        "roles": [
+          "witness"
+        ],
+        "occupation": "Suou house maid",
+        "attrs": {
+          "age": 21,
+          "note": "twin sister of Honami"
+        }
+      },
+      {
+        "id": "p9",
+        "name": "Masanori Katagiri's wife",
+        "aliases": [],
+        "roles": [
+          "victim",
+          "backstory_figure"
+        ],
+        "occupation": null,
+        "attrs": {
+          "died_of": "hit-and-run traffic accident, 20 years before present"
+        }
+      },
+      {
+        "id": "p10",
+        "name": "Toya Aikawa's mother",
+        "aliases": [],
+        "roles": [
+          "victim",
+          "backstory_figure"
+        ],
+        "occupation": "Beniko Suou's manager",
+        "attrs": {
+          "died_of": "murdered and staged as suicide, 20 years before present",
+          "false_public_narrative": "publicly blamed for causing the hit-and-run that killed Katagiri's wife, and said to have killed herself out of guilt",
+          "true_alibi": "was with her 6-year-old son Toya all day on October 31, the night of the accident"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Mask room (2nd floor, connecting east and west wings)",
+        "attrs": {
+          "desc": "corridor room joining the mansion's east and west wings, walls lined with the 200 masks of Jofre and a display knife",
+          "nightly_lockdown": "by house tradition the door is locked at midnight, sealing the masks in and cutting off travel between wings until morning"
+        }
+      },
+      {
+        "id": "l2",
+        "name": "Beniko Suou's bedroom (3rd floor, west wing)",
+        "attrs": {
+          "desc": "the murder scene; a locked room with no visible way in or out",
+          "locks": "a turn-lock plus a padlock, both installed on a spiritualist's instruction to ward off the masks' curse; victim habitually locked both before bed",
+          "sleeping_pills": "victim was taking prescribed sleeping pills nightly for insomnia, which explains the lack of any struggle without the killer needing to drug her",
+          "adjoining_door": "connects to l3; nailed shut for years, with no signs of tampering",
+          "transom_above_adjoining_door": "barred, gaps of 5x6 centimeters -- too narrow for an arm, but wide enough for a thin mask or knife to pass through",
+          "window": "fixed shut, undisturbed",
+          "bed_to_transom_distance": "about 3.5 meters"
+        }
+      },
+      {
+        "id": "l3",
+        "name": "Vacant adjoining bedroom (3rd floor)",
+        "attrs": {
+          "desc": "unused guest bedroom with the same floor plan as Beniko's, sharing the nailed-shut door and barred transom with l2",
+          "access": "reachable only via the private east-wing staircase (l4), not via the shared west-wing stairs or the mask room -- the missing fact that made the murder look impossible for anyone in the east wing"
+        }
+      },
+      {
+        "id": "l4",
+        "name": "Private east-wing staircase to the 3rd floor",
+        "attrs": {
+          "desc": "a second staircase reaching the third floor that only east-wing occupants can climb, bypassing both the mask room and the west-wing main stairs"
+        }
+      },
+      {
+        "id": "l5",
+        "name": "Kitchen",
+        "attrs": {
+          "desc": "the mask-room key hangs here on the wall, accessible to any guest or staff member at will; no spare key exists"
+        }
+      },
+      {
+        "id": "l6",
+        "name": "Dining room (east wing, 1st floor)",
+        "attrs": {
+          "desc": "site of the charity-guest welcome dinner"
+        }
+      },
+      {
+        "id": "l7",
+        "name": "West-wing guest quarters (1st-2nd floor)",
+        "attrs": {
+          "occupants_night_of_murder": "Katagiri, Matsudaira, Nagara on 2nd floor; Inaba, Minaho on 1st floor"
+        }
+      },
+      {
+        "id": "l8",
+        "name": "East-wing guest quarters (1st-2nd floor)",
+        "attrs": {
+          "occupants_night_of_murder": "Aikawa, Honami on 1st floor; Mouri, Ran, Conan on 2nd floor"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Chain of the 200 masks of Jofre (murder instrument)",
+        "role": "instrument",
+        "attrs": {
+          "provenance": "carved by Spanish sculptor Jofre Gonzales, said to be cursed to 'sip the blood' of their owners; normally displayed in the mask room (l1), owned by Beniko Suou",
+          "trick": "all 200 masks (each 15mm thick) threaded eye-to-eye on a rubber rope, with the rope also passed through a hole in the knife's pommel, to form one rigid, extendable 3-meter rod that could be pushed and pulled from the adjoining room",
+          "blood_distribution": "only the topmost/final mask nearest the wound was heavily blood-soaked; the rest show blood only around the mouth-hole where the rope was threaded -- proof of the chain mechanism rather than a supernatural attack"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Display knife (murder weapon)",
+        "role": "weapon",
+        "attrs": {
+          "provenance": "normally displayed in the mask room (l1), owned by Beniko Suou",
+          "anomaly": "found with its handle smeared in blood despite never having been gripped by a hand -- it was propelled on the far end of the mask chain via the rubber rope threaded through its pommel",
+          "reach": "the final ~10cm of blade closed the gap once the 3-meter mask chain had crossed the 3.5m from transom to bed"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Rubber rope",
+        "role": "tool",
+        "attrs": {
+          "trick": "threaded through both eyeholes of every mask and through the knife's pommel hole to lock the masks and knife into a single rigid rod; severed and withdrawn by the killer after the killing so no rope was left in the sealed bedroom"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Extension telephone",
+        "role": "instrument",
+        "attrs": {
+          "trick": "Aikawa used it to call Mouri's east-wing guest room with a taunting 'the cursed masks thirst for blood' message just before the murder, to make it appear he was confined to the east wing at the moment of death"
+        }
+      },
+      {
+        "id": "o5",
+        "name": "Anonymous \"Messenger of the Cursed Masks\" warning notes",
+        "role": "evidence",
+        "attrs": {
+          "delivery": "pinned to a tree blocking the guests' road, and separately received by several guests three days before the party; handwriting disguised with a ruler",
+          "content": "warnings not to attend Beniko Suou's charity party, escalating to 'the cursed masks will sip blood tonight'",
+          "authorship_note": "Aikawa states his motive included dissuading Katagiri from attending Beniko's 'corrupt' charity, but Aikawa himself also claims to have received one of these letters via his office -- the transcript does not conclusively establish he wrote every letter, unlike the mid-crime phone call which is explicitly his"
+        }
+      },
+      {
+        "id": "o6",
+        "name": "Hidden letter behind Aikawa's mother's diary cover",
+        "role": "evidence",
+        "attrs": {
+          "found_by": "Toya Aikawa, about two months before the case, while cleaning out his late mother's belongings",
+          "content": "reveals the truth of the hit-and-run and proves his mother had an alibi -- she was with him all day on his 6th birthday, October 31, the night of the accident",
+          "significance": "the discovery that triggered Aikawa's revenge plot"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "Aikawa let slip that he knew Ran and Conan had gone to wake Honami together, via a story about cracking his door open to look -- but in fact Conan had split off from Ran to go check the mansion's other doors for locks. Aikawa could only have assumed they were together by having actually watched the third-floor corridor near Beniko's room at the time of the murder, which the east-wing staircase (l4) made possible.",
+        "clue_type": "testimonial"
+      },
+      {
+        "id": "cB",
+        "desc": "No footprints were found in the fresh snow outside the mansion, and the doors connecting the east and west wings were confirmed locked at the time of death -- seemingly proving the killer had to be physically confined among the five guests then in the west wing. This premise only held until the private east-wing staircase to the third floor (l4), bypassing the wings' lock entirely, was uncovered, which is what actually let an east-wing occupant commit the murder.",
+        "clue_type": "physical"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p5",
+      "to": "p10",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p10",
+      "to": "p1",
+      "relation_type": "employee_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p1",
+      "to": "p5",
+      "relation_type": "mentor_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p6",
+      "to": "p1",
+      "relation_type": "employee_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p7",
+      "to": "p1",
+      "relation_type": "employee_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p8",
+      "to": "p1",
+      "relation_type": "employee_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p7",
+      "to": "p8",
+      "relation_type": "twin_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p9",
+      "relation_type": "spouse_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p4",
+      "relation_type": "client_of"
+    },
+    {
+      "type": "kills",
+      "from": "p1",
+      "to": "p9",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": 20,
+      "method": "hit-and-run",
+      "circumstance_tags": [
+        "cover_up",
+        "framed"
+      ]
+    },
+    {
+      "type": "frames",
+      "from": "p1",
+      "to": "p10",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": 20,
+      "detail": "blamed her own hit-and-run on her manager"
+    },
+    {
+      "type": "kills",
+      "from": "p1",
+      "to": "p10",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": 20,
+      "method": "unspecified, staged as suicide",
+      "circumstance_tags": [
+        "staged_suicide",
+        "cover_up",
+        "framed"
+      ]
+    },
+    {
+      "type": "stages_suicide_of",
+      "from": "p1",
+      "to": "p10",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": 20,
+      "circumstance_tags": [
+        "staged_suicide",
+        "cover_up"
+      ]
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p10",
+      "to": "o6",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": 20,
+      "detail": "hid the truth-revealing letter behind her diary cover before her death"
+    },
+    {
+      "type": "discovers",
+      "from": "p5",
+      "to": "o6",
+      "order": 1,
+      "temporal_frame": "backstory",
+      "detail": "found while cleaning out his mother's belongings about two months before the case"
+    },
+    {
+      "type": "delivered_to",
+      "from": "o5",
+      "to": "p2",
+      "order": 9,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "delivered_to",
+      "from": "o5",
+      "to": "p3",
+      "order": 9,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "delivered_to",
+      "from": "o5",
+      "to": "p4",
+      "order": 9,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "delivered_to",
+      "from": "o5",
+      "to": "p6",
+      "order": 9,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "delivered_to",
+      "from": "o5",
+      "to": "p5",
+      "order": 9,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l6",
+      "order": 11,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l6",
+      "order": 11,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l6",
+      "order": 11,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l6",
+      "order": 11,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l6",
+      "order": 11,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "requests_investigation_into",
+      "from": "p1",
+      "to": "p9",
+      "order": 12,
+      "temporal_frame": "present",
+      "detail": "privately pays Kogoro Mouri 2 million yen to check into the accident that killed Katagiri's wife, without saying why"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l7",
+      "order": 13,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l7",
+      "order": 13,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l7",
+      "order": 13,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p6",
+      "to": "l7",
+      "order": 13,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p8",
+      "to": "l7",
+      "order": 13,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l8",
+      "order": 13,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p7",
+      "to": "l8",
+      "order": 13,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l5",
+      "order": 14,
+      "temporal_frame": "present",
+      "detail": "takes the mask-room key from the kitchen"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l1",
+      "order": 14,
+      "temporal_frame": "present",
+      "detail": "unlocks the mask room, steals the masks and the knife, relocks it, returns the key to the kitchen"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l4",
+      "order": 15,
+      "temporal_frame": "present",
+      "circumstance_tags": [
+        "locked_room"
+      ]
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l3",
+      "order": 15,
+      "temporal_frame": "present",
+      "detail": "assembles the mask-and-knife chain on the rubber rope and feeds it through the barred transom into l2",
+      "circumstance_tags": [
+        "locked_room"
+      ]
+    },
+    {
+      "type": "stages_alibi_using",
+      "from": "p5",
+      "to": "o4",
+      "order": 16,
+      "temporal_frame": "present",
+      "detail": "phones Mouri's east-wing room with a taunting 'cursed masks thirst for blood' message to appear confined to the east wing"
+    },
+    {
+      "type": "was_at",
+      "from": "p1",
+      "to": "l2",
+      "order": 17,
+      "temporal_frame": "present",
+      "detail": "asleep under the effect of her own nightly sleeping pills"
+    },
+    {
+      "type": "kills",
+      "from": "p5",
+      "to": "p1",
+      "order": 17,
+      "temporal_frame": "present",
+      "method": "throat slashed at a distance using the extendable mask-and-knife chain thrust through the barred transom above the sealed adjoining door",
+      "circumstance_tags": [
+        "locked_room",
+        "remote_weapon",
+        "staged_curse"
+      ]
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p5",
+      "to": "o1",
+      "order": 18,
+      "temporal_frame": "present",
+      "detail": "severs and withdraws the rubber rope, leaving the mask chain and knife scattered in the locked bedroom"
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p5",
+      "to": "o2",
+      "order": 18,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "was_at",
+      "from": "p5",
+      "to": "l8",
+      "order": 18,
+      "temporal_frame": "present",
+      "detail": "returns to the east wing, leaving no route between wings apparently crossed"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "l1"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "l4"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "p5"
+    },
+    {
+      "type": "implicates",
+      "from": "cA",
+      "to": "p5"
+    },
+    {
+      "type": "implicates",
+      "from": "o1",
+      "to": "p5"
+    },
+    {
+      "type": "implicates",
+      "from": "o2",
+      "to": "p5"
+    },
+    {
+      "type": "implicates",
+      "from": "o4",
+      "to": "p5"
+    },
+    {
+      "type": "implicates",
+      "from": "o6",
+      "to": "p1"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o1"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o2"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p5",
+      "to": "p1",
+      "motive_type": "revenge_for_mothers_framing_and_murder_and_cover_up_of_wife_killing"
+    },
+    {
+      "type": "owns",
+      "from": "p1",
+      "to": "o3"
+    },
+    {
+      "type": "leaves_evidence",
+      "from": "p5",
+      "to": "o3",
+      "order": 18,
+      "temporal_frame": "present",
+      "detail": "severs and withdraws the rubber rope that had threaded the masks and knife into a rigid rod, leaving no rope in the sealed bedroom"
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p5"
+    }
+  ],
+  "label": {
+    "murderer_id": "p5"
+  }
+}

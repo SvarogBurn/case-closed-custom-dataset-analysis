@@ -1,0 +1,332 @@
+{
+ "case_id": "ep148_the_streetcars_sudden_stopping_case",
+ "episode_number": "148",
+ "title": "The Streetcar's Sudden Stopping Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Streetcar%27s_Sudden_Stopping_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0148.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Conan, the Detective Boys) and the one-off local investigator (Wakai Kenji, Hariisho Police) omitted by convention, matching how other episodes in this batch omit non-recurring local police who function like Inspector Megure. No `event` node type: actions are direct typed edges. This episode's transcript gives no motive material for anyone besides the culprit -- Kawasaki (the near-victim of the ladder trap) and the Driver both had circumstantial opportunity but no stated grudge against the victim, so per the schema's honesty rule no has_motive_against edge is fabricated for them; the culprit (Shimizu) is the only person carrying a motive edge in this case. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Rumi Shimizu",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "university student (Hanayama University, 2nd year)",
+    "attrs": {
+     "club": "Hanayama University Railroad Society"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tetsuya Kawasaki",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "witness"
+    ],
+    "occupation": "university student (Hanayama University, 4th year)",
+    "attrs": {
+     "club": "Hanayama University Railroad Society",
+     "note": "survived the rigged-ladder fall, injured but not killed; the fall was staged as a distraction for the real murder"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "the Driver",
+    "aliases": [],
+    "roles": [
+     "witness"
+    ],
+    "occupation": "tram operator",
+    "attrs": {
+     "note": "unnamed in the available transcript; applied the emergency brake after Kawasaki's fall"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Masao Horii",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "university student (Hanayama University, 4th year)",
+    "attrs": {
+     "club": "Hanayama University Railroad Society",
+     "died_of": "blunt-force wound to the back of the head, struck with the corner of a camera case",
+     "plans": "was about to leave to study abroad in Germany, where his father had arranged a marriage for him"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Land tram carriage",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Trackside photography spot near Harii Station (ladder and sign-post wire rig site)",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Piano wire and S-shaped hook rig",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "hooked to the ladder's leg, threaded through the loop of the nearest sign post, run around the far post, and tied off to a second sign post; when the passing tram's bumper caught and pulled the wire, the tension yanked the ladder out from under Kawasaki",
+     "timing_constraint": "had to be rigged after 5:40 AM (the time of the previous tram on the line) and before the target tram passed, which the operator's testimony narrowed down to Shimizu's ten-minute bicycle window between leaving the group and rejoining the tram late",
+     "evidence_location": "wire remnants found entangled in the tram's bumper and on both sign posts; the S-hook's mark matched a fresh scuff on the ladder leg"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Camera case / trunk (Kawasaki's, brand new)",
+    "role": "weapon",
+    "attrs": {
+     "staging_flaw": "Horii had tied the case to the handrail with two knots when boarding; after his death it was found tied with only one hastily redone knot and a fresh scratch on the previously untouched side, proving someone untied and re-tied it during the chaos",
+     "forensic_finding": "blood on the case's lower corner tested as not matching the victim, and unidentified fingerprints were found that matched neither Horii nor Kawasaki"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Aluminum photography ladder (Kawasaki's)",
+    "role": "tool",
+    "attrs": {
+     "note": "all four legs were reportedly steady before Kawasaki climbed it; collapsed only once the wire rig was triggered"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Knot-count clue: the camera case was tied to the handrail with two knots when Horii boarded, but was found afterward with only one hastily redone knot and a fresh scratch on the side that had previously been untouched -- proves someone deliberately untied and re-tied the case during the post-fall chaos, which a simple accidental fall could not explain.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Wound/blood placement clue: the lump was on the front of Horii's forehead but the fatal open wound and the pool of blood were at the back of his head, and most of the blood on the camera case sat on its lower edge rather than where a forward fall during braking would strike -- physically inconsistent with the 'accidental fall onto the case' explanation and consistent with a blow struck before the braking, then staged to look like a fall.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "Injury-match clue: fresh wounds on Shimizu's palm and wrist (and her watch) match the corner of the blood-stained camera case, tying her physically to the weapon at the moment of the strike.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o3"
+  },
+  {
+   "type": "rigs_trap_using",
+   "from": "p1",
+   "to": "o1",
+   "order": 0,
+   "temporal_frame": "present",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "assaults",
+   "from": "p1",
+   "to": "p2",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "rigged piano-wire trap tipped his ladder as the tram passed, staged to look like an accident and to distract everyone aboard",
+   "outcome": "survived, injured",
+   "circumstance_tags": [
+    "staged_accident"
+   ]
+  },
+  {
+   "type": "operates",
+   "from": "p3",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "applied the tram's emergency brake after Kawasaki fell from the ladder"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p4",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "struck from behind with the corner of the camera case while everyone's attention was on Kawasaki's fall; case re-tied to disguise the strike as an accidental fall during the emergency braking",
+   "circumstance_tags": [
+    "staged_accident",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p4",
+   "motive_type": "heartbreak_betrayal (Horii broke off their relationship because his father had arranged a marriage for him during his planned study abroad in Germany)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

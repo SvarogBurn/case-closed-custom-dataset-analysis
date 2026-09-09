@@ -1,0 +1,237 @@
+{
+ "case_id": "ep214_the_mysterious_retro_room_case",
+ "episode_number": "214",
+ "title": "The Mysterious Retro Room Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mysterious_Retro_Room_Case",
+ "subtitle_source": ["subs_resolved/0214.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure, Takagi, Chiba) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. The old wiki-derived case file (cases/ep214_...) named the correct culprit (Kuniko Yamamoto) and the correct core trick (phone dialed through a plastic bag), so label.murderer_id is unchanged -- but it collapsed everyone's relationship to generic 'knows', omitted the backstory professor who is central to the motive, omitted the third friend witness's role and the dry-cleaning-delivery witness, omitted the ice-cream/candy/string delay mechanism used to fake the TV timing (only vaguely gestured at via one clue+two events), omitted the pepper-spray and room-key reasoning Kogoro used to prove premeditation and that the victim knew her attacker, and got the timeline slightly wrong (the corrected time of death is ~12:20 PM, not simply 'right after turning the TV on' as the initial police guess assumed). case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Naomi Fujimura",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "children's clothing designer (working overseas)",
+    "attrs": {
+     "age": 27,
+     "died_of": "physical assault, unspecified weapon",
+     "time_of_death_estimated_initial": "between noon and 1 PM (police estimate, based on false assumption she was attacked right after turning on the TV)",
+     "time_of_death_actual": "approximately 12:20 PM, established once the TV coin-timer trick is understood",
+     "found_in": "Room 503, the 'Retro Room' of the Dolphinland hotel"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kuniko Yamamoto",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "clothing designer",
+    "attrs": {
+     "age": 27,
+     "cover_story": "claimed to be about to open her own clothing boutique",
+     "true_circumstance": "was actually fired from her design job after drinking too much once",
+     "confession": "admits she could not forgive Fujimura and felt humiliated and robbed of her happiness"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kaori Obayashi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "travel agent",
+    "attrs": {"age": 27}
+   },
+   {
+    "id": "p4",
+    "name": "Kanami Kaneda",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "housewife",
+    "attrs": {"age": 27}
+   },
+   {
+    "id": "p5",
+    "name": "University professor (unnamed)",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "professor, overseas job recommender",
+    "attrs": {
+     "detail": "controlled a prestigious overseas design-job recommendation both Yamamoto and Fujimura sought after graduation; let slip while drinking that Fujimura had used her feminine charms on him"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Hotel dry-cleaning delivery staff (unnamed)",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Dolphinland hotel staff",
+    "attrs": {
+     "testimony": "delivered dry cleaning to Room 503 before 1 PM but did not enter because of the 'Do Not Disturb' sign, and did not check whether the door was locked"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Tohto Line train station",
+    "attrs": {"role": "meeting point where Yamamoto rejoins the group and the faked alibi call is placed"}
+   },
+   {
+    "id": "l2",
+    "name": "Room 503, the 'Retro Room', Dolphinland hotel",
+    "attrs": {"detail": "themed replica of a guest room from the hotel's former identity as the Dolphin-Ryokan; furnished with a coin-operated TV and complimentary old-style candy"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Fujimura's cellphone",
+    "role": "evidence",
+    "attrs": {
+     "found_location": "under the table in Room 503",
+     "trick": "taken from the victim's body and used by the killer to dial her own phone, faking an incoming/outgoing call pair timestamped 1:08 PM",
+     "returned": "slipped back into the room during the commotion after the body was discovered"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Plastic bag (in Yamamoto's pocket)",
+    "role": "tool",
+    "attrs": {
+     "purpose": "used to dial a phone without leaving direct fingerprints on the keys",
+     "staging_flaw": "left an unusual vertical fingerprint smudge pattern that exactly matches the center-column keys needed to dial Yamamoto's own phone number"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Yamamoto's cellphone",
+    "role": "evidence",
+    "attrs": {
+     "number": "020-582-5-2805",
+     "detail": "can be dialed using only the center-column buttons -- the layout that produced the telltale vertical smudge on the plastic bag"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Pepper spray",
+    "role": "evidence",
+    "attrs": {
+     "found_location": "victim's pocket",
+     "significance": "unused -- indicates the victim did not perceive her attacker as a threat/stranger, i.e. she knew them"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Room key",
+    "role": "evidence",
+    "attrs": {
+     "found_location": "left on the table inside Room 503",
+     "significance": "door was left unlocked on the way out; a burglar would lock it to delay discovery, so this points to a premeditated, non-burglary murder in which the room needed to stay accessible"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Coin-operated TV, Room 503",
+    "role": "instrument",
+    "attrs": {
+     "mechanism": "one coin buys exactly one hour; auto-shuts-off, and was found off (having run out) at 2 PM when the group entered, meaning it was switched on at 1 PM",
+     "purpose_in_trick": "used to fake that the victim was still alive and watching TV around 1 PM, long after she was actually killed"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Ice cream bar (new flavor)",
+    "role": "tool",
+    "attrs": {
+     "detail": "a fairly new flavor not normally stocked among this room's complimentary selection, so the victim must have bought it separately",
+     "trick_role": "placed as a bridge between the TV controls and furniture; melts over time so the string draped across the coin slot slips free and drops a pre-set coin into the slot",
+     "residue": "left damp condensation on the channel knob and table"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "String candy",
+    "role": "tool",
+    "attrs": {
+     "trick_role": "draped over the coin slot with a coin propped by the melting ice cream bar; when the bar melts away the string slips and the coin falls in, delaying the TV's activation by roughly 40 minutes"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "'Do Not Disturb' sign",
+    "role": "tool",
+    "attrs": {
+     "purpose": "hung on the door by the killer to keep the room unlocked (so the trick would later be visible) while deterring hotel staff from entering early and discovering the body/setup too soon"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Phone-log comparison: Fujimura's outgoing call to Yamamoto and Yamamoto's incoming call both log 1:08 PM, but the TV coin-timer mechanism proves Fujimura was already dead by roughly 12:20 PM -- she could not have placed that call, revealing it was faked using the victim's own phone.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Fingerprint-pattern comparison: the odd vertical smudge pattern on the plastic bag in Yamamoto's pocket exactly matches the center-column keys required to dial Yamamoto's own phone number -- proving the bag was used to dial that specific number, not just carried innocently.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "classmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "classmate", "symmetric": true},
+
+  {"type": "seduces", "from": "p1", "to": "p5", "order": 0, "temporal_frame": "backstory", "detail": "seduced the professor to secure the overseas job recommendation both women wanted"},
+  {"type": "recommends", "from": "p5", "to": "p1", "order": 0, "temporal_frame": "backstory", "detail": "recommended Fujimura over Yamamoto for the prestigious overseas design job after being seduced"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "stolen_career_opportunity_and_resulting_humiliation"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "order": 1, "temporal_frame": "present", "method": "physical assault, unspecified weapon", "circumstance_tags": ["premeditated", "staged_alibi"]},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 1, "temporal_frame": "present"},
+
+  {"type": "stages_alibi_using", "from": "p2", "to": "o6", "order": 1, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o7", "order": 1, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o8", "order": 1, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o9", "order": 1, "temporal_frame": "present"},
+  {"type": "fakes_time_of_death_of", "from": "p2", "to": "p1", "order": 1, "temporal_frame": "present", "method": "melting ice-cream-bar-and-candy-string delay mechanism drops a coin into the room TV roughly 40 minutes after the killer leaves, making the room look occupied around 1 PM"},
+
+  {"type": "was_at", "from": "p6", "to": "l2", "order": 2, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 3, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o1", "order": 3, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o2", "order": 3, "temporal_frame": "present", "detail": "dials her own phone through the plastic bag using the victim's phone hidden in her pocket, faking a 1:08 PM alibi call"},
+
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l2", "order": 4, "temporal_frame": "present"},
+
+  {"type": "conceals_evidence", "from": "p2", "to": "o1", "order": 5, "temporal_frame": "present", "detail": "slips the victim's phone back into the room amid the commotion after the body is discovered"},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "owns", "from": "p2", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o5", "to": "p2"},
+
+  {"type": "regarding", "from": "cA", "to": "o1"},
+  {"type": "regarding", "from": "cA", "to": "o6"},
+  {"type": "implicates", "from": "cA", "to": "p2"},
+  {"type": "regarding", "from": "cB", "to": "o2"},
+  {"type": "regarding", "from": "cB", "to": "o3"},
+  {"type": "implicates", "from": "cB", "to": "p2"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,243 @@
+{
+ "case_id": "ep988_the_feuding_girls",
+ "episode_number": "988",
+ "title": "The Feuding Girls",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Feuding_Girls",
+ "subtitle_source": "subs_resolved/0988.txt (377 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Ran, Sonoko, Kogoro Mouri, Inspector Megure, Detective Takagi) omitted by convention. case_type: murder, with an unexecuted attempted-murder plot as the mechanism -- the culprit and the victim had secretly conspired together to kill a third colleague (Mai), and the culprit exploited that shared secret plot as cover to instead kill her own co-conspirator. No `event` node type: actions are direct typed edges per schema v3. The old low-fidelity `cases/ep988_the_feuding_girls.json` file's stated culprit (Yuko Oyodo, s3) and its central clue (only the culprit knew of and could subvert the secret Ayaka-Mai plot) both check out against the full transcript -- no correction needed there. What the old file lacked (added here from the full read): the manager Yasuda, the ex-boyfriend backstory figure, the four physical evidence objects (tampered scaffolding, phone-registered/coffee-stained seal toy, planted brooch, Ayaka's letter, her dropped artificial nail), the location breakdown (green room / sales floor / storage room / concert event space), and the reversed-invitation logic clue that exonerates Mai."
+ ,
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ayaka Saijo",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "promotional model (Red)",
+    "attrs": {
+     "died_of": "fall from a tampered construction scaffolding, storage room floor 2",
+     "estimated_time_of_death": "around 2:30PM",
+     "backstory": "won a commercial audition that Mai was runner-up for; earlier stole and then dumped Yuko's boyfriend, who then killed himself",
+     "secret_role": "knowingly co-conspired with Yuko to kill Mai, unaware Yuko planned to redirect the trap onto her instead"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Mai Fukamoto",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "promotional model (Yellow)",
+    "attrs": {
+     "discovered_body": true,
+     "audition_status": "runner-up to Ayaka for the same commercial",
+     "framed_as": "the scaffolding tamperer, via a planted brooch and Ayaka's invitation letter"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Mina Komoro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "promotional model (Blue)",
+    "attrs": {
+     "claimed_alibi": "skipped work to watch the concert in the event space, corroborated by an event-space receptionist"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yuko Oyodo",
+    "aliases": ["the evil seal"],
+    "roles": ["suspect"],
+    "occupation": "promotional model (Pink)",
+    "attrs": {
+     "claimed_alibi": "says she was in the green room with Mai the whole afternoon and never went to the storage room",
+     "true_actions": "tampered with the storage-room scaffolding beforehand, incited Ayaka into a real joint plot against Mai, then used a phone-registered stuffed-seal toy to time Ayaka's fatal climb onto the sabotaged scaffolding, and staged a brooch/letter frame against Mai",
+     "motive": "revenge for Ayaka driving Yuko's boyfriend to suicide"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Yasuda Kazuo",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "manager of the four models",
+    "attrs": {"age": 43}
+   },
+   {
+    "id": "p6",
+    "name": "Yuko Oyodo's boyfriend",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "suicide",
+     "circumstance": "killed himself after Ayaka pursued and then dumped him"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Green room (backstage staff area)",
+    "attrs": {"note": "where the four models argued and prepped; a stuffed seal toy got stained here"}
+   },
+   {
+    "id": "l2",
+    "name": "Sales floor (product demo area)",
+    "attrs": {"note": "public Happy Seal toy demonstration and limited-product sale"}
+   },
+   {
+    "id": "l3",
+    "name": "Storage room, floor 2 section 3 (crime scene)",
+    "attrs": {"note": "under construction; contains scaffolding and a precarious crane-stacked box pile"}
+   },
+   {
+    "id": "l4",
+    "name": "Event space (concert venue)",
+    "attrs": {"note": "site of a concert Mina says she skipped work to watch"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Tampered scaffolding",
+    "role": "weapon",
+    "attrs": {
+     "tampered_by": "Yuko",
+     "effect": "gave way and caused Ayaka's fatal fall",
+     "detail": "signs of tampering found by police, ruling out accident"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Smartphone-controlled seal toy (coffee-stained demo unit)",
+    "role": "instrument",
+    "attrs": {
+     "mechanism": "Happy Seal toys are app-controllable, but only once purchased/registered; this unit was registered to Yuko's phone",
+     "stain": "coffee stain matching a mishap during the earlier green-room scene",
+     "found_at": "storage room, near the crime scene",
+     "purpose": "used to signal/time when Ayaka should be on the sabotaged scaffolding"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Mai's brooch",
+    "role": "evidence",
+    "attrs": {
+     "missing_since": "a few days before the murder, per Mai",
+     "stolen_by": "Ayaka, on Yuko's instruction",
+     "planted": "left in front of the boxes at the crime scene to frame Mai"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Ayaka's letter to Mai",
+    "role": "evidence",
+    "attrs": {
+     "content": "fake apology asking Mai to come to storage room floor 2 section 3 around 3PM",
+     "found_in": "garbage can in the hallway",
+     "real_purpose": "lure Mai into the (unexecuted) box-collapse trap"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Ayaka's artificial nail",
+    "role": "evidence",
+    "attrs": {
+     "found_at": "on the floor in front of the stacked boxes",
+     "significance": "proves Ayaka herself, not Mai, approached the boxes -- consistent with Ayaka being the one who was supposed to spring the trap on Mai"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Stacked boxes and crane rig",
+    "role": "tool",
+    "attrs": {
+     "requires": "two people to build -- one operating the crane, one securing the stack",
+     "clasp_residue": "paint/stain residue on the securing belt's clasp",
+     "purpose": "built as the trap meant to fall on Mai; never triggered because Ayaka died first"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ayaka's letter invited Mai to the storage room -- but a scaffolding tamperer normally lures their victim there, not the reverse, so Mai (the invitee) can't be the tamperer.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "The seal toy left at the scene carries a coffee stain from the green room and is registered to Yuko's phone, while unsold display units can't be phone-controlled at all -- ties this specific, registered unit to Yuko.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "The crane-stacked boxes on floor 2 require two people to build (one on the crane, one securing) -- proves a second person besides Ayaka was involved, ruling out Mai acting alone.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c4",
+    "desc": "The Ayaka-Mai murder plot was a secret known only to Ayaka and Yuko -- only the other conspirator could have redirected the trap onto Ayaka herself.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p6", "to": "p4", "relation_type": "dated"},
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "had_affair_with"},
+  {"type": "drives_to_suicide", "from": "p1", "to": "p6", "circumstance_tags": ["backstory"]},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "revenge (Ayaka stole and dumped Yuko's boyfriend, driving him to suicide)"},
+  {"type": "conspires_with", "from": "p4", "to": "p1", "detail": "secretly planned together (opening flashback) to kill Mai; Yuko covertly redirected the plot onto Ayaka instead", "circumstance_tags": ["betrayal"]},
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "recruited by Yuko into a plot against Mai, framed as rivalry over the commercial audition", "circumstance_tags": ["manipulated"]},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "police theory: resentment over losing the commercial audition to Ayaka", "circumstance_tags": ["red_herring", "accusation_only"]},
+  {"type": "tampers_with", "from": "p4", "to": "o1", "detail": "weakened the storage-room scaffolding so it would give way"},
+  {"type": "uses", "from": "p4", "to": "o2", "detail": "app-controlled seal toy registered to her phone"},
+  {"type": "kills", "from": "p4", "to": "p1", "method": "lured onto the tampered scaffolding via the app-controlled seal toy; fell to her death", "circumstance_tags": ["staged_accident", "betrayal", "frame_up"]},
+  {"type": "written_by", "from": "o4", "to": "p1"},
+  {"type": "steals", "from": "p1", "to": "o3", "detail": "stole Mai's brooch on Yuko's instruction, to plant as false evidence", "circumstance_tags": ["frame_up"]},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o3", "detail": "planted the brooch near the boxes at the crime scene"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o4", "detail": "wrote and sent the fake apology letter, later discarded"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o5", "detail": "accidentally left an artificial nail near the boxes"},
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "located_in", "from": "o6", "to": "l3"},
+  {"type": "located_in", "from": "o2", "to": "l3"},
+  {"type": "located_in", "from": "o3", "to": "l3"},
+  {"type": "located_in", "from": "o5", "to": "l3"},
+  {"type": "implicates", "from": "o3", "to": "p2", "circumstance_tags": ["red_herring", "frame_up"]},
+  {"type": "implicates", "from": "o4", "to": "p2", "circumstance_tags": ["red_herring"]},
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "implicates", "from": "o2", "to": "p4"},
+  {"type": "implicates", "from": "c1", "to": "p4"},
+  {"type": "implicates", "from": "c2", "to": "p4"},
+  {"type": "implicates", "from": "c3", "to": "p4"},
+  {"type": "implicates", "from": "c4", "to": "p4"},
+  {"type": "regarding", "from": "c1", "to": "o4"},
+  {"type": "regarding", "from": "c1", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "regarding", "from": "c3", "to": "o6"},
+  {"type": "regarding", "from": "c4", "to": "p1"},
+  {"type": "regarding", "from": "c4", "to": "p2"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3", "detail": "Mai's own account: went after receiving Ayaka's letter, found Ayaka already dead"},
+  {"type": "was_at", "from": "p4", "to": "l3", "detail": "revealed by Conan: she claimed to never have gone there, but the registered seal toy proves otherwise"},
+  {"type": "was_at", "from": "p3", "to": "l4", "detail": "corroborated by an event-space receptionist"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

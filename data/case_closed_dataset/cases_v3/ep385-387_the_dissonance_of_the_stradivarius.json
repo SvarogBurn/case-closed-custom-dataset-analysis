@@ -1,0 +1,276 @@
+{
+ "case_id": "ep385-387_the_dissonance_of_the_stradivarius",
+ "episode_number": "385-387",
+ "title": "The Dissonance of the Stradivarius",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Dissonance_of_the_Stradivarius",
+ "subtitle_source": ["subs_resolved/0385.txt", "subs_resolved/0387.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Detective Takagi, Inspector Megure) omitted by convention. Episode 386 (middle of this 3-episode arc) has no subtitle file locally -- only 0385 and 0387 were read, so the mid-arc investigation scenes (e.g. exactly how Emi's stair fall two years ago was first investigated) are missing; anything from that gap is flagged 'ambiguous_cause' below rather than invented. The old cases/ file correctly identified Kyosuke Haga as the culprit, but drastically undercounted the scope of the case: it listed only 2 victims (Genzaburo, Ayane) and left the motive as 'unspecified', when the transcript reveals this is really a 4-death-plus-backstory revenge spree spanning 30 years (Danjirou Haga's death in a staged burglary cover-up 30 years ago; Chinami's death from nursing strain; Emi's stair fall 2 years ago; Furuto's veranda fall last year; Genzaburo burned this year; Ayane lured to fall this year) driven by Kyosuke discovering that his uncle Chouichirou and three others staged the cover-up that killed his father. The old file also missed the central deduction clue entirely (only Kyosuke, of the four gathered suspects, encouraged Kogoro to touch the Stradivarius again -- the actual proof of guilt) and mislabeled the murder weapon object. Furuto's status as an actual named co-conspirator in the 30-year cover-up is never explicitly confirmed on screen (only Chouichirou, Genzaburou, and Ayane are directly named staging the fake burglary, with Emi separately said to have 'colluded in the lie'); Kyosuke kills him anyway as part of a symbolic musical-scale sequence, which this file flags as motive_type ambiguity rather than asserting Furuto was a proven conspirator. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kyosuke Haga",
+    "aliases": [],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": "composer (TV drama soundtracks)",
+    "attrs": {
+     "perfect_pitch": true,
+     "lung_disease": "terminal, discovered mid-scheme (see p2)",
+     "closing_act": "gives the real Stradivarius to Hasuki, then tries to jump from a window; stopped because Kogoro had Takagi standing by"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Choichiro Shitara",
+    "aliases": [],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": "head of the Shitara family",
+    "attrs": {
+     "lung_disease": "terminal, about half a year left to live",
+     "birthday_celebrated": "72nd, the night of the fire"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Genzaburo Shitara",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "orchestra conductor",
+    "attrs": {"died_of": "trapped in a burning, falsely-locked room"}
+   },
+   {
+    "id": "p4",
+    "name": "Ayane Shitara",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {"died_of": "fell three stories reaching for a decoy violin rigged outside her window"}
+   },
+   {
+    "id": "p5",
+    "name": "Emi Shitara",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "violinist",
+    "attrs": {
+     "died_of": "fell down the stairs, two years before the present case",
+     "circumstance": "died shortly after confessing the 30-year cover-up truth to Kyosuke; whether Kyosuke caused the fall is never shown on screen (falls in the missing episode 386 gap)"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Furuto Shitara",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {"died_of": "pushed off a rotted veranda, one year before the present case"}
+   },
+   {
+    "id": "p7",
+    "name": "Hasuki Shitara",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "violin student",
+    "attrs": {"hired_kogoro_to": "investigate the 'curse' around the family Stradivarius"}
+   },
+   {
+    "id": "p8",
+    "name": "Benio Tsumagari",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "butler",
+    "attrs": {}
+   },
+   {
+    "id": "p9",
+    "name": "Danjiro Haga",
+    "aliases": ["Danjirou Shitara"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "untreated injuries after a violin-swap dispute, 30 years before the present case",
+     "false_public_narrative": "died resisting burglars during a break-in"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Chinami Haga",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {"died_of": "strain from nursing her unconscious husband Danjiro"}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Shitara mansion (main house)", "attrs": {}},
+   {"id": "l2", "name": "Genzaburo's room (annex 2F)", "attrs": {"note": "fire started here"}},
+   {"id": "l3", "name": "Ayane's room (annex 3F)", "attrs": {}},
+   {"id": "l4", "name": "Storage room (annex)", "attrs": {"note": "Stradivarius normally sealed here"}},
+   {"id": "l5", "name": "Practice room (annex 1F)", "attrs": {}},
+   {"id": "l6", "name": "Room below Ayane's (annex)", "attrs": {"note": "Kyosuke played the requiem here"}},
+   {"id": "l7", "name": "Veranda (Shitara mansion)", "attrs": {"note": "rotted; Furuto fell from here"}}
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Real Stradivarius violin",
+    "role": "instrument",
+    "attrs": {"made_by": "Antonio Stradivari, ~300 years old", "value": "hundreds of millions of yen"}
+   },
+   {
+    "id": "o2",
+    "name": "Replica Stradivarius (present-day)",
+    "role": "tool",
+    "attrs": {"used_for": "rigged decoy that lured Ayane to the window"}
+   },
+   {
+    "id": "o3",
+    "name": "Genzaburo's conductor batons",
+    "role": "tool",
+    "attrs": {"used_for": "struts for the window rig, stolen from o3's owner's room"}
+   },
+   {
+    "id": "o4",
+    "name": "Genzaburo's cigarette",
+    "role": "weapon",
+    "attrs": {"used_for": "started the fire that killed its owner"}
+   },
+   {
+    "id": "o5",
+    "name": "Bent lock plate, Genzaburo's door",
+    "role": "evidence",
+    "attrs": {"warp_pattern": "only the top (knob) portion is bent"}
+   },
+   {
+    "id": "o6",
+    "name": "Replica sent to Danjiro (30 yrs ago)",
+    "role": "evidence",
+    "attrs": {"note": "proof of the original violin theft; Danjiro spotted the swap immediately"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The door lock plate is bent only at the top (knob), not the bottom (bolt) -- a genuinely forced-open lock warps both, proving the door was never actually locked when it was broken down.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "A stray violin bridge and a broken baton fragment turned up near Ayane's body, but both the real Stradivarius and its replica still had their bridges intact -- proving a third, rigged decoy violin was used to lure her.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Of the four gathered suspects, only Kyosuke urged Kogoro to touch the Stradivarius again; Hasuki, Choichiro, and Tsumagari all refused -- the tell that Kyosuke needed his fingerprints re-obscured because he was the one who switched the violin.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p9", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p1", "to": "p10", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p9", "to": "p2", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p4", "to": "p2", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "married_to"},
+  {"type": "relationship", "from": "p6", "to": "p2", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p6", "to": "p4", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p7", "to": "p6", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "nephew_of"},
+  {"type": "relationship", "from": "p8", "to": "p9", "relation_type": "employee_of", "detail": "worked for the Haga household before the burglary incident 30 years ago"},
+  {"type": "relationship", "from": "p8", "to": "p2", "relation_type": "employee_of", "detail": "moved to the Shitara household after Danjiro's death"},
+
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "revenge_for_fathers_death_and_coverup"},
+  {"type": "has_motive_against", "from": "p1", "to": "p3", "motive_type": "revenge_for_fathers_death_and_coverup"},
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "revenge_for_fathers_death_and_coverup"},
+  {"type": "has_motive_against", "from": "p1", "to": "p5", "motive_type": "revenge_for_fathers_death_and_coverup"},
+  {"type": "has_motive_against", "from": "p1", "to": "p6", "motive_type": "symbolic_scale_sequence (Furuto not confirmed as a named conspirator; see notes)"},
+
+  {"type": "owns", "from": "p9", "to": "o1"},
+  {"type": "swaps_violin_with", "from": "p2", "to": "p9", "detail": "borrowed the real Stradivarius, fell in love with its tone, substituted replica o6, and sent o6 back to Danjiro"},
+  {"type": "owns", "from": "p2", "to": "o1", "detail": "kept the real violin after the swap"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+
+  {"type": "kills", "from": "p2", "to": "p9", "method": "orchestrated a fake burglary cover-up and denied Danjiro medical care after the violin-swap dispute injury; died of untreated wounds days later", "circumstance_tags": ["cover_up", "staged_robbery"]},
+  {"type": "kills", "from": "p3", "to": "p9", "method": "complicit in staging the fake burglary, went along with denying rescue", "circumstance_tags": ["cover_up", "staged_robbery"]},
+  {"type": "kills", "from": "p4", "to": "p9", "method": "complicit in staging the fake burglary, went along with denying rescue", "circumstance_tags": ["cover_up", "staged_robbery"]},
+  {"type": "kills", "from": "p5", "to": "p9", "method": "colluded in maintaining the cover story afterward", "circumstance_tags": ["cover_up"]},
+
+  {"type": "was_at", "from": "p9", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p10", "to": "l1"},
+
+  {"type": "confronts", "from": "p1", "to": "p5", "detail": "asked Emi about the Stradivarius's true tone after recognizing it while tuning it for Choichiro's 70th birthday"},
+  {"type": "confesses_to", "from": "p5", "to": "p1", "detail": "revealed the 30-year cover-up truth about Danjiro's death"},
+
+  {"type": "kills", "from": "p1", "to": "p5", "method": "ambiguous_cause: fell down the stairs shortly after confessing to Kyosuke; the mechanism is never shown in the available transcript (falls in the missing episode 386 gap)", "circumstance_tags": ["ambiguous_cause"]},
+  {"type": "was_at", "from": "p5", "to": "l1", "detail": "confessed to Kyosuke and fell to her death on the mansion stairs"},
+
+  {"type": "kills", "from": "p1", "to": "p6", "method": "pushed off the rotted veranda", "circumstance_tags": ["staged_accident"]},
+  {"type": "was_at", "from": "p1", "to": "l7"},
+  {"type": "was_at", "from": "p6", "to": "l7"},
+
+  {"type": "was_at", "from": "p7", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l5"},
+  {"type": "was_at", "from": "p1", "to": "l5"},
+  {"type": "was_at", "from": "p8", "to": "l5"},
+  {"type": "was_at", "from": "p4", "to": "l5"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+
+  {"type": "handles", "from": "p1", "to": "o1", "detail": "tuned it that afternoon"},
+  {"type": "owns", "from": "p1", "to": "o2", "detail": "brought the replica to substitute during tuning"},
+  {"type": "swaps_violin_with", "from": "p1", "to": "o1", "detail": "switched the real Stradivarius for replica o2 while tuning it"},
+  {"type": "handles", "from": "p7", "to": "o1", "detail": "received it from Kyosuke, was showing it to Kogoro when the fire broke out"},
+  {"type": "handles", "from": "p8", "to": "o1", "detail": "retrieved it from the table and returned it to storage"},
+  {"type": "located_in", "from": "o1", "to": "l4"},
+  {"type": "was_at", "from": "p8", "to": "l4"},
+
+  {"type": "owns", "from": "p3", "to": "o3"},
+  {"type": "located_in", "from": "o3", "to": "l2"},
+  {"type": "steals", "from": "p1", "to": "o3"},
+  {"type": "owns", "from": "p3", "to": "o4"},
+  {"type": "ignites_fire_with", "from": "p1", "to": "o4", "circumstance_tags": ["arson", "staged_alibi"]},
+  {"type": "burns", "from": "p1", "to": "l2"},
+  {"type": "traps_in_room", "from": "p1", "to": "p3", "detail": "falsely claimed the door was locked so others went to the window instead, then genuinely locked it during the confusion", "circumstance_tags": ["locked_room"]},
+  {"type": "kills", "from": "p1", "to": "p3", "method": "trapped in his own burning, falsely-locked room; died of smoke and fire", "circumstance_tags": ["locked_room", "staged_alibi", "arson"]},
+  {"type": "rescues", "from": "p1", "to": "p2", "detail": "jumped from an annex window onto a parked car roof to break the fall"},
+  {"type": "rescues", "from": "p1", "to": "p4", "detail": "jumped from an annex window onto a parked car roof to break the fall"},
+
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+
+  {"type": "implicates", "from": "o5", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "o5"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+
+  {"type": "rigs_as_trap", "from": "p1", "to": "o2", "detail": "hung replica o2 and stolen batons o3 outside Ayane's window on a string/baton rig", "circumstance_tags": ["staged_suicide"]},
+  {"type": "smashes", "from": "p4", "to": "o2", "detail": "discovered the violin she kept was a replica and smashed it in anger, shortly before the fatal fall"},
+  {"type": "kills", "from": "p1", "to": "p4", "method": "lured her to reach out her window for a decoy violin rigged on bending batons, using his own requiem performance as bait; she overbalanced and fell three stories", "circumstance_tags": ["staged_suicide", "locked_room"]},
+  {"type": "retrieves", "from": "p1", "to": "o2", "detail": "pulled the rig back in while everyone else rushed to Ayane's room"},
+  {"type": "retrieves", "from": "p1", "to": "o3"},
+  {"type": "was_at", "from": "p1", "to": "l6"},
+
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+
+  {"type": "regarding", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p7"},
+  {"type": "regarding", "from": "c3", "to": "p2"},
+  {"type": "regarding", "from": "c3", "to": "p8"},
+  {"type": "implicates", "from": "c3", "to": "p1"},
+
+  {"type": "entrusts_to", "from": "p1", "to": "p7", "detail": "gives the real Stradivarius, his father's legacy, to Hasuki at the close of the case"},
+  {"type": "owns", "from": "p7", "to": "o1"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

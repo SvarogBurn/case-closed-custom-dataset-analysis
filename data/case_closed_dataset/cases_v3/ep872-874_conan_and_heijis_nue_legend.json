@@ -1,0 +1,317 @@
+{
+ "case_id": "ep872-874_conan_and_heijis_nue_legend",
+ "episode_number": "872-874",
+ "title": "Conan and Heiji's Nue Legend",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Conan_and_Heiji%27s_Nue_Legend",
+ "subtitle_source": ["subs_resolved/0872.txt", "subs_resolved/0874.txt"],
+ "schema_version": "v3",
+ "notes": "Case spans episodes 872-874 but only 0872 and 0874 subtitle files are available locally (0873 is missing from subs_resolved/); the Someji murder and immediate cave-in/nue backstory come from 0872, the full Tanzawa poisoning + Masuko Fumie reveal comes from 0874, so the middle episode's material (any additional interrogation scenes) is not represented here. Recurring detective-cast nodes (Conan Edogawa, Ran Mouri) omitted by convention, matching ep011; Heiji Hattori and Kazuha Toyama are kept in because Heiji is the one who solves the case on-screen and Kazuha's fright/near-miss with a room swap is load-bearing to the plot. The Vermouth/Amuro-san cold-open gag at the very start of 0872 is an unrelated running subplot and is not part of this case's graph, consistent with the old file's own scoping note. Old cases/ file's stated culprit (Fumie Masuko, s3) is CORRECT per the transcript -- she confesses outright. However the old file was otherwise low-fidelity and had real errors: (1) it listed 'Michiki Tanzawa' as both a suspect (s2) and a separate victim (v2), duplicating one person into two nodes; (2) it listed Densuke Takekuma and Hajime Tsurumi as 'suspects' with no motive given, when the transcript gives them no criminal involvement at all (Tsurumi is a bystander invited as an unwitting witness, Densuke is the mayor who organized the treasure-hunt trip); (3) it omitted the entire real motive -- Masuko's late husband Charles Abel, a foreign archaeologist on the expedition 16 years earlier, was left to die in a cave-in by Someji and Tanzawa, and his misheard dying note ('tetsu'/metal, not 'nue') is the whole engine of the plot -- none of this appears in the old file. Conan's on-screen theory that documentary writer Hajime Tsurumi is actually Masuko and Charles's son is left as an open/unconfirmed relationship below: Masuko explicitly denies it in the transcript ('You idiot. Of course not.'), so it is recorded as disputed rather than asserted as fact. Per the current build rules, order/temporal_frame/years_before_present are omitted entirely from edges.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yasukatsu Someji",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "historian",
+    "attrs": {
+     "age": 55,
+     "died_of": "stabbed/clawed outside the hotel, staged to look like a beast attack",
+     "excavation_history": "was on the Tokugawa-treasure excavation team 16 years earlier when a cave-in killed Charles Abel"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Michiki Tanzawa",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "archaeologist",
+    "attrs": {
+     "age": 62,
+     "died_of": "poisoned by a needle dart shot through his hotel window while looking out at a staged fire",
+     "excavation_history": "was on the Tokugawa-treasure excavation team 16 years earlier when a cave-in killed Charles Abel"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Fumie Masuko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "novelist",
+    "attrs": {
+     "age": 46,
+     "education": "art school graduate (able to paint realistic false-perspective windows)",
+     "true_motive": "revenge for her husband Charles Abel, left to die in the excavation cave-in"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Hajime Tsurumi",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "documentary writer",
+    "attrs": {
+     "age": 22,
+     "cover_story": "invited by Masuko to document local monster legends",
+     "disputed_parentage": "Conan theorizes he is Masuko and Charles Abel's son (resembles Charles in a 16-year-old photo, and the dog favors him); Masuko explicitly denies this in the transcript"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Densuke Takekuma",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "Yadori Village mayor",
+    "attrs": {
+     "age": 58,
+     "goal": "organized the excavation/publicity trip to revitalize the village's tourism"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Charles Abel",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "foreign archaeologist",
+    "attrs": {
+     "died_of": "cave-in during the Tokugawa-treasure excavation 16 years before the present case",
+     "dying_note": "wrote the character for 'tetsu' (metal, referring to a hairpin he'd found) in shaky permanent marker; the ink bled and the team misread it as 'nue'",
+     "found_with": "an old metal hairpin, next to his body"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Heiji Hattori",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "high school detective (Osaka)",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Kazuha Toyama",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "high school student",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Yadori Village hotel",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Kurogane Lake shore",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Excavation cave, Kurogane Forest",
+    "attrs": {"marked": "Stay Out / Danger sign posted at the entrance"}
+   },
+   {
+    "id": "l4",
+    "name": "Masuko's 2nd-floor room",
+    "attrs": {}
+   },
+   {
+    "id": "l5",
+    "name": "Tanzawa's hotel room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Painted false-perspective cloth screen",
+    "role": "tool",
+    "attrs": {
+     "construction": "sewn sheets painted with exaggerated-perspective windows, cardboard for the parts sticking out, spray-painted to match the wall",
+     "purpose": "hung from Masuko's window at night to look like a building-sized monster in the smoke and dark",
+     "fate": "burned to destroy the evidence while everyone was distracted fighting the lawn fire"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Charles Abel's dog",
+    "role": "tool",
+    "attrs": {
+     "history": "originally Charles Abel's pet; kept returning to the excavation site after his death and was informally adopted by the village",
+     "training": "trained by Masuko to grab a decoy sign and run off whenever it heard the nue cry cue",
+     "tell": "barked at the cry cue wanting to fetch the sign, but stayed silent when the 'monster' itself supposedly appeared -- the behavioral inconsistency Conan notices"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Wine glass",
+    "role": "tool",
+    "attrs": {"use": "rim rubbed with a wet finger to produce the nue's eerie cry once the phone/recorder had already been confiscated"}
+   },
+   {
+    "id": "o4",
+    "name": "Soda-bottle dart launcher",
+    "role": "weapon",
+    "attrs": {"construction": "cork with a hollow ballpoint-pen tube through it, taped to fit a soda-water bottle; shaking the bottle and releasing a held finger shoots the cork's payload upward through a window"}
+   },
+   {
+    "id": "o5",
+    "name": "Two-pronged poison dart",
+    "role": "weapon",
+    "attrs": {"construction": "sewing needles tied to a toothpick, coated in poison, fired from the soda-bottle launcher and retrieved afterward by an attached string"}
+   },
+   {
+    "id": "o6",
+    "name": "Knife used on Someji",
+    "role": "weapon",
+    "attrs": {"fate": "thrown into Kurogane Lake after the murder; never recovered, inferred from Heiji's reasoning"}
+   },
+   {
+    "id": "o7",
+    "name": "Fake giant-teeth-marked sign",
+    "role": "evidence",
+    "attrs": {"purpose": "planted next to Someji's body so the wound and a bitten sign would look like a monster's kill left behind"}
+   },
+   {
+    "id": "o8",
+    "name": "Original small warning sign",
+    "role": "evidence",
+    "attrs": {"purpose": "the real sign Someji's fake one replaced; carried off by the trained dog on cue, to make it look like the monster fled with it"}
+   },
+   {
+    "id": "o9",
+    "name": "Old metal hairpin",
+    "role": "evidence",
+    "attrs": {"found": "next to Charles Abel's body after the cave-in, kept at the town hall for 16 years", "significance": "the actual find Charles died trying to report"}
+   },
+   {
+    "id": "o10",
+    "name": "Charles Abel's dying note",
+    "role": "evidence",
+    "attrs": {"written": "the character intended as 'tetsu' (metal), in bled permanent marker", "misread_as": "nue"}
+   },
+   {
+    "id": "o11",
+    "name": "Charles Abel's practice notebook",
+    "role": "evidence",
+    "attrs": {"content": "hiragana practice pages; found recently in the desk drawer of the room Heiji and Ran were staying in", "physical_match": "a torn page exactly matches the torn edge of the dying note"}
+   },
+   {
+    "id": "o12",
+    "name": "Old excavation team photo",
+    "role": "evidence",
+    "attrs": {"age": "16 years old", "content": "shows the original excavation team including Charles Abel, whose face resembles Hajime Tsurumi's"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "16-year-old excavation photo: the foreigner in the middle (Charles Abel) closely resembles Hajime Tsurumi -- hints at an undisclosed family tie.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Charles Abel's recovered practice notebook has a torn page that exactly matches the torn edge of his old dying note, proving both came from him and that the note really read 'tetsu' (metal), not 'nue'.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "The dog barked at the nue cry cue (wanting to fetch the decoy sign) but stayed silent when the 'giant monster' itself supposedly appeared -- proves the cry and the monster sighting were separately staged effects, not one real creature.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p6", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "disputed_son_of (Masuko denies it on-screen)"},
+  {"type": "relationship", "from": "p4", "to": "p3", "relation_type": "disputed_son_of (Masuko denies it on-screen)"},
+  {"type": "relationship", "from": "p1", "to": "p6", "relation_type": "excavation_team_colleague"},
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "excavation_team_colleague"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "excavation_team_colleague"},
+  {"type": "relationship", "from": "p7", "to": "p8", "relation_type": "childhood_friends"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "revenge_for_husbands_death"},
+  {"type": "has_motive_against", "from": "p3", "to": "p2", "motive_type": "revenge_for_husbands_death"},
+
+  {"type": "abandons", "from": "p1", "to": "p6", "circumstance_tags": ["left_for_dead"]},
+  {"type": "abandons", "from": "p2", "to": "p6", "circumstance_tags": ["left_for_dead"]},
+  {"type": "was_at", "from": "p6", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "owns", "from": "p6", "to": "o2"},
+  {"type": "written_by", "from": "o10", "to": "p6"},
+  {"type": "written_by", "from": "o11", "to": "p6"},
+  {"type": "located_in", "from": "o9", "to": "l3"},
+  {"type": "located_in", "from": "o12", "to": "l1"},
+
+  {"type": "invites", "from": "p5", "to": "p7"},
+  {"type": "invites", "from": "p7", "to": "p8"},
+  {"type": "lures", "from": "p3", "to": "p1", "circumstance_tags": ["deception"]},
+  {"type": "lures", "from": "p3", "to": "p2", "circumstance_tags": ["deception"]},
+  {"type": "invites", "from": "p3", "to": "p4"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l3"},
+  {"type": "was_at", "from": "p7", "to": "l3"},
+  {"type": "was_at", "from": "p8", "to": "l3"},
+
+  {"type": "owns", "from": "p3", "to": "o1"},
+  {"type": "owns", "from": "p3", "to": "o3"},
+  {"type": "owns", "from": "p3", "to": "o4"},
+  {"type": "owns", "from": "p3", "to": "o5"},
+  {"type": "owns", "from": "p3", "to": "o6"},
+  {"type": "located_in", "from": "o1", "to": "l4"},
+  {"type": "located_in", "from": "o3", "to": "l4"},
+  {"type": "located_in", "from": "o4", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+
+  {"type": "stages_alibi_using", "from": "p3", "to": "o1", "circumstance_tags": ["staged_monster_attack"]},
+  {"type": "kills", "from": "p3", "to": "p1", "method": "stabbed/clawed with a knife, disguised as a beast attack", "circumstance_tags": ["staged_monster_attack", "cover_up"]},
+  {"type": "leaves_evidence", "from": "p3", "to": "o7"},
+  {"type": "trains", "from": "p3", "to": "o2"},
+  {"type": "retrieves", "from": "o2", "to": "o8"},
+  {"type": "burns", "from": "p3", "to": "l1", "circumstance_tags": ["cover_up", "staged_monster_attack"]},
+  {"type": "burns", "from": "p3", "to": "o1", "circumstance_tags": ["cover_up"]},
+  {"type": "located_in", "from": "o7", "to": "l1"},
+  {"type": "located_in", "from": "o8", "to": "l1"},
+  {"type": "located_in", "from": "o6", "to": "l2", "attrs": {"recovered": false}},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p7", "to": "l2"},
+  {"type": "was_at", "from": "p8", "to": "l2"},
+
+  {"type": "stages_alibi_using", "from": "p3", "to": "o3", "circumstance_tags": ["staged_monster_attack"]},
+  {"type": "kills", "from": "p3", "to": "p2", "method": "poisoned by a two-pronged dart shot through the window as he looked out at a staged fire", "circumstance_tags": ["staged_monster_attack", "cover_up", "remote_weapon"]},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+
+  {"type": "implicates", "from": "o5", "to": "p3"},
+  {"type": "implicates", "from": "o6", "to": "p3"},
+  {"type": "implicates", "from": "o1", "to": "p3"},
+
+  {"type": "regarding", "from": "c1", "to": "o12"},
+  {"type": "regarding", "from": "c1", "to": "p4"},
+  {"type": "regarding", "from": "c1", "to": "p6"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+
+  {"type": "regarding", "from": "c2", "to": "o10"},
+  {"type": "regarding", "from": "c2", "to": "o11"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+
+  {"type": "regarding", "from": "c3", "to": "o2"},
+  {"type": "implicates", "from": "c3", "to": "p3"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

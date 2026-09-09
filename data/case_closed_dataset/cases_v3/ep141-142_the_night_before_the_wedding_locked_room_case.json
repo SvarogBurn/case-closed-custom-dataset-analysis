@@ -1,0 +1,228 @@
+{
+ "case_id": "ep141-142_the_night_before_the_wedding_locked_room_case",
+ "episode_number": "141-142",
+ "title": "The Night Before the Wedding Locked Room Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Night_Before_the_Wedding_Locked_Room_Case",
+ "subtitle_source": ["subs_resolved/0141.txt", "subs_resolved/0142.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Heiji, Kazuha, Kogoro, Ran, Inspector Megure) omitted by convention, except where an object they used (a decoy bag) is itself load-bearing evidence -- that object is kept and its owner noted only in attrs. IMPORTANT CORRECTION vs. the old cases/ file: the old file's murderer_id (s2, Yuji Sakuraba) is WRONG. Sakuraba is a deliberate false accusation: Heiji stages a full deduction show naming Sakuraba as the killer purely as bait (confirmed on-screen: 'it was all a trap we created with the Inspector's help'), Sakuraba is cleared moments later when Kaede reveals she was his alibi, and the true culprit -- unmasked only in the closing minutes of ep142 using the staged-bloodstain/no-blood-on-balcony contradiction plus a second trap involving a decoy bag -- is Kikuhito Morizono, the groom himself. This file uses Kikuhito (p6) as label.murderer_id, per the actual transcript, not the old file's wiki-derived guess. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same real-world occurrence can be grouped without a reifying node. Multigraph: multiple parallel typed edges between the same two nodes are expected. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Akio Shigematsu",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "Morizono family butler, age 51",
+    "attrs": {
+     "died_of": "stabbed once in the chest with a kitchen knife",
+     "role_in_household": "long-serving butler; personally arranged the Kikuhito-Kaede marriage, then later tried to quietly stop it",
+     "secret_past": "was in love with Mikio's wife (Kikuhito and Yurie's mother) before she was courted into marrying Mikio instead; the parallel between that old story and Kaede/Sakuraba's situation is why he moved to stop the wedding",
+     "true_intentions_misread_by_killer": "he wanted to stop the marriage so Kaede and Sakuraba, who genuinely loved each other, could be together -- Kikuhito wrongly believed this was blackmail"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kaede Katagiri",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Kikuhito Morizono's fiancée, age 22",
+    "attrs": {
+     "claimed_alibi": "said she was napping alone in her room; did not answer when Yurie knocked to invite her to bathe, which the inspector found suspicious",
+     "true_whereabouts": "was secretly with Sakuraba searching the house for the missing cat; concealed this to hide their relationship",
+     "true_feelings": "in love with Sakuraba, not Kikuhito, from the very beginning"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuji Sakuraba",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "Morizono family servant, age 23",
+    "attrs": {
+     "orphaned_young": true,
+     "regarded_shigematsu_as": "a father figure",
+     "physically_capable_of_balcony_climb": true,
+     "falsely_accused": "framed by the real killer, who stole his shirt and staged evidence against him; arrested on a staged deduction that was itself a trap for the real killer, then released once Kaede's alibi came out"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yurie Morizono",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "eldest Morizono daughter, age 28, usually lives abroad",
+    "attrs": {
+     "claimed_alibi": "alone, taking a bath",
+     "resemblance": "the spitting image of her late mother",
+     "relationship_to_cat": "the cat Rebecca was attached to her late mother and is wary of everyone except Mikio and Kikuhito"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Mikio Morizono",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "head of the Morizono family",
+    "attrs": {
+     "claimed_alibi": "alone in his room, waiting for Shigematsu to arrive for a planned talk that never happened",
+     "injury": "a bad leg from the car accident that killed his wife, which rules him out of any balcony climb"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Kikuhito Morizono",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "eldest Morizono son and heir, age 26; being put in charge of the family company",
+    "attrs": {
+     "claimed_alibi": "in his room reading a magazine and listening to music",
+     "fear_of_heights": "lifelong, since childhood -- publicly known, used by him to make himself look like the one suspect who COULDN'T have used the balcony",
+     "bribery_misdeeds": "involved in bribery at the company his father was handing him",
+     "believed_shigematsu_was_blackmailing_him": "wrongly believed Shigematsu would expose the bribery to Mikio unless the wedding proceeded",
+     "true_role": "the actual killer; framed Sakuraba by stealing his shirt and staging a balcony escape that never happened, since he never left the murder room at all"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Mikio Morizono's late wife (Kikuhito and Yurie's mother)",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "road accident (car crash), 4 years before present",
+     "backstory": "loved Shigematsu, but was overwhelmed by Mikio's courtship and married him instead; the parallel to Kaede and Sakuraba's situation is what drove Shigematsu to try to stop the current wedding"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Morizono mansion", "attrs": {}},
+   {"id": "l2", "name": "Crime-scene room (window rigged with the string-and-tape lock)", "attrs": {"located_in": "Morizono mansion, third floor"}},
+   {"id": "l3", "name": "Adjoining room (where the body was actually found)", "attrs": {"note": "next door to the crime-scene room; body dragged here after the stabbing"}},
+   {"id": "l4", "name": "Balcony connecting the crime-scene room and the adjoining room", "attrs": {}},
+   {"id": "l5", "name": "Garden tree below the crime-scene room balcony", "attrs": {"note": "where the bundled evidence (shirt, gloves, knife, string/tape) was thrown and later found stuck in the branches"}},
+   {"id": "l6", "name": "Kaede's room", "attrs": {}},
+   {"id": "l7", "name": "Mikio's room", "attrs": {}},
+   {"id": "l8", "name": "Bathroom (Yurie)", "attrs": {}},
+   {"id": "l9", "name": "Kikuhito's room", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Kitchen knife", "role": "weapon", "attrs": {"used_on": "Akio Shigematsu, single stab to the chest"}},
+   {"id": "o2", "name": "Bloodstained gloves", "role": "evidence", "attrs": {"worn_by_killer_to": "avoid leaving fingerprints while stabbing and dragging the body"}},
+   {"id": "o3", "name": "Sakuraba's shirt (stolen)", "role": "evidence", "attrs": {"stolen_in_advance_by_killer_to": "avoid getting his own clothes bloody, and to frame Sakuraba once the bundle was found"}},
+   {"id": "o4", "name": "Looped string with cellophane tape", "role": "tool", "attrs": {"mechanism": "taped to the window latch; pulling the string from the balcony throws the latch, then a harder pull slips the string off the tape and out through a drilled hole in the pane, sealing the room from what looks like the outside"}},
+   {"id": "o5", "name": "Chair (used to break the window)", "role": "tool", "attrs": {"used_by_killer_to": "shatter the window on cue once he saw Heiji and Ran outside, drawing attention to the room and covering the drilled hole"}},
+   {"id": "o6", "name": "Windowpane of the crime-scene room", "role": "evidence", "attrs": {"staging_flaw": "a small hole was drilled near the edge of the pane for the string trick; the pane didn't break cleanly when smashed with the chair, leaving the hole visible on a recovered shard", "additional_flaw": "a bloodstain was found on the latch, but no blood trace was found anywhere on the balcony itself -- the killer touched the latch with bloody gloves but never actually climbed out that way"}},
+   {"id": "o7", "name": "Rain shutter of the crime-scene room", "role": "tool", "attrs": {"closed_by_killer_to": "keep himself from being seen from outside while hiding behind the curtain"}},
+   {"id": "o8", "name": "Curtain in the crime-scene room", "role": "instrument", "attrs": {"used_by_killer_to": "hide in the corner of the room throughout the murder and its immediate discovery, then slip out and mingle with the crowd unnoticed"}},
+   {"id": "o9", "name": "Sakuraba's pendant", "role": "evidence", "attrs": {}},
+   {"id": "o10", "name": "Kaede's pendant", "role": "evidence", "attrs": {}},
+   {"id": "o11", "name": "Cat (Rebecca)", "role": "instrument", "attrs": {"belonged_to": "attached to Mikio's late wife; wary of everyone except Mikio and Kikuhito", "significance": "deliberately shut inside the crime-scene room by the killer so that, once it was noticed missing again, Sakuraba would be sent to search the house -- destroying his alibi"}},
+   {"id": "o12", "name": "Decoy bag placed to look like it was in Sakuraba's room", "role": "evidence", "attrs": {"trap": true, "actual_owner": "one of the visiting detectives (recurring cast, omitted as a person node)", "purpose": "bait set up by Heiji and Inspector Megure to see if the real killer would tamper with it once he thought he'd gotten away with framing Sakuraba"}},
+   {"id": "o13", "name": "Second knife Kikuhito produced from the decoy bag", "role": "evidence", "attrs": {"significance": "Kikuhito 'discovered' this knife in the decoy bag and presented it as further proof of Sakuraba's guilt; doing so proved he had guilty knowledge and sprang the trap"}}
+  ],
+  "clues": [
+   {"id": "c1", "desc": "Sakuraba and Kaede are seen wearing matching pendants, clearly bought together -- the physical detail Kazuha and Ran independently notice that first reveals the two are secretly a couple.", "clue_type": "physical"},
+   {"id": "c2", "desc": "Comparing the five suspects' physical situations -- Mikio's bad leg, Kaede's and Yurie's unsuitability, Kikuhito's declared fear of heights -- leaves Sakuraba as the only one nimble enough to have used the balcony escape route; used by Heiji to build the (deliberately false, staged) case against Sakuraba.", "clue_type": "behavioral"},
+   {"id": "c3", "desc": "A bloodstain was deliberately left on the window latch, but there is no blood trace anywhere on the balcony itself -- if the killer really climbed down from the balcony in bloody gloves, some trace should be there. The contradiction proves the balcony escape was staged and the killer never left the crime-scene room at all.", "clue_type": "forensic"}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p6", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p6", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p7", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p6", "to": "p7", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p5", "to": "p7", "relation_type": "widower_of"},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "father_figure_to"},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p7", "to": "p1", "relation_type": "romantically_involved_with"},
+  {"type": "relationship", "from": "p1", "to": "p7", "relation_type": "romantically_involved_with"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "romantically_involved_with"},
+  {"type": "relationship", "from": "p3", "to": "p2", "relation_type": "romantically_involved_with"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "arranged_marriage_of"},
+
+  {"type": "courts", "from": "p5", "to": "p7", "order": 0, "temporal_frame": "backstory", "years_before_present": null, "detail": "Mikio mistook Shigematsu's visits with his wife-to-be as visits for himself and proposed; overwhelmed, she gave in and married Mikio instead of Shigematsu"},
+  {"type": "was_at", "from": "p7", "to": "l1", "order": 0, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 0, "temporal_frame": "backstory"},
+
+  {"type": "confronts", "from": "p1", "to": "p6", "order": 3, "temporal_frame": "backstory", "detail": "Shigematsu, having realized Kaede loved Sakuraba and not Kikuhito, moved to quietly call off the wedding he himself had originally arranged"},
+
+  {"type": "has_motive_against", "from": "p6", "to": "p1", "motive_type": "feared_shigematsu_would_expose_his_company_bribery_if_the_wedding_was_called_off"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "resentment_over_shigematsu_arranging_kaede's_marriage_to_a_rival (false accusation used by Heiji as part of a staged trap; Sakuraba did not actually hold this motive)"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 11, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 11, "temporal_frame": "present"},
+
+  {"type": "confronts", "from": "p5", "to": "p1", "order": 12, "temporal_frame": "present", "detail": "Mikio asks Shigematsu to bring the camera, then to come by his room later that night for a private talk -- anchoring Mikio's own claimed alibi"},
+  {"type": "confronts", "from": "p5", "to": "p3", "order": 13, "temporal_frame": "present", "detail": "Mikio orders Sakuraba to go find the missing cat, Rebecca"},
+
+  {"type": "steals", "from": "p6", "to": "o3", "order": 14, "temporal_frame": "present", "circumstance_tags": ["frame_up"]},
+  {"type": "traps", "from": "p6", "to": "o11", "order": 14, "temporal_frame": "present", "circumstance_tags": ["frame_up", "locked_room"], "detail": "shuts the cat in the crime-scene room so Sakuraba will be sent to search for it again, ruining his alibi window"},
+  {"type": "conceals_self_behind", "from": "p6", "to": "o8", "order": 14, "temporal_frame": "present", "circumstance_tags": ["locked_room"]},
+  {"type": "closes", "from": "p6", "to": "o7", "order": 14, "temporal_frame": "present", "detail": "closes the rain shutter so he can't be seen hiding behind the curtain from outside"},
+  {"type": "drills_hole_in", "from": "p6", "to": "o6", "order": 14, "temporal_frame": "present", "circumstance_tags": ["locked_room"]},
+  {"type": "was_at", "from": "p6", "to": "l2", "order": 14, "temporal_frame": "present"},
+
+  {"type": "kills", "from": "p6", "to": "p1", "order": 15, "temporal_frame": "present", "method": "single stab to the chest with a kitchen knife", "circumstance_tags": ["locked_room", "staged_alibi", "cover_up"]},
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 15, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 15, "temporal_frame": "present", "detail": "actually with Sakuraba searching for the cat, concealed at the time to hide their relationship"},
+  {"type": "was_at", "from": "p2", "to": "l6", "order": 15, "temporal_frame": "present", "detail": "claimed alibi: said she was napping alone in her room; did not answer when Yurie knocked to invite her to bathe"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 15, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l8", "order": 15, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l7", "order": 15, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l9", "order": 15, "temporal_frame": "present", "detail": "claimed alibi: said he was in his room reading a magazine and listening to music"},
+
+  {"type": "drags_body_of", "from": "p6", "to": "p1", "order": 16, "temporal_frame": "present", "circumstance_tags": ["locked_room"]},
+  {"type": "was_at", "from": "p1", "to": "l3", "order": 16, "temporal_frame": "present"},
+
+  {"type": "leaves_evidence", "from": "p6", "to": "o1", "order": 17, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p6", "to": "o2", "order": 17, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p6", "to": "o3", "order": 17, "temporal_frame": "present"},
+  {"type": "located_in", "from": "o1", "to": "l5"},
+  {"type": "located_in", "from": "o2", "to": "l5"},
+  {"type": "located_in", "from": "o3", "to": "l5"},
+
+  {"type": "stages_alibi_using", "from": "p6", "to": "o4", "order": 18, "temporal_frame": "present", "circumstance_tags": ["locked_room"]},
+
+  {"type": "stages_alibi_using", "from": "p6", "to": "o5", "order": 19, "temporal_frame": "present", "circumstance_tags": ["locked_room", "staged_alibi"], "detail": "breaks the window with a chair once he notices Heiji and Ran outside, to draw them in and cover the drilled hole"},
+  {"type": "conceals_self_behind", "from": "p6", "to": "o8", "order": 19, "temporal_frame": "present"},
+
+  {"type": "confronts", "from": "p6", "to": "p3", "order": 20, "temporal_frame": "present", "detail": "after the body is discovered, Kikuhito is deliberately rude and goads Sakuraba into throwing a punch, giving cover for the earlier window-break"},
+  {"type": "was_at", "from": "p6", "to": "l3", "order": 20, "temporal_frame": "present", "detail": "emerges from behind the curtain and mingles with the crowd, pretending he'd just arrived like everyone else"},
+
+  {"type": "implicates", "from": "o1", "to": "p3"},
+  {"type": "implicates", "from": "o3", "to": "p3"},
+
+  {"type": "regarding", "from": "c1", "to": "o9"},
+  {"type": "regarding", "from": "c1", "to": "o10"},
+  {"type": "owns", "from": "p3", "to": "o9"},
+  {"type": "owns", "from": "p2", "to": "o10"},
+  {"type": "implicates", "from": "o9", "to": "p2"},
+  {"type": "implicates", "from": "o10", "to": "p3"},
+
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "p4"},
+  {"type": "regarding", "from": "c2", "to": "p6"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+
+  {"type": "located_in", "from": "o12", "to": "l1"},
+  {"type": "tampers_with", "from": "p6", "to": "o12", "order": 29, "temporal_frame": "present", "circumstance_tags": ["frame_up", "trap_triggered"]},
+  {"type": "plants_evidence", "from": "p6", "to": "o13", "order": 30, "temporal_frame": "present", "circumstance_tags": ["frame_up", "trap_triggered"]},
+  {"type": "implicates", "from": "o13", "to": "p6"},
+
+  {"type": "regarding", "from": "c3", "to": "o6"},
+  {"type": "regarding", "from": "c3", "to": "l4"},
+  {"type": "implicates", "from": "c3", "to": "p6"}
+ ],
+ "label": {
+  "murderer_id": "p6"
+ }
+}

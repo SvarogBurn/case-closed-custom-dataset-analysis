@@ -1,0 +1,480 @@
+{
+ "case_id": "ep021_on_location_tv_drama_murder_case",
+ "episode_number": "21",
+ "title": "On Location, TV Drama Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/On_Location,_TV_Drama_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0021.txt (full episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. Idol Yoko Okino, though not strictly detective-cast, is also omitted per the v1 scaffold's own convention -- she is a recurring franchise character present at the shoot but plays no causal role in the crime. The murder (Taeko, heat-of-the-moment stabbing) and the evidence tampering (Shimazaki, her fiance, disguising himself as the victim and altering the dying message afterward) are two distinct actors with two distinct sets of edges -- Shimazaki has no has_motive_against edge because he was not trying to kill Anzai, only to protect Taeko after the fact. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Morio Anzai",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "assistant photographer on the TV drama shoot",
+    "attrs": {
+     "died_of": "single stab wound from a prop knife, during a struggle",
+     "character": "blackmailed at least two other crew/cast members using material from his past and photos he'd taken"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Taeko Mamegaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "continuity checker on the TV drama shoot",
+    "attrs": {
+     "backstory": "as a delinquent teenager after her parents' accidental death, she ran with a group that included Anzai; she let slip the location/value of a shrine statue, which Anzai then stole, and a shrine caretaker (Sugiyama) took the blame and killed himself, which she has felt guilty over ever since",
+     "confession": "brought a knife to confront Anzai over his renewed blackmail and states the stabbing happened when he lunged at her -- she says she never meant to kill him"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yuji Shimazaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "assistant director on the TV drama shoot",
+    "attrs": {
+     "role_in_case": "Taeko's fiance; found her leaving the scene, grew suspicious, followed, and discovered Anzai's body -- then tampered extensively with the evidence to protect her, at one point falsely confessing to the murder himself"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shingo Nachi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "lead actor on the TV drama shoot",
+    "attrs": {
+     "note": "framed by the altered dying message and genuinely being blackmailed by Anzai, making him the prime suspect for most of the episode"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kyusaku Mamegaki",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "keeper of Beika Shrine",
+    "attrs": {
+     "family_tie": "Taeko's grandfather"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Ritsuko Hagiyama",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "actress",
+    "attrs": {
+     "note": "married; photographed leaving a hotel with Nachi, which is what Anzai used to blackmail him"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Sugiyama",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "was in charge of the shrine storehouse",
+    "attrs": {
+     "died_of": "suicide",
+     "circumstance": "felt responsible after a valuable statue was stolen from the storehouse he managed and took his own life"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Taketoshi Gondo",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "director of the TV drama",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Shrine",
+    "attrs": {
+     "role_in_case": "filming location by day; murder scene that night"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Inn where the cast and crew stayed",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Teitan Hotel",
+    "attrs": {
+     "note": "Nachi stayed here separately from the rest of the cast/crew"
+    }
+   },
+   {
+    "id": "l4",
+    "name": "Shrine storehouse",
+    "attrs": {
+     "role_in_case": "site of the backstory statue theft"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Prop knife from the drama shoot",
+    "role": "weapon",
+    "attrs": {
+     "staging_flaw": "someone wiped it clean of fingerprints without taking it away, which is inconsistent with an opportunistic killer trying to avoid identification"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Dying message written in blood",
+    "role": "evidence",
+    "attrs": {
+     "original_content": "\"Mame\" (pointing at Mamegaki)",
+     "tampering": "extra strokes added afterward, in a visibly different hand, changing it to read \"leading man\" (pointing at Nachi, the drama's lead actor)",
+     "staging_flaw": "the added strokes on two characters are drawn with the wrong stroke count/order for natural handwriting, betraying that they were added separately from the original message"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Victim's wristwatch",
+    "role": "evidence",
+    "attrs": {
+     "trick": "removed from the body, carried back to the inn to trigger its alarm (faking that the victim was still alive later than he was), wiped clean of blood, then returned to the body",
+     "staging_flaw": "the victim's entire left arm is covered in blood but the watch on that wrist has none at all"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Victim's vest and hat",
+    "role": "tool",
+    "attrs": {
+     "use": "worn by the tamperer to impersonate the victim leaving the inn alive, then dropped near the body afterward"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Blackmail photos and negatives",
+    "role": "evidence",
+    "attrs": {
+     "content": "photos of Nachi leaving a hotel with the married actress Ritsuko Hagiyama"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Stolen shrine statue",
+    "role": "evidence",
+    "attrs": {
+     "history": "an expensive statue stolen from the shrine storehouse years before the murder, the origin of the blackmail material Anzai held over Taeko"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Close inspection of the dying message shows the strokes forming \"leading man\" are inconsistent -- some characters have extra strokes drawn with the wrong stroke order for natural handwriting, over what was originally a different, shorter word -- proving the message was altered after it was first written.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "The victim's entire left arm and sleeve are soaked in blood, but his wristwatch on that same wrist has none at all -- the watch must have been removed from the body, taken elsewhere, wiped, and returned, which is how the apparent time of death was pushed later than the real one.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Subtracting the added strokes from the dying message recovers the original word, \"Mame\" -- pointing at Taeko Mamegaki rather than the framed Shingo Nachi.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cD",
+    "desc": "The murder scene shows a wide spray of blood around the body, meaning whoever stabbed the victim at close range would be heavily bloodstained -- but Shimazaki's clothes, when he confesses to the killing, have not a single drop on them, proving his confession is false and someone else actually struck the fatal blow.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "grandchild_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p6",
+   "relation_type": "affair_with"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p5",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "former_associate_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "colleague_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "colleague_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p8",
+   "to": "p4",
+   "relation_type": "colleague_of"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o6"
+  },
+  {
+   "type": "steals",
+   "from": "p1",
+   "to": "o6",
+   "temporal_frame": "backstory",
+   "detail": "stole the statue from the shrine storehouse after Taeko let slip its value/location",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "l4",
+   "temporal_frame": "backstory",
+   "detail": "the statue was kept in the shrine storehouse before Anzai stole it"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p8",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p2",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "renews his threat to expose Taeko's role in the shrine statue theft and Sugiyama's resulting suicide unless paid"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p4",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "threatens to release photos of Nachi's affair with Ritsuko Hagiyama unless paid",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["unverified_alibi"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "brings a knife and threatens Anzai to stop the blackmail for good"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "method": "stabbed with the prop knife from the drama's set, during a struggle when Anzai lunged at her",
+   "circumstance_tags": ["heat_of_the_moment"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "dying, writes \"Mame\" in his own blood"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "grew suspicious of Taeko's behavior, pretended to go buy cigarettes, and followed her to the shrine, finding Anzai already dead"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p3",
+   "to": "o2",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "adds strokes to change \"Mame\" into \"leading man\", framing Nachi instead of exposing Taeko"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p3",
+   "to": "o1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "wipes fingerprints from the knife"
+  },
+  {
+   "type": "tampers_with",
+   "from": "p3",
+   "to": "o3",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "removes the victim's watch from the body and wipes it clean of blood"
+  },
+  {
+   "type": "fakes_time_of_death_of",
+   "from": "p3",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "method": "dons the victim's vest and hat, returns to the inn to trigger the victim's watch alarm in his room and be seen leaving disguised as him, then rushes back to the shrine, replaces the watch on the body, and drops the vest and hat nearby",
+   "circumstance_tags": ["cover_up", "staged_alibi"]
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p3",
+   "to": "o4",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "blackmail_over_a_stolen_shrine_statue_and_a_related_suicide_from_her_past"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "blackmail_over_photographic_evidence_of_an_affair (red herring -- strongest apparent motive, and directly framed by the altered dying message, but not the actual killer)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

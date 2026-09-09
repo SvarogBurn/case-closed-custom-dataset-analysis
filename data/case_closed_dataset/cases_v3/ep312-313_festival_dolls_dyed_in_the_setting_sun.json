@@ -1,0 +1,152 @@
+{
+ "case_id": "ep312-313_festival_dolls_dyed_in_the_setting_sun",
+ "episode_number": "312-313",
+ "title": "Festival Dolls Dyed in the Setting Sun",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Festival_Dolls_Dyed_in_the_Setting_Sun",
+ "subtitle_source": ["subs_resolved/0312.txt", "subs_resolved/0313.txt"],
+ "schema_version": "v3",
+ "notes": "Non-murder case (theft, no human victim); label.murderer_id is reused per dataset convention to mean 'culprit_id' (the thief). Detective Boys and other recurring cast (Conan, Ayumi, Genta, Mitsuhiko, Haibara, the unnamed inspector/officer) omitted by convention -- they narrate/assist but are not suspects, victims, or witnesses under investigation. Also omitted as orthogonal to this case: the unrelated Haibara/Miyano-family backstory dialogue that appears mid-episode (about her father Miyano Atsushi) -- it does not bear on the doll-festival theft. No `event` node type: every action is a directly typed edge between the entities involved. Old low-fidelity file (cases/ep312-313...) correctly named all four suspects and correctly identified Yayoi Kanno (its s2) as the culprit -- this rebuild CONFIRMS that call, unlike several other rebuilds where the old culprit was wrong. One factual correction versus the old file: it described the scroll as hidden 'under the clothing of a display doll'; the transcript instead shows it was hidden under the red felt cloth *on top of* the 7-tier doll stand, reached by climbing the tiers like a staircase -- the old file's clue text conflated the doll-displacement clue with the hiding method. The old file also collapsed the mystery into a single clue (Kyoto doll-arrangement convention); the actual fair-play chain has five distinct comparative facts (photo comparison, physical-inconsistency reasoning, the Kyoto-vs-Tokyo convention, staged-burglary behavioral tells, and the fax-timestamp window), all modeled here as separate clue nodes. Per CONSTRUCTION.md's temporal-fields note, order/temporal_frame/years_before_present are omitted throughout. case_type: theft.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yayoi Kanno",
+    "aliases": ["Grandmother Kanno"],
+    "roles": ["suspect"],
+    "occupation": "homemaker, family matriarch",
+    "attrs": {
+     "hometown": "Kyoto",
+     "household_role": "mother-in-law of Setsuko; her son (unnamed, away on business) is the scroll's formal owner",
+     "alibi": "claims she was alone in the apartment, then briefly stepped out to buy sugar",
+     "no_alibi": true,
+     "backstory_husband_death": "her husband (Setsuko's late father-in-law) died in a storm at sea shortly after she secretly sold the companion Wind God scroll; she has believed since then that losing one of the pair scrolls brings misfortune"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Setsuko Kanno",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "housewife",
+    "attrs": {
+     "household_role": "daughter-in-law, married to the absent son who owns the scroll",
+     "alibi": "says she had a separate errand and left her purse behind; weak alibi"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Mizutaka Tsumagari",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "art collector, neighbor in room 503",
+    "attrs": {
+     "motive_detail": "already owns the companion Wind God scroll and offered 40 million yen, double the scroll's appraised value, to complete the pair",
+     "alibi": "says he went looking for Mie outside the building; no one can confirm it"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yoshiharu Mie",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "antique appraiser",
+    "attrs": {
+     "hired_by": "Mizutaka Tsumagari",
+     "alibi": "says he left to buy cigarettes after forgetting his phone; unconfirmed"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Kanno apartment tatami room", "attrs": {"contents": "7-tier Hina doll display and the hanging Thunder God scroll"}},
+   {"id": "l2", "name": "Kanno apartment living room", "attrs": {"contents": "fax machine"}},
+   {"id": "l3", "name": "Kanno apartment bedroom", "attrs": {"contents": "cabinet with Setsuko's purse; closet with empty doll boxes"}},
+   {"id": "l4", "name": "Kanno apartment balcony", "attrs": {"floor": 6, "staging_flaw": "curtains would flap and reveal an intruder looking in from outside; a real burglar wouldn't risk it"}},
+   {"id": "l5", "name": "Tsumagari's apartment", "attrs": {"unit": "room 503, same building"}},
+   {"id": "l6", "name": "Supermarket", "attrs": {}},
+   {"id": "l7", "name": "Kanno building corridor", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Scroll of the Thunder God", "role": "evidence", "attrs": {"artist": "Tetsuzan, Edo period", "appraised_value_yen": 20000000, "stolen": true}},
+   {"id": "o2", "name": "Scroll of the Wind God", "role": "evidence", "attrs": {"artist": "Tetsuzan, Edo period", "note": "companion piece to the Thunder God scroll; sold off by Yayoi years earlier, now owned by Tsumagari"}},
+   {"id": "o3", "name": "Living-room fax machine", "role": "evidence", "attrs": {"all_pages_timestamped": "3:28 PM", "sender": "the family's absent husband/son"}},
+   {"id": "o4", "name": "Ayumi's digital camera", "role": "evidence", "attrs": {"content": "photos of the doll display taken before and after the shopping trip"}},
+   {"id": "o5", "name": "7-tier Hina doll stand", "role": "instrument", "attrs": {"hiding_spot": "beneath the red felt covering the top tier, reachable only by climbing the tiers like stairs", "displacement": "Emperor and Empress dolls swapped and the other 13 dolls shifted slightly"}},
+   {"id": "o6", "name": "Setsuko's purse", "role": "evidence", "attrs": {"found": "left in plain sight on the bedroom cabinet, untouched"}},
+   {"id": "o7", "name": "Mie's cell phone", "role": "evidence", "attrs": {"forgotten_in": "the living room, used as his pretext to return"}}
+  ],
+  "clues": [
+   {"id": "cA", "desc": "Camera photos show the Emperor/Empress dolls swapped and 13 others shifted between the two shopping-trip photos", "clue_type": "physical"},
+   {"id": "cB", "desc": "Only the top two dolls were swapped, not knocked to the floor -- too controlled for an accidental collision, consistent with someone deliberately climbing the tiers rather than crashing into the stand", "clue_type": "behavioral"},
+   {"id": "cC", "desc": "The swap matches the old Kyoto convention (male doll on the left) that modern Tokyo stores reverse -- only someone raised in the old tradition would default to it", "clue_type": "testimonial"},
+   {"id": "cD", "desc": "A 'burglar' ignored a fax machine mid-delivery, left a purse in plain sight, ransacked only two rooms, and took only the one item whose price they already knew", "clue_type": "behavioral"},
+   {"id": "cE", "desc": "Fax pages all timestamped 3:28 PM were still arriving when the group left and had finished by the time they returned near 3:40 PM, narrowing the theft to the ten minutes Yayoi Kanno was home alone", "clue_type": "forensic"}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "daughter_in_law_of"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "employer_of"},
+
+  {"type": "owns", "from": "p1", "to": "o1", "detail": "acts as household guardian of the scroll; formally owned by her absent son"},
+  {"type": "owns", "from": "p3", "to": "o2"},
+  {"type": "owns", "from": "p2", "to": "o6"},
+  {"type": "owns", "from": "p4", "to": "o7"},
+  {"type": "located_in", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o3", "to": "l2"},
+  {"type": "located_in", "from": "o5", "to": "l1"},
+  {"type": "located_in", "from": "o6", "to": "l3"},
+  {"type": "located_in", "from": "o7", "to": "l2"},
+
+  {"type": "sells", "from": "p1", "to": "o2", "circumstance_tags": ["backstory", "secret", "cover_up"], "detail": "sold the companion Wind God scroll without telling her husband to cover the family's finances when her son married; he died in a storm at sea days later, which she took as a curse"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "coveted_scroll_refused_sale"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "coveted_scroll_refused_sale"},
+
+  {"type": "attempts_to_buy", "from": "p3", "to": "o1", "detail": "offered 40 million yen, double the appraised value"},
+  {"type": "appraises", "from": "p4", "to": "o1"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p1", "to": "l4"},
+  {"type": "was_at", "from": "p1", "to": "l6"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l6"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l7"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "was_at", "from": "p4", "to": "l7"},
+
+  {"type": "steals", "from": "p1", "to": "o1", "circumstance_tags": ["staged_robbery", "insider_job", "cover_up"], "detail": "planned to reclaim and re-hide the scroll after the police left, to explain its importance to her son herself rather than let it be sold"},
+  {"type": "stages_burglary_scene_in", "from": "p1", "to": "l2"},
+  {"type": "stages_burglary_scene_in", "from": "p1", "to": "l3"},
+  {"type": "stages_alibi_using", "from": "p1", "to": "l4", "detail": "left the balcony door suggesting an external entry route via rope from the roof"},
+  {"type": "hides", "from": "p1", "to": "o1", "detail": "stashed upside-down under the red felt atop the doll stand, climbing the tiers like stairs"},
+  {"type": "disturbs", "from": "p1", "to": "o5", "detail": "swapped Emperor/Empress and shifted the other 13 dolls while climbing to hide the scroll"},
+
+  {"type": "leaves_evidence", "from": "p1", "to": "o5"},
+  {"type": "implicates", "from": "o5", "to": "p1"},
+
+  {"type": "regarding", "from": "cA", "to": "o4"},
+  {"type": "regarding", "from": "cA", "to": "o5"},
+  {"type": "implicates", "from": "cA", "to": "p1"},
+
+  {"type": "regarding", "from": "cB", "to": "o5"},
+  {"type": "implicates", "from": "cB", "to": "p1"},
+
+  {"type": "regarding", "from": "cC", "to": "o5"},
+  {"type": "implicates", "from": "cC", "to": "p1"},
+
+  {"type": "regarding", "from": "cD", "to": "o3"},
+  {"type": "regarding", "from": "cD", "to": "o6"},
+  {"type": "implicates", "from": "cD", "to": "p1"},
+
+  {"type": "regarding", "from": "cE", "to": "o3"},
+  {"type": "implicates", "from": "cE", "to": "p1"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

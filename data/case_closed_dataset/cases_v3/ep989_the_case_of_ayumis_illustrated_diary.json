@@ -1,0 +1,189 @@
+{
+ "case_id": "ep989_the_case_of_ayumis_illustrated_diary",
+ "episode_number": "989",
+ "title": "The Case of Ayumi's Illustrated Diary",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Case_of_Ayumi%27s_Illustrated_Diary",
+ "subtitle_source": "subs_resolved/0989.txt (372 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan/Edogawa Conan, Ayumi Yoshida, Genta Kojima, Mitsuhiko Tsuburaya, Ai Haibara, Detective Takagi) omitted by convention, as with other cases in this dataset. Not a murder: case_type is attempted_burglary/jewel theft -- Fujioka is caught mid-escape, so the watch is never actually gotten away with. Correction vs. the old `cases/` file: it spelled the cafe manager's given name 'Sadaharu Nishimura'; the transcript's on-screen name caption at 0:04:20 reads 'Nishimura Kidaharu (65) Cafe Manager', corrected here to 'Kidaharu Nishimura'. Otherwise the old file's stated culprit (Yuji Fujioka) and core mechanism (a tunnel dug from the neighboring produce store into the jewelry store, timed to overlap with unrelated cafe renovation noise) held up against the full transcript -- no culprit reversal or backwards clue found for this episode. Added detail not present in the old file: the fake Hawaii-prize-win phone deception Fujioka used to clear the Ogino family out of the produce store for 5 days; the diary-illustration clue (Michiyo Ogino drawn together with the three adjoining shops) that is the actual episode hook and title reference; Fujioka's unprompted, oddly precise knowledge of the watch's black-market resale price; and the courier company's confirmation that Fujioka missed exactly 5 days of work, matching both the tunnel-digging time and the Ogino family's trip window.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yuji Fujioka",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "courier, Cheetah Transport",
+    "attrs": {
+     "age": 28,
+     "plan": "used cafe renovation noise next door as cover to dig an underground tunnel from the produce store on the jewelry store's opposite side, then break in and steal the watch",
+     "identified_by": [
+      "knew the watch's accurate black-market resale price unprompted, before it was public knowledge",
+      "missed 5 days of work at Cheetah Transport, matching the tunnel-digging window",
+      "was seen having a long conversation in front of the jewelry store, suggesting detailed knowledge of the area"
+     ]
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Keita Kaneko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "jewelry store proprietor",
+    "attrs": {
+     "age": 57,
+     "suspicion_theory": "floated by Haibara as a possibility: could stage a robbery of his own store for the insurance payout (unconfirmed, not pursued further)"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kidaharu Nishimura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "cafe manager, Cafe Haronbo",
+    "attrs": {
+     "age": 65,
+     "suspicion_theory": "his cafe's renovation was happening at the same time as the theft, raising suspicion the noise was cover for his own break-in; in fact Fujioka merely exploited noise from Kumazawa's construction crew that Nishimura had hired"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Masako Ogino",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "grocer, Ogino Produce Store",
+    "attrs": {
+     "age": 38,
+     "suspicion_theory": "suspected simply for running the store adjoining the jewelry store on the opposite side from the cafe",
+     "deceived": "lured away with her family to Hawaii for a 5-day trip by a fake prize-win call, after Fujioka learned from her own talk about wanting to win a trip that she loved sweepstakes; this cleared her store for the tunnel dig"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Michiyo Ogino",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "elementary school student",
+    "attrs": {
+     "relation_to_case": "Ayumi's schoolmate from the class next door and Masako Ogino's daughter; her figure in Ayumi's diary illustration, drawn alongside the three neighboring shops, revealed the shops' adjoining layout and helped Conan identify the culprit"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Jewelry Kaneko",
+    "attrs": {"note": "small-town jewelry store displaying the rare watch in its front window"}
+   },
+   {
+    "id": "l2",
+    "name": "Ogino Produce Store",
+    "attrs": {"note": "grocery shop directly opposite the jewelry store; tunnel origin point"}
+   },
+   {
+    "id": "l3",
+    "name": "Cafe Haronbo",
+    "attrs": {"note": "cafe next to the jewelry store, undergoing renovation by Kumazawa's engineering firm"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Blue Diamond Limited Tourbillon Cage No. 3",
+    "role": "contraband",
+    "attrs": {
+     "maker": "Soumillon",
+     "rarity": "one of only five in the world",
+     "estimated_value": "at least 70 million (several times more to a collector)"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Underground tunnel",
+    "role": "tool",
+    "attrs": {"origin": "Ogino Produce Store", "destination": "Jewelry Kaneko", "dig_time": "5 days"}
+   },
+   {
+    "id": "o3",
+    "name": "\"Temporarily Closed\" notice (Ogino Produce Store)",
+    "role": "evidence",
+    "attrs": {"dates": "11/30 to 12/8", "stated_reason": "family vacation"}
+   },
+   {
+    "id": "o4",
+    "name": "Ayumi's illustrated diary",
+    "role": "evidence",
+    "attrs": {
+     "content": "illustration of Michiyo Ogino drawn together with three neighboring shops in a row",
+     "significance": "revealed that the jewelry store, cafe, and produce store were directly adjoining, prompting Conan to suspect someone with detailed knowledge of that layout"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The tunnel-digging noise was deliberately timed to overlap with the unrelated cafe renovation noise next door, requiring advance knowledge of the renovation schedule",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c2",
+    "desc": "Ayumi's diary drawing of Michiyo Ogino with three shops in a row shows the jewelry store, cafe, and produce store are directly adjoining -- a layout detail an outsider wouldn't casually know",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Fujioka named the watch's black-market resale price -- several times market value -- unprompted, before any public appraisal had been discussed",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c4",
+    "desc": "Cheetah Transport confirms Fujioka missed exactly 5 days of work, matching both the tunnel's dig time and the Ogino family's 5-day Hawaii trip window",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "child_of"},
+  {"type": "owns", "from": "p2", "to": "l1"},
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p4", "to": "l2"},
+  {"type": "manages", "from": "p3", "to": "l3"},
+  {"type": "digs", "from": "p1", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+  {"type": "leads_to", "from": "o2", "to": "l1"},
+  {"type": "deceives", "from": "p1", "to": "p4", "detail": "fake phone call claiming she'd won a trip to Hawaii, to clear her family out of the produce store for the dig"},
+  {"type": "attempts_to_steal", "from": "p1", "to": "o1", "circumstance_tags": ["caught_in_act"]},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l2"},
+  {"type": "owns", "from": "p4", "to": "o3"},
+  {"type": "located_in", "from": "o3", "to": "l2"},
+  {"type": "depicts", "from": "o4", "to": "p5"},
+  {"type": "depicts", "from": "o4", "to": "l1"},
+  {"type": "depicts", "from": "o4", "to": "l2"},
+  {"type": "depicts", "from": "o4", "to": "l3"},
+  {"type": "implicates", "from": "o2", "to": "p1"},
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "l3"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o4"},
+  {"type": "regarding", "from": "c2", "to": "p5"},
+  {"type": "regarding", "from": "c2", "to": "l1"},
+  {"type": "regarding", "from": "c2", "to": "l2"},
+  {"type": "regarding", "from": "c2", "to": "l3"},
+  {"type": "implicates", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "o1"},
+  {"type": "implicates", "from": "c4", "to": "p1"},
+  {"type": "regarding", "from": "c4", "to": "o3"},
+  {"type": "regarding", "from": "c4", "to": "l2"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

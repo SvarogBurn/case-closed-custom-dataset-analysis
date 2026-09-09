@@ -1,0 +1,405 @@
+{
+ "case_id": "ep158_the_silent_loop_line",
+ "episode_number": "158",
+ "title": "The Silent Loop Line",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Silent_Loop_Line",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0158.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Conan, Kogoro, Ran, Inspector Megure, Officer Takagi) omitted by convention. No `event` node type: actions are direct typed edges. Transcript spells the victim's given name 'Kiyoumi' in dialogue; kept as 'Kiyomi Hashimoto' per the v1 scaffold's romanization, noted as an alias. Two red herrings survive from the group interrogation scene: Kurata's rejected romantic pursuit of the victim, and Kawai's accusation that the victim plagiarized her ad designs -- both raised on-screen as motives before being set aside for lack of opportunity. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Seiji Kurata",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "advertisement designer",
+    "attrs": {
+     "note": "repeatedly gave the victim gifts and pursued her romantically; she turned him down each time"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Shizuka Kawai",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "advertisement designer",
+    "attrs": {
+     "note": "once accused the victim of plagiarizing her ad designs"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yukiko Mori",
+    "aliases": [],
+    "roles": [
+     "suspect",
+     "witness"
+    ],
+    "occupation": "advertisement designer",
+    "attrs": {
+     "note": "youngest of the four coworkers; deliberately made a work mistake the day before to force everyone into Sunday overtime together, setting up the alibi dinner"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kiyomi Hashimoto",
+    "aliases": [
+     "Kiyoumi"
+    ],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "advertisement designer",
+    "attrs": {
+     "died_of": "poisoned pin (South American blow-dart poison) hidden under a headphone sponge cover, pierced her ear when she put the headphones on",
+     "died_where": "alone in the second train car of the Kanjo loop line; found when the train looped back to where she boarded"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kanjo (JR Yamanote) loop line train, second car",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Nibangai Station platform",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Restaurant used for the group's alibi dinner",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Advertising company office",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Poisoned headphones",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "a pin coated in fast-acting South American blow-dart poison, hidden under the headphone's foam ear cover; pierced the wearer's ear on contact",
+     "acquired": "the culprit said she obtained the poison a few days earlier on an overseas trip",
+     "staging_flaw": "one earpiece was snapped when the culprit yanked the headphones off the body, which had stiffened with rigor mortis and was pinned between the victim's shoulder and the train wall"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Yukiko Mori's MD player",
+    "role": "instrument",
+    "attrs": {
+     "note": "lent to the victim in place of her own, broken player, with the poisoned headphones already attached"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "MD disc inside the loaned player, with a cut/obscured label",
+    "role": "evidence",
+    "attrs": {
+     "hidden_message": "'Thank you, Yukiko. -- Kiyomi', handwritten in pink ballpoint pen, partly cut off by the label trim",
+     "significance": "the disc was labeled with that day's date, contradicting Mori's claim that she had not lent Kiyomi anything that day"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Kiyomi's own MD player",
+    "role": "evidence",
+    "attrs": {
+     "note": "broken earlier that day when Mori dropped it, creating the pretext to lend her the rigged replacement"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Yukiko Mori's handkerchief",
+    "role": "tool",
+    "attrs": {
+     "note": "used to pull the poisoned pin out of the body without leaving fingerprints; the pin itself was never recovered"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Victim's pink ballpoint pen",
+    "role": "evidence",
+    "attrs": {
+     "note": "ink matched the handwriting on the MD disc's hidden thank-you message"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Label-ink comparative clue: pink ink visible along the trimmed edge of the MD disc's label matches the pink ballpoint pen found in the victim's purse, revealing a hidden handwritten message ('Thank you, Yukiko') that the disc's outward label was cut to hide.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "Retrieval-struggle clue: an unusual pressure mark/imprint from the headphone jack was left on the victim's arm, her shirt collar had been jerked upward, and one headphone earpiece was snapped -- consistent with someone forcibly and hurriedly pulling the headphones off a rigor-mortis-stiffened body rather than the victim removing them herself.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l4",
+   "order": 0,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "damages",
+   "from": "p3",
+   "to": "o4",
+   "order": 0,
+   "temporal_frame": "present",
+   "detail": "dropped and broke Kiyomi's MD player, giving herself a pretext to lend a replacement",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "gives",
+   "from": "p3",
+   "to": "p4",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "lent her own MD player with the pre-poisoned headphones attached, in place of the broken one",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "kills",
+   "from": "p3",
+   "to": "p4",
+   "order": 2,
+   "temporal_frame": "present",
+   "method": "poisoned pin hidden in the headphone sponge cover pierced her ear when she put them on",
+   "circumstance_tags": [
+    "premeditated",
+    "staged_random_attack"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l3",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "used the group alibi dinner as cover; briefly excused herself claiming she wanted to buy juice"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "boarded the second car, having timed the loop line's ~70-minute circuit to know the body would be back at the boarding station"
+  },
+  {
+   "type": "recovers_weapon_from",
+   "from": "p3",
+   "to": "p4",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "pulled the poisoned headphones off the rigor-mortis-stiffened body, snapping an earpiece and jerking the collar",
+   "circumstance_tags": [
+    "cover_up"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p3",
+   "to": "o1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "uses",
+   "from": "p3",
+   "to": "o5",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "used the handkerchief to remove and dispose of the poison pin without leaving fingerprints"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o6"
+  },
+  {
+   "type": "written_by",
+   "from": "o3",
+   "to": "p4"
+  },
+  {
+   "type": "inscribed_to",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p3"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p4",
+   "motive_type": "revenge (the victim had taken her boyfriend; the murder was deliberately timed to his birthday)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p4",
+   "motive_type": "romantic_rejection (red herring; had pursued her with gifts and been repeatedly turned down)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p4",
+   "motive_type": "professional_grievance (red herring; accused the victim of plagiarizing her ad designs)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

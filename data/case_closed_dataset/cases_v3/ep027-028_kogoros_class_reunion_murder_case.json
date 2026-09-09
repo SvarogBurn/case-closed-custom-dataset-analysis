@@ -1,0 +1,597 @@
+{
+ "case_id": "ep027-028_kogoros_class_reunion_murder_case",
+ "episode_number": "27-28",
+ "title": "Kogoro's Class Reunion Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Kogoro%27s_Class_Reunion_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0027.txt, case_closed_dataset/subs_resolved/0028.txt (full two-part episode transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. Two-parter: part 1 (ep027) sets up the apparent suicide and the false ~3:00 PM time of death; part 2 (ep028) reveals the real ~6:30 PM murder, timed to the fireworks show, and the exercise-accelerated-rigor-mortis trick (explicitly compared in-dialogue to the legend of the warrior Benkei dying on his feet). Honest gap: this episode's transcript gives no stated motive or threat from Jun Omura, Yukio Ayashiro, or Noriko Ayashiro against Yumi -- the only red-herring material the source supports is Omura's own suspicious, initially-disbelieved testimony (he genuinely saw Yumi alive well after her presumed death), which is captured as a red-herring implicates edge rather than a fabricated has_motive_against edge. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yumi Horikoshi",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "cosmetic company employee; former manager of the university judo club",
+    "attrs": {
+     "died_of": "gunshot wound to the head, staged to look like suicide",
+     "nickname": "the judo club's \"Madonna\"",
+     "note": "used a shakehand grip when playing ping-pong, visible in an old team photo"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kazushi Nakamichi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "police detective, Chiba Prefecture; former captain of the university judo club",
+    "attrs": {
+     "backstory": "dated Yumi for 18 years before ending it to marry his boss's daughter, whom he met six months earlier",
+     "tell": "identified Yumi as dead just from seeing blood, without ever touching her, and called the police rather than an ambulance -- he already knew it was too late"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Jun Omura",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "model shop owner; former judo club member",
+    "attrs": {
+     "testimony": "claims he saw Yumi glaring down at the ping-pong room from an upstairs window shortly after 5:00 PM, well after her presumed 3:00 PM time of death -- initially dismissed by the group as exhaustion or a ghost sighting, but actually true and the key to the real timeline"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yukio Ayashiro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "high school gym teacher; former judo club member",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Noriko Ayashiro",
+    "aliases": ["Noriko Kimoto"],
+    "roles": ["suspect"],
+    "occupation": "housewife; former judo club manager/idol",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Nakamichi's fiancee",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "daughter of Nakamichi's police superior",
+    "attrs": {
+     "note": "unnamed in the transcript; target of Yumi's threatening letters, phone calls, and photo-blackmail attempt"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Unnamed bank robber",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "note": "robs a bank near where the reunion group happens to be eating; subdued in the street, and his gun goes missing in the commotion -- picked up by Nakamichi unnoticed"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Ping-pong room, Benkei hot spring resort",
+    "attrs": {
+     "role_in_case": "site of both the aborted blackmail handoff and, later, the real murder's staging via forced exertion"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Yumi's room (201), Benkei hot spring resort",
+    "attrs": {
+     "role_in_case": "where Yumi was actually shot and her body later staged and redressed; has roof access via the window"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Fireworks viewing street",
+    "attrs": {}
+   },
+   {
+    "id": "l4",
+    "name": "Public/open-air bath, Benkei hot spring resort",
+    "attrs": {
+     "role_in_case": "Nakamichi's claimed alibi location for part of the murder window"
+    }
+   },
+   {
+    "id": "l5",
+    "name": "Beika street (bank robbery scene)",
+    "attrs": {}
+   },
+   {
+    "id": "l6",
+    "name": "Common areas, Benkei hot spring resort (lobby/dining)",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Smith & Wesson M439 (stolen)",
+    "role": "weapon",
+    "attrs": {
+     "origin": "dropped by the bank robber during his arrest; picked up unnoticed by Nakamichi",
+     "staging_flaw": "the barrel shows a strike mark (from Conan kicking a brick into it during the robbery), and the victim's index finger is not on the trigger despite the gun being placed in her hand"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Yumi's ping-pong racket",
+    "role": "evidence",
+    "attrs": {
+     "significance": "she was still holding it when she stormed back to her room, which is why her dead hand later froze into the same shakehand grip shape rather than a natural trigger-pulling position"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Spare yukata used to redress the body",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "noticeably larger than the yukata Yumi was seen wearing in the lobby, and she has no undergarments on underneath -- Nakamichi had no spare undergarments to replace the sweat-soaked originals with, so he removed them rather than leave evidence of her having exerted herself"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Threatening letters and compromising photos",
+    "role": "evidence",
+    "attrs": {
+     "content": "letters and phone calls Yumi sent threatening Nakamichi's fiancee, plus photos of Yumi and Nakamichi together that she threatened to send her",
+     "note": "Yumi brought the photos to the reunion intending to sell them back to Nakamichi; he lied to her that they'd already been stolen from her room to provoke her into storming off alone"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Old university judo club photo album",
+    "role": "evidence",
+    "attrs": {
+     "content": "includes a photo of Yumi holding a ping-pong racket in a shakehand grip, the reference point for recognizing the same grip shape frozen into her dead hand"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "No burn marks or gunshot residue around the entry wound, even though a contact or near-contact self-inflicted shot to the head should leave them from the hot gas that accompanies the bullet -- rules out suicide.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "The victim's right hand, holding the gun, has its index finger sticking out stiffly instead of on the trigger -- matching the exact shakehand grip she's shown using in an old team photo, revealing her hand had already frozen mid-ping-pong-game rather than around the trigger.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "Rigor mortis normally takes hours to progress as far as it had by the time the body was examined, but sudden death immediately after intense physical exertion is medically documented to accelerate it drastically (the same principle behind the legend of the warrior Benkei dying on his feet) -- meaning the body's apparent ~7-hours-dead state is consistent with a death much later than 3:00 PM if the victim had just been made to exert herself.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cD",
+    "desc": "The yukata on the body is noticeably larger than the one Yumi was seen wearing earlier, and she has no undergarments on underneath it -- someone redressed the body after death, most likely to hide sweat that would have given away recent physical exertion.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cE",
+    "desc": "Omura insists he saw Yumi glaring down from an upstairs window shortly after 5:00 PM -- well after her presumed 3:00 PM death -- and is initially disbelieved or suspected of hiding something himself, but the sighting turns out to be genuine and is the key to recovering the real ~6:30 PM time of death.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "cF",
+    "desc": "Nakamichi identified Yumi as dead the instant he saw her covered in blood, without ever touching the body to check for a pulse, and called the police rather than an ambulance -- behavior only explainable if he already knew for certain she was dead.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "classmate",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "married_to"
+  },
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "former_partner_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p6",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "owns",
+   "from": "p7",
+   "to": "o1"
+  },
+  {
+   "type": "steals",
+   "from": "p2",
+   "to": "o1",
+   "temporal_frame": "backstory",
+   "detail": "picks up the bank robber's dropped gun from the street after Kogoro and Conan subdue him, unnoticed amid the commotion",
+   "circumstance_tags": ["opportunistic", "cover_up"]
+  },
+  {
+   "type": "was_at",
+   "from": "p7",
+   "to": "l5",
+   "temporal_frame": "backstory"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "blackmails",
+   "from": "p1",
+   "to": "p6",
+   "temporal_frame": "backstory",
+   "detail": "sends threatening letters and phone calls, then threatens to send compromising photos of herself and Nakamichi together"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l6",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l6",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l6",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l6",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l6",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "arrives for a private meeting with Nakamichi to sell back the incriminating photos, but the whole group unexpectedly joins in for ping-pong"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "leaves the ping-pong room in irritation once the private deal falls through, and stays in her room instead of joining the fireworks group -- this is what makes ~3:00 PM look like the last time she was seen alive"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present",
+   "circumstance_tags": ["still_alive_contrary_to_apparent_time_of_death"],
+   "detail": "still alive and watching the ping-pong room from her window shortly after 5:00 PM, waiting for Nakamichi to be alone"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "briefly steps out to the restroom just after 5:00 PM and glimpses Yumi at her window on the way"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "stays behind alone in the ping-pong room after the others leave for the fireworks, per a secret rendezvous arranged with Yumi"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "comes down alone after 6:00 PM to complete the photo buyback"
+  },
+  {
+   "type": "plays_ping_pong_with",
+   "from": "p2",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "engineers a ping-pong rematch specifically to physically exhaust her right before killing her, exploiting rapid rigor-mortis onset after strenuous exertion to falsify the later time-of-death estimate",
+   "circumstance_tags": ["staged_timeline"]
+  },
+  {
+   "type": "deceives",
+   "from": "p2",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "falsely tells her the blackmail photos have already been stolen from her room, provoking her into storming off alone, racket still in hand"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 6,
+   "temporal_frame": "present",
+   "detail": "follows her back to her room"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "method": "shoots her in the head at close range with the stolen Smith & Wesson M439, timed to the fireworks show starting at 6:30 PM to mask the gunshot",
+   "circumstance_tags": ["staged_suicide", "cover_up"]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p2",
+   "to": "p1",
+   "order": 7,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_suicide"]
+  },
+  {
+   "type": "tampers_with",
+   "from": "p2",
+   "to": "o3",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "redresses the sweat-soaked body in a spare, larger yukata and removes her undergarments to hide evidence of the exertion trick"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 8,
+   "temporal_frame": "present",
+   "detail": "interrupted mid-redressing by Ran and Conan coming to wake Yumi for the fireworks; exits onto the roof through the window and talks them out of entering",
+   "circumstance_tags": ["near_discovery"]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l3",
+   "order": 9,
+   "temporal_frame": "present",
+   "detail": "rejoins the group for the fireworks, then slips away claiming to be separated in the crowd to finish staging the scene"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l4",
+   "order": 4,
+   "temporal_frame": "present",
+   "circumstance_tags": ["unverified_alibi"]
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cD",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cD",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cE",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cE",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "cE",
+   "to": "p3",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "implicates",
+   "from": "cF",
+   "to": "p2"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "silencing_an_ex_girlfriend_blackmailing_his_new_engagement"
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

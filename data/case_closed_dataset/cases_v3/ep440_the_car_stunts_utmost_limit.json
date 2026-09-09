@@ -1,0 +1,351 @@
+{
+ "case_id": "ep440_the_car_stunts_utmost_limit",
+ "episode_number": "440",
+ "title": "The Car Stunt's Utmost Limit",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Car_Stunt%27s_Utmost_Limit",
+ "subtitle_source": ["subs_resolved/0440.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, the Detective Boys incl. Genta -- whose souvenir sticker becomes a physical clue, and Professor Agasa; also Inspector Megure/Takagi) omitted as person nodes by convention, matching the old case file. No `event` node type: every action is a directly typed edge between the entities involved. Murderer identity (Fukamachi) matches the old case file's s1 -- no culprit discrepancy here. However the old file's clue c1 ('a coat fragment caught in the crashed car's door but absent from earlier footage') has the finding backwards: the transcript's actual clue is that Rikiishi's cape/cloak is NOT caught in the door and the door is never seen opening/closing during the ramp-up footage, which (combined with the crashed car's engine still being hot immediately after impact, proving it had just been actively driven rather than idle since the ramp climb) is what proves a car swap happened on the roof out of camera view. The old file's c2 ('remote control found on his person') overstates what's shown -- the transcript only establishes Fukamachi borrowed the remote from Nishiwaki under the pretense of wanting to inspect it and it surfaces again at the reveal, not that it was found on his body. Also added: the duplicate Kamen-Yaiba-sticker clue (Genta stickered both cars identically), which the old file omitted entirely and which is actually what makes the sticker-based car ID a false lead in-episode. Speaker attribution in the multi-way argument scene (~13:48-14:20) about who hit whom over what is not tagged by speaker in the subtitle track; assignments below (Kijima punched over reporting Rikiishi to producers, Nakasato punched over shoddy maintenance, Nishiwaki slapped repeatedly and threatened Rikiishi at drinking parties) follow the most consistent reading of the back-and-forth accusations. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Rikiishi Kengo",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "stuntman",
+    "attrs": {
+     "age": 38,
+     "personality": "veteran stuntman, proud, competitive, feared being replaced by younger stuntmen and CG",
+     "died_of": "fatal impact when the car he was trapped in was driven off the rooftop and crashed below"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Fukamachi Shinji",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "director",
+    "attrs": {
+     "age": 30,
+     "secret": "embezzled production money to pay off personal debt; feared exposure and being fired",
+     "public_image": "had reportedly convinced the producers not to fire Rikiishi, making him look like an ally"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Nakasato Hidehiko",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "assistant director",
+    "attrs": {
+     "age": 28
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kijima Daisaku",
+    "aliases": ["Kijima-chan"],
+    "roles": ["suspect"],
+    "occupation": "cameraman",
+    "attrs": {
+     "age": 40
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Nishiwaki Masao",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "mechanical technician / vehicle specialist",
+    "attrs": {
+     "age": 45,
+     "duty": "maintained and checked both stunt cars before the shoot; kept custody of the remote control unit"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Kamen Yaiba stunt set rooftop",
+    "attrs": {
+     "detail": "rooftop ramp where the stunt car swap and launch happen"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Ground below the rooftop",
+    "attrs": {
+     "detail": "pavement where the car crashed and Rikiishi's body was found"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Car A",
+    "role": "instrument",
+    "attrs": {
+     "official_label": "Car A",
+     "detail": "the car Rikiishi drove manually up the ramp during the sanctioned stunt sequence; carries a Kamen Yaiba sticker identical to Car B's"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Car B",
+    "role": "weapon",
+    "attrs": {
+     "official_label": "Car B",
+     "detail": "remote-controlled car built to drive itself off the roof unmanned for the explosion shot; brake and door offer no driver control once in remote mode",
+     "forensic_note": "found to still have a hot engine immediately after the crash, proving it had just been actively driven rather than parked idle since the ramp climb"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Remote control unit",
+    "role": "tool",
+    "attrs": {
+     "normally_held_by": "Nishiwaki",
+     "detail": "Fukamachi borrowed it from Nishiwaki under the pretense of wanting to inspect it, then returned it afterward to avoid suspicion"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Kamen Yaiba stickers",
+    "role": "evidence",
+    "attrs": {
+     "placed_by": "a young fan among the recurring detective-cast (omitted as a person node)",
+     "detail": "identical stickers were placed on both Car A and Car B, so matching the sticker alone cannot identify which car is which"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The crashed car's hood was still hot right after impact, though the car assumed to be idle Car A should have cooled since the ramp drive -- proves the crashed car had just been actively driven, i.e. it was really Car B.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Ramp-up footage shows Rikiishi's cape never caught in the door and the door never opens or closes -- rules out a car swap happening on camera, pointing instead to a swap on the roof out of view.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cC",
+    "desc": "Both Car A and Car B carry identical Kamen Yaiba stickers, so the sticker seen on the car left on the roof cannot actually prove that car is Car B.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p2",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2"
+  },
+  {
+   "type": "maintains",
+   "from": "p5",
+   "to": "o1",
+   "detail": "checked steering wheel and brake before the shoot"
+  },
+  {
+   "type": "maintains",
+   "from": "p5",
+   "to": "o2",
+   "detail": "checked steering wheel and brake before the shoot"
+  },
+  {
+   "type": "owns",
+   "from": "p5",
+   "to": "o3"
+  },
+  {
+   "type": "provokes",
+   "from": "p2",
+   "to": "p1",
+   "detail": "reverse-psychology goading: told Rikiishi there was no air bomb in Car A, the stunt was pointless without switching to Car B, and to not even think about it -- calculated to make the proud, insecure Rikiishi attempt the switch alone"
+  },
+  {
+   "type": "drives",
+   "from": "p1",
+   "to": "o1",
+   "detail": "drove Car A up the ramp during an unauthorized lunch-break attempt to prove himself"
+  },
+  {
+   "type": "switches_to",
+   "from": "p1",
+   "to": "o2",
+   "detail": "switched into Car B on the rooftop, out of camera view"
+  },
+  {
+   "type": "remote_drives",
+   "from": "p2",
+   "to": "o2",
+   "detail": "operated the remote control to steer Car B, with Rikiishi trapped inside, toward the edge"
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p1",
+   "method": "remotely drove Car B, with its brake unresponsive and door unable to open, off the rooftop edge while Rikiishi was trapped inside",
+   "circumstance_tags": ["staged_accident", "trapped_victim", "psychological_manipulation"]
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p2",
+   "to": "o3",
+   "detail": "returned the remote control to Nishiwaki afterward so nothing looked out of place"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o1"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o2"
+  },
+  {
+   "type": "assaults",
+   "from": "p1",
+   "to": "p4",
+   "detail": "punched Kijima after learning Kijima had reported him to the producers, trying to get him fired",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "assaults",
+   "from": "p1",
+   "to": "p3",
+   "detail": "punched Nakasato over shoddy equipment maintenance habits",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "assaults",
+   "from": "p1",
+   "to": "p5",
+   "detail": "slapped Nishiwaki around on several occasions",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "feared_exposure_of_embezzlement_and_being_fired"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "professional_rivalry_reported_to_producers_and_was_punched_for_it",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "accused_of_shoddy_maintenance_and_was_punched_for_it",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "repeatedly_slapped_by_victim_and_threatened_to_kill_him_at_drinking_parties",
+   "circumstance_tags": ["red_herring"]
+  }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

@@ -1,0 +1,255 @@
+{
+ "case_id": "ep277-278_english_teacher_vs_great_western_detective",
+ "episode_number": "277-278",
+ "title": "English Teacher vs. Great Western Detective",
+ "source_url": "https://www.detectiveconanworld.com/wiki/English_Teacher_vs._Great_Western_Detective",
+ "subtitle_source": ["subs_resolved/0277.txt", "subs_resolved/0278.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan/Shin'ichi, Kogoro Mouri, Ran, Inspector Megure, Takagi, Chiba) omitted by convention. Heiji Hattori and Jodie Starling are kept as person nodes despite being recurring franchise characters because this two-parter's entire B-plot (the title itself) is Heiji and Conan investigating whether Jodie is secretly the actress Chris Vineyard / a Black Organization contact -- that thread is load-bearing for this specific episode, not incidental. The old cases/ file already had the correct culprit (Noboru Kawakami / p4, matching s3) and a roughly correct one-line summary of the method, so no culprit reversal to report here -- but it was extremely thin: no Sumiyo Hiraya node (the actual motive source, previously buried in a motive_type string), no locked-room mechanism detail (Kawakami secretly turned Takai's bed to face the balcony-less window, then phoned him and said 'I can't hear ya' to draw him toward it), no physical evidence chain (bent curtain rail, the enlarged photo of Takai clutching the curtain and throwing his phone, the voice-memo recording on that phone), no locations split (condo living room vs. bedroom vs. the street below vs. Jodie's separate unit on the same floor), no real relationships (girlfriend, coworker, in-love-with, school/university seniority), and the whole Heiji/Jodie subplot was dropped entirely. A one-sentence detail the old file also omitted: Kawakami disputes intent-to-kill even after confessing (he says he only meant to disorient Takai, not kill him), which is worth keeping as a circumstance_tag rather than silently resolved. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Takai",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "department chief, just promoted to director",
+    "attrs": {
+     "died_of": "fell from the 21st-floor window of his condo",
+     "circumstance": "drunk at his own promotion party when he was killed"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Chika Shimoda",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 30,
+     "relationship_to_victim": "girlfriend"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Michiya Nakamachi",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 28
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Noboru Kawakami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 33,
+     "disputes_intent": "confesses to moving the bed but claims he never meant for Takai to actually fall"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Sumiyo Hiraya",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "office worker",
+    "attrs": {
+     "age": 30,
+     "died_of": "suicide, one month before the present case",
+     "circumstance": "nervous breakdown after overwork; took seriously a joke by Takai that she'd be fired if she missed her sales quota"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Jodie Starling",
+    "aliases": ["Jodie Saintemillion"],
+    "roles": ["witness", "bystander"],
+    "occupation": "English teacher at Ran's high school",
+    "attrs": {
+     "apartment": "21st floor, next door to Takai's unit",
+     "cover_story": "claims she can barely speak Japanese"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Heiji Hattori",
+    "aliases": [],
+    "roles": ["bystander", "witness"],
+    "occupation": "high-school detective, son of the Osaka police chief",
+    "attrs": {}
+   },
+   {
+    "id": "p8",
+    "name": "Chris Vineyard",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "American actress",
+    "attrs": {
+     "mother": "actress Sharon Vineyard",
+     "connection": "one of six suspects who could have passed Pisco a handkerchief in an earlier, unrelated case; vanished from public life afterward"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Jodie's apartment",
+    "attrs": {"floor": "21st"}
+   },
+   {
+    "id": "l2",
+    "name": "Takai's condo -- living room",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Takai's condo -- bedroom",
+    "attrs": {"floor": "21st"}
+   },
+   {
+    "id": "l4",
+    "name": "Street below the condo building",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Takai's cell phone",
+    "role": "evidence",
+    "attrs": {
+     "contains": "voice-memo recording of Kawakami's threatening call, made while Takai clung to the curtain",
+     "thrown_by": "Takai, back into the bedroom before he fell, so the recording wouldn't be lost or broken"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Bedroom curtain and rail",
+    "role": "evidence",
+    "attrs": {
+     "damage": "pulled down, rail bent, several hooks torn off",
+     "implication": "shows Takai grabbed at it while falling -- inconsistent with a deliberate suicide"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Shimoda's camera / developed photo",
+    "role": "evidence",
+    "attrs": {
+     "shows": "an enlarged frame of Takai clutching the curtain and throwing his phone mid-fall",
+     "note": "police developed the film Shimoda had shot of the building exterior"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Takai's bed",
+    "role": "tool",
+    "attrs": {
+     "usual_position": "facing the window onto the balcony",
+     "staging_flaw": "secretly turned to face the other window, which has no balcony beneath it"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Curtain rail bent and hooks torn off: a genuine suicide wouldn't grab at the curtain on the way out, so the damage shows Takai fought against falling rather than jumping.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Enlarged photo from Shimoda's camera shows Takai clutching the curtain and throwing his phone as he fell -- the throw was deliberate, not an accidental drop.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Takai's bed normally faces the balcony window but was found facing the window with no balcony beneath it -- reenacting the layout shows someone secretly turned it before he fell.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "girlfriend_of"},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "coworker"},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "coworker"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "coworker"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "coworker"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "coworker"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "coworker"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "university_junior_of"},
+  {"type": "relationship", "from": "p5", "to": "p2", "relation_type": "university_junior_of"},
+  {"type": "relationship", "from": "p5", "to": "p3", "relation_type": "school_senior_of"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "in_love_with"},
+  {"type": "relationship", "from": "p6", "to": "p1", "relation_type": "neighbor"},
+  {"type": "relationship", "from": "p6", "to": "p8", "relation_type": "suspected_alias_of", "detail": "unconfirmed identity suspicion, not resolved within this case"},
+
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "revenge (Takai's workplace treatment of Sumiyo Hiraya, whom Kawakami loved, drove her to suicide)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "resentment over a colleague's suicide (red herring; Nakamachi also blamed Takai but shows no violent intent)"},
+  {"type": "suspects", "from": "p7", "to": "p6", "detail": "Heiji and Shin'ichi Kudo suspect Jodie of secretly being Chris Vineyard, a person of interest from an earlier, unrelated Black Organization-linked case", "circumstance_tags": ["red_herring", "unrelated_subplot"]},
+
+  {"type": "harasses", "from": "p1", "to": "p5", "order": 0, "temporal_frame": "backstory", "years_before_present": null, "detail": "joked during a work drinking session that she'd be fired if she missed her sales quota; she took it seriously", "circumstance_tags": ["workplace_harassment"]},
+
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l2", "order": 1, "temporal_frame": "present"},
+  {"type": "dismisses", "from": "p1", "to": "p3", "order": 1, "temporal_frame": "present", "detail": "told the group to stop being sentimental about a coworker's death and look to the future, unaware Kawakami loved her", "circumstance_tags": ["insensitive_remark"]},
+
+  {"type": "was_at", "from": "p4", "to": "l3", "order": 2, "temporal_frame": "present", "detail": "excused himself, claiming he needed the bathroom"},
+  {"type": "relocates", "from": "p4", "to": "o4", "order": 2, "temporal_frame": "present", "detail": "secretly turned Takai's bed to face the window with no balcony beneath it", "circumstance_tags": ["staged_accident", "premeditation"]},
+
+  {"type": "drives", "from": "p2", "to": "p3", "order": 3, "temporal_frame": "present", "detail": "drove Nakamachi and Kawakami home after the party, both drunk"},
+  {"type": "drives", "from": "p2", "to": "p4", "order": 3, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 3, "temporal_frame": "present", "detail": "remained behind, drunk, and eventually fell asleep in the living room"},
+
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 4, "temporal_frame": "present", "detail": "returned to photograph the building exterior to show a friend Takai's apartment"},
+  {"type": "sends_message", "from": "p3", "to": "p1", "order": 4, "temporal_frame": "present", "detail": "text message: 'Don't forget the little people, big shot' -- a veiled reference to Hiraya", "circumstance_tags": ["red_herring"]},
+
+  {"type": "was_at", "from": "p7", "to": "l1", "order": 5, "temporal_frame": "present", "detail": "visiting Jodie under the pretext of a social call"},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 5, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l3", "order": 6, "temporal_frame": "present", "detail": "carried to bed (now facing the wrong window) after passing out drunk in the living room"},
+
+  {"type": "calls", "from": "p4", "to": "p1", "order": 7, "temporal_frame": "present", "detail": "phoned and repeatedly said 'I can't hear ya' to draw him toward the relocated window", "circumstance_tags": ["manipulation"]},
+
+  {"type": "kills", "from": "p4", "to": "p1", "order": 8, "temporal_frame": "present", "method": "lured drunk Takai toward a window with no balcony beneath it by secretly relocating his bed and goading him over the phone to move closer for reception", "circumstance_tags": ["staged_accident", "locked_room", "disputed_intent", "cover_up"]},
+  {"type": "grabs", "from": "p1", "to": "o2", "order": 8, "temporal_frame": "present", "detail": "grabbed the curtain trying to stop his fall"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o1", "order": 8, "temporal_frame": "present", "detail": "activated the phone's voice-memo recorder, capturing Kawakami's words, then threw the phone back into the room so it wouldn't be lost or broken in the fall"},
+
+  {"type": "was_at", "from": "p1", "to": "l4", "order": 9, "temporal_frame": "present", "detail": "body lands on the street"},
+  {"type": "was_at", "from": "p6", "to": "l4", "order": 9, "temporal_frame": "present", "detail": "leaving the building for dinner with Conan and Heiji when the body fell nearby"},
+  {"type": "was_at", "from": "p7", "to": "l4", "order": 9, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 10, "temporal_frame": "present", "detail": "returned to the building once told police were conducting an on-site investigation"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 10, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l3", "order": 10, "temporal_frame": "present", "detail": "present in the bedroom when the reenactment exposed his method"},
+  {"type": "was_at", "from": "p6", "to": "l3", "order": 10, "temporal_frame": "present", "detail": "volunteered to play the victim's role, drinking real alcohol, in the police reenactment"},
+  {"type": "was_at", "from": "p7", "to": "l3", "order": 10, "temporal_frame": "present", "detail": "placed the reenactment phone call, mimicking Kawakami's role"},
+
+  {"type": "confesses_to", "from": "p4", "to": "p1", "order": 11, "temporal_frame": "present", "detail": "admitted to moving the bed but claimed he never intended for Takai to actually fall", "circumstance_tags": ["disputed_intent"]},
+
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "located_in", "from": "o4", "to": "l3"},
+  {"type": "located_in", "from": "o2", "to": "l3"},
+  {"type": "located_in", "from": "o1", "to": "l3"},
+
+  {"type": "implicates", "from": "o1", "to": "p4"},
+  {"type": "implicates", "from": "c3", "to": "p4"},
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "regarding", "from": "c1", "to": "l3"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "regarding", "from": "c3", "to": "l3"}
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

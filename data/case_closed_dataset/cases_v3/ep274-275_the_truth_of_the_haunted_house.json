@@ -1,0 +1,184 @@
+{
+ "case_id": "ep274-275_the_truth_of_the_haunted_house",
+ "episode_number": "274-275",
+ "title": "The Truth of the Haunted House",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Truth_of_the_Haunted_House",
+ "subtitle_source": ["subs_resolved/0274.txt", "subs_resolved/0275.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Dr. Tomoaki Araide, Sonoko) omitted by convention. Old lower-fidelity file (cases/ep274-275_the_truth_of_the_haunted_house.json) put the park murder 'two years ago' and used event nodes / generic 'knows' edges; the transcript repeatedly and explicitly says the murder of Rui Tabuchi was FOUR years before the present (e.g. 0274 line 242 'burnt to death in that park four years ago', 0275 lines 245-246 'Four years ago?', line 281 'the case that occurred four years before') -- corrected here. The old file also omitted the second killer entirely (an unnamed, scarred accomplice hiding in the abandoned building next door, whom Banchou was secretly feeding) -- added here as a full backstory person node since he is co-culprit of the original murder even though he is not the one on-screen orchestrating the haunting. Culprit identity itself (Kikuji Banchou, s1/p2) matches the transcript -- no label error there, just missing depth. One passage (0275 lines 194-200, the 'multi-function remote control ... Otonashi-san cooperated with me' exchange) is ambiguous in this fan translation about whether Otonashi knowingly helped broadcast the fake ghost video or was simply an unwitting tool (his TV/room were used while he and guests were drugged with chloroform); modeled conservatively here as unwitting, per the episode's stated goal of scaring Otonashi into moving out -- inconsistent with him being a willing accomplice. case_type: murder (with a present-day concealment/haunting scheme built on top of the four-year-old crime).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Rui Tabuchi",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "cause_of_death": "burned to death in a park",
+     "identification": "driver's license found on her remains, plus a dental record match",
+     "motive_context": "killed over a large sum of money she was owed"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kikuji Banchou",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "model shop employee, apartment room 4",
+    "attrs": {
+     "collection": "large number of monster/ghost dolls in his room, painted with fluorescent paint",
+     "scheme_goal": "scare the second-floor residents, especially Otonashi, into moving out before anyone noticed his accomplice hiding next door"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Scarred accomplice",
+    "aliases": [],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "identifying_mark": "large scar on his cheek, shown on a wanted-poster sketch near the park",
+     "hideout": "abandoned, never-finished building next to the apartment complex",
+     "status": "his face was not clearly seen by the four-years-ago witness, unlike Banchou's; fed and sheltered by Banchou the whole time"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Iwahisa Yotsuya",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "university student, SFX/horror-film hobbyist, apartment room 2",
+    "attrs": {
+     "red_herring_reason": "owns an 8mm camera and shot a horror film set in this apartment with his university club; briefly suspected of having played a tape to fake the TV ghost"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Tsuyuhiko Botan",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "graduate student, apartment room 1, writing a thesis",
+    "attrs": {
+     "stance": "self-declared skeptic; the only resident who has never seen any of the ghost phenomena"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Otonashi",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "elderly long-term resident, apartment room 5, patient of Dr. Araide",
+    "attrs": {
+     "tenure": "has lived in the apartment for many years and refuses to move out",
+     "role_in_scheme": "his TV, window, and possibly his own universal remote were used by Banchou to broadcast the fake ghost video and stage the window trick, apparently without his full knowledge"
+    }
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Park (murder scene)", "attrs": {"adjacent_to": "the apartment complex, visible from its windows"}},
+   {"id": "l2", "name": "Abandoned building under construction", "attrs": {"history": "owner hanged himself when the economic bubble popped; construction abandoned; built over a small graveyard", "role": "accomplice's hideout"}},
+   {"id": "l3", "name": "Apartment complex exterior", "attrs": {}},
+   {"id": "l4", "name": "Banchou's room (room 4)", "attrs": {}},
+   {"id": "l5", "name": "Yotsuya's room (room 2)", "attrs": {}},
+   {"id": "l6", "name": "Botan's room (room 1)", "attrs": {}},
+   {"id": "l7", "name": "Otonashi's room (room 5)", "attrs": {"note": "second floor; window faces the abandoned building"}},
+   {"id": "l8", "name": "Second-floor restroom", "attrs": {}},
+   {"id": "l9", "name": "Dr. Araide's clinic", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Scary video tape", "role": "evidence", "attrs": {"content": "ghost woman repeating 'Get out, get out'", "made_with": "Banchou's dolls plus a falsetto voice", "found_in": "Banchou's room"}},
+   {"id": "o2", "name": "Multi-function remote control", "role": "tool", "attrs": {"function": "can be set to control any TV in the apartment once its make and model are known", "used_for": "turning on Otonashi's TV to the tape's channel from outside his window"}},
+   {"id": "o3", "name": "Chloroform bottle", "role": "tool", "attrs": {"use": "poured through the window gap while it was still light out, making the room's occupants drowsy/unconscious before each haunting", "found_in": "Banchou's room"}},
+   {"id": "o4", "name": "Ammonia and phenolphthalein bottles", "role": "tool", "attrs": {"trick": "ammonia poured into the toilet bowl water, phenolphthalein placed in the tank -- the two react to turn the water red, mimicking blood", "found_in": "Banchou's room"}},
+   {"id": "o5", "name": "Black light on a timer", "role": "tool", "attrs": {"use": "set on a timer in Banchou's room; UV light attracts moths more strongly than pheromone, making the window 'shadow' vanish exactly on cue"}},
+   {"id": "o6", "name": "Moth pheromone spray and paper cutout", "role": "tool", "attrs": {"method": "female moth pheromone sprayed onto a window in the outline of a person, with black paper cut into a mouth and eyes", "effect": "male moths cluster into the shape, creating a peering 'shadow'"}},
+   {"id": "o7", "name": "Window screen (relocated)", "role": "tool", "attrs": {"origin": "removed from the building's second-floor window", "reused_at": "placed on Otonashi's window to stage the shadow"}},
+   {"id": "o8", "name": "Wanted-poster sketch", "role": "evidence", "attrs": {"posted_at": "utility pole near the park", "depicts": "one of the two men seen watching Rui Tabuchi's body burn, with a large scar on his cheek", "witnessed_by": "an unnamed passerby in the park at night, four years ago"}},
+   {"id": "o9", "name": "Rui Tabuchi's driver's license", "role": "evidence", "attrs": {"found": "on her burned remains", "confirmed_by": "dental record match"}},
+   {"id": "o10", "name": "Yotsuya's 8mm horror film", "role": "evidence", "attrs": {"content": "amateur horror movie shot with his university club, set in this apartment", "relevance": "initially suspected as the source of the TV ghost video; cleared once the player was checked"}},
+   {"id": "o11", "name": "Fluorescent-painted dolls", "role": "instrument", "attrs": {"location": "Banchou's room", "effect": "glow in eerie colors under the black light"}}
+  ],
+  "clues": [
+   {"id": "c1", "desc": "Right after the ghost appeared on Otonashi's TV, Conan checked the video player in that room and found no tape loaded -- rules out a locally played tape (clearing Yotsuya) and points to a signal broadcast in from elsewhere instead.", "clue_type": "physical"},
+   {"id": "c2", "desc": "When the window 'shadow' dissipated, only Banchou reacted by instantly slamming the window open before any moths could be seen lingering -- the reaction of someone who knew the trick would be exposed if even one moth remained.", "clue_type": "behavioral"},
+   {"id": "c3", "desc": "Phenolphthalein only turns red in an alkaline solution, but urine is neutral or acidic -- so the toilet's 'blood' could not have come from urine alone and required ammonia to have been added on purpose.", "clue_type": "forensic"}
+  ]
+ },
+ "edges": [
+  {"type": "kills", "from": "p2", "to": "p1", "order": 0, "temporal_frame": "backstory", "years_before_present": 4, "method": "burned to death", "circumstance_tags": ["cover_up"]},
+  {"type": "kills", "from": "p3", "to": "p1", "order": 0, "temporal_frame": "backstory", "years_before_present": 4, "method": "burned to death", "circumstance_tags": ["cover_up"]},
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 0, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 0, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 0, "temporal_frame": "backstory"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "debt (large sum of money owed)"},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "debt (large sum of money owed)"},
+  {"type": "owns", "from": "p1", "to": "o9"},
+  {"type": "implicates", "from": "o9", "to": "p1"},
+  {"type": "depicts", "from": "o8", "to": "p3"},
+  {"type": "located_in", "from": "o8", "to": "l3"},
+
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 1, "temporal_frame": "backstory", "circumstance_tags": ["cover_up"]},
+  {"type": "shelters", "from": "p2", "to": "p3", "order": 1, "temporal_frame": "present", "detail": "brings food to the accomplice hiding in the abandoned building"},
+
+  {"type": "was_at", "from": "p6", "to": "l9", "order": 3, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p6", "to": "l3", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 4, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l5", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l6", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l7", "order": 5, "temporal_frame": "present"},
+
+  {"type": "owns", "from": "p2", "to": "o11"},
+  {"type": "owns", "from": "p2", "to": "o1"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o4"},
+  {"type": "owns", "from": "p2", "to": "o5"},
+  {"type": "owns", "from": "p2", "to": "o6"},
+  {"type": "owns", "from": "p4", "to": "o10"},
+  {"type": "owns", "from": "p6", "to": "o2"},
+
+  {"type": "gasses", "from": "p2", "to": "l7", "order": 6, "temporal_frame": "present", "detail": "pours chloroform through the window gap while it was still light out"},
+  {"type": "was_at", "from": "p6", "to": "l7", "order": 6, "temporal_frame": "present"},
+
+  {"type": "uses", "from": "p2", "to": "o2", "order": 7, "temporal_frame": "present", "detail": "borrows/uses Otonashi's universal remote from the window ledge across the way to turn on his TV to the tape's channel"},
+  {"type": "broadcasts_video_via", "from": "p2", "to": "o1", "order": 7, "temporal_frame": "present", "detail": "sends the tape's signal out through his VCR into the apartment's shared antenna"},
+  {"type": "was_at", "from": "p6", "to": "l7", "order": 7, "temporal_frame": "present"},
+
+  {"type": "rigs_chemical_trick_at", "from": "p2", "to": "l8", "order": 8, "temporal_frame": "present", "circumstance_tags": ["staged_haunting"]},
+  {"type": "was_at", "from": "p6", "to": "l8", "order": 8, "temporal_frame": "present"},
+
+  {"type": "stages_illusion_using", "from": "p2", "to": "o6", "order": 9, "temporal_frame": "present", "circumstance_tags": ["staged_haunting"]},
+  {"type": "was_at", "from": "p2", "to": "l4", "order": 9, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l7", "order": 9, "temporal_frame": "present"},
+  {"type": "located_in", "from": "o7", "to": "l7"},
+
+  {"type": "was_at", "from": "p4", "to": "l5", "order": 10, "temporal_frame": "present"},
+  {"type": "regarding", "from": "c1", "to": "o10"},
+  {"type": "regarding", "from": "c1", "to": "l7"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+
+  {"type": "was_at", "from": "p5", "to": "l6", "order": 11, "temporal_frame": "present"},
+
+  {"type": "gasses", "from": "p2", "to": "l7", "order": 12, "temporal_frame": "present"},
+  {"type": "rigs_chemical_trick_at", "from": "p2", "to": "l8", "order": 12, "temporal_frame": "present", "circumstance_tags": ["staged_haunting"]},
+  {"type": "was_at", "from": "p6", "to": "l8", "order": 12, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l7", "order": 12, "temporal_frame": "present"},
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "l7"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+
+  {"type": "confronts", "from": "p2", "to": "p3", "order": 13, "temporal_frame": "present", "detail": "Banchou's scheme unravels as Kogoro publicly deduces the trick chain and names Banchou's hidden accomplice"},
+  {"type": "was_at", "from": "p2", "to": "l7", "order": 13, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l7", "order": 13, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 14, "temporal_frame": "present", "detail": "flees toward the abandoned building where his accomplice is hiding"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 14, "temporal_frame": "present", "detail": "arrested along with Banchou"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

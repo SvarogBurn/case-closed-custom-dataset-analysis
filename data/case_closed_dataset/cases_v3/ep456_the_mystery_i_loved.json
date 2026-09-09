@@ -1,0 +1,199 @@
+{
+ "case_id": "ep456_the_mystery_i_loved",
+ "episode_number": "456",
+ "title": "The Mystery I Loved",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mystery_I_Loved",
+ "subtitle_source": ["subs_resolved/0456.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Megure, Takagi, Chiba, Kawanaka, Sonoko) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ep456 file got the culprit right (Tono) but modeled almost nothing else: it used generic `knows` edges instead of real relationships, had no Shimazaki or the sushi-restaurant owner (both load-bearing to the alibi-trick reveal), no postcard/key/bag objects, and only one clue (the squid/octopus mismatch) while missing the second, equally essential comparative clue -- the still-soft ginger, which is what actually pins the morning re-staging on Tono. Rebuilt from the full transcript: Tono visited Saikawa at 6:30pm and brought her sushi containing her favorite squid and octopus, which she ate; he killed her around 7:30pm, then called the sushi shop to place a second, decoy order (arriving 8pm, missing squid/octopus by the shop's own mistake) so investigators would misdate the time of death to ~9pm off the delivered order and the stomach contents, giving him a solid alibi for 8:45pm onward. He bagged the 8pm sushi with a spare key, locked the door, and discarded the bag partway through the night; the next morning he re-planted a small amount of ginger (Saikawa hated ginger and always discarded it) to sell the false timeline, but the ginger was still soft, not dried out overnight, which is what tipped Conan off alongside the stomach-content mismatch. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Murako Saikawa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "mystery novelist (retired from professional publishing)",
+    "attrs": {
+     "age": 65,
+     "health": "incurable illness, roughly half a year left to live",
+     "died_of": "blunt-force blow to the head",
+     "quirk": "hated fresh ginger, always picked it out of sushi and threw it away"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Shun'ichi Tono",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "editor at Labyrinth Publications",
+    "attrs": {
+     "age": 26,
+     "self_described": "devoted fan of Saikawa's work, joined publishing specifically to work with her",
+     "last_seen_with_victim": "6:30pm-8pm, self-reported"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Keizo Murata",
+    "aliases": ["Keiso Murata"],
+    "roles": ["suspect"],
+    "occupation": "manager, Pearl Block of Flats",
+    "attrs": {
+     "age": 55,
+     "habit": "drinks alcohol on duty",
+     "alibi": "claims he was alone in his quarters all night, no witness"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yasunobu Shimazaki",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "editor-in-chief, Labyrinth Publications",
+    "attrs": {
+     "age": 50,
+     "stated_concern": "publisher is in financial trouble; a Saikawa story collection was a low-sales-expectation project"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Sushi restaurant owner",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "sushi shop owner/delivery",
+    "attrs": {
+     "mistake": "forgot to include squid and octopus in the 8pm order, though he always included them for Saikawa"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Saikawa's flat, Pearl Block of Flats",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Empty flat used as investigation base",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Murata's manager's quarters",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Decorative object",
+    "role": "weapon",
+    "attrs": {
+     "effect": "instantaneous death from a blow to the head"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Death threat postcard",
+    "role": "evidence",
+    "attrs": {
+     "claimed_sender": "\"Taniyoshi Ohebi\", read as \"Ryo Orochiya\" -- a criminal mastermind character from Saikawa's own novel",
+     "content": "\"the next piece I will be adding to my collection will be your life\"",
+     "purpose": "misdirection, to frame the murder as fiction come to life and confuse investigators"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "8pm sushi delivery",
+    "role": "evidence",
+    "attrs": {
+     "ordered_by": "Tono, by phone, after leaving Saikawa's flat",
+     "missing_items": "squid and octopus, omitted by the shop's mistake",
+     "purpose": "decoy meal, used to misdate the time of death to ~9pm"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "6:30pm sushi Tono brought",
+    "role": "evidence",
+    "attrs": {
+     "contents": "rice, tuna, sea urchin, flounder, squid, octopus -- Saikawa's favorites",
+     "eaten_by_victim": true
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Ginger remnants",
+    "role": "evidence",
+    "attrs": {
+     "found": "in the kitchen trash",
+     "anomaly": "still soft, not dried out, though supposedly discarded the night before",
+     "true_origin": "planted by Tono the next morning to sell the fake timeline"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Bag with 8pm sushi and spare key",
+    "role": "evidence",
+    "attrs": {
+     "spare_key_origin": "copy made by Tono, editor with prior access to the flat",
+     "fate": "used to lock the door after the murder, then thrown away partway through the night"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ginger found in the trash was still soft, not dried out as overnight ginger would be -- proves it was planted the morning after, not left from the previous night's meal.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Victim's stomach contained squid and octopus, but the 8pm delivery was missing exactly those items by the shop's own mistake -- proves she ate a different, earlier sushi meal, shifting the true time of death back to ~7:30pm.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  { "type": "relationship", "from": "p2", "to": "p1", "relation_type": "editor_of" },
+  { "type": "relationship", "from": "p2", "to": "p4", "relation_type": "employee_of" },
+  { "type": "relationship", "from": "p3", "to": "p1", "relation_type": "building_manager_of" },
+  { "type": "relationship", "from": "p5", "to": "p1", "relation_type": "regular_delivery_vendor_of" },
+
+  { "type": "was_at", "from": "p1", "to": "l1" },
+  { "type": "was_at", "from": "p2", "to": "l1" },
+  { "type": "was_at", "from": "p2", "to": "l2" },
+  { "type": "was_at", "from": "p3", "to": "l1" },
+  { "type": "was_at", "from": "p3", "to": "l2" },
+  { "type": "was_at", "from": "p3", "to": "l3" },
+  { "type": "was_at", "from": "p4", "to": "l2" },
+  { "type": "was_at", "from": "p5", "to": "l1" },
+
+  { "type": "brings", "from": "p2", "to": "o4" },
+  { "type": "consumed_by", "from": "o4", "to": "p1" },
+  { "type": "kills", "from": "p2", "to": "p1", "method": "blunt-force blow to the head with a decorative object", "circumstance_tags": ["staged_alibi", "cover_up"] },
+  { "type": "uses", "from": "p2", "to": "o1" },
+  { "type": "orders", "from": "p2", "to": "o3" },
+  { "type": "writes", "from": "p2", "to": "o2", "circumstance_tags": ["red_herring", "misdirection"] },
+  { "type": "sent_to", "from": "o2", "to": "p1" },
+  { "type": "stages_alibi_using", "from": "p2", "to": "o6", "circumstance_tags": ["locked_room", "staged_alibi"] },
+  { "type": "discards", "from": "p2", "to": "o6" },
+  { "type": "plants", "from": "p2", "to": "o5", "circumstance_tags": ["cover_up", "staged_alibi"] },
+  { "type": "located_in", "from": "o5", "to": "l1" },
+
+  { "type": "implicates", "from": "o5", "to": "p2" },
+  { "type": "implicates", "from": "o6", "to": "p2" },
+  { "type": "implicates", "from": "c1", "to": "p2" },
+  { "type": "implicates", "from": "c2", "to": "p2" },
+  { "type": "regarding", "from": "c1", "to": "o5" },
+  { "type": "regarding", "from": "c2", "to": "o3" },
+  { "type": "regarding", "from": "c2", "to": "o4" },
+
+  { "type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "wanted the world to recognize Saikawa's genius before she died forgotten of her illness, by staging a sensational murder by a villain from her own novel; Shimazaki separately suggests Tono also stood to profit, as the publicity would boost sales of the planned story collection for his struggling publisher" },
+  { "type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "victim caught him drinking on duty and threatened to report him to the management company, risking his job (red herring -- no evidence tied him to the killing)" }
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

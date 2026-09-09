@@ -1,0 +1,263 @@
+{
+ "case_id": "ep632-633_the_guardian_of_times_sword",
+ "episode_number": "632-633",
+ "title": "The Guardian of Time's Sword",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Guardian_of_Time%27s_Sword",
+ "subtitle_source": ["subs_resolved/0632.txt", "subs_resolved/0633.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast nodes (Kogoro Mouri, Ran, Conan, Inspector Megure) omitted by convention. case_type: murder. The old cases/ file correctly named Teigo Karube as the culprit and had the broad mechanism right, but was very thin: it labeled the weapon a generic 'umbrella' and the location a 'clock tower' -- the transcript clarifies the murder happened in the mansion's grand hall during Rukako's birthday party, the 'clock tower' is the great clock built into the mansion's exterior wall (dial facing the backyard well), and the weapon was Karube's own foldable umbrella fitted with a detachable spike, pulled out of the room and into the well by a fishing-line/weight rig timed off the great clock's hour hand. The old file also omitted the backstory victim (Suou's brother / Karube's childhood friend, the clock technician who drowned in the well four years earlier after Rukako delayed the search for him to keep her party going) and the red-herring motive on Chiaki Suou (the deceased's sister, explicitly flagged in dialogue as having 'the strongest motive'). No culprit discrepancy found -- Karube's own confession in 0633 matches the old file.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Rukako Hoshina",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "head of the Hoshina family",
+    "attrs": {
+     "age": 50,
+     "personality": "fanatically punctual, owns and obsesses over dozens of clocks",
+     "died_of": "single stab wound to the heart",
+     "time_of_death": "6:00 PM, moment the clocks chimed for her birthday",
+     "wore": "fluorescent-paint necklace and gold pocket watch, both recently unveiled and handled by many guests"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Gakumichi Oume",
+    "aliases": [],
+    "roles": ["witness", "suspect"],
+    "occupation": "Hoshina family butler",
+    "attrs": {
+     "age": 42,
+     "duty_at_party": "collected guests' umbrellas at the door, cut and served the birthday cake, controlled the room lights on the mistress's cue",
+     "body_search_result": "cleared, no weapon or luminol reaction found"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Teigo Karube",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "architect who designed the Hoshina mansion",
+    "attrs": {
+     "age": 45,
+     "body_search_result": "cleared at the time, no weapon found on him",
+     "confession": "admits the killing, says he had been planning it since the first threatening letter two years earlier"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Chiaki Suou",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "interior designer of the Hoshina mansion",
+    "attrs": {
+     "age": 39,
+     "note": "explicitly flagged in dialogue as having 'the strongest motive' since her brother died on the mistress's property"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Rinsaku Furugaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "clock craftsman, built the mansion's great clock",
+    "attrs": {
+     "age": 64,
+     "weight": "78 kg, self-described as plump",
+     "yearly_duty": "returns each year in person to maintain the great clock"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Chiaki Suou's brother",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "clock technician (deceased)",
+    "attrs": {
+     "death": "fell into the backyard well while repairing the great clock's dial during a storm, drowned overnight because the search was delayed",
+     "died_years_before_present": 4,
+     "relationships": "Chiaki Suou's older brother, Teigo Karube's childhood friend",
+     "personality": "treated the mansion's clocks like family, refused to see them as disposable"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Rukako's late husband",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "died_of": "illness",
+     "died_years_before_present": 1,
+     "detail": "used to complain it was as if he'd married a house full of clocks"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Karube's wife",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "detail": "removed the spare umbrella Karube had packed, leaving him with only the one he used as the murder weapon"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Hoshina mansion grand hall",
+    "attrs": {
+     "detail": "party room where the birthday cake was cut; has a balcony window through which the weapon appeared to vanish"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Well beneath the great clock",
+    "attrs": {
+     "detail": "backyard well below the great clock's dial; scheduled to be filled in two weeks at time of the murder"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Karube's foldable umbrella",
+    "role": "weapon",
+    "attrs": {
+     "trick": "fitted with a detachable screw-on spike; folded and cinched with a rubber band on the wrist immediately after stabbing",
+     "recovered_from": "well beneath the great clock, still carrying the victim's blood and Karube's fingerprints"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Weighted fishing-line rig",
+    "role": "tool",
+    "attrs": {
+     "trick": "thin line tied to the umbrella handle, threaded through a gap in the great clock's hour-hand ornament, weighted mid-line and dangled toward the well",
+     "release_mechanism": "when the hour hand pointed straight down at 6:00 PM the ring slipped free, the weight dropped, and the umbrella was yanked out the window into the well"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Hoshina mansion's great clock",
+    "role": "instrument",
+    "attrs": {
+     "detail": "built into the mansion's exterior wall, dial faces the backyard well",
+     "tampered": "hour hand secretly set a few seconds ahead so the trick would fire within the dark interval after the candles were blown out"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Rukako's gold pocket watch",
+    "role": "tool",
+    "attrs": {
+     "detail": "newly unveiled at the party; Karube handled it beforehand to gauge and nudge the exact timing of his trick"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Furugaki's cane",
+    "role": "evidence",
+    "attrs": {
+     "gift": "given to Furugaki ten years ago by Chiaki Suou's brother",
+     "search_result": "well-used walking cane, no hidden blade"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Suou's ornate hairpin",
+    "role": "evidence",
+    "attrs": {
+     "gift": "a gift from her late brother",
+     "search_result": "examined, no blade inside"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Karube's pipe",
+    "role": "evidence",
+    "attrs": {
+     "search_result": "examined for a hidden point, cleared -- not the weapon"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Four witness impressions of the fleeing 'culprit' -- large build, plump/springy resistance, unusually nimble, rustling cloth like a dress -- each match the physical behavior of a swinging, opening umbrella rather than a person, once compared side by side.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Karube could not leave with the other guests despite the rain restarting, because his only umbrella (the murder weapon) was gone and his packed spare had been removed by his wife beforehand -- leaving with no umbrella would have exposed the trick.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "The mansion's clocks chimed several seconds late after the candles were blown out even though all three on-duty technicians swore their clocks rang exactly on time -- the discrepancy is explained by the great clock's hour hand having been secretly set a few seconds ahead.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "contracted_by"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "contracted_by"},
+  {"type": "relationship", "from": "p5", "to": "p1", "relation_type": "contracted_by"},
+  {"type": "relationship", "from": "p4", "to": "p6", "relation_type": "sibling_of"},
+  {"type": "relationship", "from": "p3", "to": "p6", "relation_type": "childhood_friend_of"},
+  {"type": "relationship", "from": "p5", "to": "p6", "relation_type": "friend_of"},
+  {"type": "relationship", "from": "p8", "to": "p3", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p7", "to": "p1", "relation_type": "spouse_of"},
+
+  {"type": "delays_search_for", "from": "p1", "to": "p6", "circumstance_tags": ["negligence", "disputed_accident"], "detail": "continued her birthday party instead of searching for the missing clock technician during the storm; his body was found in the well the next morning"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2", "detail": "claimed he was going to pray at his childhood friend's death site; actually rigging the trap"},
+  {"type": "was_at", "from": "p5", "to": "l2", "detail": "seen praying at the well"},
+
+  {"type": "receives", "from": "p2", "to": "o1", "detail": "collected Karube's foldable umbrella with the other guests' umbrellas at the door"},
+
+  {"type": "owns", "from": "p3", "to": "o1"},
+  {"type": "owns", "from": "p3", "to": "o2"},
+  {"type": "owns", "from": "p3", "to": "o7"},
+  {"type": "owns", "from": "p5", "to": "o5"},
+  {"type": "owns", "from": "p4", "to": "o6"},
+  {"type": "given_by", "from": "o5", "to": "p6"},
+
+  {"type": "tampers_with", "from": "p3", "to": "o4", "detail": "handled and nudged Rukako's pocket watch ahead by a few seconds before the crime"},
+  {"type": "rigs", "from": "p3", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "o3"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+
+  {"type": "kills", "from": "p3", "to": "p1", "method": "stabbed through the heart with a spike fitted to a closed umbrella tip, retracted instantly", "circumstance_tags": ["staged_escape", "impossible_weapon", "premeditated"]},
+  {"type": "stages_alibi_using", "from": "p3", "to": "o1"},
+  {"type": "stages_alibi_using", "from": "p3", "to": "o2"},
+
+  {"type": "implicates", "from": "o1", "to": "p3"},
+  {"type": "implicates", "from": "o4", "to": "p3"},
+
+  {"type": "regarding", "from": "c1", "to": "o1"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "p8"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+  {"type": "regarding", "from": "c3", "to": "o3"},
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "implicates", "from": "c3", "to": "p3"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "revenge (blamed Rukako's cruelty and negligence for his childhood friend's death)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "sibling's death (red herring, explicitly flagged in dialogue as her having 'the strongest motive'; she denies any grudge)"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

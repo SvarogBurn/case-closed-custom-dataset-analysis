@@ -1,0 +1,201 @@
+{
+ "case_id": "ep284-285_chinatown_deja_vu_in_the_rain",
+ "episode_number": "284-285",
+ "title": "Chinatown Deja Vu in the Rain",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Chinatown_Deja_Vu_in_the_Rain",
+ "subtitle_source": ["subs_resolved/0284.txt", "subs_resolved/0285.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention, consistent with ep011. Kogoro was the story's initial red-herring suspect (seated beside the victim, accused by Inspector Yokomizo) but per the omission convention he gets no node; the case's real accusation chain runs entirely through Isogami. The old lower-fidelity case file (cases/ep284-285...) already had the correct culprit (Isogami/s1) and the correct core mechanism (poisoned towel swapped during the panic after death), but its motive edge was 'unspecified (not stated in the available source excerpt)' -- the full transcript makes the motive explicit: Isogami is avenging actress Rika, who died during a dangerous stunt a year earlier after producer Kawabata let her take a stunt double's place and did nothing to stop it. The old file also collapsed the mechanism to a single towel-swap event; the transcript shows two towels are involved (Isogami's own, used to carry the cyanide onto the turntable's underside and then staged at the scene; and Kawabata's real towel, soup- and denim-stained, which Isogami pocketed) and the actual poisoning route is indirect: Kawabata touches poisoned residue on the underside of the turntable while rotating it to push the egg dishes he's allergic to out of his sight, then ingests the cyanide by hand when eating the Peking duck -- the 'poisoned towel' investigators initially fixate on is a staged decoy, not the true delivery method. No `event` nodes: every action is a directly typed edge between the entities involved, sharing an `order` integer per real-world occurrence. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kaizo Isogami",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "movie director",
+    "attrs": {
+     "age": 52,
+     "motive_note": "grieving director avenging actress Rika; transcript implies personal attachment beyond professional loss, not stated outright as romantic"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Motohiro Ito",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "assistant director",
+    "attrs": {"age": 38}
+   },
+   {
+    "id": "p3",
+    "name": "Keigo Kitaura",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "novelist, original author",
+    "attrs": {"age": 29}
+   },
+   {
+    "id": "p4",
+    "name": "Shiro Kawabata",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "movie producer",
+    "attrs": {
+     "age": 46,
+     "died_of": "potassium cyanide poisoning, ingested via hand-to-mouth contact after touching a poisoned surface"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Rika",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "actress",
+    "attrs": {
+     "died_of": "stunt-shoot death, publicly treated as an accident",
+     "circumstance": "took a stunt double's place for the last action scene at the last minute; Kawabata could have stopped her and did not"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Mike Hama",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "private investigator",
+    "attrs": {"office": "2nd floor of Yokohama Nichigeki, Kogane-cho"}
+   },
+   {
+    "id": "p7",
+    "name": "Jugo Yokomizo",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "police inspector, Kanagawa Prefectural Police",
+    "attrs": {}
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Chinese restaurant, Yokohama Chinatown",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Restaurant restroom",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Previous film shoot set",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Isogami's hand towel",
+    "role": "weapon",
+    "attrs": {
+     "trick": "soaked in cyanide, used to smear poison on the turntable's underside, then staged at the table to look like the victim's own poisoned towel"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Cyanide bottle",
+    "role": "evidence",
+    "attrs": {"found_at": "restaurant restroom"}
+   },
+   {
+    "id": "o3",
+    "name": "Kawabata's real towel",
+    "role": "evidence",
+    "attrs": {
+     "stains": "soup stain plus a faint blue stain transferred from his blue jeans",
+     "significance": "the jean stain is missing from the towel found at the table, proving the two towels were swapped"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Lazy Susan turntable",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "poison smeared on the underside; victim's allergy to egg dishes made him rotate it himself to push those plates away, touching the poisoned spot"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Egg dishes (century egg, crab omelet)",
+    "role": "tool",
+    "attrs": {"purpose": "deliberately kept in front of the egg-allergic victim's seat to force him to rotate the turntable himself"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Isogami stopped a child from eating a bun after it touched the crime-scene tabletop, even though forensics had cleared the table -- only someone who knew poison was still on the turntable's underside would react that way.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cB",
+    "desc": "The towel still on Isogami has both a soup stain and a faint blue jeans stain from wiping the victim's trousers, but the poisoned towel found at the table lacks the jeans stain -- proving the towels were swapped and Isogami holds the real one.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "collaborator_of"},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "worked_with"},
+  {"type": "relationship", "from": "p5", "to": "p4", "relation_type": "worked_with"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "collaborator_of"},
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "revenge_for_Rikas_death"},
+
+  {"type": "responsible_for_death_of", "from": "p4", "to": "p5", "order": 0, "temporal_frame": "backstory", "years_before_present": 1, "method": "let her take a stunt double's place for a dangerous action scene and did nothing to stop it", "circumstance_tags": ["negligence", "disguised_as_accident"]},
+  {"type": "was_at", "from": "p5", "to": "l3", "order": 0, "temporal_frame": "backstory"},
+  {"type": "was_at", "from": "p4", "to": "l3", "order": 0, "temporal_frame": "backstory"},
+
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 1, "temporal_frame": "present"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 2, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 2, "temporal_frame": "present"},
+
+  {"type": "orders", "from": "p1", "to": "o5", "order": 3, "temporal_frame": "present", "detail": "orders the egg dishes he knows the victim is allergic to, keeping them near the victim's seat"},
+
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 4, "temporal_frame": "present"},
+  {"type": "poisons", "from": "p1", "to": "o1", "order": 4, "temporal_frame": "present", "detail": "applies cyanide from o2 to his own hand towel in the restroom"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+
+  {"type": "contaminates", "from": "p1", "to": "o4", "order": 5, "temporal_frame": "present", "detail": "presses the cyanide-soaked towel against the turntable's underside right before the duck is served"},
+
+  {"type": "touches", "from": "p4", "to": "o4", "order": 6, "temporal_frame": "present", "detail": "rotates the turntable himself to push the egg dishes out of view, touching the poisoned underside"},
+
+  {"type": "kills", "from": "p1", "to": "p4", "order": 7, "temporal_frame": "present", "method": "cyanide transferred from the turntable underside to the victim's hand, ingested when he ate a duck crêpe", "circumstance_tags": ["indirect_poisoning", "disguised_as_towel_switch"]},
+
+  {"type": "stages_alibi_using", "from": "p1", "to": "o1", "order": 8, "temporal_frame": "present", "detail": "leaves his own contaminated towel at the table to be mistaken for a swapped murder weapon"},
+  {"type": "conceals", "from": "p1", "to": "o3", "order": 8, "temporal_frame": "present", "detail": "pockets the victim's real towel to hide the evidence that would expose the swap"},
+
+  {"type": "was_at", "from": "p7", "to": "l1", "order": 9, "temporal_frame": "present"},
+
+  {"type": "leaves_evidence", "from": "p1", "to": "o1", "order": 10, "temporal_frame": "present"},
+
+  {"type": "located_in", "from": "o2", "to": "l2"},
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "located_in", "from": "o5", "to": "l1"},
+  {"type": "owns", "from": "p4", "to": "o3"},
+
+  {"type": "implicates", "from": "o1", "to": "p1"},
+  {"type": "implicates", "from": "o2", "to": "p1"},
+  {"type": "implicates", "from": "o3", "to": "p1"},
+  {"type": "implicates", "from": "cA", "to": "p1"},
+  {"type": "implicates", "from": "cB", "to": "p1"},
+  {"type": "regarding", "from": "cA", "to": "o4"},
+  {"type": "regarding", "from": "cB", "to": "o1"},
+  {"type": "regarding", "from": "cB", "to": "o3"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

@@ -1,0 +1,362 @@
+{
+ "case_id": "ep072_the_triplets_country_home_murder_case",
+ "episode_number": "72",
+ "title": "The Triplet's Country Home Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Triplet%27s_Country_Home_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0072.txt (full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko) omitted by convention. No event nodes: every action is a directly typed edge between the entities involved, sharing an order integer. Two genuine red herrings: witness Ayako Suzuki mistakenly names Yuzo as the killer, having glimpsed only the culprit's eyes and nose in a lightning flash and not knowing he has two identical triplet brothers; and Tatsuji is caught in a real lie about his whereabouts (claiming an Okinawa business trip when he'd actually secretly gone to see his ailing fiancee in Tokyo) that is unrelated to the murder. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Tetsuharu Tomizawa",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "president of Tomizawa Industries",
+    "attrs": {
+     "died_of": "struck with a stone",
+     "controlling_behavior": "secretly pressured publishers to drop every job offered to Taichi, hoping to force him to quit writing and join the family business"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yuzo Tomizawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "painter / illustrator; third son",
+    "attrs": {
+     "cleared_by": "the only one of the three sons with a corroborated alibi (an illustrator colleague's wake-up call just after 11:30 PM); initially misidentified by Ayako due to the triplets' identical appearance"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tatsuji Tomizawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "office worker at the family company; middle son",
+    "attrs": {
+     "real_lie": "falsely claimed to have flown back from an Okinawa business trip that morning; actually secretly went to Tokyo the night before to see his fiancee Hiromi, who had collapsed, and had a colleague cover for him at work",
+     "cleared_by": "Hiromi confirms he was with her, and independently repeats a detail from the game (no home run coverage on TV at 11:30) that matches the true broadcast timeline"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Taichi Tomizawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "novelist; eldest son",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Ayako Suzuki",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Sonoko's sister",
+    "attrs": {}
+   },
+   {
+    "id": "p6",
+    "name": "Hiromi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "note": "Tatsuji's fiancee; confirms his real whereabouts on the night of the murder, unrelated to the murder itself"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Outside the Tomizawa family villa",
+    "attrs": {
+     "power_failure": "a lightning-caused, 10-minute blackout struck at 11:30 PM; an answering machine's clock stays powered by battery through an outage, but its recording circuit does not"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Suzuki family villa (next door)",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Osaka pachinko parlor (Taichi's claimed alibi location)",
+    "attrs": {
+     "legal_closing_time": "11:00 PM, which Taichi's original story of listening to the game there past 11:30 PM would have violated"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Victim's watch, secretly fitted with a hidden microphone",
+    "role": "instrument",
+    "attrs": {
+     "trick": "let Taichi remotely listen in on his father's location and on the baseball broadcast his father was watching",
+     "fate": "taken from the body after the murder to destroy the evidence of the bug"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Tomizawa residence answering machine",
+    "role": "instrument",
+    "attrs": {
+     "trick": "clock set ahead in advance; Taichi called and left a message reacting to the game's real ending (~11:25 PM), timestamping it 11:34 PM, then quietly turned the clock back -- fabricating an alibi for the exact window of the murder"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Stone",
+    "role": "weapon",
+    "attrs": {}
+   },
+   {
+    "id": "o4",
+    "name": "Tomizawa villa satellite dish",
+    "role": "tool",
+    "attrs": {
+     "trick": "broken by Taichi in advance so his father would go watch the game at the Suzuki villa next door instead, a predictable location and timing"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Taichi's original claimed alibi -- listening to the game at an Osaka pachinko parlor past 11:30 PM -- is impossible, since pachinko parlors are legally required to close by 11:00 PM.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "The Tomizawa residence's answering machine timestamps Taichi's message at 11:34 PM, squarely inside the 10-minute blackout that struck at 11:30 -- but the machine's recording circuit (unlike its battery-powered clock) cannot function without power, meaning the message could not actually have been recorded at the time it claims.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Taichi describes the game-winning hit as pulled 'to the right,' a detail from watching the television broadcast, when his revised story claims he only heard it on the radio in Osaka -- the mismatch is what starts unraveling his account before the answering-machine proof lands the case.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c4",
+    "desc": "Tatsuji's claimed Okinawa-to-Haneda flight is shown to have landed after the time he says he arrived, exposing a real lie about his whereabouts -- but it turns out to be an unrelated cover story for secretly visiting his fiancee in Tokyo, not the murder.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p6",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "identical_triplet_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "identical_triplet_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "identical_triplet_of"
+  },
+  {
+   "type": "sabotages_career_of",
+   "from": "p1",
+   "to": "p4",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": null,
+   "detail": "secretly pressures publishers to drop every job offered to Taichi, leaving him suddenly broke, hoping to force him into the family business"
+  },
+  {
+   "type": "plants_bug_in",
+   "from": "p4",
+   "to": "o1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "hides a microphone inside his father's watch to monitor his whereabouts and eavesdrop on the game"
+  },
+  {
+   "type": "sabotages",
+   "from": "p4",
+   "to": "o4",
+   "order": 2,
+   "temporal_frame": "present",
+   "detail": "breaks his father's satellite dish so he'll go watch the game at the Suzuki villa instead, a predictable location and timing"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p4",
+   "to": "o2",
+   "order": 4,
+   "temporal_frame": "present",
+   "detail": "sets the answering machine's clock ahead in advance, then calls and leaves a message reacting to the game's real ending (~11:25 PM) so it's timestamped 11:34 PM -- inside the window of the murder -- before quietly turning the clock back",
+   "circumstance_tags": ["staged_alibi"]
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "method": "struck with a stone outside, during a 10-minute blackout, once his father started back to his own villa after the game",
+   "circumstance_tags": ["staged_alibi", "opportunistic_timing"]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o3",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3",
+   "order": 6,
+   "temporal_frame": "present",
+   "circumstance_tags": ["false_alibi_claim"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "steals",
+   "from": "p4",
+   "to": "o1",
+   "order": 7,
+   "temporal_frame": "present",
+   "detail": "takes the watch from his father's body to destroy proof of the hidden microphone",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "accuses",
+   "from": "p5",
+   "to": "p2",
+   "order": 8,
+   "temporal_frame": "present",
+   "circumstance_tags": ["red_herring", "mistaken_identity"],
+   "detail": "mistakes the fleeing culprit for Yuzo, having only glimpsed his eyes and nose in a lightning flash, unaware Yuzo has two identical triplet brothers"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "c2",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o2"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "p3"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p4"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "financial_desperation_and_revenge_--_father_secretly_sabotaged_his_writing_career_leaving_him_broke;_wanted_the_inheritance_to_keep_writing_and_planned_to_pin_the_blame_on_yuzo_to_increase_his_own_share"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

@@ -1,0 +1,308 @@
+{
+ "case_id": "ep905-906_eyewitness_testimony_seven_years_later",
+ "episode_number": "905-906",
+ "title": "Eyewitness Testimony Seven Years Later",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Eyewitness_Testimony_Seven_Years_Later",
+ "subtitle_source": "subs_resolved/0905.txt, subs_resolved/0906.txt (760 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) and local police inspector Makoto Muramatsu (pure investigating-officer scaffolding, no clue-bearing edges) omitted by convention. case_type: murder (a present-day double murder covering up a seven-year-old robbery-murder). No `event` node type: actions are direct typed edges. Correction vs. old low-fidelity file (cases/ep905-906_eyewitness_testimony_seven_years_later.json): the old file's stated culprit (Ohara) and its two headline clues (planted hair failing as evidence because a convertible can't transport a body; the magnet+bottle-opener locked-room mechanism) all check out against the transcript -- no reversal needed there. However the old file was substantially incomplete: it treated Otaro only as a 'suspect' and omitted that he is himself a second murder victim; it omitted the witness Miona entirely (the actual throughline of the case -- a five-year-old who witnessed the original robbery-murder and, traumatized, spent the whole case unable to recall the culprits' faces until the finale); it left the motive as 'unspecified' when the transcript is explicit (Ohara killed reporter Kyujiro to silence blackmail over the old crime, then killed his former partner-in-crime Otaro because Otaro wanted to kill Miona to keep her from ever remembering); and it omitted nearly all the physical evidence chain (the bugged listening device, the Byun-card threat, the reversed dying-message signature, the bottle-count/cap-shape mismatch, Ohara's magnet-damaged watch). Ohara's own stated motive (protecting Miona) vs. Kogoro's counter-accusation that he had 'always planned' to murder and frame Otaro is left explicitly unresolved by the transcript itself -- both are captured in attrs/notes rather than picking one.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Shinsuke Ohara",
+    "aliases": [],
+    "roles": ["suspect", "backstory_figure"],
+    "occupation": "Hatobue Lodge employee (chef)",
+    "attrs": {
+     "backstory_role": "one of the two costumed robbers/killers in the Haido City case seven years ago",
+     "confession": "claims Otaro insisted on killing Miona and that he killed Otaro to protect her; Kogoro counters that he had always planned to murder and frame Otaro -- transcript leaves which is true unresolved"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Otaro Minakitaya",
+    "aliases": ["Minamida Kotaro"],
+    "roles": ["suspect", "victim", "backstory_figure"],
+    "occupation": "entertainer, \"Prince of Beer\"",
+    "attrs": {
+     "died_of": "blunt-force trauma from a struggle, staged to look like a drunken accidental fall in a locked room",
+     "backstory_role": "one of the two costumed robbers/killers in the Haido City case seven years ago; his fingerprint was the one left on a discarded mask",
+     "framed_for": "Kyujiro's murder, via hair planted in his own convertible by Ohara"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Kyujiro Minakitaya",
+    "aliases": ["Kitamoto Shujiro"],
+    "roles": ["victim"],
+    "occupation": "entertainment reporter",
+    "attrs": {
+     "died_of": "drowned in tap water in a van, then dumped in the lake to look like a lake drowning",
+     "backstory_note": "former comedy duo partner of Otaro; reputation for aggressive, unscrupulous reporting; deep in debt",
+     "leverage": "bugged Otaro's room and overheard Ohara and Otaro discussing their seven-year-old secret, then tried to blackmail Ohara"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Miona Yuri",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "age_at_witnessed_crime": 5,
+     "current_age": 12,
+     "trauma": "terrified of the Masked Comet Byun show; suppressed memory of the culprits' faces until the very end of the case, when she identifies Ohara"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Asako Yuri",
+    "aliases": [],
+    "roles": ["bystander"],
+    "occupation": "Hatobue Lodge owner",
+    "attrs": {
+     "moved_to_nishiokuho": "after the Haido City incident, to help Miona heal in a quiet place"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Toru Shirogane",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "local magazine writer",
+    "attrs": {
+     "secret_occupation": "actual head writer/scriptwriter of the Masked Comet Byun TV show",
+     "reason_for_visit": "learned Miona's identity from a newspaper clipping about the seven-year-old case, worried about her, and visited to check on her -- unrelated to either murder (red herring)"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Masanari Ide",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "web designer",
+    "attrs": {
+     "hidden_backstory": "Ide is his mother's maiden name; his father was the financial-company employee murdered in the seven-year-old Haido City robbery",
+     "alibi": "on the same train as the Mori family at the time Kyujiro was killed"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Hiroko Fujiyoshi",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "stationery company employee",
+    "attrs": {
+     "discovery": "found the dining room ransacked around 2 AM, the night Otaro was killed"
+    }
+   },
+   {
+    "id": "p9",
+    "name": "Masanari Ide's Father",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "financial company employee",
+    "attrs": {
+     "died": "robbed and murdered in Haido City seven years ago by two men wearing Masked Comet Byun and Demon King Dyark costumes"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Hatobue Lodge",
+    "attrs": {
+     "note": "Nishiokuho guest house where the present-day cast stays; includes the dining room, guest rooms, and annex"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Lake",
+    "attrs": {
+     "note": "seven kilometers east of the lodge; where Kyujiro's body was dumped and found"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Haido City",
+    "attrs": {
+     "note": "site of the robbery-murder seven years ago, witnessed by a five-year-old Miona"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Cow magnet with bottle caps",
+    "role": "tool",
+    "attrs": {
+     "mechanism": "used from outside to drag a bottle opener stuck under the door, turning the deadbolt and locking the room after Ohara left",
+     "side_effect": "carried in Ohara's pocket during his escape, its magnetism damaged his watch"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Bottle opener",
+    "role": "tool",
+    "attrs": {
+     "nickname": "Otaro's \"key to the door to happiness\"",
+     "staging_flaw": "Otaro's own bottle opener was never found in the room; Ohara had to fetch a substitute from the kitchen since none was left there, and lied about it"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Otaro's convertible car",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "a convertible cannot realistically be used to transport and dump a body, disproving the planted-hair frame"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Kyujiro's hair (planted in the convertible)",
+    "role": "evidence",
+    "attrs": {
+     "planted_by": "Ohara, to frame Otaro for Kyujiro's murder"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Listening device in Otaro's room",
+    "role": "tool",
+    "attrs": {
+     "installed_by": "Kyujiro",
+     "found_with": "Kyujiro's fingerprints",
+     "purpose": "let Kyujiro overhear Ohara and Otaro discussing their shared seven-year-old secret"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Ohara's van",
+    "role": "tool",
+    "attrs": {
+     "used_for": "drowning Kyujiro in prepared tap water, then transporting and dumping the body in the lake en route to picking up guests at the station"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Ohara's watch",
+    "role": "evidence",
+    "attrs": {
+     "normally_worn": "in his pocket",
+     "found": "worn on his wrist the morning after Otaro's murder",
+     "malfunction_cause": "stopped/damaged by the cow magnet carried in the same pocket during his escape down a tree"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Masked Comet Byun card",
+    "role": "evidence",
+    "attrs": {
+     "owned_by": "Kyujiro",
+     "purpose": "shown to Ohara as a wordless threat that he knew about the seven-year-old crime"
+    }
+   },
+   {
+    "id": "o9",
+    "name": "Byun and Dyark costume masks",
+    "role": "evidence",
+    "attrs": {
+     "found": "thrown into a ditch after the Haido City robbery-murder seven years ago",
+     "detail": "one legible fingerprint survived on a mask, later matched to Otaro"
+    }
+   },
+   {
+    "id": "o10",
+    "name": "Shirogane's newspaper clipping",
+    "role": "evidence",
+    "attrs": {
+     "content": "article about the seven-year-old Haido City robbery-murder and Miona's case",
+     "note": "explained as research done to check on Miona, not evidence of guilt (red herring)"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Bloody symbol at Otaro's death scene first read as the Masked Comet Byun mark, but the hand position is reversed -- it is actually Otaro's own overlapped katakana signature style ('oh' circle + 'ha' two strokes), spelling 'Ohara' as a dying message.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Seven empty beer bottles but only six bottle caps on the cow-magnet chain, and the caps show two differently shaped pry-marks -- proves a second, borrowed bottle opener was used and one cap was removed from the scene.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "Ohara is seen wearing his watch on his wrist instead of his usual pocket, and glances at the wall clock right after checking it -- the watch is broken.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p7", "to": "p9", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "former_comedy_duo_partners"},
+
+  {"type": "kills", "from": "p1", "to": "p9", "circumstance_tags": ["cover_up", "backstory"]},
+  {"type": "kills", "from": "p2", "to": "p9", "circumstance_tags": ["cover_up", "backstory"]},
+  {"type": "was_at", "from": "p1", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p9", "to": "l3"},
+  {"type": "owns", "from": "p1", "to": "o9"},
+  {"type": "owns", "from": "p2", "to": "o9"},
+  {"type": "implicates", "from": "o9", "to": "p2"},
+  {"type": "threatens", "from": "p1", "to": "p4", "circumstance_tags": ["backstory"], "detail": "tells the child witness to forget everything or be killed too"},
+  {"type": "threatens", "from": "p2", "to": "p4", "circumstance_tags": ["backstory"], "detail": "tells the child witness to forget everything or be killed too"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p8", "to": "l1"},
+
+  {"type": "installs", "from": "p3", "to": "o5"},
+  {"type": "located_in", "from": "o5", "to": "l1"},
+  {"type": "confronts", "from": "p3", "to": "p1", "detail": "shows the Byun card and threatens to expose Ohara using recordings of Ohara and Otaro discussing the seven-year-old crime"},
+  {"type": "owns", "from": "p3", "to": "o8"},
+  {"type": "has_motive_against", "from": "p1", "to": "p3", "motive_type": "silence_blackmailer"},
+
+  {"type": "drowns", "from": "p1", "to": "p3", "detail": "drowned in a van using prepared tap water before the body was dumped in the lake"},
+  {"type": "owns", "from": "p1", "to": "o6"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "leaves_evidence", "from": "p1", "to": "o4"},
+  {"type": "located_in", "from": "o4", "to": "o3"},
+  {"type": "owns", "from": "p2", "to": "o3"},
+  {"type": "frames", "from": "p1", "to": "p2", "detail": "plants Kyujiro's hair in Otaro's convertible to make it look like Otaro killed and transported Kyujiro's body"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p4", "motive_type": "eliminate_witness"},
+  {"type": "has_motive_against", "from": "p1", "to": "p2", "motive_type": "protect_witness_and_cover_up", "detail": "Ohara says Otaro wanted to kill Miona and had to be stopped; Kogoro alleges premeditated murder-and-frame instead -- transcript leaves this unresolved"},
+  {"type": "kills", "from": "p1", "to": "p2", "detail": "blunt-force struggle staged as a drunken accidental fall in a locked room"},
+  {"type": "creates_locked_room_using", "from": "p1", "to": "o1"},
+  {"type": "creates_locked_room_using", "from": "p1", "to": "o2"},
+  {"type": "damages", "from": "o1", "to": "o7"},
+  {"type": "leaves_evidence", "from": "p2", "to": "c1", "detail": "writes the reversed dying message before dying"},
+
+  {"type": "implicates", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "o2"},
+  {"type": "implicates", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "o7"},
+  {"type": "implicates", "from": "o7", "to": "p1"},
+
+  {"type": "has_motive_against", "from": "p7", "to": "p2", "motive_type": "revenge_for_fathers_murder (red herring accusation)"},
+  {"type": "owns", "from": "p6", "to": "o10"},
+
+  {"type": "identifies", "from": "p4", "to": "p1", "detail": "Miona's regained memory identifies Ohara as one of the two masked culprits from seven years ago"}
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

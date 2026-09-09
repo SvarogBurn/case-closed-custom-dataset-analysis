@@ -1,0 +1,400 @@
+{
+ "case_id": "ep373_deadly_poisonous_spider_trap",
+ "episode_number": "373",
+ "title": "Deadly Poisonous Spider Trap",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Deadly_Poisonous_Spider_Trap",
+ "subtitle_source": ["subs_resolved/0373.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, the Detective Boys, Kogoro Mouri, Ran, Takagi, the Inspector) omitted by convention, matching ep011. No `event` node type: every action is a directly typed edge between the entities involved. case_type: accidental_death_by_staged_scare (the victim was never actually envenomated -- he died of a stress-induced heart attack after believing he'd been bitten). The old low-fidelity case file (cases/ep373...) got the culprit right (Miwa Yasuda) and the core mechanism right (staged bite via a dead spider on a hidden needle, missing antivenom), but it under-modeled the case: it had no node for the needle/thumb-tack itself, missed Itokawa's cover-up (pocketing Yasuda's dropped nail-art decal), missed the matching-cellphone evidence that exposed the Itokawa/Yasuda relationship (and thus Yasuda's access to a copied spare key), and generically 'knows' every suspect to the victim instead of the real motive/relationship structure (Itokawa is Nino's research assistant whose work Nino was stealing credit for; Urasaki is a recent acquaintance Nino pressured into selling him rare spiders; Yasuda is Itokawa's girlfriend acting to protect him). Transcript confirms the culprit acted without intent to kill -- she expected the professor to merely be hospitalized -- which the old file's motive_type already captured correctly.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Professor Nino",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "university professor, poisonous spider researcher",
+    "attrs": {
+     "died_of": "stress-induced heart attack, not spider venom",
+     "pre_existing_condition": "weak heart, on heart medication",
+     "misconduct": "repeatedly presented Itokawa's research as his own at academic conferences"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Tooru Itokawa",
+    "aliases": ["Hitokawa"],
+    "roles": ["suspect"],
+    "occupation": "assistant professor, spider researcher",
+    "attrs": {
+     "age": 32,
+     "relationship_to_victim": "research assistant whose work was taken credit for by Nino",
+     "action_after_death": "secretly pocketed a nail-art decal dropped by Yasuda to hide her presence at the scene"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Yoshiki Urasaki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "amateur spider enthusiast, sold rare spiders",
+    "attrs": {
+     "age": 38,
+     "grievance": "pressured by Nino into selling him rare spiders under threat of exposing a personal weakness"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Miwa Yasuda",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "biology magazine reporter",
+    "attrs": {
+     "age": 28,
+     "confession": "intended only to scare Nino into hospitalization over stealing Itokawa's research credit, not kill him"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Beika Agriculture University spider lab",
+    "attrs": {
+     "access": "locked room; only Nino and Itokawa normally hold keys",
+     "contents": "poisonous spider cages, antivenom cabinet, landline phone"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "University campus grounds",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Lab telephone receiver",
+    "role": "instrument",
+    "attrs": {
+     "trick": "rigged with a hidden needle and a dead spider so the earpiece would prick and appear to bite whoever answered"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hidden thumb-tack (needle)",
+    "role": "weapon",
+    "attrs": {
+     "location_found": "inside the phone receiver, at ear position",
+     "staging_flaw": "tip was broken off, invisible from outside the phone cover",
+     "used_to_break_tip": "a cellphone antenna"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Dead redback-type spider",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "already dead before contact -- could not have delivered a real bite",
+     "purpose": "placed on the needle tip to make Nino believe he'd been bitten"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Antivenom for black widow bite",
+    "role": "evidence",
+    "attrs": {
+     "normal_location": "lab antivenom cabinet",
+     "tampering": "stolen/hidden in advance so Nino could not find it when panicking"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Blue flower nail-art decal",
+    "role": "evidence",
+    "attrs": {
+     "found_on": "secretly pocketed by Itokawa after he picked it up off the floor",
+     "match": "matches the decal Yasuda wears, shown in her own magazine photo"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Itokawa's cellphone",
+    "role": "evidence",
+    "attrs": {
+     "antenna": "scratched",
+     "model_note": "same rare model as Yasuda's phone, different color"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Yasuda's cellphone",
+    "role": "evidence",
+    "attrs": {
+     "antenna": "scratched -- used to snap the thumb-tack's tip",
+     "model_note": "same rare model as Itokawa's phone, different color",
+     "call_log_anomaly": "an earlier misdialed call around noon, obscured by a construction lunch-break bell"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Nino's heart medication",
+    "role": "evidence",
+    "attrs": {
+     "significance": "confirms Nino had a pre-existing weak heart, known within the lab"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The spider was already dead before contact, and the needle it sat on had a broken, invisible tip -- together they prove the 'bite' was staged, not a real envenomation.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Autopsy shows no venom entered Nino's body; cause of death was a stress-induced heart attack from panicking over the missing antivenom, not the spider itself.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c3",
+    "desc": "Itokawa's and Yasuda's cellphones are the same rare model in different colors, and both antennas carry matching scratches -- proving they're a couple and one antenna snapped the needle's tip.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c4",
+    "desc": "The blue flower nail-art decal pocketed by Itokawa matches the decal visible on Yasuda's nails in her own magazine photo -- ties the dropped decal directly to her presence at the scene.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "recently_acquainted"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p2",
+   "relation_type": "dating"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "resentment_over_stolen_research_credit (red herring -- Itokawa is one of only two normal keyholders, making him look guilty)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p3",
+   "to": "p1",
+   "motive_type": "resentment_over_coerced_spider_sales (red herring)"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "protective_anger_over_boyfriends_stolen_research_credit"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "circumstance_tags": ["arrived_before_victim"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "plants",
+   "from": "p4",
+   "to": "o2",
+   "circumstance_tags": ["locked_room", "premeditated"]
+  },
+  {
+   "type": "plants",
+   "from": "p4",
+   "to": "o3",
+   "circumstance_tags": ["staged_bite"]
+  },
+  {
+   "type": "hides_contraband_in",
+   "from": "p4",
+   "to": "o4"
+  },
+  {
+   "type": "breaks",
+   "from": "p4",
+   "to": "o2",
+   "attrs": {"tool": "cellphone antenna (o7)"}
+  },
+  {
+   "type": "manipulates",
+   "from": "p4",
+   "to": "p3",
+   "detail": "gets Urasaki to be the one who calls Nino, so neither she nor Itokawa is the traceable caller"
+  },
+  {
+   "type": "calls",
+   "from": "p3",
+   "to": "p1",
+   "circumstance_tags": ["unwitting_trigger"]
+  },
+  {
+   "type": "kills",
+   "from": "p4",
+   "to": "p1",
+   "method": "staged fake spider bite induced a panic-driven fatal heart attack when the antivenom could not be found",
+   "circumstance_tags": ["locked_room", "staged_bite", "unintended_death"]
+  },
+  {
+   "type": "drops",
+   "from": "p4",
+   "to": "o5"
+  },
+  {
+   "type": "hides",
+   "from": "p2",
+   "to": "o5",
+   "circumstance_tags": ["cover_up"]
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o7"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o8"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o5",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o2"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "c2",
+   "to": "o4"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o6"
+  },
+  {
+   "type": "regarding",
+   "from": "c3",
+   "to": "o7"
+  },
+  {
+   "type": "implicates",
+   "from": "c3",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c4",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "c4",
+   "to": "p4"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

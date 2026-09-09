@@ -1,0 +1,210 @@
+{
+ "case_id": "ep602_the_devil_hidden_in_the_tennis_court",
+ "episode_number": "602",
+ "title": "The Devil Hidden in the Tennis Court",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Devil_Hidden_in_the_Tennis_Court",
+ "subtitle_source": ["subs_resolved/0602.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Conan, Ran) omitted by convention, plus Inspector Yamamura of the Gunma police (recurring investigator, same convention as Inspector Megure elsewhere in the dataset). case_type: attempted_murder -- Goto survives (regains consciousness, positive prognosis per the closing scene). No `event` node type: every action is a directly typed edge between the persons/locations/objects involved. The old low-fidelity case file (cases/ep602...) has the culprit right (Azuma) but gets the poisoning mechanism backwards: its event e2 says 'Azuma poisons the palm of Goto's glove', but the transcript is explicit that Azuma poisoned his OWN glove (o1) and transferred the toxin to Goto's palm via a high-five/handshake before the match (lines ~321-326: 'You high-fived Goto-san a while ago. In that instant, you forced the poison onto Goto-san's palm.'); Goto's own contaminated palm then secondarily transferred trace poison onto everything he touched afterward (towel, bottle, grip-tape film, and Suzuki's glove during the doubles handshake), which is what produced the three false accusations (Tsuchida/bottle, Otake/towel, Suzuki/grip-tape+glove) before the true chain was reconstructed. This is exactly the reversed-culprit-object direction the transcript corrects.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Takao Goto",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "college tennis club vice-captain",
+    "attrs": {
+     "age": 21,
+     "poisoned_with": "aconitine derivative",
+     "survived": true,
+     "romantic_interest_in": "pursued Suzuki partly for her family's wealth (Suzuki Financial Group)"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yuka Tsuchida",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "tennis club member",
+    "attrs": {
+     "age": 19,
+     "accusation": "suspected of lacing Goto's drink out of jealousy (red herring)"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Fumihiro Azuma",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "tennis club captain",
+    "attrs": {
+     "age": 22,
+     "injury": "fractured leg from being deliberately tripped by Goto during practice",
+     "lost_opportunities": "tournament spot, sponsor contract, and scholarship all went to Goto instead"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Chie Otake",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "tennis club member",
+    "attrs": {
+     "age": 19,
+     "financial_strain": "lent Goto her tuition fund to win his attention; risks dropping out"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Sonoko Suzuki",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "heiress, Suzuki Financial Group",
+    "attrs": {
+     "circumstance": "wrongly accused twice on circumstantial evidence (grip tape film, then her own glove) before being cleared"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "North Karuizawa tennis court",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Tennis club locker room",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Azuma's poisoned glove",
+    "role": "weapon",
+    "attrs": {
+     "toxin": "aconitine derivative applied to the palm side before the match",
+     "disposal": "stuffed inside a tennis ball after the crime"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Tennis ball hiding the gloves",
+    "role": "evidence",
+    "attrs": {
+     "anomaly": "did not bounce; visible rift from being stuffed with the gloves",
+     "concealment": "returned to the shared ball container to blend in"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Suzuki's tennis glove",
+    "role": "evidence",
+    "attrs": {
+     "note": "trace poison found -- secondary transfer from Goto's already-contaminated palm during a doubles high-five, not the source"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Grip tape adhesive film",
+    "role": "evidence",
+    "attrs": {
+     "origin": "new grip tape gifted to Goto by Otake",
+     "note": "trace poison found on the peeled film -- secondary transfer from Goto's palm, not the source"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Honey lemon water bottle",
+    "role": "evidence",
+    "attrs": {
+     "origin": "handed to Goto by Tsuchida during his break",
+     "note": "toxin found on the outside only; lab confirmed the drink itself was not poisoned"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Goto's towel",
+    "role": "evidence",
+    "attrs": {
+     "origin": "handed to Goto by Otake",
+     "note": "toxin detected but never used -- Goto left it on the bench without wiping his face"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Ran high-fived Suzuki's poisoned glove, then ate cookies with the same hand and showed no symptoms -- proves the glove received trace poison rather than being its source.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c2",
+    "desc": "Azuma batted stray balls back with the back of his gloved hand instead of the customary palm catch -- the one deviation exposing which glove's palm carried the poison.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "c3",
+    "desc": "Goto's entire palm was inflamed, not just the fingertips that would have touched the grip-tape film -- rules out the film as the primary poisoning method.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "dating"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "financial_supporter_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "teammate_of"},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "tennis_coach_of"},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "pursues_romantically"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "revenge_for_career_ending_injury"},
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "jealousy_over_suspected_infidelity (red herring)"},
+  {"type": "has_motive_against", "from": "p4", "to": "p1", "motive_type": "resentment_over_exploited_loans (red herring)"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "alleged_betrayed_romantic_feelings (red herring, speculative accusation by police, unsupported)"},
+
+  {"type": "injures", "from": "p1", "to": "p3", "method": "deliberately tripped him during practice, fracturing his leg", "circumstance_tags": ["motive_origin"]},
+
+  {"type": "poisons", "from": "p3", "to": "p1", "method": "transferred toxin from his own glove to Goto's palm via a high-five/handshake before the match", "circumstance_tags": ["hidden_in_plain_sight", "public_deception"]},
+  {"type": "applies_poison_to", "from": "p3", "to": "o1"},
+  {"type": "owns", "from": "p3", "to": "o1"},
+  {"type": "contaminates", "from": "p1", "to": "o5"},
+  {"type": "contaminates", "from": "p1", "to": "o6"},
+  {"type": "contaminates", "from": "p1", "to": "o4"},
+  {"type": "contaminates", "from": "p1", "to": "o3"},
+  {"type": "gives", "from": "p2", "to": "o5"},
+  {"type": "gives", "from": "p4", "to": "o6"},
+  {"type": "gives", "from": "p4", "to": "o4"},
+  {"type": "conceals_evidence_in", "from": "p3", "to": "o2"},
+  {"type": "manipulates", "from": "p3", "to": "p5", "detail": "advises Suzuki to remove her gloves after the match so they'd be lost in the commotion, destroying the trace-evidence trail", "circumstance_tags": ["cover_up"]},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p4"},
+  {"type": "implicates", "from": "o4", "to": "p5"},
+  {"type": "implicates", "from": "o3", "to": "p5"},
+  {"type": "implicates", "from": "o1", "to": "p3"},
+  {"type": "implicates", "from": "o2", "to": "p3"},
+
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "p5"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "regarding", "from": "c2", "to": "p3"},
+  {"type": "implicates", "from": "c2", "to": "p3"},
+
+  {"type": "regarding", "from": "c3", "to": "o4"},
+  {"type": "regarding", "from": "c3", "to": "p1"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}

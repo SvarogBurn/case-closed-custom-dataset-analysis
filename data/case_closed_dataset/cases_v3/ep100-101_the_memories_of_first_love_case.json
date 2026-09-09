@@ -1,0 +1,443 @@
+{
+ "case_id": "ep100-101_the_memories_of_first_love_case",
+ "episode_number": "100-101",
+ "title": "The Memories of First Love Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Memories_of_First_Love_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0100.txt + case_closed_dataset/subs_resolved/0101.txt (two-episode arc, full transcripts read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Kogoro) omitted by convention; Shin'ichi Kudo is also omitted under this convention (Conan's true identity) even though the 'first love' backstory revolves around him -- that backstory is captured instead as attributes on Asami's node rather than edges to an omitted person. case_type: attempted_murder (Sawai set the fire intending to 'rescue' Asami, not kill her, but the transcript is explicit it nearly did and he is charged accordingly).",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Manabu Sawai",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "4th-year Literature student, Tohto University; president of the university's Mystery Study Club",
+    "attrs": {
+     "motive_detail": "Asami turned him down when he asked her out the month before; he wanted to win her love by playing the hero who saves her from a fire he set himself"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Asami Uchida",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "1st-year Literature student, Tohto University; recent winner of a 'Newcomer Award' for her novel; titled Miss Tohto",
+    "attrs": {
+     "backstory": "confessed her feelings to a soccer-club teammate four years earlier and was turned down; started a rumor that she had been confessed to instead, to save face",
+     "other_note": "national tennis champion in her 2nd year of middle school, but abruptly switched to soccer-club manager in her 3rd year for reasons she never explained"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tomoko Hayasaka",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "4th-year Literature student, Tohto University; vice president of the Mystery Study Club",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Shigehisa Noguchi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "2nd-year Literature student, Tohto University",
+    "attrs": {
+     "note": "held the rental car key that night; briefly separated from the group to sober up near the station, giving him a window Conan has to rule out by timing"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Chika Miyazaki",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "2nd-year Literature student, Tohto University",
+    "attrs": {
+     "note": "owns the motorcycle that was parked in front of the lodge the whole time, ruling it out as the arsonist's transport"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Yoshinobu Morimoto",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "3rd-year Literature student, Tohto University",
+    "attrs": {
+     "note": "held the lodge's key, making him an early suspect on opportunity grounds alone"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Bungalow (rented lodge for Asami's birthday party)",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Karaoke room near the train station",
+    "attrs": {
+     "note": "where the group spent the night while the fire was remotely triggered back at the lodge"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Convenience store next to the karaoke place",
+    "attrs": {
+     "note": "has a fax machine customers can use; the owner's testimony about a mis-sent, backwards fax becomes key evidence"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Birthday cake with lit candles",
+    "role": "weapon",
+    "attrs": {
+     "trick": "placed on a chair directly in front of the fax machine so an incoming fax's paper feed would brush the candle flames and ignite nearby wrapping paper and curtains"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Fax machine (lodge's)",
+    "role": "instrument",
+    "attrs": {
+     "trick": "used as a remote ignition trigger -- sending it a fax from kilometers away starts the fire without any device that firefighters could later find as out of place"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Fax transmission slip",
+    "role": "evidence",
+    "attrs": {
+     "note": "kept by the convenience store owner; shows the date, time, the lodge's phone number, and Sawai's fingerprints, contradicting his claim he faxed a friend instead"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Burned fax remnants (test copy)",
+    "role": "evidence",
+    "attrs": {
+     "note": "made using the fax machine's copy feature on Professor Takamura's birthday fax, which was lying nearby, to test exactly where the mechanism would ignite; stained with cake cream and later found on Sawai, who couldn't bring himself to throw it away",
+     "significance": "two non-matching burned shapes at the scene proved two separate faxes existed, not one, exposing the rehearsal"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Sedative",
+    "role": "weapon",
+    "attrs": {
+     "trick": "dropped into Asami's drink to make her fall asleep before the fire was set"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Asami was asleep on the sofa when the group left for karaoke, but was found on the floor, away from the furniture, after the fire -- and the furniture arrangement itself looked subtly different from before, meaning someone returned and moved both her and the room's contents.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "cB",
+    "desc": "The burned fax remnants recovered from the scene form two shapes that don't fit together as one page, proving two separate faxes were involved -- a rehearsal copy made using the machine's copy feature, and the real triggering fax sent later.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cC",
+    "desc": "When the group rushed back to the burning lodge, one person said 'she was asleep in the living room, it's already burned up' before anyone had confirmed where in the house the fire was -- only the person who set it could have known that.",
+    "clue_type": "testimonial"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "club_member_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "club_member_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "club_member_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "club_member_of"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "drugs",
+   "from": "p1",
+   "to": "p2",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "drops a sedative into her drink to make her fall asleep",
+   "circumstance_tags": [
+    "premeditated"
+   ]
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o5",
+   "order": 11,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "rigs",
+   "from": "p1",
+   "to": "o1",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "positions the lit birthday cake on a chair directly in front of the fax machine"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o4",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "makes a test copy of Professor Takamura's fax to calibrate exactly where and how the mechanism would ignite"
+  },
+  {
+   "type": "poses_body_of",
+   "from": "p1",
+   "to": "p2",
+   "order": 11,
+   "temporal_frame": "present",
+   "detail": "moves the sedated Asami onto the floor, away from nearby furniture, so the fire wouldn't actually kill her before he could 'rescue' her"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "stages_alibi_using",
+   "from": "p1",
+   "to": "o2",
+   "order": 13,
+   "temporal_frame": "present",
+   "detail": "sends a fax to the lodge's fax machine from the convenience store, remotely triggering the rigged ignition, while publicly buying cigarettes to build his alibi"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p1",
+   "to": "p2",
+   "order": 14,
+   "temporal_frame": "present",
+   "method": "remotely ignites a fire in the lodge's living room via the rigged fax-and-cake mechanism while she slept, sedated, on the floor",
+   "circumstance_tags": [
+    "premeditated",
+    "attempted_murder",
+    "staged_accident"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 14,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "rescues",
+   "from": "p1",
+   "to": "p2",
+   "order": 15,
+   "temporal_frame": "present",
+   "detail": "rushes into the burning lodge to 'save' Asami as planned, hoping to win her affection as her rescuer",
+   "circumstance_tags": [
+    "staged_heroism"
+   ]
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o5"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o4",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p2"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "l1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "obsessive_infatuation_after_rejection"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p6",
+   "to": "p2",
+   "motive_type": "literary_rivalry (red herring; lost the Newcomer Award to her and held the lodge key)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

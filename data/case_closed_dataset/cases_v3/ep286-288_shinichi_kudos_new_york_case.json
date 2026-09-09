@@ -1,0 +1,229 @@
+{
+ "case_id": "ep286-288_shinichi_kudos_new_york_case",
+ "episode_number": "286-288",
+ "title": "Shinichi Kudo's New York Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Shinichi_Kudo%27s_New_York_Case",
+ "subtitle_source": ["subs_resolved/0286.txt", "subs_resolved/0288.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Shinichi/Conan, Ran) omitted by convention; Yukiko and Yusaku Kudo are kept because they are specific active participants in this story (Yukiko performs the on-stage 'Night Baroness' deduction reveal; Yusaku is the reason Radish Redwood appears at all) rather than generic case-solving apparatus. Episode 287's subtitle file is missing locally -- only 0286 and 0288 were read, so the middle episode's on-screen detail (likely more of the backstage tour / early investigation) is not represented here; everything included is grounded in what actually appears in 0286 and 0288. The old cases/ file's culprit call (Rose Hewitt) matches the transcript -- no correction needed there. It did, however: (1) mislabel the venue as 'Majestic Theatre' -- the transcript only ever calls it the 'Phantom Theater' on Broadway; (2) romanize the fourth actress as 'Iberis Hamilton' where the on-screen character card reads 'Everith Hamilton' (kept as the primary name, old spelling recorded as an alias); (3) omit an entire second, unresolved plot thread that runs through both episodes: a serial killer targeting young Japanese girls turns up dead of an apparent self-inflicted gunshot, but Shinichi later notices the blood and fingerprints at the scene were wiped clean -- meaning someone silenced him before police arrived. The transcript never names that second killer, so no murderer_id is assigned for it; it is captured only as attrs on the serial killer's own person node and flagged unresolved here rather than invented. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Heath Flockhart",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "stage actor",
+    "attrs": {
+     "age": 33,
+     "status": "the theater company's top star; the murder happens on the night of his final performance before leaving to star in a movie",
+     "died_of": "single gunshot at close range, fired up through the stage floor grille"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Rose Hewitt",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "stage actress",
+    "attrs": {
+     "age": 28,
+     "obsession": "in love with Heath's angel character 'Michael', not with Heath himself",
+     "omen": "reads a stage-armor prop accident that spared her as divine blessing on her plan"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Lila Sanchez",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "stage actress",
+    "attrs": {"age": 32}
+   },
+   {
+    "id": "p4",
+    "name": "Akane Nielsen",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "stage actress",
+    "attrs": {"age": 27}
+   },
+   {
+    "id": "p5",
+    "name": "Everith Hamilton",
+    "aliases": ["Iberis Hamilton"],
+    "roles": ["witness", "bystander"],
+    "occupation": "stage actress",
+    "attrs": {"age": 30}
+   },
+   {
+    "id": "p6",
+    "name": "Sharon Vineyard",
+    "aliases": [],
+    "roles": ["witness", "backstory_figure"],
+    "occupation": "film actress",
+    "attrs": {
+     "disguise_stunt": "impersonates NYPD Captain Radish Redwood to talk Yukiko out of a speeding ticket",
+     "backstory": "lost both parents in a fire on the day of her screen debut; husband died the day after she won her Oscar",
+     "trained_in_disguise_by": "same unnamed Japanese magician who taught Yukiko Kudo"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Chris Vineyard",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "relation": "Sharon Vineyard's daughter, mentioned only, never appears on screen",
+     "estranged_for_years": 10,
+     "note": "Sharon taught her disguise skills after Chris kept begging her; Sharon says she fell in with a bad crowd"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Radish Redwood",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "NYPD captain",
+    "attrs": {"speaks_japanese": true, "wife_is_japanese": true}
+   },
+   {
+    "id": "p9",
+    "name": "Unnamed serial killer",
+    "aliases": [],
+    "roles": ["suspect", "victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "described_as": "Japanese man, long silver/gray hair, attacks young girls only after midnight",
+     "death": "found shot dead, apparently self-inflicted, but blood and fingerprints at the scene had been wiped clean",
+     "perpetrator_of_his_death": "unidentified in the available transcript -- unresolved subplot, not assigned a murderer_id"
+    }
+   },
+   {
+    "id": "p10",
+    "name": "Man in black knit cap",
+    "aliases": [],
+    "roles": ["bystander", "backstory_figure"],
+    "occupation": null,
+    "attrs": {"note": "seen near the abandoned building the same night; identity and role never explained in the available episodes"}
+   },
+   {
+    "id": "p11",
+    "name": "Yukiko Kudo",
+    "aliases": ["Night Baroness"],
+    "roles": ["witness"],
+    "occupation": "actress",
+    "attrs": {}
+   },
+   {
+    "id": "p12",
+    "name": "Yusaku Kudo",
+    "aliases": [],
+    "roles": ["backstory_figure"],
+    "occupation": "mystery novelist",
+    "attrs": {"note": "friend of Radish Redwood from a past case; not shown on-screen in New York"}
+   }
+  ],
+  "locations": [
+   {"id": "l1", "name": "Phantom Theater backstage", "attrs": {}},
+   {"id": "l2", "name": "Phantom Theater stage", "attrs": {"features": "mirror, trap door, rotating donut-shaped floor over a hole"}},
+   {"id": "l3", "name": "Abandoned building, Manhattan", "attrs": {}},
+   {"id": "l4", "name": "Manhattan roadside (traffic stop)", "attrs": {}}
+  ],
+  "objects": [
+   {"id": "o1", "name": "Golden apple package", "role": "evidence", "attrs": {"message": "\"For the Fairest\", written in animal blood", "delivered_days_before_show": 3, "sender": "unknown, treated as a prank/omen"}},
+   {"id": "o2", "name": "Backstage mirror", "role": "tool", "attrs": {"repaired_shorter_than_original": true}},
+   {"id": "o3", "name": "Trap door / floor grille", "role": "tool", "attrs": {"mechanism": "donut-shaped rotating floor conceals a hole beneath an iron grille, behind the mirror"}},
+   {"id": "o4", "name": "Heath's angel costume wings", "role": "evidence", "attrs": {"prevented_crouching": true, "feather_caught_in_grille": true}},
+   {"id": "o5", "name": "Rose's gun", "role": "weapon", "attrs": {"rigged": "tied against Heath's suit so it would fall away from recoil when he was raised on the rig"}},
+   {"id": "o6", "name": "Spent shell casing", "role": "evidence", "attrs": {"found_near": "the trap door / floor grille mechanism"}},
+   {"id": "o7", "name": "Sharon's handkerchief", "role": "instrument", "attrs": {"gift_from": "Sharon Vineyard to Yukiko Kudo"}},
+   {"id": "o8", "name": "Serial killer's gun", "role": "weapon", "attrs": {}}
+  ],
+  "clues": [
+   {"id": "c1", "desc": "Blood is found inside Rose's right glove, left by Heath's hand grabbing her as she shot him", "clue_type": "forensic"},
+   {"id": "c2", "desc": "Of the whole cast, only Heath and Rose had been briefed that the trap door -- not the mirror -- would hide him that night", "clue_type": "testimonial"},
+   {"id": "c3", "desc": "Lila and Akane keep dressing-room photos of themselves together with Heath; Rose's photos show only Heath in costume as the angel Michael", "clue_type": "behavioral"},
+   {"id": "c4", "desc": "A wing feather caught in the floor grille sits above two blood semicircles, showing Heath was shot from below through the grille, not from above", "clue_type": "physical"}
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p5", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p2", "to": "p5", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p3", "to": "p5", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p4", "to": "p5", "relation_type": "castmate", "symmetric": true},
+  {"type": "relationship", "from": "p7", "to": "p6", "relation_type": "child_of"},
+  {"type": "relationship", "from": "p8", "to": "p12", "relation_type": "friend"},
+  {"type": "relationship", "from": "p6", "to": "p11", "relation_type": "fellow_disguise_student"},
+  {"type": "relationship", "from": "p11", "to": "p6", "relation_type": "friend"},
+
+  {"type": "regarding", "from": "o1", "to": "l1"},
+  {"type": "located_in", "from": "o1", "to": "l1", "order": 0, "temporal_frame": "backstory"},
+
+  {"type": "damages", "from": "p2", "to": "o2", "order": 1, "temporal_frame": "backstory", "detail": "Rose secretly damages the mirror so it has to be repaired shorter, forcing the switch to the trap door"},
+  {"type": "located_in", "from": "o2", "to": "l2"},
+  {"type": "located_in", "from": "o3", "to": "l2"},
+
+  {"type": "briefed_on", "from": "p1", "to": "o3", "order": 2, "temporal_frame": "present"},
+  {"type": "briefed_on", "from": "p2", "to": "o3", "order": 2, "temporal_frame": "present"},
+
+  {"type": "impersonates", "from": "p6", "to": "p8", "order": 3, "temporal_frame": "present", "circumstance_tags": ["disguise", "unrelated_subplot"]},
+  {"type": "was_at", "from": "p6", "to": "l4", "order": 3, "temporal_frame": "present"},
+  {"type": "gives", "from": "p6", "to": "p11", "order": 3, "temporal_frame": "present", "detail": "gives Yukiko a handkerchief (o7)"},
+  {"type": "owns", "from": "p11", "to": "o7"},
+
+  {"type": "was_at", "from": "p1", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p6", "to": "l1", "order": 4, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l1", "order": 4, "temporal_frame": "present"},
+
+  {"type": "owns", "from": "p1", "to": "o4"},
+  {"type": "owns", "from": "p2", "to": "o5"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "order": 5, "temporal_frame": "present", "method": "shot through the stage floor grille from below while Heath rose from the trap door", "circumstance_tags": ["premeditated", "staged"]},
+  {"type": "was_at", "from": "p1", "to": "l2", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p2", "to": "l2", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p3", "to": "l2", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p4", "to": "l2", "order": 5, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p5", "to": "l2", "order": 5, "temporal_frame": "present"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6", "order": 5, "temporal_frame": "present"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o5", "order": 5, "temporal_frame": "present", "detail": "rigs the gun to fall away from Heath's body on the recoil, then wears her right glove inside out to hide his bloody handprint and pass a GSR test"},
+
+  {"type": "was_at", "from": "p8", "to": "l2", "order": 6, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p11", "to": "l2", "order": 6, "temporal_frame": "present"},
+
+  {"type": "implicates", "from": "o5", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "c1", "to": "p2"},
+  {"type": "implicates", "from": "c2", "to": "p2"},
+  {"type": "implicates", "from": "c3", "to": "p2"},
+  {"type": "implicates", "from": "c4", "to": "p2"},
+  {"type": "regarding", "from": "c1", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "p1"},
+  {"type": "regarding", "from": "c2", "to": "o3"},
+  {"type": "regarding", "from": "c3", "to": "p1"},
+  {"type": "regarding", "from": "c3", "to": "p3"},
+  {"type": "regarding", "from": "c3", "to": "p4"},
+  {"type": "regarding", "from": "c4", "to": "o3"},
+  {"type": "regarding", "from": "c4", "to": "o4"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "obsessive devotion to the angel role 'Michael' rather than to Heath himself; killed him upon learning another actor would take over the role"},
+
+  {"type": "owns", "from": "p9", "to": "o8"},
+  {"type": "was_at", "from": "p9", "to": "l3", "order": 8, "temporal_frame": "present"},
+  {"type": "was_at", "from": "p10", "to": "l3", "order": 8, "temporal_frame": "present"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

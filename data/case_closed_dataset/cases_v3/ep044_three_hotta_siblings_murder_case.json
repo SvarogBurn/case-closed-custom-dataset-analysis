@@ -1,0 +1,469 @@
+{
+ "case_id": "ep044_three_hotta_siblings_murder_case",
+ "episode_number": "44",
+ "title": "Three Hotta Siblings Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Three_Hotta_Siblings_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0044.txt (302 dialogue lines, full transcript read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. Three red-herring has_motive_against edges are included (Koichi, Ryoji, Fumiko all have real grievances/suspicion against their father) alongside the true culprit's motive, correcting v1's near-total label leak. Ryoji is additionally the target of a staged frame-up (planted knife/tire-slashing) that the graph represents as a red herring, not as real implication. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Kosaku Hotta",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "president, Hotta Industries",
+    "attrs": {
+     "age": 58,
+     "died_of": "homemade explosive device disguised as a whiskey display box gift"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Koichi Hotta",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "eldest son, works at Hotta Industries",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Harumi Hotta",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Koichi's wife",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Ryoji Hotta",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "second son, works at Hotta Industries overseas branch",
+    "attrs": {
+     "cleared_because": "framed with a planted knife carrying rubber residue and staged tire-slashing on all cars except his own; the logic collapses because a genuinely guilty Ryoji, whose own gift box was the bomb, would already be the prime suspect and would gain nothing by also slashing his own tires"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Fumiko Hotta",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "eldest daughter, estranged from the family",
+    "attrs": {
+     "cleared_because": "admits she hated her father enough to want him dead but did not act; she is also the culprit's intended second victim, not a suspect he would frame himself"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Masahiro Yamauchi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "villa caretaker (formerly an automobile designer)",
+    "attrs": {
+     "quit_prior_career": "quit car design five years ago after his son Kentaro's death; retained the design skills he later used to rig the getaway car's airbag as a second murder attempt"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kentaro Yamauchi",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "pianist",
+    "attrs": {
+     "died_of": "drove off a cliff in despair five years ago, after Kosaku Hotta ended his engagement to Fumiko and crippled his hand; his father Masahiro regards it as effectively murder by Kosaku"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Hotta family villa",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Cliff where Kentaro Yamauchi died",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Whiskey display box (bomb)",
+    "role": "weapon",
+    "attrs": {
+     "gift_from": "Ryoji Hotta (his genuine birthday gift to Kosaku, intercepted and rigged)",
+     "mechanism": "homemade explosive of chemical fertilizer, sulfur, and easily-ignited phosphorus packed inside, with an igniter under the lid so opening it struck the charge like a match"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Sulfur and chemicals hidden in Yamauchi's cabinet",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "Masahiro Yamauchi's room, hidden inside a cabinet",
+     "significance": "bomb-making materials matching the explosive's composition"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Photograph of Kentaro Yamauchi",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "Masahiro Yamauchi's room",
+     "significance": "reveals his son's identity and ties Yamauchi to the backstory victim"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Fumiko's pendant (treasure chest of keepsakes)",
+    "role": "evidence",
+    "attrs": {
+     "contents": "mementos and feelings for Kentaro Yamauchi",
+     "significance": "proves Fumiko never stopped loving Kentaro despite years of estrangement from her father, undercutting Yamauchi's belief that she abandoned his son"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Ryoji's old-style car (rigged with an airbag trap)",
+    "role": "weapon",
+    "attrs": {
+     "mechanism": "airbag rigged by Yamauchi, using his old car-design expertise, to deploy violently if the brakes were hit hard -- a second, ultimately failed attempt on Fumiko's life",
+     "outcome": "Fumiko was called back to the villa by Conan before driving off, so the trap was never triggered"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Knife with rubber residue",
+    "role": "tool",
+    "attrs": {
+     "used_for": "cutting the villa phone lines and slashing the tires of all cars except Yamauchi's own",
+     "staging_flaw": "planted near Ryoji's abandoned car to frame him for the tire-slashing"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "Garden dirt and chemical fertilizer residue found inside the exploded whiskey box show the bomb was homemade from fertilizer and sulfur available to household staff, not a purchased explosive -- narrowing the suspect pool to someone with access to the villa's grounds and materials.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "If Ryoji had really planted the bomb in his own gift box, he would already be the prime suspect without needing to also slash his own car's tires -- the pointless extra step, plus a knife with rubber residue conveniently left near his abandoned car, proves the tire-slashing was staged to frame him.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p2",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p5",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "employee_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p6",
+   "relation_type": "child_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p7",
+   "relation_type": "engaged_to",
+   "symmetric": true
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "estranged_from",
+   "attrs": {"note": "left the family five years ago and had not spoken to Kosaku since"}
+  },
+  {
+   "type": "assaults",
+   "from": "p1",
+   "to": "p7",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "circumstance_tags": ["ends_career"],
+   "detail": "breaks Kentaro's hand after refusing to let him marry Fumiko, ending his piano career"
+  },
+  {
+   "type": "crashes_at",
+   "from": "p7",
+   "to": "l2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 5,
+   "circumstance_tags": ["suicide", "despair"]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 1,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "confronts",
+   "from": "p2",
+   "to": "p4",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "accuses Ryoji of poor overseas forecasts and an impending demotion to a subsidiary"
+  },
+  {
+   "type": "confronts",
+   "from": "p4",
+   "to": "p2",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "counter-accuses Koichi of heavy gambling debts"
+  },
+  {
+   "type": "confronts",
+   "from": "p5",
+   "to": "p1",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "arrives uninvited (per a false invitation actually sent by Yamauchi) and refuses to speak to her father"
+  },
+  {
+   "type": "receives_gift_from",
+   "from": "p1",
+   "to": "p4",
+   "order": 1,
+   "temporal_frame": "present",
+   "detail": "Kosaku receives the whiskey display box as Ryoji's birthday gift"
+  },
+  {
+   "type": "sabotages",
+   "from": "p6",
+   "to": "o1",
+   "order": 2,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated"],
+   "detail": "intercepts Ryoji's gift while delivering it and packs it with a homemade explosive"
+  },
+  {
+   "type": "kills",
+   "from": "p6",
+   "to": "p1",
+   "order": 2,
+   "temporal_frame": "present",
+   "method": "homemade fertilizer/sulfur/phosphorus explosive hidden inside a birthday gift box, set to ignite when opened",
+   "circumstance_tags": ["premeditated", "disguised_as_accident"]
+  },
+  {
+   "type": "sabotages",
+   "from": "p6",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "cuts the villa's phone lines to prevent anyone from calling the police"
+  },
+  {
+   "type": "sabotages",
+   "from": "p6",
+   "to": "l1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "slashes the tires of every car but his own to trap the family at the villa, planting a knife with rubber residue near Ryoji's abandoned car to frame him"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p6",
+   "to": "o6",
+   "order": 3,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "rigs",
+   "from": "p6",
+   "to": "o5",
+   "order": 4,
+   "temporal_frame": "present",
+   "circumstance_tags": ["premeditated"],
+   "detail": "rigs the airbag of the one working car to deploy violently under hard braking"
+  },
+  {
+   "type": "attempts_to_kill",
+   "from": "p6",
+   "to": "p5",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "sends her off alone in a car with a rigged airbag, intending it to deploy and kill her once she braked hard",
+   "circumstance_tags": ["attempted_murder", "failed"]
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 4,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "o3",
+   "to": "p7"
+  },
+  {
+   "type": "regarding",
+   "from": "o3",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "o4",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "o4",
+   "to": "p7"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p6"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p6"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p6",
+   "to": "p1",
+   "motive_type": "revenge for driving his son Kentaro to suicide by breaking his hand and ending his engagement to Fumiko"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p2",
+   "to": "p1",
+   "motive_type": "avoiding demotion and financial ruin over poor overseas-branch forecasts (accusation raised by Ryoji)",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "gambling debts and inheritance money (accusation raised by Koichi)",
+   "circumstance_tags": ["red_herring"]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "years of resentment over Kosaku ending her engagement to Kentaro and destroying his career",
+   "circumstance_tags": ["red_herring"]
+  }
+ ],
+ "label": {
+  "murderer_id": "p6"
+ }
+}

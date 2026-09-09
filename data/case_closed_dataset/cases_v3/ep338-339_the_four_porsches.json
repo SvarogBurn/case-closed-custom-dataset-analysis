@@ -1,0 +1,414 @@
+{
+ "case_id": "ep338-339_the_four_porsches",
+ "episode_number": "338-339",
+ "title": "The Four Porsches",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Four_Porsches",
+ "subtitle_source": [
+  "subs_resolved/0338.txt",
+  "subs_resolved/0339.txt"
+ ],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Sonoko, Agasa, Kogoro, Megure, Takagi, Jodie, Araide, Haibara) omitted by convention; this episode's parallel Black Organization/Haibara subplot (being tailed, Jodie/Vermouth driving Agasa and Ai home) does not touch the murder case's entity graph and is left out. No `event` node type: every action is a directly typed edge between the entities involved. The old lower-fidelity case file (cases/ep338-339_the_four_porsches.json) already had the correct culprit (Taiyama) -- unlike several other rebuilt episodes, there is no culprit correction here. What it missed: the murder actually happened inside Kureko's Porsche 911 (Banba was sleeping off drunkenness in the passenger seat of Kureko's car, not his own), the fishing line was routed under Hotei's Porsche 356A (the middle-parked car) before running into the gap at the top of Taiyama's Boxster window and being tied to her gear lever -- her Boxster's power window is what supplied the pulling force, which is why Hotei's car (no power window) and Kureko's car (no line access) were ruled out despite both owning weapon-capable objects (an automatic fishing reel, a music box) found during the search, which were red herrings. The old file's backstory event (e1) also undersold the motive: Taiyama's brother died in a Ferrari that veered off a mountain road after Banba sprayed cold water at its occupants as a prank during an impromptu race; Taiyama herself was in the car and was rescued three hours later, while her brother was not. Banba later covered up his role by claiming to golfing buddies that he had merely witnessed the crash. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Yukiya Banba",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "unemployed / Porsche and golf enthusiast",
+    "attrs": {
+     "age": 41,
+     "died_of": "strangulation with a fishing line",
+     "drunk_at_time_of_death": true,
+     "false_claim": "told golfing buddies he had merely witnessed a Ferrari crash on a mountain road, when he had actually caused it with a cold-water prank and driven off without helping"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Yoshihito Kureko",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Porsche enthusiast, golfer",
+    "attrs": {
+     "age": 45,
+     "pays_group_golf_fees": true,
+     "cleared_because": "returned to the car about an hour later and had no access to Taiyama's power window"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Eiji Hotei",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Porsche enthusiast, golfer",
+    "attrs": {
+     "age": 39,
+     "cleared_because": "his classic 356A has no power window, so his fishing reel could not have supplied the pulling force"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Kaoru Taiyama",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "Porsche enthusiast, golfer",
+    "attrs": {
+     "age": 34,
+     "survived_the_crash_that_killed_her_brother": true,
+     "rescued_after_hours": 3
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Taiyama's brother",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": null,
+    "attrs": {
+     "died_of": "car crash: their Ferrari veered off a mountain road",
+     "was_driving": true
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Underground parking garage, Tohto Dept. Store",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Tohto Dept. Store shopping floor",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Mountain road",
+    "attrs": {
+     "note": "site of the backstory Ferrari crash"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Kureko's Porsche 911",
+    "role": "evidence",
+    "attrs": {
+     "color": "white",
+     "note": "Banba was strangled in this car's passenger seat"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Hotei's Porsche 356A",
+    "role": "evidence",
+    "attrs": {
+     "color": "green",
+     "note": "50-year-old classic; parked in the middle, the fishing line was routed under it"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Taiyama's Porsche Boxster",
+    "role": "instrument",
+    "attrs": {
+     "feature": "power window -- the only one of the three parked cars that has one",
+     "staging_flaw": "small hole in the driver-side window glass from the line, found only by touch"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Banba's Porsche 928",
+    "role": "evidence",
+    "attrs": {
+     "color": "red"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Music box in Kureko's glovebox",
+    "role": "evidence",
+    "attrs": {
+     "suspected_as_weapon": true,
+     "cleared": true,
+     "note": "tracking needle broken but still winds; a red herring"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Hotei's automatic fishing reel",
+    "role": "evidence",
+    "attrs": {
+     "suspected_as_weapon": true,
+     "cleared": true,
+     "note": "could remotely reel in a line, but Hotei's car has no power window"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Taiyama's toy Porsche model",
+    "role": "tool",
+    "attrs": {
+     "stated_purpose": "gift for Taiyama's nephew",
+     "actual_use": "line tied to its rear wheels; after the line snapped it drove off and reeled the line in"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Fishing line",
+    "role": "weapon",
+    "attrs": {
+     "routing": "looped around Banba's neck in Kureko's 911, under Hotei's 356A, into the gap atop Taiyama's Boxster window, tied to her gear lever",
+     "mechanism": "starting the Boxster's engine triggered the power window, pulling the line taut and strangling Banba"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "The toy car's battery lasts only ~10 minutes, but Kureko heard no retrieval noise when he returned roughly an hour later -- it had already gone silent, meaning it ran only briefly to reel in the line rather than sitting idle like an innocent toy.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "golf_buddy",
+   "detail": "met at a Porsche debut exhibition"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "old_racing_friend",
+   "detail": "used to race down mountain roads together"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "golf_buddy",
+   "detail": "met in a golf course parking lot talking about Porsches"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p3",
+   "relation_type": "golf_buddy"
+  },
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p4",
+   "relation_type": "golf_buddy"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p4",
+   "relation_type": "golf_buddy"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p5",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p5",
+   "method": "sprayed cold water at their Ferrari mid-race on a mountain road, causing it to veer off and crash",
+   "circumstance_tags": [
+    "hit_and_run",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l3"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2"
+  },
+  {
+   "type": "strangles",
+   "from": "p4",
+   "to": "p1",
+   "method": "looped a fishing line around his neck while he slept in Kureko's Porsche 911, tied it to her Boxster's gear lever, then pulled it taut via the power window",
+   "circumstance_tags": [
+    "remote_murder",
+    "staged_alibi",
+    "locked_room"
+   ]
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p4",
+   "to": "p1",
+   "motive_type": "revenge_for_brothers_death"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o8"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o7"
+  },
+  {
+   "type": "owns",
+   "from": "p4",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o5"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p3",
+   "to": "o6"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o4"
+  },
+  {
+   "type": "located_in",
+   "from": "o5",
+   "to": "o1"
+  },
+  {
+   "type": "located_in",
+   "from": "o6",
+   "to": "o2"
+  },
+  {
+   "type": "located_in",
+   "from": "o1",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o2",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o3",
+   "to": "l1"
+  },
+  {
+   "type": "located_in",
+   "from": "o4",
+   "to": "l1"
+  },
+  {
+   "type": "recovers_weapon_using",
+   "from": "p4",
+   "to": "o7"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p4",
+   "to": "o8"
+  },
+  {
+   "type": "implicates",
+   "from": "o7",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "o8",
+   "to": "p4"
+  },
+  {
+   "type": "implicates",
+   "from": "c1",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "c1",
+   "to": "o7"
+  }
+ ],
+ "label": {
+  "murderer_id": "p4"
+ }
+}

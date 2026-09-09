@@ -1,0 +1,387 @@
+{
+ "case_id": "ep092-093_the_fearful_traversing_murder_case",
+ "episode_number": "92-93",
+ "title": "The Fearful Traversing Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Fearful_Traversing_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0092.txt + case_closed_dataset/subs_resolved/0093.txt (two-episode arc, full transcripts read)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Ran, Kogoro) omitted by convention. This episode interleaves two unrelated crimes: a professional hitman ('the Fox') hired by Bunzo Ushio to kill him, which turns out to be a decades-later revenge lure by Ushio against the Fox for killing his daughter in a botched hit six months earlier; and Akira Kawabe silencing his robbery accomplice Kyoko Saegusa. Only the Saegusa murder is modeled in full here, matching the v1 scope decision; the Fox/Ushio revenge plot and Ken'ichi Hirai's murder (committed by the Fox, disguised as the cabin manager, to protect his cover) are noted only as background context on the relevant person nodes, not modeled with their own motive/verb edges, to avoid conflating the two separate cases in one graph. The 'left-handed killer' theory pointing at novelist Shingo Nose is a genuine red herring the transcript spends real time developing before Conan overturns it with the fingernail-yarn evidence. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Akira Kawabe",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "hiker (in truth, a robber)",
+    "attrs": {}
+   },
+   {
+    "id": "p2",
+    "name": "Kyoko Saegusa",
+    "aliases": [],
+    "roles": [
+     "victim"
+    ],
+    "occupation": "hiker (in truth, a robber)",
+    "attrs": {}
+   },
+   {
+    "id": "p3",
+    "name": "Wataru Takanashi",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "company executive",
+    "attrs": {
+     "claustrophobia": "was once held captive in a cramped space by land sharks after refusing to sell his land, leaving him with severe claustrophobia; his panicked flight from the cabin during a landslide is what made him look suspicious, not guilt"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Shingo Nose",
+    "aliases": [],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "novelist (writes hitman fiction)",
+    "attrs": {
+     "note": "a natural left-hander who trained himself to write right-handed (a 'switch-hitter'); wrongly accused by Kogoro of being the hitman 'the Fox' based on the knife angle in Saegusa's wound"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Bunzo Ushio",
+    "aliases": [
+     "Moriyama (Kogoro's alias for the trip)"
+    ],
+    "roles": [
+     "suspect"
+    ],
+    "occupation": "president of a Kansai real estate agency branch",
+    "attrs": {
+     "unrelated_subplot": "hired the hitman 'the Fox' to kill him during this traverse, ostensibly after mistakenly believing he had terminal cancer; in truth this was a ploy to lure the Fox into the open in revenge for killing his young daughter Chisato in a botched contract hit six months earlier -- resolved as a separate case from Saegusa's murder"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Ken'ichi Hirai",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "bystander"
+    ],
+    "occupation": "Tohto University hiking club member, regular at the mountain lodge",
+    "attrs": {
+     "unrelated_subplot": "killed by 'the Fox' (disguised as the mountain lodge's real manager) to protect his cover, after the Fox realized Hirai knew the real manager and would expose the impersonation -- part of the separate, unmodeled Ushio/Fox case"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Tanaka Yoro",
+    "aliases": [],
+    "roles": [
+     "victim",
+     "backstory_figure"
+    ],
+    "occupation": "former mob boss",
+    "attrs": {
+     "died_of": "stabbed",
+     "note": "killed in a robbery at his home in Tanbara Village the morning of the traverse; 100 million yen was stolen from his safe"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Tanbara Summit Mountains",
+    "attrs": {}
+   },
+   {
+    "id": "l2",
+    "name": "Mountain lodge cabin near the summit",
+    "attrs": {
+     "note": "isolated overnight stop; phone line found deliberately cut, not storm-damaged as first assumed"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Hunting knife (Kawabe's)",
+    "role": "weapon",
+    "attrs": {
+     "wound_angle": "diagonal, left-and-down -- initially read as proof of a left-handed killer, but Conan demonstrates the same angle is natural for a right-handed stab from behind if the victim wasn't wary of her attacker"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Blood-stained 10,000-yen bills (stolen from Tanaka Yoro)",
+    "role": "contraband",
+    "attrs": {
+     "amount": "part of the 100 million yen stolen from Tanaka Yoro's safe",
+     "found_in": "split between Saegusa's and Kawabe's packs; the blood matches the robbery victim, not Saegusa herself"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Sweater (Kawabe's)",
+    "role": "evidence",
+    "attrs": {
+     "forensic_trace": "distinctively colored yarn scraps caught under Saegusa's fingernails match this sweater; she could only have been stabbed at close range by someone she wasn't wary of"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The stab wound's diagonal left-down angle first seemed to prove the killer was left-handed, implicating the secretly left-handed novelist Shingo Nose -- but reenacting the stab shows the same angle works for a right-handed attacker striking from behind, so the angle alone doesn't identify the killer.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Yarn scraps caught under Saegusa's fingernails match the color of only one person's sweater at the cabin -- the one person she could have let get close enough to stab her without being on guard.",
+    "clue_type": "forensic"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p1",
+   "to": "p2",
+   "relation_type": "romantic_partner_of"
+  },
+  {
+   "type": "conspires_with",
+   "from": "p1",
+   "to": "p2",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "detail": "forced Tanaka Yoro to open his safe and stole 100 million yen from him",
+   "circumstance_tags": [
+    "robbery"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p7",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "method": "stabbed",
+   "circumstance_tags": [
+    "robbery",
+    "cover_up"
+   ]
+  },
+  {
+   "type": "kills",
+   "from": "p2",
+   "to": "p7",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "method": "stabbed",
+   "circumstance_tags": [
+    "robbery",
+    "cover_up"
+   ],
+   "detail": "news reports describe both a man and woman forcing Tanaka to open his safe; the transcript does not specify which of them delivered the fatal blow"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p6",
+   "to": "l1",
+   "order": 10,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p3",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p4",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l2",
+   "order": 12,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o1"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o3"
+  },
+  {
+   "type": "owns",
+   "from": "p1",
+   "to": "o2"
+  },
+  {
+   "type": "owns",
+   "from": "p2",
+   "to": "o2"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p2",
+   "order": 13,
+   "temporal_frame": "present",
+   "method": "stabbed with a hunting knife",
+   "circumstance_tags": [
+    "panic",
+    "betrayal"
+   ],
+   "detail": "panics, believing Kogoro was sent to track them down over the Tanaka robbery-murder, and kills his own accomplice to keep her from turning herself (and him) in"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o1",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p1",
+   "to": "o3",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p1",
+   "to": "l2",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l2",
+   "order": 13,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o3",
+   "to": "p1"
+  },
+  {
+   "type": "implicates",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "p4"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o1"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o3"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "p2"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p1"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p2",
+   "motive_type": "concealment (silencing an accomplice he panicked into thinking would expose or endanger him)"
+  }
+ ],
+ "label": {
+  "murderer_id": "p1"
+ }
+}

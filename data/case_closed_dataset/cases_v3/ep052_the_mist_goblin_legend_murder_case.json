@@ -1,0 +1,435 @@
+{
+ "case_id": "ep052_the_mist_goblin_legend_murder_case",
+ "episode_number": "52",
+ "title": "The Mist Goblin Legend Murder Case",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Mist_Goblin_Legend_Murder_Case",
+ "subtitle_source": "case_closed_dataset/subs_resolved/0052.txt (775 dialogue lines, full transcript read, 60-minute special episode)",
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. Unusually, the victim of the present-day murder (Tenei) is himself the perpetrator of the backstory murder (Chunen, 2 years earlier) -- both his own has_motive_against edge (against Chunen) and the true culprit's has_motive_against edge (against Tenei) are recorded. Kannen's oddly quick, oddly certain discovery of both bodies is flagged as a genuine red-herring suspicion the transcript raises but never resolves into a motive, so no fabricated has_motive_against edge was added for him. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Priest Tenei",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "head priest, Sandei Temple",
+    "attrs": {
+     "age": 71,
+     "died_of": "strangled with a belt while carried piggyback, to leave neck marks mimicking a hanging",
+     "secret": "murdered his own priest-in-training Chunen two years earlier and staged it as a Kiri Tengu hanging, to stop him eloping with his granddaughter Kikuno"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Kannen",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "priest-in-training, Sandei Temple (longest-tenured)",
+    "attrs": {
+     "age": 21,
+     "suspicious_behavior": "found both Chunen's body two years ago and Tenei's body this time, and reacted with unusually precise certainty about where to look before actually seeing the hanging body -- raised as suspicious by the detective but never resolved into a stated motive"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Tonnen",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "priest-in-training, Sandei Temple (cook)",
+    "attrs": {
+     "age": 19,
+     "cleared_because": "shared adjoining sleeping quarters with the other priests-in-training and, per Shunen, nothing unusual was heard from him that night"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Mokunen",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "priest-in-training, Sandei Temple (carpenter)",
+    "attrs": {
+     "age": 19,
+     "note": "repaired the wall damage from the first 'Kiri Tengu' incident two years ago, and helped find Chunen's body then"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Shunen",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "priest-in-training, Sandei Temple",
+    "attrs": {
+     "age": 18,
+     "true_identity": "Chunen's biological younger brother, enrolled under a false pretext specifically to investigate his brother's death",
+     "false_alibi": "claimed to have been reading in his room until past 3:00am and to have heard Ran's scream at the Tengu mask -- but the killer's actual setup requires being sealed inside the flooding meditation room beside a roaring waterfall for hours that night, which would drown out any distant scream"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Chunen",
+    "aliases": [],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": "priest-in-training, Sandei Temple",
+    "attrs": {
+     "died_of": "strangled with a belt by Tenei two years earlier, staged as a Kiri Tengu hanging suicide",
+     "note": "Shunen's biological older brother; had reportedly agreed to elope with Kikuno"
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Kikuno",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "Tenei's granddaughter",
+    "attrs": {
+     "age": 21,
+     "note": "close to Chunen, reportedly agreed to elope with him, but was married off a few days before the present murder to a temple heir in a childhood arrangement her grandfather made"
+    }
+   },
+   {
+    "id": "p8",
+    "name": "Kikuno's husband",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "heir to a large temple",
+    "attrs": {
+     "note": "arranged to marry Kikuno since childhood; married her only a few days before the murder"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Sandei Temple, meditation room",
+    "attrs": {
+     "history": "traditionally used to lock up priests who broke religious precepts; lacquered walls to prevent climbing out; sits directly beside a mountain waterfall"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Belt",
+    "role": "weapon",
+    "attrs": {
+     "used_twice": "the same method (strangulation with a belt while carried piggyback, to fake hanging-suicide neck marks) was used by Tenei on Chunen two years earlier, and by Shunen on Tenei in the present case"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Rope and axe left at the scene",
+    "role": "tool",
+    "attrs": {
+     "purpose": "the rope was climbed to reach the elevated beam; the axe was used to break the drain panel and rapidly empty the flooded room"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Drainboard",
+    "role": "evidence",
+    "attrs": {
+     "staging_flaw": "cut short and warped to fit, flipped over, and taped along the gaps to redirect the adjacent waterfall through the meditation room's high window and flood the room, floating the body up to the beam without leaving any hoist marks",
+     "physical_trace": "cherry blossom petals carried down from the waterfall were found trapped under where the tape had been"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Wood fragment from the sliding panel",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "the woods below the temple, thrown clear when the flooded room's wall blew out under the water's pressure",
+     "significance": "the one piece of debris the killer failed to recover and destroy, still carrying tape with fingerprints on it"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Inflatable raft",
+    "role": "tool",
+    "attrs": {
+     "purpose": "kept the corpse dry and afloat while the meditation room filled with water, so the body would show no signs of wetness"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Tengu mask",
+    "role": "evidence",
+    "attrs": {
+     "found_in": "hanging in the temple bathroom",
+     "significance": "worn as a prank by Ran, whose resulting scream Shunen should have heard if he had truly been in his own room all night, as he claimed"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "The recovered drainboard has a deliberately shortened, warped cut and tape residue, with cherry-blossom petals from the waterfall trapped underneath -- proving it was flipped and taped to divert the adjacent waterfall through the window, flooding the room to float a body up to the beam without leaving any hoist marks.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Shunen claimed to have heard Ran's scream at the Tengu mask while reading in his own room until past 3:00am, but the killer's method requires being sealed inside the meditation room next to a roaring waterfall for hours that night -- a setting that would drown out any distant scream, contradicting his claim to have heard it.",
+    "clue_type": "behavioral"
+   },
+   {
+    "id": "cC",
+    "desc": "Fingerprints were found on the tape still stuck to the one wood fragment from the sliding panel that the killer failed to recover, having been thrown clear into the woods when the flooded wall gave way.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {
+   "type": "relationship",
+   "from": "p2",
+   "to": "p1",
+   "relation_type": "disciple_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p3",
+   "to": "p1",
+   "relation_type": "disciple_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p4",
+   "to": "p1",
+   "relation_type": "disciple_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p1",
+   "relation_type": "disciple_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p1",
+   "relation_type": "disciple_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p5",
+   "to": "p6",
+   "relation_type": "sibling_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p6",
+   "to": "p7",
+   "relation_type": "romantic_partner_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p1",
+   "relation_type": "grandchild_of"
+  },
+  {
+   "type": "relationship",
+   "from": "p7",
+   "to": "p8",
+   "relation_type": "spouse_of"
+  },
+  {
+   "type": "kills",
+   "from": "p1",
+   "to": "p6",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "method": "strangled with a belt while carried piggyback to leave neck marks mimicking a hanging suicide",
+   "circumstance_tags": ["premeditated", "staged_suicide", "cover_up"]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p1",
+   "to": "p6",
+   "order": 0,
+   "temporal_frame": "backstory",
+   "years_before_present": 2,
+   "circumstance_tags": ["staged_suicide", "impossible_crime"],
+   "detail": "floods the meditation room by diverting the adjacent waterfall through the window, floats the body up to the beam on a raft, ties him there, drains the room by axing the drain panel, and disposes of the wall debris"
+  },
+  {
+   "type": "discovers_body_of",
+   "from": "p2",
+   "to": "p6",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": 2
+  },
+  {
+   "type": "discovers_body_of",
+   "from": "p4",
+   "to": "p6",
+   "order": 1,
+   "temporal_frame": "backstory",
+   "years_before_present": 2
+  },
+  {
+   "type": "infiltrates",
+   "from": "p5",
+   "to": "l1",
+   "order": 2,
+   "temporal_frame": "backstory",
+   "years_before_present": 1,
+   "detail": "enrolls as a priest-in-training under a false pretext to investigate his brother's death"
+  },
+  {
+   "type": "confronts",
+   "from": "p5",
+   "to": "p1",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "presses him about the Kiri Tengu incident while he drinks his night sake"
+  },
+  {
+   "type": "confesses",
+   "from": "p1",
+   "to": "p5",
+   "order": 3,
+   "temporal_frame": "present",
+   "detail": "unknowingly admits to Chunen's own brother that he murdered Chunen to stop the elopement, showing no remorse and boasting the incident brought the temple prestige"
+  },
+  {
+   "type": "kills",
+   "from": "p5",
+   "to": "p1",
+   "order": 4,
+   "temporal_frame": "present",
+   "method": "strangled with a belt in Tenei's own room, in a fit of rage after his unrepentant confession",
+   "circumstance_tags": ["crime_of_passion"]
+  },
+  {
+   "type": "stages_suicide_of",
+   "from": "p5",
+   "to": "p1",
+   "order": 5,
+   "temporal_frame": "present",
+   "circumstance_tags": ["staged_suicide", "impossible_crime", "copies_earlier_method"],
+   "detail": "replicates Tenei's own trick: carries the body to the meditation room, floats it up to the beam by flooding the room via the diverted waterfall, ties it there, drains the room by axing the drain panel, and disposes of the debris"
+  },
+  {
+   "type": "was_at",
+   "from": "p5",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "sabotages",
+   "from": "p5",
+   "to": "o3",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "flips and tapes the drainboard to redirect the waterfall through the window"
+  },
+  {
+   "type": "sabotages",
+   "from": "p5",
+   "to": "l1",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "axes the drain panel, blasting a large hole in the wall under the pressure of tens of tons of draining water"
+  },
+  {
+   "type": "conceals_evidence_using",
+   "from": "p5",
+   "to": "o4",
+   "order": 5,
+   "temporal_frame": "present",
+   "detail": "disposes of the blasted-out wall debris, missing one fragment thrown clear into the woods"
+  },
+  {
+   "type": "leaves_evidence",
+   "from": "p5",
+   "to": "o4",
+   "order": 5,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "was_at",
+   "from": "p2",
+   "to": "l1",
+   "order": 6,
+   "temporal_frame": "present"
+  },
+  {
+   "type": "discovers_body_of",
+   "from": "p2",
+   "to": "p1",
+   "order": 6,
+   "temporal_frame": "present",
+   "circumstance_tags": ["red_herring", "suspicious_timing"],
+   "detail": "finds the body with unusually quick certainty about where to look"
+  },
+  {
+   "type": "implicates",
+   "from": "o1",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "o2",
+   "to": "p1"
+  },
+  {
+   "type": "regarding",
+   "from": "o5",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "o6",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cA",
+   "to": "o3"
+  },
+  {
+   "type": "implicates",
+   "from": "cA",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cB",
+   "to": "o6"
+  },
+  {
+   "type": "implicates",
+   "from": "cB",
+   "to": "p5"
+  },
+  {
+   "type": "regarding",
+   "from": "cC",
+   "to": "o4"
+  },
+  {
+   "type": "implicates",
+   "from": "cC",
+   "to": "p5"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p5",
+   "to": "p1",
+   "motive_type": "revenge for murdering his brother Chunen and covering it up for two years, made worse by his unrepentant boasting"
+  },
+  {
+   "type": "has_motive_against",
+   "from": "p1",
+   "to": "p6",
+   "motive_type": "wanted to stop Chunen from eloping with his granddaughter Kikuno, who he had arranged since childhood to marry a temple heir"
+  }
+ ],
+ "label": {
+  "murderer_id": "p5"
+ }
+}

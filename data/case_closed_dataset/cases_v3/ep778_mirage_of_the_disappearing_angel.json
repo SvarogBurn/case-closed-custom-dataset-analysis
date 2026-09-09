@@ -1,0 +1,216 @@
+{
+ "case_id": "ep778_mirage_of_the_disappearing_angel",
+ "episode_number": "778",
+ "title": "Mirage of the Disappearing Angel",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Mirage_of_the_Disappearing_Angel",
+ "subtitle_source": ["subs_resolved/0778.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran) omitted by convention. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's culprit (Taro Hayashi) is confirmed correct by the transcript -- he already had to be manually added to the wiki-derived suspect pool since the wiki summary underplays him until the reveal, and that manual addition holds up. What the old file missed/flattened: (1) the two-condition deduction (left-handed AND able to operate a boat) that actually identifies Hayashi, built from the punch-bruise-on-right-cheek clue and the painting's revealed boat scene -- the old file only had the painting clue; (2) Ishiguro's cap is explicitly contrasted as black against the painting's white cap as a clue that clears him; (3) the Shirakawa suicide-subplot and Conan's closing coda that Aoki's kindness to Shirakawa the night before his own murder talked him out of it; (4) Mrs. Aoki, the client who opens the episode, was entirely absent from the old node list despite being present throughout. The backstory victim's name 'Nagisa Fujii' is carried over from the old file's event text since the transcript excerpt itself never states her name on-screen (she is only 'Mr. Akagi's girlfriend' in dialogue) -- flagged here rather than presented as transcript-confirmed. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Satoru Aoki",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "artist (oil painter)",
+    "attrs": {
+     "age": 52,
+     "died_of": "drowning",
+     "time_of_death": "20:00-23:00",
+     "physical_trait": "drags a bad leg when walking"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Mrs. Aoki",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": null,
+    "attrs": {
+     "relation_to_case": "Satoru Aoki's wife; hired Kogoro to find her missing husband"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Chuji Ishiguro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "fisherman",
+    "attrs": {
+     "temperament": "prone to violence, per Inspector",
+     "handicap": "left hand impaired since a boating accident 3 years ago"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Yosuke Akagi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "handedness": "left-handed",
+     "cannot_operate_boat": true
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Kazushi Shirakawa",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": null,
+    "attrs": {
+     "handedness": "right-handed",
+     "contemplated_suicide": true
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Taro Hayashi",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "innkeeper",
+    "attrs": {
+     "handedness": "left-handed",
+     "former_occupation": "fisherman",
+     "can_operate_boat": true
+    }
+   },
+   {
+    "id": "p7",
+    "name": "Akagi's missing girlfriend",
+    "aliases": ["Nagisa Fujii"],
+    "roles": ["victim", "backstory_figure"],
+    "occupation": null,
+    "attrs": {
+     "status": "reported missing 10 days before Aoki's murder; pushed off a boat into the sea",
+     "name_source": "alias not stated on-screen in this transcript excerpt; carried over from the prior lower-fidelity case file"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Toyama Bay coast",
+    "attrs": {
+     "notable_feature": "site of the seasonal glowing firefly squid phenomenon"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Aoki's room at Hayashi's inn",
+    "attrs": {}
+   },
+   {
+    "id": "l3",
+    "name": "Common area of Hayashi's inn",
+    "attrs": {}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Aoki's painting",
+    "role": "evidence",
+    "attrs": {
+     "right_side_up": "shows a soul, guided by an angel, ascending to heaven above a house",
+     "upside_down_via_mirage_trick": "shows a white boat, a woman being thrown into the sea, and the culprit's white cap",
+     "based_on": "photos from the camera's deleted May 6th folder"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Aoki's digital camera",
+    "role": "evidence",
+    "attrs": {
+     "deleted_folder": "May 6th",
+     "deleted_content": "video, not photos, of Hayashi pushing a woman into the sea from his boat"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Ishiguro's black cap",
+    "role": "evidence",
+    "attrs": {
+     "worn": "as a lucky charm whenever he goes out to sea",
+     "color": "black"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Shirakawa's sleeping pills",
+    "role": "evidence",
+    "attrs": {
+     "quantity": "two bottles",
+     "found_in": "his car trunk"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Hayashi referred to the deleted camera data as a video, not photos -- a detail only the deleter or the police (who hadn't told him) could have known.",
+    "clue_type": "testimonial"
+   },
+   {
+    "id": "c2",
+    "desc": "Aoki's painting right-side up shows a peaceful angel scene; turned upside down (a superior-mirage effect), the same lines resolve into a boat with a woman being thrown overboard.",
+    "clue_type": "physical"
+   },
+   {
+    "id": "c3",
+    "desc": "The cap drawn on the culprit in the flipped painting is white, but Ishiguro's own cap -- worn every time he puts to sea -- is black.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p2", "to": "p1", "relation_type": "spouse_of"},
+  {"type": "relationship", "from": "p4", "to": "p7", "relation_type": "romantic_partner"},
+
+  {"type": "kills", "from": "p6", "to": "p7", "method": "pushed from his boat into the sea", "circumstance_tags": ["cover_up"]},
+  {"type": "was_at", "from": "p6", "to": "l1"},
+  {"type": "was_at", "from": "p7", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "owns", "from": "p1", "to": "o1"},
+  {"type": "owns", "from": "p1", "to": "o2"},
+  {"type": "implicates", "from": "o2", "to": "p6"},
+  {"type": "implicates", "from": "o1", "to": "p6"},
+
+  {"type": "confronts", "from": "p1", "to": "p6", "detail": "urged Hayashi to turn himself in and atone, having realized what the painting depicted"},
+  {"type": "warns", "from": "p1", "to": "p4", "detail": "told Akagi to forget about his missing girlfriend, having realized she was dead"},
+  {"type": "dissuades_suicide_of", "from": "p1", "to": "p5"},
+  {"type": "has_motive_against", "from": "p6", "to": "p1", "motive_type": "concealment (Aoki had realized Hayashi killed his girlfriend and dumped her from his boat)"},
+  {"type": "assaults", "from": "p6", "to": "p1", "detail": "punched Aoki in the face from the front with his left hand, bruising his right cheek"},
+  {"type": "drowns", "from": "p6", "to": "p1", "circumstance_tags": ["staged_accident", "cover_up"]},
+  {"type": "disguises_as", "from": "p6", "to": "p1", "detail": "dragged his leg to mimic Aoki's limp while sneaking into Aoki's room at midnight"},
+  {"type": "deletes_evidence_from", "from": "p6", "to": "o2"},
+  {"type": "was_at", "from": "p6", "to": "l2"},
+  {"type": "returns_to", "from": "p6", "to": "l2", "circumstance_tags": ["trap", "self_incriminating"], "detail": "came back for the camera after being told it could still be recovered in Tokyo, walking into Kogoro's trap"},
+
+  {"type": "was_at", "from": "p3", "to": "l3", "detail": "delivered fresh fish to the inn the morning before Aoki's death"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "confronts", "from": "p3", "to": "p1", "detail": "bawled Aoki out in his room for not eating the fish he'd delivered", "circumstance_tags": ["red_herring"]},
+  {"type": "has_motive_against", "from": "p3", "to": "p1", "motive_type": "anger over a wasted gift of fish (red herring)"},
+  {"type": "was_at", "from": "p3", "to": "l1", "detail": "present when the body was found on the beach"},
+  {"type": "owns", "from": "p3", "to": "o3"},
+
+  {"type": "was_at", "from": "p4", "to": "l3", "detail": "came to distribute missing-person flyers for his girlfriend"},
+
+  {"type": "was_at", "from": "p5", "to": "l1", "detail": "met Aoki at sundown while walking the beach to see the mirage"},
+  {"type": "was_at", "from": "p5", "to": "l2", "detail": "spent the whole night drinking with Aoki in his room"},
+  {"type": "was_at", "from": "p5", "to": "l3", "detail": "bought gifts for his wife and daughter, evidence he had abandoned his suicide plan"},
+  {"type": "consoles", "from": "p5", "to": "p1", "detail": "Aoki called out to a visibly troubled Shirakawa and they drank together till morning"},
+  {"type": "owns", "from": "p5", "to": "o4"},
+
+  {"type": "regarding", "from": "c1", "to": "o2"},
+  {"type": "implicates", "from": "c1", "to": "p6"},
+  {"type": "regarding", "from": "c2", "to": "o1"},
+  {"type": "implicates", "from": "c2", "to": "p6"},
+  {"type": "regarding", "from": "c3", "to": "o1"},
+  {"type": "regarding", "from": "c3", "to": "o3"}
+ ],
+ "label": {
+  "murderer_id": "p6"
+ }
+}

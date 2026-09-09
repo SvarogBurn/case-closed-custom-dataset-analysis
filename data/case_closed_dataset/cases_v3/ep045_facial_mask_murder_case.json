@@ -1,0 +1,355 @@
+{
+  "case_id": "ep045_facial_mask_murder_case",
+  "episode_number": "45",
+  "title": "Facial Mask Murder Case",
+  "source_url": "https://www.detectiveconanworld.com/wiki/Facial_Mask_Murder_Case",
+  "subtitle_source": "case_closed_dataset/subs_resolved/0045.txt (358 dialogue lines, full transcript read)",
+  "schema_version": "v3",
+  "notes": "Recurring detective-cast nodes (Conan, Kogoro Mouri, Ran, Inspector Megure) omitted by convention. No `event` node type: every action is a directly typed, attributed edge between the entities involved (person/location/object), sharing an `order` integer so edges belonging to the same occurrence can be grouped without a reifying node. Chihiro's face-pack impersonation of her dead mother is a genuine, transcript-supported red herring: it looks like murder-cover-up but was only done to dodge suspicion after finding the body, and Yoshioka's hidden embezzlement report is a second, unrelated red herring the police initially treat as a murder motive. case_type: murder.",
+  "nodes": {
+    "persons": [
+      {
+        "id": "p1",
+        "name": "Ikuko Kojima",
+        "aliases": [],
+        "roles": [
+          "victim"
+        ],
+        "occupation": "businesswoman, manager of a discount electronics store chain",
+        "attrs": {
+          "age": 50,
+          "died_of": "strangulation",
+          "eyesight": "poor; wore contact lenses instead of glasses"
+        }
+      },
+      {
+        "id": "p2",
+        "name": "Takeo Izumi",
+        "aliases": [],
+        "roles": [
+          "suspect"
+        ],
+        "occupation": "employee, TM Securities",
+        "attrs": {
+          "age": 25,
+          "false_alibi": "vouched for by Kogoro Mouri as being in Beika at 9:40, which only rules him out if the murder happened after 8:50 -- once Chihiro's cover-up is exposed and the true time of death is shown to fall within his own 8:00-8:40 visit, this alibi collapses"
+        }
+      },
+      {
+        "id": "p3",
+        "name": "Chihiro Kojima",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "victim's daughter",
+        "attrs": {
+          "age": 28,
+          "estranged_reason": "mother severed ties with her over her fiance, who is in prison",
+          "cleared_because": "her face-pack impersonation of her dead mother for the security guards was a cover-up to avoid suspicion after finding the body already dead, not the murder itself -- it only shifted the apparent time of death, inadvertently creating Izumi's alibi"
+        }
+      },
+      {
+        "id": "p4",
+        "name": "Juro Yoshioka",
+        "aliases": [],
+        "roles": [
+          "suspect",
+          "witness"
+        ],
+        "occupation": "employee at Ikuko Kojima's company; first to find the body",
+        "attrs": {
+          "age": 48,
+          "cleared_because": "the ten minutes he spent alone with the body were spent hiding a detective agency's report on his own embezzlement, not committing the murder -- Ikuko was already dead when he arrived"
+        }
+      },
+      {
+        "id": "p5",
+        "name": "Takeo Izumi's parents",
+        "aliases": [],
+        "roles": [
+          "backstory_figure"
+        ],
+        "occupation": null,
+        "attrs": {
+          "note": "elderly landowners pressured by Ikuko into agreeing to sell their land to cover their son's investment losses"
+        }
+      }
+    ],
+    "locations": [
+      {
+        "id": "l1",
+        "name": "Kojima household",
+        "attrs": {}
+      }
+    ],
+    "objects": [
+      {
+        "id": "o1",
+        "name": "Ikuko's missing contact lens",
+        "role": "evidence",
+        "attrs": {
+          "found_in": "Izumi's pants cuff",
+          "significance": "could only have lodged there through direct physical contact with the victim during the struggle -- i.e., only the killer"
+        }
+      },
+      {
+        "id": "o2",
+        "name": "Face pack and bathrobe used to impersonate the victim",
+        "role": "evidence",
+        "attrs": {
+          "staging_flaw": "reapplied to the corpse with no wrinkles despite the victim supposedly having worn it while struggling and dying in pain, and Chihiro forgot to remove her own purple lipstick before answering the door as her mother"
+        }
+      },
+      {
+        "id": "o3",
+        "name": "Ozawa Detective Agency embezzlement report",
+        "role": "evidence",
+        "attrs": {
+          "found_with": "Juro Yoshioka, hidden in his car for about ten minutes before he called the police",
+          "reveals": "Yoshioka's embezzlement from Ikuko's company -- his real reason for tampering, unrelated to the murder itself"
+        }
+      },
+      {
+        "id": "o4",
+        "name": "Security camera tape",
+        "role": "evidence",
+        "attrs": {
+          "shows": "precise arrival/departure times for Izumi (8:00-8:40) and Chihiro (8:50-9:10), establishing the apparent alibi window that Chihiro's cover-up later exposed as false"
+        }
+      }
+    ],
+    "clues": [
+      {
+        "id": "cA",
+        "desc": "The face pack found on the victim had no wrinkles, despite her supposedly wearing it while struggling and dying in pain -- proving it was applied to her corpse after death, not before.",
+        "clue_type": "forensic"
+      },
+      {
+        "id": "cB",
+        "desc": "The security guard who saw 'Ikuko' answer the door recalled bright purple lips clashing with the white face pack -- Ikuko never wore lipstick, but that shade matches Chihiro's, revealing Chihiro had impersonated her already-dead mother.",
+        "clue_type": "testimonial"
+      }
+    ]
+  },
+  "edges": [
+    {
+      "type": "relationship",
+      "from": "p3",
+      "to": "p1",
+      "relation_type": "child_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p2",
+      "to": "p1",
+      "relation_type": "financial_advisor_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p4",
+      "to": "p1",
+      "relation_type": "employee_of"
+    },
+    {
+      "type": "relationship",
+      "from": "p5",
+      "to": "p2",
+      "relation_type": "parent_of"
+    },
+    {
+      "type": "mismanages_investment_of",
+      "from": "p2",
+      "to": "p1",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": null,
+      "detail": "invests 300 million yen of Ikuko's money as she instructed, and the investment fails"
+    },
+    {
+      "type": "threatens",
+      "from": "p1",
+      "to": "p2",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": null,
+      "detail": "threatens to sue him for the full 300 million yen lost"
+    },
+    {
+      "type": "coerces",
+      "from": "p1",
+      "to": "p5",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": null,
+      "detail": "pressures Izumi's elderly parents into agreeing to sell their land to cover his losses"
+    },
+    {
+      "type": "confronts",
+      "from": "p3",
+      "to": "p1",
+      "order": 0,
+      "temporal_frame": "backstory",
+      "years_before_present": null,
+      "circumstance_tags": [
+        "red_herring"
+      ],
+      "detail": "asks her mother for a loan and is harshly refused, sparking a family quarrel in which she reportedly said she'd kill her mother someday"
+    },
+    {
+      "type": "was_at",
+      "from": "p2",
+      "to": "l1",
+      "order": 1,
+      "temporal_frame": "present",
+      "detail": "arrives 8:00, leaves 8:40 per security footage"
+    },
+    {
+      "type": "kills",
+      "from": "p2",
+      "to": "p1",
+      "order": 1,
+      "temporal_frame": "present",
+      "method": "strangulation",
+      "circumstance_tags": [
+        "premeditated"
+      ]
+    },
+    {
+      "type": "was_at",
+      "from": "p3",
+      "to": "l1",
+      "order": 2,
+      "temporal_frame": "present",
+      "detail": "arrives 8:50, leaves 9:10 per security footage"
+    },
+    {
+      "type": "discovers_body_of",
+      "from": "p3",
+      "to": "p1",
+      "order": 2,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "impersonates",
+      "from": "p3",
+      "to": "p1",
+      "order": 2,
+      "temporal_frame": "present",
+      "circumstance_tags": [
+        "cover_up",
+        "red_herring"
+      ],
+      "detail": "dresses in a matching robe and face pack to answer the door for the security guards after a false alarm, hiding that she'd already found her mother dead"
+    },
+    {
+      "type": "conceals_evidence_using",
+      "from": "p3",
+      "to": "o2",
+      "order": 2,
+      "temporal_frame": "present",
+      "detail": "reapplies the face pack to the corpse afterward to hide her tampering"
+    },
+    {
+      "type": "was_at",
+      "from": "p4",
+      "to": "l1",
+      "order": 3,
+      "temporal_frame": "present",
+      "detail": "arrives 9:20, calls police 9:31"
+    },
+    {
+      "type": "discovers_body_of",
+      "from": "p4",
+      "to": "p1",
+      "order": 3,
+      "temporal_frame": "present"
+    },
+    {
+      "type": "conceals_evidence_using",
+      "from": "p4",
+      "to": "o3",
+      "order": 3,
+      "temporal_frame": "present",
+      "circumstance_tags": [
+        "red_herring"
+      ],
+      "detail": "hides the detective agency's embezzlement report in his car before calling the police, fearing it would make him the prime suspect"
+    },
+    {
+      "type": "implicates",
+      "from": "o1",
+      "to": "p2"
+    },
+    {
+      "type": "implicates",
+      "from": "o3",
+      "to": "p4"
+    },
+    {
+      "type": "regarding",
+      "from": "cA",
+      "to": "o2"
+    },
+    {
+      "type": "implicates",
+      "from": "cA",
+      "to": "p3"
+    },
+    {
+      "type": "regarding",
+      "from": "cB",
+      "to": "o2"
+    },
+    {
+      "type": "implicates",
+      "from": "cB",
+      "to": "p3"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p2",
+      "to": "p1",
+      "motive_type": "revenge and financial desperation -- threatened with a lawsuit and forced to sacrifice his elderly parents' land to cover his investment losses"
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p3",
+      "to": "p1",
+      "motive_type": "family estrangement over her imprisoned fiance, a refused loan request, and a prior argument in which she reportedly threatened to kill her mother",
+      "circumstance_tags": [
+        "red_herring"
+      ]
+    },
+    {
+      "type": "has_motive_against",
+      "from": "p4",
+      "to": "p1",
+      "motive_type": "fear of exposure -- Ikuko had hired a detective agency to investigate his embezzlement from her company",
+      "circumstance_tags": [
+        "red_herring"
+      ]
+    },
+    {
+      "type": "located_in",
+      "from": "o4",
+      "to": "l1"
+    },
+    {
+      "type": "regarding",
+      "from": "o4",
+      "to": "p2",
+      "detail": "tape shows Izumi arriving 8:00 and leaving 8:40, establishing his apparent alibi window"
+    },
+    {
+      "type": "regarding",
+      "from": "o4",
+      "to": "p3",
+      "detail": "tape shows Chihiro arriving 8:50 and leaving 9:10, an apparent alibi window later exposed as false by her cover-up"
+    }
+  ],
+  "label": {
+    "murderer_id": "p2"
+  }
+}

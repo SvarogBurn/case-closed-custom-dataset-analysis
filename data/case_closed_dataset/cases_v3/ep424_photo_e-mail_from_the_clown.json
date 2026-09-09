@@ -1,0 +1,250 @@
+{
+ "case_id": "ep424_photo_e-mail_from_the_clown",
+ "episode_number": "424",
+ "title": "Photo E-mail from the Clown",
+ "source_url": "https://www.detectiveconanworld.com/wiki/Photo_E-mail_from_the_Clown",
+ "subtitle_source": ["subs_resolved/0424.txt"],
+ "schema_version": "v3",
+ "notes": "Detective-cast (Kogoro Mouri, Conan, Ran, Takagi, Sato, Megure) omitted by convention, per ep011. No `event` node type: every action is a directly typed edge between the entities involved. Cold-open theme-park scene is an unrelated gag involving no named plot character and is omitted. The old cases/ep424 file agreed on the culprit (Kijima) but was otherwise thin: it lumped Umeda's role with Kijima as 'blackmailed by his girlfriend' -- the transcript instead makes Umeda his professional mentor/discoverer who controlled his relationships by threatening to sabotage his career if he left her, not a girlfriend holding a secret over him. The old file also entirely missed the mechanics that make this episode's mystery work: the decoy clown doll swapped for the real corpse, the earthquake gas-shutoff device that accidentally exposed the true time of death, the balcony used as a cold-storage site to delay rigor mortis, the stolen phone used to send a fake photo e-mail to fabricate the victim being alive at 4:30pm, and the grey makeup/artificial-hair trace evidence from the body swap. It also gave Shimizu (the hired courier who was wrongly arrested) no distinguishing detail beyond a generic suspect slot. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Umeda",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "editor-in-chief, women's fashion magazine",
+    "attrs": {
+     "died_of": "strangulation",
+     "discovered_and_promoted": "Kijima early in his career",
+     "controlling_behavior": "threatened to destroy Kijima's next girlfriend's career if he ever left her"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Minoru Kijima",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "makeup artist, age 30",
+    "attrs": {
+     "true_alibi_gap": "unaccounted for before 3pm, when he actually killed Umeda"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Jiro Ishikawa",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "photographer, age 28",
+    "attrs": {}
+   },
+   {
+    "id": "p4",
+    "name": "Yoko Nakamura",
+    "aliases": [],
+    "roles": ["witness"],
+    "occupation": "fashion model, age 25",
+    "attrs": {}
+   },
+   {
+    "id": "p5",
+    "name": "Masataka Shimizu",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "part-time worker, age 25",
+    "attrs": {
+     "hired_via": "anonymous internet job posting",
+     "arrested_by": "police, caught in the station park carrying the stolen jewelry"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Umeda's apartment",
+    "attrs": {"note": "door left unlocked for the party; site of the murder"}
+   },
+   {
+    "id": "l2",
+    "name": "Apartment balcony",
+    "attrs": {"note": "cold outdoor space used to delay rigor mortis"}
+   },
+   {
+    "id": "l3",
+    "name": "Beika Department Store",
+    "attrs": {"note": "Kijima met Ishikawa here at 3pm"}
+   },
+   {
+    "id": "l4",
+    "name": "Costume rental shop",
+    "attrs": {"note": "all three left their mobile phones here"}
+   },
+   {
+    "id": "l5",
+    "name": "Park in front of the station",
+    "attrs": {"note": "public phone location; drop point for the stolen jewelry"}
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Clown-costume doll",
+    "role": "evidence",
+    "attrs": {
+     "purpose": "decoy corpse, similar stature to Umeda, dressed in her clown costume",
+     "function": "found by Ishikawa and Yoko instead of the real body, to make the time of death look later than it was"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Umeda's stolen phone",
+    "role": "evidence",
+    "attrs": {
+     "used_for": "sending a fake photo e-mail of the 'clown' at 4:30pm to make Umeda appear alive then"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Umeda's jewelry",
+    "role": "evidence",
+    "attrs": {
+     "content": "rings and necklaces, missing from her jewelry box",
+     "task_given_to_shimizu": "collect from the table at 5pm and carry to the station park"
+    }
+   },
+   {
+    "id": "o4",
+    "name": "Earthquake gas detector",
+    "role": "instrument",
+    "attrs": {
+     "function": "automatically cuts gas distribution off during a strong earthquake",
+     "trigger": "3pm earthquake stopped Umeda's stove"
+    }
+   },
+   {
+    "id": "o5",
+    "name": "Pot of beef stew",
+    "role": "evidence",
+    "attrs": {
+     "state": "uncooked, stove flame left on low",
+     "implication": "Umeda was mid-preparation and never returned to relight the stove after the earthquake cut it -- she was already dead"
+    }
+   },
+   {
+    "id": "o6",
+    "name": "Grey makeup stain on curtain",
+    "role": "evidence",
+    "attrs": {
+     "location": "balcony curtain",
+     "freshness": "still fresh when found",
+     "source": "transferred during the final swap of the real body for the doll"
+    }
+   },
+   {
+    "id": "o7",
+    "name": "Artificial hair strand",
+    "role": "evidence",
+    "attrs": {
+     "source": "wig fiber from the doll's clown costume",
+     "found_near": "the balcony ladder",
+     "significance": "showed no ladder was actually needed to reach the balcony -- proving the killer already had ordinary access, i.e. was an insider"
+    }
+   },
+   {
+    "id": "o8",
+    "name": "Balcony ladder",
+    "role": "tool",
+    "attrs": {"note": "Yoko had used it the week before; a red herring suggesting outside access"}
+   },
+   {
+    "id": "o9",
+    "name": "Kijima's car",
+    "role": "evidence",
+    "attrs": {"used_for": "removing the doll after the final body swap"}
+   },
+   {
+    "id": "o10",
+    "name": "Apartment phone line",
+    "role": "tool",
+    "attrs": {"tampering": "cut before the others arrived, delaying the call for help"}
+   },
+   {
+    "id": "o11",
+    "name": "Muddy footprints in hallway",
+    "role": "evidence",
+    "attrs": {"matched": "Shimizu's shoes"}
+   }
+  ],
+  "clues": [
+   {
+    "id": "cA",
+    "desc": "By 5:30pm in a heated room the body showed no rigor mortis, though the 4:30pm phone e-mail implied Umeda was alive an hour earlier -- the two facts contradict unless the body was kept cold somewhere else in between.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "cB",
+    "desc": "Fresh grey clown makeup on the balcony curtain plus a doll's wig-hair fiber by the ladder -- together they show the real and decoy bodies were swapped via the balcony, by someone who needed no outside access.",
+    "clue_type": "physical"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "engaged_to", "symmetric": true},
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "mentor_of"},
+  {"type": "relationship", "from": "p3", "to": "p1", "relation_type": "employee_of"},
+  {"type": "relationship", "from": "p4", "to": "p1", "relation_type": "professional_acquaintance_of"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p2", "to": "l4"},
+  {"type": "was_at", "from": "p3", "to": "l4"},
+  {"type": "was_at", "from": "p4", "to": "l4"},
+  {"type": "was_at", "from": "p2", "to": "l5"},
+  {"type": "was_at", "from": "p3", "to": "l5"},
+  {"type": "was_at", "from": "p5", "to": "l5"},
+
+  {"type": "kills", "from": "p2", "to": "p1", "method": "strangulation", "circumstance_tags": ["staged_alibi", "body_swap", "time_of_death_deception"]},
+  {"type": "conceals_body_at", "from": "p2", "to": "l2", "detail": "hid Umeda's real body on the cold balcony to delay rigor mortis onset"},
+  {"type": "swaps_body_of", "from": "p2", "to": "p1", "circumstance_tags": ["body_swap"], "detail": "later retrieved the real body from the balcony and swapped it back in for the decoy doll"},
+  {"type": "stages_alibi_using", "from": "p2", "to": "o1"},
+  {"type": "fakes_time_of_death_of", "from": "p2", "to": "p1", "method": "sent a fake photo e-mail of the 'clown' from Umeda's stolen phone at 4:30pm to imply she was alive then"},
+  {"type": "steals", "from": "p2", "to": "o2"},
+  {"type": "sabotages", "from": "p2", "to": "o10"},
+  {"type": "hires", "from": "p2", "to": "p5", "circumstance_tags": ["frame_up", "red_herring"], "detail": "anonymous online job to take the jewelry off the table at 5pm and carry it to the station park"},
+  {"type": "disposes_of", "from": "p2", "to": "o1", "detail": "removed the doll using his car after the final body swap"},
+  {"type": "owns", "from": "p2", "to": "o9"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o6"},
+  {"type": "leaves_evidence", "from": "p2", "to": "o7"},
+
+  {"type": "steals", "from": "p5", "to": "o3"},
+
+  {"type": "located_in", "from": "o4", "to": "l1"},
+  {"type": "located_in", "from": "o5", "to": "l1"},
+  {"type": "located_in", "from": "o8", "to": "l2"},
+
+  {"type": "implicates", "from": "o2", "to": "p2"},
+  {"type": "implicates", "from": "o6", "to": "p2"},
+  {"type": "implicates", "from": "o7", "to": "p2"},
+  {"type": "implicates", "from": "o9", "to": "p2"},
+  {"type": "implicates", "from": "o11", "to": "p5"},
+
+  {"type": "regarding", "from": "cA", "to": "p1"},
+  {"type": "regarding", "from": "cA", "to": "o2"},
+  {"type": "implicates", "from": "cA", "to": "p2"},
+  {"type": "regarding", "from": "cB", "to": "o6"},
+  {"type": "regarding", "from": "cB", "to": "o7"},
+  {"type": "implicates", "from": "cB", "to": "p2"},
+
+  {"type": "has_motive_against", "from": "p2", "to": "p1", "motive_type": "controlling_mentor_blocked_his_relationships"},
+  {"type": "has_motive_against", "from": "p5", "to": "p1", "motive_type": "financial_opportunity (red herring, accused by police of killing her for the jewelry)"}
+ ],
+ "label": {
+  "murderer_id": "p2"
+ }
+}

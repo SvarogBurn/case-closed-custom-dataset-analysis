@@ -1,0 +1,202 @@
+{
+ "case_id": "ep767_the_lover_gone_missing_in_a_snowstorm",
+ "episode_number": "767",
+ "title": "The Lover Gone Missing in a Snowstorm",
+ "source_url": "https://www.detectiveconanworld.com/wiki/The_Lover_Gone_Missing_in_a_Snowstorm",
+ "subtitle_source": ["subs_resolved/0767.txt"],
+ "schema_version": "v3",
+ "notes": "Recurring detective-cast (Conan, Ai Haibara as background presence) omitted by convention; Genta and Ayumi are kept as full person nodes because their individual actions (Genta secretly eating ice cream from the freezer, Ayumi noticing the garlic smell at dinner) are the two facts the whole solution hinges on. No `event` node type: every action is a directly typed edge between the entities involved. The old cases/ file's culprit (Juri Himuro) matches the transcript -- this is not a wrong-culprit case -- but its structure undersold the mystery: it filed Aya as a plain 'suspect' when the transcript makes her an exonerated eyewitness (seen returning from the side road empty-handed, which is exactly what clears her), used a single generic 'Ice Room lakeside' location for three narratively distinct places (the villa, its kitchen/freezer, and the side-road cliff where the trap was actually set), used only generic 'knows' edges for what are really a manipulated-boyfriend plot (Masahiko was already breaking up with Juri for another woman) and a false confession by Ryoko to shield Juri, and listed the medicine only as a vague 'hidden medication' rather than the staged pretext Juri used to get Masahiko to volunteer for the fatal errand. case_type: murder.",
+ "nodes": {
+  "persons": [
+   {
+    "id": "p1",
+    "name": "Ryoko Himuro",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "eldest Himuro sister; cooks and runs Villa Ice Room",
+    "attrs": {
+     "false_confession": "claims she committed the murder to protect Juri, calling herself Juri's parent-figure",
+     "cleared_because": "loves Juri too much to have set a trap that would make Juri suffer for life"
+    }
+   },
+   {
+    "id": "p2",
+    "name": "Aya Himuro",
+    "aliases": [],
+    "roles": ["suspect", "witness"],
+    "occupation": "middle Himuro sister, co-runs Villa Ice Room",
+    "attrs": {
+     "opposed_relationship": "pushed Masahiko to break up with Juri",
+     "witnessed": "saw Juri returning from the side road at sundown, empty-handed",
+     "protective_silence": "denies seeing anything to shield Juri"
+    }
+   },
+   {
+    "id": "p3",
+    "name": "Juri Himuro",
+    "aliases": [],
+    "roles": ["suspect"],
+    "occupation": "youngest Himuro sister",
+    "attrs": {
+     "true_motive": "Masahiko was breaking up with her for another woman and mocked her; she could not forgive him",
+     "false_pretext": "staged losing her own medicine to send Masahiko out into the snowstorm to fetch more"
+    }
+   },
+   {
+    "id": "p4",
+    "name": "Masahiko Fujita",
+    "aliases": [],
+    "roles": ["victim"],
+    "occupation": "local man; Juri's boyfriend",
+    "attrs": {
+     "reputation": "described as a notorious local",
+     "breakup_plan": "was already planning to leave Juri for another woman, calling her boring and blaming her upbringing",
+     "left_car_behind": "drove to the villa but walked the cliffside side-road shortcut instead of driving to town"
+    }
+   },
+   {
+    "id": "p5",
+    "name": "Genta",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "Detective Boy (schoolboy guest)",
+    "attrs": {
+     "unwitting_evidence": "secretly ate ice cream from the villa's kitchen freezer while Juri was freezing the trap plate there; crumbs and the wrapper froze into it"
+    }
+   },
+   {
+    "id": "p6",
+    "name": "Ayumi",
+    "aliases": [],
+    "roles": ["witness", "bystander"],
+    "occupation": "Detective Girl (schoolgirl guest)",
+    "attrs": {
+     "observation": "noticed a garlic smell at dinner despite no garlic dish being served -- the smell traced to Genta, not the food"
+    }
+   }
+  ],
+  "locations": [
+   {
+    "id": "l1",
+    "name": "Villa Ice Room",
+    "attrs": {
+     "description": "lakeside lodge run by the Himuro sisters, also a commercial ice-cream/ice producer; site of the snowball fight, the argument, and the dinner"
+    }
+   },
+   {
+    "id": "l2",
+    "name": "Villa Ice Room kitchen/freezer",
+    "attrs": {
+     "description": "walk-in freezer and cooking area stocked with ice-cream products in cooler boxes; where Ryoko cooked and Juri froze the trap ice plate"
+    }
+   },
+   {
+    "id": "l3",
+    "name": "Cliffside side-road shortcut",
+    "attrs": {
+     "description": "narrow, car-inaccessible mountain path used as a shortcut to town, running along a cliff edge; site of the trap and Masahiko's fatal fall"
+    }
+   }
+  ],
+  "objects": [
+   {
+    "id": "o1",
+    "name": "Hidden ice-plate trap",
+    "role": "weapon",
+    "attrs": {
+     "trick": "sheet of ice frozen in advance, hidden under freshly shoveled snow on the cliff side of the path; melts away by morning leaving no trace",
+     "staging_flaw": "crumbs and a wrapper from Genta's secretly-eaten ice cream froze into the plate before it was placed"
+    }
+   },
+   {
+    "id": "o2",
+    "name": "Juri's 'missing' medicine",
+    "role": "evidence",
+    "attrs": {
+     "trick": "Juri hid her own prescription so Masahiko would volunteer to fetch a refill in town",
+     "revealed_by": "Conan produces the medicine Juri claimed to have lost"
+    }
+   },
+   {
+    "id": "o3",
+    "name": "Ice cream wrapper and crumbs",
+    "role": "evidence",
+    "attrs": {
+     "brand": "Monaka Ice, went on sale the day before",
+     "origin": "Genta secretly ate it from the villa's kitchen freezer while the trap ice was being frozen there"
+    }
+   }
+  ],
+  "clues": [
+   {
+    "id": "c1",
+    "desc": "Garlic-smelling ice-cream crumbs and a wrapper were frozen inside the trap ice, but no dinner dish had garlic -- the smell traces to Genta's secret snack from the same kitchen freezer where the trap plate was made, fixing when and where it was frozen.",
+    "clue_type": "forensic"
+   },
+   {
+    "id": "c2",
+    "desc": "Aya was seen returning from the side road empty-handed and off-guard, but setting the trap required carrying a cooler box and a shovel -- proving she only witnessed the scene rather than set the trap.",
+    "clue_type": "behavioral"
+   }
+  ]
+ },
+ "edges": [
+  {"type": "relationship", "from": "p1", "to": "p2", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p1", "to": "p3", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p2", "to": "p3", "relation_type": "sibling"},
+  {"type": "relationship", "from": "p3", "to": "p4", "relation_type": "dating"},
+  {"type": "relationship", "from": "p1", "to": "p4", "relation_type": "disapproves_of"},
+  {"type": "relationship", "from": "p2", "to": "p4", "relation_type": "disapproves_of"},
+
+  {"type": "breaks_up_with", "from": "p4", "to": "p3", "circumstance_tags": ["motive"], "detail": "tells Juri he has another girl and calls her boring; agrees to run one last errand for her before they split"},
+  {"type": "confronts", "from": "p2", "to": "p4", "detail": "tells him to break up with Juri; argument turns physical"},
+
+  {"type": "hides", "from": "p3", "to": "o2", "circumstance_tags": ["staged"], "detail": "hides her own medicine to manufacture a reason to send Masahiko out"},
+  {"type": "manipulates", "from": "p3", "to": "p4", "circumstance_tags": ["premeditated"], "detail": "gets Masahiko to volunteer to fetch her medicine as a final favor, and tells him the dangerous side road is a shortcut"},
+  {"type": "stages_trap_using", "from": "p3", "to": "o1", "detail": "freezes the ice plate in the kitchen freezer, then hides it under shoveled snow on the cliffside path"},
+  {"type": "owns", "from": "p3", "to": "o1"},
+  {"type": "located_in", "from": "o1", "to": "l3"},
+  {"type": "implicates", "from": "o1", "to": "p3"},
+
+  {"type": "kills", "from": "p3", "to": "p4", "method": "lures him onto a hidden ice trap on the cliffside shortcut, causing a fatal fall", "circumstance_tags": ["premeditated", "staged_accident"]},
+
+  {"type": "eats_secretly", "from": "p5", "to": "o3", "detail": "sneaks ice cream from the villa freezer while the trap ice is being frozen there"},
+  {"type": "leaves_evidence", "from": "p5", "to": "o3"},
+  {"type": "located_in", "from": "o3", "to": "l3"},
+  {"type": "implicates", "from": "o3", "to": "p3"},
+
+  {"type": "owns", "from": "p3", "to": "o2"},
+  {"type": "located_in", "from": "o2", "to": "l1"},
+  {"type": "implicates", "from": "o2", "to": "p3"},
+
+  {"type": "shields", "from": "p1", "to": "p3", "circumstance_tags": ["cover_up"], "detail": "falsely confesses to the murder to protect Juri"},
+  {"type": "shields", "from": "p2", "to": "p3", "circumstance_tags": ["cover_up"], "detail": "denies having seen anything at the side road"},
+  {"type": "witnesses", "from": "p2", "to": "p3", "detail": "sees Juri returning from the side road at sundown, empty-handed"},
+
+  {"type": "regarding", "from": "c1", "to": "o3"},
+  {"type": "regarding", "from": "c1", "to": "l2"},
+  {"type": "implicates", "from": "c1", "to": "p3"},
+  {"type": "regarding", "from": "c2", "to": "p2"},
+  {"type": "regarding", "from": "c2", "to": "l3"},
+
+  {"type": "has_motive_against", "from": "p3", "to": "p4", "motive_type": "revenge_for_betrayal_and_breakup"},
+  {"type": "has_motive_against", "from": "p1", "to": "p4", "motive_type": "disapproved_of_relationship (red herring, cleared by lack of will to harm Juri)"},
+  {"type": "has_motive_against", "from": "p2", "to": "p4", "motive_type": "disapproved_of_relationship (red herring, cleared by lack of trap-carrying equipment)"},
+
+  {"type": "was_at", "from": "p1", "to": "l1"},
+  {"type": "was_at", "from": "p1", "to": "l2"},
+  {"type": "was_at", "from": "p2", "to": "l1"},
+  {"type": "was_at", "from": "p2", "to": "l3"},
+  {"type": "was_at", "from": "p3", "to": "l1"},
+  {"type": "was_at", "from": "p3", "to": "l2"},
+  {"type": "was_at", "from": "p3", "to": "l3"},
+  {"type": "was_at", "from": "p4", "to": "l1"},
+  {"type": "was_at", "from": "p4", "to": "l3"},
+  {"type": "was_at", "from": "p5", "to": "l1"},
+  {"type": "was_at", "from": "p5", "to": "l2"},
+  {"type": "was_at", "from": "p6", "to": "l1"}
+ ],
+ "label": {
+  "murderer_id": "p3"
+ }
+}
